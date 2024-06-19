@@ -998,7 +998,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	gliscor: {
 		tier: "Illegal",
 	},
-	snubbul: {
+	snubbull: {
 		tier: "Illegal",
 	},
 	granbull: {
@@ -1229,7 +1229,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	seedot: {
 		tier: "Illegal",
 	},
-	Illegalzleaf: {
+	nuzleaf: {
 		tier: "Illegal",
 	},
 	shiftry: {
@@ -2078,7 +2078,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	throh: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	sawk: {
 		tier: "Illegal",
@@ -2238,10 +2238,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	ducklett: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	swanna: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	vanillite: {
 		tier: "Illegal",
@@ -2603,10 +2603,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	binacle: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	barbaracle: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	skrelp: {
 		tier: "Illegal",

@@ -74,5 +74,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "The user recovers 1/2 the HP lost by the target, rounded down.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 		drain: [1, 2],
+		gen: 3,
+	},
+	matblock: {
+		inherit: true,
+		gen: 3,
+	},
+	furycutter: {
+		inherit: true,
+		basePower: 30,
 	},
 };

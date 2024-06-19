@@ -70,26 +70,50 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	mawile: {
 		inherit: true,
 		types: ["Steel", "Fairy"],
+		abilities: {0: "Hyper Cutter", 1: "Intimidate"},
 	},
 	absol: {
 		inherit: true,
 		abilities: {0: "Pressure", 1: "Synchronize"},
 	},
-	spinda: {
-		inherit: true,
-		types: ["Normal", "Psychic"],
-		abilities: {0: "Own Tempo", 1: "Speed Boost"},
-	},
 	sewaddle: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Swarm", 1: "Chlorophyll"},
 	},
 	swadloon: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Swarm", 1: "Chlorophyll"},
 	},
 	leavanny: {
 		inherit: true,
 		gen: 3,
-	}
+		abilities: {0: "Swarm", 1: "Chlorophyll"},
+	},
+	ducklett: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Keen Eye", 1: "Big Pecks"},
+	},
+	swanna: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Keen Eye", 1: "Big Pecks"},
+	},
+	throh: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Guts", 1: "Inner Focus"},
+	},
+	binacle: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Tough Claws", 1: "Keen Eye"},
+	},
+	barbaracle: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Tough Claws", 1: "Keen Eye"},
+	},
 };

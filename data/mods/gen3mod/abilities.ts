@@ -8,4 +8,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
+	toughclaws: {
+		inherit: true,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['contact']) {
+				return this.chainModify([11, 10]);
+			}
+		},
+		shortDesc: "This Pokemon's contact moves have their power multiplied by 1.1.",
+	},
 };
