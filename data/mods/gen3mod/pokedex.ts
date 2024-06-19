@@ -116,4 +116,50 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Tough Claws", 1: "Keen Eye"},
 	},
+	ponyta: {
+		inherit: true,
+		abilities: {0: "Flame Body", 1: "Flash Fire"},
+	},
+	rapidash: {
+		inherit: true,
+		abilities: {0: "Flame Body", 1: "Flash Fire"},
+	},
+	togedemaru: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Static", 1: "Lightning Rod"},
+	},
+	nidoranf: {
+		inherit: true,
+		abilities: {0: "Poison Point", 1: "Hustle"},
+	},
+	nidorina: {
+		inherit: true,
+		abilities: {0: "Poison Point", 1: "Hustle"},
+	},
+	nidoqueen: {
+		inherit: true,
+		abilities: {0: "Poison Point", 1: "Hustle"},
+	},
+	seel: {
+		inherit: true,
+		abilities: {0: "Thick Fat"},
+	},
+	dewgong: {
+		inherit: true,
+		abilities: {0: "Thick Fat"},
+	},
+	pansear: {
+		inherit: true,
+		abilities: {0: "Blaze"},
+	},
+	simisear: {
+		inherit: true,
+		abilities: {0: "Blaze"},
+	},
+	drampa: {
+		inherit: true,
+		baseStats: {hp: 78, atk: 60, def: 85, spa: 115, spd: 91, spe: 36},
+		abilities: {0: "Cloud Nine", 1: "Sap Sipper"},
+	},
 };

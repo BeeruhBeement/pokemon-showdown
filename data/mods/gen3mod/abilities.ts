@@ -18,4 +18,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		shortDesc: "This Pokemon's contact moves have their power multiplied by 1.1.",
 	},
+	sapsipper: {
+		inherit: true,
+		gen: 3,
+	},
 };

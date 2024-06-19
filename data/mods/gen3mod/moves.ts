@@ -82,6 +82,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	furycutter: {
 		inherit: true,
-		basePower: 30,
+		basePower: 40,
 	},
+	rocksmash: {
+		inherit: true,
+		basePower: 60,
+	},
+	howl: {
+		inherit: true,
+		target: "allies",
+		desc: "Raises the Attack of the user and all allies 1 stage.",
+		shortDesc: "Raises the user's and ally's Attack by 1.",
+	}
 };
