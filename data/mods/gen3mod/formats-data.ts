@@ -1425,7 +1425,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	spinda: {
-		tier: "OU",
+		tier: "Illegal",
 	},
 	trapinch: {
 		tier: "Illegal",
