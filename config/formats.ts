@@ -19,6 +19,17 @@ The column value will be ignored for repeat sections.
 
 export const Formats: FormatList = [
 
+	{
+		section: "Custom",
+	},
+	{
+		name: "[Gen 3] Modded",
+
+		mod: 'gen3mod',
+		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
+		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
+	},
+
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 
