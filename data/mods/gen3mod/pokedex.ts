@@ -94,12 +94,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ducklett: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Keen Eye", 1: "Big Pecks"},
+		abilities: {0: "Keen Eye"},
 	},
 	swanna: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Keen Eye", 1: "Big Pecks"},
+		abilities: {0: "Keen Eye"},
 	},
 	throh: {
 		inherit: true,
