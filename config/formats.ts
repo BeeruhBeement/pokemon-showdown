@@ -29,6 +29,15 @@ export const Formats: FormatList = [
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
 		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
 	},
+	{
+		name: "[Gen 3] Modded Doubles",
+
+		mod: 'gen3mod',
+		gameType: 'doubles',
+		ruleset: ['Standard', '!Switch Priority Clause Mod'],
+		banlist: ['Uber', 'Quick Claw', 'Soul Dew', 'Swagger'],
+		unbanlist: ['Wobbuffet', 'Wynaut'],
+	},
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
