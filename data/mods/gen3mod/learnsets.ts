@@ -69,10 +69,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			irontail: ["3M"],
 			drainingkiss: ["3M"],
 		},
-		eventData: [
-			{generation: 3, level: 10, gender: "M", moves: ["astonish", "faketears"], pokeball: "pokeball"},
-			{generation: 3, level: 22, moves: ["sing", "falseswipe", "visegrip", "irondefense"]},
-		],
 	},
 	absol: {
 		learnset: {
@@ -149,12 +145,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			suckerpunch: ["3L44", "3M"],
 			disarmingvoice: ["3M"],
 		},  
-		eventData: [
-			{generation: 3, level: 5, shiny: 1, abilities: ["pressure"], moves: ["scratch", "leer", "wish"], pokeball: "pokeball"},
-			{generation: 3, level: 5, shiny: 1, abilities: ["pressure"], moves: ["scratch", "leer", "spite"], pokeball: "pokeball"},
-			{generation: 3, level: 35, abilities: ["pressure"], moves: ["razorwind", "bite", "swordsdance", "spite"], pokeball: "pokeball"},
-			{generation: 3, level: 70, abilities: ["pressure"], moves: ["doubleteam", "slash", "futuresight", "perishsong"], pokeball: "pokeball"},
-		],
 	},
 	sewaddle: {
 		learnset: {
@@ -481,7 +471,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			agility: ["3L38"],
 			attract: ["3M"],
-			batonpass: ["3S0"],
 			bodyslam: ["3T"],
 			bounce: ["3L50"],
 			doubleedge: ["3T"],
@@ -522,13 +511,13 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 
 			willowisp: ["3M"],
+			batonpass: ["3E"],
 		},
 	},
 	rapidash: {
 		learnset: {
 			agility: ["3L38"],
 			attract: ["3M"],
-			batonpass: ["3S0"],
 			bodyslam: ["3T"],
 			bounce: ["3L50"],
 			doubleedge: ["3T"],
@@ -569,11 +558,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 
 			willowisp: ["3M"],
+			batonpass: ["3E"],
 			megahorn: ["3L1"],
 		},
-		eventData: [
-			{generation: 3, level: 40, moves: ["batonpass", "solarbeam", "sunnyday", "flamethrower"]},
-		],
 	},
 	togedemaru: {
 		learnset: {
@@ -618,6 +605,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			twineedle: ["3E"],
 			wish: ["3E"],
+
+			batonpass: ["3E"],
 		},
 	},
 	nidoranf: {
@@ -868,9 +857,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["3M"],
 			waterpulse: ["3M"],
 		},
-		eventData: [
-			{generation: 3, level: 23, abilities: ["thickfat"], moves: ["helpinghand", "surf", "safeguard", "icebeam"]},
-		],
 	},
 	dewgong: {
 		learnset: {

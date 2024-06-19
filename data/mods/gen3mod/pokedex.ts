@@ -127,6 +127,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	togedemaru: {
 		inherit: true,
 		gen: 3,
+		baseStats: {hp: 65, atk: 78, def: 63, spa: 60, spd: 73, spe: 96},
 		abilities: {0: "Static", 1: "Lightning Rod"},
 	},
 	nidoranf: {
