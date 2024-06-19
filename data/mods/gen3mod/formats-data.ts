@@ -2777,11 +2777,9 @@ doublesTier: "Illegal",
 	},
 	sewaddle: {
 		tier: "LC",
-doublesTier: "(DUU)",
 	},
 	swadloon: {
 		tier: "NFE",
-doublesTier: "(DUU)",
 	},
 	leavanny: {
 		tier: "OU",
@@ -2981,7 +2979,6 @@ doublesTier: "Illegal",
 	},
 	ducklett: {
 		tier: "LC",
-doublesTier: "(DUU)",
 	},
 	swanna: {
 		tier: "OU",
@@ -3467,7 +3464,6 @@ doublesTier: "Illegal",
 	},
 	binacle: {
 		tier: "LC",
-doublesTier: "(DUU)",
 	},
 	barbaracle: {
 		tier: "OU",
