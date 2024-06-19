@@ -151,14 +151,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pansear: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Blaze"},
 	},
 	simisear: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Blaze"},
 	},
 	drampa: {
 		inherit: true,
+		gen: 3,
 		baseStats: {hp: 78, atk: 60, def: 85, spa: 115, spd: 91, spe: 36},
 		abilities: {0: "Cloud Nine", 1: "Sap Sipper"},
 	},

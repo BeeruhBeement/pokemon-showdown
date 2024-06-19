@@ -597,8 +597,7 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	seel: {
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "LC",
 	},
 	dewgong: {
 		tier: "OU",
