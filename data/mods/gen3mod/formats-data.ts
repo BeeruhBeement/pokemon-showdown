@@ -5,13 +5,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ivysaur: {
 		tier: "Illegal",
 	},
-	veIllegalsaur: {
+	venusaur: {
 		tier: "Illegal",
 	},
-	veIllegalsaurmega: {
+	venusaurmega: {
 		tier: "Illegal",
 	},
-	veIllegalsaurgmax: {
+	venusaurgmax: {
 		tier: "Illegal",
 	},
 	charmander: {
@@ -227,13 +227,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	igglybuff: {
 		tier: "Illegal",
 	},
-	jigglyIllegalff: {
+	jigglypuff: {
 		tier: "Illegal",
 	},
 	wigglytuff: {
 		tier: "Illegal",
 	},
-	Illegalbat: {
+	zubat: {
 		tier: "Illegal",
 	},
 	golbat: {
@@ -902,13 +902,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ampharosmega: {
 		tier: "Illegal",
 	},
-	aIllegalrill: {
+	azurill: {
 		tier: "Illegal",
 	},
 	marill: {
 		tier: "Illegal",
 	},
-	aIllegalmarill: {
+	azumarill: {
 		tier: "Illegal",
 	},
 	bonsly: {
@@ -998,7 +998,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	gliscor: {
 		tier: "Illegal",
 	},
-	sIllegalbbull: {
+	snubbul: {
 		tier: "Illegal",
 	},
 	granbull: {
@@ -1052,7 +1052,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	magcargo: {
 		tier: "Illegal",
 	},
-	swiIllegalb: {
+	swinub: {
 		tier: "Illegal",
 	},
 	piloswine: {
@@ -1127,7 +1127,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	larvitar: {
 		tier: "Illegal",
 	},
-	Illegalpitar: {
+	pupitar: {
 		tier: "Illegal",
 	},
 	tyranitar: {
@@ -1367,7 +1367,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	plusle: {
 		tier: "Illegal",
 	},
-	miIllegaln: {
+	minun: {
 		tier: "Illegal",
 	},
 	volbeat: {
@@ -1406,7 +1406,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	wailord: {
 		tier: "Illegal",
 	},
-	Illegalmel: {
+	numel: {
 		tier: "Illegal",
 	},
 	camerupt: {
