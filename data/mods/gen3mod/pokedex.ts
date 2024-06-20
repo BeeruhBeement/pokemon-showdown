@@ -127,7 +127,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	togedemaru: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 65, atk: 78, def: 63, spa: 60, spd: 73, spe: 96},
+		baseStats: {hp: 75, atk: 98, def: 73, spa: 40, spd: 83, spe: 96},
 		abilities: {0: "Sturdy", 1: "Lightning Rod"},
 	},
 	nidoranf: {
@@ -163,7 +163,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	drampa: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 78, atk: 60, def: 85, spa: 115, spd: 91, spe: 36},
 		abilities: {0: "Cloud Nine", 1: "Sap Sipper"},
 	},
 	bruxish: {
@@ -208,5 +207,46 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Sap Sipper"},
+	},
+	electrike: {
+		inherit: true,
+		abilities: {0: "Intimidate", 1: "Lightning Rod"},
+	},
+	manectric: {
+		inherit: true,
+		abilities: {0: "Intimidate", 1: "Lightning Rod"},
+	},
+	dracozolt: {
+		inherit: true,
+		abilities: {0: "Volt Absorb", 1: "Hustle"},
+	},
+	surskit: {
+		inherit: true,
+	},
+	masquerain: {
+		inherit: true,
+		types: ["Bug", "Water"],
+	},
+	orthworm: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Earth Eater"},
+	},
+	doduo: {
+		inherit: true,
+		abilities: {0: "Run Away", 1: "Early Bird"},
+	},
+	dodrio: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 110, def: 70, spa: 60, spd: 60, spe: 110},
+		abilities: {0: "Run Away", 1: "Early Bird"},
+	},
+	cranidos: {
+		inherit: true,
+		abilities: {0: "Mold Breaker", 1: "Rock Head"},
+	},
+	rampardos: {
+		inherit: true,
+		abilities: {0: "Mold Breaker", 1: "Rock Head"},
 	},
 };

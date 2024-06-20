@@ -13,7 +13,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['contact']) {
-				return this.chainModify([11, 10]);
+				return this.chainModify([12, 10]);
 			}
 		},
 		shortDesc: "This Pokemon's contact moves have their power multiplied by 1.1.",
@@ -70,6 +70,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+	},
+	eartheater: {
+		inherit: true,
+		gen: 3,
+	},
+	runaway: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			if (['Dark', 'Bug', 'Ghost'].includes(move.type)) {
+				this.boost({spe: 1});
+			}
+		},
+		onAfterBoost(boost, target, source, effect) {
+			if (effect?.name === 'Intimidate' && boost.atk) {
+				this.boost({spe: 1});
 			}
 		},
 	},

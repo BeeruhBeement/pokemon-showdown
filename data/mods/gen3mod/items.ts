@@ -212,9 +212,16 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 		gen: 3,
+		isNonstandard: null,
 	},
 	loadeddice: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
+	},
+	eviolite: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
 	},
 };

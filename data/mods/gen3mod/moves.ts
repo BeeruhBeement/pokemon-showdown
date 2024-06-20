@@ -149,4 +149,80 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 40,
 		accuracy: 90,
 	},
+	hypervoice: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
+	},
+	charge: {
+		inherit: true,
+		desc: "If the user uses an Electric-type attack, its power will be doubled until it's no longer active.",
+		shortDesc: "The user's Electric attacks have 2x power.",
+		condition: {
+			onAfterMove(pokemon, target, move) {},
+		},
+		boosts: {},
+	},
+	thief: {
+		inherit: true,
+		basePower: 60,
+	},
+	snarl: {
+		inherit: true,
+		gen: 3,
+		flags: {protect: 1, mirror: 1, sound: 1},
+	},
+	uturn: {
+		inherit: true,
+		gen: 3,
+		type: "Normal",
+		basePower: 20,
+	},
+	leechlife: {
+		inherit: true,
+		basePower: 60,
+	},
+	twineedle: {
+		inherit: true,
+		basePower: 40,
+		accuracy: 90,
+	},
+	shellsmash: {
+		inherit: true,
+		desc: "Lowers the user's Defense and Special Defense by 1 stage. Raises the user's Attack, Special Attack, and Speed by 1 stages.",
+		shortDesc: "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 1.",
+		boosts: {
+			def: -1,
+			spd: -1,
+			atk: 1,
+			spa: 1,
+			spe: 1,
+		},
+		type: "Water",
+		gen: 3,
+	},
+	growth: {
+		inherit: true,
+		desc: "Raises the user's Attack and Special Attack by 1 stage.",
+		shortDesc: "Raises user's Attack and Sp. Atk by 1.",
+		boosts: {
+			atk: 1,
+			spa: 1,
+		},
+		secondary: null,
+		type: "Grass",
+	},
+	highjumpkick: {
+		inherit: true,
+		basePower: 120,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+	},
+	jumpkick: {
+		inherit: true,
+		basePower: 90,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('Jump Kick'));
+		},
+	},
 };
