@@ -3390,12 +3390,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	skiddo: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	gogoat: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	pancham: {
 		tier: "LC",

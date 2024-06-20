@@ -128,7 +128,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 65, atk: 78, def: 63, spa: 60, spd: 73, spe: 96},
-		abilities: {0: "Static", 1: "Lightning Rod"},
+		abilities: {0: "Sturdy", 1: "Lightning Rod"},
 	},
 	nidoranf: {
 		inherit: true,
@@ -198,5 +198,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sandslash: {
 		inherit: true,
 		abilities: {0: "Sand Rush", 1: "Rough Skin"},
+	},
+	skiddo: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Sap Sipper"},
+	},
+	gogoat: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Sap Sipper"},
 	},
 };

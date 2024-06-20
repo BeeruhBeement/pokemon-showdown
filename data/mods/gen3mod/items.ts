@@ -202,4 +202,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 	},
+	fairyfeather: {
+		inherit: true,
+		onBasePower() {},
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, user, target, move) {
+			if (move?.type === 'Fairy') {
+				return this.chainModify(1.1);
+			}
+		},
+		gen: 3,
+	},
+	loadeddice: {
+		inherit: true,
+		gen: 3,
+	},
 };
