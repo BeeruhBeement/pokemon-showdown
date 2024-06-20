@@ -3398,12 +3398,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	pancham: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	pangoro: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	furfrou: {
 		tier: "Illegal",
