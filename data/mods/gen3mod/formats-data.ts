@@ -232,16 +232,15 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	sandshrew: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	sandshrewalola: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
 	sandslash: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	sandslashalola: {
 		tier: "Illegal",
@@ -2367,11 +2366,11 @@ doublesTier: "Illegal",
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
-	loIllegalnny: {
+	lopunny: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
-	loIllegalnnymega: {
+	lopunnymega: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
@@ -2379,17 +2378,16 @@ doublesTier: "Illegal",
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
-	Illegalrugly: {
+	purugly: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
 	stunky: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	skuntank: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	bronzor: {
 		tier: "Illegal",
@@ -3995,8 +3993,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	bruxish: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	drampa: {
 		tier: "OU",

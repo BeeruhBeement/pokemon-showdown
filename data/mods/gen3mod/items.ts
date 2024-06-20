@@ -1,6 +1,7 @@
 export const Items: {[k: string]: ModdedItemData} = {
 	blackbelt: {
 		inherit: true,
+		desc: "Holder's Fighting-type attacks have 1.2x power.",
 		shortDesc: "Holder's Fighting-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -23,6 +24,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	charcoal: {
 		inherit: true,
+		desc: "Holder's Fire-type attacks have 1.2x power.",
 		shortDesc: "Holder's Fire-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
@@ -34,6 +36,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	dragonfang: {
 		inherit: true,
+		desc: "Holder's Dragon-type attacks have 1.2x power.",
 		shortDesc: "Holder's Dragon-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
@@ -45,6 +48,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	hardstone: {
 		inherit: true,
+		desc: "Holder's Rock-type attacks have 1.2x power.",
 		shortDesc: "Holder's Rock-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -56,6 +60,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	magnet: {
 		inherit: true,
+		desc: "Holder's Electric-type attacks have 1.2x power.",
 		shortDesc: "Holder's Electric-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
@@ -67,6 +72,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	metalcoat: {
 		inherit: true,
+		desc: "Holder's Steel-type attacks have 1.2x power.",
 		shortDesc: "Holder's Steel-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -78,6 +84,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	miracleseed: {
 		inherit: true,
+		desc: "Holder's Grass-type attacks have 1.2x power.",
 		shortDesc: "Holder's Grass-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
@@ -89,6 +96,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	mysticwater: {
 		inherit: true,
+		desc: "Holder's Water-type attacks have 1.2x power.",
 		shortDesc: "Holder's Water-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
@@ -100,6 +108,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	nevermeltice: {
 		inherit: true,
+		desc: "Holder's Ice-type attacks have 1.2x power.",
 		shortDesc: "Holder's Ice-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
@@ -111,6 +120,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	poisonbarb: {
 		inherit: true,
+		desc: "Holder's Poison-type attacks have 1.2x power.",
 		shortDesc: "Holder's Poison-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -122,6 +132,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	sharpbeak: {
 		inherit: true,
+		desc: "Holder's Flying-type attacks have 1.2x power.",
 		shortDesc: "Holder's Flying-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -133,6 +144,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	silkscarf: {
 		inherit: true,
+		desc: "Holder's Normal-type attacks have 1.2x power.",
 		shortDesc: "Holder's Normal-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -144,6 +156,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	silverpowder: {
 		inherit: true,
+		desc: "Holder's Bug-type attacks have 1.2x power.",
 		shortDesc: "Holder's Bug-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -155,6 +168,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	softsand: {
 		inherit: true,
+		desc: "Holder's Ground-type attacks have 1.2x power.",
 		shortDesc: "Holder's Ground-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -166,6 +180,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	spelltag: {
 		inherit: true,
+		desc: "Holder's Ghost-type attacks have 1.2x power.",
 		shortDesc: "Holder's Ghost-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifyAtkPriority: 1,
@@ -177,6 +192,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	twistedspoon: {
 		inherit: true,
+		desc: "Holder's Psychic-type attacks have 1.2x power.",
 		shortDesc: "Holder's Psychic-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,

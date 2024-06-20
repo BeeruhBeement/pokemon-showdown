@@ -93,5 +93,60 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "allies",
 		desc: "Raises the Attack of the user and all allies 1 stage.",
 		shortDesc: "Raises the user's and ally's Attack by 1.",
-	}
+	},
+	bugbite: {
+		inherit: true,
+		gen: 3,
+		onHit(target, source) {},
+		desc: "No additional effect.",
+		shortDesc: "No additional effect.",
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
+	},
+	iceshard: {
+		inherit: true,
+		gen: 3,
+	},
+	bulletpunch: {
+		inherit: true,
+		gen: 3,
+	},
+	poisongas: {
+		inherit: true,
+		accuracy: 80,
+		target: "allAdjacentFoes",
+		desc: "Poisons the target.",
+		shortDesc: "Poisons the foe(s).",
+	},
+	feint: {
+		inherit: true,
+		gen: 3,
+		onTry(source, target) {},
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+		shortDesc: "Nullifies Detect, Protect, and Quick/Wide Guard.",
+	},
+	armthrust: {
+		inherit: true,
+		basePower: 20,
+	},
+	bulletseed: {
+		inherit: true,
+		basePower: 20,
+	},
+	iciclespear: {
+		inherit: true,
+		basePower: 20,
+	},
+	pinmissile: {
+		inherit: true,
+		basePower: 20,
+	},
+	triplekick: {
+		inherit: true,
+		basePower: 20,
+	},
+	doublekick: {
+		inherit: true,
+		basePower: 40,
+		accuracy: 90,
+	},
 };

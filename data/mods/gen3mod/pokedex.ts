@@ -166,4 +166,37 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 78, atk: 60, def: 85, spa: 115, spd: 91, spe: 36},
 		abilities: {0: "Cloud Nine", 1: "Sap Sipper"},
 	},
+	bruxish: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Water Veil", 1: "Strong Jaw"},
+	},
+	stunky: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Stench", 1: "Poison Point"},
+	},
+	skuntank: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Stench", 1: "Poison Point"},
+	},
+	pancham: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Iron Fist", 1: "Mold Breaker"},
+	},
+	pangoro: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Iron Fist", 1: "Mold Breaker"},
+	},
+	sandshrew: {
+		inherit: true,
+		abilities: {0: "Sand Rush", 1: "Rough Skin"},
+	},
+	sandslash: {
+		inherit: true,
+		abilities: {0: "Sand Rush", 1: "Rough Skin"},
+	},
 };
