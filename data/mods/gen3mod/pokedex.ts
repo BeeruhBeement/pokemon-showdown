@@ -243,10 +243,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	cranidos: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Mold Breaker", 1: "Rock Head"},
 	},
 	rampardos: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Mold Breaker", 1: "Rock Head"},
 	},
 };

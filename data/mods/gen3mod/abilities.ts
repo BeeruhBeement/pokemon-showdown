@@ -77,17 +77,4 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
-	runaway: {
-		inherit: true,
-		onDamagingHit(damage, target, source, move) {
-			if (['Dark', 'Bug', 'Ghost'].includes(move.type)) {
-				this.boost({spe: 1});
-			}
-		},
-		onAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Intimidate' && boost.atk) {
-				this.boost({spe: 1});
-			}
-		},
-	},
 };
