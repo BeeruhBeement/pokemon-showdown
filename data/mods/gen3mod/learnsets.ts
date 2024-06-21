@@ -3127,6 +3127,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sweetkiss: ["3L5"],
 			sweetscent: ["3L10"],
 			tackle: ["3L1"],
+			
+			return: ["3M"],
+			frustration: ["3M"],
+			hiddenpower: ["3M"],
 		},
 	},
 	alcremie: {
@@ -3163,6 +3167,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sweetscent: ["3L1"],
 			tackle: ["3L1"],
 			triattack: ["3M"],
+			
+			return: ["3M"],
+			frustration: ["3M"],
+			hiddenpower: ["3M"],
 		},
 	},
 };
