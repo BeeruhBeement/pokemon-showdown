@@ -98,14 +98,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	stancechange: {
 		inherit: true,
-		gen:3,
+		gen: 3,
 		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use Swords Dance, and changes to Shield Forme before attempting to use Protect.",
 		shortDesc: "If Aegislash, changes Forme to Blade before Swords Dance and Shield before Protect.",
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed) return;
-			if (move.category === 'Status' && !['protect', 'swordsdance'].includes(move.id)) return;
-			let targetForme = 'Aegislash-Blade';
+			let targetForme = attacker.species.name;
 			if (move.id === 'protect') {
 				targetForme = 'Aegislash';
 			}
@@ -115,6 +114,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 	},
+	
 	quickdraw: {
 		inherit: true,
 		gen:3,
@@ -140,10 +140,28 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Electric-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type.",
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ) && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Electric';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
 		onBasePower(basePower, pokemon, target, move) {},
 	},
 	rockypayload: {
-		gen: 3,
 		inherit: true,
+		gen: 3,
+	},
+	weakarmor: {
+		inherit: true,
+		gen: 3,
+	},
+	beastboost: {
+		inherit: true,
+		gen: 3,
 	},
 };

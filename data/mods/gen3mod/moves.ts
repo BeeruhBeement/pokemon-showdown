@@ -270,7 +270,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	recover: {
 		inherit: true,
-		pp: 16,
+		pp: 10,
 	},
 	hex: {
 		inherit: true,

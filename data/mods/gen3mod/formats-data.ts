@@ -1386,12 +1386,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	slugma: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	magcargo: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	swinub: {
 		tier: "Illegal",
@@ -1430,12 +1429,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	mantyke: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	mantine: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	skarmory: {
 		tier: "Illegal",
@@ -4063,8 +4061,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	guzzlord: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	necrozma: {
 		tier: "Illegal",

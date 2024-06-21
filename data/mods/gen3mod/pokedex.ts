@@ -218,6 +218,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	dracozolt: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Volt Absorb", 1: "Hustle"},
 	},
 	surskit: {
@@ -266,12 +267,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	aegislash: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 50, def: 115, spa: 50, spd: 115, spe: 60},
+		baseStats: {hp: 60, atk: 50, def: 120, spa: 50, spd: 120, spe: 60},
 	},
 	aegislashblade: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 115, def: 50, spa: 115, spd: 50, spe: 60},
+		baseStats: {hp: 60, atk: 120, def: 50, spa: 120, spd: 50, spe: 60},
 	},
 	kecleon: {
 		inherit: true,
@@ -327,5 +328,29 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Galvanize", 1: "Sturdy"},
+	},
+	mantyke: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Swift Swim", 1: "Water Absorb"},
+	},
+	mantine: {
+		inherit: true,
+		abilities: {0: "Swift Swim", 1: "Water Absorb"},
+		baseStats: {hp: 85, atk: 40, def: 70, spa: 80, spd: 140, spe: 70},
+	},
+	slugma: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Weak Armor", 1: "Flame Body"},
+	},
+	magcargo: {
+		inherit: true,
+		abilities: {0: "Weak Armor", 1: "Flame Body"},
+		baseStats: {hp: 60, atk: 70, def: 120, spa: 90, spd: 80, spe: 30},
+	},
+	guzzlord: {
+		inherit: true,
+		gen: 3,
 	},
 };
