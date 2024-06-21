@@ -254,23 +254,28 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	honedge: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Infiltrator"},
 	},
 	doublade: {
 		inherit: true,
+		gen: 3,
 		baseStats: {hp: 59, atk: 90, def: 115, spa: 45, spd: 49, spe: 35},
 		abilities: {0: "Infiltrator"},
 	},
 	aegislash: {
 		inherit: true,
+		gen: 3,
 		baseStats: {hp: 60, atk: 50, def: 115, spa: 50, spd: 115, spe: 60},
 	},
 	aegislashblade: {
 		inherit: true,
+		gen: 3,
 		baseStats: {hp: 60, atk: 115, def: 50, spa: 115, spd: 50, spe: 60},
 	},
 	terapagos: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Clear Body"},
 	},
 	kecleon: {
@@ -286,5 +291,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Insomnia", 1: "Aftermath"},
 		baseStats: {hp: 64, atk: 115, def: 65, spa: 85, spd: 63, spe: 73},
+	},
+	cacnea: {
+		inherit: true,
+		abilities: {0: "Sand Veil", 1: "Sand Rush"},
+	},
+	cacturne: {
+		inherit: true,
+		abilities: {0: "Quick Draw", 1: "Sand Rush"},
 	},
 };

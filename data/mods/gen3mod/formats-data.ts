@@ -1908,12 +1908,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	cacnea: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	cacturne: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	swablu: {
 		tier: "Illegal",

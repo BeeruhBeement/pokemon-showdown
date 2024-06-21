@@ -65,10 +65,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	infiltrator: {
 		inherit: true,
+		gen: 3,
 		onModifyMove(move) {
 			move.infiltrates = true;
 		},
-		gen: 3,
 	},
 	roughskin: {
 		inherit: true,
@@ -90,9 +90,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	snowwarning: {
 		inherit: true,
+		gen:3,
 		onStart(source) {
 			this.field.setWeather('snow');
 		},
+	},
+	stancechange: {
+		inherit: true,
+		gen:3,
+	},
+	quickdraw: {
+		inherit: true,
+		gen:3,
 	},
 	colorchange: {
 		inherit: true,
