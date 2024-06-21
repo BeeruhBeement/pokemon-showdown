@@ -497,28 +497,24 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	geodude: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "LC",
 	},
 	geodudealola: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "LC",
 	},
 	graveler: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	graveleralola: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	golem: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	golemalola: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	ponyta: {
 		tier: "LC",
