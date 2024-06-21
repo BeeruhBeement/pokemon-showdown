@@ -277,7 +277,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	kecleon: {
 		inherit: true,
-		abilities: {0: "Color Change"},
+		abilities: {0: "Color Change", 1: "Trace"},
 		baseStats: {hp: 60, atk: 80, def: 70, spa: 80, spd: 120, spe: 40},
 	},
 	shuppet: {
@@ -328,6 +328,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	golemalola: {
 		inherit: true,
 		gen: 3,
+		baseStats: {hp: 80, atk: 110, def: 130, spa: 55, spd: 65, spe: 45},
 		abilities: {0: "Electric Surge", 1: "Sturdy"},
 	},
 	mantyke: {
@@ -356,22 +357,23 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	munna: {
 		inherit: true,
-		abilities: {0: "Synchronize", 1: "Insomnia"},
 		gen: 3,
+		abilities: {0: "Synchronize", 1: "Insomnia"},
 	},
 	musharna: {
 		inherit: true,
-		abilities: {0: "Synchronize", 1: "Psychic Surge"},
 		gen: 3,
+		abilities: {0: "Synchronize", 1: "Psychic Surge"},
 	},
 	milcery: {
 		inherit: true,
-		abilities: {0: "Vital Spirit", 1: "Early Bird"},
 		gen: 3,
+		abilities: {0: "Vital Spirit", 1: "Early Bird"},
 	},
 	alcremie: {
 		inherit: true,
-		abilities: {0: "Vital Spirit", 1: "Misty Surge"},
 		gen: 3,
+		abilities: {0: "Vital Spirit", 1: "Misty Surge"},
+		baseStats: {hp: 65, atk: 60, def: 75, spa: 100, spd: 121, spe: 64},
 	},
 };
