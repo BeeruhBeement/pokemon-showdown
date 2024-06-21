@@ -273,11 +273,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 60, atk: 115, def: 50, spa: 115, spd: 50, spe: 60},
 	},
-	terapagos: {
-		inherit: true,
-		gen: 3,
-		abilities: {0: "Clear Body"},
-	},
 	kecleon: {
 		inherit: true,
 		abilities: {0: "Color Change"},
@@ -299,5 +294,38 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	cacturne: {
 		inherit: true,
 		abilities: {0: "Quick Draw", 1: "Sand Rush"},
+	},
+	geodude: {
+		inherit: true,
+		abilities: {0: "Rock Head", 1: "Sturdy"},
+		otherFormes: ["Geodude-Alola"],
+		formeOrder: ["Geodude", "Geodude-Alola"],
+	},
+	geodudealola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Magnet Pull", 1: "Sturdy"},
+	},
+	graveler: {
+		inherit: true,
+		abilities: {0: "Rock Head", 1: "Sturdy"},
+		otherFormes: ["Graveler-Alola"],
+		formeOrder: ["Graveler", "Graveler-Alola"],
+	},
+	graveleralola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Galvanize", 1: "Sturdy"},
+	},
+	golem: {
+		inherit: true,
+		abilities: {0: "Rocky Payload", 1: "Sturdy"},
+		otherFormes: ["Golem-Alola"],
+		formeOrder: ["Golem", "Golem-Alola"],
+	},
+	golemalola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Galvanize", 1: "Sturdy"},
 	},
 };

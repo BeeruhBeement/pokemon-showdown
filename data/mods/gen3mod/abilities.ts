@@ -138,6 +138,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	galvanize: {
 		inherit: true,
 		gen: 3,
+		desc: "This Pokemon's Normal-type moves become Electric-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Electric type.",
 		onBasePower(basePower, pokemon, target, move) {},
 	},
 	rockypayload: {
