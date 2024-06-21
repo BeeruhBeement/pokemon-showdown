@@ -2002,16 +2002,15 @@ doublesTier: "Illegal",
 	castformsnowy: {
 	},
 	kecleon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	shuppet: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	banette: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	banettemega: {
 		tier: "Illegal",

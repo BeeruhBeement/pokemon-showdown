@@ -96,6 +96,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	colorchange: {
 		inherit: true,
+		desc: "This Pokemon's type changes to match the type of the last move that hit it, unless that type is already one of its types. This effect applies after each hit from a multi-hit move. This effect does not happen if this Pokemon did not lose HP from the attack.",
+		shortDesc: "This Pokemon's type changes to the type of a move it's going to be hit by, unless it has the type.",
 		onBeforeMove(target, source, move) {
 			if (!target.hp) return;
 			const type = move.type;
