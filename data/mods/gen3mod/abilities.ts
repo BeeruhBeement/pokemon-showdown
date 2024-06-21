@@ -102,11 +102,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use Swords Dance, and changes to Shield Forme before attempting to use Protect.",
 		shortDesc: "If Aegislash, changes Forme to Blade before Swords Dance and Shield before Protect.",
 		onModifyMove(move, attacker, defender) {
-			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed) return;
+			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed || (move.id !== 'swordsdance' && move.id !== 'protect')) return;
 			if (move.id === 'swordsdance' && attacker.species.name !== 'Aegislash-Blade') {
 				attacker.formeChange('Aegislash-Blade');
 			}
-			if (move.id === 'protect' && attacker.species.name !== 'Aegislash' && attacker.species.name !== 'Aegislash-Shield') {
+			if (move.id === 'protect' && attacker.species.name !== 'Aegislash') {
 				attacker.formeChange('Aegislash');
 			}
 		},
@@ -129,24 +129,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-start', pokemon, 'typechange', targetTypes.join('/'), '[from] ability: Color Change', '[of] ' + target);
 			}
 		},
-		onAfterMoveSecondary(target, source, move) {},
-	},
-	galvanize: {
-		inherit: true,
-		gen: 3,
-		desc: "This Pokemon's Normal-type moves become Electric-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-		shortDesc: "This Pokemon's Normal-type moves become Electric type.",
-		onModifyType(move, pokemon) {
-			const noModifyType = [
-				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
-			];
-			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
-				!(move.isZ) && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
-				move.type = 'Electric';
-				move.typeChangerBoosted = this.effect;
-			}
-		},
-		onBasePower(basePower, pokemon, target, move) {},
+		onAfterMoveSecondary(target, source, move) { return },
 	},
 	rockypayload: {
 		inherit: true,

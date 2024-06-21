@@ -1792,6 +1792,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			return: ["3M"],
 			frustration: ["3M"],
 			hiddenpower: ["3M"],
+			toxic: ["3M"],
 		},
 	},
 	doduo: {
@@ -3131,6 +3132,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			return: ["3M"],
 			frustration: ["3M"],
 			hiddenpower: ["3M"],
+			toxic: ["3M"],
 		},
 	},
 	alcremie: {
@@ -3171,6 +3173,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			return: ["3M"],
 			frustration: ["3M"],
 			hiddenpower: ["3M"],
+			toxic: ["3M"],
 		},
 	},
 };
