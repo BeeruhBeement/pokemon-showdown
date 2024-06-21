@@ -22064,4 +22064,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Cool",
 	},
+
+	
+	forcepunch: {
+		num: 5000,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Force Punch",
+		isNonstandard: "Unobtainable",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1,metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
 };

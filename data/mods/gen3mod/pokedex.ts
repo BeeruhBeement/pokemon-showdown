@@ -225,6 +225,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	masquerain: {
 		inherit: true,
+		baseStats: {hp: 70, atk: 60, def: 62, spa: 100, spd: 82, spe: 80},
 		types: ["Bug", "Water"],
 	},
 	orthworm: {
@@ -250,5 +251,40 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Mold Breaker", 1: "Rock Head"},
+	},
+	honedge: {
+		inherit: true,
+		abilities: {0: "Infiltrator"},
+	},
+	doublade: {
+		inherit: true,
+		baseStats: {hp: 59, atk: 90, def: 115, spa: 45, spd: 49, spe: 35},
+		abilities: {0: "Infiltrator"},
+	},
+	aegislash: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 50, def: 115, spa: 50, spd: 115, spe: 60},
+	},
+	aegislashblade: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 115, def: 50, spa: 115, spd: 50, spe: 60},
+	},
+	terapagos: {
+		inherit: true,
+		abilities: {0: "Clear Body"},
+	},
+	kecleon: {
+		inherit: true,
+		abilities: {0: "Color Change"},
+		baseStats: {hp: 60, atk: 80, def: 70, spa: 80, spd: 120, spe: 40},
+	},
+	shuppet: {
+		inherit: true,
+		abilities: {0: "Insomnia", 1: "Aftermath"},
+	},
+	banette: {
+		inherit: true,
+		abilities: {0: "Insomnia", 1: "Aftermath"},
+		baseStats: {hp: 64, atk: 115, def: 65, spa: 85, spd: 63, spe: 73},
 	},
 };

@@ -63,6 +63,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	infiltrator: {
+		inherit: true,
+		onModifyMove(move) {
+			move.infiltrates = true;
+		},
+		gen: 3,
+	},
 	roughskin: {
 		inherit: true,
 		desc: "Pokemon making contact with this Pokemon lose 1/8 of their maximum HP, rounded down. This effect does not happen if this Pokemon did not lose HP from the attack.",
@@ -76,5 +83,38 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	eartheater: {
 		inherit: true,
 		gen: 3,
+	},
+	aftermath: {
+		inherit: true,
+		gen: 3,
+	},
+	snowwarning: {
+		inherit: true,
+		onStart(source) {
+			this.field.setWeather('snow');
+		},
+	},
+	colorchange: {
+		inherit: true,
+		onBeforeMove(target, source, move) {
+			if (!target.hp) return;
+			const type = move.type;
+			if (
+				target.isActive && move.effectType === 'Move' && move.category !== 'Status' &&
+				type !== '???' && !target.hasType(type)
+			) {
+				if (!target.setType(type)) return false;
+				this.add('-start', target, 'typechange', type, '[from] ability: Color Change');
+
+				if (target.side.active.length === 2 && target.position === 1) {
+					// Curse Glitch
+					const action = this.queue.willMove(target);
+					if (action && action.move.id === 'curse') {
+						action.targetLoc = -1;
+					}
+				}
+			}
+		},
+		onAfterMoveSecondary(target, source, move) {},
 	},
 };

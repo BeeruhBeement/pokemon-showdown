@@ -23,7 +23,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	suckerpunch: {
 		inherit: true,
 		gen: 3,
-		basePower: 55,
+		basePower: 60,
 	},
 	babydolleyes: {
 		inherit: true,
@@ -228,5 +228,52 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('Jump Kick'));
 		},
+	},
+	stealthrock: {
+		inherit: true,
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Stealth Rock');
+			},
+			onEntryHazard(pokemon) {
+				if (pokemon.hasItem('heavydutyboots')) return;
+	
+				// Check if the Pokemon is Flying type
+				if (pokemon.hasType('Flying')) {
+					this.damage(pokemon.maxhp / 4); // Double damage for Flying types (25% of max HP)
+				} else {
+					this.damage(pokemon.maxhp / 8); // Neutral damage for other types (12.5% of max HP)
+				}
+			},
+		},
+	},
+	blizzard: {
+		inherit: true,
+		onModifyMove(move) {
+			if (this.field.isWeather(['hail', 'snow'])) move.accuracy = true;
+		},
+	},
+	hail: {
+		inherit: true,
+		weather: 'snow',
+	},
+	forcepunch: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 3,
+	},
+	recover: {
+		inherit: true,
+		pp: 16,
+	},
+	hex: {
+		inherit: true,
+		basePower: 60,
+	},
+	flash: {
+		inherit: true,
+		type: "Electric",
+		accuracy: 100,
 	},
 };

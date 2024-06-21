@@ -208,20 +208,21 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Fairy') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 		gen: 3,
-		isNonstandard: null,
 	},
 	loadeddice: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	eviolite: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
+	},
+	choicespecs: {
+		inherit: true,
+		gen: 3,
 	},
 };

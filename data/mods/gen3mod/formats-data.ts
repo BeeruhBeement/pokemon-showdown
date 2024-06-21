@@ -3412,16 +3412,14 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	honedge: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	doublade: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	aegislash: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	aegislashblade: {
 	},
@@ -5063,8 +5061,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	terapagos: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	pecharunt: {
 		tier: "Illegal",
