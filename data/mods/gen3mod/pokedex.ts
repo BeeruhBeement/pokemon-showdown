@@ -201,12 +201,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	skiddo: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Sap Sipper"},
+		abilities: {0: "Sap Sipper", 1: "Early Bird"},
 	},
 	gogoat: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Sap Sipper"},
+		baseStats: {hp: 103, atk: 90, def: 52, spa: 87, spd: 71, spe: 68},
+		abilities: {0: "Sap Sipper", 1: "Grassy Surge"},
 	},
 	electrike: {
 		inherit: true,
@@ -316,7 +317,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	graveleralola: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Galvanize", 1: "Sturdy"},
+		abilities: {0: "Magnet Pull", 1: "Sturdy"},
 	},
 	golem: {
 		inherit: true,
@@ -327,7 +328,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	golemalola: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Galvanize", 1: "Sturdy"},
+		abilities: {0: "Electric Surge", 1: "Sturdy"},
 	},
 	mantyke: {
 		inherit: true,
@@ -351,6 +352,26 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	guzzlord: {
 		inherit: true,
+		gen: 3,
+	},
+	munna: {
+		inherit: true,
+		abilities: {0: "Synchronize", 1: "Insomnia"},
+		gen: 3,
+	},
+	musharna: {
+		inherit: true,
+		abilities: {0: "Synchronize", 1: "Psychic Surge"},
+		gen: 3,
+	},
+	milcery: {
+		inherit: true,
+		abilities: {0: "Vital Spirit", 1: "Early Bird"},
+		gen: 3,
+	},
+	alcremie: {
+		inherit: true,
+		abilities: {0: "Vital Spirit", 1: "Misty Surge"},
 		gen: 3,
 	},
 };

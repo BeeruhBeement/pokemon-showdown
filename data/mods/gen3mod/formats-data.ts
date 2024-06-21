@@ -2661,12 +2661,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	munna: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	musharna: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	pidove: {
 		tier: "Illegal",
@@ -4393,12 +4392,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	milcery: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	alcremie: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	alcremiegmax: {
 		tier: "Illegal",

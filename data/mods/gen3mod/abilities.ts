@@ -101,20 +101,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use Swords Dance, and changes to Shield Forme before attempting to use Protect.",
 		shortDesc: "If Aegislash, changes Forme to Blade before Swords Dance and Shield before Protect.",
-		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed) return;
-			let targetForme = attacker.species.name;
-			if (move.id === 'protect') {
-				targetForme = 'Aegislash';
+			if (move.id === 'swordsdance' && attacker.species.name !== 'Aegislash-Blade') {
+				attacker.formeChange('Aegislash-Blade');
 			}
-			if (move.id === 'swordsdance') {
-				targetForme = 'Aegislash-Blade';
+			if (move.id === 'protect' && attacker.species.name !== 'Aegislash' && attacker.species.name !== 'Aegislash-Shield') {
+				attacker.formeChange('Aegislash');
 			}
-			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 	},
-	
 	quickdraw: {
 		inherit: true,
 		gen:3,
@@ -161,6 +157,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 	},
 	beastboost: {
+		inherit: true,
+		gen: 3,
+	},
+	electricsurge: {
+		inherit: true,
+		gen: 3,
+	},
+	grassysurge: {
+		inherit: true,
+		gen: 3,
+	},
+	psychicsurge: {
+		inherit: true,
+		gen: 3,
+	},
+	mistysurge: {
 		inherit: true,
 		gen: 3,
 	},

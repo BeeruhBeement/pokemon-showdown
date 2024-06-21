@@ -277,9 +277,49 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		basePower: 60,
 	},
-	flash: {
+	grassyterrain: {
 		inherit: true,
-		type: "Electric",
-		accuracy: 100,
+		gen: 3,
+		desc: "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.3, the power of Bulldoze, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain.",
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Grass' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+				this.debug('grassy terrain boost');
+				return this.chainModify(1.3);
+			}
+		},
+	},
+	electricterrain: {
+		inherit: true,
+		gen: 3,
+		desc: "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Electric' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+				this.debug('electric terrain boost');
+				return this.chainModify(1.3);
+			}
+		},
+	},
+	mistyterrain: {
+		inherit: true,
+		gen: 3,
+		desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Fairy-type attacks made by grounded Pokemon is multiplied by 1.3 and the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
+		shortDesc: "5 turns. Can't status, +Fairy power, -Dragon power vs grounded.",
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Psychic' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+				this.debug('misty terrain boost');
+				return this.chainModify(1.3);
+			}
+		},
+	},
+	psychicterrain: {
+		inherit: true,
+		gen: 3,
+		desc: "For 5 turns, the terrain becomes Psychic Terrain. During the effect, the power of Psychic-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot be hit by moves with priority greater than 0, unless the target is an ally. Camouflage transforms the user into a Psychic type, Nature Power becomes Psychic, and Secret Power has a 30% chance to lower the target's Speed by 1 stage. Fails if the current terrain is Psychic Terrain.",
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Psychic' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+				this.debug('psychic terrain boost');
+				return this.chainModify(1.3);
+			}
+		},
 	},
 };
