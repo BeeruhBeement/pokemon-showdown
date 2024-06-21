@@ -97,10 +97,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 	},
 	stancechange: {
-		inherit: true,
 		gen: 3,
 		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use Swords Dance, and changes to Shield Forme before attempting to use Protect.",
 		shortDesc: "If Aegislash, changes Forme to Blade before Swords Dance and Shield before Protect.",
+		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed || (move.id !== 'swordsdance' && move.id !== 'protect')) return;
 			if (move.id === 'swordsdance' && attacker.species.name !== 'Aegislash-Blade') {
@@ -110,13 +110,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				attacker.formeChange('Aegislash');
 			}
 		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
+		name: "Stance Change",
+		rating: 4,
+		num: 176,
 	},
 	quickdraw: {
 		inherit: true,
 		gen:3,
 	},
 	colorchange: {
-		inherit: true,
 		desc: "On switch-in, this Pokemon's type changes to match the type of an adjacent foe.",
 		shortDesc: "On switch-in, this Pokemon's type changes to match an adjacent foe's type.",
 		onSwitchIn(pokemon) {
@@ -130,6 +133,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		onAfterMoveSecondary(target, source, move) { return },
+		flags: {},
+		name: "Color Change",
+		rating: 0,
+		num: 16,
 	},
 	rockypayload: {
 		inherit: true,
