@@ -22065,7 +22065,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cool",
 	},
 
-	
 	forcepunch: {
 		num: 5000,
 		accuracy: 100,

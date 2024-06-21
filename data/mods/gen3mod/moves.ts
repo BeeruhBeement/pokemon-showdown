@@ -231,6 +231,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	stealthrock: {
 		inherit: true,
+		gen: 3,
+		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Foes lose 1/8 or 1/2 of their maximum HP, rounded down, based on wheter they are Flying-type or not. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
+		shortDesc: "Hurts foes on switch-in. Double damage on Flying.",
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
@@ -250,6 +253,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	blizzard: {
 		inherit: true,
+		desc: "Has a 10% chance to freeze the target. If the weather is Snow, this move does not check accuracy.",
+		shortDesc: "10% chance to freeze foe(s). Can't miss in Snow.",
 		onModifyMove(move) {
 			if (this.field.isWeather(['hail', 'snow'])) move.accuracy = true;
 		},
@@ -260,8 +265,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	forcepunch: {
 		inherit: true,
-		isNonstandard: null,
 		gen: 3,
+		isNonstandard: null,
 	},
 	recover: {
 		inherit: true,
@@ -269,6 +274,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	hex: {
 		inherit: true,
+		gen: 3,
 		basePower: 60,
 	},
 	flash: {

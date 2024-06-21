@@ -25,13 +25,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	strongjaw: {
 		inherit: true,
 		gen: 3,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bite']) {
-				return this.chainModify(1.3);
-			}
-		},
-		desc: "This Pokemon's bite-based attacks have their power multiplied by 1.3.",
-		shortDesc: "This Pokemon's bite-based attacks have 1.3x power.",
 	},
 	sturdy: {
 		inherit: true,
@@ -54,6 +47,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	ironfist: {
 		inherit: true,
 		gen: 3,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['punch']) {
+				this.debug('Iron Fist boost');
+				return this.chainModify([13, 10]);
+			}
+		},
+		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.3.",
+		shortDesc: "This Pokemon's punch-based attacks have 1.3x power. Sucker Punch is not boosted.",
 	},
 	moldbreaker: {
 		inherit: true,
@@ -98,6 +99,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	stancechange: {
 		inherit: true,
 		gen:3,
+		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use Swords Dance, and changes to Shield Forme before attempting to use Protect.",
+		shortDesc: "If Aegislash, changes Forme to Blade before Swords Dance and Shield before Protect.",
+		onModifyMovePriority: 1,
+		onModifyMove(move, attacker, defender) {
+			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed) return;
+			if (move.category === 'Status' && !['protect', 'swordsdance'].includes(move.id)) return;
+			let targetForme = 'Aegislash-Blade';
+			if (move.id === 'protect') {
+				targetForme = 'Aegislash';
+			}
+			if (move.id === 'swordsdance') {
+				targetForme = 'Aegislash-Blade';
+			}
+			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
+		},
 	},
 	quickdraw: {
 		inherit: true,
@@ -105,27 +121,27 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	colorchange: {
 		inherit: true,
-		desc: "This Pokemon's type changes to match the type of the last move that hit it, unless that type is already one of its types. This effect applies after each hit from a multi-hit move. This effect does not happen if this Pokemon did not lose HP from the attack.",
-		shortDesc: "This Pokemon's type changes to the type of a move it's going to be hit by, unless it has the type.",
-		onBeforeMove(target, source, move) {
-			if (!target.hp) return;
-			const type = move.type;
-			if (
-				target.isActive && move.effectType === 'Move' && move.category !== 'Status' &&
-				type !== '???' && !target.hasType(type)
-			) {
-				if (!target.setType(type)) return false;
-				this.add('-start', target, 'typechange', type, '[from] ability: Color Change');
-
-				if (target.side.active.length === 2 && target.position === 1) {
-					// Curse Glitch
-					const action = this.queue.willMove(target);
-					if (action && action.move.id === 'curse') {
-						action.targetLoc = -1;
-					}
-				}
+		desc: "On switch-in, this Pokemon's type changes to match the type of an adjacent foe.",
+		shortDesc: "On switch-in, this Pokemon's type changes to match an adjacent foe's type.",
+		onSwitchIn(pokemon) {
+			const possibleTargets = pokemon.adjacentFoes();
+			if (!possibleTargets.length) return;
+	
+			const target = this.sample(possibleTargets);
+			const targetTypes = target.getTypes();
+			if (pokemon.setType(targetTypes)) {
+				this.add('-start', pokemon, 'typechange', targetTypes.join('/'), '[from] ability: Color Change', '[of] ' + target);
 			}
 		},
 		onAfterMoveSecondary(target, source, move) {},
+	},
+	galvanize: {
+		inherit: true,
+		gen: 3,
+		onBasePower(basePower, pokemon, target, move) {},
+	},
+	rockypayload: {
+		gen: 3,
+		inherit: true,
 	},
 };

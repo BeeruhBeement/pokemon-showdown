@@ -7543,4 +7543,9 @@ export const MovesText: {[k: string]: MoveText} = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
+	
+	forcepunch: {
+		name: "Force Punch",
+		shortDesc: "No additional effect.",
+	},
 };

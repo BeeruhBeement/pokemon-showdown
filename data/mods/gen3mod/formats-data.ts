@@ -5059,8 +5059,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	terapagos: {
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "Illegal",
+		doublesTier: "Illegal",
 	},
 	pecharunt: {
 		tier: "Illegal",
