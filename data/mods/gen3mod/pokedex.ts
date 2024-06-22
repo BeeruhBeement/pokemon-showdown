@@ -153,12 +153,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	pansear: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Blaze"},
+		abilities: {0: "Gluttony"},
 	},
 	simisear: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Blaze"},
+		abilities: {0: "Gluttony"},
 	},
 	drampa: {
 		inherit: true,
@@ -201,12 +201,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	skiddo: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Sap Sipper", 1: "Early Bird"},
+		abilities: {0: "Sap Sipper", 1: "Overcoat"},
 	},
 	gogoat: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 103, atk: 90, def: 52, spa: 87, spd: 71, spe: 68},
+		baseStats: {hp: 103, atk: 100, def: 62, spa: 97, spd: 71, spe: 68},
 		abilities: {0: "Sap Sipper", 1: "Grassy Surge"},
 	},
 	electrike: {
@@ -268,12 +268,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	aegislash: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 50, def: 120, spa: 50, spd: 120, spe: 60},
+		baseStats: {hp: 80, atk: 50, def: 150, spa: 50, spd: 150, spe: 20},
 	},
 	aegislashblade: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 120, def: 50, spa: 120, spd: 50, spe: 60},
+		baseStats: {hp: 80, atk: 130, def: 50, spa: 50, spd: 50, spe: 80},
 	},
 	kecleon: {
 		inherit: true,
@@ -428,5 +428,152 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	castformsandy: {
 		inherit: true,
 		baseStats: {hp: 80, atk: 100, def: 70, spa: 70, spd: 70, spe: 80},
+	},
+	helioptile: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Dry Skin", 1: "Solar Power"},
+	},
+	heliolisk: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Dry Skin", 1: "Solar Power"},
+	},
+	vullaby: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overcoat", 1: "Weak Armor"},
+	},
+	mandibuzz: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overcoat", 1: "Weak Armor"},
+	},
+	sizzlipede: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Flash Fire", 1: "Flame Body"},
+	},
+	centiskorch: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Flash Fire", 1: "Flame Body"},
+	},
+	quaxly: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Mold Breaker"},
+	},
+	quaxwell: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Mold Breaker"},
+	},
+	quaquaval: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Mold Breaker"},
+	},
+	tepig: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Blaze", 1: "Thick Fat"},
+	},
+	pignite: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Blaze", 1: "Thick Fat"},
+	},
+	emboar: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Blaze", 1: "Thick Fat"},
+	},
+	chespin: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Bulletproof"},
+	},
+	quilladin: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Bulletproof"},
+	},
+	chesnaught: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Bulletproof"},
+	},
+	fomantis: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Chlorophyll", 1: "Solar Power"},
+	},
+	lurantis: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Chlorophyll", 1: "Solar Power"},
+	},
+	tangela: {
+		inherit: true,
+		abilities: {0: "Chlorophyll", 1: "Regenerator"},
+	},
+	tangrowth: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Chlorophyll", 1: "Regenerator"},
+	},
+	aron: {
+		inherit: true,
+		abilities: {0: "Sturdy", 1: "Rock Head"},
+	},
+	lairon: {
+		inherit: true,
+		abilities: {0: "Sturdy", 1: "Rock Head"},
+	},
+	aggron: {
+		inherit: true,
+		abilities: {0: "Sturdy", 1: "Rock Head"},
+	},
+	meowthgalar: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Pickup", 1: "Tough Claws"},
+	},
+	perrserker: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Battle Armor", 1: "Tough Claws"},
+	},
+	reshiram: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Flash Fire"},
+	},
+	keldeo: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Inner Focus"},
+	},
+	xurkitree: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Beast Boost", 1: "Lightning Rod"},
+	},
+	volcanion: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Water Absorb", 1: "Flash Fire"},
+	},
+	fidough: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Own Tempo", 1: "Gluttony"},
+	},
+	dachsbun: {
+		inherit: true,
+		gen: 3,
+		types: ["Fairy", "Ground"],
+		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
 	},
 };

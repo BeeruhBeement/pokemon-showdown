@@ -210,7 +210,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		type: "Normal",
-		basePower: 20,
+		basePower: 40,
+	},
+	voltswitch: {
+		inherit: true,
+		gen: 3,
+		basePower: 40,
 	},
 	leechlife: {
 		inherit: true,
@@ -417,5 +422,30 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			this.field.clearTerrain();
 			return success;
 		},
+	},
+	stomp: {
+		inherit: true,
+		basePower: 75,
+		type: "Ground",
+	},
+	circlethrow: {
+		inherit: true,
+		gen: 3,
+	},
+	hammerarm: {
+		inherit: true,
+		gen: 3,
+	},
+	xscissor: {
+		inherit: true,
+		gen: 3,
+	},
+	fusionflare: {
+		inherit: true,
+		gen: 3,
+	},
+	blueflare: {
+		inherit: true,
+		gen: 3,
 	},
 };

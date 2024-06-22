@@ -203,4 +203,44 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: 59,
 	},
+	dryskin: {
+		inherit: true,
+		gen: 3,
+	},
+	solarpower: {
+		inherit: true,
+		gen: 3,
+	},
+	regenerator: {
+		inherit: true,
+		gen: 3,
+		shortDesc: "This Pokemon restores 1/4 of its maximum HP, rounded down, when it switches out.",
+		onSwitchOut(pokemon) {
+			pokemon.heal(pokemon.baseMaxhp / 4);
+		},
+	},
+	overcoat: {
+		inherit: true,
+		gen: 3,
+	},
+	bulletproof: {
+		inherit: true,
+		gen: 3,
+	},
+	gluttony: {
+		inherit: true,
+		gen: 3,
+	},
+	wellbakedbody: {
+		inherit: true,
+		gen: 3,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Fire') {
+				if (!this.boost({def: 1})) {
+					this.add('-immune', target, '[from] ability: Well-Baked Body');
+				}
+				return null;
+			}
+		},
+	},
 };
