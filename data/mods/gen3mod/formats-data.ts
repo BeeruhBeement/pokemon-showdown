@@ -1983,14 +1983,16 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	castform: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	castformsunny: {
 	},
 	castformrainy: {
 	},
 	castformsnowy: {
+	},
+	castformsandy: {
 	},
 	kecleon: {
 		tier: "OU",

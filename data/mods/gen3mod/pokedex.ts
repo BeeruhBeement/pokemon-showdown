@@ -354,7 +354,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	guzzlord: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Beast Boost", H: "Thick Fat"},
+		abilities: {0: "Beast Boost", 1: "Thick Fat"},
 	},
 	munna: {
 		inherit: true,
@@ -406,5 +406,27 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Levitate", 1: "Soundproof"},
 		baseStats: {hp: 75, atk: 50, def: 80, spa: 95, spd: 90, spe: 65},
+	},
+	castform: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 70, def: 70, spa: 70, spd: 70, spe: 80},
+		otherFormes: ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy"],
+		formeOrder: ["Castform", "Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy"],
+	},
+	castformsunny: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 70, def: 70, spa: 100, spd: 70, spe: 80},
+	},
+	castformrainy: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 70, def: 70, spa: 70, spd: 100, spe: 80},
+	},
+	castformsnowy: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 70, def: 100, spa: 70, spd: 70, spe: 80},
+	},
+	castformsandy: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 100, def: 70, spa: 70, spd: 70, spe: 80},
 	},
 };

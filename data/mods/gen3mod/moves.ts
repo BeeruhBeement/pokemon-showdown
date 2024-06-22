@@ -190,9 +190,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.add('-end', pokemon, 'Charge', '[silent]');
 			},
 		},
-		boosts: {
-			spd: 1,
-		},
+		boosts: {},
 		secondary: null,
 		target: "self",
 		type: "Electric",
@@ -301,6 +299,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		weather: 'snow',
 	},
 	forcepunch: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	weatherdance: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

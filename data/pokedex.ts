@@ -19746,4 +19746,20 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		gen: 5,
 	},
+	
+	castformsandy: {
+		num: 351,
+		name: "Castform-Sandy",
+		baseSpecies: "Castform",
+		forme: "Sandy",
+		types: ["Rock"],
+		baseStats: {hp: 70, atk: 70, def: 70, spa: 70, spd: 70, spe: 70},
+		abilities: {0: "Forecast"},
+		heightm: 0.3,
+		weightkg: 0.8,
+		color: "White",
+		eggGroups: ["Fairy", "Amorphous"],
+		requiredAbility: "Forecast",
+		battleOnly: "Castform",
+	},
 };

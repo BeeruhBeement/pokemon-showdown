@@ -22080,4 +22080,28 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fighting",
 		contestType: "Tough",
 	},
+	weatherdance: {
+		num: 5001,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Weather Dance",
+		isNonstandard: "Unobtainable",
+		pp: 5,
+		priority: 0,
+		flags: {metronome: 1},
+		onHit: function (target, source) {
+			const weathers = ['RainDance', 'SunnyDay', 'Sandstorm', 'snow'];
+			const weather = this.sample(weathers);
+			this.field.setWeather(weather);
+		},
+		boosts: {
+			spe: 1,
+		},
+		secondary: null,
+		target: "all",
+		type: "Normal",
+		zMove: {boost: {spe: 1}},
+		contestType: "Beautiful",
+	},
 };

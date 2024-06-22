@@ -7548,4 +7548,8 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Force Punch",
 		shortDesc: "No additional effect.",
 	},
+	weatherdance: {
+		name: "Rain Dance",
+		shortDesc: "Summons a random weather effect.",
+	},
 };
