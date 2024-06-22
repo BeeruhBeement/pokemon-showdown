@@ -130,12 +130,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			const target = this.sample(possibleTargets);
 			const targetTypes = target.getTypes();
 			if (pokemon.setType(targetTypes)) {
-				this.add('-start', pokemon, 'typechange', targetTypes.join('/'), '[from] ability: Color Change', '[of] ' + target);
+				this.add('-start', pokemon, 'typechange', targetTypes.join('/'), '[from] ability: Color Change', '[of] ' + pokemon);
 			}
 		},
 		flags: {},
 		name: "Color Change",
-		rating: 0,
+		rating: 2,
 		num: 16,
 	},
 	rockypayload: {
