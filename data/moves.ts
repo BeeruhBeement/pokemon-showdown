@@ -22090,10 +22090,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {metronome: 1},
-		onHit: function (target, source) {
-			const weathers = ['RainDance', 'SunnyDay', 'Sandstorm', 'snow'];
-			const weather = this.sample(weathers);
-			this.field.setWeather(weather);
+		self: {
+			onHit: function (target, source) {
+				const weathers = ['raindance', 'sunnyday', 'sandstorm', 'hail'];
+				const weather = this.sample(weathers);
+				this.field.setWeather(weather);
+			},
 		},
 		boosts: {
 			spe: 1,
@@ -22103,5 +22105,5 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		zMove: {boost: {spe: 1}},
 		contestType: "Beautiful",
-	},
+	},	
 };
