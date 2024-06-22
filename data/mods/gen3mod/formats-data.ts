@@ -2587,16 +2587,14 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	tepig: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	pignite: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	emboar: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	oshawott: {
 		tier: "Illegal",
@@ -3285,16 +3283,14 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	chespin: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	quilladin: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	chesnaught: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	fennekin: {
 		tier: "Illegal",
@@ -3789,12 +3785,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	fomantis: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	lurantis: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	lurantistotem: {
 		tier: "Illegal",
@@ -4337,8 +4332,7 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	sizzlipede: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	centiskorch: {
 		tier: "OU",
