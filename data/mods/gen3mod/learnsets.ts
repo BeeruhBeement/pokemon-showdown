@@ -4731,6 +4731,11 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderbolt: ["3M"],
 			uproar: ["3M"],
 			uturn: ["3M"],
+
+			return: ["3M"],
+			frustration: ["3M"],
+			toxic: ["3M"],
+			hiddenpower: ["3M"],
 		},
 	},
 	perrserker: {
@@ -4775,6 +4780,11 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderbolt: ["3M"],
 			uproar: ["3M"],
 			uturn: ["3M"],
+
+			return: ["3M"],
+			frustration: ["3M"],
+			toxic: ["3M"],
+			hiddenpower: ["3M"],
 		},
 	},
 	reshiram: {
@@ -4990,6 +5000,11 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			takedown: ["3M"],
 			wish: ["3E"],
 			yawn: ["3E"],
+
+			return: ["3M"],
+			frustration: ["3M"],
+			toxic: ["3M"],
+			hiddenpower: ["3M"],
 		},
 	},
 	dachsbun: {
@@ -5030,6 +5045,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			takedown: ["3M"],
 			
 			stomp: ["3L1"],
+			return: ["3M"],
+			frustration: ["3M"],
+			toxic: ["3M"],
+			hiddenpower: ["3M"],
 		},
 	},
 };
