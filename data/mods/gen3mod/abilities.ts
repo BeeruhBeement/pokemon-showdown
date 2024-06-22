@@ -25,6 +25,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	strongjaw: {
 		inherit: true,
 		gen: 3,
+		shortDesc: "This Pokemon's bite-based attacks have 1.5x power.",
 	},
 	sturdy: {
 		inherit: true,
@@ -132,7 +133,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-start', pokemon, 'typechange', targetTypes.join('/'), '[from] ability: Color Change', '[of] ' + target);
 			}
 		},
-		onAfterMoveSecondary(target, source, move) { return },
 		flags: {},
 		name: "Color Change",
 		rating: 0,

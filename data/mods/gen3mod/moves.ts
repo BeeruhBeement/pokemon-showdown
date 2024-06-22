@@ -35,9 +35,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	disarmingvoice: {
 		inherit: true,
-		basePower: 60,
-		flags: {protect: 1, mirror: 1, sound: 1, metronome: 1},
 		gen: 3,
+		flags: {protect: 1, mirror: 1, sound: 1, metronome: 1},
 	},
 	dualwingbeat: {
 		inherit: true,
@@ -154,13 +153,51 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 	},
 	charge: {
-		inherit: true,
+		num: 268,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Charge",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
 		desc: "If the user uses an Electric-type attack, its power will be doubled until it's no longer active.",
 		shortDesc: "The user's Electric attacks have 2x power.",
+		volatileStatus: 'charge',
 		condition: {
-			onAfterMove(pokemon, target, move) {},
+			onStart(pokemon, source, effect) {
+				if (effect && ['Electromorphosis', 'Wind Power'].includes(effect.name)) {
+					this.add('-start', pokemon, 'Charge', this.activeMove!.name, '[from] ability: ' + effect.name);
+				} else {
+					this.add('-start', pokemon, 'Charge');
+				}
+			},
+			onRestart(pokemon, source, effect) {
+				if (effect && ['Electromorphosis', 'Wind Power'].includes(effect.name)) {
+					this.add('-start', pokemon, 'Charge', this.activeMove!.name, '[from] ability: ' + effect.name);
+				} else {
+					this.add('-start', pokemon, 'Charge');
+				}
+			},
+			onBasePowerPriority: 9,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Electric') {
+					this.debug('charge boost');
+					return this.chainModify(2);
+				}
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Charge', '[silent]');
+			},
 		},
-		boosts: {},
+		boosts: {
+			spd: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Electric",
+		zMove: {boost: {spd: 1}},
+		contestType: "Clever",
 	},
 	thief: {
 		inherit: true,
@@ -277,6 +314,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		basePower: 60,
 	},
+	flash: {
+		inherit: true,
+		type: "Electric",
+		accuracy: 100,
+	},
+	disable: {
+		inherit: true,
+		type: "Ghost",
+		accuracy: 100,
+	},
 	grassyterrain: {
 		inherit: true,
 		gen: 3,
@@ -303,7 +350,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Fairy-type attacks made by grounded Pokemon is multiplied by 1.3 and the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
-		shortDesc: "5 turns. Can't status, +Fairy power, -Dragon power vs grounded.",
+		shortDesc: "5 turns. Can't status, +Fairy power, -Dragon power.",
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Psychic' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
 				this.debug('misty terrain boost');
@@ -320,6 +367,23 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.debug('psychic terrain boost');
 				return this.chainModify(1.3);
 			}
+		},
+	},
+	takeheart: {
+		inherit: true,
+		gen: 3,
+	},
+	psychicnoise: {
+		inherit: true,
+		gen: 3,
+	},
+	meditate: {
+		inherit: true,
+		desc: "Raises the user's Attack and Special Defense by 1 stage.",
+		shortDesc: "Raises the user's Attack and Sp. Def by 1.",
+		boosts: {
+			atk: 1,
+			spd: 1,
 		},
 	},
 };

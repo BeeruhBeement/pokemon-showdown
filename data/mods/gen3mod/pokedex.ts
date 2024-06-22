@@ -376,4 +376,34 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Vital Spirit", 1: "Misty Surge"},
 		baseStats: {hp: 65, atk: 60, def: 75, spa: 100, spd: 121, spe: 64},
 	},
+	phione: {
+		inherit: true,
+		gen: 3,
+		types: ["Water", "Fairy"],
+		abilities: {0: "Swift Swim", 1: "Water Absorb"},
+	},
+	swinub: {
+		inherit: true,
+		abilities: {0: "Oblivious", 1: "Thick Fat"},
+	},
+	piloswine: {
+		inherit: true,
+		abilities: {0: "Oblivious", 1: "Thick Fat"},
+	},
+	mamoswine: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Oblivious", 1: "Thick Fat"},
+		baseStats: {hp: 100, atk: 120, def: 80, spa: 70, spd: 60, spe: 80},
+	},
+	chingling: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Levitate", 1: "Soundproof"},
+	},
+	chimecho: {
+		inherit: true,
+		abilities: {0: "Levitate", 1: "Soundproof"},
+		baseStats: {hp: 75, atk: 50, def: 80, spa: 95, spd: 90, spe: 65},
+	},
 };

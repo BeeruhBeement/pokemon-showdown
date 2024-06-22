@@ -1393,16 +1393,14 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	swinub: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	piloswine: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	mamoswine: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	corsola: {
 		tier: "Illegal",
@@ -2026,12 +2024,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	chingling: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	chimecho: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	absol: {
 		tier: "OU",
@@ -2542,8 +2539,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	phione: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	manaphy: {
 		tier: "Illegal",

@@ -225,4 +225,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	flameorb: {
+		inherit: true,
+		gen: 3,
+	},
+	toxicorb: {
+		inherit: true,
+		gen: 3,
+	},
 };
