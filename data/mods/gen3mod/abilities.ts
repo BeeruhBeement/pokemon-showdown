@@ -234,6 +234,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	wellbakedbody: {
 		inherit: true,
 		gen: 3,
+		desc: "This Pokemon is immune to Fire-type moves and raises its Defense by 1 stage when hit by a Fire-type move.",
+		shortDesc: "This Pokemon's Defense is raised 1 stage if hit by a Fire move; Fire immunity.",
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Fire') {
 				if (!this.boost({def: 1})) {

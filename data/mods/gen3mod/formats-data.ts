@@ -1763,16 +1763,14 @@ doublesTier: "DOU",
 doublesTier: "Illegal",
 	},
 	aron: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	lairon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	aggron: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	aggronmega: {
 		tier: "Illegal",
