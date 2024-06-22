@@ -354,6 +354,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	guzzlord: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Beast Boost", H: "Thick Fat"},
 	},
 	munna: {
 		inherit: true,
