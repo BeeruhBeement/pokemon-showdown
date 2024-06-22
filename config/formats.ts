@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
-		banlist: [],
+		banlist: ['Uber'],
 	},
 	{
 		name: "[Gen 3] Modded Uber",
