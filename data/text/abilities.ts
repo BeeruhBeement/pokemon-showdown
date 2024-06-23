@@ -2263,4 +2263,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+	
+	pixieveil: {
+		name: "Pixie Veil",
+		desc: "Causes the Fairy type to be added to the user, effectively making it have two or three types. Fails if the user is already a Fairy type.",
+		shortDesc: "Adds Fairy to the user's type(s).",
+	},
 };

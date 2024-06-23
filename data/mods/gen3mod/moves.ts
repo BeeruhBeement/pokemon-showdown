@@ -319,6 +319,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	hex: {
 		inherit: true,
 		gen: 3,
+		basePower: 65,
 	},
 	flash: {
 		inherit: true,

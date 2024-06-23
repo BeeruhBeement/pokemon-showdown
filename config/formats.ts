@@ -53,12 +53,17 @@ export const Formats: FormatList = [
 		banlist: [],
 	},
 	{
-		name: "[Gen 9] Sky Battles",
+		name: "[Gen 9] National Dex Sky Battles",
 		desc: `A National Dex mod that only allows Flying types and Pokémon with Levitate. Based on XY Sky Battles.`,
 	
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Evasion Items Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause', 'Z-Move Clause'],
-		banlist: ['Uber', 'Body Slam', 'Bulldoze', 'Dig', 'Dive', 'Earth Power', 'Earthquake', 'Electric Terrain', 'Fire Pledge', 'Flying Press', 'Frenzy Plant', 'Geomancy', 'Grass Knot', 'Grass Pledge', 'Grassy Terrain', 'Gravity', 'Heat Crash', 'Heavy Slam', 'Ingrain', 'Land\'s Wrath', 'Magnitude', 'Mat Block', 'Misty Terrain', 'Mud Sport', 'Muddy Water', 'Rototiller', 'Seismic Toss', 'Slam', 'Smack Down', 'Spikes', 'Stomp', 'Substitute', 'Surf', 'Thousand Arrows', 'Thousand Waves', 'Toxic Spikes', 'Water Pledge', 'Water Sport', 'Psychic Terrain', 'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+			'Body Slam', 'Bulldoze', 'Dig', 'Dive', 'Earth Power', 'Earthquake', 'Electric Terrain', 'Fire Pledge', 'Flying Press', 'Frenzy Plant', 'Geomancy', 'Grass Knot', 'Grass Pledge', 'Grassy Terrain', 'Gravity', 'Heat Crash', 'Heavy Slam', 'Ingrain', 'Land\'s Wrath', 'Magnitude', 'Mat Block', 'Misty Terrain', 'Mud Sport', 'Muddy Water', 'Rototiller', 'Seismic Toss', 'Slam', 'Smack Down', 'Spikes', 'Stomp', 'Substitute', 'Surf', 'Thousand Arrows', 'Thousand Waves', 'Toxic Spikes', 'Water Pledge', 'Water Sport', 'Psychic Terrain', 
+			'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge'
+		],
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
 			const isFlyingType = species.types.includes('Flying');
@@ -66,9 +71,19 @@ export const Formats: FormatList = [
 			const isLevitateCurrentAbility = set.ability === 'Levitate';
 	
 			if (!isFlyingType && (!hasLevitate || (hasLevitate && !isLevitateCurrentAbility))) {
-				return [`Only Flying-Type Pokémon and Pokémon with Levitate can be selected.`, `(${species.name} is not allowed)`];
+				return [`Only Flying-Type Pokémon and Pokémon with Levitate can be selected.`, `(${species.name} isn't Flying-Type or doesn't have Levitate.)`];
 			}
 		}
+	},
+	{
+		name: "[Gen 9] National Dex Inverse Battles",
+
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
 	},
 
 	// S/V Singles
