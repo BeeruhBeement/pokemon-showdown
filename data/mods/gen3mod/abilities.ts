@@ -245,4 +245,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
+	protosynthesis: {
+		inherit: true,
+		gen: 3,
+	},
+	quarkdrive: {
+		inherit: true,
+		gen: 3,
+	},
+	technician: {
+		inherit: true,
+		gen: 3,
+	},
 };

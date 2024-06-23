@@ -71,6 +71,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Steel", "Fairy"],
 		abilities: {0: "Hyper Cutter", 1: "Intimidate"},
+		baseStats: {hp: 60, atk: 85, def: 85, spa: 55, spd: 55, spe: 50},
 	},
 	absol: {
 		inherit: true,
@@ -189,6 +190,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Iron Fist", 1: "Mold Breaker"},
+		baseStats: {hp: 95, atk: 114, def: 78, spa: 69, spd: 71, spe: 58},
 	},
 	sandshrew: {
 		inherit: true,
@@ -512,7 +514,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	lurantis: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Chlorophyll", 1: "Solar Power"},
+		abilities: {0: "Technician", 1: "Solar Power"},
 	},
 	tangela: {
 		inherit: true,
@@ -575,5 +577,30 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Fairy", "Ground"],
 		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
+	},
+	ironjugulis: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
+	},
+	grimer: {
+		inherit: true,
+		abilities: {0: "Stench", 1: "Sticky Hold"},
+	},
+	grimeralola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Stench", 1: "Sticky Hold"},
+	},
+	muk: {
+		inherit: true,
+		abilities: {0: "Stench", 1: "Sticky Hold"},
+		baseStats: {hp: 105, atk: 105, def: 85, spa: 65, spd: 100, spe: 50},
+	},
+	mukalola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Stench", 1: "Sticky Hold"},
+		baseStats: {hp: 105, atk: 105, def: 75, spa: 75, spd: 100, spe: 50},
 	},
 };

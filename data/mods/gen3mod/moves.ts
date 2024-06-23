@@ -448,4 +448,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	gigadrain: {
+		inherit: true,
+		pp: 15,
+	},
+	energyball: {
+		inherit: true,
+		basePower: 80,
+	},
+	thunderwave: {
+		inherit: true,
+		accuracy: 90,
+	},
 };
