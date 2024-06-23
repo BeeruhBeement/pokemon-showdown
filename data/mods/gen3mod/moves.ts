@@ -454,6 +454,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	energyball: {
 		inherit: true,
+		gen: 3,
 		basePower: 80,
 	},
 	thunderwave: {
