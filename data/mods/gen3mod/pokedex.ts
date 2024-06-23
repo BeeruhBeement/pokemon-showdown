@@ -581,7 +581,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ironjugulis: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
+		abilities: {0: "Quark Drive", 1: "Mold Breaker"},
 	},
 	grimer: {
 		inherit: true,
