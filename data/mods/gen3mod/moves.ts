@@ -153,7 +153,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 	},
 	charge: {
-		num: 268,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -253,7 +252,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	highjumpkick: {
 		inherit: true,
-		basePower: 120,
+		basePower: 110,
 		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 		onMoveFail(target, source, move) {
@@ -320,7 +319,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	hex: {
 		inherit: true,
 		gen: 3,
-		basePower: 60,
 	},
 	flash: {
 		inherit: true,
@@ -460,5 +458,38 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	thunderwave: {
 		inherit: true,
 		accuracy: 90,
+	},
+	steelroller: {
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Steel Roller",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		onHit() {
+			this.field.clearTerrain();
+		},
+		onAfterSubDamage() {
+			this.field.clearTerrain();
+		},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		gen: 3,
+		desc: "Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain.",
+		shortDesc: "Ends the terrain.",
+	},
+	metalburst: {
+		inherit: true,
+		gen: 3,
+	},
+	spiritbreak: {
+		inherit: true,
+		gen: 3,
+	},
+	beakblast: {
+		inherit: true,
+		gen: 3,
 	},
 };

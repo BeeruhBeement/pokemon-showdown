@@ -52,6 +52,24 @@ export const Formats: FormatList = [
 		ruleset: ['Standard', '!Switch Priority Clause Mod'],
 		banlist: [],
 	},
+	{
+		name: "[Gen 9] Sky Battles",
+		desc: `A National Dex mod that only allows Flying types and Pokémon with Levitate. Based on XY Sky Battles.`,
+	
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Evasion Items Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause', 'Z-Move Clause'],
+		banlist: ['Uber', 'Body Slam', 'Bulldoze', 'Dig', 'Dive', 'Earth Power', 'Earthquake', 'Electric Terrain', 'Fire Pledge', 'Flying Press', 'Frenzy Plant', 'Geomancy', 'Grass Knot', 'Grass Pledge', 'Grassy Terrain', 'Gravity', 'Heat Crash', 'Heavy Slam', 'Ingrain', 'Land\'s Wrath', 'Magnitude', 'Mat Block', 'Misty Terrain', 'Mud Sport', 'Muddy Water', 'Rototiller', 'Seismic Toss', 'Slam', 'Smack Down', 'Spikes', 'Stomp', 'Substitute', 'Surf', 'Thousand Arrows', 'Thousand Waves', 'Toxic Spikes', 'Water Pledge', 'Water Sport', 'Misty Terrain', 'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge'],
+		onValidateSet(set) {
+			const species = this.dex.species.get(set.species);
+			const isFlyingType = species.types.includes('Flying');
+			const hasLevitate = species.abilities && Object.values(species.abilities).includes('Levitate');
+			const isLevitateCurrentAbility = set.ability === 'Levitate';
+	
+			if (!isFlyingType && (!hasLevitate || (hasLevitate && !isLevitateCurrentAbility))) {
+				return [`Only Flying-Type Pokémon and Pokémon with Levitate can be selected.`, `(${species.name} is not allowed)`];
+			}
+		}
+	},
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
@@ -509,13 +527,13 @@ export const Formats: FormatList = [
 			this.add('-message', `This is a National Dex metagame where only Pokemon with less than 280 BST are allowed, plus a select few others!`);
 			this.add('-message', `You can find our thread and metagame resources here:`);
 			this.add('-message', `https://www.smogon.com/forums/threads/3734326/`);
-		},
-		onValidateSet(set) {
-			const species = this.dex.species.get(set.species);
-			if (species.bst > 280 && !['Luvdisc', 'Unown', 'Capsakid', 'Snorunt'].includes(species.baseSpecies)) {
-				return [`Only Pok\u00e9mon with a BST of 280 or lower are allowed.`, `(${species.name}'s BST is ${species.bst}.)`];
-			}
-		},
+			},
+			onValidateSet(set) {
+				const species = this.dex.species.get(set.species);
+				if (species.bst > 280 && !['Luvdisc', 'Unown', 'Capsakid', 'Snorunt'].includes(species.baseSpecies)) {
+					return [`Only Pok\u00e9mon with a BST of 280 or lower are allowed.`, `(${species.name}'s BST is ${species.bst}.)`];
+				}
+			},
 	},
 	{
 		name: "[Gen 2] Modern Gen 2",

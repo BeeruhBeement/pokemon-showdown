@@ -671,16 +671,15 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	voltorb: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	voltorbhisui: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
 	electrode: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	electrodehisui: {
 		tier: "Illegal",
@@ -1745,8 +1744,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	sableye: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	sableyemega: {
 		tier: "Illegal",
@@ -3651,16 +3650,14 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	pikipek: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	trumbeak: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	toucannon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	yungoos: {
 		tier: "Illegal",

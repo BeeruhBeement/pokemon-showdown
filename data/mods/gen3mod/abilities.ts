@@ -257,4 +257,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	stall: {
+		inherit: true,
+		gen: 3,
+	},
+	pixieveil: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 };

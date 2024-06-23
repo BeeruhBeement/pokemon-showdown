@@ -5650,4 +5650,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: -4,
 	},
+	
+	pixieveil: {
+		isNonstandard: "Unobtainable",
+		flags: {},
+		name: "Pixie Veil",
+		rating: 2,
+		num: 5000,
+		onStart(pokemon) {
+			if (pokemon.hasType('Fairy')) return;
+			if (!pokemon.addType('Fairy')) return;
+			this.add('-start', pokemon, 'typeadd', 'Fairy', '[from] ability: Pixie Veil');
+		},
+	},
 };

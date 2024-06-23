@@ -71,10 +71,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Steel", "Fairy"],
 		abilities: {0: "Hyper Cutter", 1: "Intimidate"},
-		baseStats: {hp: 60, atk: 85, def: 85, spa: 55, spd: 55, spe: 50},
+		baseStats: {hp: 60, atk: 85, def: 85, spa: 65, spd: 65, spe: 50},
 	},
 	absol: {
 		inherit: true,
+		types: ["Dark", "Fairy"],
 		abilities: {0: "Pressure", 1: "Synchronize"},
 	},
 	sewaddle: {
@@ -270,12 +271,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	aegislash: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 80, atk: 50, def: 150, spa: 50, spd: 150, spe: 20},
+		baseStats: {hp: 60, atk: 50, def: 130, spa: 50, spd: 130, spe: 20},
 	},
 	aegislashblade: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 80, atk: 130, def: 50, spa: 50, spd: 50, spe: 80},
+		baseStats: {hp: 60, atk: 130, def: 50, spa: 50, spd: 50, spe: 80},
 	},
 	kecleon: {
 		inherit: true,
@@ -357,6 +358,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Thick Fat"},
+		baseStats: {hp: 223, atk: 101, def: 53, spa: 77, spd: 53, spe: 43},
 	},
 	munna: {
 		inherit: true,
@@ -519,11 +521,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	tangela: {
 		inherit: true,
 		abilities: {0: "Chlorophyll", 1: "Regenerator"},
+		baseStats: {hp: 65, atk: 55, def: 115, spa: 100, spd: 40, spe: 60},
 	},
 	tangrowth: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Chlorophyll", 1: "Regenerator"},
+		baseStats: {hp: 90, atk: 65, def: 125, spa: 110, spd: 50, spe: 50},
 	},
 	aron: {
 		inherit: true,
@@ -561,11 +565,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Lightning Rod"},
+		baseStats: {hp: 83, atk: 89, def: 71, spa: 173, spd: 71, spe: 63},
 	},
 	volcanion: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Water Absorb", 1: "Flash Fire"},
+		abilities: {0: "Water Absorb"},
+		baseStats: {hp: 80, atk: 110, def: 90, spa: 110, spd: 80, spe: 70},
 	},
 	fidough: {
 		inherit: true,
@@ -577,11 +583,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Fairy", "Ground"],
 		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
+		baseStats: {hp: 57, atk: 70, def: 95, spa: 50, spd: 80, spe: 75},
 	},
 	ironjugulis: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Quark Drive", 1: "Mold Breaker"},
+		abilities: {0: "Quark Drive", 1: "Lightning Rod"},
+		baseStats: {hp: 84, atk: 90, def: 86, spa: 102, spd: 80, spe: 108},
 	},
 	grimer: {
 		inherit: true,
@@ -602,5 +610,35 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Stench", 1: "Sticky Hold"},
 		baseStats: {hp: 105, atk: 105, def: 75, spa: 75, spd: 100, spe: 50},
+	},
+	sableye: {
+		inherit: true,
+		abilities: {0: "Pixie Veil", 1: "Stall"},
+		baseStats: {hp: 80, atk: 65, def: 75, spa: 65, spd: 75, spe: 50},
+		eggGroups: ["Human-Like", "Fairy"],
+	},
+	pikipek: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Keen Eye", 1: "Early Bird"},
+	},
+	trumbeak: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Keen Eye", 1: "Early Bird"},
+	},
+	toucannon: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Keen Eye", 1: "Flame Body"},
+	},
+	voltorb: {
+		inherit: true,
+		abilities: {0: "Soundproof", 1: "Static"},
+	},
+	electrode: {
+		inherit: true,
+		abilities: {0: "Soundproof", 1: "Static"},
+		baseStats: {hp: 60, atk: 60, def: 70, spa: 90, spd: 80, spe: 140},
 	},
 };
