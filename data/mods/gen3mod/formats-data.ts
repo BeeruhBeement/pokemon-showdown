@@ -597,20 +597,18 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	grimer: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	grimeralola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	muk: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	mukalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	shellder: {
 		tier: "Illegal",
@@ -4893,8 +4891,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	ironjugulis: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	ironthorns: {
 		tier: "Illegal",
