@@ -58,7 +58,7 @@ export const Formats: FormatList = [
 	
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Evasion Items Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause', 'Z-Move Clause'],
-		banlist: ['Uber', 'Body Slam', 'Bulldoze', 'Dig', 'Dive', 'Earth Power', 'Earthquake', 'Electric Terrain', 'Fire Pledge', 'Flying Press', 'Frenzy Plant', 'Geomancy', 'Grass Knot', 'Grass Pledge', 'Grassy Terrain', 'Gravity', 'Heat Crash', 'Heavy Slam', 'Ingrain', 'Land\'s Wrath', 'Magnitude', 'Mat Block', 'Misty Terrain', 'Mud Sport', 'Muddy Water', 'Rototiller', 'Seismic Toss', 'Slam', 'Smack Down', 'Spikes', 'Stomp', 'Substitute', 'Surf', 'Thousand Arrows', 'Thousand Waves', 'Toxic Spikes', 'Water Pledge', 'Water Sport', 'Misty Terrain', 'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge'],
+		banlist: ['Uber', 'Body Slam', 'Bulldoze', 'Dig', 'Dive', 'Earth Power', 'Earthquake', 'Electric Terrain', 'Fire Pledge', 'Flying Press', 'Frenzy Plant', 'Geomancy', 'Grass Knot', 'Grass Pledge', 'Grassy Terrain', 'Gravity', 'Heat Crash', 'Heavy Slam', 'Ingrain', 'Land\'s Wrath', 'Magnitude', 'Mat Block', 'Misty Terrain', 'Mud Sport', 'Muddy Water', 'Rototiller', 'Seismic Toss', 'Slam', 'Smack Down', 'Spikes', 'Stomp', 'Substitute', 'Surf', 'Thousand Arrows', 'Thousand Waves', 'Toxic Spikes', 'Water Pledge', 'Water Sport', 'Psychic Terrain', 'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge'],
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
 			const isFlyingType = species.types.includes('Flying');
