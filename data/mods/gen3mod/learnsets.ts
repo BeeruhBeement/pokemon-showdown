@@ -65,7 +65,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			dazzlinggleam: ["3M"],
 			suckerpunch: ["3T"],
-			irontail: ["3M"],
 			drainingkiss: ["3M"],
 			mistyterrain: ["3M"],
 			metalburst: ["3L61"],
@@ -148,6 +147,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			suckerpunch: ["3L44", "3T"],
 			xscissor: ["3M"],
 			pursuit: ["3M"],
+			dazzlinggleam: ["3M"],
 		},  
 	},
 	sewaddle: {

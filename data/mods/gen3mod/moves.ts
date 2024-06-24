@@ -479,7 +479,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Steel",
 		gen: 3,
 		desc: "Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain.",
-		shortDesc: "Ends the terrain.",
+		shortDesc: "Ends the effects of terrain.",
 	},
 	metalburst: {
 		inherit: true,

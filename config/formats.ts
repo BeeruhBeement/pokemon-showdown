@@ -78,7 +78,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Inverse Battles",
 
-		mod: 'gen9',
+		mod: 'invertedbattles',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
