@@ -61,8 +61,17 @@ export const Formats: FormatList = [
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-			'Body Slam', 'Bulldoze', 'Dig', 'Dive', 'Earth Power', 'Earthquake', 'Electric Terrain', 'Fire Pledge', 'Flying Press', 'Frenzy Plant', 'Geomancy', 'Grass Knot', 'Grass Pledge', 'Grassy Terrain', 'Gravity', 'Heat Crash', 'Heavy Slam', 'Ingrain', 'Land\'s Wrath', 'Magnitude', 'Mat Block', 'Misty Terrain', 'Mud Sport', 'Muddy Water', 'Rototiller', 'Seismic Toss', 'Slam', 'Smack Down', 'Spikes', 'Stomp', 'Substitute', 'Surf', 'Thousand Arrows', 'Thousand Waves', 'Toxic Spikes', 'Water Pledge', 'Water Sport', 'Psychic Terrain', 
-			'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge'
+			// Move bans (XY bans + some new moves)
+			'Body Slam', 'Bulldoze', 'Dig', 'Dive', 'Earth Power', 'Earthquake', 'Electric Terrain', 'Fire Pledge', 'Flying Press', 'Frenzy Plant', 'Geomancy', 'Grass Knot', 'Grass Pledge', 'Grassy Terrain', 'Gravity', 'Heat Crash', 'Heavy Slam', 'Ingrain', 'Land\'s Wrath', 'Magnitude', 'Mat Block', 'Misty Terrain', 'Mud Sport', 'Muddy Water', 'Rototiller', 'Seismic Toss', 'Slam', 'Smack Down', 'Spikes', 'Stomp', 'Substitute', 'Surf', 'Thousand Arrows', 'Thousand Waves', 'Toxic Spikes', 'Water Pledge', 'Water Sport', 'Psychic Terrain', 'Stomping Tantrum', 'High Horsepower', 'Body Press', 'Ceaseless Edge', 
+			// Ability bans (Terrain summoning abilities)
+			'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge', 'Hadron Engine', 'Seed Sower',
+			// Item bans
+			'Mewnium Z', // Genesis Supernova summons Psychic Terrain
+			//Pokémon bans (Not flying in sprite)
+			'Pidgey', 'Spearow', 'Farfetch\'d', 'Doduo', 'Dodrio', 'Zapdos-Galar', 'Hoothoot', 'Natu', 'Murkrow', 'Delibird', 'Taillow', 'Starly', 'Chatot', 'Shaymin-Sky', 'Pidove', 'Archen', 'Ducklett', 'Rufflet', 'Vullaby', 'Fletchling', 'Hawlucha', 'Rowlet', 'Dartrix', 'Pikipek', 'Trumbeak', 'Toucannon', 'Oricorio', 'Oricorio Pom Pom', 'Oricorio Pa\'u', 'Oricorio Sensu', 'Rookidee', 'Cramorant', 'Wattrel', 'Flamigo'
+		],
+		unbanlist: [
+			'Landorus-Incarnate',
 		],
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
@@ -78,14 +87,14 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Inverse Battles",
 
-		mod: 'invertedbattles',
+		mod: 'gen9inversebattles',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-			'Lopunny-Mega'
+			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster'
 		],
-		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra'],
+		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Shedinja'],
 	},
 
 	// S/V Singles
