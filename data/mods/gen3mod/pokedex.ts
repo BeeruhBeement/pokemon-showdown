@@ -583,7 +583,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Fairy", "Ground"],
 		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
-		baseStats: {hp: 57, atk: 70, def: 95, spa: 50, spd: 80, spe: 75},
+		baseStats: {hp: 57, atk: 70, def: 105, spa: 50, spd: 80, spe: 75},
 	},
 	ironjugulis: {
 		inherit: true,
