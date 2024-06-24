@@ -85,7 +85,7 @@ export const Formats: FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 			'Lopunny-Mega'
 		],
-		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Heartflame', 'Chien-Pao', 'Espathra'],
+		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra'],
 	},
 
 	// S/V Singles
