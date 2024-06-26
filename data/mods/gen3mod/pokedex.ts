@@ -571,7 +571,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	electrode: {
 		inherit: true,
 		abilities: {0: "Soundproof", 1: "Static"},
-		baseStats: {hp: 60, atk: 60, def: 70, spa: 90, spd: 80, spe: 150},
+		baseStats: {hp: 60, atk: 60, def: 70, spa: 90, spd: 80, spe: 140},
 	},
 	buzzwole: {
 		inherit: true,
@@ -597,6 +597,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	gyarados: {
 		inherit: true,
 		abilities: {0: "Intimidate"},
+		baseStats: {hp: 85, atk: 115, def: 69, spa: 60, spd: 100, spe: 71},
 	},
 	snorunt: {
 		inherit: true,

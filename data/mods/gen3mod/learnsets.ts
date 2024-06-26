@@ -5785,7 +5785,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			substitute: ["3T"],
 			surf: ["3M"],
 			swagger: ["3T"],
-			taunt: ["3M"],
 			thrash: ["3L1"],
 			thunder: ["3M"],
 			thunderbolt: ["3M"],
