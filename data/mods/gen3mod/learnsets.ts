@@ -5938,7 +5938,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hex: ["3T"],
 			block: ["3T"],
 			iceshard: ["3L1"],
-			thunderbolt: ["3M"],
+			icepunch: ["3T"],
 			thunderpunch: ["3T"],
 			thunderwave: ["3T"],
 			lovelykiss: ["3L1"],
@@ -6242,6 +6242,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			trick: ["3T"],
 			
 			steelroller: ["3T"],
+			hiddenpower: ["3M"],
 		},
 	},
 	bronzong: {
@@ -6296,6 +6297,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			trick: ["3T"],
 			
 			steelroller: ["3T"],
+			hiddenpower: ["3M"],
 		},
 	}	
 };

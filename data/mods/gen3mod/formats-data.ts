@@ -908,7 +908,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	gyarados: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	gyaradosmega: {

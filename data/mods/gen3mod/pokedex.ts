@@ -615,7 +615,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	froslass: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 70, atk: 80, def: 70, spa: 90, spd: 70, spe: 110},
+		baseStats: {hp: 70, atk: 85, def: 70, spa: 85, spd: 70, spe: 110},
 		abilities: {0: "Inner Focus", 1: "Aftermath"},
 	},
 	munchlax: {
