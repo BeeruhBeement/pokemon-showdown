@@ -571,13 +571,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	electrode: {
 		inherit: true,
 		abilities: {0: "Soundproof", 1: "Static"},
-		baseStats: {hp: 60, atk: 60, def: 70, spa: 90, spd: 80, spe: 140},
+		baseStats: {hp: 60, atk: 60, def: 70, spa: 90, spd: 80, spe: 150},
 	},
 	buzzwole: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Intimidate"},
-		baseStats: {hp: 107, atk: 129, def: 129, spa: 53, spd: 53, spe: 79},
+		baseStats: {hp: 97, atk: 119, def: 119, spa: 73, spd: 73, spe: 69},
 	},
 	snom: {
 		inherit: true,
@@ -635,5 +635,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Insomnia", 1: "Super Luck"},
+	},
+	bronzor: {
+		inherit: true,
+		abilities: {0: "Levitate", 1: "Heatproof"},
+	},
+	bronzong: {
+		inherit: true,
+		abilities: {0: "Levitate", 1: "Heatproof"},
 	},
 };

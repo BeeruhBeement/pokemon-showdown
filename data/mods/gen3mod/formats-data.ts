@@ -2374,12 +2374,11 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	bronzor: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	bronzong: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	chatot: {
 		tier: "Illegal",
