@@ -616,7 +616,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 70, atk: 80, def: 70, spa: 90, spd: 70, spe: 110},
-		abilities: {0: "Inner Focus", H: "Aftermath"},
+		abilities: {0: "Inner Focus", 1: "Aftermath"},
 	},
 	munchlax: {
 		inherit: true,

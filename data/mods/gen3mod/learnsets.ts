@@ -5845,7 +5845,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3M"],
 			
 			weatherball: ["3E"],
-			switcheroo: ["3E"],
 			disable: ["3E"],
 			block: ["3E"],
 		},
