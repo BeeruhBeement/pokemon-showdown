@@ -1,5 +1,5 @@
 export const Scripts: ModdedBattleScriptsData = {
-	inherit: 'gen9',
+	gen: 9,
 	/**
 	 * Given a table of base stats and a pokemon set, return the actual stats.
 	 */
