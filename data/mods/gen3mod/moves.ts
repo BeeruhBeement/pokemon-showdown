@@ -531,4 +531,37 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Fairy",
 	},
+	taunt: {
+		inherit: true,
+		desc: "For 2 to 4 turns, prevents the target from using non-damaging moves.",
+		shortDesc: "For 2-4 turns, the target can't use status moves.",
+		flags: {protect: 1, mirror: 1, bypasssub: 1, metronome: 1},
+		condition: {
+			durationCallback() {
+				return this.random(2, 4);
+			},
+			onStart(target) {
+				this.add('-start', target, 'move: Taunt');
+			},
+			onResidualOrder: 10,
+			onResidualSubOrder: 15,
+			onEnd(target) {
+				this.add('-end', target, 'move: Taunt');
+			},
+			onDisableMove(pokemon) {
+				for (const moveSlot of pokemon.moveSlots) {
+					if (this.dex.moves.get(moveSlot.id).category === 'Status') {
+						pokemon.disableMove(moveSlot.id);
+					}
+				}
+			},
+			onBeforeMovePriority: 5,
+			onBeforeMove(attacker, defender, move) {
+				if (move.category === 'Status') {
+					this.add('cant', attacker, 'move: Taunt', move);
+					return false;
+				}
+			},
+		},
+	},
 };
