@@ -229,4 +229,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	dawnstone: {
+		inherit: true,
+		gen: 3,
+	},
+	duskstone: {
+		inherit: true,
+		gen: 3,
+	},
+	sitrusberry: {
+		inherit: true,
+		desc: "Restores 1/4 max HP when at 1/2 max HP or less. Single use.",
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4);
+		},
+	},
 };

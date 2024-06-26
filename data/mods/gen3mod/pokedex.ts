@@ -1,72 +1,4 @@
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
-	clefairy: {
-		inherit: true,
-		types: ["Fairy"],
-	},
-	clefable: {
-		inherit: true,
-		types: ["Fairy"],
-	},
-	jigglypuff: {
-		inherit: true,
-		types: ["Normal", "Fairy"],
-	},
-	wigglytuff: {
-		inherit: true,
-		types: ["Normal", "Fairy"],
-	},
-	mrmime: {
-		inherit: true,
-		types: ["Psychic", "Fairy"],
-	},
-	cleffa: {
-		inherit: true,
-		types: ["Fairy"],
-	},
-	igglybuff: {
-		inherit: true,
-		types: ["Normal", "Fairy"],
-	},
-	togepi: {
-		inherit: true,
-		types: ["Fairy"],
-	},
-	togetic: {
-		inherit: true,
-		types: ["Fairy", "Flying"],
-	},
-	marill: {
-		inherit: true,
-		types: ["Water", "Fairy"],
-	},
-	azumarill: {
-		inherit: true,
-		types: ["Water", "Fairy"],
-	},
-	snubbul: {
-		inherit: true,
-		types: ["Fairy"],
-	},
-	granbull: {
-		inherit: true,
-		types: ["Fairy"],
-	},
-	ralts: {
-		inherit: true,
-		types: ["Psychic", "Fairy"],
-	},
-	kirlia: {
-		inherit: true,
-		types: ["Psychic", "Fairy"],
-	},
-	gardevoir: {
-		inherit: true,
-		types: ["Psychic", "Fairy"],
-	},
-	azurill: {
-		inherit: true,
-		types: ["Normal", "Fairy"],
-	},
 	mawile: {
 		inherit: true,
 		types: ["Steel", "Fairy"],
@@ -539,7 +471,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	aggron: {
 		inherit: true,
-		abilities: {0: "Sturdy", 1: "Rock Head"},
+		abilities: {0: "Sturdy", 1: "Solid Rock"},
 	},
 	meowthgalar: {
 		inherit: true,
@@ -640,5 +572,68 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Soundproof", 1: "Static"},
 		baseStats: {hp: 60, atk: 60, def: 70, spa: 90, spd: 80, spe: 140},
+	},
+	buzzwole: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Beast Boost", 1: "Intimidate"},
+		baseStats: {hp: 107, atk: 129, def: 129, spa: 53, spd: 53, spe: 79},
+	},
+	snom: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Shield Dust"},
+	},
+	frosmoth: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Shield Dust"},
+		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
+	},
+	magikarp: {
+		inherit: true,
+		abilities: {0: "Swift Swim"},
+	},
+	gyarados: {
+		inherit: true,
+		abilities: {0: "Intimidate"},
+	},
+	snorunt: {
+		inherit: true,
+		abilities: {0: "Inner Focus", 1: "Ice Body"},
+		evos: ["Glalie", "Froslass"],
+	},
+	glalie: {
+		inherit: true,
+		types: ["Ice", "Dark"],
+		gender: "M",
+		baseStats: {hp: 90, atk: 70, def: 90, spa: 70, spd: 90, spe: 80},
+		abilities: {0: "Inner Focus", 1: "Solid Rock"},
+		evoType: "useItem",
+		evoItem: "Dusk Stone",
+	},
+	froslass: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 70, atk: 80, def: 70, spa: 90, spd: 70, spe: 110},
+		abilities: {0: "Inner Focus", H: "Aftermath"},
+	},
+	munchlax: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Pickup", 1: "Thick Fat"},
+	},
+	snorlax: {
+		inherit: true,
+		abilities: {0: "Immunity", 1: "Thick Fat"},
+	},
+	murkrow: {
+		inherit: true,
+		abilities: {0: "Insomnia", 1: "Super Luck"},
+	},
+	honchkrow: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Insomnia", 1: "Super Luck"},
 	},
 };

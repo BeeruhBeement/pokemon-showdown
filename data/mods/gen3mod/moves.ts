@@ -493,4 +493,22 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	hiddenpowerfairy: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+		basePower: 70,
+	},
+	aeroblast: {
+		inherit: true,
+		basePower: 80,
+	},
+	roost: {
+		inherit: true,
+		gen: 3,
+	},
+	block: {
+		inherit: true,
+		type: "Dark",
+	},
 };

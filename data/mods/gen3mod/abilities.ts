@@ -261,6 +261,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	solidrock: {
+		inherit: true,
+		gen: 3,
+	},
 	pixieveil: {
 		inherit: true,
 		gen: 3,

@@ -87,12 +87,12 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Inverse Battles",
 
-		mod: 'gen9inversebattles',
+		mod: 'inversebattles',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster'
+			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster', 'Indeedee',
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Shedinja'],
 	},
