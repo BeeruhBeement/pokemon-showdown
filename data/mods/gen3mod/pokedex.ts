@@ -638,10 +638,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	bronzor: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Levitate", 1: "Heatproof"},
 	},
 	bronzong: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Levitate", 1: "Heatproof"},
 	},
 };
