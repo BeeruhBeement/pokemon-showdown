@@ -5650,7 +5650,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			cometpunch: ["3L7"],
 			counter: ["3L43"],
 			doubleteam: ["3M"],
-			dualwingbeat: ["3T"],
 			dynamicpunch: ["3T", "3L59"],
 			earthquake: ["3M"],
 			endeavor: ["3T"],
