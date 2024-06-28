@@ -601,4 +601,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	shieldbash: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 };
