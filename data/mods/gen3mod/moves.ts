@@ -431,10 +431,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
-	hammerarm: {
-		inherit: true,
-		gen: 3,
-	},
 	xscissor: {
 		inherit: true,
 		gen: 3,
@@ -531,6 +527,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Fairy",
 	},
+	workup: {
+		inherit: true,
+		gen: 3,
+		type: "Fire",
+	},
 	taunt: {
 		inherit: true,
 		desc: "For 2 to 4 turns, prevents the target from using non-damaging moves.",
@@ -563,5 +564,28 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 		},
+	},
+	submission: {
+		inherit: true,
+		basePower: 85,
+		accuracy: 100,
+	},
+	teleport: {
+		num: 100,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Teleport",
+		pp: 20,
+		priority: -6,
+		flags: {metronome: 1},
+		onTry(source) {
+			return !!this.canSwitch(source.side);
+		},
+		selfSwitch: true,
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+		contestType: "Cool",
 	},
 };

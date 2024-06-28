@@ -64,18 +64,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 98, def: 73, spa: 40, spd: 83, spe: 96},
 		abilities: {0: "Sturdy", 1: "Lightning Rod"},
 	},
-	nidoranf: {
-		inherit: true,
-		abilities: {0: "Poison Point", 1: "Hustle"},
-	},
-	nidorina: {
-		inherit: true,
-		abilities: {0: "Poison Point", 1: "Hustle"},
-	},
-	nidoqueen: {
-		inherit: true,
-		abilities: {0: "Poison Point", 1: "Hustle"},
-	},
 	seel: {
 		inherit: true,
 		abilities: {0: "Thick Fat"},
@@ -83,16 +71,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	dewgong: {
 		inherit: true,
 		abilities: {0: "Thick Fat"},
-	},
-	pansear: {
-		inherit: true,
-		gen: 3,
-		abilities: {0: "Gluttony"},
-	},
-	simisear: {
-		inherit: true,
-		gen: 3,
-		abilities: {0: "Gluttony"},
 	},
 	drampa: {
 		inherit: true,
@@ -345,25 +323,25 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	castform: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 70, def: 70, spa: 70, spd: 70, spe: 80},
+		baseStats: {hp: 90, atk: 70, def: 70, spa: 70, spd: 70, spe: 90},
 		otherFormes: ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy"],
 		formeOrder: ["Castform", "Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy"],
 	},
 	castformsunny: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 70, def: 70, spa: 100, spd: 70, spe: 80},
+		baseStats: {hp: 90, atk: 70, def: 70, spa: 100, spd: 70, spe: 90},
 	},
 	castformrainy: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 70, def: 70, spa: 70, spd: 100, spe: 80},
+		baseStats: {hp: 90, atk: 70, def: 70, spa: 70, spd: 100, spe: 90},
 	},
 	castformsnowy: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 70, def: 100, spa: 70, spd: 70, spe: 80},
+		baseStats: {hp: 90, atk: 70, def: 100, spa: 70, spd: 70, spe: 90},
 	},
 	castformsandy: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 100, def: 70, spa: 70, spd: 70, spe: 80},
+		baseStats: {hp: 90, atk: 100, def: 70, spa: 70, spd: 70, spe: 90},
 	},
 	helioptile: {
 		inherit: true,
@@ -562,7 +540,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	toucannon: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Keen Eye", 1: "Flame Body"},
+		abilities: {0: "Heatproof", 1: "Flame Body"},
 	},
 	voltorb: {
 		inherit: true,
@@ -646,5 +624,56 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Levitate", 1: "Heatproof"},
+	},
+	pansage: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Gluttony"},
+	},
+	simisage: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Gluttony"},
+	},
+	pansear: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Gluttony"},
+	},
+	simisear: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Gluttony"},
+	},
+	panpour: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Gluttony"},
+	},
+	simipour: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Gluttony"},
+	},
+	bonsly: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Sturdy", 1: "Rock Head"},
+	},
+	sudowoodo: {
+		inherit: true,
+		abilities: {0: "Sturdy", 1: "Rock Head"},
+	},
+	mimejr: {
+		inherit: true,
+		gen: 3,
+		types: ["Psychic", "Fairy"],
+		abilities: {0: "Soundproof", 1: "Technician"},
+	},
+	mrmime: {
+		inherit: true,
+		types: ["Psychic", "Fairy"],
+		baseStats: {hp: 40, atk: 65, def: 65, spa: 100, spd: 120, spe: 90},
+		abilities: {0: "Soundproof", 1: "Technician"},
 	},
 };
