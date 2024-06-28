@@ -105,6 +105,17 @@ export const Formats: FormatList = [
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Shedinja', 'Indeedee-F'],
 	},
 
+	{
+		section: "National Dex Unofficial Tiers",
+	},
+	{
+		name: "[Gen 9] National Dex SU",
+
+		mod: 'gen9',
+		ruleset: ['[Gen 9] National Dex RU'],
+		banlist: ['ND RU', 'ND NUBL', 'ND NU', 'ND PUBL', 'ND PU', 'ND ZUBL', 'ND ZU', 'ND SUBL'],
+	},
+
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 

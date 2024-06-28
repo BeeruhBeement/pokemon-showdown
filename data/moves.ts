@@ -22170,32 +22170,4 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Steel",
 	},
-	leavannycutter: {
-		num: 5005,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		name: "Leavanny Cutter",
-		isNonstandard: "Custom",
-		pp: 40,
-		priority: 3,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
-		onAfterHit(target, source, move) {
-			if (!move.hasSheerForce && source.hp) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('spikes');
-				}
-			}
-		},
-		onAfterSubDamage(damage, target, source, move) {
-			if (!move.hasSheerForce && source.hp) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('spikes');
-				}
-			}
-		},
-		volatileStatus: 'partiallytrapped',
-		target: "normal",
-		type: "Bug",
-	},
 };

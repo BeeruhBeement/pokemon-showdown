@@ -242,7 +242,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			grassyterrain: ["3M"],
 			xscissor: ["3M"],
 			energyball: ["3M"],
-			leavannycutter: ["3L1"],
 		},
 	},
 	ducklett: {
