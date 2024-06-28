@@ -283,6 +283,7 @@ export const Tags: {[id: string]: TagData} = {
 		name: "ND ZU",
 		speciesFilter: species => species.natDexTier === 'ZU',
 	},
+	
 	ndsubl: {
 		name: "ND SUBL",
 		speciesFilter: species => species.natDexTier === 'SUBL',
