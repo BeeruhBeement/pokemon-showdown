@@ -22127,8 +22127,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	etherealcutter: {
 		num: 5003,
-		accuracy: 85,
-		basePower: 95,
+		accuracy: 95,
+		basePower: 85,
 		category: "Physical",
 		name: "Ethereal Cutter",
 		isNonstandard: "Custom",
@@ -22156,89 +22156,4 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	phantomveil: {
-		num: 164,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Phantom Veil",
-		pp: 5,
-		priority: 0,
-		flags: {snatch: 1, nonsky: 1, metronome: 1},
-		volatileStatus: 'substitute',
-		onTryHit(source) {
-			if (source.volatiles['substitute']) {
-				this.add('-fail', source, 'move: Substitute');
-				return this.NOT_FAIL;
-			}
-			if (source.hp <= source.maxhp / 4 || source.maxhp === 1) { // Shedinja clause
-				this.add('-fail', source, 'move: Substitute', '[weak]');
-				return this.NOT_FAIL;
-			}
-		},
-		onHit(target) {
-			this.directDamage(target.maxhp / 4);
-		},
-		condition: {
-			onStart(target, source, effect) {
-				if (effect?.id === 'shedtail') {
-					this.add('-start', target, 'Substitute', '[from] move: Shed Tail');
-				} else {
-					this.add('-start', target, 'Substitute');
-				}
-				this.effectState.hp = Math.floor(target.maxhp / 4);
-				this.effectState.type = 'Ghost'; // Change substitute type to Ghost
-				if (target.volatiles['partiallytrapped']) {
-					this.add('-end', target, target.volatiles['partiallytrapped'].sourceEffect, '[partiallytrapped]', '[silent]');
-					delete target.volatiles['partiallytrapped'];
-				}
-			},
-			onTryPrimaryHitPriority: -1,
-			onTryPrimaryHit(target, source, move) {
-				if (target === source || move.flags['bypasssub'] || move.infiltrates) {
-					return;
-				}
-				let damage = this.actions.getDamage(source, target, move);
-				if (!damage && damage !== 0) {
-					this.add('-fail', source);
-					this.attrLastMove('[still]');
-					return null;
-				}
-				damage = this.runEvent('SubDamage', target, source, move, damage);
-				if (!damage) {
-					return damage;
-				}
-				if (damage > target.volatiles['substitute'].hp) {
-					damage = target.volatiles['substitute'].hp as number;
-				}
-				target.volatiles['substitute'].hp -= damage;
-				source.lastDamage = damage;
-				if (target.volatiles['substitute'].hp <= 0) {
-					if (move.ohko) this.add('-ohko');
-					target.removeVolatile('substitute');
-				} else {
-					this.add('-activate', target, 'move: Substitute', '[damage]');
-				}
-				if (move.recoil || move.id === 'chloroblast') {
-					this.damage(this.actions.calcRecoilDamage(damage, move, source), source, target, 'recoil');
-				}
-				if (move.drain) {
-					this.heal(Math.ceil(damage * move.drain[0] / move.drain[1]), source, target, 'drain');
-				}
-				this.singleEvent('AfterSubDamage', move, null, target, source, move, damage);
-				this.runEvent('AfterSubDamage', target, source, move, damage);
-				return this.HIT_SUBSTITUTE;
-			},
-			onEnd(target) {
-				this.add('-end', target, 'Substitute');
-			},
-			onModifyMove(move) {
-				move.type = 'Ghost';
-			},
-		},
-		secondary: null,
-		target: "self",
-		type: "Ghost",
-		contestType: "Tough",
-	},	
 };

@@ -7552,4 +7552,17 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Weather Dance",
 		shortDesc: "Summons a random weather effect. +1 Speed.",
 	},
+	cascadecrash: {
+		name: "Cascade Crash",
+		desc: "This move combines Flying in its type effectiveness against the target.",
+		shortDesc: "Combines Flying in its type effectiveness.",
+	},
+	etherealcutter: {
+		name: "Ethereal Cutter",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Disappears turn 1. Hits turn 2. Breaks protection.",
+		
+		prepare: "#shadowforce",
+		activate: "#shadowforce",
+	},
 };
