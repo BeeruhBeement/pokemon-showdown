@@ -106,14 +106,35 @@ export const Formats: FormatList = [
 	},
 
 	{
-		section: "National Dex Unofficial Tiers",
+		section: "National Dex Lower Tiers",
+	},
+	{
+		name: "[Gen 9] National Dex NU",
+
+		mod: 'gen9',
+		ruleset: ['[Gen 9] National Dex RU'],
+		banlist: ['ND RU', 'ND NUBL']
+	},
+	{
+		name: "[Gen 9] National Dex PU",
+
+		mod: 'gen9',
+		ruleset: ['[Gen 9] National Dex NU'],
+		banlist: ['ND NU', 'ND PUBL']
+	},
+	{
+		name: "[Gen 9] National Dex ZU",
+
+		mod: 'gen9',
+		ruleset: ['[Gen 9] National Dex PU'],
+		banlist: ['ND PU', 'ND ZUBL', 'Shell Smash']
 	},
 	{
 		name: "[Gen 9] National Dex SU",
 
 		mod: 'gen9',
-		ruleset: ['[Gen 9] National Dex RU'],
-		banlist: ['ND RU', 'ND NUBL', 'ND NU', 'ND PUBL', 'ND PU', 'ND ZUBL', 'ND ZU', 'ND SUBL'],
+		ruleset: ['[Gen 9] National Dex ZU'],
+		banlist: ['ND ZU', 'ND SUBL'],
 	},
 
 	// S/V Singles

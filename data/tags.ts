@@ -259,6 +259,39 @@ export const Tags: {[id: string]: TagData} = {
 		speciesFilter: species => species.natDexTier === 'RU',
 	},
 
+	ndnubl: {
+		name: "ND NUBL",
+		speciesFilter: species => species.natDexTier === 'NUBL',
+	},
+	ndnu: {
+		name: "ND NU",
+		speciesFilter: species => species.natDexTier === 'NU',
+	},
+	ndpubl: {
+		name: "ND PUBL",
+		speciesFilter: species => species.natDexTier === 'PUBL',
+	},
+	ndpu: {
+		name: "ND PU",
+		speciesFilter: species => species.natDexTier === 'PU',
+	},
+	ndzubl: {
+		name: "ND ZUBL",
+		speciesFilter: species => species.natDexTier === 'ZUBL',
+	},
+	ndzu: {
+		name: "ND ZU",
+		speciesFilter: species => species.natDexTier === 'ZU',
+	},
+	ndsubl: {
+		name: "ND SUBL",
+		speciesFilter: species => species.natDexTier === 'SUBL',
+	},
+	ndsu: {
+		name: "ND SU",
+		speciesFilter: species => species.natDexTier === 'SU',
+	},
+
 	// Legality tags
 	past: {
 		name: "Past",
