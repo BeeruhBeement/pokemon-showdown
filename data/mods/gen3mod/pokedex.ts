@@ -33,7 +33,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	swanna: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Keen Eye"},
+		baseStats: {hp: 85, atk: 97, def: 63, spa: 97, spd: 63, spe: 108},
+		abilities: {0: "Keen Eye", 1: "Water Veil"},
 	},
 	throh: {
 		inherit: true,
@@ -166,6 +167,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Mold Breaker", 1: "Rock Head"},
+	},
+	shieldon: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Soundproof", 1: "Solid Rock"},
+	},
+	bastiodon: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Soundproof", 1: "Solid Rock"},
 	},
 	honedge: {
 		inherit: true,

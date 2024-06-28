@@ -2273,12 +2273,11 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	shieldon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	bastiodon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	burmy: {
 		tier: "Illegal",

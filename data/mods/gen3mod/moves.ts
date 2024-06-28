@@ -596,4 +596,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	leavannycutter: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 };

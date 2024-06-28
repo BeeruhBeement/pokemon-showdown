@@ -19763,17 +19763,4 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		battleOnly: "Castform",
 		isNonstandard: "Custom",
 	},
-
-	illusonix: {
-		num: 687,
-		name: "Illusonix",
-		types: ["Psychic", "Dark"],
-		baseStats: {hp: 65, atk: 65, def: 65, spa: 95, spd: 130, spe: 110},
-		abilities: {0: "Illusory"},
-		heightm: 1.5,
-		weightkg: 25,
-		color: "Blue",
-		eggGroups: ["Field", "Mineral"],
-		isNonstandard: "Custom",
-	},
 };
