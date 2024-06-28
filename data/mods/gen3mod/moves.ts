@@ -587,5 +587,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "self",
 		type: "Psychic",
 		contestType: "Cool",
+
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "User switches out.",
+	},
+	cascadecrash: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
 	},
 };

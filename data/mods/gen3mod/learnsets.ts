@@ -321,6 +321,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			defog: ["3M"],
 			aeroblast: ["3T"],
 			roost: ["3T"],
+			cascadecrash: ["3L1"],
 		},
 	},
 	throh: {

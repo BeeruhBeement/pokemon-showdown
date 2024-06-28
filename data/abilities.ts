@@ -5652,7 +5652,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	
 	pixieveil: {
-		isNonstandard: "Unobtainable",
+		isNonstandard: "Custom",
 		flags: {},
 		name: "Pixie Veil",
 		rating: 2,
@@ -5662,5 +5662,36 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!pokemon.addType('Fairy')) return;
 			this.add('-start', pokemon, 'typeadd', 'Fairy', '[from] ability: Pixie Veil');
 		},
+	},
+	illusory: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Illusory",
+		rating: 3,
+		num: 5001,
+		onStart: function (pokemon) {
+			pokemon.addVolatile('Illusory');
+		},
+		onTryHitPriority: 1,
+		onTryHit: function (target, source, move) {
+			if (target !== source && move && move.flags['contact']) {
+				if (!target.volatiles['substitute']) {
+					target.addVolatile('substitute');
+					this.add('-activate', target, 'Illusory');
+					return null;
+				}
+			}
+		},
+		condition: {
+			duration: 1,
+			onStart: function (pokemon) {
+				this.add('-start', pokemon, 'Substitute', '[from] ability: Illusory');
+				this.effectState.hp = Math.floor(pokemon.maxhp / 4);
+				this.effectState.type = 'Ghost'; // Change substitute type to Ghost
+			},
+			onEnd: function (pokemon) {
+				this.add('-end', pokemon, 'Substitute');
+			}
+		}
 	},
 };
