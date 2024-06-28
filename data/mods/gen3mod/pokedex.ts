@@ -172,11 +172,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Soundproof", 1: "Solid Rock"},
+		eggGroups: ["Monster", "Mineral"],
 	},
 	bastiodon: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Soundproof", 1: "Solid Rock"},
+		eggGroups: ["Monster", "Mineral"],
 	},
 	honedge: {
 		inherit: true,

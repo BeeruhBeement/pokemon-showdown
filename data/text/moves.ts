@@ -7565,6 +7565,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		prepare: "#shadowforce",
 		activate: "#shadowforce",
 	},
+	shieldbash: {
+		name: "Shield Bash",
+		desc: "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+		shortDesc: "Uses user's Def stat as Atk in damage calculation.",
+	},
 	leavannycutter: {
 		name: "Leavanny Cutter",
 		shortDesc: "Can Leavanny not be ass with the most OP move ever.",

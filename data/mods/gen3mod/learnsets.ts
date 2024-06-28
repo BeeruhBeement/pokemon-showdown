@@ -1822,6 +1822,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			
 			shieldbash: ["3L43"],
+			steelroller: ["3T"],
 		},
 	},
 	bastiodon: {
@@ -1875,6 +1876,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			
 			shieldbash: ["3L52"],
+			steelroller: ["3T"],
 		},
 	},
 	honedge: {
@@ -1914,6 +1916,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			metalclaw: ["3M"],
 			steelroller: ["3T"],
+			shieldbash: ["3E"],
 		},
 	},
 	doublade: {
