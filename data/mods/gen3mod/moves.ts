@@ -607,11 +607,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
-	steambomb: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
 	scorchingsands: {
 		inherit: true,
 		gen: 3,

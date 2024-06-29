@@ -22170,32 +22170,4 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Steel",
 	},
-	steambomb: {
-		num: 5005,
-		accuracy: 100,
-		basePower: 85,
-		category: "Special",
-		name: "Steam Bomb",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
-		volatileStatus: 'steam',
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add('-singleturn', target, 'Steam');
-			},
-			onTryMovePriority: -1,
-			onTryMove(pokemon, target, move) {
-				if (move.type === 'Water') {
-					this.add('-activate', pokemon, 'move: Steam');
-					this.attrLastMove('[still]');
-					return false;
-				}
-			},
-		},
-		target: "normal",
-		type: "Fire",
-		contestType: "Tough",
-	},	
 };

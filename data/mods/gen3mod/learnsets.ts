@@ -3858,8 +3858,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			taunt: ["3M"],
 			thrash: ["3E"],
 			toxic: ["3M"],
-			
-			steambomb: ["3E"],
 		},
 	},
 	pignite: {
@@ -4809,8 +4807,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			waterpulse: ["3T", "3L21"],
 			weatherball: ["3L40"],
-			
-			steambomb: ["3L1"],
 		},
 	},
 	fidough: {
@@ -6896,7 +6892,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 
 			workup: ["3M"],
-			steambomb: ["3L49"],
 		},
 	},
 	quilava: {
@@ -6945,7 +6940,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 
 			workup: ["3M"],
-			steambomb: ["3L57"],
 			scorchingsands: ["3T"],
 		},
 	},
@@ -7004,7 +6998,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 
 			workup: ["3M"],
-			steambomb: ["3L57"],
 			scorchingsands: ["3T"],
 		},
 	},
@@ -7187,7 +7180,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aerialace: ["3M"],
 			attract: ["3M"],
 			bugbite: ["3T"],
-			defog: ["3M"],
 			detect: ["3L25"],
 			doubleedge: ["3T"],
 			doubleteam: ["3M", "3L12"],
@@ -7236,7 +7228,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aerialace: ["3M"],
 			attract: ["3M"],
 			bugbite: ["3T"],
-			defog: ["3M"],
 			detect: ["3L25"],
 			doubleedge: ["3T"],
 			doubleteam: ["3M", "3L12"],
