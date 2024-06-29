@@ -7570,4 +7570,12 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
 		shortDesc: "Uses user's Def stat as Atk in damage calculation.",
 	},
+	steambomb: {
+		name: "Steam Bomb",
+		desc: "If the target uses a Water-type move this turn, it is prevented from executing. This effect does not happen if the Water-type move is prevented by Desolate Land.",
+		shortDesc: "Causes a used Water-type move to fail.",
+
+		start: "  [POKEMON] is covered in steam!",
+		activate: "  The Steam caused the Water-type move to fail",
+	},
 };

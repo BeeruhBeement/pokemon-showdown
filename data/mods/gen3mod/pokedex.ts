@@ -167,6 +167,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Mold Breaker", 1: "Rock Head"},
+		baseStats: {hp: 97, atk: 165, def: 60, spa: 65, spd: 50, spe: 68},
 	},
 	shieldon: {
 		inherit: true,
@@ -178,6 +179,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Soundproof", 1: "Solid Rock"},
+		baseStats: {hp: 70, atk: 52, def: 168, spa: 47, spd: 138, spe: 30},
 		eggGroups: ["Monster", "Mineral"],
 	},
 	honedge: {
@@ -621,12 +623,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	murkrow: {
 		inherit: true,
-		abilities: {0: "Insomnia", 1: "Super Luck"},
+		abilities: {0: "Technician", 1: "Inner Focus"},
 	},
 	honchkrow: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Insomnia", 1: "Super Luck"},
+		abilities: {0: "Technician", 1: "Thick Fat"},
 	},
 	bronzor: {
 		inherit: true,
@@ -641,32 +643,32 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	pansage: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony"},
+		abilities: {0: "Gluttony", 1: "Vital Spirit"},
 	},
 	simisage: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony"},
+		abilities: {0: "Gluttony", 1: "Vital Spirit"},
 	},
 	pansear: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony"},
+		abilities: {0: "Gluttony", 1: "Vital Spirit"},
 	},
 	simisear: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony"},
+		abilities: {0: "Gluttony", 1: "Vital Spirit"},
 	},
 	panpour: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony"},
+		abilities: {0: "Gluttony", 1: "Vital Spirit"},
 	},
 	simipour: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony"},
+		abilities: {0: "Gluttony", 1: "Vital Spirit"},
 	},
 	bonsly: {
 		inherit: true,
@@ -688,5 +690,55 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Psychic", "Fairy"],
 		baseStats: {hp: 40, atk: 65, def: 65, spa: 100, spd: 120, spe: 90},
 		abilities: {0: "Soundproof", 1: "Technician"},
+	},
+	rowlet: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Long Reach"},
+	},
+	dartrix: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Long Reach"},
+	},
+	decidueye: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Long Reach"},
+	},
+	cyndaquill: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Flash Fire"},
+	},
+	quilava: {
+		inherit: true,
+		types: ["Fire", "Ground"],
+		abilities: {0: "Blaze", 1: "Flash Fire"},
+	},
+	typhlosion: {
+		inherit: true,
+		types: ["Fire", "Ground"],
+		abilities: {0: "Blaze", 1: "Flash Fire"},
+	},
+	mudkip: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Regenerator"},
+	},
+	marshtomp: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Regenerator"},
+	},
+	swampert: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Regenerator"},
+	},
+	yanma: {
+		inherit: true,
+		abilities: {0: "Speed Boost", 1: "Compound Eyes"},
+	},
+	yanmega: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Speed Boost", 1: "Compound Eyes"},
 	},
 };

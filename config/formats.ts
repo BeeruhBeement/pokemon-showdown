@@ -120,7 +120,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen9',
 		ruleset: ['[Gen 9] National Dex NU'],
-		banlist: ['ND NU', 'ND PUBL']
+		banlist: ['ND NU', 'ND PUBL', 'Damp Rock']
 	},
 	{
 		name: "[Gen 9] National Dex ZU",

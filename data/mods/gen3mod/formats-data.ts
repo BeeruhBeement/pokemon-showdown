@@ -1084,16 +1084,14 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	cyndaquil: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	quilava: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	typhlosion: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	typhlosionhisui: {
 		tier: "Illegal",
@@ -1235,12 +1233,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	yanma: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	yanmega: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	wooper: {
 		tier: "Illegal",
@@ -1538,16 +1535,14 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	mudkip: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	marshtomp: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	swampert: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	swampertmega: {
 		tier: "Illegal",
@@ -3602,16 +3597,14 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	rowlet: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	dartrix: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	decidueye: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	decidueyehisui: {
 		tier: "Illegal",

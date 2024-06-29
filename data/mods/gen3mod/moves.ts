@@ -523,17 +523,23 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1, powder: 1},
 	},
-	lovelykiss: {
-		inherit: true,
-		type: "Fairy",
-	},
 	workup: {
 		inherit: true,
 		gen: 3,
 		type: "Fire",
 	},
 	taunt: {
-		inherit: true,
+		num: 269,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Taunt",
+		pp: 20,
+		priority: 0,
+		volatileStatus: 'taunt',
+		target: "normal",
+		type: "Dark",
+
 		desc: "For 2 to 4 turns, prevents the target from using non-damaging moves.",
 		shortDesc: "For 2-4 turns, the target can't use status moves.",
 		flags: {protect: 1, mirror: 1, bypasssub: 1, metronome: 1},
@@ -600,5 +606,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
+	},
+	steambomb: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	scorchingsands: {
+		inherit: true,
+		gen: 3,
+	},
+	headsmash: {
+		inherit: true,
+		gen: 3,
 	},
 };

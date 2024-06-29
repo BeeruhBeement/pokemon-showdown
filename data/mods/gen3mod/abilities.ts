@@ -274,4 +274,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	longreach: {
+		inherit: true,
+		gen: 3,
+	},
 };
