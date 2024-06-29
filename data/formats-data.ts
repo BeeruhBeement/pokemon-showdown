@@ -800,7 +800,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	hitmonlee: {
 		tier: "ZUBL",
 		doublesTier: "(DUU)",
-		natDexTier: "SU",
+		natDexTier: "ZU",
 	},
 	hitmonchan: {
 		tier: "ZU",
