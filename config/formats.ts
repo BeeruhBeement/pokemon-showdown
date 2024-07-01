@@ -134,7 +134,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen9',
 		ruleset: ['[Gen 9] National Dex ZU'],
-		banlist: ['ND ZU', 'ND SUBL'],
+		banlist: ['ND ZU', 'ND SUBL', 'Heat Rock'],
 	},
 
 	// S/V Singles
