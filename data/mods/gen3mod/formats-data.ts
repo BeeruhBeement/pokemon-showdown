@@ -5411,4 +5411,12 @@ doublesTier: "Illegal",
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
+
+	manboo: {
+		tier: "LC",
+	},
+	ikari: {
+		tier: "OU",
+		doublesTier: "DOU",
+	},
 };

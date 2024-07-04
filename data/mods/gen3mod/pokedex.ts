@@ -227,29 +227,24 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	geodude: {
 		inherit: true,
-		abilities: {0: "Rock Head", 1: "Sturdy"},
 		otherFormes: ["Geodude-Alola"],
 		formeOrder: ["Geodude", "Geodude-Alola"],
 	},
 	geodudealola: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Magnet Pull", 1: "Sturdy"},
 	},
 	graveler: {
 		inherit: true,
-		abilities: {0: "Rock Head", 1: "Sturdy"},
 		otherFormes: ["Graveler-Alola"],
 		formeOrder: ["Graveler", "Graveler-Alola"],
 	},
 	graveleralola: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Magnet Pull", 1: "Sturdy"},
 	},
 	golem: {
 		inherit: true,
-		abilities: {0: "Rocky Payload", 1: "Sturdy"},
 		otherFormes: ["Golem-Alola"],
 		formeOrder: ["Golem", "Golem-Alola"],
 	},
@@ -257,7 +252,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 80, atk: 110, def: 130, spa: 55, spd: 65, spe: 45},
-		abilities: {0: "Electric Surge", 1: "Sturdy"},
 	},
 	mantyke: {
 		inherit: true,

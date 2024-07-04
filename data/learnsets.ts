@@ -99620,4 +99620,22 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			{generation: 5, level: 47, moves: ["darkpulse", "flamethrower", "hyperbeam", "icebeam"]},
 		],
 	},
+	
+	manboo: {
+		learnset: {
+			hydropump: ["3T"],
+			surf: ["3M"],
+			waterfall: ["3M", "3L30"],
+			watergun: ["3L1"],
+		},
+	},
+	ikari: {
+		learnset: {
+			hydropump: ["3T"],
+			surf: ["3M"],
+			waterfall: ["3M", "3L30"],
+			watergun: ["3L1"],
+			irontail: ["3L30"],
+		},
+	},
 };
