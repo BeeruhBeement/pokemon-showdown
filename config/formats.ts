@@ -104,6 +104,16 @@ export const Formats: FormatList = [
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Shedinja', 'Indeedee-F'],
 	},
+	{
+		name: "[Gen 9] Theorymon Testing",
+
+		mod: 'theorymontesting',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
+	},
 
 	{
 		section: "National Dex Lower Tiers",
