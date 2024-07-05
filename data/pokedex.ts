@@ -19765,7 +19765,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	},
 	manboo: {
 		num: -5002,
-		name: "Carvanha",
+		name: "Manboo",
 		types: ["Water"],
 		baseStats: {hp: 40, atk: 60, def: 50, spa: 30, spd: 40, spe: 50},
 		abilities: {0: "Inner Focus", 1: "Swift Swim", H: "Water Veil"},
@@ -19776,7 +19776,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Water 2"],
 	},
 	ikari: {
-		num: 319,
+		num: -5003,
 		name: "Ikari",
 		types: ["Water", "Steel"],
 		baseStats: {hp: 70, atk: 120, def: 90, spa: 40, spd: 60, spe: 95},
@@ -19787,7 +19787,5 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Manboo",
 		evoLevel: 30,
 		eggGroups: ["Water 2"],
-		otherFormes: ["Sharpedo-Mega"],
-		formeOrder: ["Sharpedo", "Sharpedo-Mega"],
 	},
 };
