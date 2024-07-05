@@ -278,4 +278,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	icebody: {
+		inherit: true,
+		gen: 3,
+	},
 };
