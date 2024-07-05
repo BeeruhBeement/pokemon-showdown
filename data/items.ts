@@ -7625,15 +7625,16 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 
 	bastiodonite: {
+		// Placeholder data, actual data is in the mod to prevent crashes because of Mix and Mega
 		name: "Bastiodonite",
 		spritenum: 345,
-		megaStone: "Bastiodon-Mega",
+		/*megaStone: "Bastiodon-Mega",
 		megaEvolves: "Bastiodon",
 		itemUser: ["Bastiodon"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
-		},
+		},*/
 		num: -5001,
 		gen: 9,
 		isNonstandard: "Custom",
