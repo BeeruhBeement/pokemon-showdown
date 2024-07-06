@@ -7623,19 +7623,4 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
-
-	bastiodonite: {
-		name: "Bastiodonite",
-		spritenum: 345,
-		megaStone: "Bastiodon-Mega",
-		megaEvolves: "Bastiodon",
-		itemUser: ["Bastiodon"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: -5001,
-		gen: 9,
-		isNonstandard: "Custom",
-	},
 };
