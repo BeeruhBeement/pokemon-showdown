@@ -1858,4 +1858,24 @@ export const Aliases: {[alias: string]: string} = {
 	zugadoon: "Blacephalon",
 	merutan: "Meltan",
 	merumetaru: "Melmetal",
+
+	// Custom New
+	uglyfish: "Bruxish",
+	dunce: "Dunsparce",
+	dudunce: "Dudunsparce",
+	lemon: "Hitmonlee",
+	leemon: "Hitmonlee",
+	rorock: "Regirock",
+	lax: "Snorlax",
+	weezer: "Weezing",
+	carlweezer: "Weezing",
+	cash: "Whiscash",
+	money: "Whiscash",
+	cashmoney: "Whiscash",
+	washed: "Wishiwashi",
+	
+	weenie: "Piloswine",
+	monky: "Piloswine",
+	ape: "Piloswine",
+	beah: "Ursaring",
 };
