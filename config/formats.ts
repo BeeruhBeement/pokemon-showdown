@@ -105,7 +105,7 @@ export const Formats: FormatList = [
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Shedinja', 'Indeedee-F'],
 	},
 	{
-		name: "[Gen 9] National Dex Theorymon Testing",
+		name: "[Gen 9] Theorymon Testing",
 
 		mod: 'theorymontesting',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
