@@ -573,16 +573,15 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	farfetchd: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	farfetchdgalar: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	sirfetchd: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	doduo: {
 		tier: "LC",
@@ -1142,12 +1141,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	chinchou: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	lanturn: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	togepi: {
 		tier: "Illegal",
@@ -2077,8 +2075,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	luvdisc: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	bagon: {
 		tier: "Illegal",
