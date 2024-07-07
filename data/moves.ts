@@ -22172,8 +22172,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	shadowcrescent: {
 		num: 5005,
-		accuracy: 100,
-		basePower: 70,
+		accuracy: 90,
+		basePower: 85,
 		category: "Special",
 		name: "Shadow Crescent",
 		pp: 15,
@@ -22182,11 +22182,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: {
 			chance: 30,
 			boosts: {
-				spd: -1,
+				spd: -2,
 			},
 		},
 		target: "allAdjacentFoes",
-		type: "Dark",
+		type: "Ghost",
 		contestType: "Cool",
 	},
 	solarflare: {

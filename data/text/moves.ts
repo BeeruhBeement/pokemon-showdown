@@ -7572,8 +7572,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	shadowcrescent: {
 		name: "Shadow Crescent",
-		desc: "Has a 30% chance to lower the target's Special Defense by 1 stage.",
-		shortDesc: "30% chance to lower the target's Sp. Def by 1.",
+		desc: "Has a 30% chance to lower the target's Special Defense by 2 stages.",
+		shortDesc: "30% chance to lower the target's Sp. Def by 2.",
 	},
 	solarflare: {
 		name: "Solar Flare",

@@ -623,6 +623,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	headsmash: {
 		inherit: true,
 		gen: 3,
+		basePower: 120,
 	},
 	aquajet: {
 		inherit: true,
@@ -639,6 +640,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	snore: {
 		inherit: true,
-		basePower: 90,
+		basePower: 75,
 	},
 };

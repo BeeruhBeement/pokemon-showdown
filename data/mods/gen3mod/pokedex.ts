@@ -3,7 +3,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Steel", "Fairy"],
 		baseStats: {hp: 60, atk: 85, def: 85, spa: 65, spd: 65, spe: 50},
-		abilities: {0: "Intimidate", 1: "Hyper Cutter"},
 	},
 	absol: {
 		inherit: true,
@@ -769,7 +768,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	lunatone: {
 		inherit: true,
-		types: ["Rock", "Dark"],
+		types: ["Rock", "Ghost"],
 		baseStats: {hp: 90, atk: 55, def: 65, spa: 95, spd: 85, spe: 70},
 	},
 	solrock: {
@@ -780,9 +779,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	riolu: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Inner Focus"},
 	},
 	lucario: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Inner Focus"},
 	},
 };
