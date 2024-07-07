@@ -706,4 +706,30 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Speed Boost", 1: "Compound Eyes"},
 	},
+	chinchou: {
+		inherit: true,
+	},
+	lanturn: {
+		inherit: true,
+	},
+	farfetchd: {
+		inherit: true,
+		baseStats: {hp: 52, atk: 90, def: 55, spa: 58, spd: 62, spe: 60},
+	},
+	farfetchdgalar: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 52, atk: 95, def: 55, spa: 58, spd: 62, spe: 55},
+	},
+	sirfetchd: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 62, atk: 125, def: 85, spa: 68, spd: 82, spe: 65},
+	},
+	luvdisc: {
+		inherit: true,
+		types: ["Water", "Fairy"],
+		baseStats: {hp: 63, atk: 50, def: 65, spa: 60, spd: 85, spe: 117},
+		abilities: {0: "Swift Swim", 1: "Heart Veil"},
+	},
 };

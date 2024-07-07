@@ -2269,4 +2269,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "Causes the Fairy type to be added to the user, effectively making it have two or three types. Fails if the user is already a Fairy type.",
 		shortDesc: "Adds Fairy to the user's type(s).",
 	},
+	heartveil: {
+		name: "Heart Veil",
+		shortDesc: "On switch-in, this Pokemon summons Safeguard.",
+	},
 };

@@ -1872,5 +1872,9 @@ export const Aliases: {[alias: string]: string} = {
 	cash: "Whiscash",
 	cache: "Whiscash",
 	washed: "Wishiwashi",
-	weenie: "Piloswine",
+	sweenie: "Piloswine",
+	pauros: "Tauros-Paldea-Combat",
+	palcombat: "Tauros-Paldea-Combat",
+	palaqua: "Tauros-Paldea-Aqua",
+	palblaze: "Tauros-Paldea-Blaze",
 };

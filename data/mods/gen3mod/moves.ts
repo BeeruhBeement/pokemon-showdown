@@ -216,6 +216,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		basePower: 40,
 	},
+	flipturn: {
+		inherit: true,
+		gen: 3,
+		basePower: 40,
+	},
 	leechlife: {
 		inherit: true,
 		basePower: 60,
@@ -612,6 +617,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 	},
 	headsmash: {
+		inherit: true,
+		gen: 3,
+	},
+	aquajet: {
+		inherit: true,
+		gen: 3,
+	},
+	heartstamp: {
 		inherit: true,
 		gen: 3,
 	},

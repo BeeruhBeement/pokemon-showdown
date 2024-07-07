@@ -5663,4 +5663,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-start', pokemon, 'typeadd', 'Fairy', '[from] ability: Pixie Veil');
 		},
 	},
+	heartveil: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Heart Veil",
+		rating: 3,
+		num: 5001,
+		onStart(pokemon) {
+			this.add('-ability', pokemon, 'Heart Veil');
+			this.add('-sidestart', pokemon.side, 'move: Safeguard');
+			pokemon.side.addSideCondition('safeguard');
+		},
+	},
 };
