@@ -209,9 +209,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	qwilfishhisui: {
 		inherit: true,
+		gen: 3,
 	},
 	overqwil: {
 		inherit: true,
+		gen: 3,
 	},
 	teddiursa: {
 		inherit: true,

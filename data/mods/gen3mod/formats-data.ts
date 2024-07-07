@@ -235,16 +235,15 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	sandshrewalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	sandslash: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
 	sandslashalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	nidoranf: {
 		tier: "Illegal",

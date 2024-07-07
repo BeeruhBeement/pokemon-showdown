@@ -2777,8 +2777,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["3M"],
 			waterpulse: ["3M"],
 			
-			bite: ["9L13"],
-			crunch: ["9L48"],
+			bite: ["3L13"],
+			crunch: ["3L48"],
 		},
 	},
 	overqwil: {
@@ -2835,8 +2835,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["3M"],
 			waterpulse: ["3M"],
 			
-			bite: ["9L13"],
-			crunch: ["9L48"],
+			bite: ["3L13"],
+			crunch: ["3L48"],
 		},
 	},
 	teddiursa: {
