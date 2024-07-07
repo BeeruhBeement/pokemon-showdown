@@ -65,6 +65,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	slushrush: {
+		inherit: true,
+		gen: 3,
+	},
 	infiltrator: {
 		inherit: true,
 		gen: 3,

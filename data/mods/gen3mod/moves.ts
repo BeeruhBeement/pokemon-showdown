@@ -645,6 +645,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	psyshieldbash: {
 		inherit: true,
 		gen: 3,
+		desc: "Damage is calculated using the user's Defense stat as its Sp. Attack, including stat stage changes. Other effects that modify the Sp. Attack stat are used as normal.",
+		shortDesc: "Uses user's Def stat as Sp. Atk in damage calculation.",
+		overrideOffensiveStat: 'def',
 	},
 	shadowcrescent: {
 		inherit: true,

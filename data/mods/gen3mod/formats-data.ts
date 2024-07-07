@@ -1257,12 +1257,11 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	misdreavus: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	mismagius: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	unown: {
 		tier: "Illegal",
@@ -1317,16 +1316,15 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	qwilfish: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	qwilfishhisui: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	overqwil: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	shuckle: {
 		tier: "Illegal",
