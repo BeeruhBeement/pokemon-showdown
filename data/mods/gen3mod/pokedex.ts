@@ -201,10 +201,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	shuppet: {
 		inherit: true,
+		types: ["Ghost", "Normal"],
 		abilities: {0: "Insomnia", 1: "Aftermath"},
 	},
 	banette: {
 		inherit: true,
+		types: ["Ghost", "Normal"],
 		abilities: {0: "Insomnia", 1: "Aftermath"},
 		baseStats: {hp: 64, atk: 115, def: 65, spa: 85, spd: 63, spe: 73},
 	},
@@ -486,7 +488,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Fairy", "Ground"],
 		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
-		baseStats: {hp: 57, atk: 70, def: 105, spa: 50, spd: 80, spe: 75},
+		baseStats: {hp: 57, atk: 70, def: 105, spa: 60, spd: 80, spe: 75},
 	},
 	ironjugulis: {
 		inherit: true,
@@ -654,7 +656,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	mrmime: {
 		inherit: true,
 		types: ["Psychic", "Fairy"],
-		baseStats: {hp: 40, atk: 65, def: 65, spa: 100, spd: 120, spe: 90},
 		abilities: {0: "Soundproof", 1: "Technician"},
 	},
 	rowlet: {
@@ -785,5 +786,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Inner Focus"},
+	},
+	aerodactyl: {
+		inherit: true,
 	},
 };

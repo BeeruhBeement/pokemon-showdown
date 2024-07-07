@@ -642,4 +642,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 75,
 	},
+	psyshieldbash: {
+		inherit: true,
+		gen: 3,
+	},
+	shadowcrescent: {
+		inherit: true,
+		gen: 3,
+	},
+	solarflare: {
+		inherit: true,
+		gen: 3,
+	},
 };

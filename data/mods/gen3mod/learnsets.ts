@@ -323,6 +323,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			roost: ["3T"],
 			cascadecrash: ["3L1"],
 			quickattack: ["3L14"],
+			flipturn: ["3T"],
 		},
 	},
 	throh: {
@@ -2952,7 +2953,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			psychicterrain: ["3M"],
 			mistyterrain: ["3M"],
-			teleport: ["3T"],
 		},
 	},
 	musharna: {
@@ -2996,7 +2996,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			mistyterrain: ["3M"],
 			futuresight: ["3E"],
 			moonlight: ["3M"],
-			teleport: ["3T"],
 		},
 	},	
 	milcery: {
@@ -3481,7 +3480,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thundershock: ["6L6"],
 			thunderwave: ["3M", "6L31"],
 			toxic: ["3M"],
-			uturn: ["3M"],
 		},
 	},
 	heliolisk: {
@@ -3525,7 +3523,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderpunch: ["3M"],
 			thunderwave: ["3M"],
 			toxic: ["3M"],
-			uturn: ["3M"],
 			weatherball: ["3M"],
 		},
 	},
@@ -3873,7 +3870,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			facade: ["3M"],
 			fireblast: ["3M"],
 			firepunch: ["3T"],
-			flamecharge: ["3M", "3L15"],
 			flamethrower: ["3M", "3L39"],
 			focuspunch: ["3T"],
 			frustration: ["3M"],
@@ -5207,7 +5203,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			frustration: ["3M"],
 			furycutter: ["3T"],
 			furyswipes: ["3L17"],
-			gyroball: ["3M", "3M"],
 			headbutt: ["3T"],
 			hiddenpower: ["3M"],
 			icepunch: ["3T"],
@@ -5303,7 +5298,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thief: ["3M"],
 			toxic: ["3M"],
 			uproar: ["3T", "3E"],
-			uturn: ["3M"],
 			
 			dualwingbeat: ["3M"],
 			workup: ["3M"],
@@ -5347,7 +5341,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thief: ["3M"],
 			toxic: ["3M"],
 			uproar: ["3T"],
-			uturn: ["3M"],
 			
 			dualwingbeat: ["3M"],
 			workup: ["3M"],
@@ -5390,7 +5383,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thief: ["3M"],
 			toxic: ["3M"],
 			uproar: ["3T"],
-			uturn: ["3M"],
 			
 			dualwingbeat: ["3M"],
 			workup: ["3M"],
@@ -5438,7 +5430,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			voltswitch: ["3L78"],
 			refresh: ["3M"],
-			teleport: ["3T"],
 		},
 	},
 	electrode: {
@@ -5482,7 +5473,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			voltswitch: ["3L72"],
 			refresh: ["3M"],
-			teleport: ["3T"],
 		},
 	},
 	buzzwole: {
@@ -6557,6 +6547,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			meditate: ["3L1"],
 			submission: ["3M"],
+			headsmash: ["3L54"],
 		},
 	},
 	mimejr: {
@@ -7332,7 +7323,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			facade: ["3M"],
 			flail: ["3L13"],
 			flash: ["3M"],
-			flipturn: ["9M"],
 			frustration: ["3M"],
 			hail: ["3M"],
 			hiddenpower: ["3M"],
@@ -7777,6 +7767,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			weatherball: ["3M"],
 
 			shadowcrescent: ["3L60"],
+			stealthrock: ["3M"],
 		},
 	},
 	solrock: {
@@ -7838,6 +7829,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			willowisp: ["3M"],
 
 			solarflare: ["3L60"],
+			stealthrock: ["3M"],
 		},
 	},
 	riolu: {
@@ -8228,6 +8220,64 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			hypervoice: ["3M"],
 			uproar: ["3M"],
+			calmmind: ["3M"],
+			moonlight: ["3L1"],
+		},
+	},
+	aerodactyl: {
+		learnset: {
+			aerialace: ["3M"],
+			agility: ["3L8"],
+			ancientpower: ["3L29"],
+			attract: ["3M"],
+			bite: ["3L15"],
+			curse: ["3E"],
+			doubleedge: ["3T"],
+			doubleteam: ["3M"],
+			dragonbreath: ["3E"],
+			dragonclaw: ["3M"],
+			dualwingbeat: ["3T"],
+			earthquake: ["3M"],
+			endure: ["3T"],
+			facade: ["3M"],
+			fireblast: ["3M"],
+			flamethrower: ["3M"],
+			fly: ["3M"],
+			foresight: ["3E"],
+			frustration: ["3M"],
+			hiddenpower: ["3M"],
+			hyperbeam: ["3M", "3L50"],
+			irontail: ["3M"],
+			mimic: ["3T"],
+			protect: ["3M"],
+			pursuit: ["3E"],
+			raindance: ["3M"],
+			rest: ["3M"],
+			return: ["3M"],
+			roar: ["3M"],
+			rockslide: ["3T"],
+			rocksmash: ["3M"],
+			rocktomb: ["3M"],
+			sandstorm: ["3M"],
+			scaryface: ["3L36"],
+			secretpower: ["3M"],
+			skyattack: ["3T"],
+			sleeptalk: ["3T"],
+			snore: ["3T"],
+			steelwing: ["3M", "3E"],
+			strength: ["3M"],
+			substitute: ["3T"],
+			sunnyday: ["3M"],
+			supersonic: ["3L22"],
+			swagger: ["3T"],
+			swift: ["3T"],
+			takedown: ["3L43"],
+			taunt: ["3M"],
+			thief: ["3M"],
+			torment: ["3M"],
+			toxic: ["3M"],
+			whirlwind: ["3E"],
+			wingattack: ["3L1"],
 		},
 	},
 };
