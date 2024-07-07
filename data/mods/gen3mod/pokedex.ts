@@ -714,17 +714,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	farfetchd: {
 		inherit: true,
-		baseStats: {hp: 52, atk: 90, def: 55, spa: 58, spd: 62, spe: 60},
+		baseStats: {hp: 52, atk: 90, def: 55, spa: 58, spd: 62, spe: 90},
 	},
 	farfetchdgalar: {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 52, atk: 95, def: 55, spa: 58, spd: 62, spe: 55},
+		abilities: {0: "Keen Eye", 1: "Inner Focus"},
 	},
 	sirfetchd: {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 62, atk: 125, def: 85, spa: 68, spd: 82, spe: 65},
+		abilities: {0: "Keen Eye", 1: "Inner Focus"},
 	},
 	luvdisc: {
 		inherit: true,

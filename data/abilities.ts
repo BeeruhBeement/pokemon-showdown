@@ -5670,9 +5670,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 5001,
 		onStart(pokemon) {
-			this.add('-ability', pokemon, 'Heart Veil');
-			this.add('-sidestart', pokemon.side, 'move: Safeguard');
-			pokemon.side.addSideCondition('safeguard');
+			if (!pokemon.side.sideConditions['safeguard']) {
+				this.add('-ability', pokemon, 'Heart Veil');
+				this.add('-sidestart', pokemon.side, 'move: Safeguard');
+				pokemon.side.addSideCondition('safeguard');
+			}
 		},
 	},
+	
 };

@@ -212,34 +212,42 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 		gen: 3,
+		isNonstandard: null,
 	},
 	eviolite: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	choicespecs: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	assaultvest: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	flameorb: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	toxicorb: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	dawnstone: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	duskstone: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	sitrusberry: {
 		inherit: true,
@@ -263,6 +271,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		itemUser: ["Farfetch\u2019d", "Farfetch\u2019d-Galar", "Sirfetch\u2019d"],
 		num: 259,
 		gen: 2,
-		isNonstandard: "Past",
+		isNonstandard: null,
 	},
 };
