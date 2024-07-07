@@ -731,7 +731,55 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	luvdisc: {
 		inherit: true,
 		types: ["Water", "Fairy"],
-		baseStats: {hp: 63, atk: 50, def: 65, spa: 60, spd: 85, spe: 117},
+		baseStats: {hp: 73, atk: 50, def: 65, spa: 90, spd: 85, spe: 97},
 		abilities: {0: "Swift Swim", 1: "Heart Veil"},
+	},
+	stantler: {
+		inherit: true,
+		types: ["Normal", "Ice"],
+		abilities: {0: "Intimidate", 1: "Vital Spirit"},
+	},
+	wyrdeer: {
+		inherit: true,
+		gen: 3,
+		types: ["Psychic", "Ice"],
+		abilities: {0: "Intimidate", 1: "Sap Sipper"},
+	},
+	teddiursa: {
+		inherit: true,
+	},
+	ursaring: {
+		inherit: true,
+		types: ["Ground", "Normal"],
+		evoLevel: 30,
+		evos: ["Ursaluna"],
+	},
+	ursaluna: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 110, atk: 140, def: 95, spa: 75, spd: 80, spe: 50},
+		abilities: {0: "Guts"},
+	},
+	ursalunabloodmoon: {
+		inherit: true,
+		gen: 3,
+	},
+	lunatone: {
+		inherit: true,
+		types: ["Rock", "Dark"],
+		baseStats: {hp: 90, atk: 55, def: 65, spa: 95, spd: 85, spe: 70},
+	},
+	solrock: {
+		inherit: true,
+		types: ["Rock", "Fire"],
+		baseStats: {hp: 90, atk: 95, def: 85, spa: 55, spd: 65, spe: 70},
+	},
+	riolu: {
+		inherit: true,
+		gen: 3,
+	},
+	lucario: {
+		inherit: true,
+		gen: 3,
 	},
 };

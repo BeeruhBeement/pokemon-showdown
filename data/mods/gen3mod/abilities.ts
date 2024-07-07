@@ -287,6 +287,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	mindseye: {
+		inherit: true,
+		gen: 3,
+	},
 	illuminate: {
 		inherit: true,
 		onBasePowerPriority: 23,

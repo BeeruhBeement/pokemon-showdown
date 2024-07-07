@@ -7,6 +7,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Fairy",
 	},
+	morningsun: {
+		inherit: true,
+		type: "Fire",
+	},
 	sweetkiss: {
 		inherit: true,
 		type: "Fairy",
@@ -119,7 +123,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	feint: {
 		inherit: true,
 		gen: 3,
-		onTry(source, target) {},
+		onTry(source, target) { null },
 		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
 		shortDesc: "Nullifies Detect, Protect, and Quick/Wide Guard.",
 	},
@@ -632,5 +636,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		basePower: 60,
+	},
+	snore: {
+		inherit: true,
+		basePower: 90,
 	},
 };

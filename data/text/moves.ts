@@ -7570,4 +7570,14 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
 		shortDesc: "Uses user's Def stat as Atk in damage calculation.",
 	},
+	shadowcrescent: {
+		name: "Shadow Crescent",
+		desc: "Has a 30% chance to lower the target's Special Defense by 1 stage.",
+		shortDesc: "30% chance to lower the target's Sp. Def by 1.",
+	},
+	solarflare: {
+		name: "Solar Flare",
+		desc: "Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn the target.",
+	},
 };
