@@ -3,6 +3,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Steel", "Fairy"],
 		baseStats: {hp: 60, atk: 85, def: 85, spa: 65, spd: 65, spe: 50},
+		abilities: {0: "Intimidate", 1: "Hyper Cutter"},
 	},
 	absol: {
 		inherit: true,
@@ -747,10 +748,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	teddiursa: {
 		inherit: true,
+		abilities: {0: "Guts"},
 	},
 	ursaring: {
 		inherit: true,
 		types: ["Ground", "Normal"],
+		abilities: {0: "Guts"},
 		evoLevel: 30,
 		evos: ["Ursaluna"],
 	},

@@ -2,7 +2,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	gen: 3,
 	inherit: 'gen3',
 	init() {
-		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Ghost', 'Psychic', 'Dragon', 'Fairy'];
+		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Ghost', 'Psychic', 'Fairy'];
 		let newCategory = '';
 		for (const i in this.data.Moves) {
 			if (!this.data.Moves[i]) console.log(i);
