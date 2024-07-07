@@ -1000,8 +1000,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	aerodactyl: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	aerodactylmega: {
 		tier: "Illegal",
