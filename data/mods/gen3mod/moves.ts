@@ -628,4 +628,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	paraboliccharge: {
+		inherit: true,
+		gen: 3,
+		basePower: 60,
+	},
 };

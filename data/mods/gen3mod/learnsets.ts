@@ -7311,6 +7311,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3M"],
 			
 			voltswitch: ["3L34"],
+			psybeam: ["3M"],
+			bubblebeam: ["3M"],
+			dazzlinggleam: ["3M"],
 		},
 	},
 	lanturn: {
@@ -7361,6 +7364,11 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3M"],
 			
 			voltswitch: ["3L40"],
+			psybeam: ["3M"],
+			bubblebeam: ["3M"],
+			solarbeam: ["3M"],
+			dazzlinggleam: ["3M"],
+			paraboliccharge: ["3L1"],
 		},
 	},
 	farfetchd: {

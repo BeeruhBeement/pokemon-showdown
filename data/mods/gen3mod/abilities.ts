@@ -287,4 +287,28 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	illuminate: {
+		inherit: true,
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			// List of moves to be boosted by Illuminate
+			const boostedMoves = [
+				'aurorabeam', 'bubblebeam', 'dazzlinggleam', 'eternabeam', 'flashcannon',
+				'icebeam', 'lightofruin', 'lightthatburnsthesky', 'meteorbeam', 'moongeistbeam',
+				'prismaticlaser', 'psybeam', 'signalbeam', 'solarbeam', 'solarblade',
+				'steelbeam', 'doomdesire', 'glitzyglow', 'fleurcannon', 'lusterpurge',
+				'mirrorshot', 'moonblast', 'photongeyser', 'powergem'
+			];
+			
+			if (boostedMoves.includes(move.id)) {
+				this.debug('Illuminate boost');
+				return this.chainModify([13, 10]);
+			}
+		},
+		flags: {},
+		name: "Illuminate",
+		rating: 3,
+		desc: "The moves Aurora Beam, Bubble Beam, Dazzlign Gleam, Eternabeam, Flash Cannon, Ice Beam, Light Of Ruin, Light That Burns The Sky, Meteor Beam, Moongeist Beam, Primsatic Laser, Psybeam, Signal Beam, Solar Beam, Solar Blade, Steel Beam, Doom Desire, Glitzy Glow, Fleur Cannon, Luster Purge, Mirror Shot, Moonblast, Photon Geyser and Power Gem have their power multiplied by 1.2.",
+		shortDesc: "Boosts some beam and light based moves by 1.2x.",
+	},
 };
