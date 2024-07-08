@@ -368,7 +368,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Fairy-type attacks made by grounded Pokemon is multiplied by 1.3 and the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
 		shortDesc: "5 turns. Can't status, +Fairy power, -Dragon power.",
 		onBasePower(basePower, attacker, defender, move) {
-			if (move.type === 'Psychic' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+			if (move.type === 'Fairy' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
 				this.debug('misty terrain boost');
 				return this.chainModify(1.3);
 			}
@@ -656,5 +656,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	solarflare: {
 		inherit: true,
 		gen: 3,
+	},
+	crunch: {
+		inherit: true,
+		desc: "Has a 20% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "20% chance to lower the target's Defense by 1.",
+		secondary: {
+			chance: 20,
+			boosts: {
+				def: -1,
+			},
+		},
 	},
 };

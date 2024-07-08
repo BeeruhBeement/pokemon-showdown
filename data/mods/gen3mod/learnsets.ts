@@ -2123,6 +2123,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			workup: ["3M"],
 			scorchingsands: ["3T"],
+			blastburn: ["3T"],
 		},
 	},
 	chinchou: {
@@ -3749,6 +3750,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["3M"],
 			watergun: ["3L1"],
 			waterpulse: ["3M"],
+			
+			hydrocannon: ["3T"],
 		},
 	},
 	surskit: {
@@ -6937,6 +6940,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			forcepunch: ["3M"],
 			energyball: ["3M"],
 			submission: ["3L1"],
+			frenzyplant: ["3T"],
 		},
 	},
 	skiddo: {
@@ -7046,7 +7050,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			dig: ["3M"],
 			doubleteam: ["3M"],
 			earthquake: ["3M"],
-			echoedvoice: ["3M"],
 			embargo: ["3M"],
 			endeavor: ["3T"],
 			facade: ["3M"],
@@ -7112,7 +7115,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			doubleteam: ["3M"],
 			dragonclaw: ["3M"],
 			earthquake: ["3M"],
-			echoedvoice: ["3M"],
 			embargo: ["3M"],
 			endeavor: ["3T"],
 			facade: ["3M"],
@@ -7583,7 +7585,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			covet: ["3T"],
 			defog: ["3T"],
 			doubleteam: ["3M"],
-			echoedvoice: ["3M"],
 			energyball: ["3M"],
 			facade: ["3M"],
 			falseswipe: ["3M"],
@@ -7664,6 +7665,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			tackle: ["3L1"],
 			toxic: ["3M"],
 			workup: ["3M"],
+			
+			frenzyplant: ["3T"],
 		},
 	},
 	pikipek: {
@@ -7719,7 +7722,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			defog: ["3T"],
 			doubleteam: ["3M"],
 			drillpeck: ["3L32"],
-			echoedvoice: ["3M", "3L1"],
 			featherdance: ["3L40"],
 			fly: ["3M"],
 			frustration: ["3M"],
@@ -8543,6 +8545,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			jumpkick: ["3L1"],
 			highjumpkick: ["3L1"],
 			attract: ["3M"],
+			hydrocannon: ["3T"],
 		},
 	},
 	fidough: {
