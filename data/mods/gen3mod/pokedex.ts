@@ -198,10 +198,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	misdreavus: {
 		inherit: true,
+		types: ["Ghost", "Fairy"],
 	},
 	mismagius: {
 		inherit: true,
 		gen: 3,
+		types: ["Ghost", "Fairy"],
 	},
 	qwilfish: {
 		inherit: true,

@@ -668,4 +668,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+	mysticalfire: {
+		inherit: true,
+		gen: 3,
+	},
 };
