@@ -643,7 +643,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit	: true,
 		gen: 3,
 		desc: "Has a 30% chance to make the target become infatuated, making it unable to attack 50% of the time. The effect ends when either the user or the target is no longer active.",
-		shortDesc: "30% chance a target of the opposite gender gets infatuated.",
+		shortDesc: "30% chance opposite gender gets infatuated.",
 		secondary: {
 			chance: 30,
 			volatileStatus: 'attract',
@@ -662,7 +662,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		desc: "Damage is calculated using the user's Defense stat as its Sp. Attack, including stat stage changes. Other effects that modify the Sp. Attack stat are used as normal.",
-		shortDesc: "Uses user's Def stat as Sp. Atk in damage calculation.",
+		shortDesc: "Uses Def stat as Sp. Atk in damage calculation.",
 		overrideOffensiveStat: 'def',
 	},
 	crunch: {

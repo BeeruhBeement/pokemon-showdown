@@ -249,6 +249,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	protosynthesis: {
 		inherit: true,
 		gen: 3,
+		desc: "If Sunny Day is active or this Pokemon uses a held Booster Energy, this Pokemon's highest stat is multiplied by 1.3. Stat stage changes are considered at the time this Ability activates. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order. If this effect was started by Sunny Day, a held Booster Energy will not activate and the effect ends when Sunny Day is no longer active. If this effect was started by a held Booster Energy, it ends when this Pokemon is no longer active.",
+		shortDesc: "Sunny Day active or Booster Energy used: highest stat is 1.3x.",
 		onModifySpe(spe, pokemon) {
 			if (this.effectState.bestStat !== 'spe' || pokemon.ignoringAbility()) return;
 			this.debug('Protosynthesis spe boost');
@@ -258,6 +260,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	quarkdrive: {
 		inherit: true,
 		gen: 3,
+		desc: "If Electric Terrain is active or this Pokemon uses a held Booster Energy, this Pokemon's highest stat is multiplied by 1.3. Stat stage changes are considered at the time this Ability activates. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order. If this effect was started by Electric Terrain, a held Booster Energy will not activate and the effect ends when Electric Terrain is no longer active. If this effect was started by a held Booster Energy, it ends when this Pokemon is no longer active.",
+		shortDesc: "Electric Terrain active or Booster Energy used: highest stat is 1.3x.",
 		onModifySpe(spe, pokemon) {
 			if (this.effectState.bestStat !== 'spe' || pokemon.ignoringAbility()) return;
 			this.debug('Protosynthesis spe boost');

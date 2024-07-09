@@ -7583,6 +7583,6 @@ export const MovesText: {[k: string]: MoveText} = {
 	rampaginghammer: {
 		name: "Rampaging Hammer",
 		desc: "The user becomes confused immediately after attacking. Ignores the target's stat stage changes, including evasiveness.",
-		shortDesc: "Ignores the target's stat stage changes. Confuses after use.",
+		shortDesc: "Ignores target's stat changes. Confuses after use.",
 	},
 };

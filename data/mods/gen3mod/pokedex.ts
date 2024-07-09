@@ -825,7 +825,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Protosynthesis", 1: "Sap Sipper"},
-		baseStats: {hp: 91, atk: 127, def: 89, spa: 79, spd: 99, spe: 55},
+		baseStats: {hp: 101, atk: 127, def: 89, spa: 79, spd: 99, spe: 55},
 	},
 	ironjugulis: {
 		inherit: true,

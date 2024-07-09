@@ -8831,7 +8831,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			absorb: ["3L1"],
 			astonish: ["3L1"],
-			bodyslam: ["3M"],
+			bodyslam: ["3T"],
 			bulletseed: ["3M"],
 			confuseray: ["3M"],
 			crunch: ["3M"],
@@ -8840,7 +8840,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			energyball: ["3M"],
 			facade: ["3M"],
 			gigadrain: ["3M", "3L49"],
-			grassknot: ["3M"],
 			grassyterrain: ["3M"],
 			growth: ["3L1"],
 			hyperbeam: ["3M"],
@@ -8864,6 +8863,19 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thrash: ["3L42"],
 
 			rampaginghammer: ["3L91"],
+			
+			return: ["3M"],
+			frustration: ["3M"],
+			toxic: ["3M"],
+			hiddenpower: ["3M"],
+
+			rollout: ["3T"],
+			swagger: ["3T"],
+			counter: ["3T"],
+			furycutter: ["3T"],
+			rocksmash: ["3M"],
+			irontail: ["3M"],
+			focuspunch: ["3M"],
 		},
 	},
 	ironjugulis: {
