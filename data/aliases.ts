@@ -1877,4 +1877,6 @@ export const Aliases: {[alias: string]: string} = {
 	palcombat: "Tauros-Paldea-Combat",
 	palaqua: "Tauros-Paldea-Aqua",
 	palblaze: "Tauros-Paldea-Blaze",
+	craw: "Crawdaunt",
+	mrcraw: "Crawdaunt",
 };

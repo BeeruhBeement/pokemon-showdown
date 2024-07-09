@@ -4826,8 +4826,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	brutebonnet: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	sandyshocks: {
 		tier: "Illegal",

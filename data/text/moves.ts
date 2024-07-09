@@ -7580,4 +7580,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 30% chance to burn the target.",
 		shortDesc: "30% chance to burn the target.",
 	},
+	rampaginghammer: {
+		name: "Rampaging Hammer",
+		desc: "The user becomes confused immediately after attacking. Ignores the target's stat stage changes, including evasiveness.",
+		shortDesc: "Ignores the target's stat stage changes. Confuses after use.",
+	},
 };

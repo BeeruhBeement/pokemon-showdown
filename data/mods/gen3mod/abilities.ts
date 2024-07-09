@@ -103,17 +103,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	stancechange: {
 		gen: 3,
-		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use Swords Dance, and changes to Shield Forme before attempting to use Protect.",
-		shortDesc: "If Aegislash, changes Forme to Blade before Swords Dance and Shield before Protect.",
+		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use an attacking move, and changes to Shield Forme before attempting to use Protect.",
+		shortDesc: "If Aegislash, changes Forme to Blade before attacks and Shield before Protect.",
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
-			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed || (move.id !== 'swordsdance' && move.id !== 'protect')) return;
-			if (move.id === 'swordsdance' && attacker.species.name !== 'Aegislash-Blade') {
-				attacker.formeChange('Aegislash-Blade');
-			}
-			if (move.id === 'protect' && attacker.species.name !== 'Aegislash') {
-				attacker.formeChange('Aegislash');
-			}
+			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed) return;
+			if (move.category === 'Status' && move.id !== 'protect') return;
+			const targetForme = (move.id === 'protect' ? 'Aegislash' : 'Aegislash-Blade');
+			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
 		name: "Stance Change",
@@ -252,10 +249,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	protosynthesis: {
 		inherit: true,
 		gen: 3,
+		onModifySpe(spe, pokemon) {
+			if (this.effectState.bestStat !== 'spe' || pokemon.ignoringAbility()) return;
+			this.debug('Protosynthesis spe boost');
+			return this.chainModify([5325, 4096]);
+		},
 	},
 	quarkdrive: {
 		inherit: true,
 		gen: 3,
+		onModifySpe(spe, pokemon) {
+			if (this.effectState.bestStat !== 'spe' || pokemon.ignoringAbility()) return;
+			this.debug('Protosynthesis spe boost');
+			return this.chainModify([5325, 4096]);
+		},
 	},
 	technician: {
 		inherit: true,

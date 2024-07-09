@@ -341,16 +341,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		weather: 'snow',
 	},
-	forcepunch: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	weatherdance: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
 	recover: {
 		inherit: true,
 		pp: 10,
@@ -636,16 +626,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "User switches out.",
 	},
-	cascadecrash: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	shieldbash: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
 	scorchingsands: {
 		inherit: true,
 		gen: 3,
@@ -660,8 +640,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 	},
 	heartstamp: {
-		inherit: true,
+		inherit	: true,
 		gen: 3,
+		desc: "Has a 30% chance to make the target become infatuated, making it unable to attack 50% of the time. The effect ends when either the user or the target is no longer active.",
+		shortDesc: "30% chance a target of the opposite gender gets infatuated.",
+		secondary: {
+			chance: 30,
+			volatileStatus: 'attract',
+		},
 	},
 	paraboliccharge: {
 		inherit: true,
@@ -678,14 +664,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Damage is calculated using the user's Defense stat as its Sp. Attack, including stat stage changes. Other effects that modify the Sp. Attack stat are used as normal.",
 		shortDesc: "Uses user's Def stat as Sp. Atk in damage calculation.",
 		overrideOffensiveStat: 'def',
-	},
-	shadowcrescent: {
-		inherit: true,
-		gen: 3,
-	},
-	solarflare: {
-		inherit: true,
-		gen: 3,
 	},
 	crunch: {
 		inherit: true,
@@ -709,5 +687,41 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	dive: {
 		inherit: true,
 		basePower: 80,
+	},
+	
+	forcepunch: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	weatherdance: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	cascadecrash: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	shieldbash: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	shadowcrescent: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	solarflare: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	rampaginghammer: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
 	},
 };

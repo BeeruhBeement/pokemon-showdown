@@ -193,12 +193,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	murkrow: {
 		inherit: true,
-		abilities: {0: "Technician", 1: "Inner Focus"},
+		abilities: {0: "Insomnia", 1: "Technician"},
 	},
 	honchkrow: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Executioner", 1: "Thick Fat"},
+		abilities: {0: "Thick Fat", 1: "Executioner"},
 	},
 	misdreavus: {
 		inherit: true,
@@ -437,7 +437,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	luvdisc: {
 		inherit: true,
 		types: ["Water", "Fairy"],
-		baseStats: {hp: 73, atk: 50, def: 65, spa: 90, spd: 85, spe: 97},
+		baseStats: {hp: 73, atk: 50, def: 65, spa: 70, spd: 85, spe: 97},
 		abilities: {0: "Swift Swim", 1: "Heart Veil"},
 	},
 	cranidos: {
@@ -497,6 +497,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Water", "Fairy"],
 		abilities: {0: "Swift Swim", 1: "Water Absorb"},
+		baseStats: {hp: 85, atk: 85, def: 85, spa: 85, spd: 85, spe: 85},
 	},
 	tepig: {
 		inherit: true,
@@ -651,12 +652,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	aegislash: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 50, def: 130, spa: 50, spd: 130, spe: 20},
+		baseStats: {hp: 60, atk: 50, def: 130, spa: 50, spd: 130, spe: 60},
 	},
 	aegislashblade: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 130, def: 50, spa: 50, spd: 50, spe: 80},
+		baseStats: {hp: 60, atk: 130, def: 50, spa: 130, spd: 50, spe: 60},
 	},
 	binacle: {
 		inherit: true,
@@ -749,13 +750,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Lightning Rod"},
-		baseStats: {hp: 83, atk: 89, def: 71, spa: 173, spd: 71, spe: 63},
+		baseStats: {hp: 83, atk: 89, def: 67, spa: 179, spd: 71, spe: 61},
 	},
 	guzzlord: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Thick Fat"},
-		baseStats: {hp: 223, atk: 101, def: 53, spa: 77, spd: 53, spe: 43},
+		baseStats: {hp: 223, atk: 101, def: 59, spa: 73, spd: 47, spe: 47},
 	},
 	sizzlipede: {
 		inherit: true,
@@ -819,6 +820,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy", "Ground"],
 		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
 		baseStats: {hp: 57, atk: 70, def: 105, spa: 60, spd: 80, spe: 75},
+	},
+	brutebonnet: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Protosynthesis", 1: "Sap Sipper"},
+		baseStats: {hp: 91, atk: 127, def: 89, spa: 79, spd: 99, spe: 55},
 	},
 	ironjugulis: {
 		inherit: true,

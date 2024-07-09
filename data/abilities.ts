@@ -5719,23 +5719,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	chrysalis: {
 		isNonstandard: "Custom",
 		onAfterUseItem(item, pokemon) {
-			pokemon.addVolatile('chrysalis');
-		},
-		onEnd(pokemon) {
-			pokemon.removeVolatile('chrysalis');
-		},
-		condition: {
-			onStart(pokemon) {
-				if (!pokemon.addType('Flying')) return false;
-				if (!pokemon.hasType('Flying')) {
-					pokemon.addType('Flying');
-					this.add('-start', pokemon, 'typeadd', 'Flying', '[from] ability: Chrysalis');
-				}
-			},
+			if (!pokemon.hasType('Flying')) {
+				this.add('-start', pokemon, 'typeadd', 'Flying', '[from] ability: Chrysalis');
+				pokemon.addType('Flying');
+			}
 		},
 		flags: {},
 		name: "Chrysalis",
 		rating: 3.5,
 		num: 5004,
-	},
+	},	
 };
