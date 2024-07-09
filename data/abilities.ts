@@ -32,6 +32,8 @@ Ratings and how they work:
 
 */
 
+import { pokemonRegex } from "../server/chat-plugins/abuse-monitor";
+
 export const Abilities: {[abilityid: string]: AbilityData} = {
 	noability: {
 		isNonstandard: "Past",
@@ -5677,5 +5679,63 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 	},
-	
+	adrenaline: {
+		isNonstandard: "Custom",
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({atk: length}, source);
+				source.addVolatile('adrenaline');
+			}
+		},
+		condition: {
+			duration: 2,
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'ability: Adrenaline');
+			},
+			onModifySpe(spe, pokemon) {
+				return this.chainModify(2);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Adrenaline');
+			},
+		},
+		flags: {},
+		name: "Adrenaline",
+		rating: 3,
+		num: 5002,
+	},
+	executioner: {
+		isNonstandard: "Custom",
+		onModifyMove(move, source, target) {
+			if (target && target.hp <= target.maxhp / 4) {
+				move.ohko = true;
+			}
+		},
+		flags: {},
+		name: "Executioner",
+		rating: 2,
+		num: 5003,
+	},
+	chrysalis: {
+		isNonstandard: "Custom",
+		onAfterUseItem(item, pokemon) {
+			pokemon.addVolatile('chrysalis');
+		},
+		onEnd(pokemon) {
+			pokemon.removeVolatile('chrysalis');
+		},
+		condition: {
+			onStart(pokemon) {
+				if (!pokemon.addType('Flying')) return false;
+				if (!pokemon.hasType('Flying')) {
+					pokemon.addType('Flying');
+					this.add('-start', pokemon, 'typeadd', 'Flying', '[from] ability: Chrysalis');
+				}
+			},
+		},
+		flags: {},
+		name: "Chrysalis",
+		rating: 3.5,
+		num: 5004,
+	},
 };

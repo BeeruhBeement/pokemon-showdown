@@ -2273,4 +2273,18 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Heart Veil",
 		shortDesc: "On switch-in, this Pokemon summons Safeguard.",
 	},
+	adrenaline: {
+		name: "Adrenaline",
+		desc: "This Pokemon's Speed is doubled for the next turn if it attacks and knocks out another Pokemon.",
+		shortDesc: "This Pokemon's Speed is doubled for the next turn if it KOes another Pokemon.",
+	},
+	executioner: {
+		name: "Executioner",
+		shortDesc: "This Pokémon's moves are guaranteed KOs against targets with 25% or less HP.",
+	},
+	chrysalis: {
+		name: "Chrysalis",
+		desc: "If this Pokemon consumes its held item for any reason, it gains the Flying type as long as it remains active and has this Ability.",
+		shortDesc: "Gain Flying type on held item use; lost if it switches or gets new Ability.",
+	},
 };

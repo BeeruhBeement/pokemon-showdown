@@ -273,16 +273,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
-	pixieveil: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	heartveil: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
 	longreach: {
 		inherit: true,
 		gen: 3,
@@ -318,5 +308,31 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3,
 		desc: "The moves Aurora Beam, Bubble Beam, Dazzlign Gleam, Eternabeam, Flash Cannon, Ice Beam, Light Of Ruin, Light That Burns The Sky, Meteor Beam, Moongeist Beam, Primsatic Laser, Psybeam, Signal Beam, Solar Beam, Solar Blade, Steel Beam, Doom Desire, Glitzy Glow, Fleur Cannon, Luster Purge, Mirror Shot, Moonblast, Photon Geyser and Power Gem have their power multiplied by 1.2.",
 		shortDesc: "Boosts some beam and light based moves by 1.2x.",
+	},
+	
+	pixieveil: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	heartveil: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	adrenaline: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	executioner: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	chrysalis: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
 	},
 };

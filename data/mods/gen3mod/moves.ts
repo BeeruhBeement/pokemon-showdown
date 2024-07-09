@@ -19,6 +19,36 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 120,
 		accuracy: 100,
+		onTry(source, target) {
+			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
+			const moveData = {
+				name: "Future Sight",
+				basePower: 120,
+				category: "Special",
+				flags: {metronome: 1, futuremove: 1},
+				willCrit: false,
+				type: 'Psychic',
+			} as unknown as ActiveMove;
+			const damage = this.actions.getDamage(source, target, moveData, true);
+			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
+				duration: 3,
+				move: 'futuresight',
+				source: source,
+				moveData: {
+					id: 'futuresight',
+					name: "Future Sight",
+					accuracy: 100,
+					basePower: 0,
+					damage: damage,
+					category: "Special",
+					flags: {metronome: 1, futuremove: 1},
+					effectType: 'Move',
+					type: 'Psychic',
+				},
+			});
+			this.add('-start', source, 'Future Sight');
+			return null;
+		},
 	},
 	metalclaw: {
 		inherit: true,
@@ -671,5 +701,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	mysticalfire: {
 		inherit: true,
 		gen: 3,
+	},
+	dig: {
+		inherit: true,
+		basePower: 80,
+	},
+	dive: {
+		inherit: true,
+		basePower: 80,
 	},
 };

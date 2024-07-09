@@ -135,6 +135,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Psychic", "Fairy"],
 		abilities: {0: "Soundproof", 1: "Technician"},
 	},
+	pinsir: {
+		inherit: true,
+		abilities: {0: "Hyper Cutter", 1: "Chrysalis"},
+	},
 	magikarp: {
 		inherit: true,
 	},
@@ -194,7 +198,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	honchkrow: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Technician", 1: "Thick Fat"},
+		abilities: {0: "Executioner", 1: "Thick Fat"},
 	},
 	misdreavus: {
 		inherit: true,
@@ -505,32 +509,32 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	pansage: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony", 1: "Vital Spirit"},
+		abilities: {0: "Gluttony"},
 	},
 	simisage: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony", 1: "Vital Spirit"},
+		abilities: {0: "Gluttony"},
 	},
 	pansear: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony", 1: "Vital Spirit"},
+		abilities: {0: "Gluttony"},
 	},
 	simisear: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony", 1: "Vital Spirit"},
+		abilities: {0: "Gluttony"},
 	},
 	panpour: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony", 1: "Vital Spirit"},
+		abilities: {0: "Gluttony"},
 	},
 	simipour: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Gluttony", 1: "Vital Spirit"},
+		abilities: {0: "Gluttony"},
 	},
 	munna: {
 		inherit: true,
@@ -634,7 +638,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	doublade: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 59, atk: 90, def: 115, spa: 45, spd: 49, spe: 35},
+		baseStats: {hp: 59, atk: 90, def: 130, spa: 45, spd: 49, spe: 35},
 		abilities: {0: "Infiltrator"},
 	},
 	aegislash: {
