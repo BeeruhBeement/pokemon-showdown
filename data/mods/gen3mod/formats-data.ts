@@ -880,8 +880,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	pinsir: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	pinsirmega: {
 		tier: "Illegal",
@@ -1920,12 +1920,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	corphish: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	crawdaunt: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	baltoy: {
 		tier: "Illegal",

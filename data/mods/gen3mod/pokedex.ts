@@ -354,6 +354,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Rock", "Fire"],
 		baseStats: {hp: 90, atk: 95, def: 85, spa: 55, spd: 65, spe: 70},
 	},
+	corphish: {
+		inherit: true,
+	},
+	crawdaunt: {
+		inherit: true,
+		abilities: {0: "Hyper Cutter", 1: "Adrenaline"},
+	},
 	castform: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 70, def: 70, spa: 70, spd: 70, spe: 90},
