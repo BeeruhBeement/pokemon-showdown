@@ -70,10 +70,6 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 	// Weather
 	raindance: {
 		inherit: true,
-		duration: 6,
-		durationCallback(source, effect) {
-			return 6;
-		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				this.add('-weather', 'RainDance', '[from] ability: ' + effect.name, '[of] ' + source);
@@ -84,10 +80,6 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 	},
 	sunnyday: {
 		inherit: true,
-		duration: 6,
-		durationCallback(source, effect) {
-			return 6;
-		},
 		onFieldStart(battle, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				this.add('-weather', 'SunnyDay', '[from] ability: ' + effect.name, '[of] ' + source);
@@ -98,10 +90,6 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 	},
 	sandstorm: {
 		inherit: true,
-		duration: 6,
-		durationCallback(source, effect) {
-			return 6;
-		},
 		onModifySpD(spd, pokemon) {
 			if (pokemon.hasType('Rock') && this.field.isWeather('sandstorm')) {
 				return this.modify(spd, 1.5);
@@ -117,10 +105,6 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 	},
 	snow: {
 		inherit: true,
-		duration: 6,
-		durationCallback(source, effect) {
-			return 6;
-		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				this.add('-weather', 'Snow', '[from] ability: ' + effect.name, '[of] ' + source);

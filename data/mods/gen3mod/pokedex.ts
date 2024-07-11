@@ -464,7 +464,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	absol: {
 		inherit: true,
 		types: ["Dark", "Fairy"],
-		abilities: {0: "Pressure", 1: "Synchronize"},
 	},
 	snorunt: {
 		inherit: true,

@@ -641,6 +641,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	filletaway: {
 		inherit: true,
+		gen: 3,
 		desc: "Raises the user's Attack, Special Attack, and Speed by 1 stages in exchange for the user losing 1/3 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Special Attack, and Speed stat stages would not change.",
 		shortDesc: "+1 Attack, Sp. Atk, Speed for 1/3 user's max HP.",
 		type: "Dark",

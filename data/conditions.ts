@@ -881,7 +881,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 
 	// Mod conditions
 	rot: {
-		name: 'rot',
+		name: 'Rot',
 		onStart(pokemon, source) {
 			this.add('-start', pokemon, 'Rot', '[from] ' + source);
 		},

@@ -1,0 +1,269 @@
+{
+    "sandslash": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Spinner",
+                "movepool": ["rapidspin", "earthquake", "toxic", "rockslide", "seismictoss"],
+                "preferredTypes": ["Rock"]
+            },
+            {
+                "role": "Hazard Setter",
+                "movepool": ["earthquake", "stealthrock", "spikes", "toxic", "rockslide", "seismictoss"],
+                "preferredTypes": ["Rock"]
+            },
+            {
+                "role": "Sweeper",
+                "movepool": ["earthquake", "swordadance", "brickbreak", "rockslide", "doubleedge"],
+                "preferredTypes": ["Rock", "Fighting"]
+            }
+        ]
+    },
+    "sandslashalola": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Hail Sweeper",
+                "movepool": ["steelroller", "earthquake", "brickbreak", "swordsdance", "rockslide", "rapidspin"],
+                "preferredTypes": ["Ground", "Fighting"]
+            }
+        ]
+    },
+    "ninetales": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Sun Setter",
+                "movepool": ["solarbeam", "flamethrower", "overheat", "willowisp", "hiddenpowerelectric"]
+            }
+        ]
+    },
+    "golbat": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky",
+                "movepool": ["roost", "sludgebomb", "uturn", "toxic", "taunt", "gigadrain"]
+            }
+        ]
+    },
+    "crobat": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["sludgebomb", "dualwingbeat", "uturn", "doubleedge", "shadowball", "gigadrain", "taunt"]
+            }
+        ]
+    },
+    "perrserker": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Pivot",
+                "movepool": ["uturn", "steelroller", "crunch", "brickbreak", "fakeout"],
+                "preferredTypes": ["Dark"]
+            }
+        ]
+    },
+    "golem": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Spinner",
+                "movepool": ["rapidspin", "earthquake", "rockslide", "explosion", "submission", "toxic"],
+                "preferredTypes": ["Dark"]
+            },
+            {
+                "role": "Rocker",
+                "movepool": ["stealthrock", "earthquake", "rockslide", "explosion", "submission", "toxic"],
+                "preferredTypes": ["Dark"]
+            }
+        ]
+    },
+    "golemalola": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Trapper",
+                "movepool": ["rockslide", "submission", "earthquake", "explosion", "fireblast", "stealthrock"],
+                "preferredTypes": ["Fighting", "Ground"]
+            }
+        ]
+    },
+    "rapidash": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Sun Attacker",
+                "movepool": ["fireblast", "solarbeam", "megahorn", "stomp", "hiddenpowerelectric", "batonpass"],
+                "preferredTypes": ["Grass"]
+            }
+        ]
+    },
+    "farfetchd": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Critical Hit",
+                "movepool": ["aeroblast", "quickattack", "knockoff", "return", "swordsdance", "agility", "leafblade"]
+            }
+        ]
+    },
+    "sirfetchd": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Band Wallbreaker",
+                "movepool": ["skyuppercut", "dualwingbeat", "knockoff", "return", "quickattack", "doubleedge", "steelwing", "batonpass"],
+                "preferredTypes": ["Flying"]
+            }
+        ]
+    },
+    "dodrio": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Band Wallbreaker",
+                "movepool": ["return", "jumpkick", "drillpeck", "pursuit", "quickattack", "doubleedge", "hiddenpowerground"],
+                "preferredTypes": ["Fighting"]
+            }
+        ]
+    },
+    "dewgong": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["icebeam", "surf", "rest", "sleeptalk", "toxic", "haze"]
+            }
+        ]
+    },
+    "muk": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["sludgebomb", "brickbreak", "gigadrain", "explosion", "rest", "sleeptalk", "hiddenpowerdark", "fireblast"]
+            },
+            {
+                "role": "Curse",
+                "movepool": ["sludgebomb", "brickbreak", "curse", "hiddenpowerdark", "rest", "sleeptalk"]
+            }
+        ]
+    },
+    "mukalola": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["sludgebomb", "brickbreak", "gigadrain", "explosion", "rest", "sleeptalk", "crunch", "pursuit", "fireblast"]
+            },
+            {
+                "role": "Curse",
+                "movepool": ["sludgebomb", "brickbreak", "curse", "crunch", "rest", "sleeptalk"]
+            }
+        ]
+    },
+    "electrode": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["thunderbolt", "hiddenpowerice", "hiddenpowergrass", "hiddenpowerfire", "voltswitch", "taunt", "thunderwave", "explosion"]
+            }
+        ]
+    },
+    "tangela": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Sun Attacker",
+                "movepool": ["solarbeam", "hiddenpowerfire", "sunnyday", "sleeppowder"]
+            }
+        ]
+    },
+    "tangrowth": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky Pivot",
+                "movepool": ["leafstorm", "hiddenpowerfire", "stunspore", "sleeppowder", "synthesis", "toxic", "gigadrain", "earthquake"],
+                "preferredTypes": ["Fire"]
+            }
+        ]
+    },
+    "pinsir": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["curse", "swordsdance", "xscissor", "earthquake", "brickbreak", "hiddenpowerflying", "submission", "rockslide"],
+                "preferredTypes": ["Flying", "Ground"]
+            }
+        ]
+    },
+    "gyarados": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Dragon Dance",
+                "movepool": ["aeroblast", "dragondance", "earthquake", "substitute", "crunch", "doubleedge"],
+                "preferredTypes": ["Ground"]
+            }
+        ]
+    },
+    "aerodactyl": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["dualwingbeat", "rockslide", "earthquake", "pursuit", "doubleedge", "taunt", "substitute"],
+                "preferredTypes": ["Ground"]
+            }
+        ]
+    },
+    "snorlax": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["return", "earthquake", "brickbreak", "selfdestruct", "hiddenpowerdark"],
+                "preferredTypes": ["Ground"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["return", "earthquake", "brickbreak", "curse", "hiddenpowerdark", "refresh", "sleeptalk", "rest"],
+                "preferredTypes": ["Ground"]
+            }
+        ]
+    },
+    "typhlosion": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Attacker",
+                "movepool": ["flamethrower", "earthquake", "thunderpunch", "hiddenpowergrass", "fireblast", "overheat"]
+            }
+        ]
+    },
+    "lanturn": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["hydropump", "surf", "thunderbolt", "hiddenpowergrass", "hiddenpowerfire", "icebeam", "dazzlinggleam", "voltswitch"],
+                "preferredTypes": ["Ice"]
+            }
+        ]
+    },
+    "sudowoodo": {
+        "level": 100,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["stealthrock", "earthquake", "rockslide", "headsmash", "doubleedge", "brickbreak", "taunt", "toxic", "meditate"]
+            }
+        ]
+    }
+}

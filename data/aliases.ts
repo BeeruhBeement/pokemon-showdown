@@ -1867,7 +1867,7 @@ export const Aliases: {[alias: string]: string} = {
 	chanmon: "Hitmonchan",
 	topmon: "Hitmontop",
 	rorock: "Regirock",
-	lax: "Snorlax",
+	slax: "Snorlax",
 	weezer: "Weezing",
 	cash: "Whiscash",
 	cache: "Whiscash",
