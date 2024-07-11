@@ -878,4 +878,30 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return bp;
 		},
 	},
+
+	// Mod conditions
+	rot: {
+		name: 'rot',
+		onStart(pokemon, source) {
+			this.add('-start', pokemon, 'Rot', '[from] ' + source);
+		},
+		onResidualOrder: 12,
+		onResidual(pokemon) {
+			if (!pokemon.types.includes('Ghost') && !pokemon.types.includes('Poison') && !pokemon.types.includes('Steel')) {
+				this.damage(pokemon.baseMaxhp / 16);
+			}
+		},
+		onBeforeMovePriority: 2,
+		onBeforeMove(pokemon, target, move) {
+			if (this.randomChance(1, 4) && (!pokemon.types.includes('Ghost') && !pokemon.types.includes('Poison') && !pokemon.types.includes('Steel'))) {
+				this.add('-activate', pokemon, 'is coughing from Rot');
+				return false;
+			}
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.flags['contact']) {
+				source.addVolatile('rot');
+			}
+		},
+	}
 };

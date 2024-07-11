@@ -22239,31 +22239,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, allyanim: 1, metronome: 1},
-		onAfterHit(target, source) {
-			target.addVolatile('rot');
-		},
-		condition: {
-			onStart(pokemon, source) {
-				this.add('-start', pokemon, 'Rot', '[from] ' + source);
-			},
-			onResidualOrder: 12,
-			onResidual(pokemon) {
-				if (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison')) {
-					this.damage(pokemon.baseMaxhp / 16);
-				}
-			},
-			onBeforeMovePriority: 2,
-			onBeforeMove(pokemon, target, move) {
-				if (this.randomChance(30, 100) && (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison'))) {
-					this.add('-activate', pokemon, 'is coughing from Rot');
-					return false;
-				}
-			},
-			onDamagingHit(damage, target, source, move) {
-				if (move.flags['contact']) {
-					source.addVolatile('rot');
-				}
-			},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'rot',
 		},
 		target: "normal",
 		type: "Poison",

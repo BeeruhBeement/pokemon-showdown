@@ -5780,33 +5780,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Deadwood",
 		rating: 1,
 		num: 5008,
-		onStart: function (pokemon) {
+		onResidual: function (pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
 				pokemon.addVolatile('rot');
 			}
-		},
-		condition: {
-			onStart(pokemon, source) {
-				this.add('-start', pokemon, 'Rot', '[from] ' + source);
-			},
-			onResidualOrder: 12,
-			onResidual(pokemon) {
-				if (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison')) {
-					this.damage(pokemon.baseMaxhp / 16);
-				}
-			},
-			onBeforeMovePriority: 2,
-			onBeforeMove(pokemon, target, move) {
-				if (this.randomChance(30, 100) && (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison'))) {
-					this.add('-activate', pokemon, 'is coughing from Rot');
-					return false;
-				}
-			},
-			onDamagingHit(damage, target, source, move) {
-				if (move.flags['contact']) {
-					source.addVolatile('rot');
-				}
-			},
 		},
 	},	
 };

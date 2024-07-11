@@ -338,6 +338,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	gallade: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Inner Focus", 1: "Sharpness"},
 	},
 	surskit: {
 		inherit: true,
@@ -738,13 +739,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	spritzee: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Oblivious"},
+		abilities: {0: "Oblivious", 1: "Immunity"},
 	},
 	aromatisse: {
 		inherit: true,
 		gen: 3,
 		types: ["Fairy", "Poison"],
-		abilities: {0: "Poison Point"},
+		abilities: {0: "Poison Point", 1: "Filter"},
 	},
 	binacle: {
 		inherit: true,

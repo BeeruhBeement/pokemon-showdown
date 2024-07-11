@@ -7585,4 +7585,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "The user becomes confused immediately after attacking. Ignores the target's stat stage changes, including evasiveness.",
 		shortDesc: "Ignores target's stat changes. Confuses after use.",
 	},
+	rottenvial: {
+		name: "Rotten Vial",
+		desc: "Apples Rot to the target. Not blocked by Shield Dust.",
+		shortDesc: "Applies Rot to the target.",
+	},
 };

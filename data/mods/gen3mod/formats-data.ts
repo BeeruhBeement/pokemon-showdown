@@ -1674,16 +1674,15 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	nincada: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	ninjask: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	shedinja: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	whismur: {
 		tier: "Illegal",
@@ -3485,22 +3484,21 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	phantump: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	trevenant: {
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	pumpkaboo: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
-	Illegalmpkaboo: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+	pumpkaboosmall: {
 	},
-	Illegalmpkaboosmall: {
+	pumpkaboolarge: {
 	},
-	Illegalmpkaboolarge: {
-	},
-	Illegalmpkaboosuper: {
+	pumpkaboosuper: {
 	},
 	gourgeist: {
 		tier: "Illegal",

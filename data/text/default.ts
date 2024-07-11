@@ -372,4 +372,14 @@ export const DefaultText: {[k: string]: DefaultText} = {
 	crash: {
 		damage: "  [POKEMON] kept going and crashed!",
 	},
+
+	// mod effects
+	rot: {
+		start: "  [POKEMON] is rotting!",
+		end: "  [POKEMON] healed from rot!",
+		endFromItem: "  [POKEMON]'s [ITEM] healing it of its rot!",
+		alreadyStarted: "  [POKEMON] is already rotting!",
+		activate: "  [POKEMON] is rotten!",
+		damage: "The rot is wearing it down!",
+	},
 };

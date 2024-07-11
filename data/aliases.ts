@@ -1879,4 +1879,7 @@ export const Aliases: {[alias: string]: string} = {
 	palblaze: "Tauros-Paldea-Blaze",
 	mrcraw: "Crawdaunt",
 	mrpresident: "Abomasnow",
+	president: "Abomasnow",
+	"9t": "Ninetales",
+	a9t: "Ninetales-Alola",
 };
