@@ -2287,4 +2287,21 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "If this Pokemon consumes its held item for any reason, it gains the Flying type as long as it remains active and has this Ability.",
 		shortDesc: "Gain Flying type on held item use; lost if it switches or gets new Ability.",
 	},
+	cleanser: {
+		name: "Cleanser",
+		desc: "This Pokemon's attacks have 1.5x power if target is Burned, Paralyzed, Poisoned, Frozen or Asleep. Heals the status after successfully using a move.",
+		shortDesc: "This Pokemon's attacks have 1.5x power if target is statused. Heal status.",
+	},
+	stonebreaker: {
+		name: "Stonebreaker",
+		shortDesc: "Moves are always super effective again Rock.",
+	},
+	steelbreaker: {
+		name: "Steelbreaker",
+		shortDesc: "Moves are always super effective again Steel.",
+	},
+	deadwood: {
+		name: "Deadwood",
+		shortDesc: "While this Pokemon has 1/2 or less of its max HP, it's afflicted by Rot.",
+	},
 };

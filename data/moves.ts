@@ -22114,7 +22114,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		category: "Physical",
 		name: "Cascade Crash",
 		pp: 10,
-		flags: {protect: 1, mirror: 1, gravity: 1, distance: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, distance: 1, metronome: 1},
 		onEffectiveness(typeMod, target, type, move) {
 			return typeMod + this.dex.getEffectiveness('Flying', type);
 		},
@@ -22133,7 +22133,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		category: "Physical",
 		name: "Ethereal Cutter",
 		pp: 10,
-		flags: {contact: 1, charge: 1, mirror: 1, metronome: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1},
+		flags: {contact: 1, charge: 1, mirror: 1, metronome: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1, slicing: 1},
 		breaksProtect: true,
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
@@ -22229,4 +22229,44 @@ export const Moves: {[moveid: string]: MoveData} = {
 			volatileStatus: 'confusion',
 		},
 	},	
+	rottenvial: {
+		isNonstandard: "Custom",
+		num: 5008,
+		accuracy: 100,
+		basePower: 20,
+		category: "Physical",
+		name: "Rotten Vial",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, allyanim: 1, metronome: 1},
+		onAfterHit(target, source) {
+			target.addVolatile('rot');
+		},
+		condition: {
+			onStart(pokemon, source) {
+				this.add('-start', pokemon, 'Rot', '[from] ' + source);
+			},
+			onResidualOrder: 12,
+			onResidual(pokemon) {
+				if (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison')) {
+					this.damage(pokemon.baseMaxhp / 16);
+				}
+			},
+			onBeforeMovePriority: 2,
+			onBeforeMove(pokemon, target, move) {
+				if (this.randomChance(30, 100) && (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison'))) {
+					this.add('-activate', pokemon, 'is coughing from Rot');
+					return false;
+				}
+			},
+			onDamagingHit(damage, target, source, move) {
+				if (move.flags['contact']) {
+					source.addVolatile('rot');
+				}
+			},
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Tough",
+	},
 };

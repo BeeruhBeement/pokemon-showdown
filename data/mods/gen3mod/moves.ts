@@ -21,15 +21,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		accuracy: 100,
 		onTry(source, target) {
 			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
-			const moveData = {
-				name: "Future Sight",
-				basePower: 120,
-				category: "Special",
-				flags: {metronome: 1, futuremove: 1},
-				willCrit: false,
-				type: 'Psychic',
-			} as unknown as ActiveMove;
-			const damage = this.actions.getDamage(source, target, moveData, true);
 			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
 				duration: 3,
 				move: 'futuresight',
@@ -38,16 +29,17 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					id: 'futuresight',
 					name: "Future Sight",
 					accuracy: 100,
-					basePower: 0,
-					damage: damage,
+					basePower: 120,
 					category: "Special",
-					flags: {metronome: 1, futuremove: 1},
+					priority: 0,
+					flags: {allyanim: 1, metronome: 1, futuremove: 1},
+					ignoreImmunity: false,
 					effectType: 'Move',
 					type: 'Psychic',
 				},
 			});
-			this.add('-start', source, 'Future Sight');
-			return null;
+			this.add('-start', source, 'move: Future Sight');
+			return this.NOT_FAIL;
 		},
 	},
 	metalclaw: {
@@ -558,45 +550,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Fire",
 	},
 	taunt: {
-		num: 269,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		name: "Taunt",
-		pp: 20,
-		priority: 0,
-		volatileStatus: 'taunt',
-		target: "normal",
-		type: "Dark",
-
-		desc: "For 2 to 4 turns, prevents the target from using non-damaging moves.",
-		shortDesc: "For 2-4 turns, the target can't use status moves.",
-		flags: {protect: 1, mirror: 1, bypasssub: 1, metronome: 1},
+		inherit: true,
 		condition: {
 			durationCallback() {
-				return this.random(2, 4);
-			},
-			onStart(target) {
-				this.add('-start', target, 'move: Taunt');
-			},
-			onResidualOrder: 10,
-			onResidualSubOrder: 15,
-			onEnd(target) {
-				this.add('-end', target, 'move: Taunt');
-			},
-			onDisableMove(pokemon) {
-				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.moves.get(moveSlot.id).category === 'Status') {
-						pokemon.disableMove(moveSlot.id);
-					}
-				}
-			},
-			onBeforeMovePriority: 5,
-			onBeforeMove(attacker, defender, move) {
-				if (move.category === 'Status') {
-					this.add('cant', attacker, 'move: Taunt', move);
-					return false;
-				}
+				return this.random(3, 5);
 			},
 		},
 	},
@@ -606,25 +563,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		accuracy: 100,
 	},
 	teleport: {
-		num: 100,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Teleport",
-		pp: 20,
+		inherit: true,
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "User switches out.",
 		priority: -6,
-		flags: {metronome: 1},
 		onTry(source) {
 			return !!this.canSwitch(source.side);
 		},
 		selfSwitch: true,
-		secondary: null,
 		target: "self",
-		type: "Psychic",
-		contestType: "Cool",
-
-		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
-		shortDesc: "User switches out.",
 	},
 	scorchingsands: {
 		inherit: true,
@@ -688,6 +635,57 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 80,
 	},
+	fly: {
+		inherit: true,
+		basePower: 90,
+	},
+	filletaway: {
+		inherit: true,
+		desc: "Raises the user's Attack, Special Attack, and Speed by 1 stages in exchange for the user losing 1/3 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Special Attack, and Speed stat stages would not change.",
+		shortDesc: "+1 Attack, Sp. Atk, Speed for 1/3 user's max HP.",
+		type: "Dark",
+		onTry(source) {
+			if (source.hp <= source.maxhp / 3 || source.maxhp === 1) return false;
+		},
+		onHit(pokemon) {
+			this.directDamage(pokemon.maxhp / 3);
+		},
+		boosts: {
+			atk: 1,
+			spa: 1,
+			spe: 1,
+		},
+	},
+	struggle: {
+		inherit: true,
+		basePower: 80,
+		struggleRecoil: true,
+	},
+	tackle: {
+		inherit: true,
+		basePower: 50,
+		accuracy: 100,
+	},
+	leafstorm: {
+		inherit: true,
+		gen: 3,
+	},
+	forestscurse: {
+		inherit: true,
+		gen: 3,
+	},
+	trickortreat: {
+		inherit: true,
+		gen: 3,
+	},
+	uproar: {
+		inherit: true,
+		basePower: 90,
+	},
+	spinout: {
+		inherit: true,
+		gen: 3,
+	},
 	
 	forcepunch: {
 		inherit: true,
@@ -720,6 +718,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	rampaginghammer: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	rottenvial: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

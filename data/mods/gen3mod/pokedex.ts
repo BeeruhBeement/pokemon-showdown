@@ -17,6 +17,23 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Slush Rush", 1: "Rough Skin"},
 	},
+	vulpix: {
+		inherit: true,
+		abilities: {0: "Flash Fire", 1: "Run Away"},
+	},
+	ninetales: {
+		inherit: true,
+		abilities: {0: "Flash Fire", 1: "Drought"},
+	},
+	zubat: {
+		inherit: true,
+	},
+	golbat: {
+		inherit: true,
+	},
+	crobat: {
+		inherit: true,
+	},
 	meowthgalar: {
 		inherit: true,
 		gen: 3,
@@ -148,6 +165,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	aerodactyl: {
 		inherit: true,
+		baseStats: {hp: 80, atk: 95, def: 65, spa: 60, spd: 75, spe: 130},
 	},
 	munchlax: {
 		inherit: true,
@@ -297,6 +315,30 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Torrent", 1: "Regenerator"},
 	},
+	wingull: {
+		inherit: true,
+		abilities: {0: "Keen Eye", 1: "Water Absorb"},
+	},
+	pelipper: {
+		inherit: true,
+		abilities: {0: "Keen Eye", 1: "Drizzle"},
+	},
+	ralts: {
+		inherit: true,
+		types: ["Psychic", "Fairy"],
+	},
+	kirlia: {
+		inherit: true,
+		types: ["Psychic", "Fairy"],
+	},
+	gardevoir: {
+		inherit: true,
+		types: ["Psychic", "Fairy"],
+	},
+	gallade: {
+		inherit: true,
+		gen: 3,
+	},
 	surskit: {
 		inherit: true,
 	},
@@ -304,6 +346,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 70, atk: 60, def: 62, spa: 100, spd: 82, spe: 80},
 		types: ["Bug", "Water"],
+	},
+	nincada: {
+		inherit: true,
+	},
+	ninjask: {
+		inherit: true,
+	},
+	shedinja: {
+		inherit: true,
 	},
 	sableye: {
 		inherit: true,
@@ -492,6 +543,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Inner Focus"},
 	},
+	snover: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Ice Body", 1: "Soundproof"},
+	},
+	abomasnow: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Snow Warning", 1: "Soundproof"},
+	},
 	phione: {
 		inherit: true,
 		gen: 3,
@@ -553,6 +614,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Synchronize", 1: "Psychic Surge"},
+	},
+	roggenrola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Weak Armor", 1: "Sturdy"},
+	},
+	boldore: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Weak Armor", 1: "Sturdy"},
+	},
+	gigalith: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Stonebreaker", 1: "Sand Stream"},
 	},
 	throh: {
 		inherit: true,
@@ -641,13 +717,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	honedge: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Infiltrator"},
+		abilities: {0: "Sharpness"},
 	},
 	doublade: {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 59, atk: 90, def: 130, spa: 45, spd: 49, spe: 35},
-		abilities: {0: "Infiltrator"},
+		abilities: {0: "Sharpness"},
 	},
 	aegislash: {
 		inherit: true,
@@ -658,6 +734,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 60, atk: 130, def: 50, spa: 130, spd: 50, spe: 60},
+	},
+	spritzee: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Oblivious"},
+	},
+	aromatisse: {
+		inherit: true,
+		gen: 3,
+		types: ["Fairy", "Poison"],
+		abilities: {0: "Poison Point"},
 	},
 	binacle: {
 		inherit: true,
@@ -678,6 +765,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Dry Skin", 1: "Solar Power"},
+	},
+	phantump: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Natural Cure", 1: "Overcoat"},
+	},
+	trevenant: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Natural Cure", 1: "Deadwood"},
 	},
 	volcanion: {
 		inherit: true,
@@ -775,7 +872,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Vital Spirit", 1: "Misty Surge"},
-		baseStats: {hp: 65, atk: 60, def: 75, spa: 100, spd: 121, spe: 64},
+		baseStats: {hp: 65, atk: 60, def: 75, spa: 80, spd: 91, spe: 64},
 	},
 	snom: {
 		inherit: true,
@@ -787,10 +884,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
 	},
 	dracozolt: {
-		inherit: true,
-		gen: 3,
-	},
-	orthworm: {
 		inherit: true,
 		gen: 3,
 	},
@@ -820,6 +913,24 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy", "Ground"],
 		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
 		baseStats: {hp: 57, atk: 70, def: 105, spa: 60, spd: 80, spe: 75},
+	},
+	varoom: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Slow Start", 1: "Filter"},
+	},
+	revavroom: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Speed Boost", 1: "Filter"},
+	},
+	orthworm: {
+		inherit: true,
+		gen: 3,
+	},
+	veluza: {
+		inherit: true,
+		gen: 3,
 	},
 	brutebonnet: {
 		inherit: true,

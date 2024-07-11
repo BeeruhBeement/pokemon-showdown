@@ -5729,4 +5729,84 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3.5,
 		num: 5004,
 	},	
+	cleanser: {
+		isNonstandard: "Custom",
+		onBasePower(basePower, pokemon, target, move) {
+			if (target.status) {
+				return this.chainModify(1.5);
+			}
+		},
+		onAfterHit(target, source, move) {
+			if (target.status) {
+				target.cureStatus();
+			}
+		},
+		flags: {},
+		name: "Cleanser",
+		rating: 2,
+		num: 5005,
+	},
+	stonebreaker: {
+		isNonstandard: "Custom",
+		onEffectiveness(typeMod, target, type, move) {
+			if (type === 'Rock') {
+				// If the move is not already super effective, make it super effective
+				if (typeMod <= 0) {
+					return 1;
+				}
+			}
+		},
+		name: "Stonebreaker",
+		rating: 3,
+		num: 5006,
+	},
+	steelbreaker: {
+		isNonstandard: "Custom",
+		onEffectiveness(typeMod, target, type, move) {
+			if (type === 'Steel') {
+				// If the move is not already super effective, make it super effective
+				if (typeMod <= 0) {
+					return 1;
+				}
+			}
+		},
+		name: "Steelbreaker",
+		rating: 4,
+		num: 5007,
+	},
+	deadwood: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Deadwood",
+		rating: 1,
+		num: 5008,
+		onStart: function (pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 2) {
+				pokemon.addVolatile('rot');
+			}
+		},
+		condition: {
+			onStart(pokemon, source) {
+				this.add('-start', pokemon, 'Rot', '[from] ' + source);
+			},
+			onResidualOrder: 12,
+			onResidual(pokemon) {
+				if (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison')) {
+					this.damage(pokemon.baseMaxhp / 16);
+				}
+			},
+			onBeforeMovePriority: 2,
+			onBeforeMove(pokemon, target, move) {
+				if (this.randomChance(30, 100) && (!pokemon.types.includes('Ghost') || !pokemon.types.includes('Poison'))) {
+					this.add('-activate', pokemon, 'is coughing from Rot');
+					return false;
+				}
+			},
+			onDamagingHit(damage, target, source, move) {
+				if (move.flags['contact']) {
+					source.addVolatile('rot');
+				}
+			},
+		},
+	},	
 };

@@ -320,6 +320,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "The moves Aurora Beam, Bubble Beam, Dazzlign Gleam, Eternabeam, Flash Cannon, Ice Beam, Light Of Ruin, Light That Burns The Sky, Meteor Beam, Moongeist Beam, Primsatic Laser, Psybeam, Signal Beam, Solar Beam, Solar Blade, Steel Beam, Doom Desire, Glitzy Glow, Fleur Cannon, Luster Purge, Mirror Shot, Moonblast, Photon Geyser and Power Gem have their power multiplied by 1.2.",
 		shortDesc: "Boosts some beam and light based moves by 1.2x.",
 	},
+	sharpness: {
+		inherit: true,
+		gen: 3,
+	},
+	filter: {
+		inherit: true,
+		gen: 3,
+	},
+	slowstart: {
+		inherit: true,
+		gen: 3,
+	},
 	
 	pixieveil: {
 		inherit: true,
@@ -342,6 +354,26 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	chrysalis: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	cleanser: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	stonebreaker: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	steelbreaker: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	deadwood: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

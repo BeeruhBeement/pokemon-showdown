@@ -1,4 +1,35 @@
 export const Conditions: {[k: string]: ModdedConditionData} = {
+	confusion: {
+		inherit: true,
+		onBeforeMove(pokemon) {
+			pokemon.volatiles['confusion'].time--;
+			if (!pokemon.volatiles['confusion'].time) {
+				pokemon.removeVolatile('confusion');
+				return;
+			}
+			this.add('-activate', pokemon, 'confusion');
+			if (!this.randomChance(25, 100)) {
+				return;
+			}
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 40);
+			if (typeof damage !== 'number') throw new Error("Confusion damage not dealt");
+			const activeMove = {id: this.toID('confused'), effectType: 'Move', type: '???'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+			return false;
+		},
+	},
+	par: {
+		inherit: true,
+		onModifySpe(spe, pokemon) {
+			// Paralysis occurs after all other Speed modifiers, so evaluate all modifiers up to this point first
+			spe = this.finalModify(spe);
+			if (!pokemon.hasAbility('quickfeet')) {
+				spe = Math.floor(spe * 50 / 100);
+			}
+			return spe;
+		},
+	},
 	slp: {
 		name: 'slp',
 		effectType: 'Status',
@@ -35,19 +66,42 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			return false;
 		},
 	},
-	sandstorm: {
-		name: 'Sandstorm',
-		effectType: 'Weather',
-		duration: 5,
+
+	// Weather
+	raindance: {
+		inherit: true,
+		duration: 6,
 		durationCallback(source, effect) {
-			if (source?.hasItem('smoothrock')) {
-				return 8;
-			}
-			return 5;
+			return 6;
 		},
-		// This should be applied directly to the stat before any of the other modifiers are chained
-		// So we give it increased priority.
-		onModifySpDPriority: 10,
+		onFieldStart(field, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				this.add('-weather', 'RainDance', '[from] ability: ' + effect.name, '[of] ' + source);
+			} else {
+				this.add('-weather', 'RainDance');
+			}
+		},
+	},
+	sunnyday: {
+		inherit: true,
+		duration: 6,
+		durationCallback(source, effect) {
+			return 6;
+		},
+		onFieldStart(battle, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				this.add('-weather', 'SunnyDay', '[from] ability: ' + effect.name, '[of] ' + source);
+			} else {
+				this.add('-weather', 'SunnyDay');
+			}
+		},
+	},
+	sandstorm: {
+		inherit: true,
+		duration: 6,
+		durationCallback(source, effect) {
+			return 6;
+		},
 		onModifySpD(spd, pokemon) {
 			if (pokemon.hasType('Rock') && this.field.isWeather('sandstorm')) {
 				return this.modify(spd, 1.5);
@@ -55,33 +109,24 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
-				if (this.gen <= 5) this.effectState.duration = 0;
 				this.add('-weather', 'Sandstorm', '[from] ability: ' + effect.name, '[of] ' + source);
 			} else {
 				this.add('-weather', 'Sandstorm');
 			}
 		},
-		onFieldResidualOrder: 1,
-		onFieldResidual() {
-			this.add('-weather', 'Sandstorm', '[upkeep]');
-			if (this.field.isWeather('sandstorm')) this.eachEvent('Weather');
-		},
-		onWeather(target) {
-			this.damage(target.baseMaxhp / 16);
-		},
-		onFieldEnd() {
-			this.add('-weather', 'none');
-		},
 	},
-	par: {
+	snow: {
 		inherit: true,
-		onModifySpe(spe, pokemon) {
-			// Paralysis occurs after all other Speed modifiers, so evaluate all modifiers up to this point first
-			spe = this.finalModify(spe);
-			if (!pokemon.hasAbility('quickfeet')) {
-				spe = Math.floor(spe * 50 / 100);
+		duration: 6,
+		durationCallback(source, effect) {
+			return 6;
+		},
+		onFieldStart(field, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				this.add('-weather', 'Snow', '[from] ability: ' + effect.name, '[of] ' + source);
+			} else {
+				this.add('-weather', 'Snow');
 			}
-			return spe;
 		},
 	},
 };
