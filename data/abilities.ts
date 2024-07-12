@@ -5683,7 +5683,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		isNonstandard: "Custom",
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
-				this.boost({atk: length}, source);
 				source.addVolatile('adrenaline');
 			}
 		},

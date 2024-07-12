@@ -6084,8 +6084,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			watersport: ["3E"],
 			wish: ["3L13"],
 			
-			takeheart: ["3L100"],
+			takeheart: ["3L99"],
 			recover: ["3M"],
+			lovelykiss: ["3L99"],
 		},
 	},
 	cranidos: {

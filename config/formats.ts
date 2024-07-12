@@ -30,10 +30,10 @@ export const Formats: FormatList = [
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 3] Modded Random Battles",
+		name: "[Gen 3] Modded Computer-Generated Teams",
 
 		mod: 'gen3mod',
-		team: 'random',
+		team: 'computerGenerated',
 		ruleset: ['Standard', 'Freeze Clause Mod'],
 	},
 	{
