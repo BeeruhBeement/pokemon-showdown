@@ -34,7 +34,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Freeze Clause Mod'],
-		banlist: ['Illegal'],
+		banlist: [],
 	},
 	{
 		name: "[Gen 3] Modded Doubles",
@@ -50,7 +50,7 @@ export const Formats: FormatList = [
 		mod: 'gen3mod',
 		gameType: 'doubles',
 		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod'],
-		banlist: ['Illegal'],
+		banlist: [],
 	},
 	{
 		name: "[Gen 9] National Dex Sky Battles",
