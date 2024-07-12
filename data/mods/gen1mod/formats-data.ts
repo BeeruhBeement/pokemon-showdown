@@ -1,460 +1,460 @@
 export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	bulbasaur: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	ivysaur: {
-		tier: "Illegal",
+		tier: "AG",
 	},
-	veIllegalsaur: {
-		tier: "Illegal",
+	veAGsaur: {
+		tier: "AG",
 	},
 	charmander: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	charmeleon: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	charizard: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	squirtle: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	wartortle: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	blastoise: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	caterpie: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	metapod: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	butterfree: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	weedle: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	kakuna: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	beedrill: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	pidgey: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	pidgeotto: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	pidgeot: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	rattata: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	raticate: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	spearow: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	fearow: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	ekans: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	arbok: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	pikachu: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	raichu: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	sandshrew: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	sandslash: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	nidoranf: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	nidorina: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	nidoqueen: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	nidoranm: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	nidorino: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	nidoking: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	clefairy: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	clefable: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	vulpix: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	ninetales: {
-		tier: "Illegal",
+		tier: "AG",
 	},
-	jigglyIllegalff: {
-		tier: "Illegal",
+	jigglyAGff: {
+		tier: "AG",
 	},
 	wigglytuff: {
-		tier: "Illegal",
+		tier: "AG",
 	},
-	Illegalbat: {
-		tier: "Illegal",
+	AGbat: {
+		tier: "AG",
 	},
 	golbat: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	oddish: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	gloom: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	vileplume: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	paras: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	parasect: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	venonat: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	venomoth: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	diglett: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	dugtrio: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	meowth: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	persian: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	psyduck: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	golduck: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	mankey: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	primeape: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	growlithe: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	arcanine: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	poliwag: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	poliwhirl: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	poliwrath: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	abra: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	kadabra: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	alakazam: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	machop: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	machoke: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	machamp: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	bellsprout: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	weepinbell: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	victreebel: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	tentacool: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	tentacruel: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	geodude: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	graveler: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	golem: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	ponyta: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	rapidash: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	slowpoke: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	slowbro: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	magnemite: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	magneton: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	farfetchd: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	doduo: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	dodrio: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	seel: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	dewgong: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	grimer: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	muk: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	shellder: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	cloyster: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	gastly: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	haunter: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	gengar: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	onix: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	drowzee: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	hypno: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	krabby: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	kingler: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	voltorb: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	electrode: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	exeggcute: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	exeggutor: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	cubone: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	marowak: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	hitmonlee: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	hitmonchan: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	lickitung: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	koffing: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	weezing: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	rhyhorn: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	rhydon: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	chansey: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	tangela: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	kangaskhan: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	horsea: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	seadra: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	goldeen: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	seaking: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	staryu: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	starmie: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	mrmime: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	scyther: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	jynx: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	electabuzz: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	magmar: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	pinsir: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	tauros: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	magikarp: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	gyarados: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	lapras: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	ditto: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	eevee: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	vaporeon: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	jolteon: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	flareon: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	porygon: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	omanyte: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	omastar: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	kabuto: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	kabutops: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	aerodactyl: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	snorlax: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	articuno: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	zapdos: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	moltres: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	dratini: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	dragonair: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	dragonite: {
-		tier: "Illegal",
+		tier: "AG",
 	},
 	mewtwo: {
-		tier: "Uber",
+		tier: "AG",
 	},
 	mew: {
-		tier: "Uber",
+		tier: "AG",
 	},
 	missingno: {
 		isNonstandard: "Unobtainable",
-		tier: "Illegal",
+		tier: "AG",
 	},
 
 	meganium: {

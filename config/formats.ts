@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause'],
-		banlist: ['Uber', 'Illegal'],
+		banlist: ['Uber'],
 	},
 	{
 		name: "[Gen 3] Modded Uber",
@@ -42,7 +42,7 @@ export const Formats: FormatList = [
 		mod: 'gen3mod',
 		gameType: 'doubles',
 		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod'],
-		banlist: ['Uber', 'Illegal'],
+		banlist: ['Uber'],
 	},
 	{
 		name: "[Gen 3] Modded Doubles Ubers",
@@ -113,14 +113,14 @@ export const Formats: FormatList = [
 
 		mod: 'gen3mod',
 		team: 'computerGenerated',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Illegal'],
+		ruleset: ['Standard', 'Freeze Clause Mod'],
 	},
 	{
 		name: "[Gen 1] Mod",
 
 		mod: 'gen1mod',
 		ruleset: ['Standard'],
-		banlist: ['Uber', 'Illegal'],
+		banlist: ['Uber'],
 	},
 
 	{
