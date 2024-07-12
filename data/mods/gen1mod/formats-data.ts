@@ -472,6 +472,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	crabominable: {
 		tier: "OU",
 	},
+	girafarig: {
+		tier: "OU",
+	},
 	sandygast: {
 		tier: "OU",
 	},

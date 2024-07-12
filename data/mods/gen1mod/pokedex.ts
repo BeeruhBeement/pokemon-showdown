@@ -640,4 +640,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 1,
 		baseStats: {hp: 97, atk: 132, def: 77, spa: 67, spd: 67, spe: 43},
 	},
+	sandygast: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 55, atk: 55, def: 80, spa: 70, spd: 70, spe: 15},
+	},
 };
