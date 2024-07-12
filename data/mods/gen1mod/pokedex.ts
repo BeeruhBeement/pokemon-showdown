@@ -612,26 +612,32 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 
 	meganium: {
 		inherit: true,
+		gen: 1,
 		baseStats: {hp: 80, atk: 82, def: 100, spa: 83, spd: 83, spe: 80},
 	},
 	linoone: {
 		inherit: true,
+		gen: 1,
 		baseStats: {hp: 78, atk: 70, def: 61, spa: 61, spd: 61, spe: 100},
 	},
 	veluza: {
 		inherit: true,
+		gen: 1,
 		baseStats: {hp: 90, atk: 102, def: 73, spa: 78, spd: 78, spe: 70},
 	},
 	girafarig: {
 		inherit: true,
+		gen: 1,
 		baseStats: {hp: 70, atk: 80, def: 65, spa: 65, spd: 65, spe: 85},
 	},
 	fletchinder: {
 		inherit: true,
+		gen: 1,
 		baseStats: {hp: 62, atk: 73, def: 55, spa: 56, spd: 56, spe: 84},
 	},
 	crabominable: {
 		inherit: true,
+		gen: 1,
 		baseStats: {hp: 97, atk: 132, def: 77, spa: 67, spd: 67, spe: 43},
 	},
 };
