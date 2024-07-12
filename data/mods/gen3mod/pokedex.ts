@@ -207,6 +207,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	yanmega: {
 		inherit: true,
 		gen: 3,
+		types: ["Bug", "Dragon"],
 		abilities: {0: "Speed Boost", 1: "Compound Eyes"},
 	},
 	murkrow: {

@@ -2749,6 +2749,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			uproar: ["3L34"],
 			wingattack: ["3L39"],
+			
+			flamethrower: ["3M"],
 		},
 	},
 	murkrow: {

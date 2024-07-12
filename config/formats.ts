@@ -27,21 +27,14 @@ export const Formats: FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 3] Modded Computer-Generated Teams",
-
-		mod: 'gen3mod',
-		team: 'computerGenerated',
-		ruleset: ['Standard', 'Freeze Clause Mod'],
+		banlist: ['Uber', 'Illegal'],
 	},
 	{
 		name: "[Gen 3] Modded Uber",
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Freeze Clause Mod'],
-		banlist: [],
+		banlist: ['Illegal'],
 	},
 	{
 		name: "[Gen 3] Modded Doubles",
@@ -49,7 +42,7 @@ export const Formats: FormatList = [
 		mod: 'gen3mod',
 		gameType: 'doubles',
 		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod'],
-		banlist: ['Uber'],
+		banlist: ['Uber', 'Illegal'],
 	},
 	{
 		name: "[Gen 3] Modded Doubles Ubers",
@@ -57,7 +50,7 @@ export const Formats: FormatList = [
 		mod: 'gen3mod',
 		gameType: 'doubles',
 		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod'],
-		banlist: [],
+		banlist: ['Illegal'],
 	},
 	{
 		name: "[Gen 9] National Dex Sky Battles",
@@ -110,6 +103,24 @@ export const Formats: FormatList = [
 			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster', 'Indeedee',
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Shedinja', 'Indeedee-F'],
+	},
+
+	{
+		section: "Experimental/Unfinished",
+	},
+	{
+		name: "[Gen 3] Modded Computer-Generated Teams",
+
+		mod: 'gen3mod',
+		team: 'computerGenerated',
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Illegal'],
+	},
+	{
+		name: "[Gen 1] Mod",
+
+		mod: 'gen1mod',
+		ruleset: ['Standard'],
+		banlist: ['Uber', 'Illegal'],
 	},
 
 	{
