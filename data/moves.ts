@@ -22247,41 +22247,4 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Poison",
 		contestType: "Tough",
 	},
-	resonantbell: {
-		isNonstandard: "Custom",
-		num: 5009,
-		accuracy: 100,
-		basePower: 80,
-		category: "Special",
-		name: "Resonant Bell",
-		pp: 10,
-		priority: 0,
-		flags: {allyanim: 1, metronome: 1, futuremove: 1},
-		ignoreImmunity: true,
-		onHit (source, target) {
-			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
-				duration: 2,
-				move: 'resonantbell',
-				source: source,
-				moveData: {
-					id: 'resonantbell',
-					name: "Resonant Bell",
-					accuracy: 100,
-					basePower: 40,
-					category: "Special",
-					priority: 0,
-					flags: {allyanim: 1, metronome: 1, futuremove: 1},
-					ignoreImmunity: false,
-					effectType: 'Move',
-					type: 'Steel',
-				},
-			});
-			this.add('-start', source, 'move: Resonant Bell');
-			return this.NOT_FAIL;
-		},
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Clever",
-	},
 };

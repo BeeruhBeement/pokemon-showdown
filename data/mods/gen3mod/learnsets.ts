@@ -3083,6 +3083,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			meteormash: ["3L1"],
 			bulletpunch: ["3L1"],
 			firepunch: ["3T"],
+			forcepunch: ["3T"],
 		},
 	},
 	chinchou: {
@@ -6451,7 +6452,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			defog: ["3M"],
 			energyball: ["3M"],
 			hypervoice: ["3T"],
-			resonantbell: ["3L1"],
 		},
 	},
 	absol: {
@@ -7194,7 +7194,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			steelroller: ["3T"],
 			hiddenpower: ["3M"],
-			resonantbell: ["3L1"],
 		},
 	},
 	riolu: {
@@ -10155,7 +10154,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			swift: ["3M"],
 			waterfall: ["9M"],
 			watergun: ["3L6"],
-			waterpledge: ["3T"],
 			waterpulse: ["3L12"],
 			weatherball: ["3M"],
 			workup: ["3M"],
@@ -10178,7 +10176,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			fling: ["3M"],
 			growl: ["3L1"],
 			lightscreen: ["3M"],
-			muddywater: ["3M"],
 			mudshot: ["3M"],
 			pound: ["3L1"],
 			protect: ["3M"],
@@ -10193,7 +10190,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			surf: ["3M"],
 			swift: ["3M"],
 			watergun: ["3L1"],
-			waterpledge: ["3T"],
 			waterpulse: ["3L12"],
 			weatherball: ["3M"],
 			workup: ["3M"],
@@ -10212,7 +10208,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bind: ["3L1"],
 			blizzard: ["3M"],
 			bounce: ["3M"],
-			darkpulse: ["3M"],
 			dive: ["3M"],
 			endure: ["3M"],
 			facade: ["3M"],
