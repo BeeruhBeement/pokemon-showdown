@@ -2304,4 +2304,9 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Deadwood",
 		shortDesc: "While this Pokemon has 1/2 or less of its max HP, it's afflicted by Rot.",
 	},
+	superhero: {
+		name: "Superhero",
+		desc: "While this Pokemon has 1/2 or less of its maximum HP, its Attack and Defense are multiplied by 1.3x.",
+		shortDesc: "While this Pokemon has 1/2 or less of its max HP, its Atk. and Def. are 1.3x.",
+	},
 };
