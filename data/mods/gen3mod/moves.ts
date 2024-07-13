@@ -119,14 +119,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Raises the Attack of the user and all allies 1 stage.",
 		shortDesc: "Raises the user's and ally's Attack by 1.",
 	},
-	bugbite: {
-		inherit: true,
-		gen: 3,
-		onHit(target, source) {},
-		desc: "No additional effect.",
-		shortDesc: "No additional effect.",
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
-	},
 	iceshard: {
 		inherit: true,
 		gen: 3,

@@ -5784,5 +5784,24 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				pokemon.addVolatile('rot');
 			}
 		},
-	},	
+	},
+	superhero: {
+		flags: {},
+		name: "Superhero",
+		rating: 3,
+		num: 5009,
+		onModifyAtkPriority: 6,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (attacker.hp <= attacker.maxhp / 2) {
+				this.debug('Superpower attack boost');
+				return this.chainModify(1.3);
+			}
+		},
+		onModifyDefPriority: 6,
+		onModifyDef(def, pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 2) {
+				return this.chainModify(1.3);
+			}
+		},
+	},
 };

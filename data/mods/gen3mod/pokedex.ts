@@ -193,6 +193,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	snorlax: {
 		inherit: true,
 	},
+	chikorita: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Heart Veil"},
+	},
+	bayleef: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Heart Veil"},
+	},
+	meganium: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Heart Veil"},
+	},
 	cyndaquill: {
 		inherit: true,
 		abilities: {0: "Blaze", 1: "Flash Fire"},
@@ -214,6 +226,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	noctowl: {
 		inherit: true,
 		types: ["Ghost", "Flying"],
+	},
+	ledyba: {
+		inherit: true,
+	},
+	ledian: {
+		inherit: true,
+		types: ["Bug", "Fighting"],
+		baseStats: {hp: 55, atk: 75, def: 50, spa: 55, spd: 110, spe: 85},
+		abilities: {0: "Superhero", 1: "Iron Fist"},
 	},
 	chinchou: {
 		inherit: true,
