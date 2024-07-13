@@ -4108,16 +4108,14 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	sobble: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	drizzile: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	inteleon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	inteleongmax: {
 		tier: "Illegal",

@@ -888,16 +888,30 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onResidualOrder: 12,
 		onResidual(pokemon) {
 			if (!pokemon.types.includes('Ghost') && !pokemon.types.includes('Poison') && !pokemon.types.includes('Steel')) {
-				this.damage(pokemon.baseMaxhp / 16);
+				this.damage(pokemon.baseMaxhp / 8);
 			}
 		},
-		onBeforeMovePriority: 2,
+		onBeforeMovePriority: 6,
 		onBeforeMove(pokemon, target, move) {
-			if (this.randomChance(1, 4) && (!pokemon.types.includes('Ghost') && !pokemon.types.includes('Poison') && !pokemon.types.includes('Steel'))) {
-				this.add('-activate', pokemon, 'is coughing from Rot');
+			if (move.flags['heal'] && !move.isZ && !move.isMax) {
+				this.add('cant', pokemon, 'rot');
 				return false;
 			}
 		},
+		onModifyMove(move, pokemon, target) {
+			if (move.flags['heal'] && !move.isZ && !move.isMax) {
+				this.add('cant', pokemon, 'rot');
+				return false;
+			}
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, 'rot');
+		},
+		onTryHeal(damage, target, source, effect) {
+			if ((effect?.id === 'zpower') || this.effectState.isZ) return damage;
+			return false;
+		},
+
 		onDamagingHit(damage, target, source, move) {
 			if (move.flags['contact']) {
 				source.addVolatile('rot');

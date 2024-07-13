@@ -109,13 +109,6 @@ export const Formats: FormatList = [
 		section: "Experimental/Unfinished",
 	},
 	{
-		name: "[Gen 3] Modded Computer-Generated Teams",
-
-		mod: 'gen3mod',
-		team: 'computerGenerated',
-		ruleset: ['Standard', 'Freeze Clause Mod'],
-	},
-	{
 		name: "[Gen 1] Mod",
 
 		mod: 'gen1mod',

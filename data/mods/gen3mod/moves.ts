@@ -728,4 +728,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	resonantbell: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+		shortDesc: "Typeless Special move. Hits again at half power the turn after being used.",
+		type: "???",
+		overrideOffensiveStat: 'spa',
+		overrideDefensiveStat: 'spd',
+	},
 };

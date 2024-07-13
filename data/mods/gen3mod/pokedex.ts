@@ -1,4 +1,16 @@
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+	charmander: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Solar Power"},
+	},
+	charmeleon: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Solar Power"},
+	},
+	charizard: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Solar Power"},
+	},
 	sandshrew: {
 		inherit: true,
 		abilities: {0: "Sand Rush", 1: "Rough Skin"},
@@ -121,6 +133,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Stench", 1: "Sticky Hold"},
 		baseStats: {hp: 105, atk: 105, def: 75, spa: 75, spd: 100, spe: 50},
 	},
+	onix: {
+		inherit: true,
+		baseStats: {hp: 45, atk: 65, def: 160, spa: 30, spd: 45, spe: 70},
+	},
+	steelix: {
+		inherit: true,
+	},
 	voltorb: {
 		inherit: true,
 		abilities: {0: "Soundproof", 1: "Static"},
@@ -187,6 +206,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Fire", "Ground"],
 		abilities: {0: "Blaze", 1: "Flash Fire"},
+	},
+	hoothoot: {
+		inherit: true,
+		types: ["Ghost", "Flying"],
+	},
+	noctowl: {
+		inherit: true,
+		types: ["Ghost", "Flying"],
 	},
 	chinchou: {
 		inherit: true,
@@ -855,6 +882,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Thick Fat"},
 		baseStats: {hp: 223, atk: 101, def: 59, spa: 73, spd: 47, spe: 47},
+	},
+	sobble: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Inner Focus"},
+	},
+	drizzile: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Inner Focus"},
+	},
+	inteleon: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Inner Focus"},
 	},
 	sizzlipede: {
 		inherit: true,

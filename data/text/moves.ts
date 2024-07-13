@@ -7590,4 +7590,12 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Apples Rot to the target. Not blocked by Shield Dust.",
 		shortDesc: "Applies Rot to the target.",
 	},
+	resonantbell: {
+		name: "Future Sight",
+		desc: "Deals damage again one turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability.",
+		shortDesc: "Hits again at half power the turn after being used.",
+
+		start: "  [POKEMON] 's attack is echoing!",
+		activate: "  [TARGET] was hit by the echo!",
+	},
 };
