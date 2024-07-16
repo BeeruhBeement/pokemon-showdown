@@ -119,11 +119,11 @@ export const Formats: FormatList = [
 		"name": "[Gen 9] National Dex Doubles Lol Complex",
 		"mod": "gen9",
 		"gameType": "doubles",
-		"ruleset": ["Standard NatDex", "OHKO Clause", "Evasion Moves Clause", "Evasion Abilities Clause", "Species Clause", "Gravity Sleep Clause", "Max Level = 19", "Default Level = 19"],
+		"ruleset": ["Standard NatDex", "OHKO Clause", "Evasion Moves Clause", "Evasion Abilities Clause", "Species Clause", "Gravity Sleep Clause",  'Adjust Level = 19',],
 		"banlist": [],
 		"unbanlist": [],
 		"onValidateSet": function(set) {
-			const allowedPokemon = ["Applin", "Blipbug", "Combee", "Caterpie", "Cascoon", "Cosmoem", "Cosmog", "Kakuna", "Kricketot", "Magikarp", "Metapod", "Scatterbug", "Silcoon", "Snom", "Sunkern", "Toxel", "Tynamo", "Tyrogue", "Weedle", "Wishiwashi", "Wobbuffet", "Wurmple", "Wynaut"];
+			const allowedPokemon = ["Applin", "Blipbug", "Combee", "Caterpie", "Cascoon", "Cosmoem", "Cosmog", "Kakuna", "Kricketot", "Magikarp", "Metapod", "Scatterbug", "Silcoon", "Snom", "Spewpa", "Sunkern", "Toxel", "Tynamo", "Tyrogue", "Weedle", "Wishiwashi", "Wobbuffet", "Wurmple", "Wynaut"];
 	        const restrictedPokemon = ["Tyrogue","Wishiwashi"];
 			const maxBasePower = 60;
 	
