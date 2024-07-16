@@ -115,6 +115,33 @@ export const Formats: FormatList = [
 		ruleset: ['Standard'],
 		banlist: ['Uber'],
 	},
+	{
+		"name": "[Gen 9] National Dex Doubles Lol Complex",
+		"mod": "gen9",
+		"gameType": "doubles",
+		"ruleset": ["Standard NatDex", "OHKO Clause", "Evasion Moves Clause", "Evasion Abilities Clause", "Species Clause", "Gravity Sleep Clause", "Max Level = 19", "Default Level = 19"],
+		"banlist": [],
+		"unbanlist": [],
+		"onValidateSet": function(set) {
+			const allowedPokemon = ["Applin", "Blipbug", "Combee", "Caterpie", "Cascoon", "Cosmoem", "Cosmog", "Kakuna", "Kricketot", "Magikarp", "Metapod", "Scatterbug", "Silcoon", "Snom", "Sunkern", "Toxel", "Tynamo", "Tyrogue", "Weedle", "Wishiwashi", "Wobbuffet", "Wurmple", "Wynaut"];
+	        const restrictedPokemon = ["Tyrogue","Wishiwashi"];
+			const maxBasePower = 60;
+	
+			if (!allowedPokemon.includes(set.species)) {
+				return [`${set.species} is not allowed.`];
+			}
+	
+			if (restrictedPokemon.includes(set.species)) {
+				for (const move of set.moves) {
+					const moveData = this.dex.moves.get(move);
+					if (moveData.basePower > maxBasePower) {
+						return [`${set.species}'s move ${moveData.name} exceeds the 60 base power limit. (Tyrogue and Wishiwashi can't use moves above 60 base power)`];
+					}
+				}
+			}
+		}
+	},
+	
 
 	{
 		section: "National Dex Lower Tiers",

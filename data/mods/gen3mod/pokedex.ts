@@ -382,20 +382,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Reckless", 1: "Gluttony"},
 	},
+	obstagoon: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Reckless", 1: "Guts"},
+		otherFormes: ["Obstagoon-Hoenn"],
+		formeOrder: ["Obstagoon", "Obstagoon-Hoenn"],
+	},
 
 	obstagoonhoenn: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
 	},
-
-	obstagoon: {
-		inherit: true,
-		gen: 3,
-		abilities: {0: "Reckless", 1: "Guts"},
-		otherFormes: ["Obstagoon-Hoenn"],
-		formeOrder: ["Obstagoon-Hoenn", "Obstagoon"],
-	},
+	
 	wingull: {
 		inherit: true,
 		abilities: {0: "Keen Eye", 1: "Water Absorb"},
