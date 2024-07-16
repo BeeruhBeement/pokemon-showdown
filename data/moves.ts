@@ -22065,24 +22065,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cool",
 	},
 
-	forcepunch: {
-		isNonstandard: "Custom",
-		num: 5000,
-		accuracy: 100,
-		basePower: 75,
-		category: "Physical",
-		name: "Force Punch",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, punch: 1,metronome: 1},
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Tough",
-	},
 	weatherdance: {
 		isNonstandard: "Custom",
-		num: 5001,
+		num: 5000,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -22108,7 +22093,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	cascadecrash: {
 		isNonstandard: "Custom",
-		num: 5002,
+		num: 5001,
 		accuracy: 95,
 		basePower: 100,
 		category: "Physical",
@@ -22127,7 +22112,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	etherealcutter: {
 		isNonstandard: "Custom",
-		num: 5003,
+		num: 5002,
 		accuracy: 95,
 		basePower: 85,
 		category: "Physical",
@@ -22158,7 +22143,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	shieldbash: {
 		isNonstandard: "Custom",
-		num: 5004,
+		num: 5003,
 		accuracy: 90,
 		basePower: 70,
 		category: "Physical",
@@ -22173,7 +22158,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	shadowcrescent: {
 		isNonstandard: "Custom",
-		num: 5005,
+		num: 5004,
 		accuracy: 90,
 		basePower: 85,
 		category: "Special",
@@ -22193,7 +22178,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	solarflare: {
 		isNonstandard: "Custom",
-		num: 5006,
+		num: 5005,
 		accuracy: 90,
 		basePower: 85,
 		category: "Special",
@@ -22211,7 +22196,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	rampaginghammer: {
 		isNonstandard: "Custom",
-		num: 5007,
+		num: 5006,
 		accuracy: 95,
 		basePower: 100,
 		category: "Physical",
@@ -22231,7 +22216,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},	
 	rottenvial: {
 		isNonstandard: "Custom",
-		num: 5008,
+		num: 5007,
 		accuracy: 100,
 		basePower: 20,
 		category: "Physical",

@@ -683,12 +683,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
-	
-	forcepunch: {
+	drainpunch: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
+	
 	weatherdance: {
 		inherit: true,
 		gen: 3,

@@ -3083,7 +3083,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			meteormash: ["3L1"],
 			bulletpunch: ["3L1"],
 			firepunch: ["3T"],
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 		},
 	},
 	chinchou: {
@@ -5425,7 +5425,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 
 			focuspunch: ["3T"],
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 			bulkup: ["3M"],
 			earthquake: ["3M"],
 			brickbreak: ["3M"],
@@ -6225,7 +6225,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			suckerpunch: ["3T", "3L41"],
 			bulletpunch: ["3L1"],
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 			energyball: ["3M"],
 		},
 	},
@@ -7230,7 +7230,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			uproar: ["3T"],
 			
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 			stealthrock: ["3M"],
 			submission: ["3M"],
 			headsmash: ["3L52"],
@@ -7631,7 +7631,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			workup: ["3M"],
 
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 		},
 	},
 	lucario: {
@@ -7690,7 +7690,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3M"],
 			workup: ["3M"],
 			
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 		},
 	},
 	snover: {
@@ -8550,7 +8550,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderpunch: ["3T"],
 			toxic: ["3M"],
 			
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 			circlethrow: ["3M"],
 			counter: ["3T"],
 			focuspunch: ["3M"],
@@ -9096,7 +9096,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			vinewhip: ["3L5"],
 			
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 			energyball: ["3M"],
 			submission: ["3L1"],
 			frenzyplant: ["3T"],
@@ -9250,7 +9250,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			uproar: ["3T"],
 			vitalthrow: ["3L27"],
 			
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 		},
 	},
 	pangoro: {
@@ -9316,7 +9316,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			vitalthrow: ["3L27"],
 			
 			bulletpunch: ["3L1"],
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 			submission: ["3M"],
 		},
 	},
@@ -10414,7 +10414,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			vitalthrow: ["3L19"],
 
-			forcepunch: ["3T"],
+			drainpunch: ["3T"],
 			submission: ["3L47"],
 		},
 	},
