@@ -116,10 +116,18 @@ export const Formats: FormatList = [
 		banlist: ['Uber'],
 	},
 	{
+		name: "[Gen 3] Modded Challenge Cup",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any legal moves.`,
+
+		mod: 'gen3mod',
+		team: 'randomCC',
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause'],
+	},
+	{
 		"name": "[Gen 9] National Dex Doubles Lol Complex",
 		"mod": "gen9",
 		"gameType": "doubles",
-		"ruleset": ["Standard NatDex", "OHKO Clause", "Evasion Moves Clause", "Evasion Abilities Clause", "Species Clause", "Gravity Sleep Clause",  'Adjust Level = 19',],
+		"ruleset": ["Standard NatDex", "OHKO Clause", "Evasion Moves Clause", "Evasion Abilities Clause", "Species Clause", "Gravity Sleep Clause",  'Adjust Level = 19'],
 		"banlist": [],
 		"unbanlist": [],
 		"onValidateSet": function(set) {
