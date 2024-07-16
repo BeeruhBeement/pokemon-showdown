@@ -679,6 +679,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	throatchop: {
+		inherit: true,
+		gen: 3,
+	},
 	
 	forcepunch: {
 		inherit: true,

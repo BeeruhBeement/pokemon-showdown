@@ -332,6 +332,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	reckless: {
+		inherit: true,
+		gen: 3,
+	},
 	
 	pixieveil: {
 		inherit: true,
@@ -374,6 +378,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	deadwood: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	superhero: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

@@ -1539,24 +1539,20 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	zigzagoon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	zigzagoongalar: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	linoone: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	linoonegalar: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	obstagoon: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	wurmple: {
 		tier: "Illegal",
@@ -5378,5 +5374,10 @@ doublesTier: "Illegal",
 	pokestarufoproIllegal2: {
 		tier: "Illegal",
 doublesTier: "Illegal",
+	},
+	
+	obstagoonhoenn: {
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 };

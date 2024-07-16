@@ -364,6 +364,38 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Torrent", 1: "Regenerator"},
 	},
+	zigzagoon: {
+		inherit: true,
+		abilities: {0: "Pickup", 1: "Gluttony"},
+	},
+	zigzagoongalar: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Pickup", 1: "Gluttony"},
+	},
+	linoone: {
+		inherit: true,
+		abilities: {0: "Reckless", 1: "Gluttony"},
+	},
+	linoonegalar: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Reckless", 1: "Gluttony"},
+	},
+
+	obstagoonhoenn: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+
+	obstagoon: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Reckless", 1: "Guts"},
+		otherFormes: ["Obstagoon-Hoenn"],
+		formeOrder: ["Obstagoon-Hoenn", "Obstagoon"],
+	},
 	wingull: {
 		inherit: true,
 		abilities: {0: "Keen Eye", 1: "Water Absorb"},

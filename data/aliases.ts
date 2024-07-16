@@ -1882,4 +1882,6 @@ export const Aliases: {[alias: string]: string} = {
 	president: "Abomasnow",
 	"9t": "Ninetales",
 	a9t: "Ninetales-Alola",
+	stoise: "Blastoise",
+	vape: "Vaporeon",
 };
