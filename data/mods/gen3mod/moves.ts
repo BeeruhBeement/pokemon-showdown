@@ -542,6 +542,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			durationCallback() {
 				return this.random(3, 5);
 			},
+			onResidualOrder: 10,
+			onResidualSubOrder: 15,
+			onEnd(target) {
+				this.add('-end', target, 'move: Taunt', '[silent]');
+			},
+			onDisableMove(pokemon) {
+				for (const moveSlot of pokemon.moveSlots) {
+					if (this.dex.moves.get(moveSlot.move).category === 'Status') {
+						pokemon.disableMove(moveSlot.id);
+					}
+				}
+			},
+			onBeforeMove(attacker, defender, move) {
+				if (move.category === 'Status') {
+					this.add('cant', attacker, 'move: Taunt', move);
+					return false;
+				}
+			},
 		},
 	},
 	submission: {

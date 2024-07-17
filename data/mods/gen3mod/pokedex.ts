@@ -41,6 +41,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pidgeot: {
 		inherit: true,
+		baseStats: {hp: 83, atk: 80, def: 75, spa: 70, spd: 70, spe: 101},
 	},
 	rattata: {
 		inherit: true,
@@ -48,6 +49,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rattataalola: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Strong Jaw", 1: "Thick Fat"},
 	},
 	raticate: {
@@ -56,6 +58,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	raticatealola: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Strong Jaw", 1: "Thick Fat"},
 	},
 	spearow: {
@@ -63,6 +66,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	fearow: {
 		inherit: true,
+		baseStats: {hp: 75, atk: 100, def: 65, spa: 61, spd: 61, spe: 100},
 		abilities: {0: "Piercing"},
 	},
 	sandshrew: {
@@ -439,19 +443,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	obstagoon: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 83, atk: 80, def: 91, spa: 60, spd: 81, spe: 75},
+		baseStats: {hp: 83, atk: 90, def: 91, spa: 60, spd: 81, spe: 95},
 		abilities: {0: "Reckless", 1: "Guts"},
-		otherFormes: ["Obstagoon-Hoenn"],
-		formeOrder: ["Obstagoon", "Obstagoon-Hoenn"],
 	},
-
-	obstagoonhoenn: {
-		inherit: true,
-		gen: 3,
-		baseStats: {hp: 83, atk: 80, def: 71, spa: 60, spd: 81, spe: 95},
-		isNonstandard: null,
-	},
-	
 	wingull: {
 		inherit: true,
 		abilities: {0: "Keen Eye", 1: "Water Absorb"},

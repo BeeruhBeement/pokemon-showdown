@@ -124,14 +124,14 @@ export const Formats: FormatList = [
 		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause'],
 	},
 	{
-		"name": "[Gen 9] National Dex Doubles Piss Complex",
-		"mod": "gen9",
+		"name": "[Gen 9] National Dex Doubles Weed Complex",
+		"mod": "weedmodtiers",
 		"gameType": "doubles",
 		"ruleset": ["Standard NatDex", "OHKO Clause", "Evasion Moves Clause", "Evasion Abilities Clause", "Species Clause", "Gravity Sleep Clause", 'Adjust Level = 19'],
 		"banlist": ['Shadow Tag', 'Arena Trap', 'Huge Power', 'Pure Power', 'Stored Power', 'Return', 'Frustration'],
 		"unbanlist": [],
 		"onValidateSet": function(set) {
-			const allowedPokemon = ["Applin", "Azurill", "Blipbug", "Bunnelby", "Burmy", "Combee", "Caterpie", "Cascoon", "Cosmoem", "Cosmog", "Flittle", "Gimmighoul-Roaming", "Kakuna", "Kricketot", "Magikarp", "Metapod", "Scatterbug", "Shinx", "Silcoon", "Slakoth", "Snom", "Spewpa", "Sunkern", "Toxel", "Tynamo", "Tyrogue", "Weedle", "Wishiwashi", "Wobbuffet", "Wiglett", "Wurmple", "Wynaut"];
+			const allowedPokemon = ["Applin", "Azurill", "Blipbug", "Burmy", "Combee", "Caterpie", "Cascoon", "Cosmoem", "Cosmog", "Ditto", "Flittle", "Gimmighoul-Roaming", "Kakuna", "Kricketot", "Magikarp", "Metapod", "Scatterbug", "Shinx", "Silcoon", "Slakoth", "Snom", "Spewpa", "Sunkern", "Toxel", "Tynamo", "Tyrogue", "Unown", "Weedle", "Wishiwashi", "Wobbuffet", "Wiglett", "Wurmple", "Wynaut"];
 			const restrictedPokemon = ["Azurill", "Flittle", "Gimmighoul-Roaming", "Shinx", "Slakoth", "Tyrogue", "Wishiwashi", "Wiglett"];
 			const maxBasePower = 60;
 	

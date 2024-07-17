@@ -1538,7 +1538,7 @@ doublesTier: "Illegal",
 		tier: "OU",
 	},
 	linoonegalar: {
-		tier: "OU",
+		tier: "NFE",
 	},
 	obstagoon: {
 		tier: "OU",
