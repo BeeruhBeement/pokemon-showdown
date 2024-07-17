@@ -682,6 +682,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	hurricane: {
+		inherit: true,
+		gen: 3,
+	},
 	glare: {
 		inherit: true,
 		type: "Poison",

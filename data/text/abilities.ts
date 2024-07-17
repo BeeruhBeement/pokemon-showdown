@@ -2314,8 +2314,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Vanguard",
 		shortDesc: "1.5x damage on first turn out.",
 	},
-	pierching: {
-		name: "Pierching",
+	piercing: {
+		name: "Piercing",
 		shortDesc: "Physical moves ignore 20% of the target's Defense.",
 	},
 };
