@@ -104,4 +104,53 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["1M"],
 		}
 	},
+	cherrim: {
+		learnset: {
+			solarbeam: ["1L61"],
+			bodyslam: ["1L31"],
+			razorleaf: ["1L1", "1L8"],
+			poisonpowder: ["1L1"],
+			growl: ["1L1"],
+			tackle: ["1L1"],
+			substitute: ["1M"],
+			swordsdance: ["1M"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			megadrain: ["1M"],
+		}
+	},
+	spinda: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			quickattack: ["1L1"],
+			icebeam: ["1L51"],
+			bite: ["1L1"],
+			substitute: ["1M"],
+			swordsdance: ["1M"],
+			agility: ["1M"],
+			doubleedge: ["1M"],
+			headbutt: ["1L7"],
+			rest: ["1M", "1L47"],
+			slash: ["1L41"],
+			toxic: ["1M"],
+			thunderwave: ["1M"],
+			thunder: ["1M"],
+			thunderbolt: ["1M"],
+			surf: ["1M"],
+		}
+	},
+	heatmor: {
+		learnset: {
+			tackle: ["1L1"],
+			focusenergy: ["1L15"],
+			slash: ["1L20"],
+			fireblast: ["1M"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			flamethrower: ["1M"],
+			megadrain: ["1M"],
+		}
+	},
 };

@@ -478,4 +478,13 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	sandygast: {
 		tier: "OU",
 	},
+	cherrim: {
+		tier: "OU",
+	},
+	spinda: {
+		tier: "OU",
+	},
+	heatmor: {
+		tier: "OU",
+	},
 };

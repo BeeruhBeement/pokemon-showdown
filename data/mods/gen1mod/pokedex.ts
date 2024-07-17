@@ -645,4 +645,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 1,
 		baseStats: {hp: 55, atk: 55, def: 80, spa: 70, spd: 70, spe: 15},
 	},
+	cherrim: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 70, atk: 60, def: 70, spa: 87, spd: 87, spe: 85},
+	},
+	spinda: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 60, atk: 60, def: 60, spa: 60, spd: 60, spe: 60},
+	},
+	heatmor: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 85, atk: 97, def: 66, spa: 105, spd: 105, spe: 66},
+	},
 };
