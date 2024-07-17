@@ -11,6 +11,28 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Blaze", 1: "Solar Power"},
 	},
+	caterpie: {
+		inherit: true,
+	},
+	metapod: {
+		inherit: true,
+	},
+	butterfree: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 45, def: 60, spa: 90, spd: 80, spe: 80},
+		abilities: {0: "Compound Eyes", 1: "Heart Veil"},
+	},
+	weedle: {
+		inherit: true,
+	},
+	kakuna: {
+		inherit: true,
+	},
+	beedrill: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 90, def: 40, spa: 45, spd: 80, spe: 95},
+		abilities: {0: "Swarm", 1: "Vanguard"},
+	},
 	sandshrew: {
 		inherit: true,
 		abilities: {0: "Sand Rush", 1: "Rough Skin"},
@@ -195,15 +217,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chikorita: {
 		inherit: true,
-		abilities: {0: "Overgrow", 1: "Heart Veil"},
+		abilities: {0: "Overgrow", 1: "Regenerator"},
 	},
 	bayleef: {
 		inherit: true,
-		abilities: {0: "Overgrow", 1: "Heart Veil"},
+		abilities: {0: "Overgrow", 1: "Regenerator"},
 	},
 	meganium: {
 		inherit: true,
-		abilities: {0: "Overgrow", 1: "Heart Veil"},
+		abilities: {0: "Overgrow", 1: "Regenerator"},
 	},
 	cyndaquill: {
 		inherit: true,
@@ -825,7 +847,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Fairy", "Poison"],
-		abilities: {0: "Poison Point", 1: "Filter"},
+		abilities: {0: "Cleanser", 1: "Filter"},
 	},
 	binacle: {
 		inherit: true,

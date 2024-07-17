@@ -218,11 +218,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 60,
 	},
-	snarl: {
-		inherit: true,
-		gen: 3,
-		flags: {protect: 1, mirror: 1, sound: 1},
-	},
 	uturn: {
 		inherit: true,
 		gen: 3,

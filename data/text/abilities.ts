@@ -2280,7 +2280,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	executioner: {
 		name: "Executioner",
-		shortDesc: "This Pokémon's moves are guaranteed KOs against targets with 25% or less HP.",
+		desc: "This Pokémon's moves become OHKO moves against targets with 25% or less HP. If the user's level is lower than the target's level damage is dealt normally.",
+		shortDesc: "This Pokémon's moves OHKOs targets with 25% or less HP.",
 	},
 	chrysalis: {
 		name: "Chrysalis",
@@ -2308,5 +2309,9 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Superhero",
 		desc: "While this Pokemon has 1/2 or less of its maximum HP, its Attack and Defense are multiplied by 1.3x.",
 		shortDesc: "While this Pokemon has 1/2 or less of its max HP, its Atk. and Def. are 1.3x.",
+	},
+	vanguard: {
+		name: "Superhero",
+		shortDesc: "1.5x damage on first turn out.",
 	},
 };

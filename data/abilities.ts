@@ -5706,7 +5706,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	executioner: {
 		isNonstandard: "Custom",
 		onModifyMove(move, source, target) {
-			if (target && target.hp <= target.maxhp / 4) {
+			if (target && target.hp <= target.maxhp / 4 && source.level >= target.level) {
 				move.ohko = true;
 			}
 		},
@@ -5786,6 +5786,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 	},
 	superhero: {
+		isNonstandard: "Custom",
 		flags: {},
 		name: "Superhero",
 		rating: 3,
@@ -5804,4 +5805,24 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 	},
+	vanguard: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Vanguard",
+		rating: 3,
+		num: 5010,
+		onStart(pokemon) {
+			pokemon.addVolatile('vanguard');	
+		},
+		onBasePowerPriority: 8,
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.volatiles['vanguard']) {
+				this.debug('Vanguard boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onResidual: function (pokemon) {
+			pokemon.removeVolatile('vanguard');
+		},
+	},	
 };
