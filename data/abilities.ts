@@ -5824,5 +5824,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidual: function (pokemon) {
 			pokemon.removeVolatile('vanguard');
 		},
-	},	
+	},
+	piercing: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Piercing",
+		rating: 3,
+		num: 5011,
+		onModifyDef(def, source, target, move) {
+			if (move && move.category === 'Physical') {
+				this.debug('Piercing defense reduction');
+				return this.chainModify(0.8);
+			}
+		},
+	},
 };

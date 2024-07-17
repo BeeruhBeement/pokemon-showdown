@@ -2311,7 +2311,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		shortDesc: "While this Pokemon has 1/2 or less of its max HP, its Atk. and Def. are 1.3x.",
 	},
 	vanguard: {
-		name: "Superhero",
+		name: "Vanguard",
 		shortDesc: "1.5x damage on first turn out.",
+	},
+	pierching: {
+		name: "Pierching",
+		shortDesc: "Physical moves ignore 20% of the target's Defense.",
 	},
 };

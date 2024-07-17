@@ -387,4 +387,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	vanguard: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	piercing: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 };

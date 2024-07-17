@@ -90,56 +90,50 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	pidgey: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	pidgeotto: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	pidgeot: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	pidgeotmega: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
 	rattata: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	rattataalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	raticate: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	raticatealola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	raticatealolatotem: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
 	spearow: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	fearow: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	ekans: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	arbok: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	pichu: {
 		tier: "Illegal",
@@ -1541,10 +1535,10 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	linoone: {
-		tier: "NFE",
+		tier: "OU",
 	},
 	linoonegalar: {
-		tier: "NFE",
+		tier: "OU",
 	},
 	obstagoon: {
 		tier: "OU",
