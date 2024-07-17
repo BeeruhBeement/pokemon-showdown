@@ -62,32 +62,28 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	caterpie: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	metapod: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	butterfree: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	butterfreegmax: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
 	weedle: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	kakuna: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	beedrill: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	beedrillmega: {
 		tier: "Illegal",
