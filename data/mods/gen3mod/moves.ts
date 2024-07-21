@@ -683,6 +683,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Dark",
 		accuracy: 100,
 	},
+	watershuriken: {
+		inherit: true,
+		gen: 3,
+	},
 	
 	weatherdance: {
 		inherit: true,

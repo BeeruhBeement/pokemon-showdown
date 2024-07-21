@@ -354,6 +354,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			wingattack: ["3L25"],
 			
 			roost: ["3M", "3L37"],
+			dualwingbeat: ["3T"],
 		},
 	},
 	pidgeotto: {
@@ -395,6 +396,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			wingattack: ["3L27"],
 			
 			roost: ["3M", "3L42"],
+			dualwingbeat: ["3T"],
 		},
 	},
 	pidgeot: {
@@ -438,6 +440,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			hurricane: ["3L68"],
 			roost: ["3M", "3L44"],
+			dualwingbeat: ["3T"],
 		},
 	},
 	rattata: {
@@ -707,6 +710,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thief: ["3M"],
 			toxic: ["3M"],
 			triattack: ["3E"],
+			
+			dualwingbeat: ["3T"],
 		},
 	},
 	fearow: {
@@ -747,6 +752,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			swift: ["3T"],
 			thief: ["3M"],
 			toxic: ["3M"],
+			
+			dualwingbeat: ["3T"],
 		},
 	},
 	ekans: {
@@ -4394,6 +4401,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			defog: ["3M"],
 			suckerpunch: ["3T", "3L45"],
+			dualwingbeat: ["3T"],
 		},
 	},
 	honchkrow: {
@@ -4444,6 +4452,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			suckerpunch: ["3T", "3L45"],
 			drillpeck: ["3L1"],
+			dualwingbeat: ["3T"],
 		},
 	},
 	misdreavus: {
@@ -6495,6 +6504,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			uturn: ["3T"],
 			xscissor: ["3L52"],
+
+			watershuriken: ["3L1"],
 		},
 	},
 	shedinja: {
