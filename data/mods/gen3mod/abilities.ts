@@ -336,6 +336,25 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	skilllink: {
+		inherit: true,
+		gen: 3,
+	},
+	powerspot: {
+		inherit: true,
+		desc: "All Pokemon have the power of their moves multiplied by 1.3. This affects Doom Desire and Future Sight, even if the user is not on the field.",
+		shortDesc: "All Pokemon have the power of their moves multiplied by 1.3.",
+		onAnyBasePowerPriority: 22,
+		onAnyBasePower(basePower, attacker, defender, move) {
+			if (attacker !== this.effectState.target) {
+				this.debug('Power Spot boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		onAllyBasePower (basePower, attacker, defender, move) {
+			return;
+		}
+	},
 	
 	pixieveil: {
 		inherit: true,

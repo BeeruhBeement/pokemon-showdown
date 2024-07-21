@@ -249,6 +249,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	focussash: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 	sitrusberry: {
 		inherit: true,
 		desc: "Restores 1/4 max HP when at 1/2 max HP or less. Single use.",
@@ -272,5 +277,20 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 259,
 		gen: 2,
 		isNonstandard: null,
+	},
+	lightball: {
+		inherit: true,
+		desc: "If held by Pichu, Pikachu, Raichu or Raichu-Alola, attacks have double power.",
+		onModifyAtk() {
+			return;
+		},
+		onModifySpA() {
+			return;
+		},
+		onBasePower(basePower, pokemon) {
+			if (pokemon.species.name === 'Pichu' || pokemon.species.name === 'Pikachu' || pokemon.species.name === 'Raichu' || pokemon.species.name === 'Raichu-Alola') {
+				return this.chainModify(2);
+			}
+		},
 	},
 };

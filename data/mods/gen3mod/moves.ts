@@ -270,7 +270,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	highjumpkick: {
 		inherit: true,
-		basePower: 110,
+		basePower: 120,
 		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 		onMoveFail(target, source, move) {
@@ -279,7 +279,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	jumpkick: {
 		inherit: true,
-		basePower: 90,
+		basePower: 100,
 		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 		onMoveFail(target, source, move) {
@@ -536,32 +536,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		type: "Fire",
 	},
-	taunt: {
-		inherit: true,
-		condition: {
-			durationCallback() {
-				return this.random(3, 5);
-			},
-			onResidualOrder: 10,
-			onResidualSubOrder: 15,
-			onEnd(target) {
-				this.add('-end', target, 'move: Taunt', '[silent]');
-			},
-			onDisableMove(pokemon) {
-				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.moves.get(moveSlot.move).category === 'Status') {
-						pokemon.disableMove(moveSlot.id);
-					}
-				}
-			},
-			onBeforeMove(attacker, defender, move) {
-				if (move.category === 'Status') {
-					this.add('cant', attacker, 'move: Taunt', move);
-					return false;
-				}
-			},
-		},
-	},
 	submission: {
 		inherit: true,
 		basePower: 85,
@@ -706,7 +680,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	glare: {
 		inherit: true,
-		type: "Poison",
+		type: "Dark",
 		accuracy: 100,
 	},
 	

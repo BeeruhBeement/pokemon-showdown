@@ -69,6 +69,52 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 100, def: 65, spa: 61, spd: 61, spe: 100},
 		abilities: {0: "Piercing"},
 	},
+	ekans: {
+		inherit: true,
+	},
+	arbok: {
+		inherit: true,
+	},
+	pichu: {
+		inherit: true,
+	},
+	pikachu: {
+		inherit: true,
+	},
+	pikachucosplay: {
+		inherit: true,
+		gen: 3,
+	},
+	pikachurockstar: {
+		inherit: true,
+		gen: 3,
+	},
+	pikachubelle: {
+		inherit: true,
+		gen: 3,
+	},
+	pikachupopstar: {
+		inherit: true,
+		gen: 3,
+	},
+	pikachuphd: {
+		inherit: true,
+		gen: 3,
+	},
+	pikachulibre: {
+		inherit: true,
+		gen: 3,
+	},
+	raichu: {
+		inherit: true,
+		baseStats: {hp: 50, atk: 80, def: 55, spa: 80, spd: 60, spe: 100},
+	},
+	raichualola: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 50, atk: 80, def: 55, spa: 80, spd: 60, spe: 100},
+		abilities: {0: "Static"},
+	},
 	sandshrew: {
 		inherit: true,
 		abilities: {0: "Sand Rush", 1: "Rough Skin"},
@@ -89,7 +135,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	vulpix: {
 		inherit: true,
-		abilities: {0: "Flash Fire", 1: "Run Away"},
+		abilities: {0: "Flash Fire", 1: "Solar Power"},
 	},
 	ninetales: {
 		inherit: true,
@@ -128,11 +174,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	golem: {
 		inherit: true,
+		baseStats: {hp: 80, atk: 120, def: 130, spa: 55, spd: 65, spe: 45},
 	},
 	golemalola: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 80, atk: 110, def: 130, spa: 55, spd: 65, spe: 45},
 	},
 	ponyta: {
 		inherit: true,
@@ -930,17 +976,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	pikipek: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Keen Eye", 1: "Early Bird"},
+		abilities: {0: "Keen Eye", 1: "Skill Link"},
 	},
 	trumbeak: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Keen Eye", 1: "Early Bird"},
+		abilities: {0: "Keen Eye", 1: "Skill Link"},
 	},
 	toucannon: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Heatproof", 1: "Flame Body"},
+		abilities: {0: "Heatproof", 1: "Skill Link"},
 	},
 	fomantis: {
 		inherit: true,
@@ -1026,6 +1072,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	frosmoth: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
+	},
+	stonjourner: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
+	},
+	eiscue: {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
