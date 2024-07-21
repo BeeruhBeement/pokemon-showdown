@@ -84,26 +84,32 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	pikachucosplay: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Static"},
 	},
 	pikachurockstar: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Static"},
 	},
 	pikachubelle: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Static"},
 	},
 	pikachupopstar: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Static"},
 	},
 	pikachuphd: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Static"},
 	},
 	pikachulibre: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Static"},
 	},
 	raichu: {
 		inherit: true,
@@ -1079,12 +1085,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	stonjourner: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
+		baseStats: {hp: 100, atk: 105, def: 105, spa: 20, spd: 20, spe: 70},
 	},
 	eiscue: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
+	},
+	eiscuenoice: {
+		inherit: true,
+		gen: 3,
 	},
 	dracozolt: {
 		inherit: true,
