@@ -224,6 +224,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	choicescarf: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 	assaultvest: {
 		inherit: true,
 		gen: 3,

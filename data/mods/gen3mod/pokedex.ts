@@ -1085,7 +1085,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	stonjourner: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 100, atk: 105, def: 105, spa: 20, spd: 20, spe: 70},
+		baseStats: {hp: 100, atk: 105, def: 115, spa: 40, spd: 40, spe: 70},
 	},
 	eiscue: {
 		inherit: true,

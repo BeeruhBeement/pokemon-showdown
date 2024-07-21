@@ -355,6 +355,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			return;
 		}
 	},
+	iceface: {
+		inherit: true,
+		gen: 3,
+	},
 	
 	pixieveil: {
 		inherit: true,
