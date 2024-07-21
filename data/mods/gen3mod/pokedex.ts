@@ -118,7 +118,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	raichualola: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 50, atk: 80, def: 55, spa: 80, spd: 60, spe: 100},
+		baseStats: {hp: 50, atk: 75, def: 50, spa: 85, spd: 65, spe: 100},
 		abilities: {0: "Static"},
 	},
 	sandshrew: {

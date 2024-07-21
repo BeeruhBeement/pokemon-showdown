@@ -342,6 +342,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	powerspot: {
 		inherit: true,
+		gen: 3,
 		desc: "All Pokemon have the power of their moves multiplied by 1.3. This affects Doom Desire and Future Sight, even if the user is not on the field.",
 		shortDesc: "All Pokemon have the power of their moves multiplied by 1.3.",
 		onAnyBasePowerPriority: 22,
@@ -358,6 +359,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	iceface: {
 		inherit: true,
 		gen: 3,
+		desc: "If this Pokemon is an Eiscue, the first physical hit it takes in battle deals 0 neutral damage. Its ice face is then broken and it changes forme to Noice Face. Eiscue regains its Ice Face forme when Snow begins or when Eiscue switches in while Snow is active. Confusion damage also breaks the ice face.",
+		shortDesc: "If Eiscue, the first physical hit it takes deals 0 damage. Effect is restored in Snow.",
 	},
 	
 	pixieveil: {
