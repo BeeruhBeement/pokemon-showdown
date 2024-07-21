@@ -362,38 +362,32 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	arenatrap: {
 		inherit: true,
 		desc: "Prevents opposing Pokemon from choosing to switch out for one turn unless they are airborne, are holding a Shed Shell, or are a Ghost type.",
-		shortDesc: "Prevents opposing ungroudning Pokemon from choosing to switch out for 1 turn.",
+		shortDesc: "Prevents opposing grounded Pokemon from switching out until for 1 turn.",
 		onFoeTrapPokemon(pokemon) {
 			return;
 		},
 		onFoeMaybeTrapPokemon(pokemon, source) {
 			return;
 		},
-		onStart(target) {
-			if (!target.isAdjacent(this.effectState.target)) return;
-			if (target.isGrounded()) {
-				target.addVolatile('trapped');
+		onStart(pokemon) {
+			for (const target of pokemon.adjacentFoes()) {
+				pokemon.addVolatile('Arena Trap');
 			}
 		},
-		onEnd(pokemon) {
-			delete pokemon.volatiles['trapped'];
-		},
 		condition: {
-			duration: 2,
-			onResidualOrder: 28,
-			onResidualSubOrder: 2,
+			duration: 1,
 			onFoeTrapPokemon(pokemon) {
-				pokemon.tryTrap(true);
-			},
-			onFoeMaybeTrapPokemon(pokemon, source) {
-				if (!source) source = this.effectState.target;
-				if (!source || !pokemon.isAdjacent(source)) return;
-				if (pokemon.isGrounded(!pokemon.knownType)) { // Negate immunity if the type is unknown
-					pokemon.maybeTrapped = true;
+				if (!pokemon.isAdjacent(this.effectState.target)) return;
+				if (pokemon.isGrounded()) {
+					pokemon.tryTrap();
 				}
 			},
 		},
-	},
+		flags: {},
+		name: "Arena Trap",
+		rating: 5,
+		num: 71,
+	},	
 	tanglinghair: {
 		inherit: true,
 		gen: 3,
