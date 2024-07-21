@@ -359,6 +359,92 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If this Pokemon is an Eiscue, the first physical hit it takes in battle deals 0 neutral damage. Its ice face is then broken and it changes forme to Noice Face. Eiscue regains its Ice Face forme when Snow begins or when Eiscue switches in while Snow is active. Confusion damage also breaks the ice face.",
 		shortDesc: "If Eiscue, the first physical hit it takes deals 0 damage. Effect is restored in Snow.",
 	},
+	arenatrap: {
+		inherit: true,
+		desc: "Prevents opposing Pokemon from choosing to switch out for one turn unless they are airborne, are holding a Shed Shell, or are a Ghost type.",
+		shortDesc: "Prevents opposing ungroudning Pokemon from choosing to switch out for 1 turn.",
+		onFoeTrapPokemon(pokemon) {
+			return;
+		},
+		onFoeMaybeTrapPokemon(pokemon, source) {
+			return;
+		},
+		onStart(target) {
+			if (!target.isAdjacent(this.effectState.target)) return;
+			if (target.isGrounded()) {
+				target.addVolatile('trapped');
+			}
+		},
+		onEnd(pokemon) {
+			delete pokemon.volatiles['trapped'];
+		},
+		condition: {
+			duration: 2,
+			onResidualOrder: 28,
+			onResidualSubOrder: 2,
+			onFoeTrapPokemon(pokemon) {
+				pokemon.tryTrap(true);
+			},
+			onFoeMaybeTrapPokemon(pokemon, source) {
+				if (!source) source = this.effectState.target;
+				if (!source || !pokemon.isAdjacent(source)) return;
+				if (pokemon.isGrounded(!pokemon.knownType)) { // Negate immunity if the type is unknown
+					pokemon.maybeTrapped = true;
+				}
+			},
+		},
+	},
+	tanglinghair: {
+		inherit: true,
+		gen: 3,
+	},
+	sandveil: {
+		inherit: true,
+		desc: "If Sandstorm is active, the defense of this Pokemon is multiplied by 1.25. This Pokemon takes no damage from Sandstorm.",
+		shortDesc: "If Sandstorm is active, this Pokemon's defense is 1.25x; immunity to Sandstorm.",
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
+		onModifyAccuracy(accuracy) {
+			return;
+		},
+		onModifyDefPriority: 6,
+		onModifyDef(def, pokemon) {
+			if (this.field.isWeather('sandstorm')) {
+				return this.chainModify(1.25);
+			}
+		}
+	},
+	snowcloak: {
+		inherit: true,
+		gen: 3,
+		desc: "If either Snowscape or Hail is active, the defense of this Pokemon is multiplied by 1.25. This Pokemon takes no damage from Hail.",
+		shortDesc: "If Snow is active, this Pokemon's defense is 1.25x.",
+		onImmunity(type, pokemon) {
+			if (type === 'hail') return false;
+		},
+		onModifyAccuracy(accuracy) {
+			return;
+		},
+		onModifyDefPriority: 6,
+		onModifyDef(def, pokemon) {
+			if (this.field.isWeather('hail')) {
+				return this.chainModify(1.25);
+			}
+		}
+	},
+	hypercutter: {
+		inherit: true,
+		shortDesc: "Prevents lowering this Pokemon's Attack stat stage from any source.",
+		onTryBoost(boost, target, source, effect) {
+			if (boost.atk && boost.atk < 0) {
+				delete boost.atk;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "Attack", "[from] ability: Hyper Cutter", "[of] " + target);
+				}
+			}
+		},
+	},
 	
 	pixieveil: {
 		inherit: true,

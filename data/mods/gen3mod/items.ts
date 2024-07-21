@@ -264,6 +264,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	rockyhelmet: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 	sitrusberry: {
 		inherit: true,
 		desc: "Restores 1/4 max HP when at 1/2 max HP or less. Single use.",

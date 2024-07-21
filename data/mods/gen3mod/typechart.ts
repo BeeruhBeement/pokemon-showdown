@@ -1,5 +1,6 @@
 export const TypeChart: {[k: string]: ModdedTypeData} = {
 	bug: {
+		inherit: true,
 		damageTaken: {
 			confusion: 3,
 			Bug: 0,
@@ -23,6 +24,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 		},
 	},
 	dark: {
+		inherit: true,
 		damageTaken: {
 			prankster: 3,
 			Bug: 1,
@@ -42,6 +44,31 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Psychic: 3,
 			Rock: 0,
 			Steel: 0,
+			Water: 0,
+		},
+	},
+	ghost: {
+		inherit: true,
+		damageTaken: {
+			trapped: 3,
+			Bug: 0,
+			Dark: 1,
+			Dragon: 0,
+			Electric: 0,
+			Fairy: 0,
+			Fighting: 3,
+			Fire: 0,
+			Flying: 0,
+			Ghost: 1,
+			Grass: 0,
+			Ground: 0,
+			Ice: 0,
+			Normal: 3,
+			Poison: 2,
+			Psychic: 0,
+			Rock: 0,
+			Steel: 0,
+			Stellar: 0,
 			Water: 0,
 		},
 	},
@@ -71,7 +98,27 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	},
 	fairy: {
 		inherit: true,
-		isNonstandard: null,
+		damageTaken: {
+			Bug: 2,
+			Dark: 2,
+			Dragon: 3,
+			Electric: 0,
+			Fairy: 0,
+			Fighting: 2,
+			Fire: 0,
+			Flying: 0,
+			Ghost: 0,
+			Grass: 0,
+			Ground: 0,
+			Ice: 0,
+			Normal: 0,
+			Poison: 1,
+			Psychic: 0,
+			Rock: 0,
+			Steel: 1,
+			Stellar: 0,
+			Water: 0,
+		},
 	},
 	grass: {
 		inherit: true,
@@ -171,6 +218,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 		},
 	},
 	rock: {
+		inherit: true,
 		damageTaken: {
 			sandstorm: 3,
 			Bug: 0,
@@ -199,7 +247,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			psn: 3,
 			tox: 3,
 			sandstorm: 3,
-			Bug: 0,
+			Bug: 2,
 			Dark: 0,
 			Dragon: 2,
 			Electric: 0,

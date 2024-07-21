@@ -74,6 +74,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	arbok: {
 		inherit: true,
+		baseStats: {hp: 60, atk: 95, def: 69, spa: 65, spd: 79, spe: 80},
 	},
 	pichu: {
 		inherit: true,
@@ -156,6 +157,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	crobat: {
 		inherit: true,
 	},
+	diglett: {
+		inherit: true,
+	},
+	diglettalola: {
+		inherit: true,
+		gen: 3,
+	},
+	dugtrio: {
+		inherit: true,
+		baseStats: {hp: 35, atk: 100, def: 50, spa: 50, spd: 70, spe: 120},
+	},
+	dugtrioalola: {
+		inherit: true,
+		gen: 3,
+	},
 	meowthgalar: {
 		inherit: true,
 		gen: 3,
@@ -235,13 +251,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	muk: {
 		inherit: true,
-		baseStats: {hp: 105, atk: 105, def: 85, spa: 65, spd: 100, spe: 50},
 	},
 	mukalola: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Stench", 1: "Sticky Hold"},
-		baseStats: {hp: 105, atk: 105, def: 75, spa: 75, spd: 100, spe: 50},
 	},
 	onix: {
 		inherit: true,
@@ -257,7 +271,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	electrode: {
 		inherit: true,
 		abilities: {0: "Soundproof", 1: "Static"},
-		baseStats: {hp: 60, atk: 60, def: 70, spa: 90, spd: 80, spe: 140},
+		baseStats: {hp: 60, atk: 50, def: 70, spa: 90, spd: 80, spe: 150},
 	},
 	tangela: {
 		inherit: true,
@@ -267,7 +281,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	tangrowth: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Chlorophyll", 1: "Regenerator"},
+		abilities: {0: "Tangling Hair", 1: "Regenerator"},
 		baseStats: {hp: 90, atk: 65, def: 125, spa: 110, spd: 50, spe: 50},
 	},
 	mimejr: {
@@ -666,7 +680,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 70, atk: 85, def: 70, spa: 85, spd: 70, spe: 110},
-		abilities: {0: "Inner Focus", 1: "Aftermath"},
+		abilities: {0: "Inner Focus", 1: "Snow Cloak"},
 	},
 	luvdisc: {
 		inherit: true,
@@ -837,7 +851,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	swanna: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 85, atk: 97, def: 63, spa: 97, spd: 63, spe: 108},
+		baseStats: {hp: 85, atk: 97, def: 63, spa: 97, spd: 63, spe: 98},
 		abilities: {0: "Keen Eye", 1: "Water Veil"},
 	},
 	vullaby: {
@@ -1002,7 +1016,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	lurantis: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Technician", 1: "Solar Power"},
+		abilities: {0: "Skill Link", 1: "Solar Power"},
 	},
 	togedemaru: {
 		inherit: true,
@@ -1052,7 +1066,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Torrent", 1: "Inner Focus"},
-		baseStats: {hp: 70, atk: 85, def: 65, spa: 105, spd: 65, spe: 120},
+		baseStats: {hp: 70, atk: 85, def: 65, spa: 115, spd: 65, spe: 110},
 	},
 	sizzlipede: {
 		inherit: true,
