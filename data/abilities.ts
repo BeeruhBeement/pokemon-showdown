@@ -5838,4 +5838,63 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 	},
+	nightfall: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Nightfall",
+		rating: 4,
+		num: 5012,
+		onStart(source) {
+			this.field.setWeather('night');
+		},
+	},
+	collector: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Collector",
+		rating: 3,
+		num: 5013,
+		onSourceTakeItem (item, pokemon, source, move) {
+			let stats: BoostID[] = [];
+			const boost: SparseBoostsTable = {};
+			let statPlus: BoostID;
+			for (statPlus in pokemon.boosts) {
+				if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
+				if (pokemon.boosts[statPlus] < 6) {
+					stats.push(statPlus);
+				}
+			}
+			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
+			if (randomStat) boost[randomStat] = 1;
+
+			this.boost(boost, pokemon, pokemon);
+		},
+	},    
+    fogofwar: {
+        isNonstandard: "Custom",
+        name: "Fog of War",
+        rating: 4,
+        num: 5014,
+        onStart(pokemon) {
+			if (this.effectState.fogofwar) return;
+            pokemon.addVolatile('fogofwar');
+        },
+		onResidual() {
+			this.effectState.fogofwar = true;
+		},
+        condition: {
+            duration: 1,
+            onStart(pokemon) {
+                this.add('-start', pokemon, 'ability: Fog of War');
+            },
+            onDisableMove(pokemon) {
+                for (const moveSlot of pokemon.moveSlots) {
+                    const move = this.dex.moves.get(moveSlot.id);
+                    if (move.category !== 'Status') {
+                        pokemon.disableMove(moveSlot.id);
+                    }
+                }
+            },
+        },
+    },
 };

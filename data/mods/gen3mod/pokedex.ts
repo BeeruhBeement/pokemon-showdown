@@ -81,6 +81,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pikachu: {
 		inherit: true,
+		baseStats: {hp: 35, atk: 55, def: 40, spa: 50, spd: 50, spe: 90},
 	},
 	pikachucosplay: {
 		inherit: true,
@@ -140,13 +141,57 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Slush Rush", 1: "Rough Skin"},
 	},
+	nidoranf: {
+		inherit: true,
+	},
+	nidorina: {
+		inherit: true,
+	},
+	nidoqueen: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 92, def: 87, spa: 75, spd: 85, spe: 76},
+	},
+	nidoranm: {
+		inherit: true,
+	},
+	nidorino: {
+		inherit: true,
+	},
+	nidoking: {
+		inherit: true,
+		baseStats: {hp: 81, atk: 102, def: 77, spa: 85, spd: 75, spe: 85},
+	},
+	cleffa: {
+		inherit: true,
+		types: ["Fairy"],
+	},
+	clefairy: {
+		inherit: true,
+		types: ["Fairy"],
+	},
+	clefable: {
+		inherit: true,
+		types: ["Fairy"],
+		baseStats: {hp: 95, atk: 70, def: 73, spa: 95, spd: 90, spe: 60},
+	},
 	vulpix: {
 		inherit: true,
 		abilities: {0: "Flash Fire", 1: "Solar Power"},
 	},
+	vulpixalola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Snow Cloak", 1: "Snow Warning"},
+	},
 	ninetales: {
 		inherit: true,
+		types: ["Fire", "Fairy"],
 		abilities: {0: "Flash Fire", 1: "Drought"},
+	},
+	ninetalesalola: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Snow Cloak", 1: "Snow Warning"},
 	},
 	zubat: {
 		inherit: true,
@@ -156,6 +201,31 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	crobat: {
 		inherit: true,
+	},
+	oddish: {
+		inherit: true,
+		abilities: {0: "Effect Spore"},
+	},
+	gloom: {
+		inherit: true,
+		abilities: {0: "Effect Spore"},
+	},
+	vileplume: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 80, def: 85, spa: 110, spd: 90, spe: 50},
+		abilities: {0: "Effect Spore"},
+	},
+	bellossom: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 80, def: 95, spa: 90, spd: 100, spe: 50},
+	},
+	paras: {
+		inherit: true,
+	},
+	parasect: {
+		inherit: true,
+		types: ["Bug", "Ghost"],
+		baseStats: {hp: 60, atk: 95, def: 120, spa: 60, spd: 80, spe: 30},
 	},
 	diglett: {
 		inherit: true,
@@ -593,15 +663,22 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Quick Draw", 1: "Sand Rush"},
 	},
+	seviper: {
+		inherit: true,
+		baseStats: {hp: 73, atk: 100, def: 60, spa: 100, spd: 60, spe: 95},
+		abilities: {0: "Merciless"},
+	},
 	lunatone: {
 		inherit: true,
 		types: ["Rock", "Ghost"],
 		baseStats: {hp: 90, atk: 55, def: 65, spa: 95, spd: 85, spe: 70},
+		abilities: {0: "Levitate", 1: "Nightfall"},
 	},
 	solrock: {
 		inherit: true,
 		types: ["Rock", "Fire"],
 		baseStats: {hp: 90, atk: 95, def: 85, spa: 55, spd: 65, spe: 70},
+		abilities: {0: "Levitate", 1: "Drought"},
 	},
 	corphish: {
 		inherit: true,

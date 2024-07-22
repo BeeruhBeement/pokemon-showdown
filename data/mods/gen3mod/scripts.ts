@@ -15,5 +15,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		for (const species in this.data.Pokedex) {
 			delete this.data.Pokedex[species].abilities['H'];
 		}
+	},		
+	actions: {
+		inherit: true,
+		modifyDamage(baseDamage, pokemon, target, move) {
+			const isCrit = target.getMoveHitData(move).crit;
+			if (isCrit) {
+				baseDamage = this.battle.modify(baseDamage, move.critModifier || 1.5);
+			}
+		},
 	},
 };

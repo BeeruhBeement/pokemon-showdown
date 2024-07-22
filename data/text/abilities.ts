@@ -2318,4 +2318,21 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Piercing",
 		shortDesc: "Physical moves ignore 20% of the target's Defense.",
 	},
+	nightfall: {
+		name: "Nightfall",
+		shortDesc: "On switch-in, this Pokemon summons Night.",
+	},
+	collector: {
+		name: "Collector",
+		desc: "This Pokemon has a random stat, other than accuracy or evasiveness, raised by 1 stage when a new item is obtained.",
+		shortDesc: "Boosts a random stat (except accuracy/evasion) +1 upon gaining an item.",
+	},
+	fogofwar: {
+		name: "Fog of War",
+		shortDesc: "All Pokemon can only use status moves for the first turn of the battle.",
+	},
+	abyssallimb: {
+		name: "Abyssal Limb",
+		shortDesc: "Considered a Status move but deals direct damage.",
+	},
 };

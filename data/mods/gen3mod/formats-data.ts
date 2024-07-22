@@ -232,28 +232,24 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	nidoranf: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	nidorina: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	nidoqueen: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	nidoranm: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	nidorino: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	nidoking: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	cleffa: {
 		tier: "Illegal",
@@ -271,16 +267,15 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	vulpixalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	ninetales: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
 	ninetalesalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	igglybuff: {
 		tier: "Illegal",
@@ -1868,8 +1863,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	seviper: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	lunatone: {
 		tier: "OU",

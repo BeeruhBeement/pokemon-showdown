@@ -22232,4 +22232,31 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Poison",
 		contestType: "Tough",
 	},
+	abyssallimb: {
+		num: 5008,
+		accuracy: 95,
+		basePower: 75,
+		category: "Status",
+		name: "Abyssal Limb",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, nonsky: 1},
+		onHit(target, source, move) {
+			const moveData: Partial<ActiveMove> = {
+				id: 'abyssallimb' as ID,
+				name: "Abyssal Limb",
+				accuracy: 95,
+				basePower: 75,
+				category: "Physical",
+				priority: 1,
+				flags: {contact: 1, protect: 1, nonsky: 1},
+				effectType: 'Move',
+				type: 'Dark',
+			};
+			this.actions.tryMoveHit(target, source, moveData as ActiveMove);
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
 };

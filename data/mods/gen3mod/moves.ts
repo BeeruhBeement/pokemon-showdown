@@ -580,7 +580,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	paraboliccharge: {
 		inherit: true,
 		gen: 3,
-		basePower: 60,
+		basePower: 65,
 	},
 	snore: {
 		inherit: true,
@@ -589,7 +589,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	psyshieldbash: {
 		inherit: true,
 		gen: 3,
-		desc: "Damage is calculated using the user's Defense stat as its Sp. Attack, including stat stage changes. Other effects that modify the Sp. Attack stat are used as normal.",
+		desc: "Damage is calculated using the user's Defense stat as its Special Attack, including stat stage changes. Other effects that modify the Special Attack stat are used as normal.",
 		shortDesc: "Uses Def stat as Sp. Atk in damage calculation.",
 		overrideOffensiveStat: 'def',
 	},
@@ -705,6 +705,29 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		multihit: 3,
 		multiaccuracy: true,
 	},
+	rockclimb: {
+		inherit: true,
+		gen: 3,
+		type: "Rock",
+	},
+	spotlight: {
+		inherit: true,
+		gen: 3,
+	},
+	poisontail: {
+		inherit: true,
+		desc: "If this move strikes with a critical hit, the damage is multiplied by 1.5.",
+		shortDesc: "1.5x power on critical hit.",
+		basePower: 75,
+		onBasePower(damage, source, target, move) {
+			if (target.getMoveHitData(move).crit) {
+				this.debug('Poison Tail boost');
+				return this.chainModify(1.5);
+			}
+		},
+		critRatio: 0,
+		secondary: null,
+	},
 	
 	weatherdance: {
 		inherit: true,
@@ -737,6 +760,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	rottenvial: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	abyssallimb: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

@@ -81,7 +81,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Pokemon making contact with this Pokemon lose 1/8 of their maximum HP, rounded down. This effect does not happen if this Pokemon did not lose HP from the attack.",
 		shortDesc: "Pokemon making contact with this Pokemon lose 1/8 of their max HP.",
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
+			if (damage && this.checkMoveMakesContact(move, source, target, true)) {
 				this.damage(source.baseMaxhp / 8, source, target);
 			}
 		},
@@ -383,10 +383,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 			},
 		},
-		flags: {},
-		name: "Arena Trap",
-		rating: 5,
-		num: 71,
 	},	
 	tanglinghair: {
 		inherit: true,
@@ -438,6 +434,71 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 			}
 		},
+	},
+	lightningrod: {
+		inherit: true,
+		desc: "This Pokemon is immune to Electric-type moves and raises its Special Attack by 1 stage when hit by an Electric-type move. If this Pokemon is not the target of a single-target Electric-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "This Pokemon draws Electric moves to itself to raise Sp. Atk by 1; Electric immunity.",
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Electric') {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Lightning Rod');
+				}
+				return null;
+			}
+		},
+	},
+	stormdrain: {
+		inherit: true,
+		gen: 3,
+		desc: "This Pokemon is immune to Water-type moves and raises its Special Attack by 1 stage when hit by a Water-type move. If this Pokemon is not the target of a single-target Water-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "This Pokemon draws Water moves to itself to raise Sp. Atk by 1; Water immunity.",
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Storm Drain');
+				}
+				return null;
+			}
+		},
+	},
+	rivalry: {
+		inherit: true,
+		desc: "This Pokemon's attacks have their power multiplied by 1.25 against targets of the same gender. There is no modifier if either this Pokemon or the target is genderless.",
+		shortDesc: "This Pokemon's attacks do 1.25x on same gender targets.",
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.gender && defender.gender) {
+				if (attacker.gender === defender.gender) {
+					this.debug('Rivalry boost');
+					return this.chainModify(1.25);
+				}
+			}
+		},
+	},
+	magicguard: {
+		inherit: true,
+		gen: 3,
+	},
+	effectspore: {
+		inherit: true,
+		desc: "30% chance a Pokemon making contact with this Pokemon will be poisoned, paralyzed, or fall asleep. This effect does not happen if this Pokemon did not lose HP from the attack.",
+		shortDesc: "30% chance of poison/paralysis/sleep on others making contact with this Pokemon.",
+		onDamagingHit(damage, target, source, move) {
+			if (damage && this.checkMoveMakesContact(move, source, target) && !source.status && source.runStatusImmunity('powder')) {
+				const r = this.random(100);
+				if (r <= 10) {
+					source.setStatus('slp', target);
+				} else if (r <= 20) {
+					source.setStatus('par', target);
+				} else if (r <= 30) {
+					source.setStatus('psn', target);
+				}
+			}
+		},
+	},
+	merciless: {
+		inherit: true,
+		gen: 3,
 	},
 	
 	pixieveil: {
@@ -496,6 +557,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	piercing: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	nightfall: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	collector: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	fogofwar: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
