@@ -174,6 +174,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy"],
 		baseStats: {hp: 95, atk: 70, def: 73, spa: 95, spd: 90, spe: 60},
 	},
+	igglybuff: {
+		inherit: true,
+		types: ["Normal", "Fairy"],
+	},
+	jigglypuff: {
+		inherit: true,
+		types: ["Normal", "Fairy"],
+	},
+	wigglytuff: {
+		inherit: true,
+		types: ["Normal", "Fairy"],
+		baseStats: {hp: 140, atk: 70, def: 55, spa: 85, spd: 60, spe: 45},
+	},
 	vulpix: {
 		inherit: true,
 		abilities: {0: "Flash Fire", 1: "Solar Power"},
@@ -226,6 +239,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Bug", "Ghost"],
 		baseStats: {hp: 60, atk: 95, def: 120, spa: 60, spd: 80, spe: 30},
+	},
+	parasong: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 120, spe: 30},
+	},
+	venonat: {
+		inherit: true,
+	},
+	venomoth: {
+		inherit: true,
 	},
 	diglett: {
 		inherit: true,
@@ -484,20 +508,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	teddiursa: {
 		inherit: true,
-		abilities: {0: "Guts"},
+		abilities: {0: "Guts", 1: "Miracle Guard"},
 	},
 	ursaring: {
 		inherit: true,
 		types: ["Ground", "Normal"],
-		abilities: {0: "Guts"},
-		evoLevel: 30,
-		evos: ["Ursaluna"],
+		abilities: {0: "Guts", 1: "Miracle Guard"},
 	},
 	ursaluna: {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 110, atk: 140, def: 95, spa: 75, spd: 80, spe: 50},
-		abilities: {0: "Guts"},
+		abilities: {0: "Guts", 1: "Miracle Guard"},
 	},
 	ursalunabloodmoon: {
 		inherit: true,
@@ -665,7 +687,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	seviper: {
 		inherit: true,
-		baseStats: {hp: 73, atk: 100, def: 60, spa: 100, spd: 60, spe: 95},
+		baseStats: {hp: 73, atk: 100, def: 60, spa: 100, spd: 60, spe: 85},
 		abilities: {0: "Merciless"},
 	},
 	lunatone: {

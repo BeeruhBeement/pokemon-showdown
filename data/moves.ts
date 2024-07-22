@@ -22111,6 +22111,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Smart",
 	},
 	etherealcutter: {
+		// currently unused
 		isNonstandard: "Custom",
 		num: 5002,
 		accuracy: 95,
@@ -22232,28 +22233,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Poison",
 		contestType: "Tough",
 	},
-	abyssallimb: {
+	voidtendril: {
+		// currently unused
 		num: 5008,
 		accuracy: 95,
 		basePower: 75,
 		category: "Status",
-		name: "Abyssal Limb",
+		name: "Void Tendril",
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, nonsky: 1},
-		onHit(target, source, move) {
-			const moveData: Partial<ActiveMove> = {
-				id: 'abyssallimb' as ID,
-				name: "Abyssal Limb",
-				accuracy: 95,
-				basePower: 75,
-				category: "Physical",
-				priority: 1,
-				flags: {contact: 1, protect: 1, nonsky: 1},
-				effectType: 'Move',
-				type: 'Dark',
-			};
-			this.actions.tryMoveHit(target, source, moveData as ActiveMove);
+		onTryMove(target, source, move) {
+			move.category = 'Physical';
+		},
+		secondary: {
+			chance: 20,
+			status: 'par',
 		},
 		target: "normal",
 		type: "Dark",

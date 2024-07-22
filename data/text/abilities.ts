@@ -2322,17 +2322,12 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Nightfall",
 		shortDesc: "On switch-in, this Pokemon summons Night.",
 	},
-	collector: {
-		name: "Collector",
-		desc: "This Pokemon has a random stat, other than accuracy or evasiveness, raised by 1 stage when a new item is obtained.",
-		shortDesc: "Boosts a random stat (except accuracy/evasion) +1 upon gaining an item.",
-	},
 	fogofwar: {
 		name: "Fog of War",
-		shortDesc: "All Pokemon can only use status moves for the first turn of the battle.",
+		shortDesc: "All Pokemon can only use status moves on this Pokemon's first turn.",
 	},
-	abyssallimb: {
-		name: "Abyssal Limb",
-		shortDesc: "Considered a Status move but deals direct damage.",
+	miracleguard: {
+		name: "Miracle Guard",
+		shortDesc: "20% chance to reduce incoming damage by 50%. Doesn't work 2 turns in a row.",
 	},
 };

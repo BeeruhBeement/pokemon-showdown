@@ -19763,4 +19763,18 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		battleOnly: "Castform",
 		isNonstandard: "Custom",
 	},
+	parasong: {
+		num: -10000,
+		name: "Parasong",
+		types: ["Bug", "Steel"],
+		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 80, spe: 30},
+		abilities: {0: "Overcoat", 1: "Dry Skin", H: "Soundproof"},
+		heightm: 1,
+		weightkg: 49.5,
+		color: "Gray",
+		prevo: "Paras",
+		evoType: "levelHold",
+		evoItem: "Soothe Bell",
+		eggGroups: ["Bug", "Grass"],
+	},
 };

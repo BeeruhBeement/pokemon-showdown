@@ -300,36 +300,36 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	oddish: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	gloom: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "NFE",
 	},
 	vileplume: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	bellossom: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	paras: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	parasect: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	parasong: {
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	venonat: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	venomoth: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	diglett: {
 		tier: "LC",

@@ -5848,33 +5848,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.field.setWeather('night');
 		},
 	},
-	collector: {
-		isNonstandard: "Custom",
-		flags: {},
-		name: "Collector",
-		rating: 3,
-		num: 5013,
-		onSourceTakeItem (item, pokemon, source, move) {
-			let stats: BoostID[] = [];
-			const boost: SparseBoostsTable = {};
-			let statPlus: BoostID;
-			for (statPlus in pokemon.boosts) {
-				if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
-				if (pokemon.boosts[statPlus] < 6) {
-					stats.push(statPlus);
-				}
-			}
-			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
-			if (randomStat) boost[randomStat] = 1;
-
-			this.boost(boost, pokemon, pokemon);
-		},
-	},    
     fogofwar: {
+		// currently unused
         isNonstandard: "Custom",
         name: "Fog of War",
         rating: 4,
-        num: 5014,
+        num: 5013,
         onStart(pokemon) {
 			if (this.effectState.fogofwar) return;
             pokemon.addVolatile('fogofwar');
@@ -5895,6 +5874,35 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
                     }
                 }
             },
+			onEnd(pokemon) {
+                this.add('-end', pokemon, 'ability: Fog of War');
+			},
         },
     },
+	miracleguard: {
+        isNonstandard: "Custom",
+		name: "Miracle Guard",
+		flags: {breakable: 1},
+		rating: 3,
+		num: 5014,
+		onStart(pokemon) {
+			pokemon.volatiles['miracleguard'] = {lastTriggered: false};
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			const lastTriggered = target.volatiles['miracleguard'].lastTriggered;
+			if (lastTriggered) {
+				target.volatiles['miracleguard'].lastTriggered = false;
+				return;
+			}
+			const r = this.random(100);
+			if (r < 20) {
+				this.add('-weakened', target, '[from] ability: Miracle Guard');
+				this.debug('Miracle Guard damage reduction');
+				target.volatiles['miracleguard'].lastTriggered = true;
+				return this.chainModify(0.5);
+			} else {
+				target.volatiles['miracleguard'].lastTriggered = false;
+			}
+		},
+	},
 };

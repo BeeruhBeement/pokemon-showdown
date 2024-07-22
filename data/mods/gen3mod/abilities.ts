@@ -223,6 +223,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	overcoat: {
 		inherit: true,
 		gen: 3,
+		desc: "This Pokemon is immune to powder moves, damage from Sandstorm or Hail, and the effects of Rage Powder and the Effect Spore Ability.",
+		shortDesc: "This Pokemon is immune to powder moves, Sandstorm or Hail damage, Effect Spore.",
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
+		},
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (move.flags['powder'] && target !== source && this.dex.getImmunity('powder', target)) {
+				this.add('-immune', target, '[from] ability: Overcoat');
+				return null;
+			}
+		},
 	},
 	bulletproof: {
 		inherit: true,
@@ -486,11 +498,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHit(damage, target, source, move) {
 			if (damage && this.checkMoveMakesContact(move, source, target) && !source.status && source.runStatusImmunity('powder')) {
 				const r = this.random(100);
-				if (r <= 10) {
+				if (r < 10) {
 					source.setStatus('slp', target);
-				} else if (r <= 20) {
+				} else if (r < 20) {
 					source.setStatus('par', target);
-				} else if (r <= 30) {
+				} else if (r < 30) {
 					source.setStatus('psn', target);
 				}
 			}
@@ -566,12 +578,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
-	collector: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	fogofwar: {
+	miracleguard: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

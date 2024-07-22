@@ -6043,4 +6043,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
+	
+	castformsandy: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	parasong: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
 };

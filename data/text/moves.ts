@@ -7590,4 +7590,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Apples Rot to the target. Not blocked by Shield Dust.",
 		shortDesc: "Applies Rot to the target.",
 	},
+	voidtendril: {
+		name: "Void Tendril",
+		desc: "This move is considered a Status move for all purposes but when actually used it's a 75 Base Power Dark Type Physical move with 95 accuracy and a 30% chance to paralyze.",
+		shortDesc: "Status but deals direct Physical damage. 30% para.",
+	},
 };

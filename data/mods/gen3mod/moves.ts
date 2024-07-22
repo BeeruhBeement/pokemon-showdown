@@ -290,21 +290,25 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	stealthrock: {
 		inherit: true,
 		gen: 3,
-		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Foes lose 1/8 or 1/2 of their maximum HP, rounded down, based on wheter they are Flying-type or not. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Hurts foes on switch-in. Double damage on Flying.",
+		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Damage is rounded down. Foes lose 1/8 of their max hp if neutral to Rock, 1/4 if they are Flying-type and 1/16 of they resist Rock. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
+		shortDesc: "Hurts foes on switch-in. Double damage on Flying, half on Rock resist.",
 		condition: {
-			// this is a side condition
 			onSideStart(side) {
 				this.add('-sidestart', side, 'move: Stealth Rock');
 			},
 			onEntryHazard(pokemon) {
 				if (pokemon.hasItem('heavydutyboots')) return;
 	
-				// Check if the Pokemon is Flying type
+				const typeMod = pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock'));
+
+				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 				if (pokemon.hasType('Flying')) {
-					this.damage(pokemon.maxhp / 4); // Double damage for Flying types (25% of max HP)
-				} else {
-					this.damage(pokemon.maxhp / 8); // Neutral damage for other types (12.5% of max HP)
+					this.damage(pokemon.maxhp / 4);
+				} else if (pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')) < 0){
+					this.damage(pokemon.maxhp / 16);
+				}
+				else {
+					this.damage(pokemon.maxhp / 8);
 				}
 			},
 		},
@@ -728,6 +732,63 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		critRatio: 0,
 		secondary: null,
 	},
+	switcheroo: {
+		inherit: true,
+		gen: 3,
+	},
+	weatherball: {
+		inherit: true,
+		onModifyType(move, pokemon) {
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				move.type = 'Fire';
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				move.type = 'Water';
+				break;
+			case 'sandstorm':
+				move.type = 'Rock';
+				break;
+			case 'hail':
+			case 'snow':
+				move.type = 'Ice';
+				break;
+			case 'night':
+				move.type = 'Dark';
+				break;
+			}
+		},
+		onModifyMove(move, pokemon) {
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				move.basePower *= 2;
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				move.basePower *= 2;
+				break;
+			case 'sandstorm':
+				move.basePower *= 2;
+				break;
+			case 'hail':
+			case 'snow':
+				move.basePower *= 2;
+				break;
+			case 'night':
+				move.basePower *= 2;
+				break;
+			}
+			this.debug('BP: ' + move.basePower);
+		},
+	},
+	rage: {
+		inherit: true,
+		basePower: 60,
+		type: "Dark",
+	},
 	
 	weatherdance: {
 		inherit: true,
@@ -760,11 +821,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	rottenvial: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	abyssallimb: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
