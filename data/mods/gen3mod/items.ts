@@ -276,21 +276,14 @@ export const Items: {[k: string]: ModdedItemData} = {
 			this.heal(pokemon.baseMaxhp / 4);
 		},
 	},
-	stick: {
-		name: "Stick",
-		desc: "If held by a Farfetch’d or Sirfetch’d, its critical hit ratio is raised by 2 stages.",
-		fling: {
-			basePower: 60,
-		},
-		spritenum: 475,
+	leek: {
+		inherit: true,
 		onModifyCritRatio(critRatio, user) {
 			if (["farfetchd", "sirfetchd"].includes(this.toID(user.baseSpecies.baseSpecies))) {
 				return critRatio + 2;
 			}
 		},
 		itemUser: ["Farfetch\u2019d", "Farfetch\u2019d-Galar", "Sirfetch\u2019d"],
-		num: 259,
-		gen: 2,
 		isNonstandard: null,
 	},
 	lightball: {
@@ -307,5 +300,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 				return this.chainModify(2);
 			}
 		},
+		itemUser: ["Pichu", "Pikachu", "Raichu", "Raichu-Alola"],
 	},
 };

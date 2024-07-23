@@ -223,8 +223,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	overcoat: {
 		inherit: true,
 		gen: 3,
-		desc: "This Pokemon is immune to powder moves, damage from Sandstorm or Hail, and the effects of Rage Powder and the Effect Spore Ability.",
-		shortDesc: "This Pokemon is immune to powder moves, Sandstorm or Hail damage, Effect Spore.",
+		desc: "This Pokemon is immune to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability.",
+		shortDesc: "This Pokemon is immune to powder moves, Sandstorm damage, Effect Spore.",
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
 		},
@@ -420,7 +420,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	snowcloak: {
 		inherit: true,
 		gen: 3,
-		desc: "If either Snowscape or Hail is active, the defense of this Pokemon is multiplied by 1.25. This Pokemon takes no damage from Hail.",
+		desc: "If Snowscape is active, the defense of this Pokemon is multiplied by 1.25.",
 		shortDesc: "If Snow is active, this Pokemon's defense is 1.25x.",
 		onImmunity(type, pokemon) {
 			if (type === 'hail') return false;
@@ -509,6 +509,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 	},
 	merciless: {
+		inherit: true,
+		gen: 3,
+	},
+	noguard: {
+		inherit: true,
+		gen: 3,
+	},
+	windrider: {
 		inherit: true,
 		gen: 3,
 	},

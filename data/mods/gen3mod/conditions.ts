@@ -116,6 +116,9 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 	
 	night: {
 		inherit: true,
+		durationCallback(source, effect) {
+			return 5;
+		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				this.add('-weather', 'Night', '[from] ability: ' + effect.name, '[of] ' + source);

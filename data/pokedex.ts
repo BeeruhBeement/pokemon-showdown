@@ -19776,5 +19776,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoType: "levelHold",
 		evoItem: "Soothe Bell",
 		eggGroups: ["Bug", "Grass"],
+		gen: -1,
 	},
 };

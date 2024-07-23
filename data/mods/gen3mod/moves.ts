@@ -3,10 +3,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Fairy",
 	},
-	moonlight: {
-		inherit: true,
-		type: "Fairy",
-	},
 	morningsun: {
 		inherit: true,
 		type: "Fire",
@@ -738,6 +734,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	weatherball: {
 		inherit: true,
+		desc: "Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power.",
+		shortDesc: "Power doubles and type varies in each weather.",
 		onModifyType(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
 			case 'sunnyday':
@@ -788,6 +786,43 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 60,
 		type: "Dark",
+	},
+	moonlight: {
+		inherit: true,
+		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Night, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, Snow, Desolate Land or Sunny Day, all rounded half down.",
+		shortDesc: "Heals the user by a weather-dependent amount.",
+		onHit(pokemon) {
+			let factor = 0.5;
+			switch (pokemon.effectiveWeather()) {
+			case 'night':
+				factor = 0.667;
+				break;
+			case 'sunnyday':
+			case 'desolateland':
+			case 'raindance':
+			case 'primordialsea':
+			case 'sandstorm':
+			case 'hail':
+			case 'snow':
+				factor = 0.25;
+				break;
+			}
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
+		},
+		type: "Fairy",
+	},
+	tailwind: {
+		inherit: true,
+		gen: 3,
+	},
+	lovelykiss: {
+		inherit: true,
+		type: "Fairy",
 	},
 	
 	weatherdance: {

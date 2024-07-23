@@ -26,7 +26,6 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	dark: {
 		inherit: true,
 		damageTaken: {
-			prankster: 3,
 			Bug: 1,
 			Dark: 2,
 			Dragon: 0,

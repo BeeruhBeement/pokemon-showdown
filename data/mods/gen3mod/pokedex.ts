@@ -367,6 +367,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Soundproof", 1: "Static"},
 		baseStats: {hp: 60, atk: 50, def: 70, spa: 90, spd: 80, spe: 150},
 	},
+	tyrogue: {
+		inherit: true,
+	},
+	hitmonchan: {
+		inherit: true,
+	},
+	hitmonlee: {
+		inherit: true,
+	},
+	hitmontop: {
+		inherit: true,
+		abilities: {0: "Intimidate"},
+	},
 	tangela: {
 		inherit: true,
 		abilities: {0: "Chlorophyll", 1: "Regenerator"},
@@ -377,6 +390,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Tangling Hair", 1: "Regenerator"},
 		baseStats: {hp: 90, atk: 65, def: 125, spa: 110, spd: 50, spe: 50},
+	},
+	goldeen: {
+		inherit: true,
+		abilities: {0: "Lightning Rod", 1: "Water Veil"},
+	},
+	seaking: {
+		inherit: true,
+		abilities: {0: "Lightning Rod", 1: "Water Veil"},
 	},
 	mimejr: {
 		inherit: true,
@@ -460,6 +481,26 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	lanturn: {
 		inherit: true,
 	},
+	togepi: {
+		inherit: true,
+		types: ["Fairy"],
+	},
+	togetic: {
+		inherit: true,
+		types: ["Fairy", "Flying"],
+	},
+	azurill: {
+		inherit: true,
+		types: ["Normal", "Fairy"],
+	},
+	marill: {
+		inherit: true,
+		types: ["Water", "Fairy"],
+	},
+	azumarill: {
+		inherit: true,
+		types: ["Water", "Fairy"],
+	},
 	bonsly: {
 		inherit: true,
 		gen: 3,
@@ -493,6 +534,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Ghost", "Fairy"],
+	},
+	snubbul: {
+		inherit: true,
+		types: ["Fairy"],
+	},
+	granbull: {
+		inherit: true,
+		types: ["Fairy"],
 	},
 	qwilfish: {
 		inherit: true,
@@ -604,6 +653,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 83, atk: 90, def: 91, spa: 60, spd: 81, spe: 95},
 		abilities: {0: "Reckless", 1: "Guts"},
 	},
+	shiftry: {
+		inherit: true,
+		abilities: {0: "Chlorophyll", 1: "Wind Rider"},
+	},
 	wingull: {
 		inherit: true,
 		abilities: {0: "Keen Eye", 1: "Water Absorb"},
@@ -680,6 +733,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	cacnea: {
 		inherit: true,
 		abilities: {0: "Sand Veil", 1: "Sand Rush"},
+	},
+	carvanha: {
+		inherit: true,
+		abilities: {0: "Rough Skin", 1: "Speed Boost"},
+	},
+	sharpedo: {
+		inherit: true,
+		abilities: {0: "Rough Skin", 1: "Speed Boost"},
 	},
 	cacturne: {
 		inherit: true,
