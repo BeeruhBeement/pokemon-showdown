@@ -358,6 +358,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	steelix: {
 		inherit: true,
 	},
+	krabby: {
+		inherit: true,
+	},
+	kingler: {
+		inherit: true,
+	},
 	voltorb: {
 		inherit: true,
 		abilities: {0: "Soundproof", 1: "Static"},
@@ -414,16 +420,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Hyper Cutter", 1: "Chrysalis"},
 	},
+	tauros: {
+		inherit: true,
+	},
 	magikarp: {
 		inherit: true,
 	},
 	gyarados: {
 		inherit: true,
-		baseStats: {hp: 85, atk: 115, def: 69, spa: 60, spd: 100, spe: 71},
 	},
 	aerodactyl: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 95, def: 65, spa: 60, spd: 75, spe: 130},
 	},
 	munchlax: {
 		inherit: true,
@@ -535,7 +542,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Ghost", "Fairy"],
 	},
-	snubbul: {
+	snubbull: {
 		inherit: true,
 		types: ["Fairy"],
 	},
@@ -729,6 +736,22 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	manectric: {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Lightning Rod"},
+	},
+	plusle: {
+		inherit: true,
+	},
+	minun: {
+		inherit: true,
+	},
+	volbeat: {
+		inherit: true,
+		types: ["Bug", "Electric"],
+		baseStats: {hp: 65, atk: 73, def: 75, spa: 67, spd: 85, spe: 85},
+	},
+	illumise: {
+		inherit: true,
+		types: ["Bug", "Electric"],
+		baseStats: {hp: 65, atk: 67, def: 75, spa: 73, spd: 85, spe: 85},
 	},
 	cacnea: {
 		inherit: true,

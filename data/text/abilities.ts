@@ -2330,4 +2330,14 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Miracle Guard",
 		shortDesc: "20% chance to reduce incoming damage by 50%. Doesn't work 2 turns in a row.",
 	},
+	immolate: {
+		name: "Immolate",
+		desc: "This Pokemon's Normal-type moves become Fire-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Fire type and have 1.2x power.",
+	},
+	drench: {
+		name: "Drench",
+		desc: "This Pokemon's Normal-type moves become Water-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Water type and have 1.2x power.",
+	},
 };

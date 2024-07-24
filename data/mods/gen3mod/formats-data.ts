@@ -3846,8 +3846,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	xurkitree: {
-		tier: "Uber",
-		doublesTier: "DUber",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	celesteela: {
 		tier: "Illegal",
