@@ -7147,7 +7147,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["3M"],
 			waterpulse: ["3M"],
 			
-			tailwind: ["3L57"],
+			tailwind: ["3L1"],
 			rockclimb: ["3M"],
 			extremespeed: ["3L1"],
 		},

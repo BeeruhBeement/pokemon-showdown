@@ -5945,6 +5945,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		flags: {},
 		name: "Drench",
 		rating: 4,
-		num: 206,
+		num: 5016,
 	},
 };

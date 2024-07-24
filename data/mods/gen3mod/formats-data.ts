@@ -1951,16 +1951,16 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	latias: {
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "Uber",
+		doublesTier: "DUber",
 	},
 	latiasmega: {
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
 	latios: {
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "Uber",
+		doublesTier: "DUber",
 	},
 	latiosmega: {
 		tier: "Illegal",

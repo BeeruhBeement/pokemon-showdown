@@ -271,15 +271,15 @@ export const Items: {[k: string]: ModdedItemData} = {
 			this.heal(pokemon.baseMaxhp / 4);
 		},
 	},
-	leek: {
+	stick: {
 		inherit: true,
+		desc: "If held by Farfetch’d or Sirfetch'd, critical ratio is raised by 5 stages.",
 		onModifyCritRatio(critRatio, user) {
 			if (["farfetchd", "sirfetchd"].includes(this.toID(user.baseSpecies.baseSpecies))) {
-				return critRatio + 2;
+				return critRatio + 5;
 			}
 		},
 		itemUser: ["Farfetch\u2019d", "Farfetch\u2019d-Galar", "Sirfetch\u2019d"],
-		isNonstandard: null,
 	},
 	lightball: {
 		inherit: true,

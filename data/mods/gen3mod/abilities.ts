@@ -1,5 +1,3 @@
-import { normalize } from "path";
-
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	hustle: {
 		inherit: true,
@@ -545,6 +543,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Electric-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type.",
+		onModifyMove(move) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id)){
+				move.type = 'Electric';
+				move.category = 'Special';
+			}
+		},
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
@@ -554,6 +561,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Fairy-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Fairy type.",
+		onModifyMove(move) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id)){
+				move.type = 'Fairy';
+				move.category = 'Special';
+			}
+		},
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
@@ -563,6 +579,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Ice-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Ice type.",
+		onModifyMove(move) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id)){
+				move.type = 'Ice';
+				move.category = 'Special';
+			}
+		},
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
@@ -572,6 +597,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Flying-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Flying type.",
+		onModifyMove(move) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id)){
+				move.type = 'Flying';
+			}
+		},
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
@@ -581,6 +614,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Fire-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Fire type.",
+		onModifyMove(move) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id)){
+				move.type = 'Fire';
+				move.category = 'Special';
+			}
+		},
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
@@ -590,13 +632,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Water type.",
+		onModifyMove(move) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id)){
+				move.type = 'Water';
+				move.category = 'Special';
+			}
+		},
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
-	},
-	normalize: {
-		inherit: true,
-		gen: 3,
 	},
 	
 	pixieveil: {

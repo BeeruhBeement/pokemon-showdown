@@ -1,3 +1,5 @@
+import { TriumvirateModeTrivia } from "../../../server/chat-plugins/trivia/trivia";
+
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	charmander: {
 		inherit: true,
@@ -428,6 +430,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gyarados: {
 		inherit: true,
+	},
+	ditto: {
+		inherit: true,
+		abilities: {0: "Imposter"},
 	},
 	aerodactyl: {
 		inherit: true,
