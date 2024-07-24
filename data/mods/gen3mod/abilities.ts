@@ -1,3 +1,5 @@
+import { normalize } from "path";
+
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	hustle: {
 		inherit: true,
@@ -540,57 +542,61 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	galvanize: {
 		inherit: true,
+		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Electric-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type.",
-		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
 	},
 	pixilate: {
 		inherit: true,
+		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Fairy-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Fairy type.",
-		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
 	},
 	refrigerate: {
 		inherit: true,
+		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Ice-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Ice type.",
-		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
 	},
 	aerilate: {
 		inherit: true,
+		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Flying-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Flying type.",
-		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
 	},
 	immolate: {
 		inherit: true,
+		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Fire-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Fire type.",
-		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
 	},
 	drench: {
 		inherit: true,
+		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Water type.",
-		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			return;
 		},
+	},
+	normalize: {
+		inherit: true,
+		gen: 3,
 	},
 	
 	pixieveil: {

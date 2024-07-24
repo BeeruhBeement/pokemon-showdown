@@ -624,6 +624,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Psychic", "Ice"],
 		abilities: {0: "Intimidate", 1: "Sap Sipper"},
 	},
+	raikou: {
+		inherit: true,
+		abilities: {0: "Galvanize"},
+	},
+	entei: {
+		inherit: true,
+		abilities: {0: "Immolate"},
+	},
+	suicune: {
+		inherit: true,
+		abilities: {0: "Drench"},
+	},
 	mudkip: {
 		inherit: true,
 		abilities: {0: "Torrent", 1: "Regenerator"},
