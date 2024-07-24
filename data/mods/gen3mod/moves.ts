@@ -737,15 +737,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power.",
 		shortDesc: "Power doubles and type varies in each weather.",
-		onModifyType(move, pokemon) {
-			switch (pokemon.effectiveWeather()) {
+		onModifyMove(move) {
+			switch (this.field.effectiveWeather()) {
 			case 'sunnyday':
-			case 'desolateland':
 				move.type = 'Fire';
+				move.category = 'Special';
 				break;
 			case 'raindance':
-			case 'primordialsea':
 				move.type = 'Water';
+				move.category = 'Special';
 				break;
 			case 'sandstorm':
 				move.type = 'Rock';
@@ -753,34 +753,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			case 'hail':
 			case 'snow':
 				move.type = 'Ice';
+				move.category = 'Special';
 				break;
 			case 'night':
 				move.type = 'Dark';
 				break;
 			}
-		},
-		onModifyMove(move, pokemon) {
-			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
-			case 'desolateland':
-				move.basePower *= 2;
-				break;
-			case 'raindance':
-			case 'primordialsea':
-				move.basePower *= 2;
-				break;
-			case 'sandstorm':
-				move.basePower *= 2;
-				break;
-			case 'hail':
-			case 'snow':
-				move.basePower *= 2;
-				break;
-			case 'night':
-				move.basePower *= 2;
-				break;
-			}
-			this.debug('BP: ' + move.basePower);
+			if (this.field.effectiveWeather()) move.basePower *= 2;
 		},
 	},
 	rage: {

@@ -361,9 +361,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onBasePower(basePower, attacker, defender, move) {
 			return this.chainModify([5325, 4096]);
 		},
-		onAllyBasePower(basePower, attacker, defender, move) {
-			return;
-		}
+		onAllyBasePower(basePower, attacker, defender, move) {}
 	},
 	iceface: {
 		inherit: true,
@@ -374,13 +372,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	arenatrap: {
 		inherit: true,
 		desc: "Prevents opposing Pokemon from choosing to switch out for one turn unless they are airborne, are holding a Shed Shell, or are a Ghost type.",
-		shortDesc: "Prevents opposing grounded Pokemon from switching out until for 1 turn.",
-		onFoeTrapPokemon(pokemon) {
-			return;
-		},
-		onFoeMaybeTrapPokemon(pokemon, source) {
-			return;
-		},
+		shortDesc: "Prevents opposing grounded Pokemon from switching out for 1 turn.",
+		onFoeTrapPokemon(pokemon) {},
+		onFoeMaybeTrapPokemon(pokemon, source) {},
 		onStart(pokemon) {
 			for (const target of pokemon.adjacentFoes()) {
 				pokemon.addVolatile('Arena Trap');
@@ -393,6 +387,27 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				if (pokemon.isGrounded()) {
 					pokemon.tryTrap();
 				}
+			},
+		},
+	},	
+	shadowtag: {
+		inherit: true,
+		desc: "Prevents opposing Pokemon from choosing to switch out, unless they are holding a Shed Shell, are a Ghost type, or also have this Ability.",
+		shortDesc: "Prevents foes without this ability from switching for 1 turn.",
+		onFoeTrapPokemon(pokemon) {},
+		onFoeMaybeTrapPokemon(pokemon, source) {},
+		onStart(pokemon) {
+			if (!pokemon.hasAbility('shadowtag') && pokemon.isAdjacent(this.effectState.target)) {
+				for (const target of pokemon.adjacentFoes()) {
+					pokemon.addVolatile('Shadow Tag');
+				}
+			}
+		},
+		condition: {
+			duration: 1,
+			onFoeTrapPokemon(pokemon) {
+				if (!pokemon.isAdjacent(this.effectState.target)) return;
+				pokemon.tryTrap();
 			},
 		},
 	},	
@@ -476,6 +491,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	rivalry: {
 		inherit: true,
+		gen: 3,
 		desc: "This Pokemon's attacks have their power multiplied by 1.25 against targets of the same gender. There is no modifier if either this Pokemon or the target is genderless.",
 		shortDesc: "This Pokemon's attacks do 1.25x on same gender targets.",
 		onBasePower(basePower, attacker, defender, move) {
@@ -552,9 +568,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.category = 'Special';
 			}
 		},
-		onBasePower(basePower, pokemon, target, move) {
-			return;
-		},
+		onBasePower(basePower, pokemon, target, move) {},
 	},
 	pixilate: {
 		inherit: true,
@@ -570,9 +584,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.category = 'Special';
 			}
 		},
-		onBasePower(basePower, pokemon, target, move) {
-			return;
-		},
+		onBasePower(basePower, pokemon, target, move) {},
 	},
 	refrigerate: {
 		inherit: true,
@@ -588,9 +600,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.category = 'Special';
 			}
 		},
-		onBasePower(basePower, pokemon, target, move) {
-			return;
-		},
+		onBasePower(basePower, pokemon, target, move) {},
 	},
 	aerilate: {
 		inherit: true,
@@ -605,9 +615,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.type = 'Flying';
 			}
 		},
-		onBasePower(basePower, pokemon, target, move) {
-			return;
-		},
+		onBasePower(basePower, pokemon, target, move) {},
 	},
 	immolate: {
 		inherit: true,
@@ -623,9 +631,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.category = 'Special';
 			}
 		},
-		onBasePower(basePower, pokemon, target, move) {
-			return;
-		},
+		onBasePower(basePower, pokemon, target, move) {},
 	},
 	drench: {
 		inherit: true,
@@ -641,9 +647,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.category = 'Special';
 			}
 		},
-		onBasePower(basePower, pokemon, target, move) {
-			return;
-		},
+		onBasePower(basePower, pokemon, target, move) {},
 	},
 	
 	pixieveil: {

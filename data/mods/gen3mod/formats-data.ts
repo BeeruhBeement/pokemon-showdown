@@ -1167,12 +1167,11 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	wynaut: {
-		tier: "Uber",
-		doublesTier: "DUber",
+		tier: "LC",
 	},
 	wobbuffet: {
-		tier: "Uber",
-		doublesTier: "DUber",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	girafarig: {
 		tier: "NFE",
