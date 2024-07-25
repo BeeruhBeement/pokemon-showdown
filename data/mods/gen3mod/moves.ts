@@ -288,7 +288,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Damage is rounded down. Foes lose 1/8 of their max hp if neutral to Rock, 1/4 if they are Flying-type and 1/16 of they resist Rock. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Hurts foes on switch-in. Double damage on Flying, half on Rock resist.",
+		shortDesc: "Hurts switch-in. Double damage Flying, half Rock resist.",
 		condition: {
 			onSideStart(side) {
 				this.add('-sidestart', side, 'move: Stealth Rock');
@@ -298,7 +298,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	
 				const typeMod = pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock'));
 
-				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 				if (pokemon.hasType('Flying')) {
 					this.damage(pokemon.maxhp / 4);
 				} else if (pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')) < 0){
