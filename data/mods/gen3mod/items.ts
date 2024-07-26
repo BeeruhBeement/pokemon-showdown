@@ -15,8 +15,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		shortDesc: "Holder's Dark-type attacks have 1.2x power.",
 		onBasePower() {},
-		onModifySpAPriority: 1,
-		onModifySpA(spa, user, target, move) {
+		onModifyAtkPriority: 1,
+		onModifyAtk(spa, user, target, move) {
 			if (move?.type === 'Dark') {
 				return this.chainModify(1.2);
 			}
@@ -39,8 +39,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 		desc: "Holder's Dragon-type attacks have 1.2x power.",
 		shortDesc: "Holder's Dragon-type attacks have 1.2x power.",
 		onBasePower() {},
-		onModifySpAPriority: 1,
-		onModifySpA(spa, user, target, move) {
+		onModifyAtkPriority: 1,
+		onModifyAtk(spa, user, target, move) {
 			if (move?.type === 'Dragon') {
 				return this.chainModify(1.2);
 			}
@@ -183,8 +183,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 		desc: "Holder's Ghost-type attacks have 1.2x power.",
 		shortDesc: "Holder's Ghost-type attacks have 1.2x power.",
 		onBasePower() {},
-		onModifyAtkPriority: 1,
-		onModifyAtk(atk, user, target, move) {
+		onModifySpAPriority: 1,
+		onModifySpA(atk, user, target, move) {
 			if (move?.type === 'Ghost') {
 				return this.chainModify(1.2);
 			}
@@ -205,8 +205,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 	fairyfeather: {
 		inherit: true,
 		onBasePower() {},
-		onModifyAtkPriority: 1,
-		onModifyAtk(atk, user, target, move) {
+		onModifySpAPriority: 1,
+		onModifySpA(atk, user, target, move) {
 			if (move?.type === 'Fairy') {
 				return this.chainModify(1.2);
 			}
@@ -214,11 +214,20 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
-	eviolite: {
+
+	metronome: {
 		inherit: true,
+		onBasePower() {},
+		onModifySpAPriority: 1,
+		onModifySpA(atk, user, target, move) {
+			if (move?.type === 'Sound') {
+				return this.chainModify(1.2);
+			}
+		},
 		gen: 3,
 		isNonstandard: null,
 	},
+
 	choicespecs: {
 		inherit: true,
 		gen: 3,
@@ -263,6 +272,35 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
+	},
+	mirrorherb: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	heatrock: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	damprock: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	smoothrock: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	icyrock: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	moonstone: {
+		inherit: true,
+		desc: "Holder's use of Night lasts 8 turns instead of 5.",
 	},
 	sitrusberry: {
 		inherit: true,

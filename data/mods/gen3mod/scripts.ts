@@ -4,7 +4,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	gen: 3,
 	inherit: 'gen3',
 	init() {
-		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Ghost', 'Psychic', 'Fairy'];
+		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Ghost', 'Psychic', 'Fairy', 'Sound'];
 		let newCategory = '';
 		for (const i in this.data.Moves) {
 			if (!this.data.Moves[i]) console.log(i);
@@ -157,7 +157,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			const type = move.type;
 
 			// Burn
-			if (pokemon.status === 'brn' && baseDamage && move.category === 'Physical' && !pokemon.hasAbility('guts')) {
+			if (pokemon.status === 'brn' && baseDamage && move.category === 'Physical' && !pokemon.hasAbility('guts') && !move.id.includes('facade')) {
 				baseDamage = this.battle.modify(baseDamage, 0.5);
 			}
 
@@ -167,8 +167,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			// Double battle multi-hit
 			// In Generation 3, the spread move modifier is 0.5x instead of 0.75x. Moves that hit both foes
 			// and the user's ally, like Earthquake and Explosion, don't get affected by spread modifiers
-			if (move.spreadHit && move.target === 'allAdjacentFoes') {
-				const spreadModifier = move.spreadModifier || 0.5;
+			if (move.spreadHit) {
+				const spreadModifier = move.spreadModifier || 0.75;
 				this.battle.debug('Spread modifier: ' + spreadModifier);
 				baseDamage = this.battle.modify(baseDamage, spreadModifier);
 			}

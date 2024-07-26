@@ -1345,7 +1345,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	raikou: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	entei: {
@@ -1353,7 +1353,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	suicune: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	larvitar: {
@@ -2200,8 +2200,8 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	chatot: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	spiritomb: {
 		tier: "Illegal",

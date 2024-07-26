@@ -330,7 +330,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	magneton: {
 		inherit: true,
-		types: ["Electric"],
+		types: ["Electric", "Steel"],
 		baseStats: {hp: 50, atk: 60, def: 95, spa: 120, spd: 120, spe: 70},
 	},
 	farfetchd: {
@@ -659,5 +659,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 1,
 		baseStats: {hp: 85, atk: 97, def: 66, spa: 105, spd: 105, spe: 66},
+	},
+	unown: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 48, atk: 48, def: 48, spa: 48, spd: 48, spe: 48},
+	},
+	regirock: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 80, atk: 100, def: 200, spa: 50, spd: 50, spe: 50},
 	},
 };

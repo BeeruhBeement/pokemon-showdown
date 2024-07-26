@@ -153,4 +153,37 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			megadrain: ["1M"],
 		}
 	},
+	unown: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			quickattack: ["1L1"],
+			icebeam: ["1L51"],
+			bite: ["1L1"],
+			substitute: ["1M"],
+			agility: ["1M"],
+			doubleedge: ["1M"],
+			headbutt: ["1L7"],
+			rest: ["1M", "1L47"],
+			slash: ["1L41"],
+			toxic: ["1M"],
+			psychic: ["1M"],
+		}
+	},
+	regirock: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			rockthrow: ["1L1"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			earthquake: ["1M"],
+			thunderwave: ["1M"],
+			thunder: ["1M"],
+			thunderbolt: ["1M"],
+			harden: ["1M"],
+		}
+	},
 };

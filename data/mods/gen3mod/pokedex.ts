@@ -471,6 +471,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fire", "Ground"],
 		abilities: {0: "Blaze", 1: "Flash Fire"},
 	},
+	sentret: {
+		inherit: true,
+	},
+	furret: {
+		inherit: true,
+	},
 	hoothoot: {
 		inherit: true,
 		types: ["Ghost", "Flying"],
@@ -728,7 +734,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Pixie Veil", 1: "Stall"},
 		baseStats: {hp: 80, atk: 65, def: 75, spa: 65, spd: 75, spe: 50},
-		eggGroups: ["Human-Like", "Fairy"],
 	},
 	mawile: {
 		inherit: true,
@@ -786,6 +791,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	cacturne: {
 		inherit: true,
 		abilities: {0: "Quick Draw", 1: "Sand Rush"},
+	},
+	zangoose: {
+		inherit: true,
+		abilities: {0: "Toxic Boost"},
+		baseStats: {hp: 73, atk: 115, def: 70, spa: 70, spd: 60, spe: 90},
 	},
 	seviper: {
 		inherit: true,
@@ -904,14 +914,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Soundproof", 1: "Solid Rock"},
-		eggGroups: ["Monster", "Mineral"],
 	},
 	bastiodon: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Soundproof", 1: "Solid Rock"},
 		baseStats: {hp: 70, atk: 52, def: 168, spa: 47, spd: 138, spe: 30},
-		eggGroups: ["Monster", "Mineral"],
 	},
 	stunky: {
 		inherit: true,
@@ -930,6 +938,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	bronzong: {
 		inherit: true,
 		gen: 3,
+	},
+	chatot: {
+		inherit: true,
+		gen: 3,
+		types: ["Sound", "Flying"],
 	},
 	riolu: {
 		inherit: true,

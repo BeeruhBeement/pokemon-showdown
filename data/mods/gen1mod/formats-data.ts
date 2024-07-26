@@ -243,7 +243,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	magneton: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	farfetchd: {
 		tier: "Illegal",
@@ -485,6 +485,12 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 	},
 	heatmor: {
+		tier: "OU",
+	},
+	unown: {
+		tier: "OU",
+	},
+	regirock: {
 		tier: "OU",
 	},
 };

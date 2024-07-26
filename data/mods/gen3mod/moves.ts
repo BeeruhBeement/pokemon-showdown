@@ -166,6 +166,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	hypervoice: {
 		inherit: true,
+		type: "Sound",
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 	},
 	charge: {
@@ -240,20 +241,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 40,
 		accuracy: 90,
-	},
-	shellsmash: {
-		inherit: true,
-		desc: "Lowers the user's Defense and Special Defense by 1 stage. Raises the user's Attack, Special Attack, and Speed by 1 stages.",
-		shortDesc: "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 1.",
-		boosts: {
-			def: -1,
-			spd: -1,
-			atk: 1,
-			spa: 1,
-			spe: 1,
-		},
-		type: "Water",
-		gen: 3,
 	},
 	growth: {
 		inherit: true,
@@ -533,11 +520,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1, powder: 1},
 	},
-	workup: {
-		inherit: true,
-		gen: 3,
-		type: "Fire",
-	},
 	submission: {
 		inherit: true,
 		basePower: 85,
@@ -641,7 +623,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	struggle: {
 		inherit: true,
 		basePower: 80,
-		struggleRecoil: true,
+		recoil: [1, 2],
 	},
 	tackle: {
 		inherit: true,
@@ -802,6 +784,25 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	lovelykiss: {
 		inherit: true,
 		type: "Fairy",
+	},
+	boomburst: {
+		inherit: true,
+		gen: 3,
+		type: "Sound",
+		basePower: 130,
+	},
+	coil: {
+		inherit: true,
+		gen: 3,
+	},
+	partingshot: {
+		inherit: true,
+		gen: 3,
+		desc: "Lowers the target's Special Attack by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "Lowers target's Sp. Atk by 1. User switches.",
+		onHit(target, source) {
+			this.boost({spa: -1}, target, source);
+		},
 	},
 	
 	weatherdance: {

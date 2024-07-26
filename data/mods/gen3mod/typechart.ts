@@ -4,7 +4,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 		damageTaken: {
 			confusion: 3,
 			Bug: 0,
-			Dark: 2,
+			Dark: 0,
 			Dragon: 0,
 			Electric: 0,
 			Fairy: 0,
@@ -21,6 +21,8 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Rock: 1,
 			Steel: 0,
 			Water: 0,
+
+			Sound: 2,
 		},
 	},
 	ghost: {
@@ -53,7 +55,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 		damageTaken: {
 			par: 3,
 			Bug: 0,
-			Dark: 2,
+			Dark: 0,
 			Dragon: 0,
 			Electric: 2,
 			Fairy: 0,
@@ -118,6 +120,8 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Rock: 0,
 			Steel: 0,
 			Water: 2,
+
+			Sound: 2,
 		},
 	},
 	ice: {
@@ -241,6 +245,31 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Steel: 2,
 			Water: 0,
 			Fairy: 2,
+		},
+	},
+	water: {
+		damageTaken: {
+			Bug: 0,
+			Dark: 0,
+			Dragon: 0,
+			Electric: 1,
+			Fairy: 0,
+			Fighting: 0,
+			Fire: 2,
+			Flying: 0,
+			Ghost: 0,
+			Grass: 1,
+			Ground: 0,
+			Ice: 2,
+			Normal: 0,
+			Poison: 0,
+			Psychic: 0,
+			Rock: 0,
+			Steel: 2,
+			Stellar: 0,
+			Water: 2,
+
+			Sound: 1,
 		},
 	},
 };

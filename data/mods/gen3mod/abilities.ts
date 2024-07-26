@@ -555,6 +555,33 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	toxicboost: {
+		inherit: true,
+		gen: 3,
+		desc: "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5. Immune to damage from poison.",
+		shortDesc: "While poisoned, physical attacks have 1.5x power. No damage from poison.",
+		onDamagePriority: 1,
+		onDamage(damage, target, source, effect) {
+			if (effect.id === 'psn' || effect.id === 'tox') {
+				return false;
+			}
+		},
+	},
+	soundproof: {
+		inherit: true,
+		shortDesc: "Immune to sound-based and Sound type moves, including Heal Bell.",
+		onTryHit(target, source, move) {
+			if (move.flags['sound'] || move.type === 'Sound') {
+				this.add('-immune', target, '[from] ability: Soundproof');
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['sound'] || move.type === 'Sound') {
+				this.add('-immune', this.effectState.target, '[from] ability: Soundproof');
+			}
+		},
+	},
 
 	// -ate abilities
 
