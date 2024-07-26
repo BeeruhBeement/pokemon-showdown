@@ -7550,6 +7550,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3M"],
 			
 			throatchop: ["3E"],
+			partingshot: ["3E"],
 		},
 	},
 	linoone: {
@@ -10927,6 +10928,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			uproar: ["3L37"],
 			
 			boomburst: ["3L58"],
+			partingshot: ["3L49"],
 		},
 	},
 	riolu: {
@@ -12571,6 +12573,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			vitalthrow: ["3L27"],
 			
 			drainpunch: ["3T"],
+			partingshot: ["3L45"],
 		},
 	},
 	pangoro: {
@@ -12634,6 +12637,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bulletpunch: ["3L1"],
 			drainpunch: ["3T"],
 			submission: ["3M"],
+			partingshot: ["3L48"],
 		},
 	},
 	honedge: {
