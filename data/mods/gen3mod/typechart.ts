@@ -50,6 +50,32 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Water: 0,
 		},
 	},
+	dragon: {
+		inherit: true,
+		damageTaken: {
+			Bug: 0,
+			Dark: 0,
+			Dragon: 1,
+			Electric: 2,
+			Fairy: 1,
+			Fighting: 0,
+			Fire: 2,
+			Flying: 0,
+			Ghost: 0,
+			Grass: 2,
+			Ground: 0,
+			Ice: 1,
+			Normal: 0,
+			Poison: 0,
+			Psychic: 0,
+			Rock: 0,
+			Steel: 0,
+			Stellar: 0,
+			Water: 2,
+
+			Sound: 2,
+		},
+	},
 	electric: {
 		inherit: true,
 		damageTaken: {

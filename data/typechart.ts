@@ -483,12 +483,11 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 
 	// Custom
-
 	
 	sound: {
 		damageTaken: {
 			Bug: 0,
-			Dark: 2,
+			Dark: 0,
 			Dragon: 0,
 			Electric: 0,
 			Fairy: 0,
