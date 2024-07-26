@@ -217,6 +217,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 
 	metronome: {
 		inherit: true,
+		desc: "Holder's Sound-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
 		onModifySpA(atk, user, target, move) {
