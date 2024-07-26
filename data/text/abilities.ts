@@ -2318,8 +2318,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Piercing",
 		shortDesc: "Physical moves ignore 20% of the target's Defense.",
 	},
-	nightfall: {
-		name: "Nightfall",
+	moonrise: {
+		name: "Moonrise",
 		shortDesc: "On switch-in, this Pokemon summons Night.",
 	},
 	fogofwar: {

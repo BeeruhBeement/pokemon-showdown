@@ -178,15 +178,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	igglybuff: {
 		inherit: true,
-		types: ["Normal", "Fairy"],
+		types: ["Sound", "Fairy"],
 	},
 	jigglypuff: {
 		inherit: true,
-		types: ["Normal", "Fairy"],
+		types: ["Sound", "Fairy"],
 	},
 	wigglytuff: {
 		inherit: true,
-		types: ["Normal", "Fairy"],
+		types: ["Sound", "Fairy"],
 		baseStats: {hp: 140, atk: 70, def: 55, spa: 85, spd: 60, spe: 45},
 	},
 	vulpix: {
@@ -368,10 +368,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	voltorb: {
 		inherit: true,
+		types: ["Electric", "Sound"],
 		abilities: {0: "Soundproof", 1: "Static"},
 	},
 	electrode: {
 		inherit: true,
+		types: ["Electric", "Sound"],
 		abilities: {0: "Soundproof", 1: "Static"},
 		baseStats: {hp: 60, atk: 50, def: 70, spa: 90, spd: 80, spe: 150},
 	},
@@ -592,6 +594,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ursalunabloodmoon: {
 		inherit: true,
 		gen: 3,
+		types: ["Ground", "Sound"],
+		abilities: {0: "Miracle Guard"}
 	},
 	slugma: {
 		inherit: true,
@@ -730,6 +734,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	shedinja: {
 		inherit: true,
 	},
+	whismur: {
+		inherit: true,
+		types: ["Sound"],
+	},
+	loudred: {
+		inherit: true,
+		types: ["Sound"],
+	},
+	exploud: {
+		inherit: true,
+		types: ["Sound"],
+		baseStats: {hp: 104, atk: 91, def: 63, spa: 91, spd: 73, spe: 68},
+	},
 	sableye: {
 		inherit: true,
 		abilities: {0: "Pixie Veil", 1: "Stall"},
@@ -806,7 +823,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Rock", "Ghost"],
 		baseStats: {hp: 90, atk: 55, def: 65, spa: 95, spd: 85, spe: 70},
-		abilities: {0: "Levitate", 1: "Nightfall"},
+		abilities: {0: "Levitate", 1: "Moonrise"},
 	},
 	solrock: {
 		inherit: true,

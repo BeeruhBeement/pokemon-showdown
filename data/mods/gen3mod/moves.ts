@@ -645,6 +645,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	uproar: {
 		inherit: true,
 		basePower: 90,
+		type: "Sound",
 	},
 	spinout: {
 		inherit: true,
@@ -795,6 +796,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	tidyup: {
+		inherit: true,
+		gen: 3,
+	},
 	partingshot: {
 		inherit: true,
 		gen: 3,
@@ -803,6 +808,66 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onHit(target, source) {
 			this.boost({spa: -1}, target, source);
 		},
+	},
+	sing: {
+		inherit: true,
+		type: "Sound",
+	},
+	sonicboom: {
+		inherit: true,
+		type: "Sound",
+	},
+	supersonic: {
+		inherit: true,
+		type: "Sound",
+	},
+	synchronoise: {
+		inherit: true,
+		gen: 3,
+		type: "Sound",
+		basePower: 80,
+		desc: "The user prevents all opposing Pokemon from using any moves that the user also knows as long as the foe remains active.",
+		shortDesc: "Foes can't use moves known by user until switch out.",
+		onTryImmunity(target, source, move) {},
+		secondary: {
+			chance: 20,
+			volatileStatus: 'imprison',
+		},
+		condition: {
+			noCopy: true,
+			onStart(target) {
+				this.add('-start', target, 'move: Imprison');
+			},
+			onFoeDisableMove(pokemon) {
+				for (const moveSlot of this.effectState.source.moveSlots) {
+					if (moveSlot.id === 'struggle') continue;
+					pokemon.disableMove(moveSlot.id, 'hidden');
+				}
+				pokemon.maybeDisabled = true;
+			},
+			onFoeBeforeMovePriority: 4,
+			onFoeBeforeMove(attacker, defender, move) {
+				if (move.id !== 'struggle' && this.effectState.source.hasMove(move.id) && !move.isZ && !move.isMax) {
+					this.add('cant', attacker, 'move: Imprison', move);
+					return false;
+				}
+			},
+		},
+		target: "normal",
+	},
+	psychoshift: {
+		inherit: true,
+		gen: 3,
+	},
+	fishiousrend: {
+		inherit: true,
+		gen: 3,
+		basePower: 65,
+	},
+	boltbeak: {
+		inherit: true,
+		gen: 3,
+		basePower: 65,
 	},
 	
 	weatherdance: {
@@ -836,6 +901,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	rottenvial: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	nightfall: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

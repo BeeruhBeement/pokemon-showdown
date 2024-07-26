@@ -212,12 +212,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 		gen: 3,
-		isNonstandard: null,
 	},
 
 	metronome: {
 		inherit: true,
 		desc: "Holder's Sound-type attacks have 1.2x power.",
+		shortDesc: "Holder's Sound-type attacks have 1.2x power.",
 		onBasePower() {},
 		onModifySpAPriority: 1,
 		onModifySpA(atk, user, target, move) {
@@ -226,86 +226,73 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 		gen: 3,
-		isNonstandard: null,
 	},
 
 	choicespecs: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	choicescarf: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	assaultvest: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	flameorb: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	toxicorb: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	dawnstone: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	duskstone: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	focussash: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	punchingglove: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	mirrorherb: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	heatrock: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	damprock: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	smoothrock: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	icyrock: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	moonstone: {
 		inherit: true,
-		desc: "Holder's use of Night lasts 8 turns instead of 5.",
+		desc: "Evolves Nidorina into Nidoqueen, Nidorino into Nidoking, Clefairy into Clefable, Jigglypuff into Wigglytuff, Skitty into Delcatty, and Munna into Musharna when used. Holder's use of Night lasts 8 turns instead of 5.",
+		shortDesc: "Holder's use of Night lasts 8 turns instead of 5.",
 	},
 	sitrusberry: {
 		inherit: true,
 		desc: "Restores 1/4 max HP when at 1/2 max HP or less. Single use.",
+		shortDesc: "Restores 1/4 max HP when at 1/2 max HP or less. Single use.",
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 4);
 		},
@@ -313,6 +300,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	stick: {
 		inherit: true,
 		desc: "If held by Farfetch’d or Sirfetch'd, critical ratio is raised by 5 stages.",
+		shortDesc: "If held by Farfetch’d or Sirfetch'd, critical ratio is raised by 5 stages.",
 		onModifyCritRatio(critRatio, user) {
 			if (["farfetchd", "sirfetchd"].includes(this.toID(user.baseSpecies.baseSpecies))) {
 				return critRatio + 5;
@@ -323,6 +311,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	lightball: {
 		inherit: true,
 		desc: "If held by Pichu, Pikachu, Raichu or Raichu-Alola, attacks have double power.",
+		shortDesc: "If held by Pichu, Pikachu, Raichu or Raichu-Alola, attacks have double power.",
 		onModifyAtk() {
 			return;
 		},

@@ -7595,4 +7595,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "This move is considered a Status move for all purposes but when actually used it's a 75 Base Power Dark Type Physical move with 95 accuracy and a 30% chance to paralyze.",
 		shortDesc: "Status but deals direct Physical damage. 30% para.",
 	},
+	nightfall: {
+		name: "Nightfall",
+		desc: "For 5 turns, the weather becomes Night. Lasts for 8 turns if the user is holding Damp Rock. Fails if the current weather is Night.",
+		shortDesc: "For 5 turns summons Night.",
+	}
 };

@@ -5814,15 +5814,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onStart(pokemon) {
 			pokemon.addVolatile('vanguard');	
 		},
-		onBasePowerPriority: 8,
-		onBasePower(basePower, attacker, defender, move) {
-			if (attacker.volatiles['vanguard']) {
-				this.debug('Vanguard boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onResidual: function (pokemon) {
-			pokemon.removeVolatile('vanguard');
+		condition: {
+			duration: 1,
+			onBasePowerPriority: 8,
+			onBasePower(basePower, attacker, defender, move) {
+				if (attacker.volatiles['vanguard']) {
+					this.debug('Vanguard boost');
+					return this.chainModify(1.5);
+				}
+			},
 		},
 	},
 	piercing: {
@@ -5838,14 +5838,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 	},
-	nightfall: {
+	moonrise: {
 		isNonstandard: "Custom",
 		flags: {},
-		name: "Nightfall",
+		name: "Moonrise",
 		rating: 4,
 		num: 5012,
 		onStart(source) {
-			this.field.setWeather('night');
+			this.field.setWeather('Night');
 		},
 	},
     fogofwar: {
@@ -5906,6 +5906,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 	},
 	immolate: {
+		isNonstandard: "Custom",
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
 			const noModifyType = [
@@ -5927,6 +5928,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 5015,
 	},
 	drench: {
+		isNonstandard: "Custom",
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
 			const noModifyType = [

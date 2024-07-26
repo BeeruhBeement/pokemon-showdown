@@ -22235,6 +22235,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	voidtendril: {
 		// currently unused
+		isNonstandard: "Custom",
 		num: 5008,
 		accuracy: 95,
 		basePower: 75,
@@ -22253,5 +22254,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Tough",
+	},
+	nightfall: {
+		isNonstandard: "Custom",
+		num: 5009,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Nightfall",
+		pp: 5,
+		priority: 0,
+		flags: {metronome: 1},
+		weather: 'Night',
+		secondary: null,
+		target: "all",
+		type: "Dark",
+		zMove: {boost: {spe: 1}},
+		contestType: "Beautiful",
 	},
 };
