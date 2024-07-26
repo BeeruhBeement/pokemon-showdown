@@ -2329,7 +2329,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	miracleguard: {
 		name: "Miracle Guard",
-		shortDesc: "20% chance to reduce incoming damage by 50%. Doesn't work 2 turns in a row.",
+		shortDesc: "20% chance to reduce incoming damage by 50%. Once per turn.",
 	},
 	immolate: {
 		name: "Immolate",

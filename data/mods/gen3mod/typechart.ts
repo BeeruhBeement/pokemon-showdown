@@ -1,3 +1,5 @@
+import { ModdedTypeData } from "../../../sim/dex-data";
+
 export const TypeChart: {[k: string]: ModdedTypeData} = {
 	bug: {
 		inherit: true,

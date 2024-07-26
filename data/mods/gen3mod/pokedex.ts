@@ -1,4 +1,5 @@
 import { TriumvirateModeTrivia } from "../../../server/chat-plugins/trivia/trivia";
+import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	charmander: {
@@ -879,10 +880,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	chingling: {
 		inherit: true,
 		gen: 3,
+		types: ["Psychic", "Sound"],
 		abilities: {0: "Levitate", 1: "Soundproof"},
 	},
 	chimecho: {
 		inherit: true,
+		types: ["Psychic", "Sound"],
 		abilities: {0: "Levitate", 1: "Soundproof"},
 		baseStats: {hp: 75, atk: 50, def: 80, spa: 95, spd: 90, spe: 65},
 	},

@@ -1,3 +1,5 @@
+import { ModdedAbilityData } from "../../../sim/dex-abilities";
+
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	hustle: {
 		inherit: true,
@@ -647,6 +649,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	immolate: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 		desc: "This Pokemon's Normal-type moves become Fire-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Fire type.",
 		onModifyMove(move) {
@@ -663,6 +666,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	drench: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 		desc: "This Pokemon's Normal-type moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Water type.",
 		onModifyMove(move) {

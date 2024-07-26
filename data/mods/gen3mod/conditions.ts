@@ -1,3 +1,5 @@
+import { ModdedConditionData } from "../../../sim/dex-conditions";
+
 export const Conditions: {[k: string]: ModdedConditionData} = {
 	confusion: {
 		inherit: true,
