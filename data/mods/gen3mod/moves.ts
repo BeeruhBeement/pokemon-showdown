@@ -522,11 +522,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1, powder: 1},
 	},
-	submission: {
-		inherit: true,
-		basePower: 85,
-		accuracy: 100,
-	},
 	teleport: {
 		inherit: true,
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
@@ -871,7 +866,29 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		basePower: 65,
 	},
-	
+	strength: {
+		inherit: true,
+		type: "Fighting",
+	},
+	batonpass: {
+		inherit: true,
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "User switches out.",
+		self: {
+			onHit(source) { return },
+		},
+	},
+	multiattack: {
+		inherit: true,
+		gen: 3,
+		onModifyMove(move, pokemon) {
+			if (pokemon.ignoringItem()) return;
+			move.type = this.runEvent('Memory', pokemon, null, move, 'Normal');
+			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
+			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
+		},
+	},
+
 	weatherdance: {
 		inherit: true,
 		gen: 3,

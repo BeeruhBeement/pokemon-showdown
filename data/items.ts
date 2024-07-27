@@ -7624,4 +7624,42 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
+	
+	// Custom
+
+	noiseplate: {
+		name: "Noise Plate",
+		spritenum: -5000,
+		onPlate: 'Sound',
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (move.type === 'Sound') {
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Arceus-Sound",
+		num: -5000,
+		isNonstandard: "Custom",
+	},
+	soundmemory: {
+		name: "Sound Memory",
+		spritenum: -5001,
+		onMemory: 'Sound',
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 773) || pokemon.baseSpecies.num === 773) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Silvally-Sound",
+		itemUser: ["Silvally-Sound"],
+		num: -5001,
+		isNonstandard: "Custom",
+	},
 };

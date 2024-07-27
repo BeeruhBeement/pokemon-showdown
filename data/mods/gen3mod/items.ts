@@ -215,7 +215,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		gen: 3,
 	},
-
 	metronome: {
 		inherit: true,
 		desc: "Holder's Sound-type attacks have 1.2x power.",
@@ -326,5 +325,15 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 		itemUser: ["Pichu", "Pikachu", "Raichu", "Raichu-Alola"],
+	},
+	noiseplate: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	soundmemory: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
 	},
 };

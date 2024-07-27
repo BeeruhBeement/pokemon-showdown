@@ -5651,6 +5651,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -4,
 	},
+
+	// Custom
 	
 	pixieveil: {
 		isNonstandard: "Custom",
@@ -5895,7 +5897,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			const r = this.random(100);
 			if (r < 20) {
-				this.add('-weakened', target, '[from] ability: Miracle Guard');
+				this.add('-activate', target, '[from] ability: Miracle Guard');
 				this.debug('Miracle Guard damage reduction');
 				target.volatiles['miracleguard'].lastTriggered = true;
 				return this.chainModify(0.5);
@@ -5947,5 +5949,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Drench",
 		rating: 4,
 		num: 5016,
+	},
+	jinxed: {
+		isNonstandard: "Custom",
+		onModifyMovePriority: -2,
+		onAnyModifyMove(move, pokemon, target) {
+			if (move.secondaries) {
+				for (const secondary of move.secondaries) {
+					this.debug('guaranteeing secondary chance');
+					if (secondary.status !== 'frz' && secondary.volatileStatus !== 'flinch') secondary.chance = 100;
+				}
+			}
+			if (move.self?.chance) move.self.chance = 100;
+		},
+		flags: {},
+		name: "Jinxed",
+		rating: 3.5,
+		num: 5017,
 	},
 };

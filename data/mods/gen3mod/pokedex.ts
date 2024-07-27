@@ -892,11 +892,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	absol: {
 		inherit: true,
 		types: ["Dark", "Fairy"],
+		abilities: {0: "Jinxed"},
 	},
 	snorunt: {
 		inherit: true,
 		abilities: {0: "Inner Focus", 1: "Ice Body"},
-		evos: ["Glalie", "Froslass"],
 	},
 	glalie: {
 		inherit: true,
@@ -912,6 +912,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 70, atk: 85, def: 70, spa: 85, spd: 70, spe: 110},
 		abilities: {0: "Inner Focus", 1: "Snow Cloak"},
+	},
+	clamperl: {
+		inherit: true,
+		baseStats: {hp: 45, atk: 64, def: 85, spa: 74, spd: 55, spe: 32},
+	},
+	huntail: {
+		inherit: true,
+		abilities: {0: "Strong Jaw"},
+	},
+	gorebyss: {
+		inherit: true,
 	},
 	luvdisc: {
 		inherit: true,
@@ -1251,6 +1262,88 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Skill Link", 1: "Solar Power"},
+	},
+	typenull: {
+		inherit: true,
+		gen: 3,
+	},
+	silvally: {
+		inherit: true,
+		gen: 3,
+		otherFormes: ["Silvally-Bug", "Silvally-Dark", "Silvally-Dragon", "Silvally-Electric", "Silvally-Fairy", "Silvally-Fighting", "Silvally-Fire", "Silvally-Flying", "Silvally-Ghost", "Silvally-Grass", "Silvally-Ground", "Silvally-Ice", "Silvally-Poison", "Silvally-Psychic", "Silvally-Rock", "Silvally-Steel", "Silvally-Water", "Silvally-Sound"],
+		formeOrder: [
+			"Silvally", "Silvally-Fighting", "Silvally-Flying", "Silvally-Poison", "Silvally-Ground", "Silvally-Rock", "Silvally-Bug", "Silvally-Ghost", "Silvally-Steel",
+			"Silvally-Fire", "Silvally-Water", "Silvally-Grass", "Silvally-Electric", "Silvally-Psychic", "Silvally-Ice", "Silvally-Dragon", "Silvally-Dark", "Silvally-Fairy", 
+			"Silvally-Sound",
+		],
+	},
+	silvallybug: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallydark: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallydragon: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyelectric: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyfighting: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyfire: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyflying: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyghost: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallygrass: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyground: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyice: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallypoison: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallypsychic: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallyrock: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallysteel: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallywater: {
+		inherit: true,
+		gen: 3,
+	},
+	silvallysound: {
+		inherit: true,
+		gen: 3,
 	},
 	togedemaru: {
 		inherit: true,

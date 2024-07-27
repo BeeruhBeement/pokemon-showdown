@@ -376,7 +376,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		condition: {
-			duration: 1,
+			duration: 2,
 			onFoeTrapPokemon(pokemon) {
 				if (!pokemon.isAdjacent(this.effectState.target)) return;
 				if (pokemon.isGrounded()) {
@@ -399,7 +399,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		condition: {
-			duration: 1,
+			duration: 2,
 			onFoeTrapPokemon(pokemon) {
 				if (!pokemon.isAdjacent(this.effectState.target)) return;
 				pokemon.tryTrap();
@@ -580,6 +580,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
+	scrappy: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// -ate abilities
 
@@ -749,6 +753,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	miracleguard: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	jinxed: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

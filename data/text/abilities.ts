@@ -2264,6 +2264,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+
+	// Custom
 	
 	pixieveil: {
 		name: "Pixie Veil",
@@ -2282,7 +2284,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	executioner: {
 		name: "Executioner",
 		desc: "This Pokémon's moves become OHKO moves against targets with 25% or less HP. If the user's level is lower than the target's level damage is dealt normally.",
-		shortDesc: "This Pokémon's moves OHKOs targets with 25% or less HP.",
+		shortDesc: "Moves OHKO targets with 25% or less HP unless user's level <= target's.",
 	},
 	chrysalis: {
 		name: "Chrysalis",
@@ -2340,5 +2342,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Drench",
 		desc: "This Pokemon's Normal-type moves become Water-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Water type and have 1.2x power.",
+	},
+	jinxed: {
+		name: "Jinxed",
+		shortDesc: "Every move used by or against this Pokemon has 100% secondaries (no flinch, freeze).",
 	},
 };
