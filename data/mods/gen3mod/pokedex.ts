@@ -1293,6 +1293,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	silvallyfairy: {
+		inherit: true,
+		gen: 3,
+	},
 	silvallyfighting: {
 		inherit: true,
 		gen: 3,

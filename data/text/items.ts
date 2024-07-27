@@ -2425,4 +2425,15 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Vile Vial",
 		shortDesc: "If held by a Venomicon, its Poison- and Flying-type attacks have 1.2x power.",
 	},
+
+	// Custom
+
+	soundmemory: {
+		name: "Sound Memory",
+		shortDesc: "Holder's Multi-Attack is Sound type.",
+	},
+	noiseplate: {
+		name: "Noise Plate",
+		shortDesc: "Holder's Sound-type attacks have 1.2x power. Judgment is Sound type.",
+	},
 };

@@ -326,11 +326,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		itemUser: ["Pichu", "Pikachu", "Raichu", "Raichu-Alola"],
 	},
-	noiseplate: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
 	soundmemory: {
 		inherit: true,
 		gen: 3,

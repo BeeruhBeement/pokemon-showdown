@@ -584,6 +584,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	rkssystem: {
+		inherit: true,
+		gen: 3,
+	},
+	multitype: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// -ate abilities
 

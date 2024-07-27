@@ -13950,8 +13950,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			round: ["3M"],
 			sandstorm: ["3M"],
 			scaryface: ["3L30"],
-			shadowclaw: ["3M"],
-			signalbeam: ["3T"],
 			sleeptalk: ["3M"],
 			snore: ["3T"],
 			substitute: ["3M"],
