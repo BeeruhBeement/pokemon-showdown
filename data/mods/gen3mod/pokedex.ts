@@ -1348,6 +1348,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	silvallysound: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	togedemaru: {
 		inherit: true,
