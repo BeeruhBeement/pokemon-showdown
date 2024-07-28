@@ -1,4 +1,3 @@
-import { TriumvirateModeTrivia } from "../../../server/chat-plugins/trivia/trivia";
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
@@ -276,6 +275,23 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	perrserker: {
 		inherit: true,
 		gen: 3,
+	},
+	poliwag: {
+		inherit: true,
+	},
+	poliwhirl: {
+		inherit: true,
+		gen: 3,
+	},
+	poliwrath: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 95, def: 95, spa: 70, spd: 90, spe: 70},
+		abilities: {0: "No Guard", 1: "Damp"},
+	},
+	politoed: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 75, def: 75, spa: 90, spd: 110, spe: 70},
+		types: ["Water", "Sound"],
 	},
 	geodude: {
 		inherit: true,

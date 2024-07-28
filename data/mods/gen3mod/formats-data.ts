@@ -1259,7 +1259,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	ursalunabloodmoon: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	slugma: {

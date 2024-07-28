@@ -26,14 +26,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 3] Modded",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause'],
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause', 'Data Mod'],
 		banlist: ['Uber'],
 	},
 	{
 		name: "[Gen 3] Modded Uber",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Freeze Clause Mod'],
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
 		banlist: [],
 	},
 	{
@@ -41,16 +41,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3mod',
 		gameType: 'doubles',
-		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod'],
+		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod', 'Data Mod'],
 		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 3] Modded Doubles Ubers",
-
-		mod: 'gen3mod',
-		gameType: 'doubles',
-		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod'],
-		banlist: [],
 	},
 	{
 		name: "[Gen 9] National Dex Sky Battles",
@@ -95,7 +87,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] National Dex Inverse Battles",
 
-		mod: 'inversebattles',
+		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -103,6 +95,40 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster', 'Indeedee',
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Shedinja', 'Indeedee-F'],
+		pokemon: {
+			runEffectiveness(move: ActiveMove) {
+				if (this.terastallized && move.type === 'Stellar') return -1;
+				let totalTypeMod = 0;
+				for (const type of this.getTypes()) {
+					let typeMod = this.battle.dex.getEffectiveness(move, type);
+					
+					// Invert type effectiveness
+					if (typeMod === 1) {
+						typeMod = -1; // Super effective becomes resisted
+					} else if (typeMod === -1) {
+						typeMod = 1; // Resisted becomes super effective
+					}
+			
+					typeMod = this.battle.singleEvent('Effectiveness', move, null, this, type, move, typeMod);
+					totalTypeMod += this.battle.runEvent('Effectiveness', this, type, move, typeMod);
+				}
+				return totalTypeMod;
+			},	
+			isGrounded(negateImmunity = false) {
+				if ('gravity' in this.battle.field.pseudoWeather) return true;
+				if ('ingrain' in this.volatiles && this.battle.gen >= 4) return true;
+				if ('smackdown' in this.volatiles) return true;
+				const item = (this.ignoringItem() ? '' : this.item);
+				if (item === 'ironball') return true;
+				if (this.hasType('Flying')) return true;
+				// If a Fire/Flying type uses Burn Up and Roost, it becomes ???/Flying-type, but it's still grounded.
+				if (!negateImmunity && this.hasType('Flying') && !(this.hasType('???') && 'roost' in this.volatiles)) return false;
+				if (this.hasAbility('levitate') && !this.battle.suppressingAbility(this)) return null;
+				if ('magnetrise' in this.volatiles) return false;
+				if ('telekinesis' in this.volatiles) return false;
+				return item !== 'airballoon';
+			},
+		},
 	},
 
 	{
@@ -112,7 +138,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 1] Mod",
 
 		mod: 'gen1mod',
-		ruleset: ['Standard'],
+		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber'],
 	},
 	{
@@ -121,7 +147,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3mod',
 		team: 'randomCC',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause'],
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause', 'Data Mod'],
 	},
 
 	{

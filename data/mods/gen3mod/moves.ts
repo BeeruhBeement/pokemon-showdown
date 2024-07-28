@@ -889,6 +889,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
 		},
 	},
+	perishsong: {
+		inherit: true,
+		type: "Ghost",
+	},
 
 	weatherdance: {
 		inherit: true,

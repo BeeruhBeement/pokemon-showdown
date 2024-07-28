@@ -1,3 +1,5 @@
+import { ModdedSpeciesFormatsData } from "../../../sim/dex-species";
+
 export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	bulbasaur: {
 		tier: "Illegal",
@@ -491,6 +493,12 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 	},
 	regirock: {
+		tier: "OU",
+	},
+	finizen: {
+		tier: "OU",
+	},
+	maractus: {
 		tier: "OU",
 	},
 };

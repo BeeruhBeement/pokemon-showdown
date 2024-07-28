@@ -4,7 +4,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	hustle: {
 		inherit: true,
 		onSourceModifyAccuracy(accuracy, target, source, move) {
-			const physicalTypes = ['Normal', 'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Dark', 'Dragon', 'Steel'];
+			const physicalTypes = ['Normal', 'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Dragon', 'Dark', 'Steel'];
 			if (physicalTypes.includes(move.type) && typeof accuracy === 'number') {
 				return this.chainModify([3277, 4096]);
 			}
@@ -313,10 +313,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			// List of moves to be boosted by Illuminate
 			const boostedMoves = [
 				'aurorabeam', 'bubblebeam', 'dazzlinggleam', 'eternabeam', 'flashcannon',
-				'icebeam', 'lightofruin', 'lightthatburnsthesky', 'meteorbeam', 'moongeistbeam',
-				'prismaticlaser', 'psybeam', 'signalbeam', 'solarbeam', 'solarblade',
-				'steelbeam', 'doomdesire', 'glitzyglow', 'fleurcannon', 'lusterpurge',
-				'mirrorshot', 'moonblast', 'photongeyser', 'powergem'
+				'hyperbeam', 'icebeam', 'lightofruin', 'lightthatburnsthesky', 'meteorbeam',
+				'moongeistbeam', 'prismaticlaser', 'psybeam', 'signalbeam', 'solarbeam',
+				'solarblade', 'steelbeam', 'doomdesire', 'glitzyglow', 'fleurcannon',
+				'lusterpurge', 'mirrorshot', 'moonblast', 'photongeyser', 'powergem'
 			];
 			if (boostedMoves.includes(move.id)) {
 				this.debug('Illuminate boost');
@@ -591,6 +591,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	multitype: {
 		inherit: true,
 		gen: 3,
+	},
+	damp: {
+		inherit: true,
+		onAnyTryMove(target, source, effect) {},
+		onAnyDamage(damage, target, source, effect) {
+			if (effect && effect.name === 'Aftermath') {
+				return false;
+			}
+			if (['explosion', 'mindblown', 'mistyexplosion', 'selfdestruct'].includes(effect.id)) {
+				return false;
+			}
+		},
+		rating: 2.5,
 	},
 
 	// -ate abilities

@@ -1,10 +1,8 @@
-import { inherits } from "util";
-
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 3,
 	inherit: 'gen3',
 	init() {
-		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Ghost', 'Psychic', 'Fairy', 'Sound'];
+		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
 		let newCategory = '';
 		for (const i in this.data.Moves) {
 			if (!this.data.Moves[i]) console.log(i);

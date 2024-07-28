@@ -1,3 +1,5 @@
+import { ModdedSpeciesData } from "../../../sim/dex-species";
+
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	missingno: {
 		inherit: true,
@@ -669,5 +671,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 1,
 		baseStats: {hp: 80, atk: 100, def: 200, spa: 50, spd: 50, spe: 50},
+	},
+	finizen: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 67, atk: 67, def: 67, spa: 95, spd: 95, spe: 67},
+	},
+	maractus: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 75, atk: 75, def: 75, spa: 105, spd: 105, spe: 75},
 	},
 };

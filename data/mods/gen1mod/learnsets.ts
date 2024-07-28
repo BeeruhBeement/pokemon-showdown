@@ -1,3 +1,5 @@
+import { ModdedLearnsetData } from "../../../sim/dex-species";
+
 export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	meganium: {
 		learnset: {
@@ -184,6 +186,40 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunder: ["1M"],
 			thunderbolt: ["1M"],
 			harden: ["1M"],
+		}
+	},
+	finizen: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			rockthrow: ["1L1"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			thunderwave: ["1M"],
+			harden: ["1M"],
+			surf: ["1M"],
+			icebeam: ["1M"],
+			blizzard: ["1M"],
+			watergun: ["1M"],
+			bubblebeam: ["1M"],
+		}
+	},
+	maractus: {
+		learnset: {
+			solarbeam: ["1L61"],
+			bodyslam: ["1L31"],
+			razorleaf: ["1L1", "1L8"],
+			poisonpowder: ["1L1"],
+			growl: ["1L1"],
+			tackle: ["1L1"],
+			substitute: ["1M"],
+			swordsdance: ["1M"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			megadrain: ["1M"],
+			dazzlinggleam: ["1L51"],
+			sandattack: ["1L5"],
 		}
 	},
 };
