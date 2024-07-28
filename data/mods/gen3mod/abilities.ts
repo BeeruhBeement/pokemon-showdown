@@ -605,6 +605,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		rating: 2.5,
 	},
+	furcoat: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// -ate abilities
 

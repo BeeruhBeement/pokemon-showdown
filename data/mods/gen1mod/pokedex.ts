@@ -632,6 +632,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 1,
 		baseStats: {hp: 70, atk: 80, def: 65, spa: 65, spd: 65, spe: 85},
 	},
+	fletchling: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 45, atk: 50, def: 43, spa: 40, spd: 40, spe: 62},
+	},
 	fletchinder: {
 		inherit: true,
 		gen: 1,
@@ -681,5 +686,25 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 1,
 		baseStats: {hp: 75, atk: 75, def: 75, spa: 105, spd: 105, spe: 75},
+	},
+	pawniard: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 85, atk: 85, def: 70, spa: 40, spd: 40, spe: 60},
+	},
+	dedenne: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 62, atk: 58, def: 57, spa: 81, spd: 81, spe: 101},
+	},
+	barraskewda: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 47, atk: 127, def: 70, spa: 47, spd: 47, spe: 177},
+	},
+	dachsbun: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 90, atk: 90, def: 90, spa: 90, spd: 90, spe: 90},
 	},
 };

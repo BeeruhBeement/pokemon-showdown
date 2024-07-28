@@ -65,6 +65,22 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["1M"],
 		}
 	},
+	fletchling: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			quickattack: ["1L1"],
+			icebeam: ["1L51"],
+			bite: ["1L1"],
+			substitute: ["1M"],
+			agility: ["1M"],
+			rest: ["1M"],
+			swordsdance: ["1M"],
+			toxic: ["1M"],
+			wingattack: ["1L41"],
+		}
+	},
 	fletchinder: {
 		learnset: {
 			ember: ["1L16"],
@@ -89,6 +105,11 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			earthquake: ["1M"],
 			toxic: ["1M"],
 			bubblebeam: ["1M"],
+			hyperbeam: ["1M"],
+			amnesia: ["1M"],
+			swordsdance: ["1M"],
+			agility: ["1M"],
+			doubleedge: ["1M"],
 		}
 	},
 	sandygast: {
@@ -203,6 +224,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			blizzard: ["1M"],
 			watergun: ["1M"],
 			bubblebeam: ["1M"],
+			razorwind: ["1M"],
+			hyperbeam: ["1M"],
 		}
 	},
 	maractus: {
@@ -220,6 +243,92 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			megadrain: ["1M"],
 			dazzlinggleam: ["1L51"],
 			sandattack: ["1L5"],
+			leechseed: ["1L9"],
+		}
+	},
+	pawniard: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			rockthrow: ["1L1"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			thunderwave: ["1M"],
+			harden: ["1M"],
+			slash: ["1L41"],
+			hyperbeam: ["1M"],
+			swordsdance: ["1M"],
+			doubleedge: ["1M"],
+			headbutt: ["1L7"],
+			agility: ["1M"],
+			rockslide: ["1M"],
+			lick: ["1M"],
+			mirrorshot: ["1M"],
+			bite: ["1M"],
+		}
+	},
+	dedenne: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			rockthrow: ["1L1"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			thunderwave: ["1M"],
+			harden: ["1M"],
+			slash: ["1L41"],
+			hyperbeam: ["1M"],
+			doubleedge: ["1M"],
+			headbutt: ["1L7"],
+			agility: ["1M"],
+			rockslide: ["1M"],
+			thunder: ["1M"],
+			thunderbolt: ["1M"],
+			dazzlinggleam: ["1L51"],
+		}
+	},
+	barraskewda: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			thunderwave: ["1M"],
+			harden: ["1M"],
+			slash: ["1L41"],
+			hyperbeam: ["1M"],
+			doubleedge: ["1M"],
+			headbutt: ["1L7"],
+			agility: ["1M"],
+			surf: ["1M"],
+			icebeam: ["1M"],
+			blizzard: ["1M"],
+			watergun: ["1M"],
+			bubblebeam: ["1M"],
+			razorwind: ["1M"],
+			bite: ["1M"],
+		}
+	},
+	dachsbun: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			harden: ["1M"],
+			doubleedge: ["1M"],
+			headbutt: ["1L7"],
+			agility: ["1M"],
+			lick: ["1M"],
+			dazzlinggleam: ["1L51"],
+			sandattack: ["1L5"],
+			leechseed: ["1L9"],
+			psychic: ["1M"],
+			bite: ["1M"],
 		}
 	},
 };

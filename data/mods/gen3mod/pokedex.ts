@@ -268,13 +268,32 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	meowth: {
+		inherit: true,
+		gen: 3,
+	},
+	meowthalola: {
+		inherit: true,
+		gen: 3,
+	},
 	meowthgalar: {
 		inherit: true,
 		gen: 3,
 	},
+	persian: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 65, atk: 85, def: 60, spa: 80, spd: 65, spe: 115},
+	},
+	persianalola: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 65, atk: 75, def: 60, spa: 90, spd: 65, spe: 115},
+	},
 	perrserker: {
 		inherit: true,
 		gen: 3,
+		baseStats: {hp: 75, atk: 110, def: 100, spa: 60, spd: 75, spe: 50},
 	},
 	poliwag: {
 		inherit: true,
@@ -810,6 +829,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Bug", "Electric"],
 		baseStats: {hp: 65, atk: 67, def: 75, spa: 73, spd: 85, spe: 85},
 	},
+	numel: {
+		inherit: true,
+	},
+	camerupt: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 100, def: 70, spa: 105, spd: 75, spe: 40},
+	},
 	cacnea: {
 		inherit: true,
 		abilities: {0: "Sand Veil", 1: "Sand Rush"},
@@ -918,7 +944,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Ice", "Dark"],
 		gender: "M",
-		baseStats: {hp: 90, atk: 70, def: 90, spa: 70, spd: 90, spe: 80},
+		baseStats: {hp: 90, atk: 70, def: 90, spa: 70, spd: 90, spe: 70},
 		abilities: {0: "Inner Focus", 1: "Solid Rock"},
 		evoType: "useItem",
 		evoItem: "Dusk Stone",
@@ -926,7 +952,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	froslass: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 70, atk: 85, def: 70, spa: 85, spd: 70, spe: 110},
 		abilities: {0: "Inner Focus", 1: "Snow Cloak"},
 	},
 	clamperl: {

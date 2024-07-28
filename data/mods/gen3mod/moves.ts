@@ -533,10 +533,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		selfSwitch: true,
 		target: "self",
 	},
-	scorchingsands: {
-		inherit: true,
-		gen: 3,
-	},
 	headsmash: {
 		inherit: true,
 		gen: 3,
@@ -892,6 +888,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	perishsong: {
 		inherit: true,
 		type: "Ghost",
+	},
+	magmastorm: {
+		inherit: true,
+		gen: 3,
 	},
 
 	weatherdance: {

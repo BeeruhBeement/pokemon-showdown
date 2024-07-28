@@ -343,8 +343,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	meowthalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	meowthgalar: {
 		tier: "LC",
@@ -358,8 +357,8 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	persianalola: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	perrserker: {
 		tier: "OU",

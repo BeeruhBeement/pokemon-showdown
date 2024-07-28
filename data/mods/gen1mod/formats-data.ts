@@ -468,6 +468,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	veluza: {
 		tier: "OU",
 	},
+	fletchling: {
+		tier: "LC",
+	},
 	fletchinder: {
 		tier: "OU",
 	},
@@ -499,6 +502,18 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 	},
 	maractus: {
+		tier: "OU",
+	},
+	pawniard: {
+		tier: "OU",
+	},
+	dedenne: {
+		tier: "OU",
+	},
+	barraskewda: {
+		tier: "OU",
+	},
+	dachsbun: {
 		tier: "OU",
 	},
 };
