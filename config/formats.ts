@@ -23,21 +23,21 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom",
 	},
 	{
-		name: "[Gen 3] Modded",
+		name: "[Gen 3] Epic Gamer",
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause', 'Data Mod'],
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 3] Modded Uber",
+		name: "[Gen 3] Epic Gamer Uber",
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
 		banlist: [],
 	},
 	{
-		name: "[Gen 3] Modded Doubles",
+		name: "[Gen 3] Epic Gamer Doubles",
 
 		mod: 'gen3mod',
 		gameType: 'doubles',
@@ -135,14 +135,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Experimental/Unfinished",
 	},
 	{
-		name: "[Gen 1] Mod",
+		name: "[Gen 1] Goofy Mod",
 
-		mod: 'gen1mod',
+		mod: 'gen1goofymod',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 3] Modded Challenge Cup",
+		name: "[Gen 3] Epic Gamer Challenge Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any legal moves.`,
 
 		mod: 'gen3mod',
