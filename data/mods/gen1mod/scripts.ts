@@ -20,6 +20,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 	},
 	pokemon: {
+		inherit: true,
 		hasType(type) {
 			const thisTypes = this.getTypes();
 			if (typeof type === 'string') {
