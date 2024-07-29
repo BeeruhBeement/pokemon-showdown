@@ -893,6 +893,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	ragingbull: {
+		inherit: true,
+		onModifyMove(move, pokemon) {
+			switch (pokemon.species.name) {
+				case 'Tauros-Paldea-Combat':
+				case 'Tauros-Paldea-Blaze':
+				case 'Tauros-Paldea-Aqua':
+					move.type = 'Fighting';
+					break;
+			}
+		},
+	},
 
 	weatherdance: {
 		inherit: true,

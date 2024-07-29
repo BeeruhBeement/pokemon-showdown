@@ -594,6 +594,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	damp: {
 		inherit: true,
+		desc: "While this Pokemon is active, Explosion, Mind Blown, Misty Explosion, Self-Destruct, and the Aftermath Ability deal no damage.",
+		shortDesc: "Prevents damage from Explosion/Mind Blown/Misty Explosion/Self-Destruct/Aftermath.",
 		onAnyTryMove(target, source, effect) {},
 		onAnyDamage(damage, target, source, effect) {
 			if (effect && effect.name === 'Aftermath') {
@@ -606,6 +608,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2.5,
 	},
 	furcoat: {
+		inherit: true,
+		gen: 3,
+	},
+	pastelveil: {
+		inherit: true,
+		gen: 3,
+	},
+	angerpoint: {
 		inherit: true,
 		gen: 3,
 	},

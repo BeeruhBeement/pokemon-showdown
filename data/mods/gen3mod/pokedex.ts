@@ -336,11 +336,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ponyta: {
 		inherit: true,
-		abilities: {0: "Flame Body", 1: "Flash Fire"},
+	},
+	ponytagalar: {
+		inherit: true,
 	},
 	rapidash: {
 		inherit: true,
-		abilities: {0: "Flame Body", 1: "Flash Fire"},
+		baseStats: {hp: 65, atk: 100, def: 70, spa: 80, spd: 80, spe: 115},
+	},
+	rapidashgalar: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 100, def: 70, spa: 80, spd: 80, spe: 115},
 	},
 	farfetchd: {
 		inherit: true,
@@ -405,13 +411,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	voltorb: {
 		inherit: true,
 		types: ["Electric", "Sound"],
-		abilities: {0: "Soundproof", 1: "Static"},
 	},
 	electrode: {
 		inherit: true,
 		types: ["Electric", "Sound"],
-		abilities: {0: "Soundproof", 1: "Static"},
-		baseStats: {hp: 60, atk: 50, def: 70, spa: 90, spd: 80, spe: 150},
+		baseStats: {hp: 60, atk: 50, def: 70, spa: 80, spd: 80, spe: 150},
+	},
+	electrodehisui: {
+		inherit: true,
 	},
 	tyrogue: {
 		inherit: true,
@@ -462,6 +469,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	tauros: {
 		inherit: true,
+		abilities: {0: "Intimidate", 1: "Adrenaline"},
+	},
+	taurospaldeacombat: {
+		inherit: true,
+	},
+	taurospaldeablaze: {
+		inherit: true,
+		abilities: {0: "Intimidate", 1: "Flame Body"},
+	},
+	taurospaldeaaqua: {
+		inherit: true,
+		abilities: {0: "Intimidate", 1: "Swift Swim"},
 	},
 	magikarp: {
 		inherit: true,
@@ -1029,12 +1048,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	snover: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Ice Body", 1: "Soundproof"},
 	},
 	abomasnow: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Snow Warning", 1: "Soundproof"},
 	},
 	phione: {
 		inherit: true,

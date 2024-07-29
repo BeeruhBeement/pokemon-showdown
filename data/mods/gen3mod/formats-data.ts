@@ -476,16 +476,15 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	ponytagalar: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "LC",
 	},
 	rapidash: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
 	rapidashgalar: {
-		tier: "Illegal",
-		doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	slowpoke: {
 		tier: "LC",
@@ -621,16 +620,15 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	voltorbhisui: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	electrode: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
 	electrodehisui: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	exeggcute: {
 		tier: "LC",
@@ -820,16 +818,16 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	taurospaldeacombat: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	taurospaldeablaze: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	taurospaldeaaqua: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	magikarp: {
 		tier: "LC",
