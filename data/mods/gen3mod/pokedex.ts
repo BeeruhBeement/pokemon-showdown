@@ -339,6 +339,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ponytagalar: {
 		inherit: true,
+		gen: 3,
 	},
 	rapidash: {
 		inherit: true,
@@ -346,6 +347,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rapidashgalar: {
 		inherit: true,
+		gen: 3,
 		baseStats: {hp: 65, atk: 100, def: 70, spa: 80, spd: 80, spe: 115},
 	},
 	farfetchd: {
@@ -412,6 +414,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Electric", "Sound"],
 	},
+	voltorbhisui: {
+		inherit: true,
+		gen: 3,
+	},
 	electrode: {
 		inherit: true,
 		types: ["Electric", "Sound"],
@@ -419,6 +425,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	electrodehisui: {
 		inherit: true,
+		gen: 3,
 	},
 	tyrogue: {
 		inherit: true,
@@ -473,13 +480,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	taurospaldeacombat: {
 		inherit: true,
+		gen: 3,
 	},
 	taurospaldeablaze: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Intimidate", 1: "Flame Body"},
 	},
 	taurospaldeaaqua: {
 		inherit: true,
+		gen: 3,
 		abilities: {0: "Intimidate", 1: "Swift Swim"},
 	},
 	magikarp: {
