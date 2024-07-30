@@ -700,11 +700,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	barraskewda: {
 		inherit: true,
 		gen: 1,
-		baseStats: {hp: 47, atk: 127, def: 70, spa: 47, spd: 47, spe: 177},
+		baseStats: {hp: 105, atk: 115, def: 70, spa: 60, spd: 60, spe: 30},
 	},
 	dachsbun: {
 		inherit: true,
 		gen: 1,
 		baseStats: {hp: 90, atk: 90, def: 90, spa: 90, spd: 90, spe: 90},
+	},
+	sableye: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 50, atk: 75, def: 75, spa: 65, spd: 65, spe: 50},
 	},
 };

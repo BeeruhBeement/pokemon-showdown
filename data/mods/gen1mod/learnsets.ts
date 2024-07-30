@@ -331,4 +331,24 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bite: ["1M"],
 		}
 	},
+	sableye: {
+		learnset: {
+			tackle: ["1L1"],
+			growl: ["1L1"],
+			tailwhip: ["1L1"],
+			rest: ["1M"],
+			toxic: ["1M"],
+			thunderwave: ["1M"],
+			harden: ["1M"],
+			slash: ["1L41"],
+			hyperbeam: ["1M"],
+			doubleedge: ["1M"],
+			headbutt: ["1L7"],
+			agility: ["1M"],
+			rockslide: ["1M"],
+			lick: ["1M"],
+			mirrorshot: ["1M"],
+			bite: ["1M"],
+		}
+	},
 };

@@ -516,4 +516,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	dachsbun: {
 		tier: "OU",
 	},
+	sableye: {
+		tier: "OU",
+	},
 };
