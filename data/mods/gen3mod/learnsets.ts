@@ -14892,7 +14892,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			icywind: ["3T"],
 			imprison: ["3L15"],
 			irondefense: ["3T"],
-			lastresort: ["3T"],
 			magiccoat: ["3T"],
 			payback: ["3M"],
 			protect: ["3M"],
@@ -14975,8 +14974,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			triattack: ["3L75"],
 			xscissor: ["3M", "3L35"],
-			
-			energyball: ["3M"],
 		},
 	},
 	togedemaru: {

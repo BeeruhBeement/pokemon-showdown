@@ -884,7 +884,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	zangoose: {
 		inherit: true,
 		abilities: {0: "Toxic Boost"},
-		baseStats: {hp: 73, atk: 115, def: 70, spa: 70, spd: 60, spe: 90},
 	},
 	seviper: {
 		inherit: true,

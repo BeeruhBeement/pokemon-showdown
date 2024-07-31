@@ -5229,9 +5229,4 @@ doublesTier: "Illegal",
 		tier: "Illegal",
 doublesTier: "Illegal",
 	},
-	
-	obstagoonhoenn: {
-		tier: "OU",
-		doublesTier: "DOU",
-	},
 };

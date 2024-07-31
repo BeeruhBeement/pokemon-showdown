@@ -19750,6 +19750,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		gen: 5,
 	},
 	
+	// gen 3 mod
+
 	castformsandy: {
 		num: 351,
 		name: "Castform-Sandy",

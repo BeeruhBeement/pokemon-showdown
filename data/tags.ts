@@ -214,6 +214,11 @@ export const Tags: {[id: IDEntry]: TagData} = {
 		name: "AG",
 		speciesFilter: species => species.tier === 'AG',
 	},
+	
+	fakemon: {
+		name: "Fakemon",
+		speciesFilter: species => species.tier === 'Fakemon',
+	},
 
 	// Doubles tiers
 	// -------------

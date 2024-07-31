@@ -895,6 +895,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	ragingbull: {
 		inherit: true,
+		gen: 3,
 		onModifyMove(move, pokemon) {
 			switch (pokemon.species.name) {
 				case 'Tauros-Paldea-Combat':
@@ -903,6 +904,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					move.type = 'Fighting';
 					break;
 			}
+		},
+	},
+	hiddenpower: {
+		inherit: true,
+		onModifyMove(move, pokemon) {
+			move.type = pokemon.hpType || 'Dark';
+			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
+			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
 		},
 	},
 

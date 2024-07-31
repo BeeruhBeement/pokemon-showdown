@@ -142,6 +142,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber'],
 	},
 	{
+		name: "[Gen 9] Poorly Done Fakemons",
+		mod: 'fakemons',
+		ruleset: ['[Gen 9] OU', '+Fakemon'],
+	},
+	{
 		name: "[Gen 3] Modded Challenge Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any legal moves.`,
 

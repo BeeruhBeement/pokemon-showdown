@@ -99597,10 +99597,4 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			{generation: 5, level: 47, moves: ["darkpulse", "flamethrower", "hyperbeam", "icebeam"]},
 		],
 	},
-
-	parasong: {
-		learnset: {
-			healbell: ["9L1", "8L1", "7L1", "6L1", "5L1", "4L1", "3L1"],
-		},
-	},
 };
