@@ -12,6 +12,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		evos: ["Norock"],
 		eggGroups: ["Mineral"],
+		gen: 9,
 	},
 	norock: {
 		num: -50001,
@@ -25,10 +26,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Minirock",
 		evoLevel: 22,
 		eggGroups: ["Mineral"],
+		gen: 9,
 	},
 	froomish: {
 		num: -50002,
-		name: "Shroomish",
+		name: "Froomish",
 		types: ["Ice"],
 		baseStats: {hp: 60, atk: 40, def: 60, spa: 40, spd: 60, spe: 35},
 		abilities: {0: "Snow Cloak", 1: "Regenerator", H: "Immunity"},
@@ -37,6 +39,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		evos: ["Frostloom"],
 		eggGroups: ["Fairy", "Grass"],
+		gen: 9,
 	},
 	frostloom: {
 		num: -50003,
@@ -50,5 +53,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Froomish",
 		evoLevel: 23,
 		eggGroups: ["Fairy", "Grass"],
+		gen: 9,
 	},
 };
