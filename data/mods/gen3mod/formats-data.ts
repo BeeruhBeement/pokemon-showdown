@@ -782,6 +782,9 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	jynx: {
+		tier: "NFE",
+	},
+	kisscope: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
@@ -792,8 +795,8 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	electivire: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	magby: {
 		tier: "LC",
@@ -802,8 +805,8 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	magmortar: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	pinsir: {
 		tier: "OU",
@@ -4420,12 +4423,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	nymble: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	lokix: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	rellor: {
 		tier: "Illegal",

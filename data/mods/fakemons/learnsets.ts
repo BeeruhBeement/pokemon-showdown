@@ -69,7 +69,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sleeptalk: ["9M"],
 		},
 	},
-	shroomish: {
+	froomish: {
 		learnset: {
 			bodyslam: ["9M"],
 			bulkup: ["9M"],

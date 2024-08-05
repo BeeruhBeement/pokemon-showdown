@@ -470,6 +470,39 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Psychic", "Fairy"],
 		abilities: {0: "Soundproof", 1: "Technician"},
 	},
+	smoochum: {
+		inherit: true,
+		abilities: {0: "Oblivious", 1: "Hydration"},
+	},
+	jynx: {
+		inherit: true,
+		abilities: {0: "Oblivious", 1: "Dry Skin"},
+	},
+	kisscope: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Sniper", 1: "Dry Skin"},
+	},
+	magby: {
+		inherit: true,
+	},
+	magmar: {
+		inherit: true,
+	},
+	magmortar: {
+		inherit: true,
+		gen: 3,
+	},
+	elekid: {
+		inherit: true,
+	},
+	electabuzz: {
+		inherit: true,
+	},
+	electivire: {
+		inherit: true,
+		gen: 3,
+	},
 	pinsir: {
 		inherit: true,
 		abilities: {0: "Hyper Cutter", 1: "Chrysalis"},
@@ -686,6 +719,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Oblivious", 1: "Thick Fat"},
 		baseStats: {hp: 100, atk: 120, def: 80, spa: 70, spd: 60, spe: 80},
 	},
+	remoraid: {
+		inherit: true,
+	},
+	octillery: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 105, def: 85, spa: 105, spd: 85, spe: 25},
+	},
 	mantyke: {
 		inherit: true,
 		gen: 3,
@@ -704,6 +744,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Psychic", "Ice"],
 		abilities: {0: "Intimidate", 1: "Sap Sipper"},
+	},
+	smeargle: {
+		inherit: true,
+		abilities: {0: "Trace", 1: "Technician"},
+		baseStats: {hp: 55, atk: 30, def: 35, spa: 30, spd: 45, spe: 75},
 	},
 	raikou: {
 		inherit: true,
@@ -832,7 +877,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	aggron: {
 		inherit: true,
-		abilities: {0: "Sturdy", 1: "Solid Rock"},
+		abilities: {0: "Solid Rock", 1: "Rock Head"},
 	},
 	electrike: {
 		inherit: true,
@@ -1454,17 +1499,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sobble: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Torrent", 1: "Inner Focus"},
+		abilities: {0: "Torrent", 1: "Sniper"},
 	},
 	drizzile: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Torrent", 1: "Inner Focus"},
+		abilities: {0: "Torrent", 1: "Sniper"},
 	},
 	inteleon: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Torrent", 1: "Inner Focus"},
+		abilities: {0: "Torrent", 1: "Sniper"},
 		baseStats: {hp: 70, atk: 85, def: 65, spa: 115, spd: 65, spe: 110},
 	},
 	sizzlipede: {
@@ -1526,6 +1571,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Torrent", 1: "Mold Breaker"},
+	},
+	nymble: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Swarm", 1: "Tined Lens"},
+	},
+	lokix: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Swarm", 1: "Tined Lens"},
+		baseStats: {hp: 71, atk: 97, def: 78, spa: 57, spd: 55, spe: 92},
 	},
 	fidough: {
 		inherit: true,

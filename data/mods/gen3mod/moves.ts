@@ -777,7 +777,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	lovelykiss: {
 		inherit: true,
-		type: "Fairy",
+		type: "Psychic",
 	},
 	boomburst: {
 		inherit: true,
@@ -913,6 +913,19 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
 			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
 		},
+	},
+	firstimpression: {
+		inherit: true,
+		gen: 3,
+		basePower: 75,
+	},
+	snipeshot: {
+		inherit: true,
+		gen: 3,
+	},
+	miracleeye: {
+		inherit: true,
+		gen: 3,
 	},
 
 	weatherdance: {

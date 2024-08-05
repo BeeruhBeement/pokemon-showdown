@@ -619,6 +619,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	sniper: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// -ate abilities
 
