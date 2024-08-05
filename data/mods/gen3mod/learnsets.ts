@@ -5667,6 +5667,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bulkup: ["3M"],
 			flamethrower: ["3M"],
 			earthquake: ["3M"],
+			drainpunch: ["3T"],
 		},
 	},
 	magby: {
@@ -16415,7 +16416,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sunnyday: ["3M"],
 			tackle: ["3L1"],
 			thief: ["3M"],
-			uturn: ["3M"],
 			xscissor: ["3M"],
 			
 			return: ["3M"],

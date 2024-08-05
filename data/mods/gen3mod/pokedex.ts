@@ -502,6 +502,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	electivire: {
 		inherit: true,
 		gen: 3,
+		types: ["Electric", "Fighting"],
 	},
 	pinsir: {
 		inherit: true,
@@ -580,10 +581,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	hoothoot: {
 		inherit: true,
 		types: ["Ghost", "Flying"],
+		abilities: {0: "Insomnia", 1: "Tinted Lens"},
 	},
 	noctowl: {
 		inherit: true,
 		types: ["Ghost", "Flying"],
+		baseStats: {hp: 100, atk: 50, def: 50, spa: 86, spd: 96, spe: 70},
+		abilities: {0: "Insomnia", 1: "Tinted Lens"},
 	},
 	ledyba: {
 		inherit: true,
@@ -1575,13 +1579,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	nymble: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Swarm", 1: "Tined Lens"},
+		abilities: {0: "Swarm", 1: "Tinted Lens"},
 	},
 	lokix: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Swarm", 1: "Tined Lens"},
-		baseStats: {hp: 71, atk: 97, def: 78, spa: 57, spd: 55, spe: 92},
+		abilities: {0: "Swarm", 1: "Tinted Lens"},
+		baseStats: {hp: 71, atk: 97, def: 78, spa: 52, spd: 55, spe: 92},
 	},
 	fidough: {
 		inherit: true,
