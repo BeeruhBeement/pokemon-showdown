@@ -13,6 +13,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Blaze", 1: "Solar Power"},
 	},
+	squrtile: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Skill Link"},
+	},
+	wartortle: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Skill Link"},
+	},
+	blastoise: {
+		inherit: true,
+		types: ["Water", "Steel"],
+		abilities: {0: "Torrent", 1: "Skill Link"},
+	},
 	caterpie: {
 		inherit: true,
 	},
@@ -678,6 +691,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	sneasel: {
+		inherit: true,
+	},
 	teddiursa: {
 		inherit: true,
 		abilities: {0: "Guts", 1: "Miracle Guard"},
@@ -861,6 +877,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Sound"],
 		baseStats: {hp: 104, atk: 91, def: 63, spa: 91, spd: 73, spe: 68},
 	},
+	skitty: {
+		inherit: true,
+	},
+	delcatty: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 85, def: 65, spa: 65, spd: 65, spe: 90},
+	},
 	sableye: {
 		inherit: true,
 		abilities: {0: "Pixie Veil", 1: "Stall"},
@@ -982,7 +1005,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	kecleon: {
 		inherit: true,
-		abilities: {0: "Color Change", 1: "Trace"},
+		abilities: {0: "Color Change", 1: "Protean"},
 		baseStats: {hp: 60, atk: 80, def: 70, spa: 80, spd: 120, spe: 40},
 	},
 	shuppet: {

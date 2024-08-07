@@ -623,9 +623,25 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	motordrive: {
+		inherit: true,
+		gen: 3,
+	},
+	protean: {
+		inherit: true,
+		gen: 3,
+	},
+	libero: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// -ate abilities
 
+	normalize: {
+		inherit: true,
+		gen: 3,
+	},
 	galvanize: {
 		inherit: true,
 		gen: 3,
