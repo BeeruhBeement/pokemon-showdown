@@ -555,6 +555,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	porygon: {
 		inherit: true,
+		types: ["Normal", "Cyber"],
 		baseStats: {hp: 65, atk: 60, def: 70, spa: 75, spd: 75, spe: 40},
 	},
 	omanyte: {
@@ -707,6 +708,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	dachsbun: {
 		inherit: true,
 		gen: 1,
+		types: ["Fairy", "Food"],
 		baseStats: {hp: 90, atk: 90, def: 90, spa: 90, spd: 90, spe: 90},
 	},
 	sableye: {
@@ -738,5 +740,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 1,
 		types: ["Normal", "Earth"],
 		baseStats: {hp: 100, atk: 70, def: 70, spa: 65, spd: 65, spe: 45},
+	},
+	vanilluxe: {
+		inherit: true,
+		gen: 1,
+		types: ["Ice", "Food"],
+		baseStats: {hp: 71, atk: 85, def: 75, spa: 110, spd: 110, spe: 79},
 	},
 };

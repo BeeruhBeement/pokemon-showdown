@@ -5,6 +5,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen1',
 	init() {
 		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Dark', 'Psychic', 'Dragon', 'Cosmic', 'Earth', 'Light'];
+
 		for (const id in this.data.Pokedex) {
 			const types = Array.from(new Set(this.data.Pokedex[id].types.map(type => (
 				type.replace(/Fairy/g, 'Psychic')
@@ -26,6 +27,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	},
 	pokemon: {
 		inherit: true,
+
 		hasType(type) {
 			const thisTypes = this.getTypes();
 			if (typeof type === 'string') {

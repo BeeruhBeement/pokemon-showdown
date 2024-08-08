@@ -258,7 +258,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			rockslide: ["1M"],
 			lick: ["1M"],
 			mirrorshot: ["1M"],
-			bite: ["1M"],
 		}
 	},
 	dedenne: {
@@ -270,10 +269,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["1M"],
 			thunderwave: ["1M"],
 			harden: ["1M"],
-			slash: ["1L41"],
-			hyperbeam: ["1M"],
-			doubleedge: ["1M"],
-			headbutt: ["1L7"],
 			agility: ["1M"],
 			rockslide: ["1M"],
 			thunder: ["1M"],
@@ -320,6 +315,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			leechseed: ["1L9"],
 			psychic: ["1M"],
 			bite: ["1M"],
+			sugarblast: ["1M"],
+			milkdrink: ["1M"],
 		}
 	},
 	sableye: {
@@ -398,7 +395,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			watergun: ["1M"],
 			bubblebeam: ["1M"],
 			razorwind: ["1M"],
-			bite: ["1M"],
 		}
 	},
 	dunsparce: {
@@ -418,6 +414,21 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hyperdrill: ["1L1"],
 			earthquake: ["1M"],
 			bite: ["1M"],
+		}
+	},
+	vanilluxe: {
+		learnset: {
+			rest: ["1M"],
+			toxic: ["1M"],
+			hyperbeam: ["1M"],
+			icebeam: ["1M"],
+			blizzard: ["1M"],
+			milkdrink: ["1M"],
+			donutwrap: ["1M"],
+			aurorabeam: ["1M"],
+			explosion: ["1M"],
+			acidarmor: ["1M"],
+			sugarblast: ["1M"],
 		}
 	},
 };

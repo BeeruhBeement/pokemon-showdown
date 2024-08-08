@@ -51,7 +51,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	eggbomb: {
 		inherit: true,
-		type: "Grass",
+		type: "Food",
 		desc: "Has a 10% chance to lower the target's Speed by 1.",
 		shortDesc: "10% chance to lower the target's Speed by 1.",
 		secondary: {
@@ -94,6 +94,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		boosts: {
 			def: 1,
 		},
+	},
+	milkdrink: {
+		inherit: true,
+		gen: 1,
+		type: "Food",
 	},
 
 	gammablast: {
@@ -206,5 +211,60 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		contestType: "Cool",
 		desc: "This attack charges on the first turn and executes on the second.",
 		shortDesc: "Charges turn 1. Hits turn 2.",
+	},
+	donuttrap: {
+		num: -7,
+		accuracy: 70,
+		basePower: 15,
+		category: "Physical",
+		name: "Donut Trap",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		volatileStatus: 'partiallytrapped',
+		self: {
+			volatileStatus: 'partialtrappinglock',
+		},
+		// FIXME: onBeforeMove(pokemon, target) {target.removeVolatile('mustrecharge')}
+		onHit(target, source) {
+			/**
+			 * The duration of the partially trapped must be always renewed to 2
+			 * so target doesn't move on trapper switch out as happens in gen 1.
+			 * However, this won't happen if there's no switch and the trapper is
+			 * about to end its partial trapping.
+			 **/
+			if (target.volatiles['partiallytrapped']) {
+				if (source.volatiles['partialtrappinglock'] && source.volatiles['partialtrappinglock'].duration > 1) {
+					target.volatiles['partiallytrapped'].duration = 2;
+				}
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Food",
+		contestType: "Cute",
+		desc: "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
+		shortDesc: "Prevents the target from moving for 2-5 turns.",
+	},
+	sugarblast: {
+		num: -2,
+		accuracy: 90,
+		basePower: 75,
+		category: "Physical",
+		name: "Sugar Blast",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 40,
+			boosts: {
+				spe: -1,
+			},
+		},
+		target: "normal",
+		type: "Food",
+		contestType: "Cute",
+		desc: "Has a 40% chance to lower the target's Speed by 1 stage.",
+		shortDesc: "40% chance to lower the target's Speed by 1.",
 	},
 };

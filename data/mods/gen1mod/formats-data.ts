@@ -531,4 +531,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	dunsparce: {
 		tier: "OU",
 	},
+	vanilluxe: {
+		tier: "OU",
+	},
 };
