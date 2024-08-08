@@ -7602,5 +7602,19 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Nightfall",
 		desc: "For 5 turns, the weather becomes Night. Lasts for 8 turns if the user is holding Damp Rock. Fails if the current weather is Night.",
 		shortDesc: "For 5 turns summons Night.",
-	}
+	},
+	zapbarrage: {
+		name: "Zap Barrage",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
+	rockcrunch: {
+		name: "Rock Crunch",
+		desc: "Has a 20% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "20% chance to lower the target's Defense by 1.",
+	},
+	bladequills: {
+		name: "Blade Quills",
+		shortDesc: "Hits 3. Decidueye: smart target, 2 hit, 50 base.",
+	},
 };

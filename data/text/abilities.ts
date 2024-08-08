@@ -2283,8 +2283,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	executioner: {
 		name: "Executioner",
-		desc: "This Pokémon's moves become OHKO moves against targets with 25% or less HP. If the user's level is lower than the target's level damage is dealt normally.",
-		shortDesc: "Moves OHKO targets with 25% or less HP unless user's level <= target's.",
+		desc: "This Pokémon's moves become OHKO moves against targets with 33% or less HP. If the user's level is lower than the target's level damage is dealt normally.",
+		shortDesc: "Moves OHKO targets with 33% or less HP unless user's level <= target's.",
 	},
 	chrysalis: {
 		name: "Chrysalis",
@@ -2346,5 +2346,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	jinxed: {
 		name: "Jinxed",
 		shortDesc: "Every move used by or against this Pokemon has 100% secondaries (no flinch, freeze).",
+	},
+	impenetrable: {
+		name: "Impenetrable",
+		shortDesc: "Survives one hit with at least 1 HP.  Once per switch-in.",
 	},
 };

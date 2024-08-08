@@ -326,94 +326,87 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		itemUser: ["Pichu", "Pikachu", "Raichu", "Raichu-Alola"],
 	},
+	widelens: {
+		inherit: true,
+		gen: 3,
+		shortDesc: "The accuracy of attacks by the holder is 1.2x.",
+		onSourceModifyAccuracy(accuracy) {
+			if (typeof accuracy === 'number') {
+				return this.chainModify([4915, 4096]);
+			}
+		},
+	},
+
 	bugmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	darkmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	dragonmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	electricmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	fairymemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	fightingmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	firememory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	flyingmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	ghostmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	grassmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	groundmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	icememory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	poisonmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	psychicmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	rockmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	soundmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	steelmemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 	watermemory: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
 };

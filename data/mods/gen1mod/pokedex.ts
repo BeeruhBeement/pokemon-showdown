@@ -437,6 +437,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	lickitung: {
 		inherit: true,
+		types: ["Rubber"],
 		baseStats: {hp: 90, atk: 55, def: 75, spa: 60, spd: 60, spe: 30},
 	},
 	koffing: {
@@ -549,6 +550,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	flareon: {
 		inherit: true,
+		types: ["Fire", "Glass"],
 		baseStats: {hp: 65, atk: 130, def: 60, spa: 110, spd: 110, spe: 65},
 	},
 	porygon: {
@@ -711,5 +713,30 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 1,
 		baseStats: {hp: 50, atk: 75, def: 75, spa: 65, spd: 65, spe: 50},
+	},
+	rotom: {
+		inherit: true,
+		gen: 1,
+		types: ["Light", "Ghost", "Glass"],
+		baseStats: {hp: 50, atk: 50, def: 77, spa: 95, spd: 95, spe: 91},
+	},
+	pokestarhumanoid: {
+		inherit: true,
+		gen: 1,
+		types: ["Normal", "Nuclear"],
+		baseStats: {hp: 75, atk: 85, def: 65, spa: 75, spd: 75, spe: 65},
+		cosmeticFormes: [],
+	},
+	lunatone: {
+		inherit: true,
+		gen: 1,
+		types: ["Rock", "Psychic", "Cosmic"],
+		baseStats: {hp: 70, atk: 55, def: 65, spa: 95, spd: 95, spe: 70},
+	},
+	dunsparce: {
+		inherit: true,
+		gen: 1,
+		types: ["Normal", "Earth"],
+		baseStats: {hp: 100, atk: 70, def: 70, spa: 65, spd: 65, spe: 45},
 	},
 };

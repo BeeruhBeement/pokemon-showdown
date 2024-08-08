@@ -757,7 +757,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	stantler: {
 		inherit: true,
 		types: ["Normal", "Ice"],
-		abilities: {0: "Intimidate", 1: "Vital Spirit"},
+		abilities: {0: "Intimidate", 1: "Sap Sipper"},
 	},
 	wyrdeer: {
 		inherit: true,
@@ -793,6 +793,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	swampert: {
 		inherit: true,
 		abilities: {0: "Torrent", 1: "Regenerator"},
+	},
+	poochyena: {
+		inherit: true,
+	},
+	mightyena: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 95, def: 70, spa: 70, spd: 70, spe: 95},
+		abilities: {0: "Intimidate", 1: "Strong Jaw"},
 	},
 	zigzagoon: {
 		inherit: true,
@@ -929,6 +937,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Bug", "Electric"],
 		baseStats: {hp: 65, atk: 67, def: 75, spa: 73, spd: 85, spe: 85},
+	},
+	gulpin: {
+		inherit: true,
+	},
+	swalot: {
+		inherit: true,
 	},
 	numel: {
 		inherit: true,
@@ -1085,23 +1099,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	shieldon: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Soundproof", 1: "Solid Rock"},
 	},
 	bastiodon: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Soundproof", 1: "Solid Rock"},
 		baseStats: {hp: 70, atk: 52, def: 168, spa: 47, spd: 138, spe: 30},
 	},
 	stunky: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Stench", 1: "Poison Point"},
 	},
 	skuntank: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Stench", 1: "Poison Point"},
 	},
 	bronzor: {
 		inherit: true,
@@ -1609,6 +1619,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Swarm", 1: "Tinted Lens"},
 		baseStats: {hp: 71, atk: 97, def: 78, spa: 52, spd: 55, spe: 92},
+	},
+	shroodle: {
+		inherit: true,
+		gen: 3,
+	},
+	grafaiai: {
+		inherit: true,
+		gen: 3,
 	},
 	fidough: {
 		inherit: true,

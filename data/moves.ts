@@ -22287,15 +22287,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
 		multihit: [2, 5],
-		secondary: {
-			chance: 10,
-			status: 'par',
-		},
+		secondary: null,
 		target: "normal",
 		type: "Electric",
 		contestType: "Cool",
 	},
 	rockcrunch: {
+		isNonstandard: "Custom",
 		num: 5011,
 		accuracy: 95,
 		basePower: 75,
@@ -22313,5 +22311,27 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Rock",
 		contestType: "Tough",
+	},
+	bladequills: {
+		isNonstandard: "Custom",
+		num: 5012,
+		accuracy: 100,
+		basePower: 30,
+		category: "Physical",
+		name: "Feather Darts",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, noparentalbond: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.species.name === 'Decidueye') {
+				move.multihit = 2,
+				move.basePower = 50,
+				move.smartTarget = true;
+			}
+		},
+		multihit: 3,
+		secondary: null,
+		target: "normal",
+		type: "Flying",
 	},
 };

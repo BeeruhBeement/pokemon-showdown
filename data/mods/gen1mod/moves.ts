@@ -1,3 +1,4 @@
+import { hasUncaughtExceptionCaptureCallback } from "process";
 import { ModdedMoveData } from "../../../sim/dex-moves";
 
 export const Moves: {[k: string]: ModdedMoveData} = {
@@ -36,6 +37,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	mirrorshot: {
 		inherit: true,
 		gen: 1,
+		type: "Light",
 		basePower: 60,
 		desc: "Has a 20% chance to lower the target's Special by 1.",
 		shortDesc: "20% chance to lower the target's Special by 1.",
@@ -71,5 +73,138 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				def: -1,
 			},
 		},
+	},
+	bounce: {
+		inherit: true,
+		gen: 1,
+		type: "Rubber",
+	},
+	hyperdrill: {
+		inherit: true,
+		gen: 1,
+		type: "Earth",
+		basePower: 90,
+	},
+	cosmicpower: {
+		inherit: true,
+		gen: 1,
+		type: "Cosmic",
+		desc: "Raises the user's Defense by 1 stage.",
+		shortDesc: "Raises the user's Defense by 1.",
+		boosts: {
+			def: 1,
+		},
+	},
+
+	gammablast: {
+		num: -1,
+		accuracy: 95,
+		basePower: 70,
+		category: "Physical",
+		name: "Gamma Blast",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 20,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Nuclear",
+		contestType: "Tough",
+		desc: "Has a 20% chance to poison the target.",
+		shortDesc: "20% chance to poison the target.",
+	},
+	beam: {
+		num: -2,
+		accuracy: 100,
+		basePower: 75,
+		category: "Special",
+		name: "Beam",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Light",
+		contestType: "Beautiful",
+		shortDesc: "No additional effect.",
+	},
+	glassshards: {
+		num: -3,
+		accuracy: 90,
+		basePower: 80,
+		category: "Physical",
+		name: "Glass Shards",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Glass",
+		contestType: "Beautiful",
+		shortDesc: "No additional effect.",
+	},
+	meteor: {
+		num: -4,
+		accuracy: 90,
+		basePower: 100,
+		category: "Special",
+		name: "Meteor",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		self: {
+			boosts: {
+				spa: -1,
+				spd: -1,
+			},
+		},
+		target: "normal",
+		type: "Cosmic",
+		contestType: "Beautiful",
+		desc: "Lowers the user's Special by 1 stage.",
+		shortDesc: "Lowers the user's Special by 1.",
+	},
+	megabyte: {
+		num: -5,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Mega Byte",
+		pp: 25,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
+		secondary: null,
+		target: "normal",
+		type: "Cyber",
+		contestType: "Tough",
+		shortDesc: "No additional effect.",
+	},
+	lagblast: {
+		num: -6,
+		accuracy: 100,
+		basePower: 120,
+		category: "Special",
+		name: "Lag Blast",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile('twoturnmove')) {
+				attacker.removeVolatile('invulnerability');
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Cyber",
+		contestType: "Cool",
+		desc: "This attack charges on the first turn and executes on the second.",
+		shortDesc: "Charges turn 1. Hits turn 2.",
 	},
 };

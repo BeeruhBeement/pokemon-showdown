@@ -138,7 +138,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 1] Mod",
 
 		mod: 'gen1mod',
-		ruleset: ['Standard', 'Data Mod'],
+		ruleset: ['Standard', 'Data Mod', 'Allow Tradeback'],
 		banlist: ['Uber'],
 	},
 	{

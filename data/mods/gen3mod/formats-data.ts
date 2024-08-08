@@ -4609,12 +4609,11 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	shroodle: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "LC",
 	},
 	grafaiai: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	fidough: {
 		tier: "LC",

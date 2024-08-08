@@ -5707,7 +5707,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	executioner: {
 		isNonstandard: "Custom",
 		onModifyMove(move, source, target) {
-			if (target && target.hp <= target.maxhp / 4 && source.level >= target.level) {
+			if (target && target.hp <= target.maxhp / 3 && source.level >= target.level) {
 				move.ohko = true;
 			}
 		},
@@ -5966,5 +5966,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Jinxed",
 		rating: 3.5,
 		num: 5017,
+	},
+	impenetrable: {
+		onDamagePriority: -30,
+		onDamage(damage, target, source, effect) {
+			if (!this.effectState.impenetrable && damage >= target.hp && effect && effect.effectType === 'Move') {
+				this.add('-ability', target, 'Sturdy');
+				this.effectState.impenetrable = true;
+				return target.hp - 1;
+			}
+		},
+		onSwitchIn() {
+			delete this.effectState.impenetrable;
+		},
+		flags: {breakable: 1},
+		name: "Impenetrable",
+		rating: 4,
+		num: 5018,
 	},
 };

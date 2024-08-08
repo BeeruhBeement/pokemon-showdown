@@ -323,7 +323,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	lickitung: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	koffing: {
 		tier: "Illegal",
@@ -407,10 +407,10 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	flareon: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	porygon: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	omanyte: {
 		tier: "Illegal",
@@ -517,6 +517,18 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 	},
 	sableye: {
+		tier: "OU",
+	},
+	rotom: {
+		tier: "OU",
+	},
+	pokestarhumanoid: {
+		tier: "OU",
+	},
+	lunatone: {
+		tier: "OU",
+	},
+	dunsparce: {
 		tier: "OU",
 	},
 };
