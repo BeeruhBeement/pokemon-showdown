@@ -281,7 +281,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderwave: ["1M"],
 			harden: ["1M"],
 			agility: ["1M"],
-			rockslide: ["1M"],
 			thunder: ["1M"],
 			thunderbolt: ["1M"],
 			dazzlinggleam: ["1L51"],
@@ -346,7 +345,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			doubleedge: ["1M"],
 			headbutt: ["1L7"],
 			agility: ["1M"],
-			rockslide: ["1M"],
 			lick: ["1M"],
 			mirrorshot: ["1M"],
 			bite: ["1M"],
@@ -386,7 +384,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			doubleedge: ["1M"],
 			headbutt: ["1L7"],
 			agility: ["1M"],
-			rockslide: ["1M"],
 			lick: ["1M"],
 			fissileblast: ["1M"],
 			megabyte: ["1M"],
@@ -432,6 +429,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bite: ["1M"],
 			earthpower: ["1M"],
 			substitute: ["1M"],
+			bodyslam: ["1M"],
 		}
 	},
 	vanilluxe: {
@@ -462,7 +460,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hydropump: ["1M"],
 			psywave: ["1M"],
 			leechlife: ["1M"],
-			pinmissile: ["1M"],
 			substitute: ["1M"],
 		}
 	},
@@ -473,7 +470,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderbolt: ["1M"],
 			hyperbeam: ["1M"],
 			acid: ["1M"],
-			pinmissile: ["1M"],
 			fissileblast: ["1M"],
 			thunder: ["1M"],
 			bite: ["1M"],
