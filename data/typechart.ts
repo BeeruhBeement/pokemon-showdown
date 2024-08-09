@@ -20,6 +20,8 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 			Steel: 0,
 			Stellar: 0,
 			Water: 0,
+			
+			Sound: 2,
 		},
 		HPivs: {atk: 30, def: 30, spd: 30},
 		HPdvs: {atk: 13, def: 13},
@@ -70,6 +72,8 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 			Steel: 0,
 			Stellar: 0,
 			Water: 2,
+			
+			Sound: 2,
 		},
 		HPivs: {atk: 30},
 		HPdvs: {def: 14},
@@ -247,6 +251,8 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 			Steel: 0,
 			Stellar: 0,
 			Water: 2,
+			
+			Sound: 2,
 		},
 		HPivs: {atk: 30, spa: 30},
 		HPdvs: {atk: 14, def: 14},
@@ -508,6 +514,8 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 			Steel: 2,
 			Stellar: 0,
 			Water: 2,
+			
+			Sound: 1,
 		},
 		HPivs: {atk: 30, def: 30, spa: 30},
 		HPdvs: {atk: 14, def: 13},

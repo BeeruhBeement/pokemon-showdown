@@ -33,6 +33,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 1,
 			Rubber: 0,
 			Food: 2,
+			Sound: 2,
 		},
 	},
 	fire: {
@@ -61,6 +62,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 0,
 			Rubber: 2,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	ghost: {
@@ -89,6 +91,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 2,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	ice: {
@@ -117,6 +120,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 0,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	poison: {
@@ -147,6 +151,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 2,
 			Rubber: 0,
 			Food: 2,
+			Sound: 0,
 		},
 	},
 	psychic: {
@@ -175,6 +180,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 1,
 			Rubber: 0,
 			Food: 0,
+			Sound: 1,
 		},
 	},
 	dragon: {
@@ -204,6 +210,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 0,
 			Rubber: 0,
 			Food: 2,
+			Sound: 2,
 		},
 	},
 	electric: {
@@ -233,6 +240,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 0,
 			Rubber: 0,
 			Food: 1,
+			Sound: 0,
 		},
 	},
 	fighting: {
@@ -262,6 +270,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 2,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	flying: {
@@ -291,6 +300,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 0,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	grass: {
@@ -320,6 +330,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 1,
 			Rubber: 0,
 			Food: 0,
+			Sound: 2,
 		},
 	},
 	ground: {
@@ -350,6 +361,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 2,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	normal: {
@@ -374,11 +386,12 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Cosmic: 0,
 			Cyber: 0,
 			Earth: 0,
-			Glass: 1,
+			Glass: 0,
 			Light: 0,
 			Nuclear: 1,
 			Rubber: 0,
-			Food: 2,
+			Food: 0,
+			Sound: 0,
 		},
 	},
 	rock: {
@@ -403,11 +416,12 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Cosmic: 0,
 			Cyber: 0,
 			Earth: 0,
-			Glass: 1,
+			Glass: 2,
 			Light: 0,
-			Nuclear: 0,
+			Nuclear: 1,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	water: {
@@ -436,6 +450,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 0,
 			Rubber: 2,
 			Food: 1,
+			Sound: 1,
 		},
 	},
 	dark: {
@@ -473,6 +488,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 2,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	cyber: {
@@ -485,8 +501,8 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Flying: 2,
 			Ghost: 0,
 			Grass: 0,
-			Ground: 1,
-			Ice: 1,
+			Ground: 0,
+			Ice: 2,
 			Normal: 0,
 			Poison: 0,
 			Psychic: 0,
@@ -501,6 +517,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 2,
 			Rubber: 1,
 			Food: 1,
+			Sound: 0,
 		},
 	},
 	earth: {
@@ -529,6 +546,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 1,
 			Rubber: 1,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	glass: {
@@ -556,7 +574,8 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Light: 1,
 			Nuclear: 0,
 			Rubber: 2,
-			Food: 1,
+			Food: 0,
+			Sound: 1,
 		},
 	},
 	light: {
@@ -585,6 +604,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 1,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
 		},
 	},
 	nuclear: {
@@ -613,6 +633,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 2,
 			Rubber: 1,
 			Food: 2,
+			Sound: 0,
 		},
 	},
 	rubber: {
@@ -622,8 +643,8 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Electric: 2,
 			Fighting: 2,
 			Fire: 0,
-			Flying: 2,
-			Ghost: 2,
+			Flying: 0,
+			Ghost: 0,
 			Grass: 0,
 			Ground: 0,
 			Ice: 0,
@@ -639,8 +660,9 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Glass: 1,
 			Light: 0,
 			Nuclear: 2,
-			Rubber: 2,
+			Rubber: 0,
 			Food: 0,
+			Sound: 2,
 		},
 	},
 	food: {
@@ -655,7 +677,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Grass: 0,
 			Ground: 0,
 			Ice: 2,
-			Normal: 1,
+			Normal: 0,
 			Poison: 1,
 			Psychic: 0,
 			Rock: 0,
@@ -669,6 +691,36 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Nuclear: 1,
 			Rubber: 0,
 			Food: 0,
+			Sound: 0,
+		},
+	},
+	sound: {
+		damageTaken: {
+			Bug: 0,
+			Dragon: 0,
+			Electric: 0,
+			Fighting: 0,
+			Fire: 0,
+			Flying: 0,
+			Ghost: 0,
+			Grass: 1,
+			Ground: 0,
+			Ice: 0,
+			Normal: 0,
+			Poison: 1,
+			Psychic: 0,
+			Rock: 0,
+			Water: 2,
+
+			Cosmic: 0,
+			Cyber: 0,
+			Earth: 0,
+			Glass: 0,
+			Light: 0,
+			Nuclear: 0,
+			Rubber: 0,
+			Food: 0,
+			Sound: 2,
 		},
 	},
 };

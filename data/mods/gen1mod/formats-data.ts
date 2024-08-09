@@ -119,7 +119,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	wigglytuff: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	zubat: {
 		tier: "Illegal",
@@ -338,7 +338,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	chansey: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	tangela: {
 		tier: "Illegal",
@@ -532,6 +532,12 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 	},
 	vanilluxe: {
+		tier: "OU",
+	},
+	dewpider: {
+		tier: "OU",
+	},
+	charjabug: {
 		tier: "OU",
 	},
 };

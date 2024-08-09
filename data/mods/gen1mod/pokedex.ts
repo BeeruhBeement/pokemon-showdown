@@ -163,7 +163,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	wigglytuff: {
 		inherit: true,
-		baseStats: {hp: 140, atk: 70, def: 45, spa: 50, spd: 50, spe: 45},
+		types: ["Normal", "Sound"],
+		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 85, spe: 45},
 	},
 	zubat: {
 		inherit: true,
@@ -458,6 +459,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chansey: {
 		inherit: true,
+		types: ["Normal", "Food"],
 		baseStats: {hp: 250, atk: 5, def: 5, spa: 105, spd: 105, spe: 50},
 	},
 	tangela: {
@@ -618,6 +620,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	meganium: {
 		inherit: true,
 		gen: 1,
+		types: ["Grass", "Earth"],
 		baseStats: {hp: 80, atk: 82, def: 100, spa: 83, spd: 83, spe: 80},
 	},
 	linoone: {
@@ -673,7 +676,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	unown: {
 		inherit: true,
 		gen: 1,
-		baseStats: {hp: 48, atk: 48, def: 48, spa: 48, spd: 48, spe: 48},
+		baseStats: {hp: 48, atk: 48, def: 96, spa: 96, spd: 96, spe: 96},
 	},
 	regirock: {
 		inherit: true,
@@ -698,6 +701,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	dedenne: {
 		inherit: true,
 		gen: 1,
+		types: ["Electric", "Fairy", "Nuclear"],
 		baseStats: {hp: 62, atk: 58, def: 57, spa: 81, spd: 81, spe: 101},
 	},
 	barraskewda: {
@@ -746,5 +750,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 1,
 		types: ["Ice", "Food"],
 		baseStats: {hp: 71, atk: 85, def: 75, spa: 110, spd: 110, spe: 79},
+	},
+	dewpider: {
+		inherit: true,
+		gen: 1,
+		baseStats: {hp: 38, atk: 40, def: 52, spa: 72, spd: 72, spe: 27},
+	},
+	charjabug: {
+		inherit: true,
+		gen: 1,
+		types: ["Bug", "Electric", "Nuclear"],
+		baseStats: {hp: 57, atk: 82, def: 95, spa: 75, spd: 75, spe: 36},
 	},
 };

@@ -5,4 +5,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'porygon').learnset.lagblast = ['1L1'];
 	dex.modData('Learnsets', 'lickitung').learnset.bounce = ['1L1'];
 	dex.modData('Learnsets', 'flareon').learnset.glassshards = ['1L1'];
+	dex.modData('Learnsets', 'wigglytuff').learnset.chatter = ['1L1'];
+	dex.modData('Learnsets', 'wigglytuff').learnset.boomburst = ['1L1'];
 }

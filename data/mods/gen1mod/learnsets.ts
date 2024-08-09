@@ -14,6 +14,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			swordsdance: ["1M"],
 			rest: ["1M"],
 			toxic: ["1M"],
+			earthpower: ["1L41"],
 		}
 	},
 	linoone: {
@@ -45,6 +46,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			agility: ["1M"],
 			rest: ["1M"],
 			toxic: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	girafarig: {
@@ -71,7 +73,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			growl: ["1L1"],
 			tailwhip: ["1L1"],
 			quickattack: ["1L1"],
-			icebeam: ["1L51"],
 			bite: ["1L1"],
 			substitute: ["1M"],
 			agility: ["1M"],
@@ -90,6 +91,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			rest: ["1M"],
 			swordsdance: ["1M"],
 			toxic: ["1M"],
+			fireblast: ["1M"],
+			agility: ["1M"],
+			hyperbeam: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	crabominable: {
@@ -172,6 +177,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["1M"],
 			flamethrower: ["1M"],
 			megadrain: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	unown: {
@@ -181,6 +187,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			cosmicpower: ["1M"],
 			beam: ["1M"],
 			meteor: ["1M"],
+			substitute: ["1M"],
+			rest: ["1M"],
 		}
 	},
 	regirock: {
@@ -201,6 +209,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bubblebeam: ["1M"],
 			razorwind: ["1M"],
 			hyperbeam: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	finizen: {
@@ -220,6 +229,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bubblebeam: ["1M"],
 			razorwind: ["1M"],
 			hyperbeam: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	maractus: {
@@ -258,6 +268,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			rockslide: ["1M"],
 			lick: ["1M"],
 			mirrorshot: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	dedenne: {
@@ -274,6 +285,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunder: ["1M"],
 			thunderbolt: ["1M"],
 			dazzlinggleam: ["1L51"],
+			substitute: ["1M"],
+			gammaray: ["1M"],
 		}
 	},
 	barraskewda: {
@@ -296,6 +309,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bubblebeam: ["1M"],
 			razorwind: ["1M"],
 			bite: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	dachsbun: {
@@ -317,6 +331,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bite: ["1M"],
 			sugarblast: ["1M"],
 			milkdrink: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	sableye: {
@@ -335,6 +350,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			lick: ["1M"],
 			mirrorshot: ["1M"],
 			bite: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	rotom: {
@@ -355,6 +371,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			megabyte: ["1M"],
 			lagblast: ["1M"],
 			glassshards: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	pokestarhumanoid: {
@@ -373,6 +390,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			lick: ["1M"],
 			gammablast: ["1M"],
 			megabyte: ["1M"],
+			substitute: ["1M"],
+			gammaray: ["1M"],
 		}
 	},
 	lunatone: {
@@ -391,10 +410,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			psychic: ["1M"],
 			meteor: ["1M"],
 			icebeam: ["1M"],
-			blizzard: ["1M"],
-			watergun: ["1M"],
-			bubblebeam: ["1M"],
-			razorwind: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	dunsparce: {
@@ -414,6 +430,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hyperdrill: ["1L1"],
 			earthquake: ["1M"],
 			bite: ["1M"],
+			earthpower: ["1M"],
+			substitute: ["1M"],
 		}
 	},
 	vanilluxe: {
@@ -424,11 +442,46 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			icebeam: ["1M"],
 			blizzard: ["1M"],
 			milkdrink: ["1M"],
-			donutwrap: ["1M"],
+			donuttrap: ["1M"],
 			aurorabeam: ["1M"],
 			explosion: ["1M"],
 			acidarmor: ["1M"],
 			sugarblast: ["1M"],
+			substitute: ["1M"],
+		}
+	},
+	dewpider: {
+		learnset: {
+			rest: ["1M"],
+			toxic: ["1M"],
+			surf: ["1M"],
+			icebeam: ["1M"],
+			blizzard: ["1M"],
+			watergun: ["1M"],
+			bubblebeam: ["1M"],
+			hydropump: ["1M"],
+			psywave: ["1M"],
+			leechlife: ["1M"],
+			pinmissile: ["1M"],
+			substitute: ["1M"],
+		}
+	},
+	charjabug: {
+		learnset: {
+			rest: ["1M"],
+			toxic: ["1M"],
+			thunderbolt: ["1M"],
+			hyperbeam: ["1M"],
+			acid: ["1M"],
+			pinmissile: ["1M"],
+			gammablast: ["1M"],
+			thunder: ["1M"],
+			bite: ["1M"],
+			harden: ["1M"],
+			thunderwave: ["1M"],
+			substitute: ["1M"],
+			dig: ["1M"],
+			gammaray: ["1M"],
 		}
 	},
 };
