@@ -1,3 +1,5 @@
+import { learnsetUpdate } from "../../mods/gen3mod/learnsetupdate";
+
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 3,
 	inherit: 'gen3',
@@ -15,6 +17,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		for (const species in this.data.Pokedex) {
 			delete this.data.Pokedex[species]?.abilities?.H;
 		}
+
+		learnsetUpdate(this);
 	},		
 	actions: {
 		inherit: true,

@@ -141,10 +141,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: 16,
 	},
-	rockypayload: {
-		inherit: true,
-		gen: 3,
-	},
 	weakarmor: {
 		inherit: true,
 		gen: 3,

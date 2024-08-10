@@ -375,8 +375,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	primeape: {
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "NFE",
 	},
 	growlithe: {
 		tier: "LC",
@@ -1578,8 +1577,8 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	probopass: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	skitty: {
 		tier: "LC",
@@ -2098,7 +2097,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	bastiodon: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	burmy: {
@@ -2606,8 +2605,8 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	basculin: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	basculegion: {
 		tier: "Illegal",

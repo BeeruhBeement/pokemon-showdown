@@ -2586,6 +2586,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			uturn: ["3T"],
 			whirlwind: ["3E"],
 			wingattack: ["3L21"],
+			
+			defog: ["3E"],
 		},
 	},
 	golbat: {
@@ -5226,10 +5228,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			absorb: ["3L8"],
 			aerialace: ["3M"],
-			ancientpower: ["3T", "3L33"],
+			ancientpower: ["3L33"],
 			attract: ["3M"],
 			bind: ["3L22"],
-			block: ["3T", "3L57"],
+			block: ["3L57"],
 			brickbreak: ["3M"],
 			bulletseed: ["3M"],
 			constrict: ["3L1"],
@@ -6044,7 +6046,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			seismictoss: ["3T", "3L13"],
 			sleeptalk: ["3T"],
 			snore: ["3T"],
-			stealthrock: ["3M"],
 			strength: ["3M"],
 			submission: ["3L43"],
 			substitute: ["3T"],
@@ -6060,6 +6061,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			curse: ["3E"],
 			aerialace: ["3M"],
 			peck: ["3L1"],
+			stealthrock: ["3M"],
 		},
 	},
 	tauros: {
@@ -6845,6 +6847,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			tackle: ["3L1"],
 			thrash: ["3E"],
 			toxic: ["3M"],
+			
+			eruption: ["3L49"],
 		},
 	},
 	quilava: {
@@ -6890,6 +6894,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			swift: ["3T", "3L42"],
 			tackle: ["3L1"],
 			toxic: ["3M"],
+			
+			eruption: ["3L57"],
 		},
 	},
 	typhlosion: {
@@ -6948,6 +6954,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			blastburn: ["3T"],
 			rockclimb: ["3M"],
+			eruption: ["3L57"],
 		},
 	},
 	sentret: {
@@ -8064,7 +8071,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			torment: ["3M"],
 			toxic: ["3M"],
 
-			xscissor: ["3M"],
+			xscissor: ["3T"],
 			throatchop: ["3E"],
 		},
 	},
@@ -8901,11 +8908,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			blizzard: ["3M"],
 			icebeam: ["3M"],
 			psyshieldbash: ["3L0"],
-		},
-	},
-	smeargle: {
-		learnset: {
-			sketch: ["3L1"],
 		},
 	},
 	raikou: {
@@ -10756,6 +10758,60 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bite: ["3L20"],
 			crunch: ["3L40"],
 			boomburst: ["3L85"],
+		},
+	},
+	probopass: {
+		learnset: {
+			attract: ["3M"],
+			block: ["3L16"],
+			bodypress: ["9M"],
+			bodyslam: ["3T"],
+			defensecurl: ["3T"],
+			doubleedge: ["3T"],
+			doubleteam: ["3M"],
+			dynamicpunch: ["3T"],
+			earthquake: ["3M"],
+			endure: ["3T"],
+			explosion: ["3T", "3E"],
+			facade: ["3M"],
+			firepunch: ["3T"],
+			frustration: ["3M"],
+			harden: ["3L7"],
+			hiddenpower: ["3M"],
+			icepunch: ["3T"],
+			lockon: ["3L46"],
+			magnitude: ["3E"],
+			mimic: ["3T"],
+			mudslap: ["3T"],
+			protect: ["3M"],
+			rest: ["3M", "3L37"],
+			return: ["3M"],
+			rockslide: ["3T", "3L28"],
+			rocksmash: ["3M"],
+			rockthrow: ["3L13"],
+			rocktomb: ["3M"],
+			rollout: ["3T", "3E"],
+			sandstorm: ["3M", "3L31"],
+			secretpower: ["3M"],
+			selfdestruct: ["3T"],
+			shockwave: ["3M"],
+			sleeptalk: ["3T"],
+			snore: ["3T"],
+			strength: ["3M"],
+			substitute: ["3T"],
+			sunnyday: ["3M"],
+			swagger: ["3T"],
+			tackle: ["3L1"],
+			taunt: ["3M"],
+			thunder: ["3M"],
+			thunderbolt: ["3M"],
+			thunderpunch: ["3T"],
+			thunderwave: ["3T", "3L22"],
+			torment: ["3M"],
+			toxic: ["3M"],
+			zapcannon: ["3L43"],
+
+			voltswitch: ["3L73"],
 		},
 	},
 	skitty: {
@@ -12771,7 +12827,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3M"],
 
 			steelroller: ["3T"],
-			block: ["3T"],
 			iceshard: ["3L1"],
 			rockslide: ["3L1"],
 			weatherball: ["3T"],
@@ -12818,7 +12873,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			waterpulse: ["3M"],
 
-			block: ["3T"],
 			iceshard: ["3L1"],
 			icepunch: ["3T"],
 			thunderpunch: ["3T"],
@@ -13022,7 +13076,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thrash: ["3E"],
 			whirlwind: ["3E"],
 
-			ancientpower: ["3T", "3L28"],
+			ancientpower: ["3L28"],
 			attract: ["3M"],
 			blizzard: ["3M"],
 			brickbreak: ["3M"],
@@ -13082,7 +13136,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 	rampardos: {
 		learnset: {
-			ancientpower: ["3T", "3L28"],
+			ancientpower: ["3L28"],
 			attract: ["3M"],
 			blizzard: ["3M"],
 			brickbreak: ["3M"],
@@ -13144,7 +13198,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 	shieldon: {
 		learnset: {
-			ancientpower: ["3T", "3L28"],
+			ancientpower: ["3L28"],
 			attract: ["3M"],
 			blizzard: ["3M"],
 			bodyslam: ["3E"],
@@ -13198,16 +13252,17 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			torment: ["3M"],
 			toxic: ["3M"],
 			
-			shieldbash: ["3L43"],
+			rockcrunch: ["3L43"],
+			shieldbash: ["3L46"],
 			steelroller: ["3T"],
 		},
 	},
 	bastiodon: {
 		learnset: {
-			ancientpower: ["3T", "3L28"],
+			ancientpower: ["3L28"],
 			attract: ["3M"],
 			blizzard: ["3M"],
-			block: ["3T", "3L30"],
+			block: ["3L30"],
 			dig: ["3M"],
 			doubleteam: ["3M"],
 			earthquake: ["3M"],
@@ -13250,7 +13305,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			torment: ["3M"],
 			toxic: ["3M"],
 			
-			shieldbash: ["3L52"],
+			rockcrunch: ["3L52"],
+			shieldbash: ["3L58"],
 			steelroller: ["3T"],
 		},
 	},
@@ -13366,7 +13422,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 	bronzor: {
 		learnset: {
-			ancientpower: ["3T"],
 			calmmind: ["3M"],
 			confuseray: ["3L14"],
 			confusion: ["3L1"],
@@ -13417,8 +13472,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 	bronzong: {
 		learnset: {
-			ancientpower: ["3T"],
-			block: ["3T", "3L33"],
+			block: ["3L33"],
 			calmmind: ["3M"],
 			confuseray: ["3L14"],
 			confusion: ["3L1"],
@@ -13701,7 +13755,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			attract: ["3M"],
 			blizzard: ["3M", "3L47"],
-			block: ["3T"],
 			brickbreak: ["3M"],
 			bulletseed: ["3M"],
 			doubleteam: ["3M"],
@@ -13760,7 +13813,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	phione: {
 		learnset: {
 			acidarmor: ["3L31"],
-			ancientpower: ["3T"],
 			blizzard: ["3M"],
 			bubble: ["3L1"],
 			bubblebeam: ["3L24"],
@@ -13892,7 +13944,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			armthrust: ["3L17"],
 			attract: ["3M"],
 			blastburn: ["3T"],
-			block: ["3T"],
 			brickbreak: ["3M"],
 			bulkup: ["3M"],
 			covet: ["3T"],
@@ -14313,7 +14364,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	roggenrola: {
 		learnset: {
 			attract: ["3M"],
-			block: ["3T"],
 			curse: ["3E"],
 			doubleteam: ["3M"],
 			earthquake: ["3M"],
@@ -14353,7 +14403,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	boldore: {
 		learnset: {
 			attract: ["3M"],
-			block: ["3T"],
 			doubleteam: ["3M"],
 			earthquake: ["3M"],
 			explosion: ["3T", "3L55"],
@@ -14389,7 +14438,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	gigalith: {
 		learnset: {
 			attract: ["3M"],
-			block: ["3T"],
 			doubleteam: ["3M"],
 			earthquake: ["3M"],
 			explosion: ["3T", "3L55"],
@@ -14430,7 +14478,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			attract: ["3M"],
 			bide: ["3L5"],
 			bind: ["3T", "3L1"],
-			block: ["3T"],
 			bodyslam: ["3L29"],
 			brickbreak: ["3M"],
 			bulkup: ["3M", "3L33"],
@@ -14693,7 +14740,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			aerialace: ["3M"],
 			attract: ["3M"],
-			block: ["3T"],
 			cut: ["3M"],
 			defog: ["3L32", "3E"],
 			doubleteam: ["3M"],
@@ -14741,7 +14787,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			aerialace: ["3M"],
 			attract: ["3M"],
-			block: ["3T"],
 			bonerush: ["3L51"],
 			cut: ["3M"],
 			defog: ["3L32"],
@@ -15146,7 +15191,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aerialace: ["3M"],
 			armthrust: ["3L7"],
 			attract: ["3M"],
-			block: ["3T"],
 			bodyslam: ["3L35"],
 			brickbreak: ["3M"],
 			bulkup: ["3M"],
@@ -15208,7 +15252,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aerialace: ["3M"],
 			armthrust: ["3L7"],
 			attract: ["3M"],
-			block: ["3T"],
 			bodyslam: ["3L35"],
 			brickbreak: ["3M"],
 			bulkup: ["3M"],
@@ -15728,7 +15771,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			astonish: ["3L5"],
 			attract: ["3M"],
-			block: ["3T"],
 			calmmind: ["3M"],
 			confuseray: ["3L1"],
 			curse: ["3L28"],
@@ -16192,7 +16234,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderwave: ["3M"],
 			toxic: ["3M"],
 			triattack: ["3L75"],
-			xscissor: ["3M", "3L35"],
+			xscissor: ["3T", "3L35"],
 		},
 	},
 	silvally: {
@@ -16201,7 +16243,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bite: ["3L15"],
 			crunch: ["3L50"],
 			crushclaw: ["3L25"],
-			defog: ["3T"],
 			doubleedge: ["3L80"],
 			doublehit: ["3L55"],
 			doubleteam: ["3M"],
@@ -16248,7 +16289,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderwave: ["3M"],
 			toxic: ["3M"],
 			triattack: ["3L75"],
-			xscissor: ["3M", "3L35"],
+			xscissor: ["3T", "3L35"],
+
+			roost: ["3L90"],
 		},
 	},
 	togedemaru: {
@@ -16351,7 +16394,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			attract: ["3M"],
 			blizzard: ["3M"],
-			block: ["3T"],
 			doubleteam: ["3M"],
 			dragonclaw: ["3M"],
 			dragonrage: ["3L21"],
@@ -17072,7 +17114,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sunnyday: ["3M"],
 			tackle: ["3L1"],
 			thief: ["3M"],
-			xscissor: ["3M"],
+			xscissor: ["3T"],
 			
 			return: ["3M"],
 			frustration: ["3M"],
@@ -17114,7 +17156,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			taunt: ["3M"],
 			thief: ["3M"],
 			throatchop: ["3L36"],
-			xscissor: ["3M"],
+			xscissor: ["3T"],
 			
 			jumpkick: ["3L53"],
 			bounce: ["3L48"],

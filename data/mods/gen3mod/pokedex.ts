@@ -636,6 +636,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	azumarill: {
 		inherit: true,
 		types: ["Water", "Fairy"],
+		baseStats: {hp: 100, atk: 50, def: 80, spa: 60, spd: 80, spe: 50},
 	},
 	bonsly: {
 		inherit: true,
@@ -643,6 +644,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	sudowoodo: {
 		inherit: true,
+	},
+	jumpluff: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 55, def: 70, spa: 55, spd: 95, spe: 110},
 	},
 	yanma: {
 		inherit: true,
@@ -884,6 +889,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Sound"],
 		baseStats: {hp: 104, atk: 91, def: 63, spa: 91, spd: 73, spe: 68},
+	},
+	nosepass: {
+		inherit: true,
+		gen: 3,
+	},
+	probopass: {
+		inherit: true,
+		gen: 3,
 	},
 	skitty: {
 		inherit: true,
@@ -1234,6 +1247,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	leavanny: {
+		inherit: true,
+		gen: 3,
+	},
+	basculin: {
 		inherit: true,
 		gen: 3,
 	},
