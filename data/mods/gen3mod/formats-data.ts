@@ -926,8 +926,8 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	aerodactylmega: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	munchlax: {
 		tier: "LC",

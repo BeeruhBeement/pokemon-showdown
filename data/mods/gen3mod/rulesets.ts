@@ -14,5 +14,14 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			this.add('-start', pokemon, `${speed}`, '[silent]');
 			this.add('message', `${pokemon} Abilities: ${abilities}`);
 		},
+		onAfterMega(pokemon) {
+			const speed = pokemon.baseSpecies.baseStats.spe;
+			const abilities = Object.values(pokemon.species.abilities).join('/');
+
+			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
+			this.add('message', `${pokemon} Base Speed: ${speed}`);
+			this.add('-start', pokemon, `${speed}`, '[silent]');
+			this.add('message', `${pokemon} Abilities: ${abilities}`);
+		},
 	},
 };

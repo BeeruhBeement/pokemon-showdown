@@ -552,6 +552,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	aerodactyl: {
 		inherit: true,
 	},
+	aerodactylmega: {
+		inherit: true,
+		gen: 3,
+	},
 	munchlax: {
 		inherit: true,
 		gen: 3,
@@ -1251,6 +1255,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	basculin: {
+		inherit: true,
+		gen: 3,
+	},
+	basculinbluestriped: {
 		inherit: true,
 		gen: 3,
 	},

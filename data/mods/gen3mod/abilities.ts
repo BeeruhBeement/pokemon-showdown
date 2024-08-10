@@ -649,6 +649,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	normalize: {
 		inherit: true,
 		gen: 3,
+		onModifyMove(move) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (!noModifyType.includes(move.id)){
+				move.type = 'Normal';
+				move.category = 'Physical';
+			}
+		},
 	},
 	galvanize: {
 		inherit: true,

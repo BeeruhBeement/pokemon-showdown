@@ -2345,7 +2345,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	jinxed: {
 		name: "Jinxed",
-		shortDesc: "Every move used by or against this Pokemon has 100% secondaries (no flinch, freeze).",
+		shortDesc: "All moves used by/against this Pokemon has 100% secondaries (no flinch, freeze).",
 	},
 	impenetrable: {
 		name: "Impenetrable",

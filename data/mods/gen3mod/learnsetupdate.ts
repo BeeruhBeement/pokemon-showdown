@@ -1,6 +1,10 @@
 import { ModdedDex } from "../../../sim/dex";
 
 export function learnsetUpdate(dex: ModdedDex) {
+	dex.modData('Learnsets', 'scyther').learnset.xscissor = ["3T"];
+	dex.modData('Learnsets', 'scizor').learnset.bulletpunch = ["3L1"];
+	dex.modData('Learnsets', 'scizor').learnset.xscissor = ["3T"];
+
 	dex.modData('Learnsets', 'omanyte').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'omastar').learnset.stealthrock = ["3M"];
 
@@ -47,19 +51,19 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'armaldo').learnset.knockoff = ["3L67"];
 	dex.modData('Learnsets', 'armaldo').learnset.xscissor = ["3L73", "3T"];
 	
-	dex.modData('Learnsets', 'kecleon').learnset.stealthrock = ["3M"];
-	
 	dex.modData('Learnsets', 'relicanth').learnset.stealthrock = ["3M"];
 	
 	dex.modData('Learnsets', 'regirock').learnset.stealthrock = ["3M"];
-	dex.modData('Learnsets', 'registeel').learnset.recover = ["3L73"];
+	dex.modData('Learnsets', 'regirock').learnset.recover = ["3L73"];
 	dex.modData('Learnsets', 'regirock').learnset.rockclimb = ["3M"];
 	dex.modData('Learnsets', 'regirock').learnset.drainpunch = ["3T"];
 
-	dex.modData('Learnsets', 'registeel').learnset.recover = ["3L73"];
+	dex.modData('Learnsets', 'regice').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'regice').learnset.recover = ["3L73"];
 	dex.modData('Learnsets', 'regice').learnset.rockclimb = ["3M"];
 	dex.modData('Learnsets', 'regice').learnset.drainpunch = ["3T"];
 
+	dex.modData('Learnsets', 'registeel').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'registeel').learnset.recover = ["3L73"];
 	dex.modData('Learnsets', 'registeel').learnset.rockclimb = ["3M"];
 	dex.modData('Learnsets', 'registeel').learnset.drainpunch = ["3T"];

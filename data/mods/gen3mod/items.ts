@@ -409,4 +409,9 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	
+	aerodactylite: {
+		inherit: true,
+		gen: 3,
+	},
 };
