@@ -19,9 +19,10 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			const abilities = Object.values(pokemon.species.abilities).join('/');
 
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
-			this.add('message', `${pokemon} Base Speed: ${speed}`);
+			this.add('message', `${pokemon} Mega Base Speed: ${speed}`);
+			this.add('-end', pokemon, `${speed}`, '[silent]');
 			this.add('-start', pokemon, `${speed}`, '[silent]');
-			this.add('message', `${pokemon} Abilities: ${abilities}`);
+			this.add('message', `${pokemon} Mega Ability: ${abilities}`);
 		},
 	},
 };
