@@ -59,6 +59,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.3.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.3x power. Sucker Punch is not boosted.",
 	},
+	sheerforce: {
+		inherit: true,
+		gen: 3,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.hasSheerForce) return this.chainModify([12, 10]);
+		},
+		desc: "This Pokemon's attacks with secondary effects have their power multiplied by 1.2, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Anger Shell, Berserk, Color Change, Emergency Exit, Pickpocket, Wimp Out, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating.",
+		shortDesc: "This Pokemon's attacks with secondary effects have 1.2x power; nullifies the effects.",
+	},
 	moldbreaker: {
 		inherit: true,
 		gen: 3,
@@ -124,6 +133,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen:3,
 	},
 	colorchange: {
+		inherit: true,
 		desc: "On switch-in, this Pokemon's type changes to match the type of an adjacent foe.",
 		shortDesc: "On switch-in, this Pokemon's type changes to match an adjacent foe's type.",
 		onSwitchIn(pokemon) {
@@ -136,10 +146,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-start', pokemon, 'typechange', targetTypes.join('/'), '[from] ability: Color Change', '[of] ' + pokemon);
 			}
 		},
-		flags: {},
-		name: "Color Change",
-		rating: 2,
-		num: 16,
+		onDamagingHit(target, source, move) {},
 	},
 	weakarmor: {
 		inherit: true,
@@ -643,6 +650,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	moxie: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// -ate abilities
 
@@ -755,6 +766,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		onBasePower(basePower, pokemon, target, move) {},
+	},
+	liquidvoice: {
+		inherit: true,
+		gen: 3,
+		onModifyMovePriority: -1,
+		onModifyMove(move, pokemon) {
+			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Water';
+				move.category = 'Special';
+			}
+		},
+		onModifyType(move, pokemon) {},
 	},
 
 	// custom abilities

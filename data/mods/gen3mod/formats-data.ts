@@ -812,8 +812,8 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	pinsirmega: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	tauros: {
 		tier: "OU",
@@ -1422,8 +1422,8 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	swampertmega: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	poochyena: {
 		tier: "LC",
@@ -2232,8 +2232,8 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	lucariomega: {
-		tier: "Illegal",
-doublesTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	hippopotas: {
 		tier: "Illegal",

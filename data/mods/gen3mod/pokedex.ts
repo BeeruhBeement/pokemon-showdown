@@ -318,7 +318,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	poliwrath: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 95, def: 95, spa: 70, spd: 90, spe: 70},
-		abilities: {0: "No Guard", 1: "Damp"},
 	},
 	politoed: {
 		inherit: true,
@@ -521,6 +520,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Hyper Cutter", 1: "Chrysalis"},
 	},
+	pinsirmega: {
+		inherit: true,
+		gen: 3,
+	},
 	tauros: {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Adrenaline"},
@@ -588,6 +591,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Fire", "Ground"],
 		abilities: {0: "Blaze", 1: "Flash Fire"},
+	},
+	totodile: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Sheer Force"},
+	},
+	croconaw: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Sheer Force"},
+	},
+	feraligatr: {
+		inherit: true,
+		types: ["Water", "Dark"],
+		abilities: {0: "Torrent", 1: "Sheer Force"},
 	},
 	sentret: {
 		inherit: true,
@@ -748,6 +764,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Oblivious", 1: "Thick Fat"},
 		baseStats: {hp: 100, atk: 120, def: 80, spa: 70, spd: 60, spe: 80},
 	},
+	corsola: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 55, def: 95, spa: 65, spd: 95, spe: 35},
+		abilities: {0: "Regenerator", 1: "Natural Cure"},
+	},
 	remoraid: {
 		inherit: true,
 	},
@@ -802,6 +823,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	swampert: {
 		inherit: true,
 		abilities: {0: "Torrent", 1: "Regenerator"},
+	},
+	swampertmega: {
+		inherit: true,
+		gen: 3,
 	},
 	poochyena: {
 		inherit: true,
@@ -1010,7 +1035,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	crawdaunt: {
 		inherit: true,
-		abilities: {0: "Hyper Cutter", 1: "Adrenaline"},
+		abilities: {0: "Hyper Cutter", 1: "Adaptability"},
 	},
 	castform: {
 		inherit: true,
@@ -1116,10 +1141,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	shieldon: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Soundproof", 1: "Sturdy"},
 	},
 	bastiodon: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Soundproof", 1: "Sturdy"},
 		baseStats: {hp: 70, atk: 52, def: 168, spa: 47, spd: 138, spe: 30},
 	},
 	stunky: {
@@ -1146,12 +1173,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	riolu: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Inner Focus"},
 	},
 	lucario: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Inner Focus"},
+		baseStats: {hp: 70, atk: 110, def: 70, spa: 105, spd: 70, spe: 90},
+	},
+	lucariomega: {
+		inherit: true,
+		gen: 3,
 	},
 	snover: {
 		inherit: true,

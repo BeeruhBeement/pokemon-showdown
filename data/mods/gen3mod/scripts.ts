@@ -1,4 +1,4 @@
-import { learnsetUpdate } from "../../mods/gen3mod/learnsetupdate";
+import { learnsetUpdate } from "./learnsetupdate";
 
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 3,

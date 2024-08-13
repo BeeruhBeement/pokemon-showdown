@@ -987,4 +987,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	artictide: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 };

@@ -410,7 +410,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 	},
 	
+	pinsirite: {
+		inherit: true,
+		gen: 3,
+	},
 	aerodactylite: {
+		inherit: true,
+		gen: 3,
+	},
+	swampertite: {
+		inherit: true,
+		gen: 3,
+	},
+	lucarionite: {
 		inherit: true,
 		gen: 3,
 	},

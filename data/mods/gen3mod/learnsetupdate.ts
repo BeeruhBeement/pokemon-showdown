@@ -1,6 +1,13 @@
 import { ModdedDex } from "../../../sim/dex";
 
 export function learnsetUpdate(dex: ModdedDex) {
+	dex.modData('Learnsets', 'seel').learnset.haze = ["3E"];
+	dex.modData('Learnsets', 'dewgong').learnset.artictide = ["3L1"];
+	dex.modData('Learnsets', 'dewgong').learnset.megahorn = ["3L65"];
+
+	dex.modData('Learnsets', 'goldeen').learnset.swordsdance = ["3T"];
+	dex.modData('Learnsets', 'seaking').learnset.swordsdance = ["3T"];
+
 	dex.modData('Learnsets', 'scyther').learnset.xscissor = ["3T"];
 	dex.modData('Learnsets', 'scizor').learnset.bulletpunch = ["3L1"];
 	dex.modData('Learnsets', 'scizor').learnset.xscissor = ["3T"];
@@ -10,6 +17,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData('Learnsets', 'kabuto').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'kabutops').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'kabutops').learnset.knockoff = ["3L72"];
 
 	dex.modData('Learnsets', 'mew').learnset.dazzlinggleam = ["3M"];
 	dex.modData('Learnsets', 'mew').learnset.weatherball = ["3T"];
@@ -24,22 +32,49 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'mew').learnset.nightfall = ["3M"];
 	dex.modData('Learnsets', 'mew').learnset.xscissor = ["3T"];
 
+	dex.modData('Learnsets', 'totodile').learnset.dragondance = ["3E"];
+
 	dex.modData('Learnsets', 'jumpluff').learnset.rapidspin = ['3L52'];
 	dex.modData('Learnsets', 'jumpluff').learnset.aeroblast = ['3L64'];
 	
 	dex.modData('Learnsets', 'shuckle').learnset.stealthrock = ["3M"];
 	
 	dex.modData('Learnsets', 'corsola').learnset.stealthrock = ["3M"];
+
+	dex.modData('Learnsets', 'phanpy').learnset.headsmash = ["3E"];
 	
 	dex.modData('Learnsets', 'miltank').learnset.stealthrock = ["3M"];
 	
 	dex.modData('Learnsets', 'larvitar').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'pupitar').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'tyranitar').learnset.stealthrock = ["3M"];
+
+	dex.modData('Learnsets', 'raikou').eventData = {generation: 3, level: 50, shiny: 1, nature: "Naive", moves: ["extremespeed", "thunder", "calmmind", "surf"]},
+	dex.modData('Learnsets', 'raikou').learnset.extremespeed = ["3S11"];
+	dex.modData('Learnsets', 'raikou').learnset.surf = ["3S11"];
+	dex.modData('Learnsets', 'raikou').learnset.rockclimb = ["3M"];
+	dex.modData('Learnsets', 'raikou').learnset.charge = ["3L1"];
+
+	dex.modData('Learnsets', 'entei').eventData = {generation: 3, level: 50, shiny: 1, nature: "Naive", moves: ["extremespeed", "fireblast", "calmmind", "thunderbolt"]},
+	dex.modData('Learnsets', 'entei').learnset.extremespeed = ["3S11"];
+	dex.modData('Learnsets', 'entei').learnset.thunderbolt = ["3S11"];
+	dex.modData('Learnsets', 'entei').learnset.rockclimb = ["3M"];
+	dex.modData('Learnsets', 'entei').learnset.sacredfire = ["3L1"];
+
+	dex.modData('Learnsets', 'suicune').eventData = {generation: 3, level: 50, shiny: 1, nature: "Naive", moves: ["extremespeed", "hydropump", "calmmind", "flamethrower"]},
+	dex.modData('Learnsets', 'suicune').learnset.extremespeed = ["3S9"];
+	dex.modData('Learnsets', 'suicune').learnset.flamethrower = ["3S9"];
+	dex.modData('Learnsets', 'suicune').learnset.rockclimb = ["3M"];
+	dex.modData('Learnsets', 'suicune').learnset.tailwind = ["3L1"];
+	
+	dex.modData('Learnsets', 'swampert').learnset.hydrocannon = ["3T"];
+	dex.modData('Learnsets', 'swampert').learnset.rockclimb = ["3M"];
+	dex.modData('Learnsets', 'swampert').learnset.bulkup = ["3M"];
 	
 	dex.modData('Learnsets', 'nosepass').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'nosepass').learnset.zapbarrage = ["3E"];
 	dex.modData('Learnsets', 'nosepass').learnset.rockcrunch = ["3E"];
+	dex.modData('Learnsets', 'nosepass').learnset.headsmash = ["3E"];
 	
 	dex.modData('Learnsets', 'lileep').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'cradily').learnset.stealthrock = ["3M"];
@@ -51,7 +86,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'armaldo').learnset.knockoff = ["3L67"];
 	dex.modData('Learnsets', 'armaldo').learnset.xscissor = ["3L73", "3T"];
 	
+	dex.modData('Learnsets', 'totodile').learnset.dragondance = ["3E"];
+	
 	dex.modData('Learnsets', 'relicanth').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'relicanth').learnset.headsmash = ["3L78"];
 	
 	dex.modData('Learnsets', 'regirock').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'regirock').learnset.recover = ["3L73"];

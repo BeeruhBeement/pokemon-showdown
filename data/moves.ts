@@ -22334,4 +22334,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Flying",
 	},
+	artictide: {
+		num: 5013,
+		accuracy: 100,
+		basePower: 120,
+		category: "Special",
+		name: "Artic Tide",
+		pp: 5,
+		priority: 0,
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Water') return 1;
+			return typeMod + this.dex.getEffectiveness('Water', type);
+		},
+		flags: {protect: 1, mirror: 1, nonsky: 1, metronome: 1},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Ice",
+		contestType: "Beautiful",
+	},
 };
