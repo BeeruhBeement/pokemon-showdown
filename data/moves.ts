@@ -22318,7 +22318,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 30,
 		category: "Physical",
-		name: "Feather Darts",
+		name: "Blade Quills",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1, noparentalbond: 1},
