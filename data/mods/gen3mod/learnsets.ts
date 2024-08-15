@@ -11182,6 +11182,14 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			magmastorm: ["3L67"],
 		},
 	},
+	spinda: {
+		inherit: true,
+		eventData: [
+			{generation: 3, level: 5, shiny: 1, moves: ["tackle", "uproar", "sing"], pokeball: "pokeball", emeraldEventEgg: true},
+			
+			{generation: 3, level: 50, moves: ["superpower", "leafstorm", "vcreate", "spinout"]},
+		],
+	},
 	cacnea: {
 		learnset: {
 			absorb: ["3L1"],

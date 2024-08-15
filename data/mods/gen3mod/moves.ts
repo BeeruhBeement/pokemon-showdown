@@ -821,10 +821,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Sound",
 		basePower: 80,
 		desc: "The user prevents all opposing Pokemon from using any moves that the user also knows as long as the foe remains active.",
-		shortDesc: "Foes can't use moves known by user until switch out.",
+		shortDesc: "Foes can't use moves known by user.",
 		onTryImmunity(target, source, move) {},
 		secondary: {
-			chance: 20,
+			chance: 100,
 			volatileStatus: 'imprison',
 		},
 		condition: {
@@ -989,6 +989,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 		},
+	},
+	vcreate: {
+		inherit: true,
+		gen: 3,
 	},
 
 	cascadecrash: {

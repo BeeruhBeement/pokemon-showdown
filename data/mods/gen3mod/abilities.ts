@@ -359,42 +359,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		desc: "Prevents opposing Pokemon from choosing to switch out for one turn unless they are airborne, are holding a Shed Shell, or are a Ghost type.",
 		shortDesc: "Prevents opposing grounded Pokemon from switching out for 1 turn.",
-		onFoeTrapPokemon(pokemon) {},
-		onFoeMaybeTrapPokemon(pokemon, source) {},
-		onStart(pokemon) {
-			for (const target of pokemon.adjacentFoes()) {
-				pokemon.addVolatile('Arena Trap');
+		onFoeTrapPokemon(pokemon) {
+			if (!pokemon.isAdjacent(this.effectState.target)) return;
+			if (pokemon.isGrounded() && pokemon.activeMoveActions <= 1) {
+				pokemon.tryTrap(true);
 			}
-		},
-		condition: {
-			duration: 2,
-			onFoeTrapPokemon(pokemon) {
-				if (!pokemon.isAdjacent(this.effectState.target)) return;
-				if (pokemon.isGrounded()) {
-					pokemon.tryTrap();
-				}
-			},
 		},
 	},	
 	shadowtag: {
 		inherit: true,
 		desc: "Prevents opposing Pokemon from choosing to switch out, unless they are holding a Shed Shell, are a Ghost type, or also have this Ability.",
 		shortDesc: "Prevents foes without this ability from switching for 1 turn.",
-		onFoeTrapPokemon(pokemon) {},
-		onFoeMaybeTrapPokemon(pokemon, source) {},
-		onStart(pokemon) {
-			if (!pokemon.hasAbility('shadowtag') && pokemon.isAdjacent(this.effectState.target)) {
-				for (const target of pokemon.adjacentFoes()) {
-					pokemon.addVolatile('Shadow Tag');
-				}
+		onFoeTrapPokemon(pokemon) {
+			if (!pokemon.hasAbility('shadowtag') && pokemon.isAdjacent(this.effectState.target) && pokemon.activeMoveActions <= 1) {
+				pokemon.tryTrap(true);
 			}
-		},
-		condition: {
-			duration: 2,
-			onFoeTrapPokemon(pokemon) {
-				if (!pokemon.isAdjacent(this.effectState.target)) return;
-				pokemon.tryTrap();
-			},
 		},
 	},	
 	tanglinghair: {
@@ -774,6 +753,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		onModifyType(move, pokemon) {},
+	},
+	runaway: {
+		inherit: true,
+		gen: 3,
+		shortDesc: "Immune to trapping.",
+		onTrapPokemonPriority: -10,
+		onTrapPokemon(pokemon) {
+			pokemon.trapped = pokemon.maybeTrapped = false;
+		},
 	},
 
 	// custom abilities

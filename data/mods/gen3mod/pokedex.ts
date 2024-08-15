@@ -323,6 +323,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	politoed: {
 		inherit: true,
+		abilities: {0: "Water Absorb", 1: "Drizzle"},
 		baseStats: {hp: 90, atk: 75, def: 75, spa: 90, spd: 110, spe: 70},
 		types: ["Water", "Sound"],
 	},

@@ -18,6 +18,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'kabuto').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'kabutops').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'kabutops').learnset.knockoff = ["3L72"];
+	
+	dex.modData('Learnsets', 'dragonite').learnset.dualwingbeat = ["3T"];
 
 	dex.modData('Learnsets', 'mew').learnset.dazzlinggleam = ["3M"];
 	dex.modData('Learnsets', 'mew').learnset.weatherball = ["3T"];
@@ -84,6 +86,13 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'nosepass').learnset.zapbarrage = ["3E"];
 	dex.modData('Learnsets', 'nosepass').learnset.rockcrunch = ["3E"];
 	dex.modData('Learnsets', 'nosepass').learnset.headsmash = ["3E"];
+
+	dex.modData('Learnsets', 'spinda').learnset.rapidspin = ["3E"];
+	dex.modData('Learnsets', 'spinda').learnset.suckerpunch = ["3E"];
+	dex.modData('Learnsets', 'spinda').learnset.superpower = ["3S1"];
+	dex.modData('Learnsets', 'spinda').learnset.leafstorm = ["3S1"];
+	dex.modData('Learnsets', 'spinda').learnset.vcreate = ["3S1"];
+	dex.modData('Learnsets', 'spinda').learnset.spinout = ["3S1"];
 	
 	dex.modData('Learnsets', 'lileep').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'cradily').learnset.stealthrock = ["3M"];
@@ -99,6 +108,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData('Learnsets', 'relicanth').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'relicanth').learnset.headsmash = ["3L78"];
+	
+	dex.modData('Learnsets', 'salamence').learnset.dualwingbeat = ["3T"];
 	
 	dex.modData('Learnsets', 'regirock').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'regirock').learnset.recover = ["3L73"];

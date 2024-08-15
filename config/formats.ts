@@ -30,21 +30,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 3] Modded Uber",
-
-		mod: 'gen3mod',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
-		banlist: [],
-	},
-	{
-		name: "[Gen 3] Modded Doubles",
-
-		mod: 'gen3mod',
-		gameType: 'doubles',
-		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod', 'Data Mod'],
-		banlist: ['Uber'],
-	},
-	{
 		name: "[Gen 9] National Dex Sky Battles",
 		desc: `A National Dex mod that only allows Flying types and Pokémon with Levitate. Based on XY Sky Battles.`,
 	
@@ -145,6 +130,56 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Poorly Done Fakemons",
 		mod: 'fakemons',
 		ruleset: ['[Gen 9] OU', '+Fakemon'],
+	},
+	{
+		name: "[Gen 3] Modded Uber",
+
+		mod: 'gen3mod',
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
+		banlist: [],
+	},
+	{
+		name: "[Gen 3] Modded UU",
+
+		mod: 'gen3mod',
+		ruleset: ['[Gen 3] Modded'],
+		banlist: ['OU', 'UUBL'],
+	},
+	{
+		name: "[Gen 3] ModdedRU",
+
+		mod: 'gen3mod',
+		ruleset: ['[Gen 3] Modded UU'],
+		banlist: ['UU', 'RUBL'],
+	},
+	{
+		name: "[Gen 3] Modded NU",
+
+		mod: 'gen3mod',
+		ruleset: ['[Gen 3] Modded RU'],
+		banlist: ['RU', 'NUBL'],
+	},
+	{
+		name: "[Gen 3] Modded PU",
+
+		mod: 'gen3mod',
+		ruleset: ['[Gen 3] Modded NU'],
+		banlist: ['RU', 'NUBL'],
+	},
+	{
+		name: "[Gen 3] Modded ZU",
+
+		mod: 'gen3mod',
+		ruleset: ['[Gen 3] Modded PU'],
+		banlist: ['NU', 'PUBL'],
+	},
+	{
+		name: "[Gen 3] Modded Doubles",
+
+		mod: 'gen3mod',
+		gameType: 'doubles',
+		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod', 'Data Mod'],
+		banlist: ['Uber'],
 	},
 	{
 		name: "[Gen 3] Modded Challenge Cup",
