@@ -364,6 +364,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	golemalola: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Manget Pull", 1: "Galvanize"},
 	},
 	ponyta: {
 		inherit: true,
@@ -380,6 +381,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 65, atk: 100, def: 70, spa: 80, spd: 80, spe: 115},
+	},
+	slowpoke: {
+		inherit: true,
+		abilities: {0: "Regenerator", 1: "Own Tempo"},
+	},
+	slowbro: {
+		inherit: true,
+		abilities: {0: "Regenerator", 1: "Own Tempo"},
+	},
+	slowking: {
+		inherit: true,
+		abilities: {0: "Regenerator", 1: "Own Tempo"},
 	},
 	farfetchd: {
 		inherit: true,
@@ -663,6 +676,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Fairy", "Flying"],
 	},
+	natu: {
+		inherit: true,
+		abilities: {0: "Magic Bounce", 1: "Early Bird"},
+	},
+	xatu: {
+		inherit: true,
+		abilities: {0: "Magic Bounce", 1: "Early Bird"},
+	},
 	azurill: {
 		inherit: true,
 		types: ["Normal", "Fairy"],
@@ -867,7 +888,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	mightyena: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 95, def: 70, spa: 70, spd: 70, spe: 95},
+		baseStats: {hp: 75, atk: 90, def: 70, spa: 70, spd: 70, spe: 90},
 		abilities: {0: "Intimidate", 1: "Strong Jaw"},
 	},
 	zigzagoon: {
@@ -1286,12 +1307,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	munna: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Synchronize", 1: "Insomnia"},
 	},
 	musharna: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Synchronize", 1: "Psychic Surge"},
+		abilities: {0: "Psychic Surge", 1: "Synchronize"},
 	},
 	roggenrola: {
 		inherit: true,
@@ -1386,30 +1406,23 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	gogoat: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 103, atk: 100, def: 62, spa: 97, spd: 71, spe: 68},
-		abilities: {0: "Sap Sipper", 1: "Grassy Surge"},
 	},
 	pancham: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Iron Fist", 1: "Mold Breaker"},
 	},
 	pangoro: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Iron Fist", 1: "Mold Breaker"},
-		baseStats: {hp: 95, atk: 114, def: 78, spa: 69, spd: 71, spe: 58},
 	},
 	honedge: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Sharpness"},
 	},
 	doublade: {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 59, atk: 90, def: 130, spa: 45, spd: 49, spe: 35},
-		abilities: {0: "Sharpness"},
 	},
 	aegislash: {
 		inherit: true,
@@ -1424,7 +1437,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	spritzee: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Oblivious", 1: "Immunity"},
+		abilities: {0: "Healer", 1: "Immunity"},
 	},
 	aromatisse: {
 		inherit: true,
@@ -1752,12 +1765,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Protosynthesis", 1: "Sap Sipper"},
-		baseStats: {hp: 101, atk: 127, def: 89, spa: 79, spd: 99, spe: 55},
 	},
 	ironjugulis: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Quark Drive", 1: "Lightning Rod"},
-		baseStats: {hp: 84, atk: 90, def: 86, spa: 102, spd: 80, spe: 108},
 	},
 };

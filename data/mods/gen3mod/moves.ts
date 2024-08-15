@@ -298,6 +298,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 		},
+		flags: {metronome: 1, mustpressure: 1, reflectable: 1},
+	},
+	spikes: {
+		inherit: true,
+		flags: {metronome: 1, mustpressure: 1, reflectable: 1},
 	},
 	blizzard: {
 		inherit: true,
@@ -671,10 +676,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "Hits three times. Power increases to 50 for the second hit and 75 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
-		accuracy: 85,
-		basePower: 25,
+		accuracy: 90,
+		basePower: 22,
 		basePowerCallback(pokemon, target, move) {
-			return 25 * move.hit;
+			return 22 * move.hit;
 		},
 		secondary: null,
 		pp: 10,
@@ -943,7 +948,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	dreameater: {
 		inherit: true,
 		desc: "The target is unaffected by this move unless it or the user is asleep. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
-		shortDesc: "User gains 1/2 HP inflicted. Sleeping target or user only.",
+		shortDesc: "User gains 1/2 HP inflicted. Sleeping target/user only.",
 		onTryImmunity(target, source) {
 			return target.status === 'slp' || target.hasAbility('comatose') || source.status === 'slp' || source.hasAbility('comatose');
 		},
@@ -1001,6 +1006,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	leafblade: {
 		inherit: true,
 		basePower: 90,
+	},
+	gunkshot: {
+		inherit: true,
+		gen: 3,
 	},
 
 	cascadecrash: {

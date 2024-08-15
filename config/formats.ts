@@ -174,14 +174,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL'],
 	},
 	{
-		name: "[Gen 3] Modded Doubles",
-
-		mod: 'gen3mod',
-		gameType: 'doubles',
-		ruleset: ['Standard', '!Switch Priority Clause Mod', 'Freeze Clause Mod', 'Data Mod'],
-		banlist: ['Uber'],
-	},
-	{
 		name: "[Gen 3] Modded Challenge Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any legal moves.`,
 

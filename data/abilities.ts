@@ -5957,7 +5957,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.secondaries) {
 				for (const secondary of move.secondaries) {
 					this.debug('guaranteeing secondary chance');
-					if (secondary.status !== 'frz' && secondary.volatileStatus !== 'flinch') secondary.chance = 100;
+					if (secondary.status !== 'slp' && secondary.volatileStatus !== 'flinch') secondary.chance = 100;
 				}
 			}
 			if (move.self?.chance) move.self.chance = 100;

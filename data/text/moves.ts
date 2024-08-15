@@ -7617,4 +7617,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Blade Quills",
 		shortDesc: "Hits 3. Decidueye: smart target, 2 hit, 50 base.",
 	},
+	deepfreeze: {
+		name: "Deep Freeze",
+		shortDesc: "Freezes the target.",
+	},
 };

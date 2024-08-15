@@ -9,6 +9,17 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'fearow').learnset.swordsdance = ["3T"];
 	dex.modData('Learnsets', 'fearow').learnset.dualwingbeat = ["3T"];
 
+	dex.modData('Learnsets', 'geodude').learnset.rapidspin = ["3E"];
+	dex.modData('Learnsets', 'geodude').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'geodude').learnset.rockclimb = ["3M"];
+	dex.modData('Learnsets', 'geodude').learnset.suckerpunch = ["3T"];
+	dex.modData('Learnsets', 'graveler').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'graveler').learnset.rockclimb = ["3M"];
+	dex.modData('Learnsets', 'graveler').learnset.suckerpunch = ["3T"];
+	dex.modData('Learnsets', 'golem').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'golem').learnset.rockclimb = ["3M"];
+	dex.modData('Learnsets', 'golem').learnset.suckerpunch = ["3T"];
+
 	dex.modData('Learnsets', 'seel').learnset.haze = ["3E"];
 	dex.modData('Learnsets', 'dewgong').learnset.megahorn = ["3L65"];
 
@@ -33,7 +44,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'kabutops').learnset.knockoff = ["3L72"];
 	
 	dex.modData('Learnsets', 'dratini').learnset.extremespeed = ["3E"];
-	dex.modData('Learnsets', 'dratini').learnset.dragondance = ["3L45"];
+	dex.modData('Learnsets', 'dratini').learnset.dragondance = ["3L45", "3E"];
 	dex.modData('Learnsets', 'dratini').learnset.coil = ["3L55"];
 	dex.modData('Learnsets', 'dragonair').learnset.dragondance = ["3L53"];
 	dex.modData('Learnsets', 'dragonair').learnset.coil = ["3L67"];
@@ -147,6 +158,15 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData('Learnsets', 'tropius').learnset.dragondance = ["3E"];
 	dex.modData('Learnsets', 'tropius').learnset.leafblade = ["3E"];
+
+	dex.modData('Learnsets', 'snorunt').learnset.weatherball = ["3E", "3T"];
+	dex.modData('Learnsets', 'snorunt').learnset.disable = ["3E"];
+	dex.modData('Learnsets', 'snorunt').learnset.block = ["3E"];
+	dex.modData('Learnsets', 'glalie').learnset.deepfreeze = ["3L68"];
+	dex.modData('Learnsets', 'glalie').learnset.steelroller = ["3T"];
+	dex.modData('Learnsets', 'glalie').learnset.iceshard = ["3L1"];
+	dex.modData('Learnsets', 'glalie').learnset.rockslide = ["3L1"];
+	dex.modData('Learnsets', 'glalie').learnset.weatherball = ["3T"];
 	
 	dex.modData('Learnsets', 'relicanth').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'relicanth').learnset.headsmash = ["3L78"];
