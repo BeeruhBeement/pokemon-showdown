@@ -687,6 +687,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 75, atk: 55, def: 70, spa: 55, spd: 95, spe: 110},
 	},
+	sunflora: {
+		inherit: true,
+		types: ["Grass", "Fire"],
+		baseStats: {hp: 75, atk: 75, def: 55, spa: 105, spd: 85, spe: 40},
+	},
 	yanma: {
 		inherit: true,
 	},
@@ -765,8 +770,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	magcargo: {
 		inherit: true,
-		abilities: {0: "Weak Armor", 1: "Flame Body"},
 		baseStats: {hp: 60, atk: 70, def: 120, spa: 90, spd: 80, spe: 30},
+		abilities: {0: "Weak Armor", 1: "Flame Body"},
 	},
 	swinub: {
 		inherit: true,
@@ -780,7 +785,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Oblivious", 1: "Thick Fat"},
-		baseStats: {hp: 100, atk: 120, def: 80, spa: 70, spd: 60, spe: 80},
 	},
 	corsola: {
 		inherit: true,
@@ -1610,19 +1614,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Intimidate"},
-		baseStats: {hp: 97, atk: 119, def: 119, spa: 73, spd: 73, spe: 69},
 	},
 	xurkitree: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Lightning Rod"},
-		baseStats: {hp: 83, atk: 89, def: 67, spa: 179, spd: 71, spe: 61},
 	},
 	guzzlord: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Beast Boost", 1: "Thick Fat"},
-		baseStats: {hp: 223, atk: 101, def: 59, spa: 73, spd: 47, spe: 47},
 	},
 	sobble: {
 		inherit: true,
@@ -1638,7 +1639,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Torrent", 1: "Sniper"},
-		baseStats: {hp: 70, atk: 85, def: 65, spa: 115, spd: 65, spe: 110},
 	},
 	sizzlipede: {
 		inherit: true,

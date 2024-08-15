@@ -849,6 +849,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		target: "normal",
 	},
+	healbell: {
+		inherit: true,
+		type: "Sound",
+	},
 	psychoshift: {
 		inherit: true,
 		gen: 3,
@@ -993,6 +997,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	vcreate: {
 		inherit: true,
 		gen: 3,
+	},
+	leafblade: {
+		inherit: true,
+		basePower: 90,
 	},
 
 	cascadecrash: {

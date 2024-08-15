@@ -26,7 +26,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	charizard: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	charizardmegax: {
@@ -48,7 +48,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	blastoise: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	blastoisemega: {
@@ -144,27 +144,27 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	pikachucosplay: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	pikachurockstar: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	pikachubelle: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	pikachupopstar: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	pikachuphd: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	pikachulibre: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	pikachuoriginal: {
@@ -222,7 +222,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	sandslash: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	sandslashalola: {
@@ -332,7 +332,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	dugtrio: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	dugtrioalola: {
@@ -353,15 +353,15 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	persian: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	persianalola: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	perrserker: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	psyduck: {
@@ -427,7 +427,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	machamp: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	machampgmax: {
@@ -572,7 +572,8 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	haunter: {
-		tier: "NFE",
+		tier: "PUBL",
+		doublesTier: "NFE",
 	},
 	gengar: {
 		tier: "OU",
@@ -692,7 +693,8 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	rhydon: {
-		tier: "NFE",
+		tier: "PUBL",
+		doublesTier: "NFE",
 	},
 	rhyperior: {
 		tier: "Illegal",
@@ -781,10 +783,11 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	jynx: {
-		tier: "NFE",
+		tier: "PUBL",
+		doublesTier: "NFE",
 	},
 	kisscope: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	elekid: {
@@ -824,11 +827,11 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	taurospaldeablaze: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	taurospaldeaaqua: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	magikarp: {
@@ -866,7 +869,7 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	vaporeon: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	jolteon: {
@@ -878,11 +881,11 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	espeon: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	umbreon: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	leafeon: {
@@ -911,7 +914,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	omastar: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	kabuto: {
@@ -971,7 +974,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	dragonite: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	mewtwo: {
@@ -1021,7 +1024,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	feraligatr: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	sentret: {
@@ -1042,7 +1045,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	ledian: {
-		tier: "NU",
+		tier: "PU",
 		doublesTier: "DOU",
 	},
 	spinarak: {
@@ -1135,7 +1138,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	yanmega: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	wooper: {
@@ -1153,14 +1156,14 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	honchkrow: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	misdreavus: {
 		tier: "NFE",
 	},
 	mismagius: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	unown: {
@@ -1171,7 +1174,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	wobbuffet: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	girafarig: {
@@ -1217,11 +1220,11 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	overqwil: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	shuckle: {
-		tier: "NU",
+		tier: "PU",
 		doublesTier: "DOU",
 	},
 	heracross: {
@@ -1251,7 +1254,8 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	ursaring: {
-		tier: "NFE",
+		tier: "PUBL",
+		doublesTier: "NFE",
 	},
 	ursaluna: {
 		tier: "Uber",
@@ -1265,7 +1269,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	magcargo: {
-		tier: "NU",
+		tier: "PU",
 		doublesTier: "DOU",
 	},
 	swinub: {
@@ -1275,7 +1279,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	mamoswine: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	corsola: {
@@ -1338,7 +1342,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	smeargle: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	miltank: {
@@ -1390,7 +1394,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	sceptile: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	sceptilemega: {
@@ -1439,13 +1443,13 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	linoone: {
-		tier: "OU",
+		tier: "UUBL",
 	},
 	linoonegalar: {
 		tier: "NFE",
 	},
 	obstagoon: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	wurmple: {
@@ -1514,7 +1518,7 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	gallade: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	gallademega: {
@@ -1563,7 +1567,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	exploud: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	makuhita: {
@@ -1584,7 +1588,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	delcatty: {
-		tier: "NU",
+		tier: "PU",
 		doublesTier: "DOU",
 	},
 	sableye: {
@@ -1713,7 +1717,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	spinda: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DOU",
 	},
 	trapinch: {
@@ -2228,7 +2232,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	lucario: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	lucariomega: {
@@ -2503,7 +2507,7 @@ doublesTier: "Illegal",
 		tier: "NFE",
 	},
 	gigalith: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	woobat: {
@@ -2975,7 +2979,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	mandibuzz: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	heatmor: {
@@ -3214,7 +3218,8 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	doublade: {
-		tier: "NFE",
+		tier: "PUBL",
+		doublesTier: "NFE",
 	},
 	aegislash: {
 		tier: "OU",
@@ -3689,7 +3694,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	silvallybug: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DOU",
 	},
 	silvallydark: {
@@ -3741,7 +3746,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	silvallypsychic: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DOU",
 	},
 	silvallyrock: {
@@ -3749,7 +3754,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	silvallysteel: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	silvallywater: {
@@ -4268,7 +4273,7 @@ doublesTier: "Illegal",
 doublesTier: "Illegal",
 	},
 	dracozolt: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	arctozolt: {
@@ -4445,7 +4450,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	lokix: {
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	rellor: {

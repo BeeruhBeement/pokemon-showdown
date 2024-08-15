@@ -763,6 +763,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			pokemon.trapped = pokemon.maybeTrapped = false;
 		},
 	},
+	contrary: {
+		inherit: true,
+		gen: 3,
+	},
+	magicbounce: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	

@@ -1,6 +1,10 @@
 import { ModdedDex } from "../../../sim/dex";
 
 export function learnsetUpdate(dex: ModdedDex) {
+	dex.modData('Learnsets', 'beedrill').learnset.xscissor = ["3T"];
+	dex.modData('Learnsets', 'beedrill').learnset.uturn = ["3T"];
+	dex.modData('Learnsets', 'beedrill').learnset.irontail = ["3M"];
+
 	dex.modData('Learnsets', 'seel').learnset.haze = ["3E"];
 	dex.modData('Learnsets', 'dewgong').learnset.megahorn = ["3L65"];
 
@@ -18,6 +22,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'kabutops').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'kabutops').learnset.knockoff = ["3L72"];
 	
+	dex.modData('Learnsets', 'dratini').learnset.extremespeed = ["3E"];
 	dex.modData('Learnsets', 'dragonite').learnset.dualwingbeat = ["3T"];
 
 	dex.modData('Learnsets', 'mew').learnset.dazzlinggleam = ["3M"];
@@ -38,12 +43,29 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'jumpluff').learnset.rapidspin = ['3L52'];
 	dex.modData('Learnsets', 'jumpluff').learnset.aeroblast = ['3L64'];
 
+	dex.modData('Learnsets', 'sunflora').learnset.ember = ['3L1'];
+	dex.modData('Learnsets', 'sunflora').learnset.firespin = ['3L25'];
+	dex.modData('Learnsets', 'sunflora').learnset.fireblast = ['3L64', '3M'];
+	dex.modData('Learnsets', 'sunflora').learnset.flamethrower = ['3M'];
+	dex.modData('Learnsets', 'sunflora').learnset.firepunch = ['3M'];
+	dex.modData('Learnsets', 'sunflora').learnset.overheat = ['3M'];
+	dex.modData('Learnsets', 'sunflora').learnset.energyball = ['3M'];
+
 	dex.modData('Learnsets', 'misdreavus').learnset.trick = ['3E'];
 	dex.modData('Learnsets', 'misdreavus').learnset.dazzlinggleam = ['3M'];
 	dex.modData('Learnsets', 'mismagius').learnset.dazzlinggleam = ['3M'];
 	dex.modData('Learnsets', 'mismagius').learnset.mysticalfire = ['3L1'];
 	
 	dex.modData('Learnsets', 'shuckle').learnset.stealthrock = ["3M"];
+	
+	dex.modData('Learnsets', 'sneasel').learnset.throatchop = ["3E"];
+	dex.modData('Learnsets', 'sneasel').learnset.xscissor = ["3T"];
+	dex.modData('Learnsets', 'sneasel').learnset.swordsdance = ["3T"];
+	
+	dex.modData('Learnsets', 'slugma').learnset.recover = ["3L23"];
+	dex.modData('Learnsets', 'slugma').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'magcargo').learnset.recover = ["3L23"];
+	dex.modData('Learnsets', 'magcargo').learnset.stealthrock = ["3M"];
 	
 	dex.modData('Learnsets', 'corsola').learnset.stealthrock = ["3M"];
 
@@ -103,7 +125,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'armaldo').learnset.knockoff = ["3L67"];
 	dex.modData('Learnsets', 'armaldo').learnset.xscissor = ["3L73", "3T"];
 	
-	dex.modData('Learnsets', 'totodile').learnset.dragondance = ["3E"];
+	dex.modData('Learnsets', 'tropius').learnset.dragondance = ["3E"];
+	dex.modData('Learnsets', 'tropius').learnset.leafblade = ["3E"];
 	
 	dex.modData('Learnsets', 'relicanth').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'relicanth').learnset.headsmash = ["3L78"];
