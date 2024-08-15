@@ -2,15 +2,15 @@ import { SpeciesFormatsData } from "../../../sim/dex-species";
 
 export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	minirock: {
-		tier: "Fakemon",
+		tier: "Unreleased",
 	},
 	norock: {
-		tier: "Fakemon",
+		tier: "Unreleased",
 	},
 	froomish: {
-		tier: "Fakemon",
+		tier: "Unreleased",
 	},
 	frostloom: {
-		tier: "Fakemon",
+		tier: "Unreleased",
 	},
 };

@@ -2,7 +2,6 @@ import { ModdedDex } from "../../../sim/dex";
 
 export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'seel').learnset.haze = ["3E"];
-	dex.modData('Learnsets', 'dewgong').learnset.artictide = ["3L1"];
 	dex.modData('Learnsets', 'dewgong').learnset.megahorn = ["3L65"];
 
 	dex.modData('Learnsets', 'goldeen').learnset.swordsdance = ["3T"];

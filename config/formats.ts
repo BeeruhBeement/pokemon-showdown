@@ -26,7 +26,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 3] Modded",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
+		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber'],
 	},
 	{
@@ -129,49 +129,49 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Poorly Done Fakemons",
 		mod: 'fakemons',
-		ruleset: ['[Gen 9] OU', '+Fakemon'],
+		ruleset: ['[Gen 9] OU', '+Unreleased'],
 	},
 	{
 		name: "[Gen 3] Modded Uber",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
+		ruleset: ['Standard', 'Data Mod'],
 		banlist: [],
 	},
 	{
 		name: "[Gen 3] Modded UU",
 
 		mod: 'gen3mod',
-		ruleset: ['[Gen 3] Modded'],
+		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber', 'OU', 'UUBL'],
 	},
 	{
 		name: "[Gen 3] Modded RU",
 
 		mod: 'gen3mod',
-		ruleset: ['[Gen 3] Modded UU'],
-		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL'],
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL'],
 	},
 	{
 		name: "[Gen 3] Modded NU",
 
 		mod: 'gen3mod',
-		ruleset: ['[Gen 3] Modded RU'],
-		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL', 'RU', 'NUBL'],
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL'],
 	},
 	{
 		name: "[Gen 3] Modded PU",
 
 		mod: 'gen3mod',
-		ruleset: ['[Gen 3] Modded NU'],
-		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL'],
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL'],
 	},
 	{
 		name: "[Gen 3] Modded ZU",
 
 		mod: 'gen3mod',
-		ruleset: ['[Gen 3] Modded PU'],
-		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL'],
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL'],
 	},
 	{
 		name: "[Gen 3] Modded Doubles",

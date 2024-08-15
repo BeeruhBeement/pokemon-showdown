@@ -7617,8 +7617,4 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Blade Quills",
 		shortDesc: "Hits 3. Decidueye: smart target, 2 hit, 50 base.",
 	},
-	artictide: {
-		name: "Artic Tide",
-		shortDesc: "Combines Water in effectiveness. SE on Water.",
-	},
 };

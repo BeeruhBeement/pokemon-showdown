@@ -162,6 +162,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (pokemon.status === 'brn' && baseDamage && move.category === 'Physical' && !pokemon.hasAbility('guts') && !move.id.includes('facade')) {
 				baseDamage = this.battle.modify(baseDamage, 0.5);
 			}
+			// Freeze SpA Drop
+			if (pokemon.status === 'frz' && baseDamage  && move.category === 'Special' && move.id !== 'facade') {
+				baseDamage = this.battle.modify(baseDamage, 0.5);
+			}
 
 			// Other modifiers (Reflect/Light Screen/etc)
 			baseDamage = this.battle.runEvent('ModifyDamagePhase1', pokemon, target, move, baseDamage);
@@ -169,6 +173,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			// Double battle multi-hit
 			// In Generation 3, the spread move modifier is 0.5x instead of 0.75x. Moves that hit both foes
 			// and the user's ally, like Earthquake and Explosion, don't get affected by spread modifiers
+			// But I changed that
 			if (move.spreadHit) {
 				const spreadModifier = move.spreadModifier || 0.75;
 				this.battle.debug('Spread modifier: ' + spreadModifier);
