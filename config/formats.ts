@@ -146,7 +146,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['OU', 'UUBL'],
 	},
 	{
-		name: "[Gen 3] ModdedRU",
+		name: "[Gen 3] Modded RU",
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded UU'],
@@ -164,14 +164,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded NU'],
-		banlist: ['RU', 'NUBL'],
+		banlist: ['NU', 'PUBL'],
 	},
 	{
 		name: "[Gen 3] Modded ZU",
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded PU'],
-		banlist: ['NU', 'PUBL'],
+		banlist: ['PU', 'ZUBL'],
 	},
 	{
 		name: "[Gen 3] Modded Doubles",
