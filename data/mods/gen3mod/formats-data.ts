@@ -1316,7 +1316,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	houndoom: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	houndoommega: {
@@ -1327,7 +1327,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	donphan: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	stantler: {
@@ -1709,7 +1709,7 @@ doublesTier: "Illegal",
 		tier: "LC",
 	},
 	grumpig: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	spinda: {
@@ -3693,7 +3693,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	silvallydark: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	silvallydragon: {
@@ -3721,7 +3721,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	silvallyghost: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	silvallygrass: {

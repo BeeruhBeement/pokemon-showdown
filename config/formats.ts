@@ -143,35 +143,35 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded'],
-		banlist: ['OU', 'UUBL'],
+		banlist: ['Uber', 'OU', 'UUBL'],
 	},
 	{
 		name: "[Gen 3] Modded RU",
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded UU'],
-		banlist: ['UU', 'RUBL'],
+		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL'],
 	},
 	{
 		name: "[Gen 3] Modded NU",
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded RU'],
-		banlist: ['RU', 'NUBL'],
+		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL', 'RU', 'NUBL'],
 	},
 	{
 		name: "[Gen 3] Modded PU",
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded NU'],
-		banlist: ['NU', 'PUBL'],
+		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL'],
 	},
 	{
 		name: "[Gen 3] Modded ZU",
 
 		mod: 'gen3mod',
 		ruleset: ['[Gen 3] Modded PU'],
-		banlist: ['PU', 'ZUBL'],
+		banlist: ['Uber', 'OU', 'UUBL','UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL'],
 	},
 	{
 		name: "[Gen 3] Modded Doubles",
