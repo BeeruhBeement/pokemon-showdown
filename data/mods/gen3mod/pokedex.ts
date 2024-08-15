@@ -165,6 +165,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	nidoqueen: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 92, def: 87, spa: 75, spd: 85, spe: 76},
+		abilities: {0: "Poison Point", 1: "Sheer Force"},
 	},
 	nidoranm: {
 		inherit: true,
@@ -175,6 +176,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	nidoking: {
 		inherit: true,
 		baseStats: {hp: 81, atk: 102, def: 77, spa: 85, spd: 75, spe: 85},
+		abilities: {0: "Poison Point", 1: "Sheer Force"},
 	},
 	cleffa: {
 		inherit: true,
@@ -324,6 +326,22 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 75, def: 75, spa: 90, spd: 110, spe: 70},
 		types: ["Water", "Sound"],
 	},
+	abra: {
+		inherit: true,
+		abilities: {0: "Synchronize", 1: "Magic Guard"},
+	},
+	kadabra: {
+		inherit: true,
+		abilities: {0: "Synchronize", 1: "Magic Guard"},
+	},
+	alakazam: {
+		inherit: true,
+		abilities: {0: "Synchronize", 1: "Magic Guard"},
+	},
+	alakazammega: {
+		inherit: true,
+		gen: 3,
+	},
 	geodude: {
 		inherit: true,
 	},
@@ -375,7 +393,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sirfetchd: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 62, atk: 125, def: 85, spa: 68, spd: 82, spe: 65},
 		abilities: {0: "Keen Eye", 1: "Inner Focus"},
 	},
 	doduo: {
@@ -812,6 +829,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Drench"},
 	},
+	torchic: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Speed Boost"},
+	},
+	combusken: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Speed Boost"},
+	},
+	blaziken: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Speed Boost"},
+	},
 	mudkip: {
 		inherit: true,
 		abilities: {0: "Torrent", 1: "Regenerator"},
@@ -905,6 +934,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	shedinja: {
 		inherit: true,
+		baseStats: {hp: 1, atk: 110, def: 15, spa: 110, spd: 10, spe: 110},
 	},
 	whismur: {
 		inherit: true,
@@ -992,6 +1022,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	camerupt: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 100, def: 70, spa: 105, spd: 75, spe: 40},
+	},
+	spinda: {
+		inherit: true,
+		types: ["Normal", "Fighting"],
+		abilities: {0: "Own Tempo", 1: "Contrary"},
 	},
 	cacnea: {
 		inherit: true,
@@ -1182,6 +1217,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	lucariomega: {
 		inherit: true,
 		gen: 3,
+		baseStats: {hp: 70, atk: 145, def: 83, spa: 140, spd: 70, spe: 107},
 	},
 	snover: {
 		inherit: true,
@@ -1195,7 +1231,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Water", "Fairy"],
-		abilities: {0: "Swift Swim", 1: "Water Absorb"},
 		baseStats: {hp: 85, atk: 85, def: 85, spa: 85, spd: 85, spe: 85},
 	},
 	tepig: {
@@ -1460,12 +1495,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	fomantis: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Chlorophyll", 1: "Solar Power"},
+		abilities: {0: "Contrary"},
 	},
 	lurantis: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Skill Link", 1: "Solar Power"},
+		abilities: {0: "Contrary"},
 	},
 	typenull: {
 		inherit: true,
@@ -1630,7 +1665,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	frosmoth: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 70, atk: 65, def: 70, spa: 115, spd: 90, spe: 65},
 	},
 	stonjourner: {
 		inherit: true,

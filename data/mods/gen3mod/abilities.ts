@@ -113,20 +113,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 	},
 	stancechange: {
+		inherit: true,
 		gen: 3,
-		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use an attacking move, and changes to Shield Forme before attempting to use Protect.",
-		shortDesc: "If Aegislash, changes Forme to Blade before attacks and Shield before Protect.",
-		onModifyMovePriority: 1,
-		onModifyMove(move, attacker, defender) {
-			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed) return;
-			if (move.category === 'Status' && move.id !== 'protect') return;
-			const targetForme = (move.id === 'protect' ? 'Aegislash' : 'Aegislash-Blade');
-			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
-		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
-		name: "Stance Change",
-		rating: 4,
-		num: 176,
 	},
 	quickdraw: {
 		inherit: true,
@@ -651,6 +639,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 	},
 	moxie: {
+		inherit: true,
+		gen: 3,
+	},
+	hydration: {
+		inherit: true,
+		gen: 3,
+	},
+	steadfast: {
 		inherit: true,
 		gen: 3,
 	},

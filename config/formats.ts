@@ -26,7 +26,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 3] Modded",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause', 'Data Mod'],
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
 		banlist: ['Uber'],
 	},
 	{
