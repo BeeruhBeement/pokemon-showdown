@@ -1911,7 +1911,7 @@ doublesTier: "Illegal",
 		doublesTier: "DOU",
 	},
 	luvdisc: {
-		tier: "ZU",
+		tier: "PU",
 		doublesTier: "DOU",
 	},
 	bagon: {

@@ -1053,4 +1053,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	deepfreeze: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 };
