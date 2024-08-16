@@ -809,7 +809,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	dragonite: {
-		tier: "UUBL",
+		tier: "OU",
 	},
 	mewtwo: {
 		tier: "Uber",
@@ -1840,7 +1840,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	lucario: {
-		tier: "UUBL",
+		tier: "OU",
 	},
 	lucariomega: {
 		tier: "Uber",

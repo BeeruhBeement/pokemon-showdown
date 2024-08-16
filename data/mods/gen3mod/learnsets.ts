@@ -2755,7 +2755,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			attract: ["3M"],
 			block: ["3L16"],
-			bodypress: ["3M"],
 			bodyslam: ["3T"],
 			defensecurl: ["3T"],
 			doubleedge: ["3T"],
@@ -6463,7 +6462,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			mudshot: ["3L39"],
 			needlearm: ["3L26"],
 			painsplit: ["3L52"],
-			payback: ["3M"],
 			pinmissile: ["3L20"],
 			protect: ["3M"],
 			reflect: ["3M"],
@@ -7719,7 +7717,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			imprison: ["3L15"],
 			irondefense: ["3T"],
 			magiccoat: ["3T"],
-			payback: ["3M"],
 			protect: ["3M"],
 			pursuit: ["3L10"],
 			rage: ["3L5"],

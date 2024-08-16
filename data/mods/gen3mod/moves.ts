@@ -506,12 +506,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
-	hiddenpowerfairy: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-		basePower: 70,
-	},
 	aeroblast: {
 		inherit: true,
 		basePower: 80,
@@ -523,22 +517,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	block: {
 		inherit: true,
 		type: "Dark",
-	},
-	sleeppowder: {
-		inherit: true,
-		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1, powder: 1},
-	},
-	stunspore: {
-		inherit: true,
-		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1, powder: 1},
-	},
-	poisonpowder: {
-		inherit: true,
-		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1, powder: 1},
-	},
-	spore: {
-		inherit: true,
-		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1, powder: 1},
 	},
 	teleport: {
 		inherit: true,

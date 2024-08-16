@@ -1062,6 +1062,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 90, atk: 100, def: 70, spa: 105, spd: 75, spe: 40},
 	},
+	torkoal: {
+		inherit: true,
+		abilities: {0: "White Smoke", 1: "Drought"},
+	},
 	spinda: {
 		inherit: true,
 		types: ["Normal", "Fighting"],

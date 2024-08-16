@@ -222,7 +222,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
-			if (move.flags['powder'] && target !== source && this.dex.getImmunity('powder', target)) {
+			if (move.flags['powder'] && this.dex.getImmunity('powder', target)) {
 				this.add('-immune', target, '[from] ability: Overcoat');
 				return null;
 			}
@@ -239,16 +239,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	wellbakedbody: {
 		inherit: true,
 		gen: 3,
-		desc: "This Pokemon is immune to Fire-type moves and raises its Defense by 1 stage when hit by a Fire-type move.",
-		shortDesc: "This Pokemon's Defense is raised 1 stage if hit by a Fire move; Fire immunity.",
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Fire') {
-				if (!this.boost({def: 1})) {
-					this.add('-immune', target, '[from] ability: Well-Baked Body');
-				}
-				return null;
-			}
-		},
 	},
 	protosynthesis: {
 		inherit: true,
@@ -360,7 +350,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "Prevents opposing grounded Pokemon from switching out for 1 turn.",
 		onFoeTrapPokemon(pokemon) {
 			if (!pokemon.isAdjacent(this.effectState.target)) return;
-			if (pokemon.isGrounded() && pokemon.activeMoveActions <= 1) {
+			if (pokemon.isGrounded() && pokemon.activeMoveActions <= 0) {
 				pokemon.tryTrap(true);
 			}
 		},
@@ -370,7 +360,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Prevents opposing Pokemon from choosing to switch out, unless they are holding a Shed Shell, are a Ghost type, or also have this Ability.",
 		shortDesc: "Prevents foes without this ability from switching for 1 turn.",
 		onFoeTrapPokemon(pokemon) {
-			if (!pokemon.hasAbility('shadowtag') && pokemon.isAdjacent(this.effectState.target) && pokemon.activeMoveActions <= 1) {
+			if (!pokemon.hasAbility('shadowtag') && pokemon.isAdjacent(this.effectState.target) && pokemon.activeMoveActions <= 0) {
 				pokemon.tryTrap(true);
 			}
 		},
