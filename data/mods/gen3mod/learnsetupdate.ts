@@ -184,8 +184,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'tauros').learnset.ragingbull = ["3L35"];
 	dex.modData('Learnsets', 'tauros').learnset.rockclimb = ["3M"];
 	
-	dex.modData('Learnsets', 'magikarp').learnset.bounce = ["3S0"];
-	dex.modData('Learnsets', 'magikarp').learnset.hydropump = ["3S0"];
+	dex.modData('Learnsets', 'magikarp').learnset.bounce = ["3S8"];
+	dex.modData('Learnsets', 'magikarp').learnset.hydropump = ["3S8"];
 
 	dex.modData('Learnsets', 'omanyte').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'omastar').learnset.stealthrock = ["3M"];

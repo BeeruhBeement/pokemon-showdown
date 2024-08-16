@@ -1871,7 +1871,17 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		},
 	},
 	magikarp: {
+		inherit: true,
 		eventData: [
+			{generation: 4, level: 5, gender: "M", nature: "Relaxed", moves: ["splash"], pokeball: "pokeball"},
+			{generation: 4, level: 6, gender: "F", nature: "Rash", moves: ["splash"], pokeball: "pokeball"},
+			{generation: 4, level: 7, gender: "F", nature: "Hardy", moves: ["splash"], pokeball: "pokeball"},
+			{generation: 4, level: 5, gender: "F", nature: "Lonely", moves: ["splash"], pokeball: "pokeball"},
+			{generation: 4, level: 4, gender: "M", nature: "Modest", moves: ["splash"], pokeball: "pokeball"},
+			{generation: 5, level: 99, shiny: true, gender: "M", moves: ["flail", "hydropump", "bounce", "splash"], pokeball: "cherishball"},
+			{generation: 6, level: 1, shiny: 1, moves: ["splash", "celebrate", "happyhour"], pokeball: "cherishball"},
+			{generation: 7, level: 19, shiny: true, moves: ["splash", "bounce"], pokeball: "cherishball"},
+
 			{generation: 3, level: 10, shiny: 1, moves: ["splash", "bounce", "hydropump"]},
 		],
 	},
