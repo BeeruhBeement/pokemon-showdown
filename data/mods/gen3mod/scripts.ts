@@ -1,7 +1,7 @@
 import { learnsetUpdate } from "./learnsetupdate";
 
 export const Scripts: ModdedBattleScriptsData = {
-	gen: 6,
+	gen: 3,
 	inherit: 'gen3',
 	init() {
 		const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
