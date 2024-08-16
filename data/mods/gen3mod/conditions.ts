@@ -34,6 +34,10 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			}
 		},
 		onBeforeMove(pokemon, target, move) { return },
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
+		},
 	},
 	par: {
 		inherit: true,

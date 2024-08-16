@@ -349,6 +349,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	geodudealola: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Magnet Pull", 1: "Galvanize"},
 	},
 	graveler: {
 		inherit: true,
@@ -356,6 +357,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	graveleralola: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Magnet Pull", 1: "Galvanize"},
 	},
 	golem: {
 		inherit: true,
@@ -364,7 +366,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	golemalola: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Manget Pull", 1: "Galvanize"},
+		abilities: {0: "Magnet Pull", 1: "Galvanize"},
 	},
 	ponyta: {
 		inherit: true,
@@ -481,7 +483,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	hitmontop: {
 		inherit: true,
-		abilities: {0: "Intimidate"},
 	},
 	tangela: {
 		inherit: true,
@@ -888,7 +889,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	mightyena: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 90, def: 70, spa: 70, spd: 70, spe: 90},
+		baseStats: {hp: 70, atk: 90, def: 70, spa: 70, spd: 70, spe: 90},
 		abilities: {0: "Intimidate", 1: "Strong Jaw"},
 	},
 	zigzagoon: {

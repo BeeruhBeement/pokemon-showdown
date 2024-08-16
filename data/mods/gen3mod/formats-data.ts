@@ -281,7 +281,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UUBL",
 	},
 	dugtrioalola: {
-		tier: "UU",
+		tier: "RU",
 	},
 	meowth: {
 		tier: "LC",
@@ -839,7 +839,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	typhlosion: {
-		tier: "UU",
+		tier: "RU",
 	},
 	typhlosionhisui: {
 		tier: "Illegal",
@@ -971,7 +971,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	mismagius: {
-		tier: "UUBL",
+		tier: "RU",
 	},
 	unown: {
 		tier: "ZU",
@@ -1091,7 +1091,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	mantine: {
-		tier: "UU",
+		tier: "RU",
 	},
 	skarmory: {
 		tier: "OU",
@@ -1337,7 +1337,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	mawile: {
-		tier: "UU",
+		tier: "NU",
 	},
 	mawilemega: {
 		tier: "Illegal",
@@ -1349,7 +1349,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	aggron: {
-		tier: "UU",
+		tier: "RU",
 	},
 	aggronmega: {
 		tier: "Illegal",
@@ -2893,7 +2893,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	lurantis: {
-		tier: "UU",
+		tier: "RU",
 	},
 	lurantistotem: {
 		tier: "Illegal",

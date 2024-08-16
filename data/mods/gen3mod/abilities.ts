@@ -27,7 +27,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	strongjaw: {
 		inherit: true,
 		gen: 3,
-		shortDesc: "This Pokemon's bite-based attacks have 1.5x power.",
 	},
 	sturdy: {
 		inherit: true,
@@ -626,6 +625,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 	},
 	steadfast: {
+		inherit: true,
+		gen: 3,
+	},
+	unaware: {
 		inherit: true,
 		gen: 3,
 	},

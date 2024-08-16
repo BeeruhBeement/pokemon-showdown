@@ -160,7 +160,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	triplekick: {
 		inherit: true,
-		basePower: 20,
+		basePower: 15,
+		basePowerCallback(pokemon, target, move) {
+			return 15 * move.hit;
+		},
 	},
 	doublekick: {
 		inherit: true,
