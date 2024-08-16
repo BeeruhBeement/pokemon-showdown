@@ -120,18 +120,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Experimental/Unfinished",
 	},
 	{
-		name: "[Gen 1] Mod",
-
-		mod: 'gen1mod',
-		ruleset: ['Standard', 'Data Mod', 'Allow Tradeback'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 9] Poorly Done Fakemons",
-		mod: 'fakemons',
-		ruleset: ['[Gen 9] OU', '+Unreleased'],
-	},
-	{
 		name: "[Gen 3] Modded Uber",
 
 		mod: 'gen3mod',
@@ -180,6 +168,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen3mod',
 		team: 'randomCC',
 		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause', 'Data Mod'],
+	},
+	{
+		name: "[Gen 1] Mod",
+
+		mod: 'gen1mod',
+		ruleset: ['Standard', 'Data Mod', 'Allow Tradeback'],
+		banlist: ['Uber'],
+	},
+	{
+		name: "[Gen 9] Poorly Done Fakemons",
+		mod: 'fakemons',
+		ruleset: ['[Gen 9] OU', '+Unreleased'],
 	},
 
 	{

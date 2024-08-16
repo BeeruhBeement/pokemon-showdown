@@ -176,7 +176,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'magby').learnset.machpunch = ["3E"];
 	
 	dex.modData('Learnsets', 'pinsir').learnset.curse = ["3E"];
-	dex.modData('Learnsets', 'pinsir').learnset.PECK = ["3L1"];
+	dex.modData('Learnsets', 'pinsir').learnset.peck = ["3L1"];
 	dex.modData('Learnsets', 'pinsir').learnset.xscissor = ["3T", "3L30"];
 	dex.modData('Learnsets', 'pinsir').learnset.aerialace = ["3M"];
 	dex.modData('Learnsets', 'pinsir').learnset.stealthrock = ["3M"];
@@ -447,6 +447,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'spinda').learnset.leafstorm = ["3S1"];
 	dex.modData('Learnsets', 'spinda').learnset.vcreate = ["3S1"];
 	dex.modData('Learnsets', 'spinda').learnset.spinout = ["3S1"];
+	
+	dex.modData('Learnsets', 'vibrava').learnset.dragonclaw = ["3M"];
+	dex.modData('Learnsets', 'vibrava').learnset.uturn = ["3T"];
+	dex.modData('Learnsets', 'flygon').learnset.uturn = ["3T"];
 	
 	dex.modData('Learnsets', 'lileep').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'cradily').learnset.stealthrock = ["3M"];

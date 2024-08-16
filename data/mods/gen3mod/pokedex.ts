@@ -610,7 +610,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Overgrow", 1: "Regenerator"},
 	},
-	cyndaquill: {
+	cyndaquil: {
 		inherit: true,
 		abilities: {0: "Blaze", 1: "Flash Fire"},
 	},
@@ -722,6 +722,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Bug", "Dragon"],
 		abilities: {0: "Speed Boost", 1: "Compound Eyes"},
+	},
+	wooper: {
+		inherit: true,
+		abilities: {0: "Unaware", 1: "Water Absorb"},
+	},
+	quagsire: {
+		inherit: true,
+		abilities: {0: "Unaware", 1: "Water Absorb"},
+	},
+	espeon: {
+		inherit: true,
+		abilities: {0: "Magic Bounce"},
 	},
 	murkrow: {
 		inherit: true,
@@ -1511,6 +1523,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Heatproof", 1: "Skill Link"},
 	},
+	oricorio: {
+		inherit: true,
+		gen: 3,
+	},
 	fomantis: {
 		inherit: true,
 		gen: 3,
@@ -1722,7 +1738,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Swarm", 1: "Tinted Lens"},
-		baseStats: {hp: 71, atk: 97, def: 78, spa: 52, spd: 55, spe: 92},
 	},
 	shroodle: {
 		inherit: true,

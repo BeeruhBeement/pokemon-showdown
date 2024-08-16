@@ -138,9 +138,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	feint: {
 		inherit: true,
 		gen: 3,
+		basePower: 30,
+		desc: "If this move is successful, it deals double damage and breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+		shortDesc: "Double damage on Detect, Protect, and Quick/Wide Guard.",
+		basePowerCallback(pokemon, target, move) {
+			// You can't get here unless the pursuit succeeds
+			if (target.volatiles['protect']) {
+				this.debug('Feint damage boost');
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
 		onTry(source, target) { null },
-		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
-		shortDesc: "Nullifies Detect, Protect, and Quick/Wide Guard.",
 	},
 	armthrust: {
 		inherit: true,
@@ -1014,12 +1023,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
-
-	cascadecrash: {
+	revelationdance: {
 		inherit: true,
 		gen: 3,
-		isNonstandard: null,
 	},
+
 	shieldbash: {
 		inherit: true,
 		gen: 3,
