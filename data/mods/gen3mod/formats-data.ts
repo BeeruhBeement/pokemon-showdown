@@ -731,7 +731,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	flareon: {
-		tier: "NU",
+		tier: "PU",
 	},
 	espeon: {
 		tier: "UU",

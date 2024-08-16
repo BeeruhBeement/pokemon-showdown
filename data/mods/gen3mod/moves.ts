@@ -149,7 +149,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			}
 			return move.basePower;
 		},
-		onTry(source, target) { null },
+		onTry(source, target) {},
 	},
 	armthrust: {
 		inherit: true,
@@ -895,6 +895,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		self: {
 			onHit(source) { return },
 		},
+		selfSwitch: true,
 	},
 	multiattack: {
 		inherit: true,
@@ -1026,6 +1027,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	revelationdance: {
 		inherit: true,
 		gen: 3,
+		onModifyMove(move, pokemon) {
+			const types = pokemon.getTypes();
+			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
+			let type = types[0];
+			if (type === 'Bird') type = '???';
+			if (type === '???' && types[1]) type = types[1];
+			move.type = type;
+			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
+		},
+		onModifyType(move, pokemon) {},
 	},
 
 	shieldbash: {

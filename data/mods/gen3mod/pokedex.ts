@@ -1708,7 +1708,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Vital Spirit", 1: "Misty Surge"},
-		baseStats: {hp: 65, atk: 60, def: 75, spa: 80, spd: 91, spe: 64},
 	},
 	snom: {
 		inherit: true,
@@ -1721,7 +1720,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	stonjourner: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 100, atk: 105, def: 115, spa: 40, spd: 40, spe: 70},
 	},
 	eiscue: {
 		inherit: true,
@@ -1778,7 +1776,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Fairy", "Ground"],
 		abilities: {0: "Well-Baked Body", 1: "Gluttony"},
-		baseStats: {hp: 57, atk: 70, def: 105, spa: 60, spd: 80, spe: 75},
 	},
 	varoom: {
 		inherit: true,

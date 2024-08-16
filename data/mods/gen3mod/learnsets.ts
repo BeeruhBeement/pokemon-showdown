@@ -8217,6 +8217,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			hiddenpower: ["3M"],
 			secretpower: ["3M"],
+			coil: ["3L25"],
 		},
 	},
 	centiskorch: {
@@ -8250,6 +8251,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hiddenpower: ["3M"],
 			xscissor: ["3T"],
 			secretpower: ["3M"],
+			coil: ["3L25"],
 		},
 	},
 	milcery: {
