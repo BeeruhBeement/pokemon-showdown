@@ -1376,6 +1376,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 85, atk: 97, def: 63, spa: 97, spd: 63, spe: 98},
 		abilities: {0: "Keen Eye", 1: "Water Veil"},
 	},
+	cubchoo: {
+		inherit: true,
+		gen: 3,
+	},
+	beartic: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
+	},
 	vullaby: {
 		inherit: true,
 		gen: 3,
@@ -1524,6 +1533,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Heatproof", 1: "Skill Link"},
 	},
 	oricorio: {
+		inherit: true,
+		gen: 3,
+	},
+	oricoriopompom: {
+		inherit: true,
+		gen: 3,
+	},
+	oricoriopau: {
+		inherit: true,
+		gen: 3,
+	},
+	oricoriosensu: {
 		inherit: true,
 		gen: 3,
 	},
