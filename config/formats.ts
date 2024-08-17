@@ -181,6 +181,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'fakemons',
 		ruleset: ['[Gen 9] OU', '+Unreleased'],
 	},
+	{
+		name: "[Gen 9] National Dex One Mon",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod', '-All Pokemon', '+Golbat'],
+		banlist: [],
+		onBegin() {
+			this.add('-message', `One Mon is a National Dex metagame where only one Pokémon is legal`);
+			this.add('-message', `Standard NatDex Clauses apply except for Species Clause and there are no bans`);
+			this.add('-message', `The only legal Pokémon is Golbat`);
+			this.add('-message', `The one mon switches every once in a while`);
+			},
+	},
 
 	{
 		section: "National Dex Lower Tiers",

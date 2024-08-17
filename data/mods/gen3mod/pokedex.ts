@@ -1349,6 +1349,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	sawk: {
+		inherit: true,
+		gen: 3,
+	},
 	sewaddle: {
 		inherit: true,
 		gen: 3,
