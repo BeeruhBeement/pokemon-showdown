@@ -5,6 +5,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'blastoise').learnset.zapcannon = ["3L1"];
 	dex.modData('Learnsets', 'blastoise').learnset.zapbarrage = ["3L1"];
 	dex.modData('Learnsets', 'blastoise').learnset.steelroller = ["3T"];
+	dex.modData('Learnsets', 'blastoise').learnset.scald = ["3T"];
 
 	dex.modData('Learnsets', 'butterfree').learnset.encore = ["3L53"];
 	dex.modData('Learnsets', 'butterfree').learnset.tailwind = ["3L61"];
@@ -96,15 +97,26 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'persian').learnset.uturn = ["3T"];
 	
 	dex.modData('Learnsets', 'poliwag').learnset.lovelykiss = ["3E"];
+	dex.modData('Learnsets', 'poliwag').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'poliwhirl').learnset.scald = ["3T"];
 	dex.modData('Learnsets', 'poliwrath').learnset.circlethrow = ["3L53"];
 	dex.modData('Learnsets', 'poliwrath').learnset.rockclimb = ["3M"];
 	dex.modData('Learnsets', 'poliwrath').learnset.drainpunch = ["3T"];
+	dex.modData('Learnsets', 'poliwrath').learnset.scald = ["3T"];
 	dex.modData('Learnsets', 'politoed').learnset.bounce = ["3L37"];
 	dex.modData('Learnsets', 'politoed').learnset.uproar = ["3L48"];
 	dex.modData('Learnsets', 'politoed').learnset.hypervoice = ["3L53"];
+	dex.modData('Learnsets', 'politoed').learnset.scald = ["3T"];
 	
 	dex.modData('Learnsets', 'ponyta').learnset.morningsun = ["3E"];
 	dex.modData('Learnsets', 'rapidash').learnset.megahorn = ["3L1"];
+	
+	dex.modData('Learnsets', 'slowpoke').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'slowpoke').learnset.teleport = ["3T"];
+	dex.modData('Learnsets', 'slowbro').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'slowbro').learnset.teleport = ["3T"];
+	dex.modData('Learnsets', 'slowking').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'slowking').learnset.teleport = ["3T"];
 	
 	dex.modData('Learnsets', 'farfetchd').learnset.firstimpression = ["3E"];
 	dex.modData('Learnsets', 'farfetchd').learnset.aeroblast = ["3L55"];
@@ -113,6 +125,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData('Learnsets', 'seel').learnset.haze = ["3E"];
 	dex.modData('Learnsets', 'dewgong').learnset.megahorn = ["3L65"];
+	dex.modData('Learnsets', 'dewgong').learnset.frostbite = ["3L65"];
 	
 	dex.modData('Learnsets', 'grimer').learnset.gunkshot = ["3L44"];
 	dex.modData('Learnsets', 'muk').learnset.gunkshot = ["3L54"];
@@ -156,7 +169,14 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'kangaskhan').learnset.drainpunch = ["3T"];
 
 	dex.modData('Learnsets', 'goldeen').learnset.swordsdance = ["3T"];
+	dex.modData('Learnsets', 'goldeen').learnset.scald = ["3T"];
 	dex.modData('Learnsets', 'seaking').learnset.swordsdance = ["3T"];
+	dex.modData('Learnsets', 'seaking').learnset.scald = ["3T"];
+
+	dex.modData('Learnsets', 'staryu').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'staryu').learnset.teleport = ["3T"];
+	dex.modData('Learnsets', 'starmie').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'starmie').learnset.teleport = ["3T"];
 	
 	dex.modData('Learnsets', 'mrmime').learnset.dazzlinggleam = ["3M"];
 	dex.modData('Learnsets', 'mrmime').learnset.teleport = ["3T"];
@@ -187,6 +207,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'magikarp').learnset.bounce = ["3S8"];
 	dex.modData('Learnsets', 'magikarp').learnset.hydropump = ["3S8"];
 
+	dex.modData('Learnsets', 'lapras').learnset.frostbite = ["3L55"];
+
+	dex.modData('Learnsets', 'vaporeon').learnset.scald = ["3L1"];
+	dex.modData('Learnsets', 'jolteon').learnset.dazzlinggleam = ["3L1"];
+	dex.modData('Learnsets', 'flareon').learnset.superpower = ["3L1"];
+
 	dex.modData('Learnsets', 'omanyte').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'omastar').learnset.stealthrock = ["3M"];
 
@@ -202,6 +228,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData('Learnsets', 'snorlax').learnset.rocksmash = ["3M"];
 	dex.modData('Learnsets', 'snorlax').learnset.steelroller = ["3T"];
+
+	dex.modData('Learnsets', 'articuno').learnset.defog = ["3L1"];
+
+	dex.modData('Learnsets', 'zapdos').learnset.defog = ["3L1"];
+
+	dex.modData('Learnsets', 'moltres').learnset.defog = ["3L1"];
 	
 	dex.modData('Learnsets', 'dratini').learnset.extremespeed = ["3E"];
 	dex.modData('Learnsets', 'dratini').learnset.dragondance = ["3L45", "3E"];
@@ -223,6 +255,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'mew').learnset.energyball = ["3M"];
 	dex.modData('Learnsets', 'mew').learnset.nightfall = ["3M"];
 	dex.modData('Learnsets', 'mew').learnset.xscissor = ["3T"];
+	dex.modData('Learnsets', 'mew').learnset.scald = ["3T"];
 
 	dex.modData('Learnsets', 'totodile').learnset.dragondance = ["3E"];
 
@@ -262,15 +295,32 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData('Learnsets', 'chinchou').learnset.voltswitch = ["3L34"];
 	dex.modData('Learnsets', 'chinchou').learnset.dazzlinggleam = ["3M"];
+	dex.modData('Learnsets', 'chinchou').learnset.scald = ["3T"];
 	dex.modData('Learnsets', 'lanturn').learnset.paraboliccharge = ["3L1"];
 	dex.modData('Learnsets', 'lanturn').learnset.voltswitch = ["3L40"];
 	dex.modData('Learnsets', 'lanturn').learnset.dazzlinggleam = ["3M"];
+	dex.modData('Learnsets', 'lanturn').learnset.scald = ["3T"];
+	
+	dex.modData('Learnsets', 'ampharos').learnset.tailglow = ["3L1"];
+
+	dex.modData('Learnsets', 'togetic').learnset.roost = ["3L51"];
+	dex.modData('Learnsets', 'togetic').learnset.defog = ["3L51"];
+	
+	dex.modData('Learnsets', 'natu').learnset.roost = ["3L39"];
+	dex.modData('Learnsets', 'xatu').learnset.roost = ["3L47"];
+	
+	dex.modData('Learnsets', 'marill').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'azumarill').learnset.scald = ["3T"];
 	
 	dex.modData('Learnsets', 'sudowoodo').learnset.meditate = ["3L1"];
 	dex.modData('Learnsets', 'sudowoodo').learnset.headsmash = ["3L54"];
 
 	dex.modData('Learnsets', 'jumpluff').learnset.rapidspin = ['3L52'];
 	dex.modData('Learnsets', 'jumpluff').learnset.aeroblast = ['3L64'];
+
+	dex.modData('Learnsets', 'wooper').learnset.recover = ["3E"];
+	dex.modData('Learnsets', 'wooper').learnset.scald = ["3T"];
+	dex.modData('Learnsets', 'quagsire').learnset.scald = ["3T"];
 
 	dex.modData('Learnsets', 'sunflora').learnset.ember = ['3L1'];
 	dex.modData('Learnsets', 'sunflora').learnset.firespin = ['3L25'];
@@ -294,6 +344,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'mismagius').learnset.mysticalfire = ['3L1'];
 	
 	dex.modData('Learnsets', 'qwilfish').learnset.poisontail = ['3L48'];
+	dex.modData('Learnsets', 'qwilfish').learnset.scald = ["3T"];
 	
 	dex.modData('Learnsets', 'shuckle').learnset.stealthrock = ["3M"];
 	
@@ -313,20 +364,28 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'piloswine').learnset.iceshard = ['3L1'];
 	
 	dex.modData('Learnsets', 'corsola').learnset.stealthrock = ["3M"];
+	dex.modData('Learnsets', 'corsola').learnset.scald = ["3T"];
 	
 	dex.modData('Learnsets', 'remoraid').learnset.waterspout = ['3E'];
 	dex.modData('Learnsets', 'remoraid').learnset.zapcannon = ['3E'];
 	dex.modData('Learnsets', 'remoraid').learnset.zapbarrage = ['3E'];
+	dex.modData('Learnsets', 'remoraid').learnset.scald = ["3T"];
 	dex.modData('Learnsets', 'octillery').learnset.gunkshot = ['3L1'];
 	dex.modData('Learnsets', 'octillery').learnset.headsmash = ['3L1'];
 	dex.modData('Learnsets', 'octillery').learnset.energyball = ['3M'];
 	dex.modData('Learnsets', 'octillery').learnset.thunder = ['3M'];
 	dex.modData('Learnsets', 'octillery').learnset.thunderbolt = ['3M'];
+	dex.modData('Learnsets', 'octillery').learnset.scald = ['3T'];
 	
 	dex.modData('Learnsets', 'delibird').learnset.drillpeck = ["3L25"];
 	dex.modData('Learnsets', 'delibird').learnset.deepfreeze = ["3L50"];
+	dex.modData('Learnsets', 'delibird').learnset.frostbite = ["3L75"];
 	
+	dex.modData('Learnsets', 'mantine').learnset.signalbeam = ['3L1'];
+	dex.modData('Learnsets', 'mantine').learnset.hurricane = ['3L1'];
+	dex.modData('Learnsets', 'mantine').learnset.roost = ['3L1'];
 	dex.modData('Learnsets', 'mantine').learnset.dualwingbeat = ['3T'];
+	dex.modData('Learnsets', 'mantine').learnset.scald = ["3T"];
 
 	dex.modData('Learnsets', 'phanpy').learnset.headsmash = ["3E"];
 
@@ -451,6 +510,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'vibrava').learnset.dragonclaw = ["3M"];
 	dex.modData('Learnsets', 'vibrava').learnset.uturn = ["3T"];
 	dex.modData('Learnsets', 'flygon').learnset.uturn = ["3T"];
+
+	dex.modData('Learnsets', 'altaria').learnset.roost = ["3L70"];
+	dex.modData('Learnsets', 'altaria').learnset.defog = ["3L70"];
+	
+	dex.modData('Learnsets', 'barboach').learnset.scald = ['3T'];
+	dex.modData('Learnsets', 'whiscash').learnset.scald = ['3T'];
 	
 	dex.modData('Learnsets', 'lileep').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'cradily').learnset.stealthrock = ["3M"];
@@ -462,17 +527,25 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'armaldo').learnset.knockoff = ["3L67"];
 	dex.modData('Learnsets', 'armaldo').learnset.xscissor = ["3L73", "3T"];
 	
+	dex.modData('Learnsets', 'feebas').learnset.scald = ['3T'];
+	dex.modData('Learnsets', 'milotic').learnset.scald = ['3T'];
+	
 	dex.modData('Learnsets', 'tropius').learnset.dragondance = ["3E"];
 	dex.modData('Learnsets', 'tropius').learnset.leafblade = ["3E"];
 
 	dex.modData('Learnsets', 'snorunt').learnset.weatherball = ["3E", "3T"];
 	dex.modData('Learnsets', 'snorunt').learnset.disable = ["3E"];
 	dex.modData('Learnsets', 'snorunt').learnset.block = ["3E"];
+	dex.modData('Learnsets', 'snorunt').learnset.frostbite = ["3E"];
 	dex.modData('Learnsets', 'glalie').learnset.deepfreeze = ["3L68"];
 	dex.modData('Learnsets', 'glalie').learnset.steelroller = ["3T"];
 	dex.modData('Learnsets', 'glalie').learnset.iceshard = ["3L1"];
 	dex.modData('Learnsets', 'glalie').learnset.rockslide = ["3L1"];
 	dex.modData('Learnsets', 'glalie').learnset.weatherball = ["3T"];
+	
+	dex.modData('Learnsets', 'spheal').learnset.frostbite = ["3L49"];
+	dex.modData('Learnsets', 'sealeo').learnset.frostbite = ["3L55"];
+	dex.modData('Learnsets', 'walrein').learnset.frostbite = ["3L65"];
 	
 	dex.modData('Learnsets', 'relicanth').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'relicanth').learnset.headsmash = ["3L78"];
@@ -486,6 +559,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData('Learnsets', 'regice').learnset.stealthrock = ["3M"];
 	dex.modData('Learnsets', 'regice').learnset.recover = ["3L73"];
+	dex.modData('Learnsets', 'regice').learnset.frostbite = ["3L73"];
+	dex.modData('Learnsets', 'regice').learnset.drainpunch = ["3T"];
 	dex.modData('Learnsets', 'regice').learnset.rockclimb = ["3M"];
 	dex.modData('Learnsets', 'regice').learnset.drainpunch = ["3T"];
 

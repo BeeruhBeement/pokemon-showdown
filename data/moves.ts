@@ -22335,6 +22335,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 	},
 	deepfreeze: {
+		isNonstandard: "Custom",
 		num: 5013,
 		accuracy: 75,
 		basePower: 0,
@@ -22348,5 +22349,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Ice",
 		contestType: "Beautiful",
+	},
+	frostbite: {
+		isNonstandard: "Custom",
+		num: 5014,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Frostbite",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		thawsTarget: true,
+		secondary: {
+			chance: 20,
+			status: 'frz',
+		},
+		target: "normal",
+		type: "Ice",
+		contestType: "Tough",
 	},
 };

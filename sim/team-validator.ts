@@ -567,7 +567,7 @@ export class TeamValidator {
 			name = `${set.name} (${set.species})`;
 		}
 
-		if (!set.teraType && this.gen === 9) {
+		if ((!set.teraType || set.teraType === 'Sound') && this.gen === 9) {
 			set.teraType = species.types[0];
 		}
 

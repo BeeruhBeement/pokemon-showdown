@@ -187,17 +187,19 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod'],
 		banlist: [],
 		onBegin() {
+			const legalMon = 'Golbat';
 			this.add('-message', `One Mon is a National Dex metagame where only one Pokémon is legal`);
 			this.add('-message', `Standard NatDex Clauses apply except for Species Clause and there are no bans`);
-			this.add('-message', `The only legal Pokémon is Golbat`);
+			this.add('-message', `The only legal Pokémon is ${legalMon}`);
 			this.add('-message', `The one mon switches every once in a while`);
-			},
-		onValidateSet(set) {
-			const species = this.dex.species.get(set.species);
-			if (species.baseSpecies != 'Golbat') {
-				return [`Only Golbat is allowed.`];
-			}
 		},
+		onValidateSet(set) {
+			const legalMon = 'Golbat';
+			const species = this.dex.species.get(set.species);
+			if (species.baseSpecies !== legalMon) {
+				return [`Only ${legalMon} is allowed.`];
+			}
+		},		
 	},
 
 	{

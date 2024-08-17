@@ -1379,10 +1379,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	volbeat: {
-		tier: "NU",
+		tier: "PU",
 	},
 	illumise: {
-		tier: "PU",
+		tier: "ZU",
 	},
 	budew: {
 		tier: "LC",
@@ -1882,22 +1882,22 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	rotom: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	rotomheat: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	rotomwash: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	rotomfrost: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	rotomfan: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	rotommow: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	uxie: {
 		tier: "Illegal",
@@ -2687,7 +2687,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	trevenant: {
-		tier: "NU",
+		tier: "PU",
 	},
 	pumpkaboo: {
 		tier: "Illegal",

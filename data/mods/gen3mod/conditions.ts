@@ -21,6 +21,12 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			return false;
 		},
 	},
+	brn: {
+		inherit: true,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
+		},
+	},
 	frz: {
 		inherit: true,
 		onStart(target, source, sourceEffect) {

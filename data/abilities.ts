@@ -5656,7 +5656,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	
 	pixieveil: {
 		isNonstandard: "Custom",
-		flags: {},
+		flags: {breakable: 1},
 		name: "Pixie Veil",
 		rating: 2,
 		num: 5000,
@@ -5983,5 +5983,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Impenetrable",
 		rating: 4,
 		num: 5018,
+	},
+	possessed: {
+		// unused
+		isNonstandard: "Custom",
+		flags: {breakable: 1},
+		name: "Possessed",
+		rating: 2,
+		num: 5019,
+		onStart(pokemon) {
+			if (pokemon.hasType('Ghost')) return;
+			if (!pokemon.addType('Ghost')) return;
+			this.add('-start', pokemon, 'typeadd', 'Ghost', '[from] ability: Possessed');
+		},
 	},
 };

@@ -551,7 +551,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	paraboliccharge: {
 		inherit: true,
 		gen: 3,
-		basePower: 65,
+		basePower: 75,
 	},
 	snore: {
 		inherit: true,
@@ -1016,6 +1016,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onModifyType(move, pokemon) {},
 	},
+	scald: {
+		inherit: true,
+		gen: 3,
+		desc: "Has a 20% chance to burn the target. The target thaws out if it is frozen.",
+		shortDesc: "20% chance to burn the target. Thaws target.",
+		secondary: {
+			chance: 20,
+			status: 'brn',
+		},
+	},
 
 	shieldbash: {
 		inherit: true,
@@ -1063,6 +1073,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	deepfreeze: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	frostbite: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

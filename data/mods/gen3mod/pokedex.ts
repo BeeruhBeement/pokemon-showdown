@@ -260,6 +260,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	parasong: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 120, spe: 30},
 	},
 	venonat: {
@@ -525,6 +526,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	kisscope: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 		abilities: {0: "Sniper", 1: "Dry Skin"},
 	},
 	magby: {
@@ -1267,6 +1269,30 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	abomasnow: {
+		inherit: true,
+		gen: 3,
+	},
+	rotom: {
+		inherit: true,
+		gen: 3,
+	},
+	rotomheat: {
+		inherit: true,
+		gen: 3,
+	},
+	rotomwash: {
+		inherit: true,
+		gen: 3,
+	},
+	rotomfrost: {
+		inherit: true,
+		gen: 3,
+	},
+	rotomfan: {
+		inherit: true,
+		gen: 3,
+	},
+	rotommow: {
 		inherit: true,
 		gen: 3,
 	},

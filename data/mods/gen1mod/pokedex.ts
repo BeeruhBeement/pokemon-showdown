@@ -729,7 +729,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 1,
 		types: ["Normal", "Nuclear"],
 		baseStats: {hp: 75, atk: 85, def: 65, spa: 75, spd: 75, spe: 65},
-		cosmeticFormes: null,
 	},
 	lunatone: {
 		inherit: true,

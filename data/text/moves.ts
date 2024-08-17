@@ -7621,4 +7621,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Deep Freeze",
 		shortDesc: "Freezes the target.",
 	},
+	frostbite: {
+		name: "Frostbite",
+		desc: "Has a 20% chance to freeze the target.",
+		shortDesc: "20% chance to freeze the target.",
+	},
 };
