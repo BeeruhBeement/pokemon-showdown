@@ -184,7 +184,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] National Dex One Mon",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod', '-All Pokemon', '+Golbat'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod'],
 		banlist: [],
 		onBegin() {
 			this.add('-message', `One Mon is a National Dex metagame where only one Pokémon is legal`);
@@ -192,6 +192,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			this.add('-message', `The only legal Pokémon is Golbat`);
 			this.add('-message', `The one mon switches every once in a while`);
 			},
+		onValidateSet(set) {
+			const species = this.dex.species.get(set.species);
+			if (species.baseSpecies != 'Golbat') {
+				return [`Only Golbat is allowed.`];
+			}
+		},
 	},
 
 	{

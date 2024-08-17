@@ -5919,7 +5919,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			secretpower: ["3M"],
 			sleeptalk: ["3T"],
 			snore: ["3T"],
-			stoneedge: ["3M"],
 			strength: ["3M"],
 			substitute: ["3M"],
 			sunnyday: ["3M"],

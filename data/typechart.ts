@@ -415,6 +415,7 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 	// Custom
 	
 	sound: {
+		isNonstandard: 'Custom',
 		damageTaken: {
 			Bug: 0,
 			Dark: 0,

@@ -19753,6 +19753,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	// gen 3 mod
 
 	castformsandy: {
+		isNonstandard: "Custom",
 		num: 351,
 		name: "Castform-Sandy",
 		baseSpecies: "Castform",
@@ -19766,9 +19767,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Fairy", "Amorphous"],
 		requiredAbility: "Forecast",
 		battleOnly: "Castform",
-		isNonstandard: "Custom",
 	},
 	arceussound: {
+		isNonstandard: "Custom",
 		num: 493,
 		name: "Arceus-Sound",
 		baseSpecies: "Arceus",
@@ -19802,6 +19803,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		changesFrom: "Silvally",
 	},
 	parasong: {
+		isNonstandard: "Custom",
 		num: -10000,
 		name: "Parasong",
 		types: ["Bug", "Steel"],
@@ -19817,6 +19819,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		gen: -1,
 	},
 	kisscope: {
+		isNonstandard: "Custom",
 		num: -10001,
 		name: "Kisscope",
 		types: ["Ice", "Psychic"],

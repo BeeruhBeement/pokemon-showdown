@@ -249,6 +249,10 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Water: 1,
 		},
 	},
+	sound: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	steel: {
 		inherit: true,
 		damageTaken: {
