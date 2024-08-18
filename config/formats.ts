@@ -199,7 +199,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			if (species.baseSpecies !== legalMon) {
 				return [`Only ${legalMon} is allowed.`];
 			}
-		},		
+		},
+	},
+	{
+		name: "[Gen 3] P/S Split OU",
+		mod: 'gen3pssplit',
+		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
+		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
 	},
 
 	{

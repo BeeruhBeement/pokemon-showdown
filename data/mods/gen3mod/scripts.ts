@@ -20,7 +20,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 
 		learnsetUpdate(this);
-	},		
+	},
 	actions: {
 		inherit: true,
 		hitStepTryImmunity(targets: Pokemon[], pokemon: Pokemon, move: ActiveMove) {
