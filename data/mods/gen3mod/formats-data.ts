@@ -314,7 +314,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	primeape: {
-		tier: "NFE",
+		tier: "NU",
 	},
 	growlithe: {
 		tier: "LC",
@@ -1193,7 +1193,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	mightyena: {
-		tier: "PU",
+		tier: "PUBL",
 	},
 	zigzagoon: {
 		tier: "LC",
