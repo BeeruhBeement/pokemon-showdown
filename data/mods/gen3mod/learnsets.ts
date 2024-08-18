@@ -1862,21 +1862,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bulkup: ["3M"],
 		},
 	},
-	magikarp: {
-		inherit: true,
-		eventData: [
-			{generation: 4, level: 5, gender: "M", nature: "Relaxed", moves: ["splash"], pokeball: "pokeball"},
-			{generation: 4, level: 6, gender: "F", nature: "Rash", moves: ["splash"], pokeball: "pokeball"},
-			{generation: 4, level: 7, gender: "F", nature: "Hardy", moves: ["splash"], pokeball: "pokeball"},
-			{generation: 4, level: 5, gender: "F", nature: "Lonely", moves: ["splash"], pokeball: "pokeball"},
-			{generation: 4, level: 4, gender: "M", nature: "Modest", moves: ["splash"], pokeball: "pokeball"},
-			{generation: 5, level: 99, shiny: true, gender: "M", moves: ["flail", "hydropump", "bounce", "splash"], pokeball: "cherishball"},
-			{generation: 6, level: 1, shiny: 1, moves: ["splash", "celebrate", "happyhour"], pokeball: "cherishball"},
-			{generation: 7, level: 19, shiny: true, moves: ["splash", "bounce"], pokeball: "cherishball"},
-
-			{generation: 3, level: 10, shiny: 1, moves: ["splash", "bounce", "hydropump"]},
-		],
-	},
 	munchlax: {
 		learnset: {
 			amnesia: ["3L5"],
@@ -2516,55 +2501,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			icebeam: ["3M"],
 			psyshieldbash: ["3L0"],
 		},
-	},
-	raikou: {
-		inherit: true,
-		eventData: [
-			{generation: 3, level: 50, shiny: 1, moves: ["thundershock", "roar", "quickattack", "spark"]},
-			{generation: 3, level: 70, moves: ["quickattack", "spark", "reflect", "crunch"], pokeball: "pokeball"},
-			{generation: 4, level: 40, shiny: 1, moves: ["roar", "quickattack", "spark", "reflect"]},
-			{generation: 4, level: 30, shiny: true, nature: "Rash", moves: ["zapcannon", "aurasphere", "extremespeed", "weatherball"], pokeball: "cherishball"},
-			{generation: 6, level: 50, shiny: 1, moves: ["spark", "reflect", "crunch", "thunderfang"]},
-			{generation: 7, level: 60, shiny: 1, moves: ["reflect", "crunch", "thunderfang", "discharge"]},
-			{generation: 7, level: 60, moves: ["reflect", "crunch", "thunderfang", "discharge"], pokeball: "cherishball"},
-			{generation: 7, level: 100, moves: ["thunderbolt", "voltswitch", "extrasensory", "calmmind"], pokeball: "cherishball"},
-			{generation: 8, level: 70, shiny: 1, moves: ["thunderbolt", "howl", "extremespeed", "weatherball"]},
-			{generation: 9, level: 70, moves: ["raindance", "reflect", "discharge", "extrasensory"]},
-
-			{generation: 3, level: 50, nature: "Hasty", moves: ["extremespeed", "thunder", "calmmind", "surf"]},
-		],
-	},
-	entei: {
-		inherit: true,
-		eventData: [
-			{generation: 3, level: 50, shiny: 1, moves: ["ember", "roar", "firespin", "stomp"]},
-			{generation: 3, level: 70, moves: ["firespin", "stomp", "flamethrower", "swagger"], pokeball: "pokeball"},
-			{generation: 4, level: 40, shiny: 1, moves: ["roar", "firespin", "stomp", "flamethrower"]},
-			{generation: 4, level: 30, shiny: true, nature: "Adamant", moves: ["flareblitz", "howl", "extremespeed", "crushclaw"], pokeball: "cherishball"},
-			{generation: 6, level: 50, shiny: 1, moves: ["stomp", "flamethrower", "swagger", "firefang"]},
-			{generation: 7, level: 60, shiny: 1, moves: ["stomp", "bite", "swagger", "lavaplume"]},
-			{generation: 7, level: 60, moves: ["stomp", "bite", "swagger", "lavaplume"], pokeball: "cherishball"},
-			{generation: 7, level: 100, moves: ["sacredfire", "stoneedge", "ironhead", "flamecharge"], pokeball: "cherishball"},
-			{generation: 8, level: 70, shiny: 1, moves: ["flamethrower", "scaryface", "extremespeed", "crunch"]},
-			{generation: 9, level: 70, moves: ["sunnyday", "swagger", "lavaplume", "extrasensory"]},
-
-			{generation: 3, level: 50, nature: "Hasty", moves: ["extremespeed", "fireblast", "calmmind", "thunderbolt"]},
-		],
-	},
-	suicune: {
-		inherit: true,
-		eventData: [
-			{generation: 3, level: 50, shiny: 1, moves: ["bubblebeam", "raindance", "gust", "aurorabeam"]},
-			{generation: 3, level: 70, moves: ["gust", "aurorabeam", "mist", "mirrorcoat"], pokeball: "pokeball"},
-			{generation: 4, level: 40, shiny: 1, moves: ["raindance", "gust", "aurorabeam", "mist"]},
-			{generation: 4, level: 30, shiny: true, nature: "Relaxed", moves: ["sheercold", "airslash", "extremespeed", "aquaring"], pokeball: "cherishball"},
-			{generation: 6, level: 50, shiny: 1, moves: ["aurorabeam", "mist", "mirrorcoat", "icefang"]},
-			{generation: 7, level: 60, shiny: 1, moves: ["bubblebeam", "aurorabeam", "mist", "raindance"]},
-			{generation: 8, level: 70, shiny: 1, moves: ["liquidation", "extrasensory", "extremespeed", "calmmind"]},
-			{generation: 9, level: 70, moves: ["raindance", "mirrorcoat", "surf", "extrasensory"]},
-
-			{generation: 3, level: 50, nature: "Hasty", moves: ["extremespeed", "hydropump", "calmmind", "flamethrower"]},
-		],
 	},
 	zigzagoongalar: {
 		learnset: {
@@ -3339,14 +3275,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			steelroller: ["3T"],
 			rockclimb: ["3M"],
 		},
-	},
-	spinda: {
-		inherit: true,
-		eventData: [
-			{generation: 3, level: 5, shiny: 1, moves: ["tackle", "uproar", "sing"], pokeball: "pokeball", emeraldEventEgg: true},
-			
-			{generation: 3, level: 50, moves: ["superpower", "leafstorm", "vcreate", "spinout"]},
-		],
 	},
 	cacnea: {
 		learnset: {
