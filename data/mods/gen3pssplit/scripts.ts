@@ -1,3 +1,5 @@
+import {Dex} from '../../../sim/dex';
+
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen3',
 	gen: 3,
