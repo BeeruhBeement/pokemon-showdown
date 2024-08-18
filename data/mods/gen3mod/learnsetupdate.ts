@@ -95,6 +95,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData('Learnsets', 'persian').learnset.switcheroo = ["3L1"];
 	dex.modData('Learnsets', 'persian').learnset.feint = ["3L54"];
 	dex.modData('Learnsets', 'persian').learnset.uturn = ["3T"];
+
+	dex.modData('Learnsets', 'primeape').learnset.stealthrock = ["3M"];
 	
 	dex.modData('Learnsets', 'poliwag').learnset.lovelykiss = ["3E"];
 	dex.modData('Learnsets', 'poliwag').learnset.scald = ["3T"];

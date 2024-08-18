@@ -1279,22 +1279,27 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	rotomheat: {
 		inherit: true,
 		gen: 3,
+		types: ["Electric", "Fire"],
 	},
 	rotomwash: {
 		inherit: true,
 		gen: 3,
+		types: ["Electric", "Water"],
 	},
 	rotomfrost: {
 		inherit: true,
 		gen: 3,
+		types: ["Electric", "Ice"],
 	},
 	rotomfan: {
 		inherit: true,
 		gen: 3,
+		types: ["Electric", "Flying"],
 	},
 	rotommow: {
 		inherit: true,
 		gen: 3,
+		types: ["Electric", "Grass"],
 	},
 	phione: {
 		inherit: true,

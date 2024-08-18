@@ -4780,6 +4780,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M", "3L20"],
 
 			suckerpunch: ["3T"],
+			defog: ["3L1"],
 		},
 	},
 	skuntank: {
@@ -4832,6 +4833,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			suckerpunch: ["3T"],
 			pursuit: ["3M"],
+			defog: ["3L1"],
 		},
 	},
 	bronzor: {
