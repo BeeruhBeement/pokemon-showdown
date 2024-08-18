@@ -1026,6 +1026,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'brn',
 		},
 	},
+	nastyplot: {
+		inherit: true,
+		gen: 3,
+	},
+	tailglow: {
+		inherit: true,
+		desc: "Raises the user's Special Attack by 3 stages.",
+		shortDesc: "Raises the user's Sp. Atk by 3.",
+		boosts: {
+			spa: 3,
+		},
+	},
 
 	shieldbash: {
 		inherit: true,

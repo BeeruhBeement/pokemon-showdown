@@ -781,6 +781,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
+	desolateland: {
+		inherit: true,
+		gen: 3,
+		onEnd(pokemon) {},
+	},
+	primordialsea: {
+		inherit: true,
+		gen: 3,
+		onEnd(pokemon) {},
+	},
 
 	// custom abilities
 	

@@ -1207,6 +1207,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 73, atk: 50, def: 65, spa: 70, spd: 85, spe: 97},
 		abilities: {0: "Swift Swim", 1: "Heart Veil"},
 	},
+	kyogre: {
+		inherit: true,
+		abilities: {0: "Primordial Sea"},
+	},
+	groudon: {
+		inherit: true,
+		abilities: {0: "Desolate Land"},
+	},
 	cranidos: {
 		inherit: true,
 		gen: 3,

@@ -15,15 +15,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.modData('Moves', i).category = newCategory;
 			}
 		}
-		for (const i in this.data.Pokedex) {
-			if (this.species.get(i).gen > 3) this.modData('Pokedex', i).gen = 3;
-		}
-		for (const i in this.data.Abilities) {
-			if (this.abilities.get(i).gen > 3) this.modData('Abilities', i).gen = 3;
-		}
-		for (const species in this.data.Pokedex) {
-			delete this.data.Pokedex[species]?.abilities?.H;
-		}
 
 		learnsetUpdate(this);
 	},

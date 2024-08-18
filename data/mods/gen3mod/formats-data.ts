@@ -344,7 +344,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	kadabra: {
-		tier: "NFE",
+		tier: "NU",
 	},
 	alakazam: {
 		tier: "OU",
@@ -752,7 +752,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	porygon2: {
-		tier: "NFE",
+		tier: "NU",
 	},
 	porygonz: {
 		tier: "Illegal",
@@ -1385,10 +1385,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "ZU",
 	},
 	budew: {
-		tier: "LC",
+		tier: "Illegal",
 	},
 	roselia: {
-		tier: "NFE",
+		tier: "NU",
 	},
 	roserade: {
 		tier: "Illegal",
