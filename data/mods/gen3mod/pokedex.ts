@@ -1274,7 +1274,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rotom: {
 		inherit: true,
-		gen: 3,
 	},
 	rotomheat: {
 		inherit: true,
