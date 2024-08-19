@@ -508,7 +508,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	aeroblast: {
 		inherit: true,
-		basePower: 80,
 	},
 	roost: {
 		inherit: true,
@@ -1070,6 +1069,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 		},
+	},
+	rockpolish: {
+		inherit: true,
+		gen: 3,
+	},
+	healingwish: {
+		inherit: true,
+		gen: 3,
+	},
+	lusterpurge: {
+		inherit: true,
+		basePower: 95,
+	},
+	mistball: {
+		inherit: true,
+		basePower: 95,
+	},
+	psystrike: {
+		inherit: true,
+		basePower: 95,
 	},
 
 	shieldbash: {

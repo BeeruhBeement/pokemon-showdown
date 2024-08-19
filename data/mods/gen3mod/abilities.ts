@@ -791,6 +791,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		onEnd(pokemon) {},
 	},
+	neuroforce: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	
@@ -820,16 +824,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	cleanser: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	stonebreaker: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	steelbreaker: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

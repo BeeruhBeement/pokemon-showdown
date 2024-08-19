@@ -26,33 +26,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Steel"],
 		abilities: {0: "Torrent", 1: "Skill Link"},
 	},
-	caterpie: {
-		inherit: true,
-	},
-	metapod: {
-		inherit: true,
-	},
 	butterfree: {
 		inherit: true,
 		baseStats: {hp: 60, atk: 45, def: 60, spa: 90, spd: 80, spe: 80},
 		abilities: {0: "Compound Eyes", 1: "Heart Veil"},
 	},
-	weedle: {
-		inherit: true,
-	},
-	kakuna: {
-		inherit: true,
-	},
 	beedrill: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 90, def: 40, spa: 45, spd: 80, spe: 95},
 		abilities: {0: "Swarm", 1: "Vanguard"},
-	},
-	pidgey: {
-		inherit: true,
-	},
-	pidgeotto: {
-		inherit: true,
 	},
 	pidgeot: {
 		inherit: true,
@@ -76,23 +58,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Strong Jaw", 1: "Thick Fat"},
 	},
-	spearow: {
-		inherit: true,
-	},
 	fearow: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 100, def: 65, spa: 61, spd: 61, spe: 100},
 		abilities: {0: "Piercing"},
 	},
-	ekans: {
-		inherit: true,
-	},
 	arbok: {
 		inherit: true,
 		baseStats: {hp: 60, atk: 95, def: 69, spa: 65, spd: 79, spe: 80},
-	},
-	pichu: {
-		inherit: true,
 	},
 	pikachu: {
 		inherit: true,
@@ -156,22 +129,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Slush Rush", 1: "Rough Skin"},
 	},
-	nidoranf: {
-		inherit: true,
-	},
-	nidorina: {
-		inherit: true,
-	},
 	nidoqueen: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 92, def: 87, spa: 75, spd: 85, spe: 76},
 		abilities: {0: "Poison Point", 1: "Sheer Force"},
-	},
-	nidoranm: {
-		inherit: true,
-	},
-	nidorino: {
-		inherit: true,
 	},
 	nidoking: {
 		inherit: true,
@@ -223,15 +184,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Snow Cloak", 1: "Snow Warning"},
 	},
-	zubat: {
-		inherit: true,
-	},
-	golbat: {
-		inherit: true,
-	},
-	crobat: {
-		inherit: true,
-	},
 	oddish: {
 		inherit: true,
 		abilities: {0: "Effect Spore"},
@@ -249,9 +201,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 75, atk: 80, def: 95, spa: 90, spd: 100, spe: 50},
 	},
-	paras: {
-		inherit: true,
-	},
 	parasect: {
 		inherit: true,
 		types: ["Bug", "Ghost"],
@@ -262,15 +211,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		isNonstandard: null,
 		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 120, spe: 30},
-	},
-	venonat: {
-		inherit: true,
-	},
-	venomoth: {
-		inherit: true,
-	},
-	diglett: {
-		inherit: true,
 	},
 	diglettalola: {
 		inherit: true,
@@ -311,9 +251,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 75, atk: 110, def: 100, spa: 60, spd: 75, spe: 50},
 	},
-	poliwag: {
-		inherit: true,
-	},
 	poliwhirl: {
 		inherit: true,
 		gen: 3,
@@ -344,16 +281,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
-	geodude: {
-		inherit: true,
-	},
 	geodudealola: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Magnet Pull", 1: "Galvanize"},
-	},
-	graveler: {
-		inherit: true,
 	},
 	graveleralola: {
 		inherit: true,
@@ -368,9 +299,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Magnet Pull", 1: "Galvanize"},
-	},
-	ponyta: {
-		inherit: true,
 	},
 	ponytagalar: {
 		inherit: true,
@@ -412,9 +340,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Keen Eye", 1: "Inner Focus"},
 	},
-	doduo: {
-		inherit: true,
-	},
 	dodrio: {
 		inherit: true,
 		baseStats: {hp: 60, atk: 110, def: 70, spa: 60, spd: 60, spe: 110},
@@ -427,16 +352,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Thick Fat"},
 	},
-	grimer: {
-		inherit: true,
-	},
 	grimeralola: {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Stench", 1: "Sticky Hold"},
-	},
-	muk: {
-		inherit: true,
 	},
 	mukalola: {
 		inherit: true,
@@ -446,15 +365,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	onix: {
 		inherit: true,
 		baseStats: {hp: 45, atk: 65, def: 160, spa: 30, spd: 45, spe: 70},
-	},
-	steelix: {
-		inherit: true,
-	},
-	krabby: {
-		inherit: true,
-	},
-	kingler: {
-		inherit: true,
 	},
 	voltorb: {
 		inherit: true,
@@ -472,18 +382,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	electrodehisui: {
 		inherit: true,
 		gen: 3,
-	},
-	tyrogue: {
-		inherit: true,
-	},
-	hitmonchan: {
-		inherit: true,
-	},
-	hitmonlee: {
-		inherit: true,
-	},
-	hitmontop: {
-		inherit: true,
 	},
 	tangela: {
 		inherit: true,
@@ -529,26 +427,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		abilities: {0: "Sniper", 1: "Dry Skin"},
 	},
-	magby: {
-		inherit: true,
-	},
-	magmar: {
-		inherit: true,
-	},
 	magmortar: {
 		inherit: true,
 		gen: 3,
-	},
-	elekid: {
-		inherit: true,
-	},
-	electabuzz: {
-		inherit: true,
+		baseStats: {hp: 75, atk: 95, def: 67, spa: 130, spd: 95, spe: 83},
 	},
 	electivire: {
 		inherit: true,
 		gen: 3,
 		types: ["Electric", "Fighting"],
+		baseStats: {hp: 75, atk: 123, def: 67, spa: 95, spd: 85, spe: 100},
 	},
 	pinsir: {
 		inherit: true,
@@ -576,18 +464,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Intimidate", 1: "Swift Swim"},
 	},
-	magikarp: {
-		inherit: true,
-	},
-	gyarados: {
-		inherit: true,
-	},
 	ditto: {
 		inherit: true,
 		abilities: {0: "Imposter"},
-	},
-	aerodactyl: {
-		inherit: true,
 	},
 	aerodactylmega: {
 		inherit: true,
@@ -596,9 +475,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	munchlax: {
 		inherit: true,
 		gen: 3,
-	},
-	snorlax: {
-		inherit: true,
 	},
 	chikorita: {
 		inherit: true,
@@ -639,12 +515,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Dark"],
 		abilities: {0: "Torrent", 1: "Sheer Force"},
 	},
-	sentret: {
-		inherit: true,
-	},
-	furret: {
-		inherit: true,
-	},
 	hoothoot: {
 		inherit: true,
 		types: ["Ghost", "Flying"],
@@ -656,20 +526,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 50, def: 50, spa: 86, spd: 96, spe: 70},
 		abilities: {0: "Insomnia", 1: "Tinted Lens"},
 	},
-	ledyba: {
-		inherit: true,
-	},
 	ledian: {
 		inherit: true,
 		types: ["Bug", "Fighting"],
 		baseStats: {hp: 55, atk: 75, def: 50, spa: 55, spd: 110, spe: 85},
 		abilities: {0: "Superhero", 1: "Iron Fist"},
-	},
-	chinchou: {
-		inherit: true,
-	},
-	lanturn: {
-		inherit: true,
 	},
 	togepi: {
 		inherit: true,
@@ -704,20 +565,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
-	sudowoodo: {
-		inherit: true,
-	},
 	jumpluff: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 55, def: 70, spa: 55, spd: 95, spe: 110},
+		baseStats: {hp: 80, atk: 65, def: 70, spa: 65, spd: 100, spe: 110},
 	},
 	sunflora: {
 		inherit: true,
 		types: ["Grass", "Fire"],
 		baseStats: {hp: 75, atk: 75, def: 55, spa: 105, spd: 85, spe: 40},
-	},
-	yanma: {
-		inherit: true,
 	},
 	yanmega: {
 		inherit: true,
@@ -755,6 +610,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Ghost", "Fairy"],
 	},
+	unown: {
+		inherit: true,
+		abilities: {0: "Protean"},
+	},
 	snubbull: {
 		inherit: true,
 		types: ["Fairy"],
@@ -774,9 +633,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	overqwil: {
 		inherit: true,
 		gen: 3,
-	},
-	sneasel: {
-		inherit: true,
 	},
 	teddiursa: {
 		inherit: true,
@@ -827,9 +683,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 65, atk: 55, def: 95, spa: 65, spd: 95, spe: 35},
 		abilities: {0: "Regenerator", 1: "Natural Cure"},
 	},
-	remoraid: {
-		inherit: true,
-	},
 	octillery: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 105, def: 85, spa: 105, spd: 85, spe: 25},
@@ -841,6 +694,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	mantine: {
 		inherit: true,
 		baseStats: {hp: 85, atk: 40, def: 70, spa: 80, spd: 140, spe: 70},
+	},
+	houndoom: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 100, def: 50, spa: 115, spd: 90, spe: 95},
 	},
 	stantler: {
 		inherit: true,
@@ -870,6 +727,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Drench"},
 	},
+	hooh: {
+		inherit: true,
+		abilities: {0: "Regenerator"},
+	},
 	torchic: {
 		inherit: true,
 		abilities: {0: "Blaze", 1: "Speed Boost"},
@@ -897,9 +758,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	swampertmega: {
 		inherit: true,
 		gen: 3,
-	},
-	poochyena: {
-		inherit: true,
 	},
 	mightyena: {
 		inherit: true,
@@ -934,6 +792,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Chlorophyll", 1: "Wind Rider"},
 	},
+	swellow: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 85, def: 60, spa: 75, spd: 50, spe: 125},
+	},
 	wingull: {
 		inherit: true,
 		abilities: {0: "Keen Eye", 1: "Water Absorb"},
@@ -959,19 +821,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Inner Focus", 1: "Sharpness"},
 	},
-	surskit: {
-		inherit: true,
-	},
 	masquerain: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 60, def: 62, spa: 100, spd: 82, spe: 80},
 		types: ["Bug", "Water"],
-	},
-	nincada: {
-		inherit: true,
-	},
-	ninjask: {
-		inherit: true,
 	},
 	shedinja: {
 		inherit: true,
@@ -997,9 +850,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	probopass: {
 		inherit: true,
 		gen: 3,
-	},
-	skitty: {
-		inherit: true,
 	},
 	delcatty: {
 		inherit: true,
@@ -1027,6 +877,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Solid Rock", 1: "Rock Head"},
 	},
+	medicham: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 60, def: 75, spa: 60, spd: 75, spe: 80},
+	},
 	electrike: {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Lightning Rod"},
@@ -1034,12 +888,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	manectric: {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Lightning Rod"},
-	},
-	plusle: {
-		inherit: true,
-	},
-	minun: {
-		inherit: true,
 	},
 	volbeat: {
 		inherit: true,
@@ -1050,15 +898,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Bug", "Electric"],
 		baseStats: {hp: 65, atk: 67, def: 75, spa: 73, spd: 85, spe: 85},
-	},
-	gulpin: {
-		inherit: true,
-	},
-	swalot: {
-		inherit: true,
-	},
-	numel: {
-		inherit: true,
 	},
 	camerupt: {
 		inherit: true,
@@ -1109,9 +948,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Rock", "Fire"],
 		baseStats: {hp: 90, atk: 95, def: 85, spa: 55, spd: 65, spe: 70},
 		abilities: {0: "Levitate", 1: "Drought"},
-	},
-	corphish: {
-		inherit: true,
 	},
 	crawdaunt: {
 		inherit: true,
@@ -1198,9 +1034,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Strong Jaw"},
 	},
-	gorebyss: {
-		inherit: true,
-	},
 	luvdisc: {
 		inherit: true,
 		types: ["Water", "Fairy"],
@@ -1282,6 +1115,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rotom: {
 		inherit: true,
+		gen: 3,
 	},
 	rotomheat: {
 		inherit: true,
@@ -1371,17 +1205,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	roggenrola: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Weak Armor", 1: "Sturdy"},
+		abilities: {0: "Sturdy", 1: "Weak Armor"},
 	},
 	boldore: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Weak Armor", 1: "Sturdy"},
+		abilities: {0: "Sturdy", 1: "Weak Armor"},
 	},
 	gigalith: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Stonebreaker", 1: "Sand Stream"},
+		abilities: {0: "Sturdy", 1: "Sand Stream"},
 	},
 	throh: {
 		inherit: true,
@@ -1414,13 +1248,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ducklett: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Keen Eye", 1: "Water Veil"},
 	},
 	swanna: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 85, atk: 97, def: 63, spa: 97, spd: 63, spe: 98},
-		abilities: {0: "Keen Eye", 1: "Water Veil"},
 	},
 	cubchoo: {
 		inherit: true,
@@ -1490,17 +1321,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	doublade: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 59, atk: 90, def: 130, spa: 45, spd: 49, spe: 35},
 	},
 	aegislash: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 50, def: 130, spa: 50, spd: 130, spe: 60},
+		baseStats: {hp: 60, atk: 50, def: 140, spa: 50, spd: 140, spe: 60},
 	},
 	aegislashblade: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 60, atk: 130, def: 50, spa: 130, spd: 50, spe: 60},
+		baseStats: {hp: 60, atk: 140, def: 50, spa: 140, spd: 50, spe: 60},
 	},
 	spritzee: {
 		inherit: true,
@@ -1546,7 +1376,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	volcanion: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 80, atk: 110, def: 90, spa: 110, spd: 80, spe: 70},
 	},
 	rowlet: {
 		inherit: true,

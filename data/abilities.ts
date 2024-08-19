@@ -5747,10 +5747,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 5005,
 	},
 	stonebreaker: {
+		// unused
 		isNonstandard: "Custom",
 		onEffectiveness(typeMod, target, type, move) {
 			if (type === 'Rock') {
-				// If the move is not already super effective, make it super effective
 				if (typeMod <= 0) {
 					return 1;
 				}
@@ -5761,10 +5761,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 5006,
 	},
 	steelbreaker: {
+		// unused
 		isNonstandard: "Custom",
 		onEffectiveness(typeMod, target, type, move) {
 			if (type === 'Steel') {
-				// If the move is not already super effective, make it super effective
 				if (typeMod <= 0) {
 					return 1;
 				}
