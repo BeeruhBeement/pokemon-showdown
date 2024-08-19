@@ -476,6 +476,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	mewtwo: {
+		inherit: true,
+		abilities: {0: "Neuroforce"},
+	},
 	chikorita: {
 		inherit: true,
 		abilities: {0: "Overgrow", 1: "Regenerator"},

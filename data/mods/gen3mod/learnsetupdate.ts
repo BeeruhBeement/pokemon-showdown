@@ -379,7 +379,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "unown").learnset.explosion = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.vcreate = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.focuspunch = ["3L1"];
-	dex.modData("Learnsets", "unown").learnset.eruption = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.waterspout = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.headsmash = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.doomdesire = ["3L1"];
@@ -392,7 +391,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "unown").learnset.hurricane = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.earthquake = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.shadowball = ["3L1"];
-	dex.modData("Learnsets", "unown").learnset.xscissor = ["3L1"];
+	dex.modData("Learnsets", "unown").learnset.megahorn = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.rampaginghammer = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.dazzlinggleam = ["3L1"];
 

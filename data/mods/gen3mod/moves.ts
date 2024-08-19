@@ -1088,7 +1088,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	psystrike: {
 		inherit: true,
-		basePower: 95,
+		gen: 3,
 	},
 
 	shieldbash: {
