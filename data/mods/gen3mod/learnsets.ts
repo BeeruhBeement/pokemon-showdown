@@ -1351,6 +1351,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			gigadrain: ["3M"],
 			stunspore: ["3L15"],
 			energyball: ["3M", "3L37"],
+			voltswitch: ["3E"],
 		},
 	},
 	electrodehisui: {

@@ -911,7 +911,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			if ((effect?.id === 'zpower') || this.effectState.isZ) return damage;
 			return false;
 		},
-
 		onDamagingHit(damage, target, source, move) {
 			if (move.flags['contact']) {
 				source.addVolatile('rot');

@@ -544,7 +544,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "altaria").learnset.roost = ["3L70"];
 	dex.modData("Learnsets", "altaria").learnset.defog = ["3L70"];
 	
+	dex.modData("Learnsets", "barboach").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "barboach").learnset.scald = ["3T"];
+	dex.modData("Learnsets", "whiscash").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "whiscash").learnset.scald = ["3T"];
 	
 	dex.modData("Learnsets", "corphish").learnset.xscissor = ["3T"];

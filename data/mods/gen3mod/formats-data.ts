@@ -80,7 +80,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	pidgeot: {
-		tier: "NU",
+		tier: "PU",
 	},
 	pidgeotmega: {
 		tier: "Illegal",
@@ -254,7 +254,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "RU",
 	},
 	bellossom: {
-		tier: "NU",
+		tier: "PU",
 	},
 	paras: {
 		tier: "LC",
@@ -308,7 +308,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	golduck: {
-		tier: "NU",
+		tier: "PU",
 	},
 	mankey: {
 		tier: "LC",
@@ -950,7 +950,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	yanmega: {
-		tier: "NU",
+		tier: "PU",
 	},
 	wooper: {
 		tier: "LC",
@@ -1082,7 +1082,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	octillery: {
-		tier: "NU",
+		tier: "PU",
 	},
 	delibird: {
 		tier: "ZU",
@@ -1529,7 +1529,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	banette: {
-		tier: "NU",
+		tier: "PU",
 	},
 	banettemega: {
 		tier: "Illegal",
@@ -1733,13 +1733,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	rampardos: {
-		tier: "NU",
+		tier: "PU",
 	},
 	shieldon: {
 		tier: "LC",
 	},
 	bastiodon: {
-		tier: "NU",
+		tier: "PU",
 	},
 	burmy: {
 		tier: "Illegal",
@@ -1894,7 +1894,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	rotomfan: {
-		tier: "NU",
+		tier: "PU",
 	},
 	rotommow: {
 		tier: "RU",
@@ -1936,7 +1936,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	phione: {
-		tier: "NU",
+		tier: "PU",
 	},
 	manaphy: {
 		tier: "Illegal",
@@ -2573,7 +2573,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	gogoat: {
-		tier: "NU",
+		tier: "PU",
 	},
 	pancham: {
 		tier: "LC",
@@ -3733,7 +3733,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	ironjugulis: {
-		tier: "UU",
+		tier: "RU",
 	},
 	ironthorns: {
 		tier: "Illegal",
