@@ -1,6 +1,18 @@
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+	bulbasaur: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Chlorophyll"},
+	},
+	ivysaur: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Chlorophyll"},
+	},
+	venusaur: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Chlorophyll"},
+	},
 	charmander: {
 		inherit: true,
 		abilities: {0: "Blaze", 1: "Solar Power"},
@@ -746,6 +758,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Regenerator"},
 	},
+	treeko: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Sharpness"},
+	},
+	grovyle: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Sharpness"},
+	},
+	sceptile: {
+		inherit: true,
+		abilities: {0: "Overgrow", 1: "Sharpness"},
+	},
 	torchic: {
 		inherit: true,
 		abilities: {0: "Blaze", 1: "Speed Boost"},
@@ -1231,7 +1255,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	emboar: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Blaze", 1: "Thick Fat"},
+		abilities: {0: "Blaze", 1: "Reckless"},
 	},
 	pansage: {
 		inherit: true,
@@ -1697,17 +1721,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	quaxly: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Torrent", 1: "Mold Breaker"},
+		abilities: {0: "Torrent", 1: "Moxie"},
 	},
 	quaxwell: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Torrent", 1: "Mold Breaker"},
+		abilities: {0: "Torrent", 1: "Moxie"},
 	},
 	quaquaval: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Torrent", 1: "Mold Breaker"},
+		abilities: {0: "Torrent", 1: "Moxie"},
 	},
 	nymble: {
 		inherit: true,
