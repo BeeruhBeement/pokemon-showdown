@@ -803,12 +803,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	simple: {
 		inherit: true,
 		gen: 3,
+		onModifyBoost(boosts, pokemon) { return },
+		onChangeBoost(boost, target, source, effect) {
+			if (effect && effect.id === 'zpower') return;
+			let i: BoostID;
+			for (i in boost) {
+				boost[i]! *= 2;
+			}
+		},
 	},
 	defiant: {
 		inherit: true,
 		gen: 3,
 	},
 	competitive: {
+		inherit: true,
+		gen: 3,
+	},
+	prankster: {
 		inherit: true,
 		gen: 3,
 	},

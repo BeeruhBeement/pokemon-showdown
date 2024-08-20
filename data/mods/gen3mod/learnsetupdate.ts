@@ -657,12 +657,15 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "seviper").learnset.coil = ["3L64"];
 	dex.modData("Learnsets", "seviper").learnset.xscissor = ["3T"];
 
+	dex.modData("Learnsets", "lunatone").learnset.moonlight = ["3L1"];
 	dex.modData("Learnsets", "lunatone").learnset.rockpolish = ["3L20"];
 	dex.modData("Learnsets", "lunatone").learnset.shadowcrescent = ["3L60"];
 	dex.modData("Learnsets", "lunatone").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "lunatone").learnset.nightfall = ["3M"];
 	dex.modData("Learnsets", "lunatone").learnset.weatherball = ["3T"];
 
+	dex.modData("Learnsets", "solrock").learnset.morningsun = ["3L1"];
+	dex.modData("Learnsets", "solrock").learnset.willowisp = ["3L19"];
 	dex.modData("Learnsets", "solrock").learnset.rockpolish = ["3L20"];
 	dex.modData("Learnsets", "solrock").learnset.solarflare = ["3L60"];
 	dex.modData("Learnsets", "solrock").learnset.stealthrock = ["3M"];
