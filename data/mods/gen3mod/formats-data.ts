@@ -41,7 +41,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	blastoise: {
-		tier: "UU",
+		tier: "RU",
 	},
 	blastoisemega: {
 		tier: "Illegal",
@@ -1673,31 +1673,31 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Uber",
 	},
 	turtwig: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	grotle: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	torterra: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	chimchar: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	monferno: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	infernape: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	piplup: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	prinplup: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	empoleon: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	starly: {
 		tier: "Illegal",
@@ -1709,10 +1709,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	bidoof: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	bibarel: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	kricketot: {
 		tier: "Illegal",
@@ -3337,13 +3337,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	impidimp: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	morgrem: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	grimmsnarl: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	grimmsnarlgmax: {
 		tier: "Illegal",

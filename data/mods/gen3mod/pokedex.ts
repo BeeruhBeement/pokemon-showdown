@@ -508,6 +508,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	quilava: {
 		inherit: true,
+		types: ["Fire", "Ground"],
 		abilities: {0: "Blaze", 1: "Flash Fire"},
 	},
 	typhlosion: {
@@ -521,6 +522,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	croconaw: {
 		inherit: true,
+		types: ["Water", "Dark"],
 		abilities: {0: "Torrent", 1: "Sheer Force"},
 	},
 	feraligatr: {
@@ -1062,6 +1064,60 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Desolate Land"},
 	},
+	turtwig: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Shell Armor"},
+	},
+	grotle: {
+		inherit: true,
+		gen: 3,
+		types: ["Grass", "Ground"],
+		abilities: {0: "Overgrow", 1: "Shell Armor"},
+	},
+	torterra: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Overgrow", 1: "Shell Armor"},
+	},
+	chimchar: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Blaze", 1: "Iron Fist"},
+	},
+	monferno: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Blaze", 1: "Iron Fist"},
+	},
+	infernape: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Blaze", 1: "Iron Fist"},
+	},
+	piplup: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Defiant"},
+	},
+	prinplup: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Defiant"},
+	},
+	empoleon: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Torrent", 1: "Defiant"},
+	},
+	bidoof: {
+		inherit: true,
+		gen: 3,
+	},
+	bibarel: {
+		inherit: true,
+		gen: 3,
+	},
 	cranidos: {
 		inherit: true,
 		gen: 3,
@@ -1587,6 +1643,22 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	centiskorch: {
 		inherit: true,
 		gen: 3,
+	},
+	impidimp: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Prankster", 1: "Defiant"},
+	},
+	morgrem: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 65, atk: 65, def: 45, spa: 75, spd: 55, spe: 70},
+		abilities: {0: "Prankster", 1: "Defiant"},
+	},
+	grimmsnarl: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Prankster", 1: "Defiant"},
 	},
 	milcery: {
 		inherit: true,

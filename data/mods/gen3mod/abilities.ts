@@ -804,6 +804,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	defiant: {
+		inherit: true,
+		gen: 3,
+	},
+	competitive: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	
