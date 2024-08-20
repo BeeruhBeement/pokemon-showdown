@@ -16,10 +16,6 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 		}
 
-		for (const species in this.data.Pokedex) {
-			delete this.data.Pokedex[species].abilities['H'];
-		}
-
 		learnsetUpdate(this);
 	},
 	actions: {
