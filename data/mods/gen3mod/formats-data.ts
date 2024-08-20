@@ -71,7 +71,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	beedrillmega: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	pidgey: {
 		tier: "LC",
@@ -83,7 +83,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	pidgeotmega: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	rattata: {
 		tier: "LC",

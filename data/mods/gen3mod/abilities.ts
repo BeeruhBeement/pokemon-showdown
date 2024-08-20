@@ -515,8 +515,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	toxicboost: {
 		inherit: true,
 		gen: 3,
-		desc: "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5. Immune to damage from poison.",
-		shortDesc: "While poisoned, physical attacks have 1.5x power. No damage from poison.",
+		desc: "While this Pokemon is poisoned, the power of its attacks is multiplied by 1.5. Immune to damage from poison.",
+		shortDesc: "While poisoned, attacks have 1.5x power. No damage from poison.",
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.status === 'psn' || attacker.status === 'tox') {
+				return this.chainModify(1.5);
+			}
+		},
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'psn' || effect.id === 'tox') {
@@ -792,6 +797,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onEnd(pokemon) {},
 	},
 	neuroforce: {
+		inherit: true,
+		gen: 3,
+	},
+	simple: {
 		inherit: true,
 		gen: 3,
 	},

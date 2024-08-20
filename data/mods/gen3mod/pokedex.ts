@@ -36,9 +36,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 65, atk: 90, def: 40, spa: 45, spd: 80, spe: 95},
 		abilities: {0: "Swarm", 1: "Vanguard"},
 	},
+	beedrillmega: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 65, atk: 160, def: 40, spa: 15, spd: 80, spe: 155},
+	},
 	pidgeot: {
 		inherit: true,
 		baseStats: {hp: 83, atk: 80, def: 75, spa: 70, spd: 70, spe: 101},
+	},
+	pidgeotmeta: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 83, atk: 135, def: 80, spa: 70, spd: 80, spe: 131},
 	},
 	rattata: {
 		inherit: true,
@@ -498,7 +508,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	quilava: {
 		inherit: true,
-		types: ["Fire", "Ground"],
 		abilities: {0: "Blaze", 1: "Flash Fire"},
 	},
 	typhlosion: {
@@ -934,6 +943,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	zangoose: {
 		inherit: true,
+		baseStats: {hp: 73, atk: 115, def: 60, spa: 90, spd: 60, spe: 90},
 		abilities: {0: "Toxic Boost"},
 	},
 	seviper: {

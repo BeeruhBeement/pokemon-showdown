@@ -84,15 +84,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	outrage: {
 		inherit: true,
-		basePower: 100,
+		basePower: 120,
 	},
 	thrash: {
 		inherit: true,
-		basePower: 100,
+		basePower: 120,
 	},
 	petaldance: {
 		inherit: true,
-		basePower: 100,
+		basePower: 120,
 	},
 	drainingkiss: {
 		inherit: true,
@@ -495,6 +495,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Ends the effects of terrain.",
 	},
 	metalburst: {
+		inherit: true,
+		gen: 3,
+	},
+	falsesurrender: {
 		inherit: true,
 		gen: 3,
 	},

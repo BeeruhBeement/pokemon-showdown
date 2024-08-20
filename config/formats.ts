@@ -162,6 +162,16 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL'],
 	},
 	{
+		name: "[Gen 3] Modded NFE",
+		mod: 'gen3mod',
+		ruleset: ['Standard OMs', 'Not Fully Evolved', 'Sleep Moves Clause', 'Terastal Clause'],
+	},
+	{
+		name: "[Gen 3] Modded LC",
+		mod: 'gen3mod',
+		ruleset: ['Little Cup', 'Standard'],
+	},
+	{
 		name: "[Gen 3] Modded Challenge Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any legal moves.`,
 

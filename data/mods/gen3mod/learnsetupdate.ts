@@ -122,8 +122,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "ponyta").learnset.morningsun = ["3E"];
 	dex.modData("Learnsets", "rapidash").learnset.megahorn = ["3L1"];
 	
+	dex.modData("Learnsets", "slowpoke").learnset.slackoff = ["3L39"];
 	dex.modData("Learnsets", "slowpoke").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "slowpoke").learnset.teleport = ["3T"];
+	dex.modData("Learnsets", "slowbro").learnset.slackoff = ["3L41"];
 	dex.modData("Learnsets", "slowbro").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "slowbro").learnset.teleport = ["3T"];
 	dex.modData("Learnsets", "slowking").learnset.nastyplot = ["3L39"];
@@ -244,6 +246,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "aerodactyl").learnset.crunch = ["3L33"];
 	dex.modData("Learnsets", "aerodactyl").learnset.rockcrunch = ["3L81"];
 	
+	dex.modData("Learnsets", "snorlax").learnset.slackoff = ["3L59"];
 	dex.modData("Learnsets", "snorlax").learnset.rocksmash = ["3M"];
 	dex.modData("Learnsets", "snorlax").learnset.steelroller = ["3T"];
 
@@ -431,6 +434,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "remoraid").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "octillery").learnset.gunkshot = ["3L1"];
 	dex.modData("Learnsets", "octillery").learnset.headsmash = ["3L1"];
+	dex.modData("Learnsets", "octillery").learnset.recover = ["3L1"];
 	dex.modData("Learnsets", "octillery").learnset.energyball = ["3M"];
 	dex.modData("Learnsets", "octillery").learnset.thunder = ["3M"];
 	dex.modData("Learnsets", "octillery").learnset.thunderbolt = ["3M"];
