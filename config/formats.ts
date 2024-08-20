@@ -164,7 +164,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 3] Modded NFE",
 		mod: 'gen3mod',
-		ruleset: ['Standard OMs', 'Not Fully Evolved', 'Sleep Moves Clause', 'Terastal Clause'],
+		ruleset: ['Standard OMs', 'Not Fully Evolved'],
+		banlist: [
+			'Chansey', 'Doublade', 'Haunter', 'Kadabra', 'Magneton', 'Porygon2', 'Rhydon'
+		],
 	},
 	{
 		name: "[Gen 3] Modded LC",
