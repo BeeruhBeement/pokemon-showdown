@@ -3156,7 +3156,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderpunch: ["3T", "3E"],
 			torment: ["3M", "3L25"],
 			toxic: ["3M"],
-			uturn: ["3M"],
+			uturn: ["3T"],
 
 			switcheroo: ["3E"],
 		},
@@ -3183,9 +3183,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			focuspunch: ["3M"],
 			frustration: ["3M"],
 			furyswipes: ["3L16"],
-			grassknot: ["3M"],
-			gunkshot: ["3T"],
-			helpinghand: ["3T"],
 			hiddenpower: ["3M"],
 			irontail: ["3M"],
 			leer: ["3L1"],

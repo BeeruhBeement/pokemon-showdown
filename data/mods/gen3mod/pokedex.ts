@@ -57,7 +57,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 83, atk: 80, def: 75, spa: 70, spd: 70, spe: 101},
 	},
-	pidgeotmeta: {
+	pidgeotmega: {
 		inherit: true,
 		gen: 3,
 		baseStats: {hp: 83, atk: 135, def: 80, spa: 70, spd: 80, spe: 131},

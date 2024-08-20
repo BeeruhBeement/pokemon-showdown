@@ -2962,13 +2962,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PUBL",
 	},
 	silvallydark: {
-		tier: "UU",
+		tier: "RU",
 	},
 	silvallydragon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	silvallyelectric: {
-		tier: "UU",
+		tier: "NU",
 	},
 	silvallyfairy: {
 		tier: "OU",
@@ -3001,13 +3001,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PUBL",
 	},
 	silvallyrock: {
-		tier: "RU",
+		tier: "NU",
 	},
 	silvallysteel: {
 		tier: "RU",
 	},
 	silvallywater: {
-		tier: "UU",
+		tier: "RU",
 	},
 	silvallysound: {
 		tier: "NU",
