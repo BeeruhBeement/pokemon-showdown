@@ -1,3 +1,4 @@
+import { TriumvirateModeTrivia } from "../../../server/chat-plugins/trivia/trivia";
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
@@ -1367,6 +1368,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Overcoat", 1: "Weak Armor"},
 	},
+	deino: {
+		inherit: true,
+		gen: 3,
+	},
+	zweilous: {
+		inherit: true,
+		gen: 3,
+	},
+	hydreigon: {
+		inherit: true,
+		gen: 3,
+	},
 	reshiram: {
 		inherit: true,
 		gen: 3,
@@ -1406,6 +1419,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	pangoro: {
+		inherit: true,
+		gen: 3,
+	},
+	furfrou: {
 		inherit: true,
 		gen: 3,
 	},
@@ -1517,6 +1534,26 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	oricoriosensu: {
 		inherit: true,
 		gen: 3,
+	},
+	rockruff: {
+		inherit: true,
+		gen: 3,
+	},
+	lycanroc: {
+		inherit: true,
+		gen: 3,
+		types: ["Rock", "Ground"],
+	},
+	lycanrocmidnight: {
+		inherit: true,
+		gen: 3,
+		types: ["Rock", "Dark"],
+		abilities: {0: "Keen Eye", 1: "Night Stalker"},
+	},
+	lycanrocdusk: {
+		inherit: true,
+		gen: 3,
+		types: ["Rock", "Fighting"],
 	},
 	fomantis: {
 		inherit: true,
@@ -1660,6 +1697,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Torrent", 1: "Sniper"},
+	},
+	nickit: {
+		inherit: true,
+		gen: 3,
+	},
+	thievul: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Night Stalker", 1: "Unburden"},
 	},
 	sizzlipede: {
 		inherit: true,

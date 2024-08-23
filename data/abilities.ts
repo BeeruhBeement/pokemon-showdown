@@ -5967,23 +5967,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 5017,
 	},
-	impenetrable: {
-		onDamagePriority: -30,
-		onDamage(damage, target, source, effect) {
-			if (!this.effectState.impenetrable && damage >= target.hp && effect && effect.effectType === 'Move') {
-				this.add('-ability', target, 'Sturdy');
-				this.effectState.impenetrable = true;
-				return target.hp - 1;
-			}
-		},
-		onSwitchIn() {
-			delete this.effectState.impenetrable;
-		},
-		flags: {breakable: 1},
-		name: "Impenetrable",
-		rating: 4,
-		num: 5018,
-	},
 	possessed: {
 		// unused
 		isNonstandard: "Custom",
@@ -5996,5 +5979,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!pokemon.addType('Ghost')) return;
 			this.add('-start', pokemon, 'typeadd', 'Ghost', '[from] ability: Possessed');
 		},
+	},
+	nightstalker: {
+		isNonstandard: "Custom",
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.field.isWeather('night')) {
+				if (move.type === 'Dark' || move.type === 'Fairy' || move.type === 'Ghost' || move.type === 'Psychic') {
+					this.debug('Stalker boost');
+					return this.chainModify([5325, 4096]);
+				}
+			}
+		},
+		flags: {},
+		name: "Night Stalker",
+		rating: 3,
+		num: 5019,
 	},
 };

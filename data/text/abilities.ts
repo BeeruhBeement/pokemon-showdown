@@ -2347,8 +2347,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Jinxed",
 		shortDesc: "All moves used by/against this Pokemon has 100% secondaries (no flinch, sleep).",
 	},
-	impenetrable: {
-		name: "Impenetrable",
-		shortDesc: "Survives one hit with at least 1 HP.  Once per switch-in.",
+	nightstalker: {
+		name: "Night Stalker",
+		desc: "If Night is active, this Pokemon's Dark-, Fairy-, Ghost-, and Psychic-type attacks have their power multiplied by 1.3.",
+		shortDesc: "This Pokemon's Dark/Fairy/Ghost/Psychic attacks do 1.3x in Night.",
 	},
 };

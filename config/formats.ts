@@ -131,7 +131,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'OU', 'UUBL', 'Heat Rock'],
+		banlist: ['Uber', 'OU', 'UUBL', 'Heat Rock', 'Damp Rock'],
 	},
 	{
 		name: "[Gen 3] Modded RU",

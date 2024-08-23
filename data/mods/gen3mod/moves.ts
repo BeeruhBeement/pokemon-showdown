@@ -1094,6 +1094,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	accelerock: {
+		inherit: true,
+		gen: 3,
+	},
+	shadowsneak: {
+		inherit: true,
+		gen: 3,
+	},
 
 	shieldbash: {
 		inherit: true,
