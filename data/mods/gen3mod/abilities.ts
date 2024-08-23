@@ -892,7 +892,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
-	nightstalker: {
+	nocturnal: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

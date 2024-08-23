@@ -309,10 +309,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "hoothoot").learnset.synchronoise = ["3L41"];
 	dex.modData("Learnsets", "hoothoot").learnset.roost = ["3L45"];
 	dex.modData("Learnsets", "hoothoot").learnset.psychoshift = ["3L49"];
+	dex.modData("Learnsets", "hoothoot").learnset.nightfall = ["3M"];
 	dex.modData("Learnsets", "hoothoot").learnset.dualwingbeat = ["3T"];
 	dex.modData("Learnsets", "noctowl").learnset.synchronoise = ["3L47"];
 	dex.modData("Learnsets", "noctowl").learnset.roost = ["3L52"];
 	dex.modData("Learnsets", "noctowl").learnset.psychoshift = ["3L57"];
+	dex.modData("Learnsets", "noctowl").learnset.nightfall = ["3M"];
 	dex.modData("Learnsets", "noctowl").learnset.dualwingbeat = ["3T"];
 	
 	dex.modData("Learnsets", "ledyba").learnset.machpunch = ["3L17"];

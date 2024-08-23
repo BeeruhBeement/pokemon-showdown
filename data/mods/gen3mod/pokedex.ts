@@ -547,13 +547,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	hoothoot: {
 		inherit: true,
 		types: ["Ghost", "Flying"],
-		abilities: {0: "Insomnia", 1: "Tinted Lens"},
+		abilities: {0: "Nocturnal", 1: "Tinted Lens"},
 	},
 	noctowl: {
 		inherit: true,
 		types: ["Ghost", "Flying"],
 		baseStats: {hp: 100, atk: 50, def: 50, spa: 86, spd: 96, spe: 70},
-		abilities: {0: "Insomnia", 1: "Tinted Lens"},
+		abilities: {0: "Nocturnal", 1: "Tinted Lens"},
 	},
 	ledian: {
 		inherit: true,
@@ -1548,7 +1548,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Rock", "Dark"],
-		abilities: {0: "Keen Eye", 1: "Night Stalker"},
+		abilities: {0: "Keen Eye", 1: "Nocturnal"},
 	},
 	lycanrocdusk: {
 		inherit: true,
@@ -1705,7 +1705,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	thievul: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Night Stalker", 1: "Unburden"},
+		abilities: {0: "Nocturnal", 1: "Unburden"},
 	},
 	sizzlipede: {
 		inherit: true,
