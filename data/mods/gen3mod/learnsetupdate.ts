@@ -628,6 +628,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "camerupt").learnset.magmastorm = ["3L67"];
 	dex.modData("Learnsets", "camerupt").learnset.stealthrock = ["3M"];
 
+	dex.modData("Learnsets", "torkoal").learnset.rapidspin = ["3L23"];
+
 	dex.modData("Learnsets", "spinda").learnset.rapidspin = ["3E"];
 	dex.modData("Learnsets", "spinda").learnset.suckerpunch = ["3E"];
 	dex.modData("Learnsets", "spinda").learnset.superpower = ["3E"];

@@ -442,6 +442,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	jynx: {
 		inherit: true,
 		abilities: {0: "Oblivious", 1: "Dry Skin"},
+		evos: ["Kisscope"],
 	},
 	kisscope: {
 		inherit: true,

@@ -131,7 +131,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'OU', 'UUBL'],
+		banlist: ['Uber', 'OU', 'UUBL', 'Heat Rock'],
 	},
 	{
 		name: "[Gen 3] Modded RU",
@@ -164,15 +164,15 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 3] Modded NFE",
 		mod: 'gen3mod',
-		ruleset: ['Standard OMs', 'Not Fully Evolved'],
+		ruleset: ['Standard', 'Not Fully Evolved', 'Data Mod'],
 		banlist: [
-			'Chansey', 'Doublade', 'Haunter', 'Kadabra', 'Magneton', 'Porygon2', 'Rhydon'
+			'Chansey', 'Haunter', 'Kadabra', 'Magneton', 'Porygon2', 'Rhydon', 'Golbat', 'Scyther', 'Jynx', 'Electabuzz', 'Magmar',
 		],
 	},
 	{
 		name: "[Gen 3] Modded LC",
 		mod: 'gen3mod',
-		ruleset: ['Little Cup', 'Standard'],
+		ruleset: ['Standard', 'Little Cup', 'Data Mod'],
 	},
 	{
 		name: "[Gen 3] Modded Challenge Cup",
@@ -200,14 +200,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod'],
 		banlist: [],
 		onBegin() {
-			const legalMon = 'Golbat';
+			const legalMon = 'Tyrantrum';
 			this.add('-message', `One Mon is a National Dex metagame where only one Pokémon is legal`);
 			this.add('-message', `Standard NatDex Clauses apply except for Species Clause and there are no bans`);
 			this.add('-message', `The only legal Pokémon is ${legalMon}`);
 			this.add('-message', `The one mon switches every once in a while`);
 		},
 		onValidateSet(set) {
-			const legalMon = 'Golbat';
+			const legalMon = 'Tyrantrum';
 			const species = this.dex.species.get(set.species);
 			if (species.baseSpecies !== legalMon) {
 				return [`Only ${legalMon} is allowed.`];
