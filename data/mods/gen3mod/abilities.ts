@@ -824,6 +824,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	surgesurfer: {
+		inherit: true,
+		gen: 3,
+	},
+	turboblaze: {
+		inherit: true,
+		gen: 3,
+	},
+	teravolt: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	

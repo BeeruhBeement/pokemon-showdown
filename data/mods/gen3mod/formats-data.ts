@@ -437,7 +437,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	magnezone: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	farfetchd: {
 		tier: "PU",
@@ -584,7 +584,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	rhyperior: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	happiny: {
 		tier: "LC",
@@ -2143,13 +2143,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	sandile: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	krokorok: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	krookodile: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	darumaka: {
 		tier: "Illegal",
