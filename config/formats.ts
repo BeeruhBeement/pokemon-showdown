@@ -130,51 +130,36 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 3] Modded UU",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
+		ruleset: ['[Gen 3] Modded'],
+		banlist: ['OU', 'UUBL', 'Heat Rock', 'Damp Rock'],
 	},
 	{
 		name: "[Gen 3] Modded RU",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
+		ruleset: ['[Gen 3] Modded UU'],
+		banlist: ['UU', 'RUBL'],
 	},
 	{
 		name: "[Gen 3] Modded NU",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
+		ruleset: ['[Gen 3] Modded RU'],
+		banlist: ['RU', 'NUBL'],
 	},
 	{
 		name: "[Gen 3] Modded PU",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
+		ruleset: ['[Gen 3] Modded NU'],
+		banlist: ['NU', 'PUBL'],
 	},
 	{
 		name: "[Gen 3] Modded ZU",
 
 		mod: 'gen3mod',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
+		ruleset: ['[Gen 3] Modded PU'],
+		banlist: ['PU', 'ZUBL'],
 	},
 	{
 		name: "[Gen 3] Modded NFE",
