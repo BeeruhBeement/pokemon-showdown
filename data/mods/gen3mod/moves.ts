@@ -1126,6 +1126,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	toxic: {
+		inherit: true,
+		accuracy: 90,
+	},
 
 	shieldbash: {
 		inherit: true,

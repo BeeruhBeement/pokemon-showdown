@@ -1242,10 +1242,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	cubchoo: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Rattled"},
 	},
 	beartic: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Swift Swim"},
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
 	},
 	vullaby: {
