@@ -1102,6 +1102,30 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	blazingtorque: {
+		inherit: true,
+		gen: 3,
+	},
+	wickedtorque: {
+		inherit: true,
+		gen: 3,
+	},
+	noxioustorque: {
+		inherit: true,
+		gen: 3,
+	},
+	combattorque: {
+		inherit: true,
+		gen: 3,
+	},
+	magicaltorque: {
+		inherit: true,
+		gen: 3,
+	},
+	honeclaws: {
+		inherit: true,
+		gen: 3,
+	},
 
 	shieldbash: {
 		inherit: true,
@@ -1154,6 +1178,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	frostbite: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	echolocation: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

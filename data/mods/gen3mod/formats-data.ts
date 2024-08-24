@@ -1403,7 +1403,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	sharpedo: {
-		tier: "UU",
+		tier: "RU",
 	},
 	sharpedomega: {
 		tier: "Illegal",

@@ -22368,4 +22368,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Tough",
 	},
+	echolocation: {
+		isNonstandard: "Custom",
+		num: 5015,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Echolocation",
+		pp: 15,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		boosts: {
+			spa: 1,
+			accuracy: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Sound",
+		contestType: "Cute",
+	},
 };

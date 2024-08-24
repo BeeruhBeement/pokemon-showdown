@@ -701,6 +701,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			hiddenpower: ["3M"],
 			steelroller: ["3T"],
+			honeclaws: ["3L4"],
 		},
 	},
 	persianalola: {
@@ -806,6 +807,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			hiddenpower: ["3M"],
 			steelroller: ["3T"],
+			honeclaws: ["3L1"],
 		},
 	},
 	geodudealola: {
@@ -2637,6 +2639,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3M"],
 
 			throatchop: ["3L53"],
+			honeclaws: ["3L15"],
 		},
 	},
 	obstagoon: {
@@ -2701,6 +2704,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderpunch: ["3T"],
 			icepunch: ["3T"],
 			brickbreak: ["3M"],
+			honeclaws: ["3L15"],
 		},
 	},
 	gallade: {
@@ -2883,6 +2887,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			uproar: ["3L17"],
 			wish: ["3E"],
 			wrap: ["3L1"],
+			
+			echolocation: ["3L15"],
 		},
 	},
 	froslass: {
@@ -4089,6 +4095,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			boomburst: ["3L58"],
 			partingshot: ["3L57"],
 			synchronoise: ["3L49"],
+			echolocation: ["3L15"],
 			nastyplot: ["3E"],
 		},
 	},
@@ -6488,7 +6495,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3T"],
 			withdraw: ["3L7"],
 
-			rockpolish: ["3L24"]
+			rockpolish: ["3L24"],
+			honeclaws: ["3L32"],
 		},
 	},
 	barbaracle: {
@@ -6543,7 +6551,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterpulse: ["3T"],
 			withdraw: ["3L7"],
 
-			rockpolish: ["3L24"]
+			rockpolish: ["3L24"],
+			honeclaws: ["3L32"],
 		},
 	},
 	helioptile: {
@@ -7845,7 +7854,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			dig: ["3M"],
 			endure: ["3M"],
 			facade: ["3M"],
-			honeclaws: ["3L8"],
 			howl: ["3E"],
 			knockoff: ["3E"],
 			nastyplot: ["3L20"],
@@ -7863,6 +7871,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			torment: ["3E"],
 			
 			nightfall: ["3M"],
+			honeclaws: ["3L8"],
 
 			return: ["3M"],
 			frustration: ["3M"],
@@ -7879,7 +7888,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			beatup: ["3L1"],
 			dig: ["3M"],
 			facade: ["3M"],
-			honeclaws: ["3L1"],
 			hyperbeam: ["3M"],
 			nastyplot: ["3L22"],
 			partingshot: ["3L52"],
@@ -7900,6 +7908,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			surf: ["3M"],
 			nightfall: ["3M"],
+			honeclaws: ["3L1"],
 
 			return: ["3M"],
 			frustration: ["3M"],
@@ -8751,6 +8760,12 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			attract: ["3M"],
 			secretpower: ["3M"],
 			gunkshot: ["3L58"],
+
+			blazingtorque: ["3L1"],
+			wickedtorque: ["3L1"],
+			noxioustorque: ["3L1"],
+			combattorque: ["3L1"],
+			magicaltorque: ["3L1"],
 		},
 	},
 	orthworm: {

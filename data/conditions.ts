@@ -927,6 +927,12 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			}
 			return 5;
 		},
+		onModifySpAPriority: 10,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.hasType('Dark') && this.field.isWeather('night')) {
+				return this.modify(spa, 1.5);
+			}
+		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;

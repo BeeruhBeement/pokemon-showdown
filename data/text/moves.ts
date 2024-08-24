@@ -7626,4 +7626,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 20% chance to freeze the target.",
 		shortDesc: "20% chance to freeze the target.",
 	},
+	echolocation: {
+		name: "Echolocation",
+		desc: "Raises the user's Special Attack and accuracy by 1 stage.",
+		shortDesc: "Raises the user's Sp. Attack and accuracy by 1.",
+	},
 };

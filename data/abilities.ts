@@ -5982,13 +5982,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	nocturnal: {
 		isNonstandard: "Custom",
-		onBasePowerPriority: 21,
-		onBasePower(basePower, attacker, defender, move) {
-			if (this.field.isWeather('night')) {
-				if (move.type === 'Dark' || move.type === 'Fairy' || move.type === 'Ghost' || move.type === 'Psychic') {
-					this.debug('Nocturnal boost');
-					return this.chainModify([5325, 4096]);
-				}
+		onModifySpe(spe, pokemon) {
+			if (['night'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(2);
 			}
 		},
 		flags: {},
