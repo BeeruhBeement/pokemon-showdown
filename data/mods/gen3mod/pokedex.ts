@@ -1231,6 +1231,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	sandile: {
+		inherit: true,
+		gen: 3,
+	},
+	krokorok: {
+		inherit: true,
+		gen: 3,
+	},
+	krookodile: {
+		inherit: true,
+		gen: 3,
+	},
 	ducklett: {
 		inherit: true,
 		gen: 3,
