@@ -131,35 +131,50 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'OU', 'UUBL', 'Heat Rock', 'Damp Rock'],
+		banlist: [
+			'Uber', 'OU', 'UUBL', 
+			'Heat Rock', 'Damp Rock'
+		],
 	},
 	{
 		name: "[Gen 3] Modded RU",
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL'],
+		banlist: [
+			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 
+			'Heat Rock', 'Damp Rock'
+		],
 	},
 	{
 		name: "[Gen 3] Modded NU",
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL'],
+		banlist: [
+			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 
+			'Heat Rock', 'Damp Rock'
+		],
 	},
 	{
 		name: "[Gen 3] Modded PU",
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL'],
+		banlist: [
+			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 
+			'Heat Rock', 'Damp Rock'
+		],
 	},
 	{
 		name: "[Gen 3] Modded ZU",
 
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL'],
+		banlist: [
+			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL', 
+			'Heat Rock', 'Damp Rock'
+		],
 	},
 	{
 		name: "[Gen 3] Modded NFE",
@@ -167,12 +182,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard', 'Not Fully Evolved', 'Data Mod'],
 		banlist: [
 			'Chansey', 'Haunter', 'Kadabra', 'Magneton', 'Porygon2', 'Rhydon', 'Golbat', 'Scyther', 'Jynx', 'Electabuzz', 'Magmar',
+			'Heat Rock', 'Damp Rock'
 		],
 	},
 	{
 		name: "[Gen 3] Modded LC",
 		mod: 'gen3mod',
 		ruleset: ['Standard', 'Little Cup', 'Data Mod'],
+		banlist: ['Heat Rock', 'Damp Rock'],
 	},
 	{
 		name: "[Gen 3] Modded Challenge Cup",
