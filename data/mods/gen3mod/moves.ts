@@ -900,6 +900,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	ragingbull: {
 		inherit: true,
 		gen: 3,
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated. If the user's current form is a Paldean Tauros, this move's type changes to Fighting type. Has a 20% chance to make the target flinch.",
+		shortDesc: "Destroys screens. Paldea = Fighting. 20% Flinch.",
 		onModifyMove(move, pokemon) {
 			switch (pokemon.species.name) {
 				case 'Tauros-Paldea-Combat':
@@ -908,6 +910,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					move.type = 'Fighting';
 					break;
 			}
+		},
+		secondary: {
+			chance: 20,
+			volatileStatus: 'flinch',
 		},
 	},
 	hiddenpower: {

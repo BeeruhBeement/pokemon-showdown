@@ -1,4 +1,5 @@
 import { learnsetUpdate } from "./learnsetupdate";
+import { Pokedex } from "./pokedex";
 
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 3,
@@ -14,9 +15,13 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.modData('Moves', i).category = newCategory;
 			}
 		}
+		for (const i in this.data.Pokedex) {
+			this.modData('Pokedex', i).unreleasedHidden = false;
+			this.modData('Pokedex', i).maleOnlyHidden = false;
+		}
 
 		learnsetUpdate(this);
-	},
+	},	
 	actions: {
 		inherit: true,
 		hitStepTryImmunity(targets: Pokemon[], pokemon: Pokemon, move: ActiveMove) {

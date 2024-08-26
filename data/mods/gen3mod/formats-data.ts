@@ -224,7 +224,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	ninetalesalola: {
-		tier: "RU",
+		tier: "RUBL",
 	},
 	igglybuff: {
 		tier: "LC",
@@ -1936,7 +1936,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	phione: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	manaphy: {
 		tier: "Illegal",
@@ -2149,7 +2149,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	krookodile: {
-		tier: "RU",
+		tier: "UU",
 	},
 	darumaka: {
 		tier: "Illegal",
