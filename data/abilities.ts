@@ -5992,4 +5992,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 5019,
 	},
+	lunarcharge: {
+		isNonstandard: "Custom",
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (['night'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'night') {
+				this.damage(target.baseMaxhp / 10, target, target);
+			}
+		},
+		flags: {},
+		name: "Lunar Charge",
+		rating: 2,
+		num: 5020,
+	},
 };

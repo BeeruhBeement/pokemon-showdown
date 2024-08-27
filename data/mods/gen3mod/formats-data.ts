@@ -278,7 +278,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	dugtrio: {
-		tier: "NUBL",
+		tier: "RU",
 	},
 	dugtrioalola: {
 		tier: "NU",
@@ -2312,13 +2312,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	klink: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	klang: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	klinklang: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	tynamo: {
 		tier: "Illegal",
@@ -2899,10 +2899,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	morelull: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	shiinotic: {
-		tier: "Illegal",
+		tier: "PU",
 	},
 	salandit: {
 		tier: "Illegal",

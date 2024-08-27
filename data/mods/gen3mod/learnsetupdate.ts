@@ -138,7 +138,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "farfetchd").learnset.firstimpression = ["3E"];
 	dex.modData("Learnsets", "farfetchd").learnset.aeroblast = ["3L55"];
 	
-	dex.modData("Learnsets", "dodrio").learnset.jumpkick = ["3L43"];
+	dex.modData("Learnsets", "doduo").learnset.uturn = ["3T"];
+	dex.modData("Learnsets", "dodrio").learnset.jumpkick = ["3L43"];	
+	dex.modData("Learnsets", "dodrio").learnset.uturn = ["3T"];
 
 	dex.modData("Learnsets", "seel").learnset.haze = ["3E"];
 	dex.modData("Learnsets", "dewgong").learnset.megahorn = ["3L65"];
@@ -157,6 +159,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "steelix").learnset.dragondance = ["3L49"];
 	dex.modData("Learnsets", "steelix").learnset.rockclimb = ["3M"];
 	dex.modData("Learnsets", "steelix").learnset.stealthrock = ["3M"];
+	dex.modData("Learnsets", "steelix").learnset.steelroller = ["3T"];
 	
 	dex.modData("Learnsets", "krabby").learnset.xscissor = ["3T"];
 	dex.modData("Learnsets", "kingler").learnset.superpower = ["3L1"];
@@ -784,8 +787,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "gorebyss").learnset.drainingkiss = ["3L11"];
 	dex.modData("Learnsets", "gorebyss").learnset.coil = ["3L45"];
 	
-	dex.modData("Learnsets", "relicanth").learnset.stealthrock = ["3M"];
+	dex.modData("Learnsets", "relicanth").learnset.crunch = ["3E"];
 	dex.modData("Learnsets", "relicanth").learnset.headsmash = ["3L78"];
+	dex.modData("Learnsets", "relicanth").learnset.stealthrock = ["3M"];
 
 	dex.modData("Learnsets", "luvdisc").learnset.aquajet = ["3E"];
 	dex.modData("Learnsets", "luvdisc").learnset.drainingkiss = ["3L9"];

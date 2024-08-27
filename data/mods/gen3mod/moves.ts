@@ -235,13 +235,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	uturn: {
 		inherit: true,
 		gen: 3,
-		type: "Normal",
-		basePower: 40,
+		basePower: 50,
 	},
 	voltswitch: {
 		inherit: true,
 		gen: 3,
-		basePower: 40,
+		basePower: 50,
 	},
 	flipturn: {
 		inherit: true,
@@ -1135,6 +1134,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	toxic: {
 		inherit: true,
 		accuracy: 90,
+	},
+	strengthsap: {
+		inherit: true,
+		gen: 3,
+	},
+	shiftgear: {
+		inherit: true,
+		gen: 3,
+	},
+	geargrind: {
+		inherit: true,
+		gen: 3,
 	},
 
 	shieldbash: {

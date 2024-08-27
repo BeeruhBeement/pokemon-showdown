@@ -1,19 +1,6 @@
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
-	minirock: {
-		num: -50000,
-		name: "Minirock",
-		types: ["Rock"],
-		baseStats: {hp: 45, atk: 77, def: 55, spa: 35, spd: 45, spe: 32},
-		abilities: {0: "Weak Armor", H: "Hustle"},
-		heightm: 0.5,
-		weightkg: 50,
-		color: "Gray",
-		evos: ["Norock"],
-		eggGroups: ["Mineral"],
-		gen: 9,
-	},
 	norock: {
 		num: -50001,
 		name: "Norock",
@@ -26,7 +13,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Minirock",
 		evoLevel: 22,
 		eggGroups: ["Mineral"],
-		gen: 9,
 	},
 	froomish: {
 		num: -50002,
@@ -39,7 +25,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		evos: ["Frostloom"],
 		eggGroups: ["Fairy", "Grass"],
-		gen: 9,
 	},
 	frostloom: {
 		num: -50003,
@@ -53,6 +38,38 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Froomish",
 		evoLevel: 23,
 		eggGroups: ["Fairy", "Grass"],
-		gen: 9,
 	},
+	roastimp: {
+		num: -50004,
+		name: "Roastimp",
+		types: ["Fire"],
+		baseStats: {hp: 83, atk: 85, def: 60, spa: 90, spd: 60, spe: 105},
+		abilities: {0: "Gluttony", 1: "Sap Sipper", H: "Prankster"},
+		heightm: 0.6,
+		weightkg: 28.5,
+		color: "Red",
+		eggGroups: ["Field", "Fairy"],
+	},
+	gorgergeist: {
+		num: -50005,
+		name: "Gorgergeist",
+		types: ["Fire", "Ghost"],
+		baseStats: {hp: 136, atk: 90, def: 70, spa: 75, spd: 74, spe: 35},
+		abilities: {0: "Flame Body", 1: "Thick Fat", H: "Cursed Body"},
+		heightm: 1.5,
+		weightkg: 500,
+		color: "Purple",
+		eggGroups: ["Amorphous"],
+	},
+	bibsol: {
+		num: -50006,
+		name: "Bibsol",
+		types: ["Dark", "Water"],
+		baseStats: {hp: 70, atk: 100, def: 60, spa: 65, spd: 60, spe: 75},
+		abilities: {0: "Simple", 1: "Super Luck", H: "Moody"},
+		heightm: 1,
+		weightkg: 47,
+		color: "Brown",
+		eggGroups: ["Field", "Water 1"],
+	}
 };

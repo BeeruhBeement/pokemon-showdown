@@ -837,6 +837,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Strong Jaw", H: "Water Veil"},
 	},
+	relicanth: {
+		inherit: true,
+		baseStats: {hp: 100, atk: 95, def: 130, spa: 45, spd: 75, spe: 55},
+	},
 	luvdisc: {
 		inherit: true,
 		types: ["Water", "Fairy"],
@@ -1092,6 +1096,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	klink: {
+		inherit: true,
+		gen: 3,
+	},
+	klang: {
+		inherit: true,
+		gen: 3,
+	},
+	klinklang: {
+		inherit: true,
+		gen: 3,
+	},
 	ducklett: {
 		inherit: true,
 		gen: 3,
@@ -1297,6 +1313,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	lurantis: {
 		inherit: true,
 		gen: 3,
+	},
+	morelull: {
+		inherit: true,
+		gen: 3,
+	},
+	shiinotic: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 70, atk: 45, def: 80, spa: 90, spd: 100, spe: 30},
 	},
 	typenull: {
 		inherit: true,

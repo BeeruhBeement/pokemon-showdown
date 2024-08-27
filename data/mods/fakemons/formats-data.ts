@@ -1,9 +1,6 @@
 import { SpeciesFormatsData } from "../../../sim/dex-species";
 
 export const FormatsData: {[k: string]: SpeciesFormatsData} = {
-	minirock: {
-		tier: "Unreleased",
-	},
 	norock: {
 		tier: "Unreleased",
 	},
@@ -11,6 +8,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Unreleased",
 	},
 	frostloom: {
+		tier: "Unreleased",
+	},
+	roastimp: {
+		tier: "Unreleased",
+	},
+	gorgergeist: {
+		tier: "Unreleased",
+	},
+	bibsol: {
 		tier: "Unreleased",
 	},
 };

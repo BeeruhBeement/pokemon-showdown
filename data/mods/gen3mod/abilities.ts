@@ -203,6 +203,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	solarpower: {
 		inherit: true,
 		gen: 3,
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+				this.damage(target.baseMaxhp / 10, target, target);
+			}
+		},
 	},
 	regenerator: {
 		inherit: true,
@@ -905,6 +911,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	nocturnal: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	lunarcharge: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
