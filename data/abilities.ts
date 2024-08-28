@@ -5675,7 +5675,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			if (!pokemon.side.sideConditions['safeguard']) {
 				this.add('-ability', pokemon, 'Heart Veil');
-				this.add('-sidestart', pokemon.side, 'move: Safeguard');
 				pokemon.side.addSideCondition('safeguard');
 			}
 		},

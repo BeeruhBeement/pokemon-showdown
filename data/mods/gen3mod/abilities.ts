@@ -203,6 +203,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	solarpower: {
 		inherit: true,
 		gen: 3,
+		desc: "If Sunny Day is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/10 of its maximum HP, rounded down, at the end of each turn. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
+		shortDesc: "If Sunny Day is active, this Pokemon's Sp. Atk is 1.5x; loses 1/10 max HP per turn.",
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
@@ -498,20 +500,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	plus: {
 		inherit: true,
-		shortDesc: "This Pokemon's Special Attack is 1.5x.",
+		shortDesc: "This Pokemon's Special Attack is 1.3x.",
 		onModifySpA(spa, pokemon) {
-			return this.chainModify(1.5);
+			return this.chainModify(1.3);
 		},
 	},
 	minus: {
 		inherit: true,
-		shortDesc: "This Pokemon's Special Defense is 1.5x.",
+		shortDesc: "This Pokemon's Special Defense is 1.3x.",
 		onModifySpA(spa, pokemon) {
 			return;
 		},
 		onModifySpDPriority: 5,
 		onModifySpD(spa, pokemon) {
-			return this.chainModify(1.5);
+			return this.chainModify(1.3);
 		},
 	},
 	tintedlens: {

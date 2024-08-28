@@ -435,6 +435,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Fairy", "Flying"],
 	},
+	togekiss: {
+		inherit: true,
+		gen: 3,
+		types: ["Fairy", "Flying"],
+	},
 	azurill: {
 		inherit: true,
 		types: ["Normal", "Fairy"],
@@ -532,10 +537,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	slugma: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Dry Skin", 1: "Flame Body", H: "Weak Armor"},
 	},
 	magcargo: {
 		inherit: true,
 		baseStats: {hp: 60, atk: 70, def: 120, spa: 90, spd: 80, spe: 30},
+		abilities: {0: "Dry Skin", 1: "Flame Body", H: "Weak Armor"},
 	},
 	mamoswine: {
 		inherit: true,
@@ -1127,6 +1134,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Swift Swim"},
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
 	},
+	pawniard: {
+		inherit: true,
+		gen: 3,
+	},
+	bisharp: {
+		inherit: true,
+		gen: 3,
+	},
+	bouffalant: {
+		inherit: true,
+		gen: 3,
+	},
 	vullaby: {
 		inherit: true,
 		gen: 3,
@@ -1306,6 +1325,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		types: ["Rock", "Fighting"],
 	},
+	mareanie: {
+		inherit: true,
+		gen: 3,
+	},
+	toxapex: {
+		inherit: true,
+		gen: 3,
+	},
 	fomantis: {
 		inherit: true,
 		gen: 3,
@@ -1317,10 +1344,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	morelull: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Illuminate", 1: "Effect Spore", H: "Lunar Charge"},
 	},
 	shiinotic: {
 		inherit: true,
 		gen: 3,
+		abilities: {0: "Illuminate", 1: "Effect Spore", H: "Lunar Charge"},
 		baseStats: {hp: 70, atk: 45, def: 80, spa: 90, spd: 100, spe: 30},
 	},
 	typenull: {
@@ -1420,6 +1449,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	drampa: {
+		inherit: true,
+		gen: 3,
+	},
+	tapubulu: {
 		inherit: true,
 		gen: 3,
 	},

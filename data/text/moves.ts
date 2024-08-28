@@ -7623,8 +7623,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	frostbite: {
 		name: "Frostbite",
-		desc: "Has a 20% chance to freeze the target.",
-		shortDesc: "20% chance to freeze the target.",
+		desc: "Has a 30% chance to freeze the target.",
+		shortDesc: "30% chance to freeze the target.",
 	},
 	echolocation: {
 		name: "Echolocation",

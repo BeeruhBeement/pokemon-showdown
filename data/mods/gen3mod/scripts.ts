@@ -1,5 +1,4 @@
 import { learnsetUpdate } from "./learnsetupdate";
-import { Pokedex } from "./pokedex";
 
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 3,

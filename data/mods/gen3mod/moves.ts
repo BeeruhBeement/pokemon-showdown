@@ -48,7 +48,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	suckerpunch: {
 		inherit: true,
 		gen: 3,
-		basePower: 60,
+		basePower: 70,
 	},
 	babydolleyes: {
 		inherit: true,
@@ -466,30 +466,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	energyball: {
 		inherit: true,
 		gen: 3,
-		basePower: 90,
 	},
 	thunderwave: {
 		inherit: true,
 		accuracy: 90,
 	},
 	steelroller: {
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		name: "Steel Roller",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		onHit() {
-			this.field.clearTerrain();
-		},
-		onAfterSubDamage() {
-			this.field.clearTerrain();
-		},
-		secondary: null,
-		target: "normal",
-		type: "Steel",
+		inherit: true,
 		gen: 3,
+		basePower: 80,
 		desc: "Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain.",
 		shortDesc: "Ends the effects of terrain.",
 	},
@@ -947,13 +932,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	dreameater: {
 		inherit: true,
 		desc: "The target is unaffected by this move unless it or the user is asleep. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
-		shortDesc: "User gains 1/2 HP inflicted. Sleeping target/user only.",
+		shortDesc: "User gains 1/2 HP inflicted. Sleeping target/user.",
 		onTryImmunity(target, source) {
 			return target.status === 'slp' || target.hasAbility('comatose') || source.status === 'slp' || source.hasAbility('comatose');
 		},
 	},
 	kingsshield: {
 		inherit: true,
+		gen: 3,
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		shortDesc: "Protects from damaging attacks. Contact: -1 Atk.",
 		onPrepareHit(pokemon) {
@@ -1027,11 +1013,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	scald: {
 		inherit: true,
 		gen: 3,
-		desc: "Has a 20% chance to burn the target. The target thaws out if it is frozen.",
-		shortDesc: "20% chance to burn the target. Thaws target.",
-		secondary: {
-			chance: 20,
-			status: 'brn',
+		desc: "Has a 30% chance to burn the target. The target thaws out if it is frozen. Deals neutral damage to Fire types.",
+		shortDesc: "30% chance to burn the target. Fire neutral.",
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Fire') return 0;
 		},
 	},
 	nastyplot: {
@@ -1146,6 +1131,53 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	geargrind: {
 		inherit: true,
 		gen: 3,
+	},
+	headcharge: {
+		inherit: true,
+		gen: 3,
+		basePower: 130,
+	},
+	banefulbunker: {
+		inherit: true,
+		gen: 3,
+	},
+	discharge: {
+		inherit: true,
+		gen: 3,
+	},
+	lavaplume: {
+		inherit: true,
+		gen: 3,
+	},
+	naturesmadness: {
+		inherit: true,
+		gen: 3,
+	},
+	skullbash: {
+		inherit: true,
+		gen: 3,
+		desc: "This attack charges on the first turn and executes on the second unless the attacker's Attack is greater than the target's Attack. Raises the user's Defense by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "No charge if user's Atk > target's Atk. +1 Def.",
+		onTryMove(attacker, defender, move) {
+			let userAtk = Math.floor(attacker.getStat('atk'));
+			let targetAtk = Math.floor(defender.getStat('atk'));
+			if(userAtk >= targetAtk) {
+				this.boost({def: 1}, attacker, attacker, move);
+				return;
+			}
+			else {
+				if (attacker.removeVolatile(move.id)) {
+					return;
+				}
+				this.add('-prepare', attacker, move.name);
+				this.boost({def: 1}, attacker, attacker, move);
+				if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+					return;
+				}
+				attacker.addVolatile('twoturnmove', defender);
+				return null;
+			}
+		},
 	},
 
 	shieldbash: {
