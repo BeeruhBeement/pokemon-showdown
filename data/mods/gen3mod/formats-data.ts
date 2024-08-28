@@ -890,7 +890,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	togekiss: {
-		tier: "NU",
+		tier: "RU",
 	},
 	natu: {
 		tier: "PU",
@@ -2396,7 +2396,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	bouffalant: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	rufflet: {
 		tier: "Illegal",
