@@ -301,7 +301,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 
 				if (pokemon.hasType('Flying')) {
 					this.damage(pokemon.maxhp / 4);
-				} else if (pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')) < 0){
+				} else if (typeMod < 0){
 					this.damage(pokemon.maxhp / 16);
 				}
 				else {
@@ -446,6 +446,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	dragontail: {
+		inherit: true,
+		gen: 3,
+	},
 	xscissor: {
 		inherit: true,
 		gen: 3,
@@ -565,6 +569,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	mysticalfire: {
 		inherit: true,
 		gen: 3,
+		basePower: 75,
 	},
 	dig: {
 		inherit: true,
@@ -581,20 +586,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	filletaway: {
 		inherit: true,
 		gen: 3,
-		desc: "Raises the user's Attack, Special Attack, and Speed by 1 stages in exchange for the user losing 1/3 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Special Attack, and Speed stat stages would not change.",
-		shortDesc: "+1 Attack, Sp. Atk, Speed for 1/3 user's max HP.",
-		type: "Dark",
-		onTry(source) {
-			if (source.hp <= source.maxhp / 3 || source.maxhp === 1) return false;
-		},
-		onHit(pokemon) {
-			this.directDamage(pokemon.maxhp / 3);
-		},
-		boosts: {
-			atk: 1,
-			spa: 1,
-			spe: 1,
-		},
 	},
 	struggle: {
 		inherit: true,
@@ -842,12 +833,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	fishiousrend: {
 		inherit: true,
 		gen: 3,
-		basePower: 65,
+		basePower: 75,
 	},
 	boltbeak: {
 		inherit: true,
 		gen: 3,
-		basePower: 65,
+		basePower: 75,
 	},
 	strength: {
 		inherit: true,
@@ -1095,22 +1086,44 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	blazingtorque: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
+		basePower: 100,
+		flags: {
+			protect: 1
+		},
 	},
 	wickedtorque: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
+		basePower: 100,
+		flags: {
+			protect: 1
+		},
 	},
 	noxioustorque: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
+		flags: {
+			protect: 1
+		},
 	},
 	combattorque: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
+		flags: {
+			protect: 1
+		},
 	},
 	magicaltorque: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
+		flags: {
+			protect: 1
+		},
 	},
 	honeclaws: {
 		inherit: true,
@@ -1183,6 +1196,25 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	spikecannon: {
 		inherit: true,
 		type: "Steel",
+		basePower: 25,
+	},
+	quiverdance: {
+		inherit: true,
+		gen: 3,
+		desc: "Raises the user's Special Attack and Speed by 1 stage.",
+		shortDesc: "Raises the user's Sp. Atk and Speed by 1.",
+		boosts: {
+			spa: 1,
+			spe: 1,
+		},
+	},
+	snaptrap: {
+		inherit: true,
+		gen: 3,
+		desc: "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+		shortDesc: "Prevents the target from switching out. +1 priority.",
+		volatileStatus: 'partiallytrapped',
+		priority: 1,
 	},
 
 	shieldbash: {

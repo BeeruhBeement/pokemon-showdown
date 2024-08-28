@@ -9,6 +9,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			const speed = pokemon.baseSpecies.baseStats.spe;
 			const abilities = Object.values(pokemon.species.abilities).join('/');
 
+			pokemon.removeVolatile('message');
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 			this.add('message', `${pokemon} Base Speed: ${speed}`);
 			this.add('-start', pokemon, `${speed}`, '[silent]');
@@ -19,6 +20,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 				const speed = target.baseSpecies.baseStats.spe;
 				const abilities = Object.values(target.species.abilities).join('/');
 
+				target.removeVolatile('message');
 				this.add('-start', target, 'typechange', (target.illusion || target).getTypes(true).join('/'), '[silent]');
 				this.add('message', `${target} Base Speed: ${speed}`);
 				this.add('-start', target, `${speed}`, '[silent]');
@@ -29,10 +31,11 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			const speed = pokemon.baseSpecies.baseStats.spe;
 			const abilities = Object.values(pokemon.species.abilities).join('/');
 
+			pokemon.removeVolatile('message');
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
-			this.add('message', `${pokemon} Mega Base Speed: ${speed}`);
+			this.add('message', `${pokemon} Base Speed: ${speed}`);
 			this.add('-start', pokemon, `${speed}`, '[silent]');
-			this.add('message', `${pokemon} Mega Ability: ${abilities}`);
+			this.add('message', `${pokemon} Ability: ${abilities}`);
 		},
 	},
 };

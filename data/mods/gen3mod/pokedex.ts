@@ -594,7 +594,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Drench", H: "Inner Focus"},
 	},
-	treeko: {
+	treecko: {
 		inherit: true,
 		abilities: {0: "Overgrow", H: "Sharpness"},
 	},
@@ -749,7 +749,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	zangoose: {
 		inherit: true,
-		baseStats: {hp: 73, atk: 115, def: 60, spa: 90, spd: 60, spe: 90},
 	},
 	seviper: {
 		inherit: true,
@@ -945,6 +944,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Sound", "Flying"],
+	},
+	carnivine: {
+		inherit: true,
+		gen: 3,
+		types: ["Grass", "Dark"],
+		baseStats: {hp: 84, atk: 110, def: 72, spa: 100, spd: 72, spe: 46},
+		abilities: {0: "Flytrap"},
 	},
 	riolu: {
 		inherit: true,

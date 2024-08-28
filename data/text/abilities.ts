@@ -2352,4 +2352,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If Night is active, this Pokemon's Speed is doubled. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
 		shortDesc: "If Night is active, this Pokemon's Speed is doubled.",
 	},
+	flytrap: {
+		name: "Flytrap",
+		desc: "Pokemon using Bug-type moves against this Pokemon lose 1/8 of their maximum HP, rounded down. This Pokemon is immune to Water-type moves.",
+		shortDesc: "Pokemon using Bug moves on this Pokemon lose 1/8 HP. Bug immunity.",
+	},
 };

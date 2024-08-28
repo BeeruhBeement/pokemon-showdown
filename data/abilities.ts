@@ -6010,4 +6010,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 5020,
 	},
+	flytrap: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Bug') {
+				this.damage(source.baseMaxhp / 8, source, target);
+				this.add('-immune', target, '[from] ability: Flytrap');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Flytrap",
+		rating: 3.5,
+		num: 5021,
+	},
 };

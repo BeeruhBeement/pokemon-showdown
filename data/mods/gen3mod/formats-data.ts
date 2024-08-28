@@ -1460,7 +1460,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	zangoose: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	seviper: {
 		tier: "PU",
@@ -1864,7 +1864,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	carnivine: {
-		tier: "Illegal",
+		tier: "PU",
 	},
 	finneon: {
 		tier: "Illegal",
@@ -2381,7 +2381,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	druddigon: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	golett: {
 		tier: "Illegal",

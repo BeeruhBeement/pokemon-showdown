@@ -523,10 +523,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	toxicboost: {
 		inherit: true,
 		gen: 3,
-		desc: "While this Pokemon is poisoned, the power of its attacks is multiplied by 1.5. Immune to damage from poison.",
-		shortDesc: "While poisoned, attacks have 1.5x power. No damage from poison.",
+		desc: "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5. Immune to damage from poison.",
+		shortDesc: "While poisoned, physical attacks have 1.5x power. No damage from poison.",
 		onBasePower(basePower, attacker, defender, move) {
-			if (attacker.status === 'psn' || attacker.status === 'tox') {
+			if ((attacker.status === 'psn' || attacker.status === 'tox') && move.category === 'Physical') {
 				return this.chainModify(1.5);
 			}
 		},
@@ -918,6 +918,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	lunarcharge: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	flytrap: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
