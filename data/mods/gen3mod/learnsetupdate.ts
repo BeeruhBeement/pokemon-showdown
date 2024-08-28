@@ -285,6 +285,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "snorlax").learnset.steelroller = ["3T"];
 
 	dex.modData("Learnsets", "articuno").learnset.defog = ["3L1"];
+	dex.modData("Learnsets", "articuno").learnset.frostbite = ["3L50"];
 	dex.modData("Learnsets", "articuno").learnset.roost = ["3L57"];
 	dex.modData("Learnsets", "articuno").learnset.uturn = ["3T"];
 

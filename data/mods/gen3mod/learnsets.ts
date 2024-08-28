@@ -5723,6 +5723,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			zapcannon: ["3L54"],
 
 			discharge: ["3L42"],
+			steelroller: ["3T"],
 		},
 	},
 	klang: {
@@ -5757,6 +5758,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			zapcannon: ["3L60"],
 
 			discharge: ["3L44"],
+			steelroller: ["3T"],
 		},
 	},
 	klinklang: {
@@ -5794,6 +5796,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			zapcannon: ["3L66"],
 
 			discharge: ["3L44"],
+			steelroller: ["3T"],
 		},
 	},
 	cubchoo: {
@@ -8241,6 +8244,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			steelroller: ["3T"],
 			secretpower: ["3M"],
 			discharge: ["3L29"],
+			spikecannon: ["3L45"],
 		},
 	},
 	bruxish: {

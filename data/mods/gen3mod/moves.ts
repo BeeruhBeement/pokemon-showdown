@@ -1158,6 +1158,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		desc: "This attack charges on the first turn and executes on the second unless the attacker's Attack is greater than the target's Attack. Raises the user's Defense by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "No charge if user's Atk > target's Atk. +1 Def.",
+		basePower: 130,
 		onTryMove(attacker, defender, move) {
 			let userAtk = Math.floor(attacker.getStat('atk'));
 			let targetAtk = Math.floor(defender.getStat('atk'));
@@ -1178,6 +1179,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				return null;
 			}
 		},
+	},
+	spikecannon: {
+		inherit: true,
+		type: "Steel",
 	},
 
 	shieldbash: {
