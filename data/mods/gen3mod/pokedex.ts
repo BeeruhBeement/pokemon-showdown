@@ -648,6 +648,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 60, atk: 85, def: 60, spa: 75, spd: 50, spe: 125},
 	},
+	wingull: {
+		inherit: true,
+		abilities: {0: "Keen Eye", 1: "Hydration", H: "Rain Dish"},
+	},
+	pelipper: {
+		inherit: true,
+		abilities: {0: "Keen Eye", 1: "Drizzle", H: "Rain Dish"},
+	},
 	ralts: {
 		inherit: true,
 		types: ["Psychic", "Fairy"],
@@ -734,6 +742,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	camerupt: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 100, def: 70, spa: 105, spd: 75, spe: 40},
+	},
+	torkoal: {
+		inherit: true,
+		abilities: {0: "White Smoke", 1: "Drought", H: "Shell Armor"},
 	},
 	spinda: {
 		inherit: true,
