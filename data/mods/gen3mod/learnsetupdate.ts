@@ -261,9 +261,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "magikarp").learnset.hydropump = ["3L75"];
 
 	dex.modData("Learnsets", "lapras").learnset.frostbite = ["3L55"];
-
-	dex.modData("Learnsets", "vaporeon").learnset.scald = ["3T", "3L78"];
+	
+	dex.modData("Learnsets", "vaporeon").learnset.flipturn = ["3L78"];
 	dex.modData("Learnsets", "vaporeon").learnset.dazzlinggleam = ["3M"];
+	dex.modData("Learnsets", "vaporeon").learnset.scald = ["3T"]
 	dex.modData("Learnsets", "jolteon").learnset.discharge = ["3L78"];
 	dex.modData("Learnsets", "jolteon").learnset.dazzlinggleam = ["3M"];
 	dex.modData("Learnsets", "flareon").learnset.lavaplume = ["3L78"];
@@ -695,8 +696,11 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "electrike").learnset.switcheroo = ["3E"];
 	dex.modData("Learnsets", "electrike").learnset.discharge = ["3E", "3L41"];
 	dex.modData("Learnsets", "electrike").learnset.flamethrower = ["3M"];
+	dex.modData("Learnsets", "electrike").learnset.voltswitch = ["3T"];
 	dex.modData("Learnsets", "manectric").learnset.discharge = ["3L49"];
 	dex.modData("Learnsets", "manectric").learnset.flamethrower = ["3M"];
+	dex.modData("Learnsets", "manectric").learnset.overheat = ["3M"];
+	dex.modData("Learnsets", "manectric").learnset.voltswitch = ["3T"];
 	
 	dex.modData("Learnsets", "plusle").learnset.nastyplot = ["3L51"];
 

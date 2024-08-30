@@ -1,4 +1,3 @@
-import { TriumvirateModeTrivia } from "../../../server/chat-plugins/trivia/trivia";
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
@@ -1065,6 +1064,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Psychic Surge", 1: "Synchronize", H: "Telepathy"},
+	},
+	blitzle: {
+		inherit: true,
+		gen: 3,
+	},
+	zebstrika: {
+		inherit: true,
+		gen: 3,
+		types: ["Electric", "Fire"],
+		abilities: {0: "Flash Fire", 1: "Motor Drive", H: "Sap Sipper"},
 	},
 	roggenrola: {
 		inherit: true,
