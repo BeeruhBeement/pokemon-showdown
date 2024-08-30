@@ -806,7 +806,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	mewtwo: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	mewtwomegax: {
 		tier: "Illegal",
@@ -815,7 +815,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	mew: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	chikorita: {
 		tier: "Illegal",
@@ -1043,10 +1043,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	ursaluna: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	ursalunabloodmoon: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	slugma: {
 		tier: "Illegal",
@@ -1118,13 +1118,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	raikou: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	entei: {
 		tier: "Illegal",
 	},
 	suicune: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	larvitar: {
 		tier: "Illegal",
@@ -1139,10 +1139,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	lugia: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	hooh: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	celebi: {
 		tier: "Illegal",
@@ -1622,31 +1622,31 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	latias: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	latiasmega: {
 		tier: "Illegal",
 	},
 	latios: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	latiosmega: {
 		tier: "Illegal",
 	},
 	kyogre: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	kyogreprimal: {
 		tier: "Illegal",
 	},
 	groudon: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	groudonprimal: {
 		tier: "Illegal",
 	},
 	rayquaza: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	rayquazamega: {
 		tier: "Illegal",
@@ -1655,16 +1655,16 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	deoxys: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	deoxysattack: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	deoxysdefense: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	deoxysspeed: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	turtwig: {
 		tier: "Illegal",
@@ -1837,7 +1837,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	lucariomega: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	hippopotas: {
 		tier: "Illegal",
@@ -2450,7 +2450,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	reshiram: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	zekrom: {
 		tier: "Illegal",
@@ -2471,7 +2471,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	keldeo: {
-		tier: "Uber",
+		tier: "Illegal",
 	},
 	meloetta: {
 		tier: "Illegal",
@@ -2578,7 +2578,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	furfrou: {
 		tier: "Illegal",
 	},
-	esIllegalrr: {
+	espurr: {
 		tier: "Illegal",
 	},
 	meowstic: {
@@ -3414,7 +3414,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	drakloak: {
 		tier: "Illegal",
 	},
-	dragaIllegallt: {
+	dragapult: {
 		tier: "Illegal",
 	},
 	zacian: {

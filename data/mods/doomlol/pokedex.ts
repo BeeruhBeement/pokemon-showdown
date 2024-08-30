@@ -4,6 +4,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	caterpiemega: {
 		num: 10,
 		name: "Caterpie-Mega",
+		baseSpecies: "Caterpie",
+		forme: "Mega",
 		types: ["Bug", "Dragon"],
 		baseStats: {hp: 45, atk: 50, def: 55, spa: 30, spd: 60, spe: 55},
 		abilities: {0: "Sheer Force"},
@@ -17,6 +19,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	weedlemega: {
 		num: 13,
 		name: "Weedle-Mega",
+		baseSpecies: "Weedle",
+		forme: "Mega",
 		types: ["Bug", "Poison"],
 		baseStats: {hp: 40, atk: 45, def: 40, spa: 30, spd: 40, spe: 100},
 		abilities: {0: "Merciless"},
@@ -30,6 +34,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	wurmplemega: {
 		num: 265,
 		name: "Wurmple-Mega",
+		baseSpecies: "Wurmple",
+		forme: "Mega",
 		types: ["Bug"],
 		baseStats: {hp: 45, atk: 65, def: 55, spa: 40, spd: 50, spe: 40},
 		abilities: {0: "Unaware"},

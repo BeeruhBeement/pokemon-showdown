@@ -2584,7 +2584,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	furfrou: {
 		tier: "NUBL",
 	},
-	esIllegalrr: {
+	espurr: {
 		tier: "Illegal",
 	},
 	meowstic: {
@@ -3420,7 +3420,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	drakloak: {
 		tier: "Illegal",
 	},
-	dragaIllegallt: {
+	dragapult: {
 		tier: "Illegal",
 	},
 	zacian: {

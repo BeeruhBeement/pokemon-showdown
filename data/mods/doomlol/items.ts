@@ -3,6 +3,7 @@ import { ModdedItemData } from "../../../sim/dex-items";
 export const Items: {[k: string]: ModdedItemData} = {
 	caterpieite: {
 		name: "Caterpieite",
+		shortDesc: "If held by a Caterpie, this item allows it to Mega Evolve in battle.",
 		spritenum: 628,
 		megaStone: "Caterpie-Mega",
 		megaEvolves: "Caterpie",
@@ -16,6 +17,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	weedleite: {
 		name: "Weedleite",
+		shortDesc: "If held by a Weedle, this item allows it to Mega Evolve in battle.",
 		spritenum: 628,
 		megaStone: "Weedle-Mega",
 		megaEvolves: "Weedle",
@@ -29,6 +31,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	wurmpleite: {
 		name: "Wurmpleite",
+		shortDesc: "If held by a Wurmple, this item allows it to Mega Evolve in battle.",
 		spritenum: 628,
 		megaStone: "Wurmple-Mega",
 		megaEvolves: "Wurmple",
