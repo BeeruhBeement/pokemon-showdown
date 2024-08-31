@@ -1975,13 +1975,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "RU",
 	},
 	oshawott: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	dewott: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	samurott: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	samurotthisui: {
 		tier: "Illegal",
@@ -2426,7 +2426,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	hydreigon: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	larvesta: {
 		tier: "Illegal",
@@ -2438,7 +2438,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	terrakion: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	virizion: {
 		tier: "Illegal",
@@ -3415,13 +3415,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	dreepy: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	drakloak: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	dragapult: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	zacian: {
 		tier: "Illegal",

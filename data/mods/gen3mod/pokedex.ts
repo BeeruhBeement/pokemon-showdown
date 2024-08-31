@@ -1032,6 +1032,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	oshawott: {
+		inherit: true,
+		gen: 3,
+	},
+	dewott: {
+		inherit: true,
+		gen: 3,
+		types: ["Water", "Fighting"],
+	},
+	samurott: {
+		inherit: true,
+		gen: 3,
+		types: ["Water", "Fighting"],
+	},
 	pansage: {
 		inherit: true,
 		gen: 3,
@@ -1190,6 +1204,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	hydreigon: {
+		inherit: true,
+		gen: 3,
+	},
+	terrakion: {
 		inherit: true,
 		gen: 3,
 	},
@@ -1574,6 +1592,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	dracozolt: {
+		inherit: true,
+		gen: 3,
+	},
+	dreepy: {
+		inherit: true,
+		gen: 3,
+	},
+	drakloak: {
+		inherit: true,
+		gen: 3,
+	},
+	dragapult: {
 		inherit: true,
 		gen: 3,
 	},

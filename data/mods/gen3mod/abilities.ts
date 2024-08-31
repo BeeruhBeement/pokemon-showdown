@@ -639,6 +639,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	justified: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// -ate abilities
 
@@ -841,6 +845,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 	},
 	teravolt: {
+		inherit: true,
+		gen: 3,
+	},
+	icescales: {
 		inherit: true,
 		gen: 3,
 	},

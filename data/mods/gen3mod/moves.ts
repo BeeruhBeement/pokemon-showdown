@@ -245,7 +245,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	flipturn: {
 		inherit: true,
 		gen: 3,
-		basePower: 40,
+		basePower: 50,
 	},
 	leechlife: {
 		inherit: true,
@@ -1216,6 +1216,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Prevents the target from switching out. +1 priority.",
 		volatileStatus: 'partiallytrapped',
 		priority: 1,
+	},
+	sacredsword: {
+		inherit: true,
+		gen: 3,
+	},
+	dragondarts: {
+		inherit: true,
+		gen: 3,
 	},
 
 	shieldbash: {
