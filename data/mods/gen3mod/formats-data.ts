@@ -2375,10 +2375,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	mienfoo: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	mienshao: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	druddigon: {
 		tier: "NU",
@@ -3028,7 +3028,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	mimikyu: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	mimikyutotem: {
 		tier: "Illegal",
@@ -3058,7 +3058,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	tapukoko: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	tapulele: {
 		tier: "Illegal",

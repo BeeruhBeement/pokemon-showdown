@@ -156,11 +156,11 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "magneton").learnset.explosion = ["3T"];
 	
 	dex.modData("Learnsets", "farfetchd").learnset.firstimpression = ["3E"];
-	dex.modData("Learnsets", "farfetchd").learnset.aeroblast = ["3L55"];
+	dex.modData("Learnsets", "farfetchd").learnset.acrobatics = ["3L55"];
 	
 	dex.modData("Learnsets", "doduo").learnset.uturn = ["3T"];
 	dex.modData("Learnsets", "dodrio").learnset.jumpkick = ["3L43"];	
-	dex.modData("Learnsets", "dodrio").learnset.uturn = ["3T"];
+	dex.modData("Learnsets", "dodrio").learnset.uturn = ["3T"];	
 
 	dex.modData("Learnsets", "seel").learnset.haze = ["3E"];
 	dex.modData("Learnsets", "dewgong").learnset.megahorn = ["3L65"];
@@ -421,10 +421,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "hoppip").learnset.cottonguard = ["3E"];
 	dex.modData("Learnsets", "hoppip").learnset.strengthsap = ["3E"];
 	dex.modData("Learnsets", "hoppip").learnset.uturn = ["3T", "3L31"];
+	dex.modData("Learnsets", "hoppip").learnset.acrobatics = ["3L46"];
 	dex.modData("Learnsets", "skiploom").learnset.uturn = ["3T", "3L36"];
+	dex.modData("Learnsets", "skiploom").learnset.acrobatics = ["3L56"];
 	dex.modData("Learnsets", "jumpluff").learnset.uturn = ["3T", "3L36"];
 	dex.modData("Learnsets", "jumpluff").learnset.rapidspin = ["3L52"];
-	dex.modData("Learnsets", "jumpluff").learnset.aeroblast = ["3L64"];
+	dex.modData("Learnsets", "jumpluff").learnset.acrobatics = ["3L64"];
 
 	dex.modData("Learnsets", "wooper").learnset.recover = ["3E"];
 	dex.modData("Learnsets", "wooper").learnset.scald = ["3T"];

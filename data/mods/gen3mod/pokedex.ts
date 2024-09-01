@@ -1175,6 +1175,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Swift Swim"},
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
 	},
+	mienfoo: {
+		inherit: true,
+		gen: 3,
+	},
+	mienshao: {
+		inherit: true,
+		gen: 3,
+	},
+	druddigon: {
+		inherit: true,
+		gen: 3,
+	},
 	pawniard: {
 		inherit: true,
 		gen: 3,
@@ -1489,11 +1501,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 75, atk: 98, def: 73, spa: 40, spd: 83, spe: 96},
 	},
+	mimiyku: {
+		inherit: true,
+		gen: 3,
+	},
 	bruxish: {
 		inherit: true,
 		gen: 3,
 	},
 	drampa: {
+		inherit: true,
+		gen: 3,
+	},
+	tapukoko: {
 		inherit: true,
 		gen: 3,
 	},

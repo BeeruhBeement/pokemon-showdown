@@ -499,9 +499,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
-	aeroblast: {
-		inherit: true,
-	},
 	roost: {
 		inherit: true,
 		gen: 3,
