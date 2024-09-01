@@ -2336,13 +2336,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	litwick: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	lampent: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	chandelure: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	axew: {
 		tier: "Illegal",

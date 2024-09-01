@@ -1156,6 +1156,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	litwick: {
+		inherit: true,
+		gen: 3,
+	},
+	lampent: {
+		inherit: true,
+		gen: 3,
+	},
+	chandelure: {
+		inherit: true,
+		gen: 3,
+	},
 	ducklett: {
 		inherit: true,
 		gen: 3,
@@ -1501,7 +1513,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 75, atk: 98, def: 73, spa: 40, spd: 83, spe: 96},
 	},
-	mimiyku: {
+	mimikyu: {
 		inherit: true,
 		gen: 3,
 	},
