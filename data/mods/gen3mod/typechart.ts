@@ -27,31 +27,6 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Sound: 2,
 		},
 	},
-	dark: {
-		inherit: true,
-		damageTaken: {
-			prankster: 3,
-			Bug: 1,
-			Dark: 2,
-			Dragon: 0,
-			Electric: 0,
-			Fairy: 1,
-			Fighting: 1,
-			Fire: 0,
-			Flying: 0,
-			Ghost: 2,
-			Grass: 0,
-			Ground: 0,
-			Ice: 0,
-			Normal: 0,
-			Poison: 0,
-			Psychic: 3,
-			Rock: 0,
-			Steel: 0,
-			Stellar: 0,
-			Water: 0,
-		},
-	},
 	ghost: {
 		inherit: true,
 		damageTaken: {
@@ -129,7 +104,6 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	grass: {
 		inherit: true,
 		damageTaken: {
-			powder: 3,
 			Bug: 1,
 			Dark: 0,
 			Dragon: 0,

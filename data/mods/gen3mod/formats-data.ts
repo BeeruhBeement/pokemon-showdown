@@ -938,7 +938,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	ambipom: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	sunkern: {
 		tier: "LC",
@@ -1418,7 +1418,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	camerupt: {
-		tier: "RU",
+		tier: "NU",
 	},
 	cameruptmega: {
 		tier: "Illegal",
@@ -3028,7 +3028,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	mimikyu: {
-		tier: "RU",
+		tier: "NU",
 	},
 	mimikyutotem: {
 		tier: "Illegal",

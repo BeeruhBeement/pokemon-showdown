@@ -1222,6 +1222,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	tailslap: {
+		inherit: true,
+		gen: 3,
+	},
 
 	shieldbash: {
 		inherit: true,

@@ -23,30 +23,6 @@ export const Scripts: ModdedBattleScriptsData = {
 	},	
 	actions: {
 		inherit: true,
-		hitStepTryImmunity(targets: Pokemon[], pokemon: Pokemon, move: ActiveMove) {
-			const hitResults = [];
-			for (const [i, target] of targets.entries()) {
-				if (move.flags['powder'] && target !== pokemon && !this.dex.getImmunity('powder', target)) {
-					this.battle.debug('natural powder immunity');
-					this.battle.add('-immune', target);
-					hitResults[i] = false;
-				} else if (!this.battle.singleEvent('TryImmunity', move, {}, target, pokemon, move)) {
-					this.battle.add('-immune', target);
-					hitResults[i] = false;
-				} else if (move.pranksterBoosted && pokemon.hasAbility('prankster') &&
-					!targets[i].isAlly(pokemon) && !this.dex.getImmunity('prankster', target)) {
-					this.battle.debug('natural prankster immunity');
-					if (target.illusion || !(move.status && !this.dex.getImmunity(move.status, target))) {
-						this.battle.hint("In Gen 3 Mod, Dark is immune to Prankster moves.");
-					}
-					this.battle.add('-immune', target);
-					hitResults[i] = false;
-				} else {
-					hitResults[i] = true;
-				}
-			}
-			return hitResults;
-		},
 		getDamage(
 			source: Pokemon, target: Pokemon, move: string | number | ActiveMove,
 			suppressMessages = false

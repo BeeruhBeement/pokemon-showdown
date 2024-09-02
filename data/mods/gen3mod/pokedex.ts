@@ -460,6 +460,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 80, atk: 65, def: 70, spa: 65, spd: 100, spe: 110},
 	},
+	aipom: {
+		inherit: true,
+	},
+	ambipom: {
+		inherit: true,
+		gen: 3,
+	},
 	sunflora: {
 		inherit: true,
 		types: ["Grass", "Fire"],

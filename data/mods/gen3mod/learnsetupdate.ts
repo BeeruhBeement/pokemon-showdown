@@ -27,6 +27,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "pidgeot").learnset.hurricane = ["3L68"];
 	dex.modData("Learnsets", "pidgeot").learnset.dualwingbeat = ["3T"];
 	
+	dex.modData("Learnsets", "raticate").learnset.jumpkick = ["3L44"];
+	
 	dex.modData("Learnsets", "spearow").learnset.swordsdance = ["3T"];
 	dex.modData("Learnsets", "fearow").learnset.swordsdance = ["3T"];
 	dex.modData("Learnsets", "fearow").learnset.dualwingbeat = ["3T"];
@@ -124,6 +126,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "poliwrath").learnset.drainpunch = ["3T"];
 	dex.modData("Learnsets", "poliwrath").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "politoed").learnset.bounce = ["3L37"];
+	dex.modData("Learnsets", "politoed").learnset.jumpkick = ["3L37"];
 	dex.modData("Learnsets", "politoed").learnset.uproar = ["3L48"];
 	dex.modData("Learnsets", "politoed").learnset.hypervoice = ["3L53"];
 	dex.modData("Learnsets", "politoed").learnset.scald = ["3T"];
@@ -427,6 +430,13 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "jumpluff").learnset.uturn = ["3T", "3L36"];
 	dex.modData("Learnsets", "jumpluff").learnset.rapidspin = ["3L52"];
 	dex.modData("Learnsets", "jumpluff").learnset.acrobatics = ["3L64"];
+	
+	dex.modData("Learnsets", "aipom").learnset.bounce = ["3E"];
+	dex.modData("Learnsets", "aipom").learnset.fakeout = ["3E"];
+	dex.modData("Learnsets", "aipom").learnset.tailslap = ["3E"];
+	dex.modData("Learnsets", "aipom").learnset.switcheroo = ["3E"];
+	dex.modData("Learnsets", "aipom").learnset.nastyplot = ["3L39"];
+	dex.modData("Learnsets", "aipom").learnset.uturn = ["3T"];
 
 	dex.modData("Learnsets", "wooper").learnset.recover = ["3E"];
 	dex.modData("Learnsets", "wooper").learnset.scald = ["3T"];
@@ -838,7 +848,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "chimecho").learnset.echolocation = ["3L15"];
 	dex.modData("Learnsets", "chimecho").learnset.hypervoice = ["3L54"];
 	dex.modData("Learnsets", "chimecho").learnset.synchronoise = ["3L57"];
-	dex.modData("Learnsets", "chimecho").learnset.energyball = ["3M"];
 
 	dex.modData("Learnsets", "absol").learnset.megahorn = ["3E"];
 	dex.modData("Learnsets", "absol").learnset.pursuit = ["3L1"];
