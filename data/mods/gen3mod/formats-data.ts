@@ -296,10 +296,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	persian: {
-		tier: "NU",
+		tier: "PU",
 	},
 	persianalola: {
-		tier: "RU",
+		tier: "NU",
 	},
 	perrserker: {
 		tier: "RU",
@@ -761,7 +761,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	omastar: {
-		tier: "UU",
+		tier: "RU",
 	},
 	kabuto: {
 		tier: "LC",
@@ -1577,7 +1577,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	walrein: {
-		tier: "NU",
+		tier: "PU",
 	},
 	clamperl: {
 		tier: "LC",
@@ -2624,7 +2624,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	barbaracle: {
-		tier: "RU",
+		tier: "NU",
 	},
 	skrelp: {
 		tier: "Illegal",

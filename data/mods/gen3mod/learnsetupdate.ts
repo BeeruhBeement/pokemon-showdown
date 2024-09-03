@@ -131,6 +131,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "politoed").learnset.hypervoice = ["3L53"];
 	dex.modData("Learnsets", "politoed").learnset.scald = ["3T"];
 
+	dex.modData("Learnsets", "machop").learnset.bulletpunch = ["3E"];
 	dex.modData("Learnsets", "machop").learnset.machpunch = ["3L22"];
 	dex.modData("Learnsets", "machop").learnset.drainpunch = ["3T"];
 	dex.modData("Learnsets", "machoke").learnset.machpunch = ["3L22"];
@@ -654,6 +655,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "exploud").learnset.synchronoise = ["3L55"];
 	dex.modData("Learnsets", "exploud").learnset.boomburst = ["3L85"];
 	
+	dex.modData("Learnsets", "makuhita").learnset.bulletpunch = ["3E"];
+	
 	dex.modData("Learnsets", "nosepass").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "nosepass").learnset.zapbarrage = ["3E"];
 	dex.modData("Learnsets", "nosepass").learnset.rockcrunch = ["3E"];
@@ -702,6 +705,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "aggron").learnset.rockclimb = ["3M"];
 	dex.modData("Learnsets", "aggron").learnset.steelroller = ["3T"];
 	
+	dex.modData("Learnsets", "meditite").learnset.bulletpunch = ["3E"];
 	dex.modData("Learnsets", "meditite").learnset.drainpunch = ["3T"];
 	dex.modData("Learnsets", "medicham").learnset.drainpunch = ["3T"];
 
