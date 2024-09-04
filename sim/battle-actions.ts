@@ -47,6 +47,8 @@ export class BattleActions {
 		Flying: "Supersonic Skystrike",
 		Ground: "Tectonic Rage",
 		Fairy: "Twinkle Tackle",
+		
+		Sound: "Resonant Annihilation",
 	};
 
 	constructor(battle: Battle) {
