@@ -2436,4 +2436,8 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Noise Plate",
 		shortDesc: "Holder's Sound-type attacks have 1.2x power. Judgment is Sound type.",
 	},
+	soundiumz: {
+		name: "Soundium Z",
+		shortDesc: "If holder has a Sound move, this item allows it to use a Sound Z-Move.",
+	},
 };

@@ -71,7 +71,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	beedrillmega: {
-		tier: "UUBL",
+		tier: "OU",
 	},
 	pidgey: {
 		tier: "LC",
@@ -971,7 +971,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	mismagius: {
-		tier: "UU",
+		tier: "OU",
 	},
 	unown: {
 		tier: "ZU",
@@ -1100,7 +1100,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	houndoom: {
-		tier: "RU",
+		tier: "NU",
 	},
 	houndoommega: {
 		tier: "Illegal",
@@ -1786,10 +1786,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	drifloon: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	drifblim: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	buneary: {
 		tier: "Illegal",
@@ -2002,10 +2002,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	purrloin: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	liepard: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	pansage: {
 		tier: "LC",
@@ -2378,7 +2378,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	mienshao: {
-		tier: "UU",
+		tier: "OU",
 	},
 	druddigon: {
 		tier: "NU",
@@ -3679,7 +3679,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	dachsbun: {
-		tier: "UU",
+		tier: "RU",
 	},
 	maschiff: {
 		tier: "Illegal",

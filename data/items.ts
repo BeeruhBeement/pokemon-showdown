@@ -7649,7 +7649,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	soundmemory: {
 		name: "Sound Memory",
-		spritenum: -5001,
 		onMemory: 'Sound',
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 773) || pokemon.baseSpecies.num === 773) {
@@ -7660,6 +7659,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		forcedForme: "Silvally-Sound",
 		itemUser: ["Silvally-Sound"],
 		num: -5001,
+		isNonstandard: "Custom",
+	},
+	soundiumz: {
+		name: "Soundium Z",
+		spritenum: 640,
+		onPlate: 'Sound',
+		onTakeItem: false,
+		zMove: true,
+		zMoveType: "Sound",
+		forcedForme: "Arceus-Sound",
+		num: -5002,
 		isNonstandard: "Custom",
 	},
 };

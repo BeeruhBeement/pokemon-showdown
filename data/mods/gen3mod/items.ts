@@ -400,6 +400,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	soundmemory: {
 		inherit: true,
 		gen: 3,
+		isNonstandard: null,
 	},
 	steelmemory: {
 		inherit: true,
@@ -435,6 +436,126 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 	},
 	lucarionite: {
+		inherit: true,
+		gen: 3,
+	},
+	
+	normaliumz: {
+		inherit: true,
+		gen: 3,
+	},
+	fightiniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	flyiniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	poisoniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	groundiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	rockiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	buginiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	ghostiniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	steeliumz: {
+		inherit: true,
+		gen: 3,
+	},
+	firiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	wateriumz: {
+		inherit: true,
+		gen: 3,
+	},
+	grassiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	electriumz: {
+		inherit: true,
+		gen: 3,
+	},
+	psychiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	iciumz: {
+		inherit: true,
+		gen: 3,
+	},
+	dragoniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	darkiniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	fairiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	soundiumz: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	pikaniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	pikashuniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	aloraichiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	snorlaxiumz: {
+		inherit: true,
+		gen: 3,
+		zMoveFrom: "Hyper Beam",
+		shortDesc: "If held by a Snorlax with Hyper Beam, it can use Pulverizing Pancake.",
+	},
+	mewniumz: {
+		inherit: true,
+		gen: 3,
+	},
+	decidiumz: {
+		inherit: true,
+		gen: 3,
+	},
+	lycaniumz: {
+		inherit: true,
+		gen: 3,
+		zMoveFrom: "Rock Crunch",
+		shortDesc: "If held by a Lycanroc forme with Rock Crunch, it can use Splintered Stormshards.",
+	},
+	mimikiumz: {
+		inherit: true,
+		gen: 3,
+		zMoveFrom: "Dazzling Gleam",
+		shortDesc: "If held by a Mimikyu with Dazzling Gleam, it can use Let's Snuggle Forever.",
+	},
+	tapuniumz: {
 		inherit: true,
 		gen: 3,
 	},

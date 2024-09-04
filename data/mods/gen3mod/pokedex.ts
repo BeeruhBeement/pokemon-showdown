@@ -765,9 +765,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Quick Draw", H: "Sand Rush"},
 	},
-	zangoose: {
-		inherit: true,
-	},
 	seviper: {
 		inherit: true,
 		baseStats: {hp: 73, atk: 100, def: 60, spa: 100, spd: 60, spe: 85},
@@ -942,6 +939,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 70, atk: 52, def: 168, spa: 47, spd: 138, spe: 30},
 	},
+	drifloon: {
+		inherit: true,
+		gen: 3,
+	},
+	drifblim: {
+		inherit: true,
+		gen: 3,
+	},
 	stunky: {
 		inherit: true,
 		gen: 3,
@@ -1052,6 +1057,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Water", "Fighting"],
+	},
+	purrloin: {
+		inherit: true,
+		gen: 3,
+	},
+	liepard: {
+		inherit: true,
+		gen: 3,
 	},
 	pansage: {
 		inherit: true,

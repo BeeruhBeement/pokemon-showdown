@@ -7631,4 +7631,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack and accuracy by 1 stage.",
 		shortDesc: "Raises the user's Sp. Attack and accuracy by 1.",
 	},
+	resonantannihilation: {
+		name: "Resonant Annihilation",
+		shortDesc: "Power is equal to the base move's Z-Power.",
+	},
 };
