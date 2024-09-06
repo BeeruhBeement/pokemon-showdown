@@ -1344,4 +1344,150 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
+	
+	breakneckblitz: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	alloutpummeling: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	supersonicskystrike: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	aciddownpour: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	tectonicrage: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	continentalcrush: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	savagespinout: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	neverendingnightmare: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	corkscrewcrash: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	infernooverdrive: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	hydrovortex: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	bloomdoom: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	gigavolthavoc: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	shatteredpsyche: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	subzeroslammer: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	devastatingdrake: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	blacholeeclypse: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	twinkletackle: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	resonantannihilation: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	catastropika: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	"10000000voltthunderbolt": {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	stokedsparksurfer: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	extremeevoboost: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	pulverizingpancake: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	gensissupernova: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	sinisterarrowraid: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	splinteredstormshards: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	letssnuggleforever: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	guardianofalola: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
 };

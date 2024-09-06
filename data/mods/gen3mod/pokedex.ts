@@ -25,7 +25,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	beedrillmega: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 65, atk: 160, def: 40, spa: 15, spd: 80, spe: 155},
+		baseStats: {hp: 65, atk: 160, def: 40, spa: 15, spd: 90, spe: 145},
 	},
 	pidgeot: {
 		inherit: true,

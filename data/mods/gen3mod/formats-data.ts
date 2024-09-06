@@ -779,7 +779,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	snorlax: {
-		tier: "UU",
+		tier: "OU",
 	},
 	snorlaxgmax: {
 		tier: "Illegal",
@@ -1292,7 +1292,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	slaking: {
-		tier: "UU",
+		tier: "ZU",
 	},
 	nincada: {
 		tier: "LC",
@@ -1625,7 +1625,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	registeel: {
-		tier: "UU",
+		tier: "OU",
 	},
 	latias: {
 		tier: "Uber",
@@ -2438,7 +2438,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	terrakion: {
-		tier: "UU",
+		tier: "OU",
 	},
 	virizion: {
 		tier: "Illegal",
@@ -2956,7 +2956,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	silvally: {
-		tier: "OU",
+		tier: "UU",
 	},
 	silvallybug: {
 		tier: "PUBL",

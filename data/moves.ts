@@ -22386,6 +22386,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "self",
 		type: "Sound",
+		zMove: {boost: {spa: 1}},
 		contestType: "Cute",
 	},
 	resonantannihilation: {

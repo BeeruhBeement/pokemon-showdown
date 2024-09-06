@@ -249,6 +249,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	rockyhelmet: {
+		inherit: true,
+		gen: 3,
+	},
 	dawnstone: {
 		inherit: true,
 		gen: 3,
@@ -468,7 +472,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
-	ghostiniumz: {
+	ghostiumz: {
 		inherit: true,
 		gen: 3,
 	},
