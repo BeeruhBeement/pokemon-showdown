@@ -663,6 +663,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "ninjask").learnset.dualwingbeat = ["3T"];
 	dex.modData("Learnsets", "ninjask").learnset.uturn = ["3T"];
 	dex.modData("Learnsets", "ninjask").learnset.watershuriken = ["3L38"];
+	dex.modData("Learnsets", "ninjask").learnset.superpower = ["3L38"];
 	dex.modData("Learnsets", "shedinja").learnset.shadowsneak = ["3L38"];
 	dex.modData("Learnsets", "shedinja").learnset.xscissor = ["3T"];
 	
