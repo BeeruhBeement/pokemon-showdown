@@ -61,11 +61,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	sheerforce: {
 		inherit: true,
 		gen: 3,
-		onBasePower(basePower, pokemon, target, move) {
-			if (move.hasSheerForce) return this.chainModify([12, 10]);
-		},
-		desc: "This Pokemon's attacks with secondary effects have their power multiplied by 1.2, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Anger Shell, Berserk, Color Change, Emergency Exit, Pickpocket, Wimp Out, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating.",
-		shortDesc: "This Pokemon's attacks with secondary effects have 1.2x power; nullifies the effects.",
 	},
 	moldbreaker: {
 		inherit: true,
@@ -857,6 +852,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 	},
 	fluffy: {
+		inherit: true,
+		gen: 3,
+	},
+	neutralizinggas: {
 		inherit: true,
 		gen: 3,
 	},

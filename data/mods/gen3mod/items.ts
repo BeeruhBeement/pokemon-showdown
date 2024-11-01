@@ -551,7 +551,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
-	snorlaxiumz: {
+	snorliumz: {
 		inherit: true,
 		gen: 3,
 		zMoveFrom: "Hyper Beam",

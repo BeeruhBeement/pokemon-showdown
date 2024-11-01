@@ -1214,6 +1214,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	ducklett: {
+		inherit: true,
+		gen: 3,
+	},
+	swanna: {
+		inherit: true,
+		gen: 3,
+	},
+	alomomola: {
+		inherit: true,
+		gen: 3,
+		types: ["Water", "Fairy"],
+		baseStats: {hp: 165, atk: 40, def: 80, spa: 75, spd: 75, spe: 65},
+		abilities: {0: "Magic Guard", 1: "Unaware", H: "Regenerator"},
+	},
 	klink: {
 		inherit: true,
 		gen: 3,
@@ -1240,14 +1255,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Flash Fire", 1: "Flame Body", H: "Infiltrator", S: "Shadow Tag"},
-	},
-	ducklett: {
-		inherit: true,
-		gen: 3,
-	},
-	swanna: {
-		inherit: true,
-		gen: 3,
 	},
 	axew: {
 		inherit: true,
@@ -1316,6 +1323,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	hydreigon: {
+		inherit: true,
+		gen: 3,
+	},
+	cobalion: {
 		inherit: true,
 		gen: 3,
 	},

@@ -2297,7 +2297,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	alomomola: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	joltik: {
 		tier: "Illegal",
@@ -2435,7 +2435,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	cobalion: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	terrakion: {
 		tier: "OU",
