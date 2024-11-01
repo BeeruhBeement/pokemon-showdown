@@ -1340,7 +1340,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	mawilemega: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	aron: {
 		tier: "LC",
@@ -2107,13 +2107,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	venipede: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	whirlipede: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	scolipede: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	cottonee: {
 		tier: "Illegal",
@@ -2345,13 +2345,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	axew: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	fraxure: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	haxorus: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	cubchoo: {
 		tier: "LC",
@@ -3019,7 +3019,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	turtonator: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	togedemaru: {
 		tier: "NU",
@@ -3094,7 +3094,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	celesteela: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	kartana: {
 		tier: "Illegal",
@@ -3851,5 +3851,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	pecharunt: {
 		tier: "Illegal",
+	},
+
+	goursear: {
+		tier: "NU",
 	},
 };

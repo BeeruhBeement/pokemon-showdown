@@ -856,6 +856,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	fluffy: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	

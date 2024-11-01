@@ -71,11 +71,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "geodude").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "geodude").learnset.rockclimb = ["3M"];
 	dex.modData("Learnsets", "geodude").learnset.suckerpunch = ["3T"];
-	dex.modData("Learnsets", "geodude").learnset.graveler = ["3L8"];
 	dex.modData("Learnsets", "graveler").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "graveler").learnset.rockclimb = ["3M"];
 	dex.modData("Learnsets", "graveler").learnset.suckerpunch = ["3T"];
-	dex.modData("Learnsets", "golem").learnset.graveler = ["3L8"];
+	dex.modData("Learnsets", "golem").learnset.steamroller = ["3L18"];
 	dex.modData("Learnsets", "golem").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "golem").learnset.rockclimb = ["3M"];
 	dex.modData("Learnsets", "golem").learnset.suckerpunch = ["3T"];
@@ -223,6 +222,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "goldeen").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "seaking").learnset.swordsdance = ["3T"];
 	dex.modData("Learnsets", "seaking").learnset.scald = ["3T"];
+	dex.modData("Learnsets", "seaking").learnset.fishiousrend = ["3L1"];
+	dex.modData("Learnsets", "seaking").learnset.boltbeak = ["3L1"];
 
 	dex.modData("Learnsets", "staryu").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "staryu").learnset.teleport = ["3T"];
@@ -500,6 +501,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData("Learnsets", "granbull").learnset.stompingtantrum = ["3L1"];
 	dex.modData("Learnsets", "granbull").learnset.temperflare = ["3L1"];
+	dex.modData("Learnsets", "granbull").learnset.crosschop = ["3L1"];
 	
 	dex.modData("Learnsets", "qwilfish").learnset.poisontail = ["3L48"];
 	dex.modData("Learnsets", "qwilfish").learnset.scald = ["3T"];

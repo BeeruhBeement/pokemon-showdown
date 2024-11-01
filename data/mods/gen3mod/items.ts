@@ -340,6 +340,24 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 	},
+	razzberry: {
+		name: "Razz Berry",
+		inherit: true,
+		desc: "Restores 1/2 max HP when at 1/4 max HP or less. Single use.",
+		shortDesc: "Restores 1/2 max HP when at 1/4 max HP or less.",
+		onUpdate(pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
+				pokemon.eatItem();
+			}
+		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 2)) return false;
+		},
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp / 2);
+		},
+	},
 
 	bugmemory: {
 		inherit: true,

@@ -917,6 +917,25 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			}
 		},
 	},
+	bld: {
+		name: 'bld',
+		effectType: 'Status',
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'bld', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'bld');
+			}
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 8);
+			if (this.randomChance(1, 4)) {
+				pokemon.cureStatus();
+				return;
+			}
+		},
+	},
 	night: {
 		name: 'Night',
 		effectType: 'Weather',

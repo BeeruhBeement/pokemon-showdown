@@ -453,6 +453,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	xscissor: {
 		inherit: true,
 		gen: 3,
+		desc: "Has a 20% chance to bleed the target.",
+		shortDesc: "20% chance to bleed the target.",
+		secondary: {
+			chance: 20,
+			status: 'bld',
+		},
 	},
 	fusionflare: {
 		inherit: true,
@@ -1282,6 +1288,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	acrobatics: {
 		inherit: true,
 		gen: 3,
+	},
+	steamroller: {
+		inherit: true,
+		gen: 3,
+		desc: "Has a 100% chance to raise the user's Attack by 1 stage.",
+		shortDesc: "100% chance to raise the user's Attack by 1.",
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					atk: 1,
+				},
+			},
+		},
 	},
 
 	shieldbash: {
