@@ -22405,4 +22405,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Sound",
 		contestType: "Cool",
 	},
+	relicpower: {
+		isNonstandard: "Custom",
+		num: 5017,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Relic Power",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Rock",
+		contestType: "Tough",
+	},
 };

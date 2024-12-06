@@ -1103,7 +1103,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	houndoommega: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	phanpy: {
 		tier: "LC",
@@ -1661,7 +1661,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	deoxys: {
-		tier: "Uber",
+		tier: "UU",
 	},
 	deoxysattack: {
 		tier: "Uber",
@@ -1670,7 +1670,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Uber",
 	},
 	deoxysspeed: {
-		tier: "Uber",
+		tier: "OU",
 	},
 	turtwig: {
 		tier: "LC",
@@ -1766,10 +1766,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	buizel: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	floatzel: {
-		tier: "Illegal",
+		tier: "PU",
 	},
 	cherubi: {
 		tier: "Illegal",
@@ -3763,13 +3763,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	tinkatink: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	tinkatuff: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	tinkaton: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	charcadet: {
 		tier: "Illegal",

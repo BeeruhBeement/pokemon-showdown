@@ -859,6 +859,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	analytic: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	
@@ -938,6 +942,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	flytrap: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	sharp: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

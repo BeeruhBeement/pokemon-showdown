@@ -7635,4 +7635,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Resonant Annihilation",
 		shortDesc: "Power is equal to the base move's Z-Power.",
 	},
+	relicpower: {
+		name: "Relic Power",
+		desc: "Has a 10% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
+	},
 };

@@ -629,6 +629,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	drainpunch: {
 		inherit: true,
 		gen: 3,
+		pp: 15,
 		basePower: 75,
 	},
 	hurricane: {
@@ -752,6 +753,30 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	tailwind: {
 		inherit: true,
 		gen: 3,
+		condition: {
+			duration: 4,
+			durationCallback(target, source, effect) {
+				if (source?.hasAbility('persistent')) {
+					this.add('-activate', source, 'ability: Persistent', '[move] Tailwind');
+					return 6;
+				}
+				return 4;
+			},
+			onSideStart(side, source) {
+				if (source?.hasAbility('persistent')) {
+					this.add('-sidestart', side, 'move: Tailwind', '[persistent]');
+				} else {
+					this.add('-sidestart', side, 'move: Tailwind');
+				}
+			},
+			onModifySpe(spe) {
+				return spe * 2;
+			},
+			onSideResidualOrder: 5,
+			onSideEnd(side) {
+				this.add('-sideend', side, 'move: Tailwind');
+			},
+		},
 	},
 	lovelykiss: {
 		inherit: true,
@@ -1328,6 +1353,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+	bonemerang: {
+		inherit: true,
+		accuracy: 100,
+	},
+	payback: {
+		inherit: true,
+		gen: 3,
+	},
+	punishment: {
+		inherit: true,
+		gen: 3,
+	},
+	spikyshield: {
+		inherit: true,
+		gen: 3,
+	},
+	gigatonhammer: {
+		inherit: true,
+		gen: 3,
+	},
 
 	shieldbash: {
 		inherit: true,
@@ -1385,6 +1430,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	echolocation: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	relicpower: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
