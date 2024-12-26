@@ -28,9 +28,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 65, atk: 160, def: 40, spa: 15, spd: 90, spe: 145},
 	},
+	pidgey: {
+		inherit: true,
+		abilities: {0: "Keen Eye", 1: "Tangled Feet", H: "Quick Feet"},
+	},
+	pidgeotto: {
+		inherit: true,
+		abilities: {0: "Keen Eye", 1: "Tangled Feet", H: "Quick Feet"},
+	},
 	pidgeot: {
 		inherit: true,
 		baseStats: {hp: 83, atk: 80, def: 75, spa: 70, spd: 70, spe: 101},
+		abilities: {0: "Keen Eye", 1: "Tangled Feet", H: "Quick Feet"},
 	},
 	pidgeotmega: {
 		inherit: true,
@@ -112,7 +121,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	nidoqueen: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 92, def: 87, spa: 75, spd: 85, spe: 76},
-		abilities: {0: "Poison Point", 1: "Sheer Force"},
 	},
 	nidoking: {
 		inherit: true,
@@ -670,7 +678,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	mightyena: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 90, def: 70, spa: 70, spd: 70, spe: 90},
-		abilities: {0: "Intimidate", 1: "Strong Jaw", H: "Moxie"},
 	},
 	zigzagoongalar: {
 		inherit: true,
@@ -931,19 +938,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	deoxys: {
 		inherit: true,
 		baseStats: {hp: 50, atk: 110, def: 110, spa: 110, spd: 110, spe: 110},
-		abilities: {0: "Multicore"},
-	},
-	deoxysattack: {
-		inherit: true,
-		abilities: {0: "Multicore"},
-	},
-	deoxysdefense: {
-		inherit: true,
-		abilities: {0: "Multicore"},
-	},
-	deoxysspeed: {
-		inherit: true,
-		abilities: {0: "Multicore"},
 	},
 	turtwig: {
 		inherit: true,
@@ -1024,6 +1018,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	drifblim: {
+		inherit: true,
+		gen: 3,
+	},
+	glameow: {
+		inherit: true,
+		gen: 3,
+	},
+	purugly: {
 		inherit: true,
 		gen: 3,
 	},
@@ -1388,6 +1390,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	terrakion: {
+		inherit: true,
+		gen: 3,
+	},
+	virizion: {
+		inherit: true,
+		gen: 3,
+	},
+	tornadus: {
+		inherit: true,
+		gen: 3,
+	},
+	tornadustherian: {
 		inherit: true,
 		gen: 3,
 	},
@@ -1770,6 +1784,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		abilities: {0: "Sweet Veil", H: "Misty Surge"},
 	},
+	falinks: {
+		inherit: true,
+		gen: 3,
+		types: ["Fighting", "Bug"],
+	},
 	snom: {
 		inherit: true,
 		gen: 3,
@@ -1838,6 +1857,30 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Fairy", "Ground"],
+	},
+	squawkabilly: {
+		inherit: true,
+		gen: 3,
+		types: ["Sound", "Flying"],
+		baseStats: {hp: 82, atk: 96, def: 56, spa: 75, spd: 56, spe: 92},
+	},
+	squawkabillyblue: {
+		inherit: true,
+		gen: 3,
+		types: ["Sound", "Flying"],
+		baseStats: {hp: 82, atk: 96, def: 56, spa: 75, spd: 56, spe: 92},
+	},
+	squawkabillyyellow: {
+		inherit: true,
+		gen: 3,
+		types: ["Sound", "Flying"],
+		baseStats: {hp: 82, atk: 96, def: 56, spa: 75, spd: 56, spe: 92},
+	},
+	squawkabillywhite: {
+		inherit: true,
+		gen: 3,
+		types: ["Sound", "Flying"],
+		baseStats: {hp: 82, atk: 96, def: 56, spa: 75, spd: 56, spe: 92},
 	},
 	shroodle: {
 		inherit: true,

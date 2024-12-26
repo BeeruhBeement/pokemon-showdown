@@ -2284,7 +2284,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	executioner: {
 		name: "Executioner",
 		desc: "This Pokémon's moves become OHKO moves against targets with 33% or less HP. If the user's level is lower than the target's level damage is dealt normally.",
-		shortDesc: "Moves OHKO targets with 33% or less HP unless user's level <= target's.",
+		shortDesc: "Moves OHKO targets with 33% or less HP unless user's level < target's.",
 	},
 	chrysalis: {
 		name: "Chrysalis",
@@ -2361,6 +2361,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Flytrap",
 		desc: "Pokemon using Bug-type moves against this Pokemon lose 1/8 of their maximum HP, rounded down. This Pokemon is immune to Water-type moves.",
 		shortDesc: "Pokemon using Bug moves on this Pokemon lose 1/8 HP. Bug immunity.",
+	},
+	sharp: {
+		name: "Sharp",
+		desc: "This Pokemon's contact moves have a 30% chance of bleeding. This effect comes after a move's inherent secondary effect chance.",
+		shortDesc: "This Pokemon's contact moves have a 30% chance of bleeding.",
 	},
 	multicore: {
 		name: "Multicore",

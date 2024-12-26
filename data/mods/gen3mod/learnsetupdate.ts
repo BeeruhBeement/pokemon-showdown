@@ -109,17 +109,17 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "meowth").learnset.quickattack = ["3E"];
 	dex.modData("Learnsets", "meowth").learnset.nastyplot = ["3L38"];
 	dex.modData("Learnsets", "meowth").learnset.feint = ["3L54"];
-	dex.modData("Learnsets", "meowth").learnset.uturn = ["3T"];
+	dex.modData("Learnsets", "meowth").learnset.nightslash = ["3L49"];
 	dex.modData("Learnsets", "persian").learnset.switcheroo = ["3L1"];
 	dex.modData("Learnsets", "persian").learnset.nastyplot = ["3L44"];
 	dex.modData("Learnsets", "persian").learnset.feint = ["3L54"];
-	dex.modData("Learnsets", "persian").learnset.uturn = ["3T"];
+	dex.modData("Learnsets", "persian").learnset.nightslash = ["3L61"];
 
 	dex.modData("Learnsets", "mankey").learnset.stompingtantrum = ["3L1"];
 	dex.modData("Learnsets", "mankey").learnset.temperflare = ["3L1"];
 	dex.modData("Learnsets", "primeape").learnset.stompingtantrum = ["3L1"];
 	dex.modData("Learnsets", "primeape").learnset.temperflare = ["3L1"];
-	dex.modData("Learnsets", "primeape").learnset.stealthrock = ["3M"];
+	dex.modData("Learnsets", "primeape").learnset.ragefist = ["3L35"];
 
 	dex.modData("Learnsets", "growlithe").learnset.morningsun = ["3E"];
 	
@@ -437,7 +437,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "togetic").learnset.drainpunch = ["3T"];
 	
 	dex.modData("Learnsets", "natu").learnset.roost = ["3L39"];
+	dex.modData("Learnsets", "natu").learnset.ominouswind = ["3L39"];
 	dex.modData("Learnsets", "xatu").learnset.roost = ["3L47"];
+	dex.modData("Learnsets", "xatu").learnset.ominouswind = ["3L47"];
 	
 	dex.modData("Learnsets", "marill").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "azumarill").learnset.scald = ["3T"];
@@ -487,6 +489,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData("Learnsets", "misdreavus").learnset.trick = ["3E"];
 	dex.modData("Learnsets", "misdreavus").learnset.nastyplot = ["3E"];
+	dex.modData("Learnsets", "misdreavus").learnset.ominouswind = ["3E"];
 	dex.modData("Learnsets", "misdreavus").learnset.shadowsneak = ["3E"];
 	dex.modData("Learnsets", "misdreavus").learnset.dazzlinggleam = ["3M"];
 	dex.modData("Learnsets", "mismagius").learnset.dazzlinggleam = ["3M"];
@@ -514,6 +517,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "girafarig").learnset.nastyplot = ["3L46"];
 	
 	dex.modData("Learnsets", "forretress").learnset.steelroller = ["3T"];
+	dex.modData("Learnsets", "forretress").learnset.voltswitch = ["3T"];
+
+	dex.modData("Learnsets", "dunsparce").learnset.hyperdrill = ["3L32"];
 
 	dex.modData("Learnsets", "snubbull").learnset.dazzlinggleam = ["3M"];
 	dex.modData("Learnsets", "granbull").learnset.dazzlinggleam = ["3M"];
@@ -526,8 +532,11 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData("Learnsets", "shuckle").learnset.stealthrock = ["3M"];
 	
-	dex.modData("Learnsets", "heracross").learnset.throatchop = ["3E"];
-	dex.modData("Learnsets", "heracross").learnset.xscissor = ["3M"];
+	dex.modData("Learnsets", "heracross").learnset.rockblast = ["3E"];
+	dex.modData("Learnsets", "heracross").learnset.armthrust = ["3L1"];
+	dex.modData("Learnsets", "heracross").learnset.bulletseed = ["3L1"];
+	dex.modData("Learnsets", "heracross").learnset.nightslash = ["3L1"];
+	dex.modData("Learnsets", "heracross").learnset.pinmissile = ["3L31"];
 	
 	dex.modData("Learnsets", "sneasel").learnset.throatchop = ["3E"];
 	dex.modData("Learnsets", "sneasel").learnset.nightslash = ["3L35"];
@@ -653,6 +662,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData("Learnsets", "beautifly").learnset.quiverdance = ["3L45"];
 	dex.modData("Learnsets", "dustox").learnset.quiverdance = ["3L45"];
+	dex.modData("Learnsets", "dustox").learnset.uturn = ["3L40"];
 
 	dex.modData("Learnsets", "seedot").learnset.nastyplot = ["3E"];
 	dex.modData("Learnsets", "seedot").learnset.suckerpunch = ["3L30", "3T"];
@@ -688,6 +698,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "gardevoir").learnset.dazzlinggleam = ["3M"];
 	
 	dex.modData("Learnsets", "surskit").learnset.aquajet = ["3E"];
+	dex.modData("Learnsets", "masquerain").learnset.ominouswind = ["3L1"];
 	dex.modData("Learnsets", "masquerain").learnset.quiverdance = ["3L68"];
 	
 	dex.modData("Learnsets", "breloom").learnset.poweruppunch = ["3T"];
@@ -874,7 +885,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "banette").learnset.brickbreak = ["3M"];
 	dex.modData("Learnsets", "banette").learnset.suckerpunch = ["3T"];
 	dex.modData("Learnsets", "banette").learnset.swordsdance = ["3T"];
-	
+
+	dex.modData("Learnsets", "duskull").learnset.ominouswind = ["3E"];
 	dex.modData("Learnsets", "duskull").learnset.shadowsneak = ["3L22"];
 	dex.modData("Learnsets", "dusclops").learnset.shadowsneak = ["3L22"];
 	
@@ -908,6 +920,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "chimecho").learnset.recover = ["3E"];
 	dex.modData("Learnsets", "chimecho").learnset.futuresight = ["3E"];
 	dex.modData("Learnsets", "chimecho").learnset.psychicnoise = ["3L1"];
+	dex.modData("Learnsets", "chimecho").learnset.ominouswind = ["3L11"];
 	dex.modData("Learnsets", "chimecho").learnset.echolocation = ["3L15"];
 	dex.modData("Learnsets", "chimecho").learnset.hypervoice = ["3L54"];
 	dex.modData("Learnsets", "chimecho").learnset.synchronoise = ["3L57"];
@@ -915,6 +928,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "absol").learnset.megahorn = ["3E"];
 	dex.modData("Learnsets", "absol").learnset.pursuit = ["3L1"];
 	dex.modData("Learnsets", "absol").learnset.suckerpunch = ["3L44", "3T"];
+	dex.modData("Learnsets", "absol").learnset.nightslash = ["3L52"];
 	dex.modData("Learnsets", "absol").learnset.dazzlinggleam = ["3M"];
 	dex.modData("Learnsets", "absol").learnset.xscissor = ["3T"];
 

@@ -1,3 +1,4 @@
+import { chatfilter } from "../../../server/chat-plugins/chat-monitor";
 import { ModdedMoveData } from "../../../sim/dex-moves";
 
 export const Moves: {[k: string]: ModdedMoveData} = {
@@ -338,8 +339,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	flash: {
 		inherit: true,
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
 		type: "Electric",
 		accuracy: 100,
+		basePower: 30,
+		category: "Special",
+		priority: 1,
+		boosts: {},
 	},
 	disable: {
 		inherit: true,
@@ -647,12 +654,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	triattack: {
 		inherit: true,
-		desc: "Hits three times. Power increases to 50 for the second hit and 75 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		desc: "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
 		accuracy: 90,
-		basePower: 22,
+		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
-			return 22 * move.hit;
+			return 20 * move.hit;
 		},
 		secondary: null,
 		pp: 10,
@@ -1282,26 +1289,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			this.actions.useMove(randomMove, target);
 		},
 	},
-	metronome: {
-		inherit: true,
-		desc: "A random move is selected for use, other than After You, Apple Acid, Armor Cannon, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Blazing Torque, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Chilling Water, Chilly Reception, Clangorous Soul, Collision Course, Combat Torque, Comeuppance, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Doodle, Double Iron Bash, Double Shock, Dragon Ascent, Dragon Energy, Drum Beating, Dynamax Cannon, Electro Drift, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fillet Away, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyper Drill, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jet Punch, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Magical Torque, Make It Rain, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Noxious Torque, Obstruct, Order Up, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Population Bomb, Pounce, Power Shift, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Fist, Rage Powder, Raging Bull, Raging Fury, Relic Song, Revival Blessing, Ruination, Salt Cure, Secret Sword, Shed Tail, Shell Trap, Silk Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Snowscape, Spectral Thief, Spicy Extract, Spiky Shield, Spirit Break, Spotlight, Springtide Storm, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Tera Starstorm, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Tidy Up, Trailblaze, Transform, Trick, Twin Beam, V-create, Wicked Blow, Wicked Torque, Wide Guard or moves with a Base Power inferior to 70.",
-		shortDesc: "Picks a random move with 70 or more Base Power.",
-		onHit(target, source, effect) {
-			const moves = this.dex.moves.all().filter(move => (
-				(![2, 4].includes(this.gen) || !source.moves.includes(move.id)) &&
-				(!move.isNonstandard || move.isNonstandard === 'Unobtainable') &&
-				move.flags['metronome'] && move.basePower < 70
-			));
-			let randomMove = '';
-			if (moves.length) {
-				moves.sort((a, b) => a.num - b.num);
-				randomMove = this.sample(moves).id;
-			}
-			if (!randomMove) return false;
-			source.side.lastSelectedMove = this.toID(randomMove);
-			this.actions.useMove(randomMove, target);
-		},
-	},
 	stompingtantrum: {
 		inherit: true,
 		gen: 3,
@@ -1376,6 +1363,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	nightslash: {
 		inherit: true,
 		gen: 3,
+		desc: "Has a 10% chance to bleed the target and a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. 10% chance to bleed.",
+		secondary: {
+			chance: 30,
+			status: 'bld',
+		},
 	},
 	razorwind: {
 		inherit: true,
@@ -1404,6 +1397,64 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		basePower: 50,
+	},
+	noretreat: {
+		inherit: true,
+		gen: 3,
+		desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage and causes the Steel type to be added to the user, but it becomes prevented from switching out. The user can still switch out if it uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the user leaves the field using Baton Pass, the replacement will remain trapped. Fails if the user has already been prevented from switching by this effect.",
+		shortDesc: "Raises all stats by 1. Traps user. + Steel type.",
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'move: No Retreat');
+				if (pokemon.hasType('Steel')) return false;
+				if (!pokemon.addType('Steel')) return false;
+				this.add('-start', pokemon, 'typeadd', 'Steel', '[from] move: No Retreat');
+			},
+			onTrapPokemon(pokemon) {
+				pokemon.tryTrap();
+			},
+		},
+	},
+	ragefist: {
+		inherit: true,
+		gen: 3,
+		basePower: 65,
+		desc: "Power doubles if the user moves after the target this turn. Switching in counts as an action.",
+		shortDesc: "Power doubles if the user moves after the target.",
+		basePowerCallback(pokemon, target, move) {
+			if (this.queue.willMove(target)) {
+				this.debug('Rage Fist NOT boosted');
+				return move.basePower;
+			}
+			this.debug('Rage Fist damage boost');
+			return move.basePower * 2;
+		},
+		type: "Fighting",
+	},
+	hyperdrill: {
+		inherit: true,
+		gen: 3,
+		shortDesc: "Bypasses protection without breaking it. 100% lower target Defense.",
+		secondary: {
+			chance: 100,
+			boosts: {
+				def: -1,
+			},
+		},
+	},
+	chatter: {
+		inherit: true,
+		gen: 3,
+		type: "Sound",
+	},
+	ominouswind: {
+		inherit: true,
+		gen: 3,
+		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
+	},
+	silverwind: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
 	},
 
 	shieldbash: {

@@ -340,7 +340,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 	},
-	razzberry: {
+	aguavberry: {
 		inherit: true,
 		desc: "Restores 1/2 max HP when at 1/4 max HP or less. Single use.",
 		shortDesc: "Restores 1/2 max HP when at 1/4 max HP or less.",
@@ -465,6 +465,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 	},
 	aerodactylite: {
+		inherit: true,
+		gen: 3,
+	},
+	heracronite: {
 		inherit: true,
 		gen: 3,
 	},

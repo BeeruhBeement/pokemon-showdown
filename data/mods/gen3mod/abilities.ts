@@ -484,6 +484,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	merciless: {
 		inherit: true,
 		gen: 3,
+		shortDesc: "This Pokemon's attacks are critical hits if the target is statused.",
+		onModifyCritRatio(critRatio, source, target) {
+			if (target && target.status) return 5;
+		},
 	},
 	noguard: {
 		inherit: true,
@@ -867,6 +871,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	superluck: {
+		inherit: true,
+		gen: 3,
+	},
+	flareboost: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	
@@ -951,11 +963,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	sharp: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	multicore: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
