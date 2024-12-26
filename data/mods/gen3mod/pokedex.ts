@@ -562,6 +562,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	heracrossmega: {
+		inherit: true,
+		gen: 3,
+	},
 	teddiursa: {
 		inherit: true,
 		abilities: {0: "Guts", 1: "Miracle Guard", H: "Honey Gatherer"},

@@ -1363,8 +1363,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	nightslash: {
 		inherit: true,
 		gen: 3,
-		desc: "Has a 10% chance to bleed the target and a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio. 10% chance to bleed.",
+		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. 30% chance to bleed.",
 		secondary: {
 			chance: 30,
 			status: 'bld',

@@ -3646,7 +3646,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	squawkabilly: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	flamigo: {
 		tier: "Illegal",

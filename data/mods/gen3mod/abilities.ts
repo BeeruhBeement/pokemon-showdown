@@ -791,8 +791,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	healer: {
 		inherit: true,
 		gen: 3,
-		desc: "Heals itself and its allies by 1/16 of their Max HP at the end of each turn.",
-		shortDesc: "Heal self and allies by 1/16 Max HP each turn.",
+		desc: "Heals itself and its allies by 1/16 of their max HP at the end of each turn.",
+		shortDesc: "Heal self and allies by 1/16 max HP each turn.",
 		onResidual(pokemon) {
 			for (const allyActive of pokemon.adjacentAllies()) {
 				this.add('-activate', pokemon, 'ability: Healer');
