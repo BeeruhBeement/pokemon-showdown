@@ -863,6 +863,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	comatose: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	
@@ -947,6 +951,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isNonstandard: null,
 	},
 	sharp: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
+	},
+	multicore: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

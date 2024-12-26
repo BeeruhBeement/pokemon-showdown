@@ -1373,6 +1373,38 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	nightslash: {
+		inherit: true,
+		gen: 3,
+	},
+	razorwind: {
+		inherit: true,
+		basePower: 85,
+		desc: "Has a higher chance for a critical hit. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn.",
+		shortDesc: "High critical. Charges turn 1, hits turn 2. No charge in rain.",
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (['raindance', 'primordialsea'].includes(attacker.effectiveWeather())) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		type: "Flying",
+	},
+	poweruppunch: {
+		inherit: true,
+		gen: 3,
+		basePower: 50,
+	},
 
 	shieldbash: {
 		inherit: true,

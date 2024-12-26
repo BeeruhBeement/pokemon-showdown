@@ -6040,6 +6040,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 5022,
 	},
+	multicore: {
+		onPrepareHit(source, target, move) {
+			if (this.effectState.protean) return;
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch' || move.callsMove) return;
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if (!source.addType(type)) return;
+				this.effectState.protean = true;
+				this.add('-start', source, 'typeadd', type, '[from] ability: Protean');
+			}
+		},
+		onSwitchIn(pokemon) {
+			delete this.effectState.protean;
+		},
+		flags: {},
+		name: "Multicore",
+		rating: 3.5,
+		num: 5023,
+	},
 	//these could also be items
 	/*rustmuzzle: {
 		// bites boosted, but have recoil

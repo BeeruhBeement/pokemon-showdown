@@ -19834,17 +19834,4 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 		gen: -1,
 	},
-	goursear: {
-		isNonstandard: "Custom",
-		num: -10002,
-		name: "Goursear",
-		types: ["Fire", "Fairy"],
-		baseStats: {hp: 145, atk: 85, def: 55, spa: 65, spd: 70, spe: 40},
-		abilities: {0: "Gluttony", H: "Stench"},
-		heightm: 4,
-		weightkg: 650,
-		color: "Red",
-		eggGroups: ["Field", "Fairy"],
-		gen: -1,
-	},
 };

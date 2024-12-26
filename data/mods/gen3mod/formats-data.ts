@@ -1667,7 +1667,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Uber",
 	},
 	deoxysdefense: {
-		tier: "Uber",
+		tier: "OU",
 	},
 	deoxysspeed: {
 		tier: "OU",
@@ -3688,10 +3688,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	bramblin: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	brambleghast: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	gimmighoul: {
 		tier: "Illegal",
@@ -3851,9 +3851,5 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	pecharunt: {
 		tier: "Illegal",
-	},
-
-	goursear: {
-		tier: "NU",
 	},
 };

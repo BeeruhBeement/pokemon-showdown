@@ -341,7 +341,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 	},
 	razzberry: {
-		name: "Razz Berry",
 		inherit: true,
 		desc: "Restores 1/2 max HP when at 1/4 max HP or less. Single use.",
 		shortDesc: "Restores 1/2 max HP when at 1/4 max HP or less.",
@@ -356,6 +355,22 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 2);
+		},
+	},
+	watmelberry: {
+		inherit: true,
+		shortDesc: "Halves damage taken from a supereffective attack. Single use.",
+		onSourceModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod > 0) {
+				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
+				if (hitSub) return;
+
+				if (target.eatItem()) {
+					this.debug('-50% reduction');
+					this.add('-enditem', target, this.effect, '[weaken]');
+					return this.chainModify(0.5);
+				}
+			}
 		},
 	},
 

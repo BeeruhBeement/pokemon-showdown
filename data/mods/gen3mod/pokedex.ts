@@ -757,6 +757,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Steel", "Fairy"],
 		baseStats: {hp: 60, atk: 85, def: 85, spa: 65, spd: 65, spe: 50},
+		abilities: {0: "Hustle", 1: "Intimidate", H: "Sheer Force"},
 	},
 	mawilemega: {
 		inherit: true,
@@ -930,6 +931,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	deoxys: {
 		inherit: true,
 		baseStats: {hp: 50, atk: 110, def: 110, spa: 110, spd: 110, spe: 110},
+		abilities: {0: "Multicore"},
+	},
+	deoxysattack: {
+		inherit: true,
+		abilities: {0: "Multicore"},
+	},
+	deoxysdefense: {
+		inherit: true,
+		abilities: {0: "Multicore"},
+	},
+	deoxysspeed: {
+		inherit: true,
+		abilities: {0: "Multicore"},
 	},
 	turtwig: {
 		inherit: true,
@@ -1163,7 +1177,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	musharna: {
 		inherit: true,
 		gen: 3,
-		abilities: {0: "Misty Surge", 1: "Synchronize", H: "Telepathy"},
+		abilities: {0: "Comatose", 1: "Synchronize", H: "Telepathy"},
+	},
+	pidove: {
+		inherit: true,
+		gen: 3,
+	},
+	tranquill: {
+		inherit: true,
+		gen: 3,
+	},
+	unfezant: {
+		inherit: true,
+		gen: 3,
+		baseStats: {hp: 80, atk: 115, def: 80, spa: 75, spd: 55, spe: 93},
 	},
 	blitzle: {
 		inherit: true,
@@ -1767,6 +1794,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	duraludon: {
+		inherit: true,
+		gen: 3,
+	},
 	dreepy: {
 		inherit: true,
 		gen: 3,
@@ -1816,6 +1847,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	bramblin: {
+		inherit: true,
+		gen: 3,
+	},
+	brambleghast: {
+		inherit: true,
+		gen: 3,
+	},
 	tinkatink: {
 		inherit: true,
 		gen: 3,
@@ -1857,10 +1896,5 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Quark Drive", H: "Lightning Rod"},
-	},
-	goursear: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
 	},
 };

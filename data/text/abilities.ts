@@ -2362,4 +2362,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "Pokemon using Bug-type moves against this Pokemon lose 1/8 of their maximum HP, rounded down. This Pokemon is immune to Water-type moves.",
 		shortDesc: "Pokemon using Bug moves on this Pokemon lose 1/8 HP. Bug immunity.",
 	},
+	multicore: {
+		name: "Multicore",
+		desc: "This Pokemon's type changes to add the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+		shortDesc: "The type of the move this Pokemon is using gets added to it.",
+	},
 };
