@@ -6040,44 +6040,4 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 5022,
 	},
-	//these could also be items
-	/*rustmuzzle: {
-		// bites boosted, but have recoil
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bite']) {
-				return this.chainModify(1.5);
-			}
-		},
-		flags: {},
-		name: "Rust Muzzle",
-		rating: 3.5,
-		num: 5023,
-	},
-	gasoline: {
-		// figure it out
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bite']) {
-				return this.chainModify(1.5);
-			}
-		},
-		flags: {},
-		name: "Gasoline",
-		rating: 3.5,
-		num: 5023,
-	},
-	butcher: {
-		// 10% heal on attack
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bite']) {
-				return this.chainModify(1.5);
-			}
-		},
-		flags: {},
-		name: "Butcher",
-		rating: 3.5,
-		num: 5023,
-	},*/
 };

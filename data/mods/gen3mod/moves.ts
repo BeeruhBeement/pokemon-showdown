@@ -1360,6 +1360,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
+	slash: {
+		inherit: true,
+		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. 30% chance to bleed.",
+		secondary: {
+			chance: 30,
+			status: 'bld',
+		},
+	},
 	nightslash: {
 		inherit: true,
 		gen: 3,
@@ -1455,6 +1464,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	silverwind: {
 		inherit: true,
 		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
+	},
+	whirlwind: {
+		inherit: true,
+		type: "Flying",
 	},
 
 	shieldbash: {

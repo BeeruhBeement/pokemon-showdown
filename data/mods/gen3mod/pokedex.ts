@@ -2,7 +2,7 @@ import { TriumvirateModeTrivia } from "../../../server/chat-plugins/trivia/trivi
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
-	squrtile: {
+	squirtle: {
 		inherit: true,
 		abilities: {0: "Torrent", H: "Skill Link"},
 	},
@@ -151,6 +151,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Sound", "Fairy"],
 		baseStats: {hp: 140, atk: 70, def: 55, spa: 85, spd: 60, spe: 45},
+	},
+	zubat: {
+		inherit: true,
+	},
+	golbat: {
+		inherit: true,
+	},
+	crobat: {
+		inherit: true,
+		abilities: {0: "Merciless", H: "Infiltrator"},
 	},
 	vulpixalola: {
 		inherit: true,
@@ -991,6 +1001,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 	},
+	kricketot: {
+		inherit: true,
+		gen: 3,
+	},
+	kricketune: {
+		inherit: true,
+		gen: 3,
+		types: ["Bug", "Sound"],
+	},
 	cranidos: {
 		inherit: true,
 		gen: 3,
@@ -1053,6 +1072,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Sound", "Flying"],
+	},
+	skorupi: {
+		inherit: true,
+		gen: 3,
+	},
+	drapion: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Battle Armor", 1: "Sniper", H: "Merciless"},
 	},
 	carnivine: {
 		inherit: true,
@@ -1504,6 +1532,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		abilities: {0: "Natural Cure", 1: "Deadwood", H: "Harvest"},
+	},
+	hoopa: {
+		inherit: true,
+		gen: 3,
+	},
+	hoopaunbound: {
+		inherit: true,
+		gen: 3,
 	},
 	volcanion: {
 		inherit: true,

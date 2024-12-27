@@ -449,11 +449,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	rivalry: {
 		inherit: true,
 		gen: 3,
-		desc: "This Pokemon's attacks have their power multiplied by 1.25 against targets of the same gender. There is no modifier if either this Pokemon or the target is genderless.",
-		shortDesc: "This Pokemon's attacks do 1.25x on same gender targets.",
+		desc: "This Pokemon's attacks have their power multiplied by 1.25 against targets of the same type.",
+		shortDesc: "This Pokemon's attacks do 1.25x on same type targets.",
 		onBasePower(basePower, attacker, defender, move) {
-			if (attacker.gender && defender.gender) {
-				if (attacker.gender === defender.gender) {
+			if (attacker.types && defender.types) {
+				if (attacker.types.includes(defender.types[0]) || attacker.types.includes(defender.types[1]) || attacker.types.includes(defender.types[2])) {
 					this.debug('Rivalry boost');
 					return this.chainModify(1.25);
 				}

@@ -294,6 +294,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "jolteon").learnset.dazzlinggleam = ["3M"];
 	dex.modData("Learnsets", "flareon").learnset.lavaplume = ["3L78"];
 	dex.modData("Learnsets", "flareon").learnset.dazzlinggleam = ["3M"];
+	dex.modData("Learnsets", "flareon").learnset.superpower = ["3T"];
 	dex.modData("Learnsets", "espeon").learnset.dazzlinggleam = ["3M"];
 	dex.modData("Learnsets", "umbreon").learnset.dazzlinggleam = ["3M"];
 

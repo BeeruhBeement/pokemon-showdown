@@ -190,6 +190,15 @@ export const Tags: {[id: IDEntry]: TagData} = {
 		speciesFilter: species => species.tier === 'SU',
 	},
 
+	'8ubl': {
+		name: "8UBL",
+		speciesFilter: species => species.tier === '8UBL',
+	},
+	'8u': {
+		name: "8U",
+		speciesFilter: species => species.tier === '8U',
+	},
+
 	nfe: {
 		name: "NFE",
 		speciesFilter: species => species.tier === 'NFE',
