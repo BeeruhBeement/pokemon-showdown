@@ -1469,6 +1469,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Flying",
 	},
+	hyperspacehole: {
+		inherit: true,
+		gen: 3,
+	},
+	hyperspacefury: {
+		inherit: true,
+		gen: 3,
+	},
 
 	shieldbash: {
 		inherit: true,
@@ -1526,11 +1534,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 	},
 	echolocation: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	relicpower: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,

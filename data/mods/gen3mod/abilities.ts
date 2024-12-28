@@ -879,6 +879,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	magician: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	

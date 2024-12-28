@@ -185,13 +185,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	parasect: {
 		inherit: true,
 		types: ["Bug", "Ghost"],
-		baseStats: {hp: 60, atk: 95, def: 120, spa: 60, spd: 80, spe: 30},
+		baseStats: {hp: 60, atk: 95, def: 100, spa: 60, spd: 80, spe: 30},
 	},
 	parasong: {
 		inherit: true,
 		gen: 3,
 		isNonstandard: null,
-		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 120, spe: 30},
+		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 100, spe: 30},
 	},
 	diglettalola: {
 		inherit: true,
@@ -510,7 +510,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	jumpluff: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 65, def: 70, spa: 65, spd: 100, spe: 110},
+		baseStats: {hp: 75, atk: 65, def: 70, spa: 65, spd: 95, spe: 110},
 	},
 	aipom: {
 		inherit: true,
@@ -721,6 +721,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	pelipper: {
 		inherit: true,
 		abilities: {0: "Keen Eye", 1: "Drizzle", H: "Rain Dish"},
+		baseStats: {hp: 60, atk: 50, def: 100, spa: 95, spd: 70, spe: 65},
 	},
 	ralts: {
 		inherit: true,
@@ -831,7 +832,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	cacturne: {
 		inherit: true,
 		baseStats: {hp: 80, atk: 115, def: 80, spa: 75, spd: 80, spe: 55},
-		abilities: {0: "Quick Draw", H: "Analytic"},
+		abilities: {0: "Quick Draw", H: "Sand Rush"},
+	},
+	zangoose: {
+		inherit: true,
+		baseStats: {hp: 73, atk: 115, def: 60, spa: 80, spd: 60, spe: 90},
 	},
 	seviper: {
 		inherit: true,
@@ -938,7 +943,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	luvdisc: {
 		inherit: true,
 		types: ["Water", "Fairy"],
-		baseStats: {hp: 73, atk: 50, def: 65, spa: 70, spd: 85, spe: 97},
+		baseStats: {hp: 63, atk: 50, def: 65, spa: 60, spd: 85, spe: 97},
 		abilities: {0: "Swift Swim", H: "Heart Veil"},
 	},
 	kyogre: {
@@ -1521,6 +1526,26 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	heliolisk: {
+		inherit: true,
+		gen: 3,
+	},
+	goomy: {
+		inherit: true,
+		gen: 3,
+	},
+	sliggoo: {
+		inherit: true,
+		gen: 3,
+	},
+	sliggoohisui: {
+		inherit: true,
+		gen: 3,
+	},
+	goodra: {
+		inherit: true,
+		gen: 3,
+	},
+	goodrahisui: {
 		inherit: true,
 		gen: 3,
 	},
