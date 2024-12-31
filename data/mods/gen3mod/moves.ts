@@ -14,42 +14,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Fairy",
 	},
-	futuresight: {
-		inherit: true,
-		basePower: 120,
-		accuracy: 100,
-		onTry(source, target) {
-			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
-			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
-				duration: 3,
-				move: 'futuresight',
-				source: source,
-				moveData: {
-					id: 'futuresight',
-					name: "Future Sight",
-					accuracy: 100,
-					basePower: 120,
-					category: "Special",
-					priority: 0,
-					flags: {allyanim: 1, metronome: 1, futuremove: 1},
-					ignoreImmunity: false,
-					effectType: 'Move',
-					type: 'Psychic',
-				},
-			});
-			this.add('-start', source, 'move: Future Sight');
-			return this.NOT_FAIL;
-		},
-	},
 	metalclaw: {
 		inherit: true,
 		basePower: 70,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
-	},
-	suckerpunch: {
-		inherit: true,
-		gen: 3,
-		basePower: 70,
 	},
 	babydolleyes: {
 		inherit: true,
@@ -83,18 +51,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	outrage: {
-		inherit: true,
-		basePower: 120,
-	},
-	thrash: {
-		inherit: true,
-		basePower: 120,
-	},
-	petaldance: {
-		inherit: true,
-		basePower: 120,
-	},
 	drainingkiss: {
 		inherit: true,
 		gen: 3,
@@ -106,14 +62,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	matblock: {
 		inherit: true,
 		gen: 3,
-	},
-	furycutter: {
-		inherit: true,
-		basePower: 40,
-	},
-	rocksmash: {
-		inherit: true,
-		basePower: 60,
 	},
 	howl: {
 		inherit: true,
@@ -131,7 +79,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	poisongas: {
 		inherit: true,
-		accuracy: 80,
+		accuracy: 90,
 		target: "allAdjacentFoes",
 		desc: "Poisons the target.",
 		shortDesc: "Poisons the foe(s).",
@@ -153,18 +101,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onTry(source, target) {},
 	},
 	armthrust: {
-		inherit: true,
-		basePower: 25,
-	},
-	bulletseed: {
-		inherit: true,
-		basePower: 25,
-	},
-	iciclespear: {
-		inherit: true,
-		basePower: 25,
-	},
-	pinmissile: {
 		inherit: true,
 		basePower: 25,
 	},
@@ -216,10 +152,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	thief: {
-		inherit: true,
-		basePower: 60,
-	},
 	uturn: {
 		inherit: true,
 		gen: 3,
@@ -234,10 +166,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		basePower: 50,
-	},
-	leechlife: {
-		inherit: true,
-		basePower: 75,
 	},
 	twineedle: {
 		inherit: true,
@@ -254,24 +182,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		secondary: null,
 		type: "Grass",
-	},
-	highjumpkick: {
-		inherit: true,
-		basePower: 120,
-		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User is hurt by 50% of its max HP if it misses.",
-		onMoveFail(target, source, move) {
-			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
-		},
-	},
-	jumpkick: {
-		inherit: true,
-		basePower: 100,
-		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User is hurt by 50% of its max HP if it misses.",
-		onMoveFail(target, source, move) {
-			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('Jump Kick'));
-		},
 	},
 	stealthrock: {
 		inherit: true,
@@ -307,6 +217,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "Has a 10% chance to freeze the target. If the weather is Snow, this move does not check accuracy.",
 		shortDesc: "10% chance to freeze foe(s). Can't miss in Snow.",
+		basePower: 110,
 		onModifyMove(move) {
 			if (this.field.isWeather(['hail', 'snow'])) move.accuracy = true;
 		},
@@ -462,15 +373,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
-	gigadrain: {
-		inherit: true,
-		pp: 15,
-		basePower: 75,
-	},
-	energyball: {
-		inherit: true,
-		gen: 3,
-	},
 	thunderwave: {
 		inherit: true,
 		accuracy: 90,
@@ -537,11 +439,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			volatileStatus: 'attract',
 		},
 	},
-	paraboliccharge: {
-		inherit: true,
-		gen: 3,
-		basePower: 75,
-	},
 	snore: {
 		inherit: true,
 		basePower: 75,
@@ -564,23 +461,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	mysticalfire: {
-		inherit: true,
-		gen: 3,
-		basePower: 75,
-	},
-	dig: {
-		inherit: true,
-		basePower: 80,
-	},
-	dive: {
-		inherit: true,
-		basePower: 80,
-	},
-	fly: {
-		inherit: true,
-		basePower: 90,
-	},
 	filletaway: {
 		inherit: true,
 		gen: 3,
@@ -590,15 +470,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 80,
 		recoil: [1, 2],
 	},
-	tackle: {
-		inherit: true,
-		basePower: 50,
-		accuracy: 100,
-	},
-	leafstorm: {
-		inherit: true,
-		gen: 3,
-	},
 	forestscurse: {
 		inherit: true,
 		gen: 3,
@@ -607,11 +478,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 	},
-	uproar: {
-		inherit: true,
-		basePower: 90,
-		type: "Sound",
-	},
 	spinout: {
 		inherit: true,
 		gen: 3,
@@ -619,21 +485,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	throatchop: {
 		inherit: true,
 		gen: 3,
-	},
-	drainpunch: {
-		inherit: true,
-		gen: 3,
-		pp: 15,
-		basePower: 75,
-	},
-	hurricane: {
-		inherit: true,
-		gen: 3,
-	},
-	glare: {
-		inherit: true,
-		type: "Dark",
-		accuracy: 100,
 	},
 	watershuriken: {
 		inherit: true,
@@ -849,10 +700,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Sound",
 	},
-	psychoshift: {
-		inherit: true,
-		gen: 3,
-	},
 	fishiousrend: {
 		inherit: true,
 		gen: 3,
@@ -891,10 +738,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Ghost",
 	},
-	magmastorm: {
-		inherit: true,
-		gen: 3,
-	},
 	ragingbull: {
 		inherit: true,
 		gen: 3,
@@ -912,14 +755,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		secondary: {
 			chance: 20,
 			volatileStatus: 'flinch',
-		},
-	},
-	hiddenpower: {
-		inherit: true,
-		onModifyMove(move, pokemon) {
-			move.type = pokemon.hpType || 'Dark';
-			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
-			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
 		},
 	},
 	firstimpression: {
@@ -999,14 +834,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 	},
 	vcreate: {
-		inherit: true,
-		gen: 3,
-	},
-	leafblade: {
-		inherit: true,
-		basePower: 90,
-	},
-	gunkshot: {
 		inherit: true,
 		gen: 3,
 	},
@@ -1442,6 +1269,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		type: "Sound",
+		basePower: 65,
 	},
 	ominouswind: {
 		inherit: true,
@@ -1473,6 +1301,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	hyperbeam: {
 		inherit: true,
 		gen: 3,
+		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move. Has a 30% chance to paralyze the target.",
+		shortDesc: "User cannot move next turn. 30% chance to paralyze the target.",
 		secondary: {
 			chance: 30,
 			status: 'par',
@@ -1491,6 +1321,385 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	scorchingsands: {
 		inherit: true,
 		gen: 3,
+	},
+
+	// Move Base Power updates
+
+	dig: {
+		inherit: true,
+		basePower: 80,
+	},
+	dive: {
+		inherit: true,
+		basePower: 80,
+	},
+	fly: {
+		inherit: true,
+		basePower: 90,
+	},
+	leafblade: {
+		inherit: true,
+		basePower: 90,
+	},
+	outrage: {
+		inherit: true,
+		basePower: 120,
+	},
+	rocksmash: {
+		inherit: true,
+		basePower: 60,
+	},
+	zapcannon: {
+		inherit: true,
+		basePower: 120,
+	},
+	inferno: {
+		inherit: true,
+		basePower: 120,
+	},
+	bulletseed: {
+		inherit: true,
+		basePower: 25,
+	},
+	covet: {
+		inherit: true,
+		basePower: 60,
+	},
+	doomdesire: {
+		inherit: true,
+		basePower: 140,
+		accuracy: 100,
+	},
+	drainpunch: {
+		inherit: true,
+		gen: 3,
+		pp: 15,
+		basePower: 75,
+	},
+	firespin: {
+		inherit: true,
+		basePower: 35,
+		accuracy: 85,
+	},
+	gigadrain: {
+		inherit: true,
+		pp: 15,
+		basePower: 75,
+	},
+	highjumpkick: {
+		inherit: true,
+		basePower: 130,
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User is hurt by 50% of its max HP if it misses.",
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+	},
+	iciclespear: {
+		inherit: true,
+		basePower: 25,
+	},
+	jumpkick: {
+		inherit: true,
+		basePower: 100,
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User is hurt by 50% of its max HP if it misses.",
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('Jump Kick'));
+		},
+	},
+	petaldance: {
+		inherit: true,
+		basePower: 120,
+	},
+	sandtomb: {
+		inherit: true,
+		basePower: 35,
+		accuracy: 85,
+	},
+	thrash: {
+		inherit: true,
+		basePower: 120,
+	},
+	uproar: {
+		inherit: true,
+		basePower: 120,
+		type: "Sound",
+	},
+	whirlpool: {
+		inherit: true,
+		basePower: 35,
+		accuracy: 85,
+	},
+	aircutter: {
+		inherit: true,
+		basePower: 60,
+	},
+	clamp: {
+		inherit: true,
+		accuracy: 85,
+	},
+	cottonspore: {
+		inherit: true,
+		accuracy: 100,
+	},
+	crabhammer: {
+		inherit: true,
+		basePower: 100,
+		accuracy: 90,
+	},
+	energyball: {
+		inherit: true,
+		gen: 3,
+		basePower: 90,
+	},
+	fireblast: {
+		inherit: true,
+		basePower: 110,
+	},
+	flamethrower: {
+		inherit: true,
+		basePower: 90,
+	},
+	furycutter: {
+		inherit: true,
+		basePower: 40,
+	},
+	futuresight: {
+		inherit: true,
+		basePower: 120,
+		accuracy: 100,
+		onTry(source, target) {
+			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
+			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
+				duration: 3,
+				move: 'futuresight',
+				source: source,
+				moveData: {
+					id: 'futuresight',
+					name: "Future Sight",
+					accuracy: 100,
+					basePower: 120,
+					category: "Special",
+					priority: 0,
+					flags: {allyanim: 1, metronome: 1, futuremove: 1},
+					ignoreImmunity: false,
+					effectType: 'Move',
+					type: 'Psychic',
+				},
+			});
+			this.add('-start', source, 'move: Future Sight');
+			return this.NOT_FAIL;
+		},
+	},
+	heatwave: {
+		inherit: true,
+		basePower: 95,
+	},
+	hurricane: {
+		inherit: true,
+		gen: 3,
+		basePower: 110,
+	},
+	hydropump: {
+		inherit: true,
+		basePower: 110,
+	},
+	icebeam: {
+		inherit: true,
+		basePower: 90,
+	},
+	leafstorm: {
+		inherit: true,
+		gen: 3,
+		basePower: 130,
+	},
+	lick: {
+		inherit: true,
+		basePower: 30,
+	},
+	lowsweep: {
+		inherit: true,
+		basePower: 65,
+	},
+	magmastorm: {
+		inherit: true,
+		gen: 3,
+		basePower: 100,
+		accuracy: 75,
+	},
+	meteormash: {
+		inherit: true,
+		basePower: 90,
+		accuracy: 90,
+	},
+	muddywater: {
+		inherit: true,
+		basePower: 90,
+	},
+	overheat: {
+		inherit: true,
+		basePower: 130,
+	},
+	pinmissile: {
+		inherit: true,
+		basePower: 25,
+		accuracy: 95,
+	},
+	smog: {
+		inherit: true,
+		basePower: 30,
+	},
+	surf: {
+		inherit: true,
+		basePower: 90,
+	},
+	thief: {
+		inherit: true,
+		basePower: 60,
+	},
+	thunder: {
+		inherit: true,
+		basePower: 110,
+	},
+	thunderbolt: {
+		inherit: true,
+		basePower: 90,
+	},
+	vinewhip: {
+		inherit: true,
+		basePower: 45,
+	},
+	leechlife: {
+		inherit: true,
+		basePower: 75,
+	},
+	mysticalfire: {
+		inherit: true,
+		gen: 3,
+		basePower: 75,
+	},
+	paraboliccharge: {
+		inherit: true,
+		gen: 3,
+		basePower: 75,
+	},
+	suckerpunch: {
+		inherit: true,
+		gen: 3,
+		basePower: 70,
+	},
+	tackle: {
+		inherit: true,
+		basePower: 40,
+		accuracy: 100,
+	},
+	rockblast: {
+		inherit: true,
+		accuracy: 90,
+	},
+	willowisp: {
+		inherit: true,
+		accuracy: 85,
+	},
+	psywave: {
+		inherit: true,
+		accuracy: 100,
+	},
+	psychoshift: {
+		inherit: true,
+		gen: 3,
+		accuracy: 100,
+	},
+	gunkshot: {
+		inherit: true,
+		gen: 3,
+		accuracy: 80
+	},
+	glare: {
+		inherit: true,
+		type: "Dark",
+		accuracy: 100,
+	},
+	swagger: {
+		inherit: true,
+		accuracy: 85,
+	},
+	hiddenpower: {
+		inherit: true,
+		basePower: 60,
+		onModifyMove(move, pokemon) {
+			move.type = pokemon.hpType || 'Dark';
+			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
+			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
+		},
+		basePowerCallback(pokemon) {
+			return 60;
+		},
+	},
+	hiddenpowerbug: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerdark: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerdragon: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerelectric: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerfighting: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerfire: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerflying: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerghost: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowergrass: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerground: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerice: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerpoison: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerpsychic: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerrock: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowersteel: {
+		inherit: true,
+		basePower: 60,
+	},
+	hiddenpowerwater: {
+		inherit: true,
+		basePower: 60,
 	},
 
 	shieldbash: {

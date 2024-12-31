@@ -550,6 +550,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thief: ["3M"],
 			toxic: ["3M"],
 			uproar: ["3E"],
+
+			swordsdance: ["3T"],
 		},
 	},
 	dugtrioalola: {
@@ -594,7 +596,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			triattack: ["3L1"],
 			
-			nightslash: ["3L1"],
+			swordsdance: ["3T"],
 		},
 	},
 	meowthalola: {
@@ -1885,6 +1887,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bulkup: ["3M"],
 			stompingtantrum: ["3L1"],
 			temperflare: ["3L1"],
+			outrage: ["3L50"],
 		},
 	},
 	taurospaldeablaze: {
@@ -1943,6 +1946,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bulkup: ["3M"],
 			stompingtantrum: ["3L1"],
 			temperflare: ["3L1"],
+			outrage: ["3L50"],
 		},
 	},
 	taurospaldeaaqua: {
@@ -2001,6 +2005,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bulkup: ["3M"],
 			stompingtantrum: ["3L1"],
 			temperflare: ["3L1"],
+			outrage: ["3L50"],
 		},
 	},
 	munchlax: {
@@ -2787,6 +2792,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			blizzard: ["3M"],
 			icebeam: ["3M"],
 			psyshieldbash: ["3L0"],
+			energyball: ["3M"],
 		},
 	},
 	zigzagoongalar: {
@@ -4699,6 +4705,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			steelroller: ["3T"],
 			hiddenpower: ["3M"],
+			psywave: ["3L15"],
 		},
 	},
 	bronzong: {
@@ -4753,6 +4760,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			steelroller: ["3T"],
 			hiddenpower: ["3M"],
+			psywave: ["3L15"],
 		},
 	},
 	chatot: {

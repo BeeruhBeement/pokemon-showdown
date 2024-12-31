@@ -193,6 +193,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 100, spe: 30},
 	},
+	diglett: {
+		inherit: true,
+		abilities: {0: "Sharp", 1: "Arena Trap", H: "Sand Force"},
+	},
 	diglettalola: {
 		inherit: true,
 		gen: 3,
@@ -200,6 +204,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	dugtrio: {
 		inherit: true,
 		baseStats: {hp: 35, atk: 100, def: 50, spa: 50, spd: 70, spe: 120},
+		abilities: {0: "Sharp", 1: "Arena Trap", H: "Sand Force"},
 	},
 	dugtrioalola: {
 		inherit: true,
@@ -335,6 +340,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	electrodehisui: {
 		inherit: true,
 		gen: 3,
+	},
+	exeggutor: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 95, def: 85, spa: 125, spd: 75, spe: 55},
+	},
+	hitmontop: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Intimidate", 1: "Technician", H: "Dancer"},
 	},
 	koffing: {
 		inherit: true,
@@ -708,6 +722,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 60, atk: 50, def: 70, spa: 50, spd: 100, spe: 65},
 	},
+	ludicolo:{
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Swift Swim", 1: "Rain Dish", H: "Dancer"},
+	},
 	shiftry: {
 		inherit: true,
 		abilities: {0: "Chlorophyll", 1: "Wind Rider", H: "Pickpocket", S: "Early Bird"},
@@ -794,9 +813,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Solid Rock", 1: "Rock Head", H: "Heavy Metal"},
 	},
+	meditite: {
+		inherit: true,
+		abilities: {0: "Pure Power", H: "Magic Guard"},
+	},
 	medicham: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 60, def: 75, spa: 60, spd: 75, spe: 80},
+		abilities: {0: "Pure Power", H: "Magic Guard"},
 	},
 	electrike: {
 		inherit: true,
@@ -1392,6 +1416,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	accelgor: {
 		inherit: true,
 		gen: 3,
+		types: ["Bug", "Water"],
 	},
 	mienfoo: {
 		inherit: true,
