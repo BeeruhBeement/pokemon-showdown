@@ -186,16 +186,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 	},
 	charge: {
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Charge",
-		pp: 20,
-		priority: 0,
-		flags: {snatch: 1, metronome: 1},
+		inherit: true,
 		desc: "If the user uses an Electric-type attack, its power will be doubled until it's no longer active.",
 		shortDesc: "The user's Electric attacks have 2x power.",
-		volatileStatus: 'charge',
 		condition: {
 			onStart(pokemon, source, effect) {
 				if (effect && ['Electromorphosis', 'Wind Power'].includes(effect.name)) {
@@ -222,12 +215,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.add('-end', pokemon, 'Charge', '[silent]');
 			},
 		},
-		boosts: {},
-		secondary: null,
-		target: "self",
-		type: "Electric",
-		zMove: {boost: {spd: 1}},
-		contestType: "Clever",
 	},
 	thief: {
 		inherit: true,
@@ -1383,7 +1370,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 85,
 		desc: "Has a higher chance for a critical hit. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn.",
-		shortDesc: "High critical. Charges turn 1, hits turn 2. No charge in rain.",
+		shortDesc: "High critical. Charges and hits turn 2. No charge in rain.",
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -1472,8 +1459,36 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	hyperspacehole: {
 		inherit: true,
 		gen: 3,
+		basePower: 100,
 	},
 	hyperspacefury: {
+		inherit: true,
+		gen: 3,
+	},
+	bloodmoon: {
+		inherit: true,
+		gen: 3,
+		type: "Psychic",
+	},
+	hyperbeam: {
+		inherit: true,
+		gen: 3,
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
+	},
+	smellingsalts: {
+		inherit: true,
+		type: "Rock",
+		basePower: 70,
+	},
+	wakeupslap: {
+		inherit: true,
+		basePower: 70,
+		gen: 3,
+	},
+	scorchingsands: {
 		inherit: true,
 		gen: 3,
 	},

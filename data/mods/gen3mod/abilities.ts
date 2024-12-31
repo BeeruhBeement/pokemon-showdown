@@ -198,12 +198,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	solarpower: {
 		inherit: true,
 		gen: 3,
-		desc: "If Sunny Day is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/10 of its maximum HP, rounded down, at the end of each turn. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
+		desc: "If Sunny Day is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/10 of its maximum HP, rounded down, at the end of each turn.",
 		shortDesc: "If Sunny Day is active, this Pokemon's Sp. Atk is 1.5x; loses 1/10 max HP per turn.",
 		onWeather(target, source, effect) {
-			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
 				this.damage(target.baseMaxhp / 10, target, target);
+			}
+		},
+	},
+	sandforce: {
+		inherit: true,
+		gen: 3,
+		desc: "If Sandstorm is active, this Pokemon's attacks have their power multiplied by 1.3. This Pokemon takes no damage from Sandstorm.",
+		shortDesc: "This Pokemon's attacks have 1.3x power in Sandstorm; immunity to it.",
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.field.isWeather('sandstorm')) {
+				return this.chainModify([5325, 4096]);
 			}
 		},
 	},
@@ -625,6 +635,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	hydration: {
 		inherit: true,
 		gen: 3,
+		desc: "This Pokemon has its non-volatile status condition cured at the end of each turn if Rain Dance is active or is hit by a Water-type move.",
+		shortDesc: "This Pokemon has its status cured if Rain Dance is active or is hit by Water.",
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Water') {
+				this.debug('hydration');
+				this.add('-activate', target, 'ability: Hydration');
+				target.cureStatus();
+			}
+		},
 	},
 	steadfast: {
 		inherit: true,
@@ -645,6 +664,44 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	disguise: {
 		inherit: true,
 		gen: 3,
+	},
+	mindseye: {
+		inherit: true,
+		gen: 3,
+		desc: "This Pokemon can hit Dark types with Psychic-type moves. Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
+		shortDesc: "Psychic moves hit Dark. Accuracy can't be lowered, ignores evasiveness.",
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Psychic'] = true;
+			}
+		},
+	},
+	lightmetal: {
+		inherit: true,
+		gen: 3,
+		desc: "This Pokemon receives 3/4 damage from Ground-type attacks and its weight is halved, rounded down to a tenth of a kilogram. This effect is calculated after the effect of Autotomize, and before the effect of Float Stone. A Pokemon's weight will not drop below 0.1 kg.",
+		shortDesc: "This Pokemon's weight is doubled. 3/4 damage from Ground-type attacks.",
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.type === 'Ground') {
+				this.debug('Light Metal weaken');
+				return this.chainModify(0.75);
+			}
+		},
+	},
+	heavymetal: {
+		inherit: true,
+		gen: 3,
+		desc: "This Pokemon receives 3/4 damage from Fighting-type attacks and its weight is doubled. This effect is calculated after the effect of Autotomize, and before the effect of Float Stone.",
+		shortDesc: "This Pokemon's weight is doubled. 3/4 damage from Fighting-type attacks.",
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.type === 'Fighting') {
+				this.debug('Heavy Metal weaken');
+				return this.chainModify(0.75);
+			}
+		},
 	},
 
 	// -ate abilities
@@ -880,6 +937,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 	},
 	magician: {
+		inherit: true,
+		gen: 3,
+	},
+	gooey: {
 		inherit: true,
 		gen: 3,
 	},

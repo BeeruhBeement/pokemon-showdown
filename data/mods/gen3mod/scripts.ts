@@ -391,5 +391,54 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 			return true;
 		},
+
+		getZMove(move: Move, pokemon: Pokemon, skipChecks?: boolean): string | undefined {
+			const item = pokemon.getItem();
+			if (!skipChecks) {
+				if (pokemon.side.zMoveUsed) return;
+				if (!item.zMove) return;
+				if (item.itemUser && !item.itemUser.includes(pokemon.species.name)) return;
+				const moveData = pokemon.getMoveData(move);
+				// Draining the PP of the base move prevents the corresponding Z-move from being used.
+				if (!moveData?.pp) return;
+			}
+	
+			if (item.zMoveFrom) {
+				if (move.name === item.zMoveFrom) return item.zMove as string;
+			} else if (item.zMove === true) {
+				if (move.type === item.zMoveType) {
+					if (move.category === "Status") {
+						return move.name;
+					} else if (move.zMove?.basePower) {
+						return this.Z_MOVES[move.type];
+					}
+				}
+			}
+		},
+		
+		getActiveZMove(move: Move, pokemon: Pokemon): ActiveMove {
+			if (pokemon) {
+				const item = pokemon.getItem();
+				if (move.name === item.zMoveFrom) {
+					const zMove = this.dex.getActiveMove(item.zMove as string);
+					zMove.isZOrMaxPowered = true;
+					return zMove;
+				}
+			}
+	
+			if (move.category === 'Status') {
+				const zMove = this.dex.getActiveMove(move);
+				zMove.isZ = true;
+				zMove.isZOrMaxPowered = true;
+				return zMove;
+			}
+			const zMove = this.dex.getActiveMove(this.Z_MOVES[move.type]);
+			zMove.basePower = move.zMove!.basePower!;
+			zMove.category = move.category;
+			// copy the priority for Quick Guard
+			zMove.priority = move.priority;
+			zMove.isZOrMaxPowered = true;
+			return zMove;
+		}
 	},
 };

@@ -26,7 +26,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	beedrillmega: {
 		inherit: true,
 		gen: 3,
-		baseStats: {hp: 65, atk: 160, def: 40, spa: 15, spd: 90, spe: 145},
+		baseStats: {hp: 65, atk: 150, def: 40, spa: 25, spd: 90, spe: 145},
 	},
 	pidgey: {
 		inherit: true,
@@ -318,15 +318,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	hypno: {
 		inherit: true,
 		types: ["Psychic", "Dark"],
-		baseStats: {hp: 85, atk: 73, def: 70, spa: 83, spd: 115, spe: 67},
-		abilities: {0: "Insomnia", 1: "Psychic Surge", H: "Inner Focus"},
-	},
-	krabby: {
-		inherit: true,
-	},
-	kingler: {
-		inherit: true,
-		baseStats: {hp: 55, atk: 180, def: 115, spa: 50, spd: 50, spe: 75},
 	},
 	voltorb: {
 		inherit: true,
@@ -478,6 +469,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 55, atk: 75, def: 50, spa: 55, spd: 110, spe: 85},
 		abilities: {0: "Superhero", 1: "Early Bird", H: "Iron Fist"},
 	},
+	ariados: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 90, def: 70, spa: 60, spd: 70, spe: 40},
+	},
 	togepi: {
 		inherit: true,
 		types: ["Fairy"],
@@ -522,7 +517,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sunflora: {
 		inherit: true,
 		types: ["Grass", "Fire"],
-		baseStats: {hp: 75, atk: 75, def: 55, spa: 105, spd: 85, spe: 40},
+		baseStats: {hp: 75, atk: 75, def: 55, spa: 105, spd: 85, spe: 50},
 	},
 	yanmega: {
 		inherit: true,
@@ -594,8 +589,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ursalunabloodmoon: {
 		inherit: true,
 		gen: 3,
-		types: ["Ground", "Sound"],
-		abilities: {0: "Miracle Guard"}
+		types: ["Ground", "Psychic"],
 	},
 	slugma: {
 		inherit: true,
@@ -706,6 +700,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 		baseStats: {hp: 83, atk: 90, def: 91, spa: 60, spd: 81, spe: 95},
 	},
+	beautifly: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 70, def: 50, spa: 100, spd: 50, spe: 65},
+	},
+	dustox: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 50, def: 70, spa: 50, spd: 100, spe: 65},
+	},
 	shiftry: {
 		inherit: true,
 		abilities: {0: "Chlorophyll", 1: "Wind Rider", H: "Pickpocket", S: "Early Bird"},
@@ -761,6 +763,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Sound"],
 		baseStats: {hp: 104, atk: 91, def: 63, spa: 91, spd: 73, spe: 68},
+		abilities: {0: "Soundproof", H: "Mold Breaker"},
 	},
 	probopass: {
 		inherit: true,
@@ -883,7 +886,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	kecleon: {
 		inherit: true,
-		baseStats: {hp: 60, atk: 80, def: 70, spa: 80, spd: 120, spe: 40},
 		abilities: {0: "Color Change", H: "Protean"},
 	},
 	shuppet: {
@@ -896,6 +898,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ghost", "Normal"],
 		baseStats: {hp: 64, atk: 115, def: 65, spa: 85, spd: 63, spe: 73},
 		abilities: {0: "Insomnia", 1: "Aftermath", H: "Fluffy"},
+	},
+	tropius: {
+		inherit: true,
+		baseStats: {hp: 109, atk: 73, def: 83, spa: 77, spd: 87, spe: 61},
 	},
 	chingling: {
 		inherit: true,
@@ -937,7 +943,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	relicanth: {
 		inherit: true,
-		baseStats: {hp: 100, atk: 90, def: 170, spa: 35, spd: 35, spe: 55},
 		abilities: {0: "Battle Armor", 1: "Rock Head", H: "Sturdy"},
 	},
 	luvdisc: {
@@ -953,6 +958,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	groudon: {
 		inherit: true,
 		abilities: {0: "Desolate Land"},
+	},
+	jirachi: {
+		inherit: true,
+		abilities: {0: "Serene Grace", H: "Healer"},
 	},
 	deoxys: {
 		inherit: true,
@@ -1376,6 +1385,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Miracle Guard", 1: "Slush Rush", H: "Swift Swim"},
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
 	},
+	shelmet: {
+		inherit: true,
+		gen: 3,
+	},
+	accelgor: {
+		inherit: true,
+		gen: 3,
+	},
 	mienfoo: {
 		inherit: true,
 		gen: 3,
@@ -1401,6 +1418,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	bouffalant: {
 		inherit: true,
 		gen: 3,
+		types: ["Normal", "Rock"],
 	},
 	vullaby: {
 		inherit: true,
@@ -1532,10 +1550,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	goomy: {
 		inherit: true,
 		gen: 3,
+		types: ["Dragon", "Water"],
 	},
 	sliggoo: {
 		inherit: true,
 		gen: 3,
+		types: ["Dragon", "Water"],
 	},
 	sliggoohisui: {
 		inherit: true,
@@ -1544,6 +1564,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	goodra: {
 		inherit: true,
 		gen: 3,
+		types: ["Dragon", "Water"],
 	},
 	goodrahisui: {
 		inherit: true,
