@@ -484,6 +484,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	cameruptite: {
+		inherit: true,
+		gen: 3,
+	},
 	lucarionite: {
 		inherit: true,
 		gen: 3,

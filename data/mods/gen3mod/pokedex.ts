@@ -250,9 +250,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 75, def: 75, spa: 90, spd: 110, spe: 70},
 		types: ["Water", "Sound"],
 	},
+	alakazam: {
+		inherit: true,
+		baseStats: {hp: 55, atk: 50, def: 45, spa: 135, spd: 95, spe: 120},
+	},
 	alakazammega: {
 		inherit: true,
 		gen: 3,
+		baseStats: {hp: 55, atk: 50, def: 65, spa: 175, spd: 105, spe: 150},
 	},
 	geodudealola: {
 		inherit: true,
@@ -499,6 +504,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Fairy", "Flying"],
+	},
+	ampharos: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 75, def: 85, spa: 115, spd: 90, spe: 55},
 	},
 	azurill: {
 		inherit: true,
@@ -794,8 +803,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	sableye: {
 		inherit: true,
-		abilities: {0: "Pixie Veil", 1: "Stall", H: "Prankster"},
 		baseStats: {hp: 80, atk: 65, def: 75, spa: 65, spd: 75, spe: 50},
+		abilities: {0: "Pixie Veil", 1: "Stall", H: "Prankster"},
 	},
 	mawile: {
 		inherit: true,
@@ -830,6 +839,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Lightning Rod", H: "Minus"},
 	},
+	plusle: {
+		inherit: true,
+		abilities: {0: "Plus", H: "Lightning Rod"},
+	},
+	minun: {
+		inherit: true,
+		abilities: {0: "Minus", H: "Volt Absorb"},
+	},
 	volbeat: {
 		inherit: true,
 		types: ["Bug", "Electric"],
@@ -840,9 +857,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Bug", "Electric"],
 		baseStats: {hp: 65, atk: 67, def: 75, spa: 73, spd: 85, spe: 85},
 	},
+	sharpedo: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 120, def: 40, spa: 105, spd: 40, spe: 105},
+	},
 	camerupt: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 100, def: 70, spa: 105, spd: 75, spe: 40},
+	},
+	cameruptmega: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 120, def: 100, spa: 145, spd: 105, spe: 20},
 	},
 	torkoal: {
 		inherit: true,
@@ -1124,7 +1149,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		gen: 3,
 		types: ["Grass", "Dark"],
-		baseStats: {hp: 84, atk: 110, def: 72, spa: 100, spd: 72, spe: 46},
+		baseStats: {hp: 84, atk: 100, def: 72, spa: 90, spd: 72, spe: 46},
 		abilities: {0: "Flytrap"},
 	},
 	riolu: {
@@ -1353,6 +1378,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 3,
 	},
 	alomomola: {
+		inherit: true,
+		gen: 3,
+	},
+	joltik: {
+		inherit: true,
+		gen: 3,
+	},
+	galvantula: {
 		inherit: true,
 		gen: 3,
 	},
@@ -1868,6 +1901,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	centiskorch: {
 		inherit: true,
 		gen: 3,
+	},
+	clobbopus: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Water Veil", H: "Technician"},
+	},
+	grapploct: {
+		inherit: true,
+		gen: 3,
+		abilities: {0: "Water Veil", H: "Technician"},
 	},
 	impidimp: {
 		inherit: true,

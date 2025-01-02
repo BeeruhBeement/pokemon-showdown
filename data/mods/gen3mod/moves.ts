@@ -1132,6 +1132,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	rocktomb: {
 		inherit: true,
 		accuracy: 95,
+		basePower: 60,
 	},
 	wish: {
 		inherit: true,

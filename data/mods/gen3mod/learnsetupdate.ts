@@ -585,6 +585,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "shuckle").learnset.stealthrock = ["3M"];
 	
 	dex.modData("Learnsets", "heracross").learnset.rockblast = ["3E"];
+	dex.modData("Learnsets", "heracross").learnset.spikes = ["3E"];
 	dex.modData("Learnsets", "heracross").learnset.armthrust = ["3L1"];
 	dex.modData("Learnsets", "heracross").learnset.bulletseed = ["3L1"];
 	dex.modData("Learnsets", "heracross").learnset.nightslash = ["3L1"];
@@ -699,7 +700,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "hooh").learnset.aeroblast = ["3L71"];
 	dex.modData("Learnsets", "hooh").learnset.outrage = ["3L93"];
 	
+	dex.modData("Learnsets", "treecko").learnset.rockslide = ["3T"];
+	dex.modData("Learnsets", "grovyle").learnset.rockslide = ["3T"];
 	dex.modData("Learnsets", "sceptile").learnset.nightslash = ["3L1"];
+	dex.modData("Learnsets", "sceptile").learnset.rockslide = ["3T"];
 	
 	dex.modData("Learnsets", "blaziken").learnset.highjumpkick = ["3L1"];
 	
@@ -734,10 +738,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "seedot").learnset.nastyplot = ["3E"];
 	dex.modData("Learnsets", "seedot").learnset.suckerpunch = ["3L30", "3T"];
 	dex.modData("Learnsets", "nuzleaf").learnset.suckerpunch = ["3L50", "3T"];
+	dex.modData("Learnsets", "nuzleaf").learnset.rockslide = ["3T"];
 	dex.modData("Learnsets", "shiftry").learnset.tailwind = ["3L1"];
 	dex.modData("Learnsets", "shiftry").learnset.nastyplot = ["3L1"];
 	dex.modData("Learnsets", "shiftry").learnset.leafstorm = ["3L49"];
 	dex.modData("Learnsets", "shiftry").learnset.suckerpunch = ["3T"];
+	dex.modData("Learnsets", "shiftry").learnset.rockslide = ["3T"];
 
 	dex.modData("Learnsets", "taillow").learnset.boomburst = ["3E"];
 
@@ -817,6 +823,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData("Learnsets", "sableye").learnset.encore = ["3E"];
 	dex.modData("Learnsets", "sableye").learnset.metalburst = ["3E"];
+	dex.modData("Learnsets", "sableye").learnset.octazooka = ["3E"];
 	dex.modData("Learnsets", "sableye").learnset.shadowsneak = ["3L25"];
 	dex.modData("Learnsets", "sableye").learnset.spiritbreak = ["3L61"];
 	dex.modData("Learnsets", "sableye").learnset.dazzlinggleam = ["3M"];
@@ -876,7 +883,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "camerupt").learnset.lavaplume = ["3L31"];
 	dex.modData("Learnsets", "camerupt").learnset.scorchingsands = ["3L67"];
 	dex.modData("Learnsets", "camerupt").learnset.magmastorm = ["3L75"];
-	dex.modData("Learnsets", "camerupt").learnset.stealthrock = ["3M"];
 
 	dex.modData("Learnsets", "torkoal").learnset.rapidspin = ["3L23"];
 	dex.modData("Learnsets", "torkoal").learnset.lavaplume = ["3L39"];

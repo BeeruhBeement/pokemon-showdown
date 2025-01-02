@@ -509,20 +509,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	plus: {
 		inherit: true,
-		shortDesc: "This Pokemon's Special Attack is 1.3x.",
+		shortDesc: "This Pokemon's Special Attack is 1.1x.",
 		onModifySpA(spa, pokemon) {
-			return this.chainModify(1.3);
+			return this.chainModify(1.1);
 		},
 	},
 	minus: {
 		inherit: true,
-		shortDesc: "This Pokemon's Special Defense is 1.3x.",
+		shortDesc: "This Pokemon's Special Defense is 1.1x.",
 		onModifySpA(spa, pokemon) {
 			return;
 		},
 		onModifySpDPriority: 5,
 		onModifySpD(spa, pokemon) {
-			return this.chainModify(1.3);
+			return this.chainModify(1.1);
 		},
 	},
 	tintedlens: {

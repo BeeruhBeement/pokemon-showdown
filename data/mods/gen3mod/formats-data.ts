@@ -1373,10 +1373,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	plusle: {
-		tier: "PU",
+		tier: "SU",
 	},
 	minun: {
-		tier: "SU",
+		tier: "8U",
 	},
 	volbeat: {
 		tier: "ZU",
@@ -1421,7 +1421,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	cameruptmega: {
-		tier: "Illegal",
+		tier: "RU",
 	},
 	torkoal: {
 		tier: "RU",
@@ -2300,10 +2300,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	joltik: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	galvantula: {
-		tier: "Illegal",
+		tier: "PU",
 	},
 	ferroseed: {
 		tier: "Illegal",
@@ -3313,10 +3313,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	clobbopus: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	grapploct: {
-		tier: "Illegal",
+		tier: "ZU",
 	},
 	sinistea: {
 		tier: "Illegal",
