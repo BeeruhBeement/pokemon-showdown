@@ -410,7 +410,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pinsir: {
 		inherit: true,
-		abilities: {0: "Hyper Cutter", 1: "Mold Breaker", H: "Chrysalis	"},
+		abilities: {0: "Hyper Cutter", 1: "Mold Breaker", H: "Chrysalis"},
 	},
 	pinsirmega: {
 		inherit: true,
@@ -990,10 +990,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	huntail: {
 		inherit: true,
 		abilities: {0: "Strong Jaw", H: "Water Veil"},
-	},
-	relicanth: {
-		inherit: true,
-		abilities: {0: "Battle Armor", 1: "Rock Head", H: "Sturdy"},
 	},
 	luvdisc: {
 		inherit: true,
