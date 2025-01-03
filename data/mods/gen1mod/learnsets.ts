@@ -29,6 +29,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			rest: ["1M"],
 			explosion: ["1M"],
 			substitute: ["1M"],
+			strength: ["1M"],
 		},
 	},
 	shelmet: {
