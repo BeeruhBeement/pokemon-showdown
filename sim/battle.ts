@@ -2284,6 +2284,9 @@ export class Battle {
 					return target;
 				}
 				if (target.isAlly(pokemon)) {
+					if (move.target === 'adjacentAllyOrSelf' && this.gen !== 5) {
+						return pokemon;
+					}
 					// Target is a fainted ally: attack shouldn't retarget
 					return target;
 				}
@@ -2545,8 +2548,10 @@ export class Battle {
 		case 'move':
 			if (!action.pokemon.isActive) return false;
 			if (action.pokemon.fainted) return false;
-			this.actions.runMove(action.move, action.pokemon, action.targetLoc, action.sourceEffect,
-				action.zmove, undefined, action.maxMove, action.originalTarget);
+			this.actions.runMove(action.move, action.pokemon, action.targetLoc, {
+				sourceEffect: action.sourceEffect, zMove: action.zmove,
+				maxMove: action.maxMove, originalTarget: action.originalTarget,
+			});
 			break;
 		case 'megaEvo':
 			this.actions.runMegaEvo(action.pokemon);
@@ -2808,7 +2813,12 @@ export class Battle {
 	choose(sideid: SideID, input: string) {
 		const side = this.getSide(sideid);
 
-		if (!side.choose(input)) return false;
+		if (!side.choose(input)) {
+			if (!side.choice.error) {
+				side.emitChoiceError(`Unknown error for choice: ${input}. If you're not using a custom client, please report this as a bug.`);
+			}
+			return false;
+		}
 
 		if (!side.isChoiceDone()) {
 			side.emitChoiceError(`Incomplete choice: ${input} - missing other pokemon`);
@@ -3007,7 +3017,7 @@ export class Battle {
 		return team as PokemonSet[];
 	}
 
-	showOpenTeamSheets(hideFromSpectators = false) {
+	showOpenTeamSheets() {
 		if (this.turn !== 0) return;
 		for (const side of this.sides) {
 			const team = side.pokemon.map(pokemon => {
@@ -3044,13 +3054,8 @@ export class Battle {
 				}
 				return newSet;
 			});
-			if (hideFromSpectators) {
-				for (const s of this.sides) {
-					this.addSplit(s.id, ['showteam', side.id, Teams.pack(team)]);
-				}
-			} else {
-				this.add('showteam', side.id, Teams.pack(team));
-			}
+
+			this.add('showteam', side.id, Teams.pack(team));
 		}
 	}
 
@@ -3135,6 +3140,15 @@ export class Battle {
 
 	getSide(sideid: SideID): Side {
 		return this.sides[parseInt(sideid[1]) - 1];
+	}
+
+	/**
+	 * Currently, we treat Team Preview as turn 0, but the games start counting their turns at turn 0
+	 * There is also overflow that occurs in Gen 8+ that affects moves like Wish / Future Sight
+	 * https://www.smogon.com/forums/threads/10352797
+	 */
+	getOverflowedTurnCount(): number {
+		return this.gen >= 8 ? (this.turn - 1) % 256 : this.turn - 1;
 	}
 
 	destroy() {
