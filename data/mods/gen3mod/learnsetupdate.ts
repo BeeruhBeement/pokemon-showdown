@@ -1047,8 +1047,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "luvdisc").learnset.recover = ["3L99"];
 	dex.modData("Learnsets", "luvdisc").learnset.takeheart = ["3L99"];
 	
-	dex.modData("Learnsets", "bagon").learnset.bagon = ["3L50"];
-	dex.modData("Learnsets", "shelgon").learnset.shelgon = ["3L60"];
+	dex.modData("Learnsets", "bagon").learnset.outrage = ["3L50"];
+	dex.modData("Learnsets", "shelgon").learnset.outrage = ["3L60"];
 	dex.modData("Learnsets", "salamence").learnset.outrage = ["3L64"];
 	dex.modData("Learnsets", "salamence").learnset.dragontail = ["3L80"];
 	dex.modData("Learnsets", "salamence").learnset.dualwingbeat = ["3T"];

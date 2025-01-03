@@ -2367,8 +2367,4 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's contact moves have a 30% chance of bleeding. This effect comes after a move's inherent secondary effect chance.",
 		shortDesc: "This Pokemon's contact moves have a 30% chance of bleeding.",
 	},
-	adaptablegenome: {
-		name: "Adaptable Genome",
-		shortDesc: "This Pokemon's type changes to match the types of its first 2 moveslots.",
-	},
 };

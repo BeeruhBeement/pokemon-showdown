@@ -6040,19 +6040,4 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 5022,
 	},
-	adaptablegenome: {
-		isNonstandard: "Custom",
-		onSwitchIn(pokemon) {
-			const types = [...new Set(pokemon.baseMoveSlots.slice(0, 2).map(move => this.dex.moves.get(move.id).type))];
-			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
-		},
-		onAfterMega(pokemon) {
-			const types = [...new Set(pokemon.baseMoveSlots.slice(0, 2).map(move => this.dex.moves.get(move.id).type))];
-			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
-		},
-		flags: {},
-		name: "Adaptable Genome",
-		rating: 4,
-		num: 5023,
-	},
 };

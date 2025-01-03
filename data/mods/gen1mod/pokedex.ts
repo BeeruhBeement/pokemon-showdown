@@ -615,148 +615,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
 	},
 
-	meganium: {
+	sudowoodo: {
 		inherit: true,
 		gen: 1,
-		types: ["Grass", "Earth"],
-		baseStats: {hp: 80, atk: 82, def: 100, spa: 83, spd: 83, spe: 80},
+		baseStats: {hp: 70, atk: 100, def: 115, spa: 65, spd: 65, spe: 30},
 	},
-	linoone: {
+	shelmet: {
 		inherit: true,
 		gen: 1,
-		baseStats: {hp: 78, atk: 70, def: 61, spa: 61, spd: 61, spe: 100},
+		baseStats: {hp: 50, atk: 40, def: 85, spa: 40, spd: 40, spe: 25},
 	},
-	veluza: {
+	accelgor: {
 		inherit: true,
 		gen: 1,
-		baseStats: {hp: 90, atk: 102, def: 73, spa: 78, spd: 78, spe: 70},
-	},
-	girafarig: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 70, atk: 80, def: 65, spa: 65, spd: 65, spe: 85},
-	},
-	fletchling: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 45, atk: 50, def: 43, spa: 40, spd: 40, spe: 62},
-	},
-	fletchinder: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 62, atk: 73, def: 55, spa: 56, spd: 56, spe: 84},
-	},
-	crabominable: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 97, atk: 132, def: 77, spa: 67, spd: 67, spe: 43},
-	},
-	sandygast: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 55, atk: 55, def: 80, spa: 70, spd: 70, spe: 15},
-	},
-	cherrim: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 70, atk: 60, def: 70, spa: 87, spd: 87, spe: 85},
-	},
-	spinda: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 60, atk: 60, def: 60, spa: 60, spd: 60, spe: 60},
-	},
-	heatmor: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 85, atk: 97, def: 66, spa: 105, spd: 105, spe: 66},
-	},
-	unown: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 48, atk: 48, def: 96, spa: 96, spd: 96, spe: 96},
-	},
-	regirock: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 80, atk: 100, def: 200, spa: 50, spd: 50, spe: 50},
-	},
-	finizen: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 67, atk: 67, def: 67, spa: 95, spd: 95, spe: 67},
-	},
-	maractus: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 75, atk: 75, def: 75, spa: 105, spd: 105, spe: 75},
-	},
-	pawniard: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 85, atk: 85, def: 70, spa: 40, spd: 40, spe: 60},
-	},
-	dedenne: {
-		inherit: true,
-		gen: 1,
-		types: ["Electric", "Fairy", "Nuclear"],
-		baseStats: {hp: 62, atk: 58, def: 57, spa: 81, spd: 81, spe: 101},
-	},
-	barraskewda: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 105, atk: 115, def: 70, spa: 60, spd: 60, spe: 30},
-	},
-	dachsbun: {
-		inherit: true,
-		gen: 1,
-		types: ["Fairy", "Food"],
-		baseStats: {hp: 90, atk: 90, def: 90, spa: 90, spd: 90, spe: 90},
-	},
-	sableye: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 50, atk: 75, def: 75, spa: 65, spd: 65, spe: 50},
-	},
-	rotom: {
-		inherit: true,
-		gen: 1,
-		types: ["Light", "Ghost", "Glass"],
-		baseStats: {hp: 50, atk: 50, def: 77, spa: 95, spd: 95, spe: 91},
-	},
-	pokestarhumanoid: {
-		inherit: true,
-		gen: 1,
-		types: ["Normal", "Nuclear"],
-		baseStats: {hp: 75, atk: 85, def: 65, spa: 75, spd: 75, spe: 65},
-	},
-	lunatone: {
-		inherit: true,
-		gen: 1,
-		types: ["Rock", "Psychic", "Cosmic"],
-		baseStats: {hp: 70, atk: 55, def: 65, spa: 95, spd: 95, spe: 70},
-	},
-	dunsparce: {
-		inherit: true,
-		gen: 1,
-		types: ["Normal", "Earth"],
-		baseStats: {hp: 100, atk: 70, def: 70, spa: 65, spd: 65, spe: 45},
-	},
-	vanilluxe: {
-		inherit: true,
-		gen: 1,
-		types: ["Ice", "Food"],
-		baseStats: {hp: 71, atk: 85, def: 75, spa: 110, spd: 110, spe: 79},
-	},
-	dewpider: {
-		inherit: true,
-		gen: 1,
-		baseStats: {hp: 38, atk: 40, def: 52, spa: 72, spd: 72, spe: 27},
-	},
-	charjabug: {
-		inherit: true,
-		gen: 1,
-		types: ["Bug", "Electric", "Nuclear"],
-		baseStats: {hp: 57, atk: 82, def: 95, spa: 75, spd: 75, spe: 36},
+		baseStats: {hp: 80, atk: 70, def: 40, spa: 60, spd: 60, spe: 145},
 	},
 };

@@ -35,7 +35,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	dualwingbeat: {
 		inherit: true,
 		gen: 3,
-		accuracy: 85,
 	},
 	rapidspin: {
 		inherit: true,
@@ -1303,7 +1302,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		gen: 3,
 		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move. Has a 30% chance to paralyze the target.",
-		shortDesc: "User cannot move next turn. 30% chance to paralyze the target.",
+		shortDesc: "User cannot move next turn. 30% para chance.",
 		secondary: {
 			chance: 30,
 			status: 'par',

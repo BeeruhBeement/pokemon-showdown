@@ -867,6 +867,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	cameruptmega: {
 		inherit: true,
+		gen: 3,
 		baseStats: {hp: 90, atk: 120, def: 100, spa: 145, spd: 105, spe: 20},
 	},
 	torkoal: {
