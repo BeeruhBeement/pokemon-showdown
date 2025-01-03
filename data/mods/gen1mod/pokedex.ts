@@ -627,4 +627,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: 1,
 		baseStats: {hp: 80, atk: 70, def: 40, spa: 60, spd: 60, spe: 145},
 	},
+	morelull: {
+		inherit: true,
+		gen: 1,
+		types: ['Grass'],
+		baseStats: {hp: 40, atk: 35, def: 55, spa: 75, spd: 75, spe: 15},
+	},
+	shiinotic: {
+		inherit: true,
+		gen: 1,
+		types: ['Grass'],
+		baseStats: {hp: 60, atk: 45, def: 80, spa: 100, spd: 100, spe: 30},
+	},
 };

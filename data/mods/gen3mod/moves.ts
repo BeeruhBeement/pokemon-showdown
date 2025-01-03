@@ -1021,6 +1021,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "This attack charges on the first turn and executes on the second unless the attacker's Attack is greater than the target's Attack. Raises the user's Defense by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "No charge if user's Atk > target's Atk. +1 Def.",
 		basePower: 130,
+		pp: 10,
 		onTryMove(attacker, defender, move) {
 			let userAtk = Math.floor(attacker.getStat('atk'));
 			let targetAtk = Math.floor(defender.getStat('atk'));
@@ -1068,6 +1069,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	sacredsword: {
 		inherit: true,
 		gen: 3,
+		pp: 15,
 	},
 	dragondarts: {
 		inherit: true,
@@ -1132,6 +1134,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		accuracy: 95,
 		basePower: 60,
+		pp: 15,
 	},
 	wish: {
 		inherit: true,
@@ -1325,6 +1328,44 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 
 	// Move Base Power updates
 
+	absorb: {
+		inherit: true,
+		pp: 25,
+	},
+	megadrain: {
+		inherit: true,
+		pp: 20,
+	},
+	stockpile: {
+		inherit: true,
+		pp: 20,
+	},
+	acidarmor: {
+		inherit: true,
+		pp: 20,
+	},
+	barrier: {
+		inherit: true,
+		pp: 20,
+	},
+	extrasensory: {
+		inherit: true,
+		pp: 20,
+	},
+	minimize: {
+		inherit: true,
+		pp: 10,
+	},
+	submission: {
+		inherit: true,
+		pp: 15,
+		basePower: 90,
+		accuracy: 100,
+	},
+	swordsdance: {
+		inherit: true,
+		pp: 20,
+	},
 	dig: {
 		inherit: true,
 		basePower: 80,
@@ -1344,6 +1385,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	outrage: {
 		inherit: true,
 		basePower: 120,
+		pp: 10,
 	},
 	rocksmash: {
 		inherit: true,
@@ -1364,6 +1406,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	covet: {
 		inherit: true,
 		basePower: 60,
+		pp: 25,
 	},
 	doomdesire: {
 		inherit: true,
@@ -1373,7 +1416,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	drainpunch: {
 		inherit: true,
 		gen: 3,
-		pp: 15,
+		pp: 10,
 		basePower: 75,
 	},
 	firespin: {
@@ -1383,12 +1426,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	gigadrain: {
 		inherit: true,
-		pp: 15,
+		pp: 10,
 		basePower: 75,
 	},
 	highjumpkick: {
 		inherit: true,
 		basePower: 130,
+		pp: 10,
 		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 		onMoveFail(target, source, move) {
@@ -1402,6 +1446,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	jumpkick: {
 		inherit: true,
 		basePower: 100,
+		pp: 10,
 		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 		onMoveFail(target, source, move) {
@@ -1411,6 +1456,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	petaldance: {
 		inherit: true,
 		basePower: 120,
+		pp: 10,
 	},
 	sandtomb: {
 		inherit: true,
@@ -1420,6 +1466,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	thrash: {
 		inherit: true,
 		basePower: 120,
+		pp: 10,
 	},
 	uproar: {
 		inherit: true,
@@ -1438,6 +1485,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	clamp: {
 		inherit: true,
 		accuracy: 85,
+		pp: 15,
 	},
 	cottonspore: {
 		inherit: true,
@@ -1469,6 +1517,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 120,
 		accuracy: 100,
+		pp: 10,
 		onTry(source, target) {
 			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
 			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
@@ -1557,6 +1606,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	thief: {
 		inherit: true,
 		basePower: 60,
+		pp: 25,
 	},
 	thunder: {
 		inherit: true,
@@ -1569,10 +1619,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	vinewhip: {
 		inherit: true,
 		basePower: 45,
+		pp: 25,
 	},
 	leechlife: {
 		inherit: true,
 		basePower: 75,
+		pp: 10,
 	},
 	mysticalfire: {
 		inherit: true,

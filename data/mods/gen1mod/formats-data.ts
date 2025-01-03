@@ -468,4 +468,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	accelgor: {
 		tier: "OU",
 	},
+	morelull: {
+		tier: "LC",
+	},
+	shiinotic: {
+		tier: "OU",
+	},
 };
