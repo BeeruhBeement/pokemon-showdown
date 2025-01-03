@@ -944,6 +944,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		gen: 3,
 	},
+	tangledfeet: {
+		inherit: true,
+		gen: 3,
+	},
+	download: {
+		inherit: true,
+		gen: 3,
+	},
+	poisonheal: {
+		inherit: true,
+		gen: 3,
+	},
 
 	// custom abilities
 	
