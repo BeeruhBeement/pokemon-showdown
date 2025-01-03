@@ -163,8 +163,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	wigglytuff: {
 		inherit: true,
-		types: ["Normal", "Sound"],
-		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 85, spe: 45},
+		baseStats: {hp: 140, atk: 70, def: 45, spa: 50, spd: 50, spe: 45},
 	},
 	zubat: {
 		inherit: true,
@@ -328,10 +327,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	magnemite: {
 		inherit: true,
+		types: ["Electric"],
 		baseStats: {hp: 25, atk: 35, def: 70, spa: 95, spd: 95, spe: 45},
 	},
 	magneton: {
 		inherit: true,
+		types: ["Electric"],
 		baseStats: {hp: 50, atk: 60, def: 95, spa: 120, spd: 120, spe: 70},
 	},
 	farfetchd: {
@@ -436,7 +437,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	lickitung: {
 		inherit: true,
-		types: ["Rubber"],
 		baseStats: {hp: 90, atk: 55, def: 75, spa: 60, spd: 60, spe: 30},
 	},
 	koffing: {
@@ -457,7 +457,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chansey: {
 		inherit: true,
-		types: ["Normal", "Food"],
 		baseStats: {hp: 250, atk: 5, def: 5, spa: 105, spd: 105, spe: 50},
 	},
 	tangela: {
@@ -550,12 +549,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	flareon: {
 		inherit: true,
-		types: ["Fire", "Glass"],
 		baseStats: {hp: 65, atk: 130, def: 60, spa: 110, spd: 110, spe: 65},
 	},
 	porygon: {
 		inherit: true,
-		types: ["Normal", "Cyber"],
 		baseStats: {hp: 65, atk: 60, def: 70, spa: 75, spd: 75, spe: 40},
 	},
 	omanyte: {
