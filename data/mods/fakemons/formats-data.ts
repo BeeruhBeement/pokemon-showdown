@@ -1,22 +1,29 @@
 import { SpeciesFormatsData } from "../../../sim/dex-species";
 
 export const FormatsData: {[k: string]: SpeciesFormatsData} = {
+	parasong: {
+		tier: "OU",
+	},
+	ironmongrel: {
+		tier: "OU"
+	},
+
 	norock: {
-		tier: "Unreleased",
+		tier: "OU",
 	},
 	froomish: {
-		tier: "Unreleased",
+		tier: "LC",
 	},
 	frostloom: {
-		tier: "Unreleased",
+		tier: "OU",
 	},
 	roastimp: {
-		tier: "Unreleased",
+		tier: "OU",
 	},
 	gorgergeist: {
-		tier: "Unreleased",
+		tier: "OU",
 	},
 	bibsol: {
-		tier: "Unreleased",
+		tier: "OU",
 	},
 };

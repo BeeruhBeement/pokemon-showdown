@@ -1,12 +1,22 @@
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+	parasong: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	ironmongrel: {
+		inherit: true,
+		isNonstandard: null,
+	},
+
+	// fakemons exclusives
 	norock: {
 		num: -50001,
 		name: "Norock",
 		types: ["Rock"],
 		baseStats: {hp: 85, atk: 117, def: 95, spa: 65, spd: 75, spe: 82},
-		abilities: {0: "Weak Armor", H: "Hustle"},
+		abilities: {0: "Weak Armor", 1: "No Guard", H: "Hustle"},
 		heightm: 1.5,
 		weightkg: 300,
 		color: "Gray",

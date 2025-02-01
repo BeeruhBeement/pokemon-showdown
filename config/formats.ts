@@ -207,9 +207,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 9] Poorly Done Fakemons",
+		name: "[Gen 9] National Dex Fakemons",
 		mod: 'fakemons',
-		ruleset: ['[Gen 9] OU', '+Unreleased'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
 	},
 	{
 		name: "[Gen 9] National Dex Doom Lol",

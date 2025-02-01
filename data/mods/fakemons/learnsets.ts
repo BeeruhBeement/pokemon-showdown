@@ -157,7 +157,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			temperflare: ["9M"],
 			firepunch: ["9M"],
 			firefang: ["9M"],
-			
+
 			protect: ["9M"],
 			substitute: ["9M"],
 			rest: ["9M"],
@@ -177,6 +177,14 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			painsplit: ["9M"],
 			rollout: ["9M"],
 			steelroller: ["9M"],
+			shadowpunch: ["9M"],
+			hyperbeam: ["9M"],
+			bodyslam: ["9M"],
+			doubleedge: ["9M"],
+			earthpower: ["9M"],
+			leechseed: ["9M"],
+			seedbomb: ["9M"],
+			solarbeam: ["9M"],
 			
 			protect: ["9M"],
 			substitute: ["9M"],

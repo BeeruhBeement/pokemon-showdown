@@ -6039,4 +6039,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
+	ironmongrel: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
 };
