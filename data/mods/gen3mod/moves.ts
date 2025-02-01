@@ -878,9 +878,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			duration: 3,
 			onStart(target) {
-				if (target.activeTurns && !this.queue.willMove(target)) {
-					this.effectState.duration++;
-				}
 				this.add('-start', target, 'move: Taunt');
 			},
 			onResidualOrder: 15,

@@ -3843,6 +3843,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	terapagos: {
 		tier: "Illegal",
 	},
+	terapagosstellar: {
+		tier: "Illegal",
+	},
 	pecharunt: {
 		tier: "Illegal",
 	},
