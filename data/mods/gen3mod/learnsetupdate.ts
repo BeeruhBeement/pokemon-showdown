@@ -185,8 +185,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "slowking").learnset.scald = ["3T"];
 	dex.modData("Learnsets", "slowking").learnset.teleport = ["3T"];
 	
+	dex.modData("Learnsets", "magnemite").learnset.magnetbomb = ["3L30"];
 	dex.modData("Learnsets", "magnemite").learnset.discharge = ["3L38"];
 	dex.modData("Learnsets", "magnemite").learnset.explosion = ["3T"];
+	dex.modData("Learnsets", "magneton").learnset.magnetbomb = ["3L30"];
 	dex.modData("Learnsets", "magneton").learnset.discharge = ["3L40"];
 	dex.modData("Learnsets", "magneton").learnset.explosion = ["3T"];
 	
@@ -456,10 +458,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "ledian").learnset.uturn = ["3T"];
 	dex.modData("Learnsets", "ledian").learnset.poweruppunch = ["3T"];
 
+	dex.modData("Learnsets", "spinarak").learnset.infestation = ["3L8"];
 	dex.modData("Learnsets", "spinarak").learnset.shadowsneak = ["3L19"];
 	dex.modData("Learnsets", "spinarak").learnset.suckerpunch = ["3L26"];
 	dex.modData("Learnsets", "spinarak").learnset.poisontail = ["3E"];
 	dex.modData("Learnsets", "spinarak").learnset.megahorn = ["3E"];
+	dex.modData("Learnsets", "ariados").learnset.infestation = ["3L8"];
 	dex.modData("Learnsets", "ariados").learnset.shadowsneak = ["3L19"];
 	dex.modData("Learnsets", "ariados").learnset.suckerpunch = ["3L28"];
 	dex.modData("Learnsets", "ariados").learnset.swordsdance = ["3M"];
@@ -869,8 +873,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "minun").learnset.switcheroo = ["3L13"];
 	dex.modData("Learnsets", "minun").learnset.nastyplot = ["3L51"];
 
+	dex.modData("Learnsets", "volbeat").learnset.infestation = ["3L50"];
 	dex.modData("Learnsets", "volbeat").learnset.uturn = ["3T"];
 
+	dex.modData("Learnsets", "illumise").learnset.infestation = ["3L50"];
 	dex.modData("Learnsets", "illumise").learnset.dazzlinggleam = ["3M"];
 	dex.modData("Learnsets", "illumise").learnset.uturn = ["3T"];
 

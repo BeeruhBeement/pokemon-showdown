@@ -81,5 +81,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 47,
 		color: "Brown",
 		eggGroups: ["Field", "Water 1"],
-	}
+	},
+	ghoulgash: {
+		num: -50007,
+		name: "Ghoulgash",
+		types: ["Ghost", "Rock"],
+		baseStats: {hp: 55, atk: 115, def: 95, spa: 45, spd: 75, spe: 95},
+		abilities: {0: "Sturdy", H: "Moxie"},
+		heightm: 0.6,
+		weightkg: 2,
+		color: "Purple",
+		eggGroups: ["Amorphous", "Mineral"],
+	},
 };

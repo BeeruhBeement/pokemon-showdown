@@ -26,4 +26,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	bibsol: {
 		tier: "OU",
 	},
+	ghoulgash: {
+		tier: "OU",
+	},
 };

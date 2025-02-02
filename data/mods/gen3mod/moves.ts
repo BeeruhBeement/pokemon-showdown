@@ -19,22 +19,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 70,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
 	},
-	babydolleyes: {
-		inherit: true,
-		gen: 3,
-	},
-	dazzlinggleam: {
-		inherit: true,
-		gen: 3,
-	},
 	disarmingvoice: {
 		inherit: true,
-		gen: 3,
 		flags: {protect: 1, mirror: 1, sound: 1, metronome: 1},
-	},
-	dualwingbeat: {
-		inherit: true,
-		gen: 3,
 	},
 	rapidspin: {
 		inherit: true,
@@ -52,29 +39,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	drainingkiss: {
 		inherit: true,
-		gen: 3,
 		desc: "The user recovers 1/2 the HP lost by the target, rounded down.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 		basePower: 75,
 		drain: [1, 2],
-	},
-	matblock: {
-		inherit: true,
-		gen: 3,
 	},
 	howl: {
 		inherit: true,
 		target: "allies",
 		desc: "Raises the Attack of the user and all allies 1 stage.",
 		shortDesc: "Raises the user's and ally's Attack by 1.",
-	},
-	iceshard: {
-		inherit: true,
-		gen: 3,
-	},
-	bulletpunch: {
-		inherit: true,
-		gen: 3,
 	},
 	poisongas: {
 		inherit: true,
@@ -85,7 +59,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	feint: {
 		inherit: true,
-		gen: 3,
 		basePower: 30,
 		desc: "If this move is successful, it deals double damage and breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
 		shortDesc: "Double damage on Detect, Protect, and Quick/Wide Guard.",
@@ -153,17 +126,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	uturn: {
 		inherit: true,
-		gen: 3,
 		basePower: 50,
 	},
 	voltswitch: {
 		inherit: true,
-		gen: 3,
 		basePower: 50,
 	},
 	flipturn: {
 		inherit: true,
-		gen: 3,
 		basePower: 50,
 	},
 	twineedle: {
@@ -184,7 +154,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	stealthrock: {
 		inherit: true,
-		gen: 3,
 		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Damage is rounded down. Foes lose 1/8 of their max hp if neutral to Rock, 1/4 if they are Flying-type and 1/16 of they resist Rock. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Hurts switch-in. x2 damage Flying, 1/2 resist.",
 		condition: {
@@ -231,7 +200,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	hex: {
 		inherit: true,
-		gen: 3,
 		basePower: 65,
 	},
 	flash: {
@@ -252,7 +220,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	grassyterrain: {
 		inherit: true,
-		gen: 3,
 		desc: "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.3, the power of Bulldoze, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain.",
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Grass' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
@@ -263,7 +230,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	electricterrain: {
 		inherit: true,
-		gen: 3,
 		desc: "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Electric' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
@@ -274,7 +240,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	mistyterrain: {
 		inherit: true,
-		gen: 3,
 		desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Fairy-type attacks made by grounded Pokemon is multiplied by 1.3 and the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
 		shortDesc: "5 turns. Can't status, +Fairy power, -Dragon power.",
 		onBasePower(basePower, attacker, defender, move) {
@@ -286,7 +251,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	psychicterrain: {
 		inherit: true,
-		gen: 3,
 		desc: "For 5 turns, the terrain becomes Psychic Terrain. During the effect, the power of Psychic-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot be hit by moves with priority greater than 0, unless the target is an ally. Camouflage transforms the user into a Psychic type, Nature Power becomes Psychic, and Secret Power has a 30% chance to lower the target's Speed by 1 stage. Fails if the current terrain is Psychic Terrain.",
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Psychic' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
@@ -294,14 +258,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				return this.chainModify(1.3);
 			}
 		},
-	},
-	takeheart: {
-		inherit: true,
-		gen: 3,
-	},
-	psychicnoise: {
-		inherit: true,
-		gen: 3,
 	},
 	meditate: {
 		inherit: true,
@@ -314,7 +270,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	defog: {
 		inherit: true,
-		gen: 3,
 		onHit(target, source, move) {
 			let success = false;
 			if (!target.volatiles['substitute'] || move.infiltrates) success = !!this.boost({evasion: -1});
@@ -346,17 +301,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 75,
 		type: "Ground",
 	},
-	circlethrow: {
-		inherit: true,
-		gen: 3,
-	},
-	dragontail: {
-		inherit: true,
-		gen: 3,
-	},
 	xscissor: {
 		inherit: true,
-		gen: 3,
 		desc: "Has a 20% chance to bleed the target.",
 		shortDesc: "20% chance to bleed the target.",
 		secondary: {
@@ -364,45 +310,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'bld',
 		},
 	},
-	fusionflare: {
-		inherit: true,
-		gen: 3,
-	},
-	blueflare: {
-		inherit: true,
-		gen: 3,
-	},
 	thunderwave: {
 		inherit: true,
 		accuracy: 90,
 	},
 	steelroller: {
 		inherit: true,
-		gen: 3,
 		basePower: 80,
 		desc: "Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain.",
 		shortDesc: "Ends the effects of terrain.",
 		onTry() {},
-	},
-	metalburst: {
-		inherit: true,
-		gen: 3,
-	},
-	falsesurrender: {
-		inherit: true,
-		gen: 3,
-	},
-	spiritbreak: {
-		inherit: true,
-		gen: 3,
-	},
-	beakblast: {
-		inherit: true,
-		gen: 3,
-	},
-	roost: {
-		inherit: true,
-		gen: 3,
 	},
 	block: {
 		inherit: true,
@@ -421,16 +338,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	headsmash: {
 		inherit: true,
-		gen: 3,
 		basePower: 120,
-	},
-	aquajet: {
-		inherit: true,
-		gen: 3,
 	},
 	heartstamp: {
 		inherit	: true,
-		gen: 3,
 		desc: "Has a 30% chance to make the target become infatuated, making it unable to attack 50% of the time. The effect ends when either the user or the target is no longer active.",
 		shortDesc: "30% chance opposite gender gets infatuated.",
 		secondary: {
@@ -444,7 +355,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	psyshieldbash: {
 		inherit: true,
-		gen: 3,
 		desc: "Damage is calculated using the user's Defense stat as its Special Attack, including stat stage changes. Other effects that modify the Special Attack stat are used as normal.",
 		shortDesc: "Uses Def stat as Sp. Atk in damage calculation.",
 		overrideOffensiveStat: 'def',
@@ -460,34 +370,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	filletaway: {
-		inherit: true,
-		gen: 3,
-	},
 	struggle: {
 		inherit: true,
 		basePower: 80,
 		recoil: [1, 2],
-	},
-	forestscurse: {
-		inherit: true,
-		gen: 3,
-	},
-	trickortreat: {
-		inherit: true,
-		gen: 3,
-	},
-	spinout: {
-		inherit: true,
-		gen: 3,
-	},
-	throatchop: {
-		inherit: true,
-		gen: 3,
-	},
-	watershuriken: {
-		inherit: true,
-		gen: 3,
 	},
 	triattack: {
 		inherit: true,
@@ -506,12 +392,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	rockclimb: {
 		inherit: true,
-		gen: 3,
 		type: "Rock",
-	},
-	spotlight: {
-		inherit: true,
-		gen: 3,
 	},
 	poisontail: {
 		inherit: true,
@@ -526,10 +407,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		critRatio: 0,
 		secondary: null,
-	},
-	switcheroo: {
-		inherit: true,
-		gen: 3,
 	},
 	weatherball: {
 		inherit: true,
@@ -596,7 +473,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	tailwind: {
 		inherit: true,
-		gen: 3,
 		condition: {
 			duration: 4,
 			durationCallback(target, source, effect) {
@@ -628,21 +504,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	boomburst: {
 		inherit: true,
-		gen: 3,
 		type: "Sound",
 		basePower: 130,
 	},
-	coil: {
-		inherit: true,
-		gen: 3,
-	},
-	tidyup: {
-		inherit: true,
-		gen: 3,
-	},
 	partingshot: {
 		inherit: true,
-		gen: 3,
 		desc: "Lowers the target's Special Attack by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "Lowers target's Sp. Atk by 1. User switches.",
 		onHit(target, source) {
@@ -663,7 +529,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	synchronoise: {
 		inherit: true,
-		gen: 3,
 		type: "Sound",
 		basePower: 80,
 		desc: "The user prevents all opposing Pokemon from using any moves that the user also knows as long as the foe remains active.",
@@ -701,12 +566,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	fishiousrend: {
 		inherit: true,
-		gen: 3,
 		basePower: 75,
 	},
 	boltbeak: {
 		inherit: true,
-		gen: 3,
 		basePower: 75,
 	},
 	strength: {
@@ -724,7 +587,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	multiattack: {
 		inherit: true,
-		gen: 3,
 		basePower: 100,
 		onModifyMove(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
@@ -739,7 +601,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	ragingbull: {
 		inherit: true,
-		gen: 3,
 		desc: "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated. If the user's current form is a Paldean Tauros, this move's type changes to Fighting type. Has a 20% chance to make the target flinch.",
 		shortDesc: "Destroys screens. Paldea = Fighting. 20% Flinch.",
 		onModifyMove(move, pokemon) {
@@ -758,24 +619,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	firstimpression: {
 		inherit: true,
-		gen: 3,
 		basePower: 75,
 	},
-	snipeshot: {
+	secretsword: {
 		inherit: true,
-		gen: 3,
-	},
-	miracleeye: {
-		inherit: true,
-		gen: 3,
-	},
-	spiritshackle: {
-		inherit: true,
-		gen: 3,
-	},
-	doodle: {
-		inherit: true,
-		gen: 3,
+		overrideOffensiveStat: 'spa',	
+		overrideDefensiveStat: 'def',
+		desc: "Damage is calculated using the user's Special Attack stat as its Attack, including stat stage changes. Deals damage to the target based on its Defense instead of Special Defense. Other effects that modify the Attack stat are used as normal.",
+		shortDesc: "Uses user's SpA stat as Atk in damage calculation.",
 	},
 	dreameater: {
 		inherit: true,
@@ -787,7 +638,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	kingsshield: {
 		inherit: true,
-		gen: 3,
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		shortDesc: "Protects from damaging attacks. Contact: -1 Atk.",
 		onPrepareHit(pokemon) {
@@ -832,13 +682,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	vcreate: {
-		inherit: true,
-		gen: 3,
-	},
 	revelationdance: {
 		inherit: true,
-		gen: 3,
 		onModifyMove(move, pokemon) {
 			const types = pokemon.getTypes();
 			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Psychic', 'Ghost', 'Fairy', 'Sound'];
@@ -852,16 +697,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	scald: {
 		inherit: true,
-		gen: 3,
 		desc: "Has a 30% chance to burn the target. The target thaws out if it is frozen. Deals neutral damage to Fire types.",
 		shortDesc: "30% chance to burn the target. Fire neutral.",
 		onEffectiveness(typeMod, target, type) {
 			if (type === 'Fire') return 0;
 		},
-	},
-	nastyplot: {
-		inherit: true,
-		gen: 3,
 	},
 	tailglow: {
 		inherit: true,
@@ -901,14 +741,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	rockpolish: {
-		inherit: true,
-		gen: 3,
-	},
-	healingwish: {
-		inherit: true,
-		gen: 3,
-	},
 	lusterpurge: {
 		inherit: true,
 		basePower: 95,
@@ -917,21 +749,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 95,
 	},
-	psystrike: {
-		inherit: true,
-		gen: 3,
-	},
-	accelerock: {
-		inherit: true,
-		gen: 3,
-	},
-	shadowsneak: {
-		inherit: true,
-		gen: 3,
-	},
 	blazingtorque: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 		basePower: 100,
 		flags: {
@@ -940,7 +759,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	wickedtorque: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 		basePower: 100,
 		flags: {
@@ -949,7 +767,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	noxioustorque: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 		flags: {
 			protect: 1
@@ -957,7 +774,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	combattorque: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 		flags: {
 			protect: 1
@@ -965,56 +781,21 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	magicaltorque: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 		flags: {
 			protect: 1
 		},
 	},
-	honeclaws: {
-		inherit: true,
-		gen: 3,
-	},
 	toxic: {
 		inherit: true,
 		accuracy: 90,
 	},
-	strengthsap: {
-		inherit: true,
-		gen: 3,
-	},
-	shiftgear: {
-		inherit: true,
-		gen: 3,
-	},
-	geargrind: {
-		inherit: true,
-		gen: 3,
-	},
 	headcharge: {
 		inherit: true,
-		gen: 3,
 		basePower: 130,
-	},
-	banefulbunker: {
-		inherit: true,
-		gen: 3,
-	},
-	discharge: {
-		inherit: true,
-		gen: 3,
-	},
-	lavaplume: {
-		inherit: true,
-		gen: 3,
-	},
-	naturesmadness: {
-		inherit: true,
-		gen: 3,
 	},
 	skullbash: {
 		inherit: true,
-		gen: 3,
 		desc: "This attack charges on the first turn and executes on the second unless the attacker's Attack is greater than the target's Attack. Raises the user's Defense by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "No charge if user's Atk > target's Atk. +1 Def.",
 		basePower: 130,
@@ -1047,7 +828,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	quiverdance: {
 		inherit: true,
-		gen: 3,
 		desc: "Raises the user's Special Attack and Speed by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Speed by 1.",
 		boosts: {
@@ -1057,7 +837,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	snaptrap: {
 		inherit: true,
-		gen: 3,
 		desc: "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
 		shortDesc: "Prevents the target from switching out. +1 priority.",
 		volatileStatus: 'partiallytrapped',
@@ -1065,16 +844,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	sacredsword: {
 		inherit: true,
-		gen: 3,
 		pp: 15,
-	},
-	dragondarts: {
-		inherit: true,
-		gen: 3,
-	},
-	tailslap: {
-		inherit: true,
-		gen: 3,
 	},
 	assist: {
 		inherit: true,
@@ -1101,21 +871,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			this.actions.useMove(randomMove, target);
 		},
 	},
-	stompingtantrum: {
-		inherit: true,
-		gen: 3,
-	},
-	temperflare: {
-		inherit: true,
-		gen: 3,
-	},
-	acrobatics: {
-		inherit: true,
-		gen: 3,
-	},
 	steamroller: {
 		inherit: true,
-		gen: 3,
 		desc: "Has a 100% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "100% chance to raise the user's Attack by 1.",
 		secondary: {
@@ -1158,22 +915,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		accuracy: 100,
 	},
-	payback: {
-		inherit: true,
-		gen: 3,
-	},
-	punishment: {
-		inherit: true,
-		gen: 3,
-	},
-	spikyshield: {
-		inherit: true,
-		gen: 3,
-	},
-	gigatonhammer: {
-		inherit: true,
-		gen: 3,
-	},
 	slash: {
 		inherit: true,
 		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
@@ -1185,7 +926,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	nightslash: {
 		inherit: true,
-		gen: 3,
 		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio. 30% chance to bleed.",
 		secondary: {
@@ -1218,12 +958,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	poweruppunch: {
 		inherit: true,
-		gen: 3,
 		basePower: 50,
 	},
 	noretreat: {
 		inherit: true,
-		gen: 3,
 		desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage and causes the Steel type to be added to the user, but it becomes prevented from switching out. The user can still switch out if it uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the user leaves the field using Baton Pass, the replacement will remain trapped. Fails if the user has already been prevented from switching by this effect.",
 		shortDesc: "Raises all stats by 1. Traps user. + Steel type.",
 		condition: {
@@ -1240,7 +978,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	ragefist: {
 		inherit: true,
-		gen: 3,
 		basePower: 65,
 		desc: "Power doubles if the user moves after the target this turn. Switching in counts as an action.",
 		shortDesc: "Power doubles if the user moves after the target.",
@@ -1256,7 +993,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	hyperdrill: {
 		inherit: true,
-		gen: 3,
 		shortDesc: "Bypasses protection without breaking it. 100% lower target Defense.",
 		secondary: {
 			chance: 100,
@@ -1267,13 +1003,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	chatter: {
 		inherit: true,
-		gen: 3,
 		type: "Sound",
 		basePower: 65,
 	},
 	ominouswind: {
 		inherit: true,
-		gen: 3,
 		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
 	},
 	silverwind: {
@@ -1286,21 +1020,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	hyperspacehole: {
 		inherit: true,
-		gen: 3,
 		basePower: 100,
-	},
-	hyperspacefury: {
-		inherit: true,
-		gen: 3,
 	},
 	bloodmoon: {
 		inherit: true,
-		gen: 3,
 		type: "Psychic",
 	},
 	hyperbeam: {
 		inherit: true,
-		gen: 3,
 		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move. Has a 30% chance to paralyze the target.",
 		shortDesc: "User cannot move next turn. 30% para chance.",
 		secondary: {
@@ -1316,11 +1043,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	wakeupslap: {
 		inherit: true,
 		basePower: 70,
-		gen: 3,
 	},
-	scorchingsands: {
+	magnetbomb: {
 		inherit: true,
-		gen: 3,
+		desc: "This move does not check accuracy. This move's type effectiveness against Steel is changed to be super effective no matter what this move's type is.",
+		shortDesc: "Does not check accuracy. Super effective on Steel.",
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Steel') return 1;
+		},
+		type: "Electric",
 	},
 
 	// Move Base Power updates
@@ -1412,7 +1143,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	drainpunch: {
 		inherit: true,
-		gen: 3,
 		pp: 10,
 		basePower: 75,
 	},
@@ -1495,7 +1225,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	energyball: {
 		inherit: true,
-		gen: 3,
 		basePower: 90,
 	},
 	fireblast: {
@@ -1544,7 +1273,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	hurricane: {
 		inherit: true,
-		gen: 3,
 		basePower: 110,
 	},
 	hydropump: {
@@ -1557,7 +1285,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	leafstorm: {
 		inherit: true,
-		gen: 3,
 		basePower: 130,
 	},
 	lick: {
@@ -1570,7 +1297,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	magmastorm: {
 		inherit: true,
-		gen: 3,
 		basePower: 100,
 		accuracy: 75,
 	},
@@ -1625,17 +1351,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	mysticalfire: {
 		inherit: true,
-		gen: 3,
 		basePower: 75,
 	},
 	paraboliccharge: {
 		inherit: true,
-		gen: 3,
 		basePower: 75,
 	},
 	suckerpunch: {
 		inherit: true,
-		gen: 3,
 		basePower: 70,
 	},
 	tackle: {
@@ -1657,12 +1380,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	psychoshift: {
 		inherit: true,
-		gen: 3,
 		accuracy: 100,
 	},
 	gunkshot: {
 		inherit: true,
-		gen: 3,
 		accuracy: 80
 	},
 	glare: {
@@ -1753,208 +1474,167 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 
 	shieldbash: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	shadowcrescent: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	solarflare: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	rampaginghammer: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	rottenvial: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	nightfall: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	zapbarrage: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	rockcrunch: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	bladequills: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	deepfreeze: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	frostbite: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	echolocation: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	
 	breakneckblitz: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	alloutpummeling: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	supersonicskystrike: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	aciddownpour: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	tectonicrage: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	continentalcrush: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	savagespinout: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	neverendingnightmare: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	corkscrewcrash: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	infernooverdrive: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	hydrovortex: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	bloomdoom: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	gigavolthavoc: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	shatteredpsyche: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	subzeroslammer: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	devastatingdrake: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	blacholeeclypse: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	twinkletackle: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	resonantannihilation: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	catastropika: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	"10000000voltthunderbolt": {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	stokedsparksurfer: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	extremeevoboost: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	pulverizingpancake: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	gensissupernova: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	sinisterarrowraid: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	splinteredstormshards: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	letssnuggleforever: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 	guardianofalola: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 	},
 };

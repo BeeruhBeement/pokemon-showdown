@@ -12,21 +12,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	toughclaws: {
 		inherit: true,
-		gen: 3,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['contact']) {
 				return this.chainModify([12, 10]);
 			}
 		},
 		shortDesc: "This Pokemon's contact moves have their power multiplied by 1.2.",
-	},
-	sapsipper: {
-		inherit: true,
-		gen: 3,
-	},
-	strongjaw: {
-		inherit: true,
-		gen: 3,
 	},
 	sturdy: {
 		inherit: true,
@@ -48,7 +39,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	ironfist: {
 		inherit: true,
-		gen: 3,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['punch']) {
 				this.debug('Iron Fist boost');
@@ -58,25 +48,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.3.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.3x power. Sucker Punch is not boosted.",
 	},
-	sheerforce: {
-		inherit: true,
-		gen: 3,
-	},
-	moldbreaker: {
-		inherit: true,
-		gen: 3,
-	},
-	sandrush: {
-		inherit: true,
-		gen: 3,
-	},
-	slushrush: {
-		inherit: true,
-		gen: 3,
-	},
 	infiltrator: {
 		inherit: true,
-		gen: 3,
 		onModifyMove(move) {
 			move.infiltrates = true;
 		},
@@ -91,28 +64,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
-	eartheater: {
-		inherit: true,
-		gen: 3,
-	},
-	aftermath: {
-		inherit: true,
-		gen: 3,
-	},
 	snowwarning: {
 		inherit: true,
-		gen:3,
 		onStart(source) {
 			this.field.setWeather('snow');
 		},
-	},
-	stancechange: {
-		inherit: true,
-		gen: 3,
-	},
-	quickdraw: {
-		inherit: true,
-		gen:3,
 	},
 	colorchange: {
 		inherit: true,
@@ -129,30 +85,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		onDamagingHit(target, source, move) {},
-	},
-	weakarmor: {
-		inherit: true,
-		gen: 3,
-	},
-	beastboost: {
-		inherit: true,
-		gen: 3,
-	},
-	electricsurge: {
-		inherit: true,
-		gen: 3,
-	},
-	grassysurge: {
-		inherit: true,
-		gen: 3,
-	},
-	psychicsurge: {
-		inherit: true,
-		gen: 3,
-	},
-	mistysurge: {
-		inherit: true,
-		gen: 3,
 	},
 	forecast: {
 		inherit: true,
@@ -191,13 +123,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: 59,
 	},
-	dryskin: {
-		inherit: true,
-		gen: 3,
-	},
 	solarpower: {
 		inherit: true,
-		gen: 3,
 		desc: "If Sunny Day is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/10 of its maximum HP, rounded down, at the end of each turn.",
 		shortDesc: "If Sunny Day is active, this Pokemon's Sp. Atk is 1.5x; loses 1/10 max HP per turn.",
 		onWeather(target, source, effect) {
@@ -208,7 +135,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	sandforce: {
 		inherit: true,
-		gen: 3,
 		desc: "If Sandstorm is active, this Pokemon's attacks have their power multiplied by 1.3. This Pokemon takes no damage from Sandstorm.",
 		shortDesc: "This Pokemon's attacks have 1.3x power in Sandstorm; immunity to it.",
 		onBasePower(basePower, attacker, defender, move) {
@@ -219,7 +145,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	regenerator: {
 		inherit: true,
-		gen: 3,
 		shortDesc: "This Pokemon restores 1/4 of its maximum HP, rounded down, when it switches out.",
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 4);
@@ -227,7 +152,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	overcoat: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon is immune to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability.",
 		shortDesc: "This Pokemon is immune to powder moves, Sandstorm damage, Effect Spore.",
 		onImmunity(type, pokemon) {
@@ -241,21 +165,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
-	bulletproof: {
-		inherit: true,
-		gen: 3,
-	},
-	gluttony: {
-		inherit: true,
-		gen: 3,
-	},
-	wellbakedbody: {
-		inherit: true,
-		gen: 3,
-	},
 	protosynthesis: {
 		inherit: true,
-		gen: 3,
 		desc: "If Sunny Day is active  this Pokemon's highest stat is multiplied by 1.3. Stat stage changes are considered at the time this Ability activates. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order. If this effect was started by Sunny Day, a held Booster Energy will not activate and the effect ends when Sunny Day is no longer active. If this effect was started by a held Booster Energy, it ends when this Pokemon is no longer active.",
 		shortDesc: "Sunny Day active: highest stat is 1.3x.",
 		onModifySpe(spe, pokemon) {
@@ -266,7 +177,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	quarkdrive: {
 		inherit: true,
-		gen: 3,
 		desc: "If Electric Terrain is active this Pokemon's highest stat is multiplied by 1.3. Stat stage changes are considered at the time this Ability activates. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order. If this effect was started by Electric Terrain, a held Booster Energy will not activate and the effect ends when Electric Terrain is no longer active. If this effect was started by a held Booster Energy, it ends when this Pokemon is no longer active.",
 		shortDesc: "Electric Terrain: highest stat is 1.3x.",
 		onModifySpe(spe, pokemon) {
@@ -274,30 +184,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			this.debug('Protosynthesis spe boost');
 			return this.chainModify([5325, 4096]);
 		},
-	},
-	technician: {
-		inherit: true,
-		gen: 3,
-	},
-	stall: {
-		inherit: true,
-		gen: 3,
-	},
-	solidrock: {
-		inherit: true,
-		gen: 3,
-	},
-	heatproof: {
-		inherit: true,
-		gen: 3,
-	},
-	longreach: {
-		inherit: true,
-		gen: 3,
-	},
-	icebody: {
-		inherit: true,
-		gen: 3,
 	},
 	illuminate: {
 		inherit: true,
@@ -320,29 +206,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "The moves Aurora Beam, Bubble Beam, Dazzlign Gleam, Eternabeam, Flash Cannon, Ice Beam, Light Of Ruin, Light That Burns The Sky, Meteor Beam, Moongeist Beam, Primsatic Laser, Psybeam, Signal Beam, Solar Beam, Solar Blade, Steel Beam, Doom Desire, Glitzy Glow, Fleur Cannon, Luster Purge, Mirror Shot, Moonblast, Photon Geyser and Power Gem have their power multiplied by 1.2.",
 		shortDesc: "Boosts some beam and light based moves by 1.2x.",
 	},
-	sharpness: {
-		inherit: true,
-		gen: 3,
-	},
-	filter: {
-		inherit: true,
-		gen: 3,
-	},
-	slowstart: {
-		inherit: true,
-		gen: 3,
-	},
-	reckless: {
-		inherit: true,
-		gen: 3,
-	},
-	skilllink: {
-		inherit: true,
-		gen: 3,
-	},
 	powerspot: {
 		inherit: true,
-		gen: 3,
 		desc: "All Pokemon have the power of their moves multiplied by 1.3. This affects Doom Desire and Future Sight, even if the user is not on the field.",
 		shortDesc: "All Pokemon have the power of their moves multiplied by 1.3.",
 		onBasePowerPriority: 22,
@@ -353,7 +218,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	iceface: {
 		inherit: true,
-		gen: 3,
 		desc: "If this Pokemon is an Eiscue, the first physical hit it takes in battle deals 0 neutral damage. Its ice face is then broken and it changes forme to Noice Face. Eiscue regains its Ice Face forme when Snow begins or when Eiscue switches in while Snow is active. Confusion damage also breaks the ice face.",
 		shortDesc: "If Eiscue, the first physical hit it takes deals 0 damage. Effect is restored in Snow.",
 	},
@@ -377,10 +241,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				pokemon.tryTrap(true);
 			}
 		},
-	},	
-	tanglinghair: {
-		inherit: true,
-		gen: 3,
 	},
 	sandveil: {
 		inherit: true,
@@ -401,7 +261,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	snowcloak: {
 		inherit: true,
-		gen: 3,
 		desc: "If Snowscape is active, the defense of this Pokemon is multiplied by 1.25.",
 		shortDesc: "If Snow is active, this Pokemon's defense is 1.25x.",
 		onImmunity(type, pokemon) {
@@ -444,7 +303,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	stormdrain: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon is immune to Water-type moves and raises its Special Attack by 1 stage when hit by a Water-type move. If this Pokemon is not the target of a single-target Water-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
 		shortDesc: "This Pokemon draws Water moves to itself to raise Sp. Atk by 1; Water immunity.",
 		onTryHit(target, source, move) {
@@ -458,7 +316,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	rivalry: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon's attacks have their power multiplied by 1.25 against targets of the same type.",
 		shortDesc: "This Pokemon's attacks do 1.25x on same type targets.",
 		onBasePower(basePower, attacker, defender, move) {
@@ -469,10 +326,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 			}
 		},
-	},
-	magicguard: {
-		inherit: true,
-		gen: 3,
 	},
 	effectspore: {
 		inherit: true,
@@ -493,19 +346,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	merciless: {
 		inherit: true,
-		gen: 3,
 		shortDesc: "This Pokemon's attacks are critical hits if the target is statused.",
 		onModifyCritRatio(critRatio, source, target) {
 			if (target && target.status) return 5;
 		},
-	},
-	noguard: {
-		inherit: true,
-		gen: 3,
-	},
-	windrider: {
-		inherit: true,
-		gen: 3,
 	},
 	plus: {
 		inherit: true,
@@ -525,13 +369,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			return this.chainModify(1.1);
 		},
 	},
-	tintedlens: {
-		inherit: true,
-		gen: 3,
-	},
 	toxicboost: {
 		inherit: true,
-		gen: 3,
 		desc: "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5. Immune to damage from poison.",
 		shortDesc: "While poisoned, physical attacks have 1.5x power. No damage from poison.",
 		onBasePower(basePower, attacker, defender, move) {
@@ -561,18 +400,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
-	scrappy: {
-		inherit: true,
-		gen: 3,
-	},
-	rkssystem: {
-		inherit: true,
-		gen: 3,
-	},
-	multitype: {
-		inherit: true,
-		gen: 3,
-	},
 	damp: {
 		inherit: true,
 		desc: "While this Pokemon is active, Explosion, Mind Blown, Misty Explosion, Self-Destruct, and the Aftermath Ability deal no damage.",
@@ -588,53 +415,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		rating: 2.5,
 	},
-	furcoat: {
-		inherit: true,
-		gen: 3,
-	},
-	pastelveil: {
-		inherit: true,
-		gen: 3,
-	},
-	angerpoint: {
-		inherit: true,
-		gen: 3,
-	},
-	sniper: {
-		inherit: true,
-		gen: 3,
-	},
-	motordrive: {
-		inherit: true,
-		gen: 3,
-	},
-	protean: {
-		inherit: true,
-		gen: 3,
-	},
-	libero: {
-		inherit: true,
-		gen: 3,
-	},
-	adaptability: {
-		inherit: true,
-		gen: 3,
-	},
-	poisontouch: {
-		inherit: true,
-		gen: 3,
-	},
-	unburden: {
-		inherit: true,
-		gen: 3,
-	},
-	moxie: {
-		inherit: true,
-		gen: 3,
-	},
 	hydration: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon has its non-volatile status condition cured at the end of each turn if Rain Dance is active or is hit by a Water-type move.",
 		shortDesc: "This Pokemon has its status cured if Rain Dance is active or is hit by Water.",
 		onDamagingHit(damage, target, source, move) {
@@ -645,29 +427,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
-	steadfast: {
-		inherit: true,
-		gen: 3,
-	},
-	unaware: {
-		inherit: true,
-		gen: 3,
-	},
-	dancer: {
-		inherit: true,
-		gen: 3,
-	},
-	justified: {
-		inherit: true,
-		gen: 3,
-	},
-	disguise: {
-		inherit: true,
-		gen: 3,
-	},
 	mindseye: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon can hit Dark types with Psychic-type moves. Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
 		shortDesc: "Psychic moves hit Dark. Accuracy can't be lowered, ignores evasiveness.",
 		onModifyMove(move) {
@@ -680,7 +441,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	lightmetal: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon receives 3/4 damage from Ground-type attacks and its weight is halved, rounded down to a tenth of a kilogram. This effect is calculated after the effect of Autotomize, and before the effect of Float Stone. A Pokemon's weight will not drop below 0.1 kg.",
 		shortDesc: "This Pokemon's weight is doubled. 3/4 damage from Ground-type attacks.",
 		onSourceModifyAtkPriority: 6,
@@ -693,7 +453,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	heavymetal: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon receives 3/4 damage from Fighting-type attacks and its weight is doubled. This effect is calculated after the effect of Autotomize, and before the effect of Float Stone.",
 		shortDesc: "This Pokemon's weight is doubled. 3/4 damage from Fighting-type attacks.",
 		onSourceModifyDamage(damage, source, target, move) {
@@ -703,12 +462,61 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
+	liquidvoice: {
+		inherit: true,
+		onModifyMovePriority: -1,
+		onModifyMove(move, pokemon) {
+			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Water';
+				move.category = 'Special';
+			}
+		},
+		onModifyType(move, pokemon) {},
+	},
+	runaway: {
+		inherit: true,
+		shortDesc: "Immune to trapping.",
+		onTrapPokemonPriority: -10,
+		onTrapPokemon(pokemon) {
+			pokemon.trapped = pokemon.maybeTrapped = false;
+		},
+	},
+	healer: {
+		inherit: true,
+		desc: "Heals itself and its allies by 1/16 of their max HP at the end of each turn.",
+		shortDesc: "Heal self and allies by 1/16 max HP each turn.",
+		onResidual(pokemon) {
+			for (const allyActive of pokemon.adjacentAllies()) {
+				this.add('-activate', pokemon, 'ability: Healer');
+				pokemon.heal(pokemon.baseMaxhp / 16);
+				allyActive.heal(allyActive.baseMaxhp / 16);
+			}
+		},
+	},
+	desolateland: {
+		inherit: true,
+		onEnd(pokemon) {},
+	},
+	primordialsea: {
+		inherit: true,
+		onEnd(pokemon) {},
+	},
+	simple: {
+		inherit: true,
+		onModifyBoost(boosts, pokemon) { return },
+		onChangeBoost(boost, target, source, effect) {
+			if (effect && effect.id === 'zpower') return;
+			let i: BoostID;
+			for (i in boost) {
+				boost[i]! *= 2;
+			}
+		},
+	},
 
 	// -ate abilities
 
 	normalize: {
 		inherit: true,
-		gen: 3,
 		onModifyMove(move) {
 			const noModifyType = [
 				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
@@ -721,7 +529,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	galvanize: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Electric-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type.",
 		onModifyMove(move) {
@@ -737,7 +544,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	pixilate: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Fairy-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Fairy type.",
 		onModifyMove(move) {
@@ -753,7 +559,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	refrigerate: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Ice-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Ice type.",
 		onModifyMove(move) {
@@ -769,7 +574,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	aerilate: {
 		inherit: true,
-		gen: 3,
 		desc: "This Pokemon's Normal-type moves become Flying-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Flying type.",
 		onModifyMove(move) {
@@ -784,7 +588,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	immolate: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 		desc: "This Pokemon's Normal-type moves become Fire-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Fire type.",
@@ -801,7 +604,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	drench: {
 		inherit: true,
-		gen: 3,
 		isNonstandard: null,
 		desc: "This Pokemon's Normal-type moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Water type.",
@@ -815,146 +617,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		onBasePower(basePower, pokemon, target, move) {},
-	},
-	liquidvoice: {
-		inherit: true,
-		gen: 3,
-		onModifyMovePriority: -1,
-		onModifyMove(move, pokemon) {
-			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
-				move.type = 'Water';
-				move.category = 'Special';
-			}
-		},
-		onModifyType(move, pokemon) {},
-	},
-	runaway: {
-		inherit: true,
-		gen: 3,
-		shortDesc: "Immune to trapping.",
-		onTrapPokemonPriority: -10,
-		onTrapPokemon(pokemon) {
-			pokemon.trapped = pokemon.maybeTrapped = false;
-		},
-	},
-	contrary: {
-		inherit: true,
-		gen: 3,
-	},
-	magicbounce: {
-		inherit: true,
-		gen: 3,
-	},
-	healer: {
-		inherit: true,
-		gen: 3,
-		desc: "Heals itself and its allies by 1/16 of their max HP at the end of each turn.",
-		shortDesc: "Heal self and allies by 1/16 max HP each turn.",
-		onResidual(pokemon) {
-			for (const allyActive of pokemon.adjacentAllies()) {
-				this.add('-activate', pokemon, 'ability: Healer');
-				pokemon.heal(pokemon.baseMaxhp / 16);
-				allyActive.heal(allyActive.baseMaxhp / 16);
-			}
-		},
-	},
-	desolateland: {
-		inherit: true,
-		gen: 3,
-		onEnd(pokemon) {},
-	},
-	primordialsea: {
-		inherit: true,
-		gen: 3,
-		onEnd(pokemon) {},
-	},
-	neuroforce: {
-		inherit: true,
-		gen: 3,
-	},
-	simple: {
-		inherit: true,
-		gen: 3,
-		onModifyBoost(boosts, pokemon) { return },
-		onChangeBoost(boost, target, source, effect) {
-			if (effect && effect.id === 'zpower') return;
-			let i: BoostID;
-			for (i in boost) {
-				boost[i]! *= 2;
-			}
-		},
-	},
-	defiant: {
-		inherit: true,
-		gen: 3,
-	},
-	competitive: {
-		inherit: true,
-		gen: 3,
-	},
-	prankster: {
-		inherit: true,
-		gen: 3,
-	},
-	surgesurfer: {
-		inherit: true,
-		gen: 3,
-	},
-	turboblaze: {
-		inherit: true,
-		gen: 3,
-	},
-	teravolt: {
-		inherit: true,
-		gen: 3,
-	},
-	icescales: {
-		inherit: true,
-		gen: 3,
-	},
-	fluffy: {
-		inherit: true,
-		gen: 3,
-	},
-	neutralizinggas: {
-		inherit: true,
-		gen: 3,
-	},
-	analytic: {
-		inherit: true,
-		gen: 3,
-	},
-	comatose: {
-		inherit: true,
-		gen: 3,
-	},
-	superluck: {
-		inherit: true,
-		gen: 3,
-	},
-	flareboost: {
-		inherit: true,
-		gen: 3,
-	},
-	magician: {
-		inherit: true,
-		gen: 3,
-	},
-	gooey: {
-		inherit: true,
-		gen: 3,
-	},
-	tangledfeet: {
-		inherit: true,
-		gen: 3,
-	},
-	download: {
-		inherit: true,
-		gen: 3,
-	},
-	poisonheal: {
-		inherit: true,
-		gen: 3,
 	},
 
 	// custom abilities

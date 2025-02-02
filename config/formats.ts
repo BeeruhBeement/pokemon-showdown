@@ -203,20 +203,20 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 1] Mod",
 
 		mod: 'gen1mod',
-		ruleset: ['Standard', 'Data Mod', 'Allow Tradeback'],
+		ruleset: ['Standard', 'Allow Tradeback'],
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 9] National Dex Fakemons",
+		name: "[Gen 9] Nat Dex Fakemons",
 		mod: 'fakemons',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Terastal Clause'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'/*, 'Terastal Clause'*/],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 		],
 	},
 	{
-		name: "[Gen 9] National Dex Doom Lol",
+		name: "[Gen 9] Nat Dex Doom Lol",
 		mod: 'doomlol',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
 		banlist: [
@@ -225,7 +225,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 9] National Dex One Mon",
+		name: "[Gen 9] Nat Dex One Mon",
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod'],
 		banlist: [],

@@ -2177,13 +2177,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	scraggy: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	scrafty: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	sigilyph: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	yamask: {
 		tier: "Illegal",
@@ -2479,6 +2479,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	keldeo: {
 		tier: "Uber",
 	},
+	keldeoresolute: {
+		tier: "Uber",
+	},
 	meloetta: {
 		tier: "Illegal",
 	},
@@ -2590,6 +2593,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	meowstic: {
 		tier: "Illegal",
 	},
+	meowsticf: {
+		tier: "Illegal",
+	},
 	honedge: {
 		tier: "NFE",
 	},
@@ -2611,7 +2617,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	swirlix: {
 		tier: "Illegal",
 	},
-	slurIllegalff: {
+	slurpuff: {
 		tier: "Illegal",
 	},
 	inkay: {
@@ -3043,7 +3049,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	dhelmise: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	jangmoo: {
 		tier: "Illegal",
@@ -3223,16 +3229,16 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	wooloo: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	dubwool: {
-		tier: "Illegal",
+		tier: "ZU",
 	},
 	chewtle: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	drednaw: {
-		tier: "Illegal",
+		tier: "PU",
 	},
 	drednawgmax: {
 		tier: "Illegal",
@@ -3283,6 +3289,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	cramorant: {
+		tier: "Illegal",
+	},
+	cramorantgulping: {
+		tier: "Illegal",
+	},
+	cramorantgorging: {
 		tier: "Illegal",
 	},
 	arrokuda: {
@@ -3382,6 +3394,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	morpeko: {
+		tier: "Illegal",
+	},
+	morpekohangry: {
 		tier: "Illegal",
 	},
 	cufant: {

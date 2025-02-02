@@ -5875,7 +5875,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 5014,
 		onStart(pokemon) {
-			pokemon.volatiles['miracleguard'] = {lastTriggered: false};
+			pokemon.volatiles.includes['miracleguard'] = {lastTriggered: false};
 		},
 		onSourceModifyDamage(damage, source, target, move) {
 			const lastTriggered = target.volatiles['miracleguard'].lastTriggered;
