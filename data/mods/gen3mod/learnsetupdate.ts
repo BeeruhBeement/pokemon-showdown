@@ -650,6 +650,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "houndoom").learnset.nastyplot = ["3L60"];
 	dex.modData("Learnsets", "houndoom").learnset.megahorn = ["3L75"];
 	dex.modData("Learnsets", "houndoom").learnset.bonerush = ["3L75"];
+	dex.modData("Learnsets", "houndoom").learnset.jawlock = ["3L75"];
 
 	dex.modData("Learnsets", "phanpy").learnset.headsmash = ["3E"];
 

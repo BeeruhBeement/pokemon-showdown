@@ -9,6 +9,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		isNonstandard: null,
 	},
+	ironimitator: {
+		inherit: true,
+		isNonstandard: null,
+	},
 
 	// fakemons exclusives
 	norock: {

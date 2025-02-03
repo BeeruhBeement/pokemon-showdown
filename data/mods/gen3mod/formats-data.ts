@@ -2530,6 +2530,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	greninjaash: {
 		tier: "Illegal",
 	},
+	greninjabond: {
+		tier: "Illegal",
+	},
 	bunnelby: {
 		tier: "Illegal",
 	},
@@ -3309,6 +3312,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	toxtricity: {
 		tier: "Illegal",
 	},
+	toxtricitylowkey: {
+		tier: "Illegal",
+	},
 	toxtricitygmax: {
 		tier: "Illegal",
 	},
@@ -3700,7 +3706,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	bramblin: {
-		tier: "NFE",
+		tier: "LC",
 	},
 	brambleghast: {
 		tier: "NU",

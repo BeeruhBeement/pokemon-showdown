@@ -3991,6 +3991,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			stealthrock: ["3M"],
 			headsmash: ["3L43"],
+			rockpolish: ["3L10"],
+			dragondance: ["3E"],
 		},
 	},
 	rampardos: {
@@ -4052,6 +4054,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			stealthrock: ["3M"],
 			headsmash: ["3L52"],
 			rockclimb: ["3M"],
+			rockpolish: ["3L10"],
 		},
 	},
 	shieldon: {
@@ -6954,7 +6957,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			secretpower: ["6M"],
 			sleeptalk: ["3T"],
 			sludgebomb: ["3M"],
-			snarl: ["3M"],
 			snatch: ["3T"],
 			snore: ["3T"],
 			spite: ["3T"],
@@ -7056,7 +7058,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			psybeam: ["3L18"],
 			psychic: ["3M", "3L44"],
 			psychup: ["3M"],
-			psyshock: ["3M"],
 			psywave: ["3L8"],
 			raindance: ["3M"],
 			reflect: ["3M", "3L28"],

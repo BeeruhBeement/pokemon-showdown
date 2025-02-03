@@ -7,7 +7,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ironmongrel: {
 		tier: "OU"
 	},
-
+	ironimitator: {
+		tier: "OU"
+	},
+	
 	norock: {
 		tier: "OU",
 	},
