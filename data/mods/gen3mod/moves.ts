@@ -1482,16 +1482,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 60,
 	},
-	hiddenpowerfairy: {
-		inherit: true,
-		isNonstandard: null,
-		basePower: 60,
-	},
-	hiddenpowersound: {
-		inherit: true,
-		isNonstandard: null,
-		basePower: 60,
-	},
 
 	shieldbash: {
 		inherit: true,

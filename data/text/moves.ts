@@ -7586,12 +7586,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		},
 	},
 	
-	hiddenpowerfairy: {
-		name: "Hidden Power Fairy",
-	},
-	hiddenpowersound: {
-		name: "Hidden Power Sound",
-	},
 	weatherdance: {
 		name: "Weather Dance",
 		shortDesc: "Summons a random weather effect. +1 Speed.",
