@@ -1091,7 +1091,7 @@ export class TeamValidator {
 
 		const allowAVs = ruleTable.has('allowavs');
 		const evLimit = ruleTable.evLimit;
-		const canBottleCap = (dex.gen >= 7 || this.format.mod === 'gen3mod') && (set.level >= (dex.gen < 9 ? 100 : 50) || !ruleTable.has('obtainablemisc'));
+		const canBottleCap = (dex.gen >= 7 || dex.currentMod === 'gen3mod') && (set.level >= (dex.gen < 9 ? 100 : 50) || !ruleTable.has('obtainablemisc'));
 
 		if (!set.evs) set.evs = TeamValidator.fillStats(null, evLimit === null ? 252 : 0);
 		if (!set.ivs) set.ivs = TeamValidator.fillStats(null, 31);
