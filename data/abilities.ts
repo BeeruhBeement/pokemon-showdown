@@ -5669,6 +5669,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 	},
 	adrenaline: {
+		// currently unused
 		isNonstandard: "Custom",
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
@@ -5705,6 +5706,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 5003,
 	},
 	chrysalis: {
+		// currently unused
 		isNonstandard: "Custom",
 		onAfterUseItem(item, pokemon) {
 			if (!pokemon.hasType('Flying')) {

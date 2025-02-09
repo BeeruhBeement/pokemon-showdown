@@ -19,10 +19,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 70,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
 	},
-	disarmingvoice: {
-		inherit: true,
-		flags: {protect: 1, mirror: 1, sound: 1, metronome: 1},
-	},
 	rapidspin: {
 		inherit: true,
 		desc: "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. Has a 100% chance to raise the user's Speed by 1 stage.",
@@ -47,8 +43,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	howl: {
 		inherit: true,
 		target: "allies",
-		desc: "Raises the Attack of the user and all allies 1 stage.",
-		shortDesc: "Raises the user's and ally's Attack by 1.",
+		onModifyMove(move, pokemon) {
+			if (['night'].includes(pokemon.effectiveWeather())) move.boosts = {atk: 2};
+		},
+		desc: "Raises the Attack of the user and all allies 1 stage. If the weather is Night, this move raises the user's Attack by 2 stages.",
+		shortDesc: "Raises user's and ally Attack by 1; 2 in Night.",
 	},
 	poisongas: {
 		inherit: true,
@@ -335,10 +334,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		selfSwitch: true,
 		target: "self",
-	},
-	headsmash: {
-		inherit: true,
-		basePower: 120,
 	},
 	heartstamp: {
 		inherit	: true,
@@ -1390,10 +1385,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Dark",
 		accuracy: 100,
+		ignoreImmunity: true,
 	},
 	swagger: {
 		inherit: true,
 		accuracy: 85,
+	},
+	bind: {
+		inherit: true,
+		type: "Fighting",
+		accuracy: 85,
+	},
+	wrap: {
+		inherit: true,
+		accuracy: 90,
+	},
+	lifedew: {
+		inherit: true,
+		desc: "Each Pokemon on the user's side restores 1/3 of its maximum HP, rounded half up.",
+		shortDesc: "Heals the user and its allies by 1/3 their max HP.",
+		heal: [1, 3],
 	},
 	hiddenpower: {
 		inherit: true,
@@ -1471,6 +1482,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 60,
 	},
+	hiddenpowerfairy: {
+		inherit: true,
+		isNonstandard: null,
+		basePower: 60,
+	},
+	hiddenpowersound: {
+		inherit: true,
+		isNonstandard: null,
+		basePower: 60,
+	},
 
 	shieldbash: {
 		inherit: true,
@@ -1519,6 +1540,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	echolocation: {
 		inherit: true,
 		isNonstandard: null,
+	},
+	hivecrash: {
+		inherit: true,
+		isNonstandard: null,
+		recoil: [1, 3],
 	},
 	
 	breakneckblitz: {

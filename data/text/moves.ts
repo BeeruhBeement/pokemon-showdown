@@ -7586,9 +7586,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		},
 	},
 	
-	forcepunch: {
-		name: "Force Punch",
-		shortDesc: "No additional effect.",
+	hiddenpowerfairy: {
+		name: "Hidden Power Fairy",
+	},
+	hiddenpowersound: {
+		name: "Hidden Power Sound",
 	},
 	weatherdance: {
 		name: "Weather Dance",
@@ -7673,5 +7675,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	resonantannihilation: {
 		name: "Resonant Annihilation",
 		shortDesc: "Power is equal to the base move's Z-Power.",
+	},
+	hivecrash: {
+		name: "Hive Crash",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+		gen4: {
+			desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded down, but not less than 1 HP.",
+			shortDesc: "Has 1/3 recoil.",
+		},
 	},
 };

@@ -442,7 +442,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	lightmetal: {
 		inherit: true,
 		desc: "This Pokemon receives 3/4 damage from Ground-type attacks and its weight is halved, rounded down to a tenth of a kilogram. This effect is calculated after the effect of Autotomize, and before the effect of Float Stone. A Pokemon's weight will not drop below 0.1 kg.",
-		shortDesc: "This Pokemon's weight is doubled. 3/4 damage from Ground-type attacks.",
+		shortDesc: "This Pokemon's weight is halved. 3/4 damage from Ground-type attacks.",
 		onSourceModifyAtkPriority: 6,
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === 'Ground') {

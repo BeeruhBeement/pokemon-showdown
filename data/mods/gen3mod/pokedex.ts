@@ -263,6 +263,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Psychic", "Fairy"],
 	},
+	kleavor: {
+		inherit: true,
+		abilities: {0: "Swarm", 1: "Sheer Force", H: "Sharpness"},
+	},
 	jynx: {
 		inherit: true,
 		evos: ["Kisscope"],
@@ -282,7 +286,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pinsir: {
 		inherit: true,
-		abilities: {0: "Hyper Cutter", 1: "Mold Breaker", H: "Chrysalis"},
+		types: ["Bug", "Ground"],
 	},
 	taurospaldeablaze: {
 		inherit: true,
@@ -457,6 +461,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	octillery: {
 		inherit: true,
+		types: ["Water", "Fire"],
 		baseStats: {hp: 75, atk: 105, def: 85, spa: 105, spd: 85, spe: 25},
 	},
 	delibird: {
@@ -519,10 +524,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	mightyena: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 90, def: 70, spa: 70, spd: 70, spe: 90},
-	},
-	obstagoon: {
-		inherit: true,
-		baseStats: {hp: 83, atk: 90, def: 91, spa: 60, spd: 81, spe: 95},
 	},
 	beautifly: {
 		inherit: true,
@@ -834,6 +835,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Battle Armor", 1: "Sniper", H: "Merciless"},
 	},
+	croagunk: {
+		inherit: true,
+		abilities: {0: "Opportunist", 1: "Dry Skin", H: "Poison Touch"},
+	},
+	toxicroak: {
+		inherit: true,
+		baseStats: {hp: 83, atk: 106, def: 65, spa: 96, spd: 65, spe: 85},
+		abilities: {0: "Opportunist", 1: "Dry Skin", H: "Poison Touch"},
+	},
 	carnivine: {
 		inherit: true,
 		types: ["Grass", "Dark"],
@@ -862,7 +872,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rotomfan: {
 		inherit: true,
-		types: ["Electric", "Flying"],
+		types: ["Electric", "Fairy"],
 	},
 	rotommow: {
 		inherit: true,
@@ -873,13 +883,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Fairy"],
 		baseStats: {hp: 85, atk: 85, def: 85, spa: 85, spd: 85, spe: 85},
 	},
-	dewott: {
-		inherit: true,
-		types: ["Water", "Fighting"],
-	},
 	samurott: {
 		inherit: true,
 		types: ["Water", "Fighting"],
+	},
+	samurotthisui: {
+		inherit: true,
+		abilities: {0: "Torrent", H: "Sharpness"},
 	},
 	musharna: {
 		inherit: true,
@@ -966,6 +976,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	bouffalant: {
 		inherit: true,
 		types: ["Normal", "Rock"],
+	},
+	gogoat: {
+		inherit: true,
+		types: ["Grass", "Rock"],
 	},
 	pancham: {
 		inherit: true,
@@ -1103,6 +1117,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	falinks: {
 		inherit: true,
 		types: ["Fighting", "Bug"],
+	},
+	pincurchin: {
+		inherit: true,
+		abilities: {0: "Rough Skin", H: "Electric Surge"},
 	},
 	dachsbun: {
 		inherit: true,

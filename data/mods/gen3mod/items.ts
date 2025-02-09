@@ -265,14 +265,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
-	punchingglove: {
-		inherit: true,
-		gen: 3,
-	},
-	mirrorherb: {
-		inherit: true,
-		gen: 3,
-	},
 	heatrock: {
 		inherit: true,
 		gen: 3,
@@ -329,16 +321,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 		itemUser: ["Pichu", "Pikachu", "Raichu", "Raichu-Alola"],
-	},
-	widelens: {
-		inherit: true,
-		gen: 3,
-		shortDesc: "The accuracy of attacks by the holder is 1.2x.",
-		onSourceModifyAccuracy(accuracy) {
-			if (typeof accuracy === 'number') {
-				return this.chainModify([4915, 4096]);
-			}
-		},
 	},
 	aguavberry: {
 		inherit: true,
