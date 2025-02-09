@@ -5080,7 +5080,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			substitute: ["3M"],
 			suckerpunch: ["3L31"],
 			sunnyday: ["3M"],
-			superfang: ["3T"],
 			swagger: ["3M", "3L24"],
 			taunt: ["3M", "3L10"],
 			terablast: ["9M"],
@@ -12344,9 +12343,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			agility: ["3M"],
 			attract: ["3M"],
-			batonpass: ["3M"],
 			bodyslam: ["3M"],
-			bounce: ["3M"],
 			copycat: ["3L1"],
 			cottonguard: ["3L44"],
 			defensecurl: ["3L1"],

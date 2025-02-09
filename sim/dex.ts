@@ -321,6 +321,7 @@ export class ModdedDex {
 		const hpTypes = [
 			'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
 			'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
+			'Fairy', 'Sound',
 		];
 		const tr = this.trunc;
 		const stats = {hp: 31, atk: 31, def: 31, spe: 31, spa: 31, spd: 31};
