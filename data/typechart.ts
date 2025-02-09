@@ -439,7 +439,6 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 
 			Sound: 2,
 		},
-		HPivs: {},
 	},
 
 	// End of custom

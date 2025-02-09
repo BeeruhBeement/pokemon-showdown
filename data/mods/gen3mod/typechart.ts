@@ -100,7 +100,6 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Water: 0,
 		},
 		isNonstandard: null,
-		HPivs: {},
 	},
 	grass: {
 		inherit: true,
