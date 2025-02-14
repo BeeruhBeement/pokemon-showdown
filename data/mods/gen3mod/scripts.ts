@@ -16,14 +16,17 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 		for (const i in this.data.Pokedex) {
 			this.modData('Pokedex', i).gen = 3;
+			this.modData('Pokedex', i).isNonstandard = null;
 			this.modData('Pokedex', i).unreleasedHidden = false;
 			this.modData('Pokedex', i).maleOnlyHidden = false;
 		}
 		for (const i in this.data.Abilities) {
 			this.modData('Abilities', i).gen = 3;
+			this.modData('Abilities', i).isNonstandard = null;
 		}
 		for (const i in this.data.Moves) {
 			this.modData('Moves', i).gen = 3;
+			this.modData('Moves', i).isNonstandard = null;
 		}
 
 		learnsetUpdate(this);

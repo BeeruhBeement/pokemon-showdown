@@ -145,7 +145,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	parasong: {
 		inherit: true,
-		isNonstandard: null,
 		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 100, spe: 30},
 	},
 	diglett: {
@@ -185,6 +184,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	alakazammega: {
 		inherit: true,
 		baseStats: {hp: 55, atk: 50, def: 65, spa: 175, spd: 105, spe: 150},
+	},
+	victreebel: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 105, def: 65, spa: 100, spd: 70, spe: 70},
 	},
 	golem: {
 		inherit: true,
@@ -270,10 +273,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	jynx: {
 		inherit: true,
 		evos: ["Kisscope"],
-	},
-	kisscope: {
-		inherit: true,
-		isNonstandard: null,
 	},
 	magmortar: {
 		inherit: true,
@@ -831,6 +830,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Sound", "Flying"],
 	},
+	spiritomb: {
+		inherit: true,
+		abilities: {0: "Pressure", H: "Moonrise"},
+	},
 	drapion: {
 		inherit: true,
 		abilities: {0: "Battle Armor", 1: "Sniper", H: "Merciless"},
@@ -914,7 +917,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gigalith: {
 		inherit: true,
+		baseStats: {hp: 85, atk: 135, def: 130, spa: 60, spd: 80, spe: 25},
 		abilities: {0: "Sturdy", 1: "Sand Stream", H: "Sand Force"},
+	},
+	leavanny: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 103, def: 80, spa: 70, spd: 80, spe: 92},
 	},
 	venipede: {
 		inherit: true,
@@ -1056,10 +1064,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 			"Silvally-Fire", "Silvally-Water", "Silvally-Grass", "Silvally-Electric", "Silvally-Psychic", "Silvally-Ice", "Silvally-Dragon", "Silvally-Dark", "Silvally-Fairy", 
 			"Silvally-Sound",
 		],
-	},
-	silvallysound: {
-		inherit: true,
-		isNonstandard: null,
 	},
 	togedemaru: {
 		inherit: true,

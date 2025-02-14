@@ -180,6 +180,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: {metronome: 1, mustpressure: 1, reflectable: 1},
 	},
+	encore: {
+		inherit: true,
+		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, metronome: 1, failencore: 1},
+	},
 	blizzard: {
 		inherit: true,
 		desc: "Has a 10% chance to freeze the target. If the weather is Snow, this move does not check accuracy.",
@@ -500,7 +504,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	boomburst: {
 		inherit: true,
 		type: "Sound",
-		basePower: 130,
 	},
 	partingshot: {
 		inherit: true,
@@ -710,6 +713,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "For 3 turns, prevents the target from using non-damaging moves.",
 		shortDesc: "For 3 turns, the target can't use status moves.",
+		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, metronome: 1},
 		condition: {
 			duration: 3,
 			onStart(target) {
@@ -973,17 +977,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	ragefist: {
 		inherit: true,
-		basePower: 65,
-		desc: "Power doubles if the user moves after the target this turn. Switching in counts as an action.",
-		shortDesc: "Power doubles if the user moves after the target.",
-		basePowerCallback(pokemon, target, move) {
-			if (this.queue.willMove(target)) {
-				this.debug('Rage Fist NOT boosted');
-				return move.basePower;
-			}
-			this.debug('Rage Fist damage boost');
-			return move.basePower * 2;
-		},
 		type: "Fighting",
 	},
 	hyperdrill: {
@@ -999,7 +992,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	chatter: {
 		inherit: true,
 		type: "Sound",
-		basePower: 65,
+		basePower: 75,
+		secondary: {
+			chance: 100,
+			volatileStatus: 'confusion',
+		},
 	},
 	ominouswind: {
 		inherit: true,
@@ -1047,6 +1044,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			if (type === 'Steel') return 1;
 		},
 		type: "Electric",
+	},
+	pyroball: {
+		inherit: true,
+		desc: "Has a 100% chance to burn the target.",
+		shortDesc: "100% chance to burn the target. Thaws user.",
+		basePower: 60,
+		secondary: {
+			chance: 100,
+			status: 'brn',
+		},
 	},
 
 	// Move Base Power updates
@@ -1483,174 +1490,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 60,
 	},
 
-	shieldbash: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	shadowcrescent: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	solarflare: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	rampaginghammer: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	rottenvial: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	nightfall: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	zapbarrage: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	rockcrunch: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	bladequills: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	deepfreeze: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	frostbite: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	echolocation: {
-		inherit: true,
-		isNonstandard: null,
-	},
 	hivecrash: {
 		inherit: true,
 		isNonstandard: null,
 		recoil: [1, 3],
-	},
-	
-	breakneckblitz: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	alloutpummeling: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	supersonicskystrike: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	aciddownpour: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	tectonicrage: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	continentalcrush: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	savagespinout: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	neverendingnightmare: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	corkscrewcrash: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	infernooverdrive: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	hydrovortex: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	bloomdoom: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	gigavolthavoc: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	shatteredpsyche: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	subzeroslammer: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	devastatingdrake: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	blacholeeclypse: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	twinkletackle: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	resonantannihilation: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	catastropika: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	"10000000voltthunderbolt": {
-		inherit: true,
-		isNonstandard: null,
-	},
-	stokedsparksurfer: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	extremeevoboost: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	pulverizingpancake: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	gensissupernova: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	sinisterarrowraid: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	splinteredstormshards: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	letssnuggleforever: {
-		inherit: true,
-		isNonstandard: null,
-	},
-	guardianofalola: {
-		inherit: true,
-		isNonstandard: null,
 	},
 };

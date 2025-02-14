@@ -316,12 +316,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "magby").learnset.lavaplume = ["3L34"];
 	dex.modData("Learnsets", "magmar").learnset.lavaplume = ["3L36"];
 	
-	dex.modData("Learnsets", "pinsir").learnset.curse = ["3E"];
-	dex.modData("Learnsets", "pinsir").learnset.peck = ["3L1"];
 	dex.modData("Learnsets", "pinsir").learnset.xscissor = ["3T", "3L30"];
 	dex.modData("Learnsets", "pinsir").learnset.superpower = ["3L52"];
 	dex.modData("Learnsets", "pinsir").learnset.hivecrash = ["3L64"];
-	dex.modData("Learnsets", "pinsir").learnset.aerialace = ["3M"];
 	dex.modData("Learnsets", "pinsir").learnset.stealthrock = ["3M"];
 	
 	dex.modData("Learnsets", "tauros").learnset.stompingtantrum = ["3L1"];
@@ -451,11 +448,13 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "hoothoot").learnset.roost = ["3L45"];
 	dex.modData("Learnsets", "hoothoot").learnset.psychoshift = ["3L49"];
 	dex.modData("Learnsets", "hoothoot").learnset.nightfall = ["3M"];
+	dex.modData("Learnsets", "hoothoot").learnset.lunarbeam = ["3M"];
 	dex.modData("Learnsets", "hoothoot").learnset.dualwingbeat = ["3T"];
 	dex.modData("Learnsets", "noctowl").learnset.synchronoise = ["3L47"];
 	dex.modData("Learnsets", "noctowl").learnset.roost = ["3L52"];
 	dex.modData("Learnsets", "noctowl").learnset.psychoshift = ["3L57"];
 	dex.modData("Learnsets", "noctowl").learnset.nightfall = ["3M"];
+	dex.modData("Learnsets", "noctowl").learnset.lunarbeam = ["3M"];
 	dex.modData("Learnsets", "noctowl").learnset.dualwingbeat = ["3T"];
 	
 	dex.modData("Learnsets", "ledyba").learnset.machpunch = ["3L17"];
@@ -954,6 +953,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "lunatone").learnset.shadowcrescent = ["3L60"];
 	dex.modData("Learnsets", "lunatone").learnset.stealthrock = ["3M"];
 	dex.modData("Learnsets", "lunatone").learnset.nightfall = ["3M"];
+	dex.modData("Learnsets", "lunatone").learnset.lunarbeam = ["3M"];
 	dex.modData("Learnsets", "lunatone").learnset.weatherball = ["3T"];
 
 	dex.modData("Learnsets", "solrock").learnset.morningsun = ["3L1"];
