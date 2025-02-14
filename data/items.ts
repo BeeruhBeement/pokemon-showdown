@@ -7690,14 +7690,12 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: -5001,
 		isNonstandard: "Custom",
 	},
-	soundiumz: {
-		name: "Soundium Z",
-		spritenum: 640,
-		onPlate: 'Sound',
-		onTakeItem: false,
-		zMove: true,
-		zMoveType: "Sound",
-		forcedForme: "Arceus-Sound",
+	moonrock: {
+		name: "Moon Rock",
+		spritenum: 88,
+		fling: {
+			basePower: 60,
+		},
 		num: -5002,
 		isNonstandard: "Custom",
 	},

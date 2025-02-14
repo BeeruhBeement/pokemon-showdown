@@ -281,11 +281,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
-	moonstone: {
-		inherit: true,
-		desc: "Evolves Nidorina into Nidoqueen, Nidorino into Nidoking, Clefairy into Clefable, Jigglypuff into Wigglytuff, Skitty into Delcatty, and Munna into Musharna when used. Holder's use of Night lasts 8 turns instead of 5.",
-		shortDesc: "Holder's use of Night lasts 8 turns instead of 5.",
-	},
 	sitrusberry: {
 		inherit: true,
 		desc: "Restores 1/4 max HP when at 1/2 max HP or less. Single use.",
@@ -354,6 +349,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 				}
 			}
 		},
+	},
+
+	moonrock: {
+		inherit: true,
+		gen: 3,
+		isNonstandard: null,
 	},
 
 	bugmemory: {
@@ -430,6 +431,22 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 	},
 	
+	venusaurite: {
+		inherit: true,
+		gen: 3,
+	},
+	charizarditex: {
+		inherit: true,
+		gen: 3,
+	},
+	charizarditey: {
+		inherit: true,
+		gen: 3,
+	},
+	blastoisinite: {
+		inherit: true,
+		gen: 3,
+	},
 	beedrillite: {
 		inherit: true,
 		gen: 3,
@@ -442,11 +459,47 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	slowbronite: {
+		inherit: true,
+		gen: 3,
+	},
+	gengarite: {
+		inherit: true,
+		gen: 3,
+	},
+	kangaskhanite: {
+		inherit: true,
+		gen: 3,
+	},
 	pinsirite: {
 		inherit: true,
 		gen: 3,
 	},
+	gyaradosite: {
+		inherit: true,
+		gen: 3,
+	},
 	aerodactylite: {
+		inherit: true,
+		gen: 3,
+	},
+	mewtwonitex: {
+		inherit: true,
+		gen: 3,
+	},
+	mewtwonitey: {
+		inherit: true,
+		gen: 3,
+	},
+	ampharosite: {
+		inherit: true,
+		gen: 3,
+	},
+	steelixite: {
+		inherit: true,
+		gen: 3,
+	},
+	scizorite: {
 		inherit: true,
 		gen: 3,
 	},
@@ -458,7 +511,27 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	tyranitarite: {
+		inherit: true,
+		gen: 3,
+	},
+	sceptilite: {
+		inherit: true,
+		gen: 3,
+	},
+	blazikenite: {
+		inherit: true,
+		gen: 3,
+	},
 	swampertite: {
+		inherit: true,
+		gen: 3,
+	},
+	gardevoirite: {
+		inherit: true,
+		gen: 3,
+	},
+	sablenite: {
 		inherit: true,
 		gen: 3,
 	},
@@ -466,7 +539,55 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	aggronite: {
+		inherit: true,
+		gen: 3,
+	},
+	medichamite: {
+		inherit: true,
+		gen: 3,
+	},
+	manectite: {
+		inherit: true,
+		gen: 3,
+	},
+	altarianite: {
+		inherit: true,
+		gen: 3,
+	},
+	sharpedonite: {
+		inherit: true,
+		gen: 3,
+	},
 	cameruptite: {
+		inherit: true,
+		gen: 3,
+	},
+	banettite: {
+		inherit: true,
+		gen: 3,
+	},
+	absolite: {
+		inherit: true,
+		gen: 3,
+	},
+	glalitite: {
+		inherit: true,
+		gen: 3,
+	},
+	salamencite: {
+		inherit: true,
+		gen: 3,
+	},
+	metagrossite: {
+		inherit: true,
+		gen: 3,
+	},
+	latiasite: {
+		inherit: true,
+		gen: 3,
+	},
+	latiosite: {
 		inherit: true,
 		gen: 3,
 	},
@@ -474,127 +595,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
-	
-	normaliumz: {
+	abomasite: {
 		inherit: true,
 		gen: 3,
 	},
-	fightiniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	flyiniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	poisoniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	groundiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	rockiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	buginiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	ghostiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	steeliumz: {
-		inherit: true,
-		gen: 3,
-	},
-	firiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	wateriumz: {
-		inherit: true,
-		gen: 3,
-	},
-	grassiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	electriumz: {
-		inherit: true,
-		gen: 3,
-	},
-	psychiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	iciumz: {
-		inherit: true,
-		gen: 3,
-	},
-	dragoniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	darkiniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	fairiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	soundiumz: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
-	pikaniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	pikashuniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	aloraichiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	snorliumz: {
-		inherit: true,
-		gen: 3,
-		zMoveFrom: "Hyper Beam",
-		shortDesc: "If held by a Snorlax with Hyper Beam, it can use Pulverizing Pancake.",
-	},
-	mewniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	decidiumz: {
-		inherit: true,
-		gen: 3,
-	},
-	lycaniumz: {
-		inherit: true,
-		gen: 3,
-		zMoveFrom: "Rock Crunch",
-		shortDesc: "If held by a Lycanroc forme with Rock Crunch, it can use Splintered Stormshards.",
-	},
-	mimikiumz: {
-		inherit: true,
-		gen: 3,
-		zMoveFrom: "Dazzling Gleam",
-		shortDesc: "If held by a Mimikyu with Dazzling Gleam, it can use Let's Snuggle Forever.",
-	},
-	tapuniumz: {
-		inherit: true,
-		gen: 3,
-	},
-	ultranecroziumz: {
+	galladite: {
 		inherit: true,
 		gen: 3,
 	},

@@ -2451,4 +2451,8 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Soundium Z",
 		shortDesc: "If holder has a Sound move, this item allows it to use a Sound Z-Move.",
 	},
+	moonrock: {
+		name: "Moon Rock",
+		shortDesc: "Holder's use of Night lasts 8 turns instead of 5.",
+	},
 };

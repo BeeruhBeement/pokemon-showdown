@@ -238,6 +238,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 95, atk: 95, def: 85, spa: 125, spd: 75, spe: 55},
 	},
+	hitmonchan: {
+		inherit: true,
+		abilities: {0: "Stamina", 1: "Iron Fist", H: "Inner Focus"},
+	},
 	hitmontop: {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Technician", H: "Dancer"},
@@ -249,10 +253,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	weezing: {
 		inherit: true,
 		abilities: {0: "Levitate", 1: "Neutralizing Gas", H: "Stench"},
-	},
-	tangrowth: {
-		inherit: true,
-		baseStats: {hp: 90, atk: 65, def: 125, spa: 110, spd: 50, spe: 50},
 	},
 	seaking: {
 		inherit: true,

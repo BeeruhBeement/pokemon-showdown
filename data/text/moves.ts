@@ -7679,4 +7679,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			shortDesc: "Has 1/3 recoil.",
 		},
 	},
+	lunarbeam: {
+		name: "Lunar Beam",
+		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Sunny Day or Desolate Land and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Night, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Night, the move still requires a turn to charge.",
+		shortDesc: "Charges turn 1. Hits turn 2. No charge in night.",
+
+		prepare: "  [POKEMON] absorbed darkness!",
+	},
 };
