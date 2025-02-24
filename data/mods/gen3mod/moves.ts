@@ -1,4 +1,3 @@
-import { chatfilter } from "../../../server/chat-plugins/chat-monitor";
 import { ModdedMoveData } from "../../../sim/dex-moves";
 
 export const Moves: {[k: string]: ModdedMoveData} = {
@@ -519,7 +518,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	sonicboom: {
 		inherit: true,
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
 		type: "Sound",
+		basePower: 40,
+		pp: 30,
+		priority: 1,
 	},
 	supersonic: {
 		inherit: true,
@@ -1450,6 +1454,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Each Pokemon on the user's side restores 1/3 of its maximum HP, rounded half up.",
 		shortDesc: "Heals the user and its allies by 1/3 their max HP.",
 		heal: [1, 3],
+	},
+	axekick: {
+		inherit: true,
+		type: "Dark",
 	},
 	hiddenpower: {
 		inherit: true,

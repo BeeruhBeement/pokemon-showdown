@@ -22050,86 +22050,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Cool",
 	},
 
-	weatherdance: {
-		isNonstandard: "Custom",
-		num: 5000,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Weather Dance",
-		pp: 5,
-		priority: 0,
-		flags: {metronome: 1},
-		self: {
-			onHit: function (target, source) {
-				const weathers = ['raindance', 'sunnyday', 'sandstorm', 'hail'];
-				const weather = this.sample(weathers);
-				this.field.setWeather(weather);
-			},
-		},
-		boosts: {
-			spe: 1,
-		},
-		secondary: null,
-		target: "all",
-		type: "Normal",
-		zMove: {boost: {spe: 1}},
-		contestType: "Beautiful",
-	},
-	cascadecrash: {
-		isNonstandard: "Custom",
-		num: 5001,
-		accuracy: 95,
-		basePower: 100,
-		category: "Physical",
-		name: "Cascade Crash",
-		pp: 10,
-		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, distance: 1, metronome: 1},
-		onEffectiveness(typeMod, target, type, move) {
-			return typeMod + this.dex.getEffectiveness('Flying', type);
-		},
-		priority: 0,
-		secondary: null,
-		target: "any",
-		type: "Water",
-		zMove: {basePower: 170},
-		contestType: "Smart",
-	},
-	etherealcutter: {
-		// currently unused
-		isNonstandard: "Custom",
-		num: 5002,
-		accuracy: 95,
-		basePower: 85,
-		category: "Physical",
-		name: "Ethereal Cutter",
-		pp: 10,
-		flags: {contact: 1, charge: 1, mirror: 1, metronome: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1, slicing: 1},
-		breaksProtect: true,
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
-				return;
-			}
-			attacker.addVolatile('twoturnmove', defender);
-			return null;
-		},
-		condition: {
-			duration: 2,
-			onInvulnerability: false,
-		},
-		priority: 0,
-		secondary: null,
-		target: "any",
-		type: "Psychic",
-		contestType: "Cool",
-	},
 	shieldbash: {
 		isNonstandard: "Custom",
-		num: 5003,
+		num: 0,
 		accuracy: 90,
 		basePower: 70,
 		category: "Physical",
@@ -22144,7 +22067,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	shadowcrescent: {
 		isNonstandard: "Custom",
-		num: 5004,
+		num: 0,
 		accuracy: 90,
 		basePower: 85,
 		category: "Special",
@@ -22164,7 +22087,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	solarflare: {
 		isNonstandard: "Custom",
-		num: 5005,
+		num: 0,
 		accuracy: 90,
 		basePower: 85,
 		category: "Special",
@@ -22182,7 +22105,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	rampaginghammer: {
 		isNonstandard: "Custom",
-		num: 5006,
+		num: 0,
 		accuracy: 95,
 		basePower: 100,
 		category: "Physical",
@@ -22202,7 +22125,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},	
 	rottenvial: {
 		isNonstandard: "Custom",
-		num: 5007,
+		num: 0,
 		accuracy: 100,
 		basePower: 20,
 		category: "Physical",
@@ -22218,31 +22141,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Tough",
 	},
-	voidtendril: {
-		// currently unused
-		isNonstandard: "Custom",
-		num: 5008,
-		accuracy: 95,
-		basePower: 75,
-		category: "Status",
-		name: "Void Tendril",
-		pp: 15,
-		priority: 0,
-		flags: {contact: 1, protect: 1, nonsky: 1},
-		onTryMove(target, source, move) {
-			move.category = 'Physical';
-		},
-		secondary: {
-			chance: 20,
-			status: 'par',
-		},
-		target: "normal",
-		type: "Dark",
-		contestType: "Tough",
-	},
 	nightfall: {
 		isNonstandard: "Custom",
-		num: 5009,
+		num: 0,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -22259,7 +22160,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	zapbarrage: {
 		isNonstandard: "Custom",
-		num: 5010,
+		num: 0,
 		accuracy: 90,
 		basePower: 25,
 		category: "Special",
@@ -22275,7 +22176,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	rockcrunch: {
 		isNonstandard: "Custom",
-		num: 5011,
+		num: 0,
 		accuracy: 95,
 		basePower: 75,
 		category: "Physical",
@@ -22295,7 +22196,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},	
 	bladequills: {
 		isNonstandard: "Custom",
-		num: 5012,
+		num: 0,
 		accuracy: 100,
 		basePower: 30,
 		category: "Physical",
@@ -22317,7 +22218,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	deepfreeze: {
 		isNonstandard: "Custom",
-		num: 5013,
+		num: 0,
 		accuracy: 75,
 		basePower: 0,
 		category: "Status",
@@ -22334,7 +22235,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	frostbite: {
 		isNonstandard: "Custom",
-		num: 5014,
+		num: 0,
 		accuracy: 100,
 		basePower: 80,
 		category: "Special",
@@ -22352,7 +22253,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	echolocation: {
 		isNonstandard: "Custom",
-		num: 5015,
+		num: 0,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -22372,7 +22273,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	hivecrash: {
 		isNonstandard: "Custom",
-		num: 5016,
+		num: 0,
 		accuracy: 100,
 		basePower: 120,
 		category: "Physical",
@@ -22388,7 +22289,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	lunarbeam: {
 		isNonstandard: "Custom",
-		num: 5017,
+		num: 0,
 		accuracy: 100,
 		basePower: 120,
 		category: "Special",
@@ -22423,6 +22324,92 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Ghost",
 		contestType: "Cool",
+	},
+
+	// unused/fakemon exclusives
+	etherealcutter: {
+		// currently unused
+		isNonstandard: "Custom",
+		num: 0,
+		accuracy: 95,
+		basePower: 85,
+		category: "Physical",
+		name: "Ethereal Cutter",
+		pp: 10,
+		flags: {contact: 1, charge: 1, mirror: 1, metronome: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1, slicing: 1},
+		breaksProtect: true,
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onInvulnerability: false,
+		},
+		priority: 0,
+		secondary: null,
+		target: "any",
+		type: "Psychic",
+		contestType: "Cool",
+	},
+	voidtendril: {
+		// currently unused
+		isNonstandard: "Custom",
+		num: 0,
+		accuracy: 95,
+		basePower: 75,
+		category: "Status",
+		name: "Void Tendril",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, nonsky: 1},
+		onTryMove(target, source, move) {
+			move.category = 'Physical';
+		},
+		secondary: {
+			chance: 20,
+			status: 'par',
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
+	zenbash: {
+		num: 0,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Zen Bash",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1},
+		recoil: [33, 100],
+		secondary: null,
+		target: "any",
+		type: "Psychic",
+		contestType: "Cool",
+	},
+	zensmash: {
+		num: 0,
+		accuracy: 80,
+		basePower: 150,
+		category: "Physical",
+		name: "Zen Smash",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		recoil: [1, 2],
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Tough",
 	},
 
 	// CAP moves

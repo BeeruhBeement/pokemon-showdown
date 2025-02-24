@@ -439,7 +439,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ursaluna: {
 		inherit: true,
 		baseStats: {hp: 110, atk: 140, def: 95, spa: 75, spd: 80, spe: 50},
-		abilities: {0: "Guts", 1: "Miracle Guard", H: "Unnerve"},
+		abilities: {0: "Guts", 1: "Miracle Guard", H: "Nocturnal"},
 	},
 	ursalunabloodmoon: {
 		inherit: true,
@@ -818,9 +818,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Bug", "Sound"],
 	},
+	cranidos: {
+		inherit: true,
+		abilities: {0: "Mold Breaker", H: "Sand Rush"},
+	},
 	rampardos: {
 		inherit: true,
 		baseStats: {hp: 97, atk: 165, def: 60, spa: 65, spd: 50, spe: 68},
+		abilities: {0: "Mold Breaker", H: "Sand Rush"},
 	},
 	bastiodon: {
 		inherit: true,
@@ -966,8 +971,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	beartic: {
 		inherit: true,
+		types: ["Ice", "Rock"],
 		abilities: {0: "Miracle Guard", 1: "Slush Rush", H: "Swift Swim"},
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
+	},
+	cryogonal: {
+		inherit: true,
+		abilities: {0: "Levitate", H: "Technician"},
+		baseStats: {hp: 80, atk: 50, def: 50, spa: 95, spd: 135, spe: 105},
 	},
 	accelgor: {
 		inherit: true,
@@ -1085,9 +1096,25 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Beast Boost", H: "Thick Fat"},
 	},
+	meltan: {
+		inherit: true,
+		evos: ["Melmetal"],
+	},
+	melmetal: {
+		inherit: true,
+		prevo: "Meltan",
+	},
 	thievul: {
 		inherit: true,
 		abilities: {0: "Nocturnal", 1: "Unburden", H: "Stakeout"},
+	},
+	yamper: {
+		inherit: true,
+		types: ["Electric", "Normal"],
+	},
+	boltund: {
+		inherit: true,
+		types: ["Electric", "Normal"],
 	},
 	clobbopus: {
 		inherit: true,
@@ -1168,10 +1195,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	brutebonnet: {
 		inherit: true,
-		abilities: {0: "Protosynthesis", H: "Sap Sipper"},
+		abilities: {0: "Protosynthesis", H: "Anger Point"},
+	},
+	sandyshocks: {
+		inherit: true,
+		abilities: {0: "Protosynthesis", H: "Magnet Pull"},
 	},
 	ironjugulis: {
 		inherit: true,
-		abilities: {0: "Quark Drive", H: "Lightning Rod"},
+		abilities: {0: "Quark Drive", H: "Galvanize"},
+	},
+
+	vibraye: {
+		inherit: true,
+		types: ["Dark", "Sound"],
 	},
 };

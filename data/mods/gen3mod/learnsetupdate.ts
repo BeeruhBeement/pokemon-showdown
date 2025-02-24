@@ -243,6 +243,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "tyrogue").learnset.machpunch = ["3E"];
 	dex.modData("Learnsets", "tyrogue").learnset.bulletpunch = ["3E"];
 	dex.modData("Learnsets", "tyrogue").learnset.poweruppunch = ["3T"];
+	dex.modData("Learnsets", "hitmonlee").learnset.axekick = ["3L50"];
 	dex.modData("Learnsets", "hitmonlee").learnset.suckerpunch = ["3T"];
 	dex.modData("Learnsets", "hitmonlee").learnset.poweruppunch = ["3T"];
 	dex.modData("Learnsets", "hitmonchan").learnset.bulletpunch = ["3L20"];
@@ -310,6 +311,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData("Learnsets", "elekid").learnset.discharge = ["3L34"];
 	dex.modData("Learnsets", "electabuzz").learnset.discharge = ["3L37"];
+	dex.modData("Learnsets", "electabuzz").learnset.thunderclap = ["3L37"];
 	
 	dex.modData("Learnsets", "magby").learnset.bellydrum = ["3E"];
 	dex.modData("Learnsets", "magby").learnset.machpunch = ["3E"];
@@ -875,6 +877,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData("Learnsets", "meditite").learnset.bulletpunch = ["3E"];
 	dex.modData("Learnsets", "meditite").learnset.drainpunch = ["3T"];
+	dex.modData("Learnsets", "medicham").learnset.axekick = ["3L53"];
 	dex.modData("Learnsets", "medicham").learnset.drainpunch = ["3T"];
 
 	dex.modData("Learnsets", "electrike").learnset.switcheroo = ["3E"];
