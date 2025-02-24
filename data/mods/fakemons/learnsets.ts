@@ -683,6 +683,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hyperbeam: ["9M"],
 			terablast: ["9M"],
 			electricterrain: ["9M"],
+			flashcannon: ["9M"],
 		},
 	},
 	sturdygrade: {
