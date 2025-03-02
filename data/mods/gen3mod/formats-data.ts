@@ -1433,7 +1433,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	spinda: {
-		tier: "9U",
+		tier: "OU",
 	},
 	trapinch: {
 		tier: "LC",
@@ -1780,10 +1780,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	cherrimsunshine: {
 	},
 	shellos: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	gastrodon: {
-		tier: "Illegal",
+		tier: "NU",
 	},
 	drifloon: {
 		tier: "LC",
@@ -3499,10 +3499,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	enamorus: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	enamorustherian: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	sprigatito: {
 		tier: "Illegal",

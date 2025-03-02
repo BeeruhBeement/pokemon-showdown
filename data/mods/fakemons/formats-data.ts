@@ -65,4 +65,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	sturdygrade: {
 		tier: "OU",
 	},
+	cacturnepirate: {
+		tier: "OU",
+	},
+	rampardosfish: {
+		tier: "OU",
+	},
 };

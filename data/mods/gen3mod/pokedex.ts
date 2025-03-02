@@ -42,7 +42,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pidgeotmega: {
 		inherit: true,
-		baseStats: {hp: 83, atk: 135, def: 80, spa: 70, spd: 80, spe: 131},
+		types: ["Electric", "Flying"],
 	},
 	fearow: {
 		inherit: true,
@@ -209,8 +209,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 52, atk: 95, def: 55, spa: 58, spd: 62, spe: 55},
 	},
+	doduo: {
+		inherit: true,
+		types: ["Ground", "Flying"],
+	},
 	dodrio: {
 		inherit: true,
+		types: ["Ground", "Flying"],
 		baseStats: {hp: 60, atk: 110, def: 70, spa: 60, spd: 60, spe: 110},
 	},
 	gengar: {
@@ -670,7 +675,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	spinda: {
 		inherit: true,
 		types: ["Normal", "Fighting"],
-		abilities: {0: "Own Tempo", 1: "Miracle Guard", H: "Contrary"},
+		baseStats: {hp: 90, atk: 75, def: 90, spa: 60, spd: 120, spe: 75},
+		abilities: {0: "Scrappy", 1: "Miracle Guard", H: "Contrary"},
 	},
 	cacturne: {
 		inherit: true,
@@ -767,6 +773,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Inner Focus", 1: "Ice Body", H: "Solid Rock"},
 		evoType: "useItem",
 		evoItem: "Dusk Stone",
+	},
+	glaliemega: {
+		inherit: true,
+		types: ["Ice", "Dark"],
+		gender: "M",
+		baseStats: {hp: 70, atk: 120, def: 80, spa: 120, spd: 80, spe: 110},
 	},
 	clamperl: {
 		inherit: true,
@@ -983,6 +995,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	accelgor: {
 		inherit: true,
 		types: ["Bug", "Water"],
+	},
+	druddigon: {
+		inherit: true,
+		types: ["Dragon", "Rock"],
 	},
 	pawniard: {
 		inherit: true,

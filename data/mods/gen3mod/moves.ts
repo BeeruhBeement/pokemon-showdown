@@ -152,27 +152,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	stealthrock: {
 		inherit: true,
-		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Damage is rounded down. Foes lose 1/8 of their max hp if neutral to Rock, 1/4 if they are Flying-type and 1/16 of they resist Rock. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Hurts switch-in. x2 damage Flying, 1/2 resist.",
-		condition: {
-			onSideStart(side) {
-				this.add('-sidestart', side, 'move: Stealth Rock');
-			},
-			onEntryHazard(pokemon) {
-				if (pokemon.hasItem('heavydutyboots')) return;
-	
-				const typeMod = pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock'));
-
-				if (pokemon.hasType('Flying')) {
-					this.damage(pokemon.maxhp / 4);
-				} else if (typeMod < 0){
-					this.damage(pokemon.maxhp / 16);
-				}
-				else {
-					this.damage(pokemon.maxhp / 8);
-				}
-			},
-		},
 		flags: {metronome: 1, mustpressure: 1, reflectable: 1},
 	},
 	spikes: {
@@ -1458,6 +1437,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	axekick: {
 		inherit: true,
 		type: "Dark",
+	},
+	frostbreath: {
+		inherit: true,
+		basePower: 60,
 	},
 	hiddenpower: {
 		inherit: true,

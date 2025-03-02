@@ -150,7 +150,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			attack = this.battle.runEvent('Modify' + statTable[attackStat], source, target, move, attack);
 			defense = this.battle.runEvent('Modify' + statTable[defenseStat], target, source, move, defense);
 	
-			if (this.battle.gen <= 4 && ['explosion', 'selfdestruct'].includes(move.id) && defenseStat === 'def') {
+			if (this.battle.gen <= 4 && ['explosion', 'selfdestruct'].includes(move.id)) {
 				defense = this.battle.clampIntRange(Math.floor(defense / 2), 1);
 			}
 	
