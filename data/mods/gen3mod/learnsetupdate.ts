@@ -346,6 +346,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "gyarados").learnset.stompingtantrum = ["3L1"];
 	dex.modData("Learnsets", "gyarados").learnset.temperflare = ["3L1"];
 	dex.modData("Learnsets", "gyarados").learnset.coil = ["3L1"];
+	dex.modData("Learnsets", "gyarados").learnset.crunch = ["3L1"];
 	dex.modData("Learnsets", "gyarados").learnset.outrage = ["3L41"];
 
 	dex.modData("Learnsets", "lapras").learnset.lifedew = ["3L15"];
@@ -765,7 +766,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "beautifly").learnset.quiverdance = ["3L45"];
 	dex.modData("Learnsets", "dustox").learnset.uturn = ["3L40"];
 	dex.modData("Learnsets", "dustox").learnset.quiverdance = ["3L45"];
-	dex.modData("Learnsets", "dustox").learnset.iriondefense = ["3L50"];
+	dex.modData("Learnsets", "dustox").learnset.irondefense = ["3L50"];
 	dex.modData("Learnsets", "dustox").learnset.roost = ["3L55"];
 	dex.modData("Learnsets", "dustox").learnset.defog = ["3L60"];
 	dex.modData("Learnsets", "dustox").learnset.energyball = ["3M"];

@@ -7481,6 +7481,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		condition: {
 			onSideStart(side) {
+				if (['stealthrock', 'gmaxsteelsurge', 'hotcoals', 'sharpice'].some(hazard => hazard in side.sideConditions)) return false;
 				this.add('-sidestart', side, 'move: G-Max Steelsurge');
 			},
 			onSwitchIn(pokemon) {
@@ -18488,9 +18489,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
-				side.removeSideCondition('gmaxsteelsurge');
-				side.removeSideCondition('hotcoals');
-				side.removeSideCondition('sharpice');
+				if (['stealthrock', 'gmaxsteelsurge', 'hotcoals', 'sharpice'].some(hazard => hazard in side.sideConditions)) return false;
 				this.add('-sidestart', side, 'move: Stealth Rock');
 			},
 			onSwitchIn(pokemon) {
@@ -22341,10 +22340,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		sideCondition: 'gmaxsteelsurge',
 		condition: {
 			onSideStart(side) {
-				side.removeSideCondition('stealthrock');
-				side.removeSideCondition('hotcoals');
-				side.removeSideCondition('sharpice');
-				this.add('-sidestart', side, 'move: G-Max Steelsurge');
+				if (['stealthrock', 'gmaxsteelsurge', 'hotcoals', 'sharpice'].some(hazard => hazard in side.sideConditions)) return false;
+				this.add('-sidestart', side, 'move: Steel Spikes');
 			},
 			onSwitchIn(pokemon) {
 				if (pokemon.hasItem('heavydutyboots')) return;
@@ -22376,9 +22373,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		sideCondition: 'hotcoals',
 		condition: {
 			onSideStart(side) {
-				side.removeSideCondition('stealthrock');
-				side.removeSideCondition('gmaxsteelsurge');
-				side.removeSideCondition('sharpice');
+				if (['stealthrock', 'gmaxsteelsurge', 'hotcoals', 'sharpice'].some(hazard => hazard in side.sideConditions)) return false;
 				this.add('-sidestart', side, 'move: Hot Coals');
 			},
 			onSwitchIn(pokemon) {
@@ -22411,9 +22406,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		sideCondition: 'sharpice',
 		condition: {
 			onSideStart(side) {
-				side.removeSideCondition('stealthrock');
-				side.removeSideCondition('gmaxsteelsurge');
-				side.removeSideCondition('hotcoals');
+				if (['stealthrock', 'gmaxsteelsurge', 'hotcoals', 'sharpice'].some(hazard => hazard in side.sideConditions)) return false;
 				this.add('-sidestart', side, 'move: Sharp Ice');
 			},
 			onSwitchIn(pokemon) {

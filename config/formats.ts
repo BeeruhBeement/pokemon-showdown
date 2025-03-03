@@ -192,12 +192,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Heat Rock', 'Damp Rock'],
 	},
 	{
-		name: "[Gen 3] Modded Challenge Cup",
+		name: "[Gen 3] Modded Random Battle",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any legal moves.`,
 
 		mod: 'gen3mod',
-		team: 'randomCC',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Baton Pass Stat Trap Clause', 'Data Mod'],
+		team: 'random',
+		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
 	},
 	{
 		name: "[Gen 1] Mod",

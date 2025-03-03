@@ -46,6 +46,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	fearow: {
 		inherit: true,
+		types: ["Dark", "Flying"],
 		baseStats: {hp: 75, atk: 100, def: 65, spa: 61, spd: 61, spe: 100},
 		abilities: {0: "Piercing", H: "Sniper"},
 	},
@@ -220,7 +221,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gengar: {
 		inherit: true,
-		abilities: {0: "Cursed Body", S: "Levitate"},
+		abilities: {0: "Cursed Body"},
 	},
 	onix: {
 		inherit: true,
@@ -306,7 +307,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	zapdos: {
 		inherit: true,
-		abilities: {0: "Pressure", H: "Static", S: "Lightning Rod"},
+		abilities: {0: "Pressure", H: "Static"},
 	},
 	chikorita: {
 		inherit: true,
@@ -491,15 +492,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	raikou: {
 		inherit: true,
-		abilities: {0: "Galvanize", H: "Inner Focus", S: "Volt Absorb"},
+		abilities: {0: "Galvanize", H: "Inner Focus"},
 	},
 	entei: {
 		inherit: true,
-		abilities: {0: "Immolate", H: "Inner Focus", S: "Flash Fire"},
+		abilities: {0: "Immolate", H: "Inner Focus"},
 	},
 	suicune: {
 		inherit: true,
-		abilities: {0: "Drench", H: "Inner Focus", S: "Water Absorb"},
+		abilities: {0: "Drench", H: "Inner Focus"},
 	},
 	treecko: {
 		inherit: true,
@@ -543,7 +544,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	shiftry: {
 		inherit: true,
-		abilities: {0: "Chlorophyll", 1: "Wind Rider", H: "Pickpocket", S: "Early Bird"},
+		abilities: {0: "Chlorophyll", 1: "Wind Rider", H: "Pickpocket"},
 	},
 	swellow: {
 		inherit: true,
@@ -680,7 +681,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	cacturne: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 115, def: 80, spa: 75, spd: 80, spe: 55},
 		abilities: {0: "Quick Draw", H: "Sand Rush"},
 	},
 	zangoose: {
@@ -816,15 +816,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	piplup: {
 		inherit: true,
-		abilities: {0: "Torrent", H: "Competitive", S: "Defiant"},
+		abilities: {0: "Torrent", H: "Competitive"},
 	},
 	prinplup: {
 		inherit: true,
-		abilities: {0: "Torrent", H: "Competitive", S: "Defiant"},
+		abilities: {0: "Torrent", H: "Competitive"},
 	},
 	empoleon: {
 		inherit: true,
-		abilities: {0: "Torrent", H: "Competitive", S: "Defiant"},
+		abilities: {0: "Torrent", H: "Competitive"},
 	},
 	kricketune: {
 		inherit: true,
@@ -943,27 +943,27 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	venipede: {
 		inherit: true,
-		abilities: {0: "Poison Point", 1: "Swarm", H: "Speed Boost", S: "Quick Feet"},
+		abilities: {0: "Poison Point", 1: "Swarm", H: "Speed Boost"},
 	},
 	whirlipede: {
 		inherit: true,
-		abilities: {0: "Poison Point", 1: "Swarm", H: "Speed Boost", S: "Quick Feet"},
+		abilities: {0: "Poison Point", 1: "Swarm", H: "Speed Boost"},
 	},
 	scolipede: {
 		inherit: true,
-		abilities: {0: "Poison Point", 1: "Swarm", H: "Speed Boost", S: "Quick Feet"},
+		abilities: {0: "Poison Point", 1: "Swarm", H: "Speed Boost"},
 	},
 	litwick: {
 		inherit: true,
-		abilities: {0: "Flash Fire", 1: "Flame Body", H: "Infiltrator", S: "Shadow Tag"},
+		abilities: {0: "Flash Fire", 1: "Flame Body", H: "Infiltrator"},
 	},
 	lampent: {
 		inherit: true,
-		abilities: {0: "Flash Fire", 1: "Flame Body", H: "Infiltrator", S: "Shadow Tag"},
+		abilities: {0: "Flash Fire", 1: "Flame Body", H: "Infiltrator"},
 	},
 	chandelure: {
 		inherit: true,
-		abilities: {0: "Flash Fire", 1: "Flame Body", H: "Infiltrator", S: "Shadow Tag"},
+		abilities: {0: "Flash Fire", 1: "Flame Body", H: "Infiltrator"},
 	},
 	axew: {
 		inherit: true,

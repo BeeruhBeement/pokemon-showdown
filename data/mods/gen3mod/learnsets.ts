@@ -659,7 +659,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			
 			nastyplot: ["3L38"],
 			partingshot: ["3E"],
-			uturn: ["3T"],
 			feint: ["3L54"],
 		},
 	},
@@ -14810,9 +14809,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			electroweb: ["3M"],
 			endure: ["3M"],
 			facade: ["3M"],
-			flashcannon: ["3M"],
-			gigaimpact: ["3M"],
-			highhorsepower: ["3M"],
 			hyperbeam: ["3M"],
 			lightscreen: ["3M"],
 			metalsound: ["3M", "3L49"],
@@ -14841,6 +14837,12 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			spikes: ["3L77"],
 			lowkick: ["3L42"],
 			magnetbomb: ["3L91"],
+			
+			return: ["3M"],
+			frustration: ["3M"],
+			toxic: ["3M"],
+			hiddenpower: ["3M"],
+			secretpower: ["3M"],
 		},
 	},
 	ironjugulis: {
