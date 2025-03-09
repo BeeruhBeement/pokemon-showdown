@@ -192,14 +192,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Heat Rock', 'Damp Rock'],
 	},
 	{
-		name: "[Gen 3] Modded Random Battle",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any legal moves.`,
-
-		mod: 'gen3mod',
-		team: 'random',
-		ruleset: ['Standard', 'Freeze Clause Mod', 'Data Mod'],
-	},
-	{
 		name: "[Gen 1] Mod",
 
 		mod: 'gen1mod',
@@ -249,6 +241,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen3pssplit',
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
 		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
+	},
+	{
+		name: "[Gen 7] Randomizer",
+		mod: 'gen7randomizer',
+		ruleset: ['Standard'],
+		banlist: ['Uber', 'Arena Trap', 'Power Construct', 'Shadow Tag', 'Baton Pass'],
 	},
 
 	{

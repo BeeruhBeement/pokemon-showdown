@@ -676,11 +676,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 3,
 		isNonstandard: null,
 	},
-	miracleguard: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
 	jinxed: {
 		inherit: true,
 		gen: 3,

@@ -2333,10 +2333,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Fog of War",
 		shortDesc: "All Pokemon can only use status moves on this Pokemon's first turn.",
 	},
-	miracleguard: {
-		name: "Miracle Guard",
-		shortDesc: "20% chance to reduce incoming damage by 50%. Once per turn.",
-	},
 	immolate: {
 		name: "Immolate",
 		desc: "This Pokemon's Normal-type moves become Fire-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",

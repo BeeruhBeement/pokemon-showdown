@@ -1,4 +1,3 @@
-import { TriumvirateModeTrivia } from "../../../server/chat-plugins/trivia/trivia";
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
@@ -301,10 +300,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Anger Point", H: "Swift Swim"},
 	},
-	munchlax: {
-		inherit: true,
-		abilities: {0: "Miracle Guard", 1: "Thick Fat", H: "Gluttony"},
-	},
 	zapdos: {
 		inherit: true,
 		abilities: {0: "Pressure", H: "Static"},
@@ -433,19 +428,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 65, atk: 95, def: 85, spa: 55, spd: 55, spe: 85},
 	},
-	teddiursa: {
-		inherit: true,
-		abilities: {0: "Guts", 1: "Miracle Guard", H: "Honey Gatherer"},
-	},
 	ursaring: {
 		inherit: true,
 		types: ["Ground", "Normal"],
-		abilities: {0: "Guts", 1: "Miracle Guard", H: "Unnerve"},
 	},
 	ursaluna: {
 		inherit: true,
 		baseStats: {hp: 110, atk: 140, def: 95, spa: 75, spd: 80, spe: 50},
-		abilities: {0: "Guts", 1: "Miracle Guard", H: "Nocturnal"},
+		abilities: {0: "Guts", 1: "Bulletproof", H: "Nocturnal"},
 	},
 	ursalunabloodmoon: {
 		inherit: true,
@@ -677,7 +667,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Normal", "Fighting"],
 		baseStats: {hp: 90, atk: 75, def: 90, spa: 60, spd: 120, spe: 75},
-		abilities: {0: "Scrappy", 1: "Miracle Guard", H: "Contrary"},
+		abilities: {0: "Scrappy", 1: "Unaware", H: "Contrary"},
 	},
 	cacturne: {
 		inherit: true,
@@ -979,12 +969,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	cubchoo: {
 		inherit: true,
-		abilities: {0: "Miracle Guard", 1: "Slush Rush", H: "Rattled"},
+		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Rattled"},
 	},
 	beartic: {
 		inherit: true,
 		types: ["Ice", "Rock"],
-		abilities: {0: "Miracle Guard", 1: "Slush Rush", H: "Swift Swim"},
+		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Swift Swim"},
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
 	},
 	cryogonal: {
@@ -1015,14 +1005,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	gogoat: {
 		inherit: true,
 		types: ["Grass", "Rock"],
-	},
-	pancham: {
-		inherit: true,
-		abilities: {0: "Iron Fist", 1: "Miracle Guard", H: "Scrappy"},
-	},
-	pangoro: {
-		inherit: true,
-		abilities: {0: "Iron Fist", 1: "Miracle Guard", H: "Scrappy"},
 	},
 	aegislash: {
 		inherit: true,

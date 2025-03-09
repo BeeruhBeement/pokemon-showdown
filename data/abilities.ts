@@ -5870,32 +5870,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			},
         },
     },
-	miracleguard: {
-        isNonstandard: "Custom",
-		name: "Miracle Guard",
-		flags: {breakable: 1},
-		rating: 3,
-		num: 5014,
-		onStart(pokemon) {
-			pokemon.volatiles.includes['miracleguard'] = {lastTriggered: false};
-		},
-		onSourceModifyDamage(damage, source, target, move) {
-			const lastTriggered = target.volatiles['miracleguard'].lastTriggered;
-			if (lastTriggered) {
-				target.volatiles['miracleguard'].lastTriggered = false;
-				return;
-			}
-			const r = this.random(100);
-			if (r < 20) {
-				this.add('-activate', target, '[from] ability: Miracle Guard');
-				this.debug('Miracle Guard damage reduction');
-				target.volatiles['miracleguard'].lastTriggered = true;
-				return this.chainModify(0.5);
-			} else {
-				target.volatiles['miracleguard'].lastTriggered = false;
-			}
-		},
-	},
 	immolate: {
 		isNonstandard: "Custom",
 		onModifyTypePriority: -1,
