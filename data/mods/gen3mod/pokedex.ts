@@ -14,6 +14,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Steel"],
 		abilities: {0: "Torrent", H: "Skill Link"},
 	},
+	blastoisemega: {
+		inherit: true,
+		types: ["Water", "Steel"],
+	},
 	butterfree: {
 		inherit: true,
 		baseStats: {hp: 60, atk: 45, def: 60, spa: 90, spd: 80, spe: 80},
@@ -415,6 +419,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Protean"},
 	},
+	girafarig: {
+		inherit: true,
+		abilities: {0: "Strong Jaw", 1: "Early Bird", H: "Sap Sipper"},
+	},
 	snubbull: {
 		inherit: true,
 		types: ["Fairy"],
@@ -605,21 +613,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	mawilemega: {
 		inherit: true,
-		types: ["Steel", "Fairy"],
 		baseStats: {hp: 60, atk: 105, def: 125, spa: 75, spd: 95, spe: 50},
 	},
 	aggron: {
 		inherit: true,
 		abilities: {0: "Solid Rock", 1: "Rock Head", H: "Heavy Metal"},
 	},
-	meditite: {
-		inherit: true,
-		abilities: {0: "Pure Power", H: "Magic Guard"},
-	},
 	medicham: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 60, def: 75, spa: 60, spd: 75, spe: 80},
-		abilities: {0: "Pure Power", H: "Magic Guard"},
 	},
 	electrike: {
 		inherit: true,
@@ -679,6 +681,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	seviper: {
 		inherit: true,
+		types: ["Poison", "Fire"],
 		baseStats: {hp: 73, atk: 100, def: 60, spa: 100, spd: 60, spe: 85},
 		abilities: {0: "Shed Skin", H: "Merciless"},
 	},
@@ -735,6 +738,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 64, atk: 115, def: 65, spa: 85, spd: 63, spe: 73},
 		abilities: {0: "Insomnia", 1: "Aftermath", H: "Fluffy"},
 	},
+	banettemega: {
+		inherit: true,
+		types: ["Ghost", "Normal"],
+		baseStats: {hp: 64, atk: 165, def: 75, spa: 103, spd: 83, spe: 75},
+	},
 	tropius: {
 		inherit: true,
 		baseStats: {hp: 109, atk: 73, def: 83, spa: 77, spd: 87, spe: 61},
@@ -754,6 +762,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Dark", "Fairy"],
 		abilities: {0: "Sharp", 1: "Super Luck", H: "Jinxed"},
+	},
+	absolmega: {
+		inherit: true,
+		types: ["Dark", "Fairy"],
 	},
 	glalie: {
 		inherit: true,
@@ -973,7 +985,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	beartic: {
 		inherit: true,
-		types: ["Ice", "Rock"],
 		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Swift Swim"},
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50},
 	},
@@ -1001,6 +1012,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	bouffalant: {
 		inherit: true,
 		types: ["Normal", "Rock"],
+	},
+	heatmor: {
+		inherit: true,
+		types: ["Fire", "Poison"],
 	},
 	gogoat: {
 		inherit: true,
@@ -1064,6 +1079,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Illuminate", 1: "Effect Spore", H: "Lunar Charge"},
 		baseStats: {hp: 70, atk: 45, def: 80, spa: 90, spd: 100, spe: 30},
+	},
+	oranguru: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 50, def: 60, spa: 70, spd: 110, spe: 60},
+		abilities: {0: "Brain Power", 1: "Telepathy", H: "Symbiosis"},
 	},
 	silvally: {
 		inherit: true,

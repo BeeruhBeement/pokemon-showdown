@@ -2367,4 +2367,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's contact moves have a 30% chance of bleeding. This effect comes after a move's inherent secondary effect chance.",
 		shortDesc: "This Pokemon's contact moves have a 30% chance of bleeding.",
 	},
+	brainpower: {
+		name: "Brain Power",
+		shortDesc: "This Pokemon's Special Attack is doubled.",
+	},
 };

@@ -242,12 +242,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
 		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
 	},
-	{
-		name: "[Gen 7] Randomizer",
-		mod: 'gen7randomizer',
-		ruleset: ['Standard'],
-		banlist: ['Uber', 'Arena Trap', 'Power Construct', 'Shadow Tag', 'Baton Pass'],
-	},
 
 	{
 		section: "National Dex Lower Tiers",

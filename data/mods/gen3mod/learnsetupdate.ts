@@ -220,6 +220,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData("Learnsets", "shellder").learnset.lifedew = ["3E"];
 	dex.modData("Learnsets", "shellder").learnset.sharpice = ["3E"];
+	dex.modData("Learnsets", "shellder").learnset.razorshell = ["3L32"];
 	
 	dex.modData("Learnsets", "onix").learnset.headsmash = ["3E"];
 	dex.modData("Learnsets", "onix").learnset.rockpolish = ["3L30"];
@@ -248,6 +249,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	dex.modData("Learnsets", "exeggcute").learnset.leafstorm = ["3E"];
 	dex.modData("Learnsets", "exeggcute").learnset.energyball = ["3M"];
+	dex.modData("Learnsets", "exeggcute").learnset.teleport = ["3T"];
 	dex.modData("Learnsets", "exeggutor").learnset.energyball = ["3M"];
 	dex.modData("Learnsets", "exeggutor").learnset.teleport = ["3T"];
 
@@ -600,7 +602,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "unown").learnset.rampaginghammer = ["3L1"];
 	dex.modData("Learnsets", "unown").learnset.dazzlinggleam = ["3L1"];
 
+	dex.modData("Learnsets", "girafarig").learnset.hyperfang = ["3E"];
 	dex.modData("Learnsets", "girafarig").learnset.nastyplot = ["3L46"];
+	dex.modData("Learnsets", "girafarig").learnset.psychicfangs = ["3L50", "3E"];
 	
 	dex.modData("Learnsets", "forretress").learnset.steelroller = ["3T"];
 	dex.modData("Learnsets", "forretress").learnset.voltswitch = ["3T"];
@@ -924,6 +928,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "gulpin").learnset.destinybond = ["3E"];
 	dex.modData("Learnsets", "gulpin").learnset.gunkshot = ["3L54", "3E"];
 	dex.modData("Learnsets", "swalot").learnset.gunkshot = ["3L66"];
+
+	dex.modData("Learnsets", "carvanha").learnset.psychicfangs = ["3E"];
 	
 	dex.modData("Learnsets", "numel").learnset.lavaplume = ["3L31"];
 	dex.modData("Learnsets", "camerupt").learnset.lavaplume = ["3L31"];
@@ -974,6 +980,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "seviper").learnset.switcheroo = ["3E"];
 	dex.modData("Learnsets", "seviper").learnset.coil = ["3L64"];
 	dex.modData("Learnsets", "seviper").learnset.xscissor = ["3T"];
+	dex.modData("Learnsets", "seviper").learnset.overheat = ["3M"];
 
 	dex.modData("Learnsets", "lunatone").learnset.moonlight = ["3L1"];
 	dex.modData("Learnsets", "lunatone").learnset.rockpolish = ["3L20"];

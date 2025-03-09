@@ -2414,7 +2414,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "RU",
 	},
 	heatmor: {
-		tier: "Illegal",
+		tier: "PU",
 	},
 	durant: {
 		tier: "Illegal",
@@ -2941,7 +2941,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	oranguru: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	passimian: {
 		tier: "Illegal",
@@ -3872,10 +3872,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 
 	syclar: {
-		tier: "LC",
+		tier: "Illegal",
 	},
 	syclant: {
-		tier: "OU",
+		tier: "Illegal",
 	},
 	revenankh: {
 		tier: "Illegal",
@@ -3992,13 +3992,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	floatoy: {
-		tier: "LC",
+		tier: "Illegal",
 	},
 	caimanoe: {
-		tier: "NFE",
+		tier: "Illegal",
 	},
 	naviathan: {
-		tier: "UU",
+		tier: "Illegal",
 	},
 	crucibelle: {
 		tier: "Illegal",

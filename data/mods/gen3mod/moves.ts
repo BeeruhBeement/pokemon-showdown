@@ -600,14 +600,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	firstimpression: {
 		inherit: true,
-		basePower: 75,
-	},
-	secretsword: {
-		inherit: true,
-		overrideOffensiveStat: 'spa',	
-		overrideDefensiveStat: 'def',
-		desc: "Damage is calculated using the user's Special Attack stat as its Attack, including stat stage changes. Deals damage to the target based on its Defense instead of Special Defense. Other effects that modify the Attack stat are used as normal.",
-		shortDesc: "Uses user's SpA stat as Atk in damage calculation.",
+		basePower: 80,
 	},
 	dreameater: {
 		inherit: true,
@@ -1444,6 +1437,28 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	frostbreath: {
 		inherit: true,
 		basePower: 60,
+	},
+	razorshell: {
+		inherit: true,
+		desc: "Has a 100% chance to lower the target's Special Defense by 1 stage.",
+		shortDesc: "100% chance to lower the target's Sp. Def by 1.",
+		secondary: {
+			chance: 100,
+			boosts: {
+				spd: -1,
+			},
+		},
+	},
+	firelash: {
+		inherit: true,
+		desc: "Has a 100% chance to lower the target's Special Defense by 1 stage.",
+		shortDesc: "100% chance to lower the target's Sp. Def by 1.",
+		secondary: {
+			chance: 100,
+			boosts: {
+				spd: -1,
+			},
+		},
 	},
 	hiddenpower: {
 		inherit: true,

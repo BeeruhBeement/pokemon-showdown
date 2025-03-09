@@ -6005,4 +6005,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 5022,
 	},
+	brainpower: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa) {
+			return this.chainModify(2);
+		},
+		flags: {},
+		name: "Brain Power",
+		rating: 5,
+		num: 5023,
+	},
 };
