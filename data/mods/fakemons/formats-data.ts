@@ -71,4 +71,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	rampardosfish: {
 		tier: "OU",
 	},
+	bugglow: {
+		tier: "OU",
+	},
+	jorein: {
+		tier: "OU",
+	},
 };
