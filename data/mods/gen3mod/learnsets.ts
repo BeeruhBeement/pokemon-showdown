@@ -3787,7 +3787,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			whirlpool: ["3L39"],
 
 			dualwingbeat: ["3T"],
-			steelspikes: ["3L21"],
 		},
 	},
 	bidoof: {
@@ -8359,8 +8358,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			swagger: ["3M"],
 			toxic: ["3M"],
 			waterpulse: ["3T"],
-
-			sharpice: ["3L9"],
 		},
 	},
 	shelmet: {
@@ -9081,8 +9078,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			voltswitch: ["3M"],
 			xscissor: ["3T"],
-
-			steelspikes: ["3L4"],
 		},
 	},
 	terrakion: {
@@ -10615,7 +10610,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			weatherball: ["3L40", "3T"],
 			
 			scald: ["3L32"],
-			hotcoals: ["3L52"],
 		},
 	},
 	rowlet: {
@@ -11547,8 +11541,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			tackle: ["3L1"],
 			taunt: ["3M"],
 			toxic: ["3M"],
-			
-			hotcoals: ["3L45"],
 		},
 	},
 	togedemaru: {

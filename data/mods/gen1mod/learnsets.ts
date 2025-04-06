@@ -121,4 +121,40 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			substitute: ["1M"],
 		},
 	},
+	nymble: {
+		learnset: {
+			tackle: ["1L1"],
+			leer: ["1L1"],
+			doublekick: ["1L11"],
+			screech: ["1L14"],
+			leechlife: ["1L22"],
+			agility: ["1L30", "1M"],
+			
+			toxic: ["1M"],
+			takedown: ["1M"],
+			doubleteam: ["1M"],
+			substitute: ["1M"],
+		}
+	},
+	lokix: {
+		learnset: {
+			tackle: ["1L1"],
+			leer: ["1L1"],
+			lowkick: ["1L1"],
+			doublekick: ["1L11"],
+			screech: ["1L14"],
+			leechlife: ["1L22"],
+			agility: ["1L30", "1M"],
+			highjumpkick: ["1L53"],
+			
+			swordsdance: ["1M"],
+			megakick: ["1M"],
+			toxic: ["1M"],
+			takedown: ["1M"],
+			doubleedge: ["1M"],
+			hyperbeam: ["1M"],
+			doubleteam: ["1M"],
+			substitute: ["1M"],
+		}
+	},
 };

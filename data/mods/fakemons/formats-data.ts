@@ -11,6 +11,27 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU"
 	},
 	
+	fearowpsycho: {
+		tier: "OU",
+	},
+	shuckleangry: {
+		tier: "OU",
+	},
+	cacturnepirate: {
+		tier: "OU",
+	},
+	whiscashevil: {
+		tier: "OU",
+	},
+	rampardosfish: {
+		tier: "OU",
+	},
+	drifblimsoap: {
+		tier: "OU",
+	},
+	rotomradar: {
+		tier: "OU",
+	},
 	norock: {
 		tier: "OU",
 	},
@@ -32,23 +53,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ghoulgash: {
 		tier: "OU",
 	},
-	fearowpsycho: {
-		tier: "OU",
-	},
-	shuckleangry: {
-		tier: "OU",
-	},
-	whiscashevil: {
-		tier: "OU",
-	},
 	moonhyena: {
 		tier: "OU",
 	},
 	chublit: {
 		tier: "LC",
-	},
-	rotomradar: {
-		tier: "OU",
 	},
 	fryder: {
 		tier: "OU",
@@ -65,16 +74,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	sturdygrade: {
 		tier: "OU",
 	},
-	cacturnepirate: {
-		tier: "OU",
-	},
-	rampardosfish: {
-		tier: "OU",
-	},
 	bugglow: {
-		tier: "OU",
-	},
-	jorein: {
 		tier: "OU",
 	},
 };

@@ -213,13 +213,11 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "seel").learnset.haze = ["3E"];
 	dex.modData("Learnsets", "dewgong").learnset.megahorn = ["3L65"];
 	dex.modData("Learnsets", "dewgong").learnset.frostbite = ["3L65"];
-	dex.modData("Learnsets", "dewgong").learnset.sharpice = ["3L65"];
 	
 	dex.modData("Learnsets", "grimer").learnset.gunkshot = ["3L44"];
 	dex.modData("Learnsets", "muk").learnset.gunkshot = ["3L54"];
 
 	dex.modData("Learnsets", "shellder").learnset.lifedew = ["3E"];
-	dex.modData("Learnsets", "shellder").learnset.sharpice = ["3E"];
 	dex.modData("Learnsets", "shellder").learnset.razorshell = ["3L32"];
 	
 	dex.modData("Learnsets", "onix").learnset.headsmash = ["3E"];
@@ -640,7 +638,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData("Learnsets", "ursaring").learnset.rockclimb = ["3M"];
 	
-	dex.modData("Learnsets", "slugma").learnset.hotcoals = ["3E"];
 	dex.modData("Learnsets", "slugma").learnset.recover = ["3L23"];
 	dex.modData("Learnsets", "slugma").learnset.lavaplume = ["3L38"];
 	dex.modData("Learnsets", "slugma").learnset.stealthrock = ["3M"];
@@ -680,7 +677,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "mantine").learnset.scald = ["3T"];
 	
 	dex.modData("Learnsets", "skarmory").learnset.roost = ["3E"];
-	dex.modData("Learnsets", "skarmory").learnset.steelspikes = ["3E"];
 	dex.modData("Learnsets", "skarmory").learnset.bladequills = ["3L35"];
 
 	dex.modData("Learnsets", "houndour").learnset.suckerpunch = ["3E"];
@@ -935,11 +931,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "camerupt").learnset.lavaplume = ["3L31"];
 	dex.modData("Learnsets", "camerupt").learnset.scorchingsands = ["3L67"];
 	dex.modData("Learnsets", "camerupt").learnset.magmastorm = ["3L75"];
-	dex.modData("Learnsets", "camerupt").learnset.hotcoals = ["3L75"];
 
 	dex.modData("Learnsets", "torkoal").learnset.rapidspin = ["3L23"];
 	dex.modData("Learnsets", "torkoal").learnset.lavaplume = ["3L39"];
-	dex.modData("Learnsets", "torkoal").learnset.hotcoals = ["3L49"];
 
 	dex.modData("Learnsets", "spinda").learnset.rapidspin = ["3E"];
 	dex.modData("Learnsets", "spinda").learnset.suckerpunch = ["3E"];
@@ -1125,14 +1119,12 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "regirock").learnset.recover = ["3L73"];
 	dex.modData("Learnsets", "regirock").learnset.rockclimb = ["3M"];
 	dex.modData("Learnsets", "regirock").learnset.drainpunch = ["3T"];
-
-	dex.modData("Learnsets", "regice").learnset.sharpice = ["3L1"];
+	
 	dex.modData("Learnsets", "regice").learnset.recover = ["3L73"];
 	dex.modData("Learnsets", "regice").learnset.frostbite = ["3L73"];
 	dex.modData("Learnsets", "regice").learnset.drainpunch = ["3T"];
 	dex.modData("Learnsets", "regice").learnset.rockclimb = ["3M"];
 
-	dex.modData("Learnsets", "registeel").learnset.steelspikes = ["3L1"];
 	dex.modData("Learnsets", "registeel").learnset.recover = ["3L73"];
 	dex.modData("Learnsets", "registeel").learnset.rockclimb = ["3M"];
 	dex.modData("Learnsets", "registeel").learnset.drainpunch = ["3T"];

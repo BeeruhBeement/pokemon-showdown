@@ -7686,33 +7686,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		prepare: "  [POKEMON] absorbed darkness!",
 	},
-	steelspikes: {
-		name: "Steel Spikes",
-		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Steel type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Hurts foes on switch-in. Factors Steel weakness.",
-
-		start: "  Sharp-pointed pieces of steel started floating around [PARTY]!",
-		end: "  The pieces of steel surrounding [PARTY] disappeared!",
-		damage: "  The sharp steel bit into [POKEMON]!",
-	},
-	hotcoals: {
-		name: "Hot Coals",
-		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Fire type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Hurts foes on switch-in. Factors Fire weakness.",
-
-		start: "  Hot coals float in the air around [TEAM]!",
-		end: "  The hot coals disappeared from around [TEAM]!",
-		damage: "  Hot coals dug into [POKEMON]!",
-	},
-	sharpice: {
-		name: "Sharp Ice",
-		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Ice type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Hurts foes on switch-in. Factors Ice weakness.",
-
-		start: "  Sharp icicles float in the air around [TEAM]!",
-		end: "  The sharp icicles disappeared from around [TEAM]!",
-		damage: "  Sharp icicles dug into [POKEMON]!",
-	},
 	zenbash: {
 		name: "Zen Bash",
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
