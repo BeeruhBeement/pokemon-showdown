@@ -1,4 +1,4 @@
-export const MovesText: {[id: IDEntry]: MoveText} = {
+export const MovesText: { [id: IDEntry]: MoveText } = {
 	"10000000voltthunderbolt": {
 		name: "10,000,000 Volt Thunderbolt",
 		desc: "Has a very high chance for a critical hit.",
@@ -896,8 +896,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "For 5 turns, the weather becomes Snow. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "Starts Snow. User switches out.",
 
-		// TODO needs to be implemented
-		activate: "  [POKEMON] is preparing to tell a chillingly bad joke!",
+		prepare: "  [POKEMON] is preparing to tell a chillingly bad joke!",
 	},
 	chipaway: {
 		name: "Chip Away",
@@ -906,7 +905,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	chloroblast: {
 		name: "Chloroblast",
-		desc: "If this move is successful, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability.",
+		desc: "If this move is successful, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard or Rock Head Abilities.",
 		shortDesc: "User loses 50% max HP.",
 	},
 	circlethrow: {
