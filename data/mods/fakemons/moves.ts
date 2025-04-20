@@ -24,10 +24,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		num: 0,
 		accuracy: true,
 		basePower: 50,
-		onModifyType(move, pokemon) {
-			switch (move.hit) {
-				case 1: move.type = 'Ice'; break;
-				case 2: move.type = 'Fire'; break;	
+		onTryHit(target, source, move) {
+			if (move.hit === 2) {
+				move.type = 'Fire';
 			}
 		},
 		category: "Special",
@@ -61,6 +60,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		type: "Steel",
 		contestType: "Tough",
+		desc: "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
 	},
 	plasticblaze: {
 		num: 0,

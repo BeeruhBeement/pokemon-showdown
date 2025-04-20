@@ -123,7 +123,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 
 	norock: {
-		num: 0,
+		num: -60000,
 		name: "Norock",
 		types: ["Rock"],
 		baseStats: {hp: 85, atk: 117, def: 95, spa: 65, spd: 75, spe: 82},
@@ -136,7 +136,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Mineral"],
 	},
 	froomish: {
-		num: 0,
+		num: -60001,
 		name: "Froomish",
 		types: ["Ice"],
 		baseStats: {hp: 60, atk: 40, def: 60, spa: 40, spd: 60, spe: 35},
@@ -148,7 +148,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Fairy", "Grass"],
 	},
 	frostloom: {
-		num: 0,
+		num: -60002,
 		name: "Frostloom",
 		types: ["Ice", "Poison"],
 		baseStats: {hp: 60, atk: 60, def: 60, spa: 130, spd: 80, spe: 70},
@@ -161,7 +161,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Fairy", "Grass"],
 	},
 	roastimp: {
-		num: 0,
+		num: -60003,
 		name: "Roastimp",
 		types: ["Fire"],
 		baseStats: {hp: 83, atk: 85, def: 60, spa: 90, spd: 60, spe: 105},
@@ -172,7 +172,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field", "Fairy"],
 	},
 	gorgergeist: {
-		num: 0,
+		num: -60004,
 		name: "Gorgergeist",
 		types: ["Fire", "Ghost"],
 		baseStats: {hp: 136, atk: 90, def: 70, spa: 75, spd: 74, spe: 35},
@@ -184,7 +184,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous", "Fairy"],
 	},
 	bibsol: {
-		num: 0,
+		num: -60005,
 		name: "Bibsol",
 		types: ["Dark", "Water"],
 		baseStats: {hp: 70, atk: 100, def: 60, spa: 65, spd: 60, spe: 75},
@@ -195,7 +195,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field", "Water 1"],
 	},
 	ghoulgash: {
-		num: 0,
+		num: -60006,
 		name: "Ghoulgash",
 		types: ["Ghost", "Rock"],
 		baseStats: {hp: 55, atk: 115, def: 95, spa: 45, spd: 75, spe: 95},
@@ -206,7 +206,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous", "Mineral"],
 	},
 	moonhyena: {
-		num: 0,
+		num: -60007,
 		name: "Moonhyena",
 		types: ["Dark", "Ghost"],
 		baseStats: {hp: 95, atk: 125, def: 70, spa: 90, spd: 60, spe: 100},
@@ -219,7 +219,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field"],
 	},
 	chublit: {
-		num: 0,
+		num: -60008,
 		name: "Chublit",
 		types: ["Fire", "Ghost"],
 		baseStats: {hp: 55, atk: 65, def: 45, spa: 65, spd: 55, spe: 55},
@@ -232,7 +232,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous", "Fairy"],
 	},
 	fryder: {
-		num: 0,
+		num: -60009,
 		name: "Fryder",
 		types: ["Bug", "Ground"],
 		baseStats: {hp: 50, atk: 95, def: 107, spa: 75, spd: 65, spe: 107},
@@ -243,7 +243,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous"],
 	},
 	fallingmeteor: {
-		num: 0,
+		num: -60010,
 		name: "Falling Meteor",
 		types: ["Electric", "Flying"],
 		gender: "N",
@@ -256,7 +256,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 	},
 	ironprojector: {
-		num: 0,
+		num: -60011,
 		name: "Iron Projector",
 		types: ["Electric", "Ghost"],
 		gender: "N",
@@ -269,7 +269,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 	},
 	sturdygrade: {
-		num: 0,
+		num: -60012,
 		name: "Sturdygrade",
 		types: ["Bug", "Water"],
 		baseStats: {hp: 55, atk: 75, def: 200, spa: 15, spd: 95, spe: 15},
@@ -280,7 +280,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous"],
 	},
 	bugglow: {
-		num: 0,
+		num: -60013,
 		name: "Bugglow",
 		types: ["Bug", "Ghost"],
 		baseStats: {hp: 55, atk: 110, def: 80, spa: 65, spd: 95, spe: 93},
@@ -292,7 +292,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	
 	guardromon: {
-		num: 0,
+		num: -60014,
 		name: "Guardromon",
 		types: ["Steel"],
 		baseStats: {hp: 85, atk: 110, def: 130, spa: 105, spd: 95, spe: 45},
@@ -303,7 +303,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Mineral"],
 	},
 	toyagumon: {
-		num: 0,
+		num: -60015,
 		name: "ToyAgumon",
 		types: ["Normal", "Fairy"],
 		baseStats: {hp: 70, atk: 60, def: 70, spa: 95, spd: 95, spe: 70},
