@@ -986,8 +986,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	guardromon: {
 		learnset: {
 			bulletpunch: ["9L1"],
-			bugbuzz: ["9L1"],
-			vitalthrow: ["9L1"],
 			protect: ["9L6"],
 			defog: ["9L6"],
 			block: ["9L11"],
@@ -998,7 +996,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			roar: ["9L26"],
 			irondefense: ["9L31"],
 			heavyslam: ["9L31"],
-			heatcrash: ["9L31"],
 			overdrive: ["9L36"],
 			guardianbarrage: ["9L41"],
 			hyperbeam: ["9L51"],
@@ -1022,6 +1019,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			spikyshield: ["9L56"],
 			airslash: ["9L61"],
 			stoneedge: ["9L66"],
+			flameburst: ["9L71"],
 		}
 	},
 };

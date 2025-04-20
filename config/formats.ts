@@ -199,7 +199,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 9] Nat Dex Fakemons",
+		name: "[Gen 9] Fakemons",
 		mod: 'fakemons',
 		ruleset: ['Standard NatDex'/*, 'Terastal Clause'*/],
 		banlist: [

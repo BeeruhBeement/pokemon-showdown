@@ -3,12 +3,15 @@ import { ModdedSpeciesData } from "../../../sim/dex-species";
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	parasong: {
 		inherit: true,
+		gen: -12,
 	},
 	ironmongrel: {
 		inherit: true,
+		gen: -12,
 	},
 	ironimitator: {
 		inherit: true,
+		gen: -12,
 	},
 
 	// fakemons exclusives
@@ -24,6 +27,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 38,
 		color: "Gray",
 		eggGroups: ["Flying"],
+		gen: -12,
 	},
 	electrodemega: {
 		num: 101,
@@ -39,6 +43,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Red",
 		eggGroups: ["Mineral"],
 		requiredItem: "Electrodite",
+		gen: -12,
 	},
 	shuckleangry: {
 		num: 213,
@@ -52,6 +57,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 0.1,
 		color: "Red",
 		eggGroups: ["Bug"],
+		gen: -12,
 	},
 	cacturnepirate: {
 		num: 332,
@@ -65,6 +71,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 77.4,
 		color: "Blue",
 		eggGroups: ["Grass", "Human-Like"],
+		gen: -12,
 	},
 	whiscashevil: {
 		num: 340,
@@ -78,6 +85,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 23.6,
 		color: "Purple",
 		eggGroups: ["Water 2"],
+		gen: -12,
 	},
 	rampardosfish: {
 		num: 409,
@@ -92,6 +100,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 62.5,
 		color: "White",
 		eggGroups: ["Water 1", "Dragon"],
+		gen: -12,
 	},
 	drifblimsoap: {
 		num: 426,
@@ -105,6 +114,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 5,
 		color: "Purple",
 		eggGroups: ["Amorphous"],
+		gen: -12,
 	},
 	rotomradar: {
 		num: 479,
@@ -120,6 +130,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Red",
 		eggGroups: ["Amorphous"],
 		changesFrom: "Rotom",
+		gen: -12,
 	},
 
 	norock: {
@@ -134,6 +145,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Minirock",
 		evoLevel: 22,
 		eggGroups: ["Mineral"],
+		gen: -12,
 	},
 	froomish: {
 		num: -60001,
@@ -146,6 +158,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		evos: ["Frostloom"],
 		eggGroups: ["Fairy", "Grass"],
+		gen: -12,
 	},
 	frostloom: {
 		num: -60002,
@@ -159,6 +172,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Froomish",
 		evoLevel: 23,
 		eggGroups: ["Fairy", "Grass"],
+		gen: -12,
 	},
 	roastimp: {
 		num: -60003,
@@ -170,6 +184,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 28.5,
 		color: "Red",
 		eggGroups: ["Field", "Fairy"],
+		gen: -12,
 	},
 	gorgergeist: {
 		num: -60004,
@@ -182,6 +197,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 		prevo: "Chublit",
 		eggGroups: ["Amorphous", "Fairy"],
+		gen: -12,
 	},
 	bibsol: {
 		num: -60005,
@@ -193,6 +209,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 47,
 		color: "Brown",
 		eggGroups: ["Field", "Water 1"],
+		gen: -12,
 	},
 	ghoulgash: {
 		num: -60006,
@@ -204,6 +221,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 2,
 		color: "Purple",
 		eggGroups: ["Amorphous", "Mineral"],
+		gen: -12,
 	},
 	moonhyena: {
 		num: -60007,
@@ -217,6 +235,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Mightyena",
 		evoLevel: 36,
 		eggGroups: ["Field"],
+		gen: -12,
 	},
 	chublit: {
 		num: -60008,
@@ -230,6 +249,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Gorgergeist"],
 		evoLevel: 23,
 		eggGroups: ["Amorphous", "Fairy"],
+		gen: -12,
 	},
 	fryder: {
 		num: -60009,
@@ -241,6 +261,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 0.3,
 		color: "Red",
 		eggGroups: ["Amorphous"],
+		gen: -12,
 	},
 	fallingmeteor: {
 		num: -60010,
@@ -254,6 +275,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Red",
 		tags: ["Paradox"],
 		eggGroups: ["Undiscovered"],
+		gen: -12,
 	},
 	ironprojector: {
 		num: -60011,
@@ -267,6 +289,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		tags: ["Paradox"],
 		eggGroups: ["Undiscovered"],
+		gen: -12,
 	},
 	sturdygrade: {
 		num: -60012,
@@ -278,6 +301,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 1,
 		color: "Green",
 		eggGroups: ["Amorphous"],
+		gen: -12,
 	},
 	bugglow: {
 		num: -60013,
@@ -289,28 +313,33 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 1,
 		color: "Green",
 		eggGroups: ["Amorphous"],
+		gen: -12,
 	},
 	
 	guardromon: {
 		num: -60014,
 		name: "Guardromon",
 		types: ["Steel"],
+		gender: "N",
 		baseStats: {hp: 85, atk: 110, def: 130, spa: 105, spd: 95, spe: 45},
 		abilities: {0: "Heatproof", H: "No Guard"},
 		heightm: 1.4,
 		weightkg: 400,
 		color: "Brown",
-		eggGroups: ["Mineral"],
+		eggGroups: ["Undiscovered"],
+		gen: -12,
 	},
 	toyagumon: {
 		num: -60015,
 		name: "ToyAgumon",
 		types: ["Normal", "Fairy"],
+		gender: "N",
 		baseStats: {hp: 70, atk: 60, def: 70, spa: 95, spd: 95, spe: 70},
 		abilities: {0: "Justified", 1: "Flash Fire", H: "Friend Guard"},
 		heightm: 0.7,
 		weightkg: 12,
 		color: "Green",
-		eggGroups: ["Amorphous"],
+		eggGroups: ["Undiscovered"],
+		gen: -12,
 	},
 };
