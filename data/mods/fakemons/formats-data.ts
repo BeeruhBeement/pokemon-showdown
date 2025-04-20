@@ -14,6 +14,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	fearowpsycho: {
 		tier: "OU",
 	},
+	electrodemega: {
+		tier: "OU",
+	},
 	shuckleangry: {
 		tier: "OU",
 	},
@@ -32,6 +35,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	rotomradar: {
 		tier: "OU",
 	},
+
 	norock: {
 		tier: "OU",
 	},
@@ -62,9 +66,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	fryder: {
 		tier: "OU",
 	},
-	electrodemega: {
-		tier: "OU",
-	},
 	fallingmeteor: {
 		tier: "OU",
 	},
@@ -75,6 +76,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	bugglow: {
+		tier: "OU",
+	},
+
+	guardromon: {
+		tier: "OU",
+	},
+	toyagumon: {
 		tier: "OU",
 	},
 };

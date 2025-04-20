@@ -16,4 +16,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	shiinotic: {
 		tier: "OU",
 	},
+	nymble: {
+		tier: "LC",
+	},
+	lokix: {
+		tier: "OU",
+	},
 };

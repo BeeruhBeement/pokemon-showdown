@@ -1,6 +1,7 @@
 import { execArgv } from "node:process";
 import { ModdedLearnsetData } from "../../../sim/dex-species";
 import { crypto_box_PUBLICKEYBYTES } from "sodium-native";
+import { h } from "preact";
 
 export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	norock: {
@@ -981,5 +982,46 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			terablast: ["9M"],
 			hyperbeam: ["9M"],
 		},
+	},
+	guardromon: {
+		learnset: {
+			bulletpunch: ["9L1"],
+			bugbuzz: ["9L1"],
+			vitalthrow: ["9L1"],
+			protect: ["9L6"],
+			defog: ["9L6"],
+			block: ["9L11"],
+			pursuit: ["9L11"],
+			metalsound: ["9L16"],
+			lockon: ["9L21"],
+			powerlaser: ["9L21"],
+			roar: ["9L26"],
+			irondefense: ["9L31"],
+			heavyslam: ["9L31"],
+			heatcrash: ["9L31"],
+			overdrive: ["9L36"],
+			guardianbarrage: ["9L41"],
+			hyperbeam: ["9L51"],
+		}
+	},
+	toyagumon: {
+		learnset: {
+			tackle: ["9L1"],
+			fairywind: ["9L1"],
+			incinerate: ["9L1"],
+			calmmind: ["9L6"],
+			bodyslam: ["9L11"],
+			healingwish: ["9L16"],
+			healpulse: ["9L21"],
+			dazzlinggleam: ["9L26"],
+			moonblast: ["9L31"],
+			plasticblaze: ["9L36"],
+			healbell: ["9L41"],
+			hypervoice: ["9L46"],
+			spikes: ["9L51"],
+			spikyshield: ["9L56"],
+			airslash: ["9L61"],
+			stoneedge: ["9L66"],
+		}
 	},
 };
