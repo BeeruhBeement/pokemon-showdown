@@ -12,7 +12,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', i).isNonstandard = null;
 		}
 		for (const i in this.data.FormatsData) {
-			if (this.modData('Pokedex', i).gen == -12) 
+			if (this.modData('Pokedex', i).gen != -12)
 			{
 					this.modData('FormatsData', i).tier = "Illegal";
 			}
