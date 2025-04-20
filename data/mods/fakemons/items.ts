@@ -13,5 +13,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		num: 0,
 		gen: 0,
+		shortDesc: "If held by an Electrode, this item allows it to Mega Evolve in battle.",
 	},
 };

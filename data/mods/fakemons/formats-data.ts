@@ -1,6 +1,10 @@
 import { SpeciesFormatsData } from "../../../sim/dex-species";
 
 export const FormatsData: {[k: string]: SpeciesFormatsData} = {
+	electrode: {
+		tier: "OU",
+	},
+	
 	parasong: {
 		tier: "OU",
 	},
@@ -15,7 +19,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	electrodemega: {
-		tier: "OU",
+		tier: "Uber",
 	},
 	shuckleangry: {
 		tier: "OU",
@@ -30,7 +34,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	drifblimsoap: {
-		tier: "OU",
+		tier: "Uber",
 	},
 	rotomradar: {
 		tier: "OU",
@@ -83,6 +87,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	toyagumon: {
+		tier: "OU",
+	},
+	ancienttroiamon: {
 		tier: "OU",
 	},
 };

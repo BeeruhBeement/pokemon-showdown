@@ -4,7 +4,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	frythrow: {
 		num: 0,
 		accuracy: 100,
-		basePower: 25,
+		basePower: 20,
 		category: "Physical",
 		name: "Fry Throw",
 		pp: 10,
@@ -14,8 +14,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: {basePower: 140},
-		maxMove: {basePower: 130},
 		contestType: "Cool",
 		desc: "Hits two to five times with each hit having a 10% chance to burn the target. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times. Each hit has 10% chance to burn.",
@@ -82,5 +80,23 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		contestType: "Cute",
 		desc: "This move's type effectiveness against Steel is changed to be super effective no matter what this move's type is. This move's type effectiveness against Water is changed to be resisted no matter what this move's type is.",
 		shortDesc: "Super effective on Steel. Resisted by Water.",
+	},
+	epeiusgimmick: {
+		num: 0,
+		accuracy: 75,
+		basePower: 120,
+		category: "Physical",
+		name: "Epeius Gimmick",
+		onHit(target, source) {
+			source.addVolatile('confusion', source);
+		},
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "allAdjacent",
+		type: "Fighting",
+		contestType: "Cool",
+		shortDesc: "Confuses the user.",
 	},
 };
