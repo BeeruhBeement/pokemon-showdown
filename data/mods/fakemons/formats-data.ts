@@ -19,7 +19,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	electrodemega: {
-		tier: "Uber",
+		tier: "OU",
 	},
 	shuckleangry: {
 		tier: "OU",
@@ -90,6 +90,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	ancienttroiamon: {
+		tier: "OU",
+	},
+	divermon: {
 		tier: "OU",
 	},
 };
