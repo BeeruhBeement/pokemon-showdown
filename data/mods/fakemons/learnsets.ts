@@ -437,6 +437,13 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			irontail: ["9M"],
 			meditate: ["9M"],
 			crunch: ["9M"],
+			return: ["9M"],
+			frustration: ["9M"],
+			rest: ["9M"],
+			sleeptalk: ["9M"],
+			protect: ["9M"],
+			substitute: ["9M"],
+			toxic: ["9M"],
 		},
 	},
 	shuckleangry: {
@@ -479,6 +486,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			leechlife: ["9M"],
 			surf: ["9M"],
 			gunkshot: ["9M"],
+			toxic: ["9M"],
+			return: ["9M"],
+			frustration: ["9M"],
+			curse: ["9M"],
 		},
 	},
 	swampertdelta: {
@@ -516,6 +527,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			gunkshot: ["9M"],
 			gigaimpact: ["9M"],
 			superpower: ["9M"],
+			toxic: ["9M"],
+			return: ["9M"],
+			frustration: ["9M"],
+			curse: ["9M"],
 		},
 	},
 	whiscashevil: {
@@ -542,6 +557,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			protect: ["9M"],
 			recover: ["9M"],
 			rest: ["9M"],
+			return: ["9M"],
+			frustration: ["9M"],
+			toxic: ["9M"],
 		},
 	},
 	moonhyena: {
@@ -790,6 +808,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sunnyday: ["9M"],
 			raindance: ["9M"],
 			healingwish: ["9M"],
+			return: ["9M"],
+			frustration: ["9M"],
+			toxic: ["9M"],
 		},
 	},
 	cacturnepirate: {
@@ -987,6 +1008,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			lightscreen: ["9M"],
 			haze: ["9M"],
 			calmmind: ["9M"],
+			return: ["9M"],
+			frustration: ["9M"],
 		},
 	},
 	bugglow: {
@@ -1054,6 +1077,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			takedown: ["9M"],
 			terablast: ["9M"],
 			hyperbeam: ["9M"],
+			return: ["9M"],
+			frustration: ["9M"],
 		},
 	},
 	ironimitator:{
