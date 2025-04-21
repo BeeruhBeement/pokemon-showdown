@@ -70,6 +70,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 16,
 		evos: ["Swampert-Delta"],
 		eggGroups: ["Monster", "Water 1"],
+		gen: -12,
 	},
 	swampertdelta: {
 		num: 260,
@@ -86,6 +87,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Monster", "Water 1"],
 		otherFormes: ["Swampert-Mega"],
 		formeOrder: ["Swampert", "Swampert-Mega"],
+		gen: -12,
 	},
 	swampertdeltamega: {
 		num: 260,
@@ -101,6 +103,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		eggGroups: ["Monster", "Water 1"],
 		requiredItem: "Swampertite-Delta",
+		gen: -12,
 	},
 	cacturnepirate: {
 		num: 332,
