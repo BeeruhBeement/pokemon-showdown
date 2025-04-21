@@ -112,6 +112,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		secondary: null,
 		target: "normal",
 		type: "Water",
+		contestType: "Cool",
 		desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
 		shortDesc: "Always results in a critical hit.",
 	},

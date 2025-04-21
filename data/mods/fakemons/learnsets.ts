@@ -563,6 +563,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			jawlock: ["9M"],
 			dazzlinggleam: ["9M"],
 			moonblast: ["9M"],
+			moonlight: ["9M"],
 		},
 	},
 	chublit: {
@@ -1133,7 +1134,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			dive: ["9L41"],
 			aircutter: ["9L46"],
 			swordsdance: ["9L51"],
-			stoneedge: ["9L56"],
+			bite: ["9L56"],
 			liquidation: ["9L61"],
 			jumpkick: ["9L66"],
 		}

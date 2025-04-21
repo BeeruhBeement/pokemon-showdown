@@ -24,6 +24,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	shuckleangry: {
 		tier: "OU",
 	},
+	marshtompdelta: {
+		tier: "NFE",
+	},
+	swampertdelta: {
+		tier: "OU",
+	},
+	swampertdeltamega: {
+		tier: "OU",
+	},
 	cacturnepirate: {
 		tier: "OU",
 	},
