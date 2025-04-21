@@ -68,6 +68,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	ghoulgash: {
+		tier: "NFE",
+	},
+	polterslice: {
 		tier: "OU",
 	},
 	moonhyena: {
@@ -89,6 +92,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	bugglow: {
+		tier: "OU",
+	},
+	lumenova: {
+		tier: "OU",
+	},
+	tishi: {
+		tier: "LC",
+	},
+	yodojo: {
 		tier: "OU",
 	},
 
