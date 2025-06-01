@@ -454,7 +454,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: -12,
 	},
 	clocklizard: {
-		num: -60020,
+		num: -60021,
 		name: "Clock Lizard",
 		types: ["Psychic", "Electric"],
 		baseStats: {hp: 95, atk: 55, def: 75, spa: 75, spd: 95, spe: 110},
@@ -466,7 +466,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gen: -12,
 	},
 	orbital: {
-		num: -60020,
+		num: -60022,
 		name: "Orbital",
 		types: ["Psychic", "Ground"],
 		baseStats: {hp: 65, atk: 95, def: 65, spa: 55, spd: 123, spe: 97},

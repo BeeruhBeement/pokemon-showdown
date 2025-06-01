@@ -1336,7 +1336,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bulkup: ["9M"],
 		}
 	},
-	pendulum: {
+	clockbreaker: {
 		learnset: {
 			zenheadbutt: ["9M"],
 			psychocut: ["9M"],
