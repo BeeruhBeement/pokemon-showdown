@@ -42,6 +42,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return this.chainModify([dmgMod[numConsecutive], 4096]);
 			},
 		},
+		shortDesc: "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns.",
 	},
 	transmutate: {
 		onModifyTypePriority: -1,
@@ -63,5 +64,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Transmutate",
 		rating: 4,
 		num: 182,
+		desc: "This Pokemon's Normal-type moves become Psychic-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Psychic type and have 1.2x power.",
 	},
 };

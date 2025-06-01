@@ -103,6 +103,18 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	yodojo: {
 		tier: "OU",
 	},
+	clockbreaker: {
+		tier: "OU",
+	},
+	chessquen: {
+		tier: "OU",
+	},
+	clocklizard: {
+		tier: "OU",
+	},
+	orbital: {
+		tier: "OU",
+	},
 
 	guardromon: {
 		tier: "OU",
