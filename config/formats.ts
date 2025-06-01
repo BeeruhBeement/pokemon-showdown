@@ -208,35 +208,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 9] Nat Dex Doom Lol",
-		mod: 'doomlol',
-		ruleset: ['Standard NatDex'],
-		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-		],
-	},
-	/*{
-		name: "[Gen 9] Nat Dex One Mon",
-		mod: 'gen9',
-		ruleset: ['Standard NatDex'],
-		banlist: [],
-		onBegin() {
-			const legalMon = 'Tyrantrum';
-			this.add('-message', `One Mon is a National Dex metagame where only one Pokémon is legal`);
-			this.add('-message', `Standard NatDex Clauses apply except for Species Clause and there are no bans`);
-			this.add('-message', `The only legal Pokémon is ${legalMon}`);
-			this.add('-message', `The one mon switches every once in a while`);
-		},
-		onValidateSet(set) {
-			const legalMon = 'Tyrantrum';
-			const species = this.dex.species.get(set.species);
-			if (species.baseSpecies !== legalMon) {
-				return [`Only ${legalMon} is allowed.`];
-			}
-		},
-	},*/
-	{
 		name: "[Gen 3] P/S Split",
 		mod: 'gen3pssplit',
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],

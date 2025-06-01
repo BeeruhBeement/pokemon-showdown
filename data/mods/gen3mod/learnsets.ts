@@ -9213,7 +9213,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["3M"],
 			uproar: ["3L1"],
 			
-			sandsearstorm: ["3L77"],
+			bleakwindstorm: ["3L77"],
 		},
 	},
 	tornadustherian: {
