@@ -6024,5 +6024,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Kleptomancy",
 		rating: 0,
 		num: 0,
+		desc: " When coins are scattered, recovers 1/3 max HP. 2/3 if holding Amulet Coin.",
 	},
 };
