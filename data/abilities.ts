@@ -6019,4 +6019,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 5023,
 	},
+	kleptomancy: {
+		flags: {},
+		name: "Kleptomancy",
+		rating: 0,
+		num: 0,
+	},
 };

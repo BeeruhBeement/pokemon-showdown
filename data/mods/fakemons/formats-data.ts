@@ -14,6 +14,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ironimitator: {
 		tier: "OU"
 	},
+	variengo: {
+		tier: "OU"
+	},
 	
 	fearowpsycho: {
 		tier: "OU",

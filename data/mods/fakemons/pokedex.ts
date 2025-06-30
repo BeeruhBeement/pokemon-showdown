@@ -11,6 +11,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		num: -50001,
 		gen: -12,
 	},
+	variengo: {
+		inherit: true,
+		num: -50002,
+		gen: -12,
+	},
 
 	// fakemons exclusives
 	fearowpsycho: {
