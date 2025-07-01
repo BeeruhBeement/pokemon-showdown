@@ -723,6 +723,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 90, atk: 100, def: 70, spa: 70, spd: 70, spe: 90},
 	},
+	castformnight: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 70, def: 70, spa: 100, spd: 70, spe: 90},
+	},
 	kecleon: {
 		inherit: true,
 		abilities: {0: "Color Change", H: "Protean"},
@@ -831,6 +835,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	kricketune: {
 		inherit: true,
 		types: ["Bug", "Sound"],
+	},
+	luxray: {
+		inherit: true,
+		abilities: { 0: "Infiltrator", 1: "Intimidate", H: "Guts" },
 	},
 	cranidos: {
 		inherit: true,
@@ -953,7 +961,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	scolipede: {
 		inherit: true,
+		baseStats: { hp: 60, atk: 100, def: 89, spa: 55, spd: 69, spe: 112 },
 		abilities: {0: "Poison Point", 1: "Swarm", H: "Speed Boost"},
+	},
+	solosis: {
+		inherit: true,
+		abilities: {0: "Gelatinous Body", 1: "Magic Guard", H: "Regenerator"},
+	},
+	duosion: {
+		inherit: true,
+		abilities: {0: "Gelatinous Body", 1: "Magic Guard", H: "Regenerator"},
+	},
+	reuniclus: {
+		inherit: true,
+		types: ["Psychic", "Fighting"],
+		abilities: {0: "Gelatinous Body", 1: "Magic Guard", H: "Regenerator"},
 	},
 	litwick: {
 		inherit: true,
@@ -996,6 +1018,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	accelgor: {
 		inherit: true,
 		types: ["Bug", "Water"],
+		baseStats: { hp: 80, atk: 60, def: 40, spa: 110, spd: 60, spe: 145 },
+		abilities: { 0: "Hydration", 1: "Finesse", H: "Unburden" },
 	},
 	druddigon: {
 		inherit: true,
@@ -1222,10 +1246,5 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ironjugulis: {
 		inherit: true,
 		abilities: {0: "Quark Drive", H: "Galvanize"},
-	},
-
-	vibraye: {
-		inherit: true,
-		types: ["Dark", "Sound"],
 	},
 };

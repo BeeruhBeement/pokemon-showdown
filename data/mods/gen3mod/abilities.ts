@@ -98,20 +98,29 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			case 'sunnyday':
 			case 'desolateland':
 				if (pokemon.species.id !== 'castformsunny') forme = 'Castform-Sunny';
+				this.add('-ability', pokemon, "Solar Power", '[from] ability: Forecast', `[of] ${pokemon}`);
 				break;
 			case 'raindance':
 			case 'primordialsea':
 				if (pokemon.species.id !== 'castformrainy') forme = 'Castform-Rainy';
+				this.add('-ability', pokemon, "Rain Dish", '[from] ability: Forecast', `[of] ${pokemon}`);
 				break;
 			case 'hail':
 			case 'snow':
 				if (pokemon.species.id !== 'castformsnowy') forme = 'Castform-Snowy';
+				this.add('-ability', pokemon, "Ice Body", '[from] ability: Forecast', `[of] ${pokemon}`);
 				break;
 			case 'sandstorm':
 				if (pokemon.species.id !== 'castformsandy') forme = 'Castform-Sandy';
+				this.add('-ability', pokemon, "Sand Force", '[from] ability: Forecast', `[of] ${pokemon}`);
+				break;
+			case 'night':
+				if (pokemon.species.id !== 'castformnight') forme = 'Castform-Night';
+				this.add('-ability', pokemon, "Lunar Charge", '[from] ability: Forecast', `[of] ${pokemon}`);
 				break;
 			default:
 				if (pokemon.species.id !== 'castform') forme = 'Castform';
+				this.add('-ability', pokemon, "Forecast", '[from] ability: Forecast', `[of] ${pokemon}`);
 				break;
 			}
 			if (pokemon.isActive && forme) {
@@ -510,6 +519,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			for (i in boost) {
 				boost[i]! *= 2;
 			}
+		},
+	},
+	emergencyexit: {
+		inherit: true,
+		onResidualOrder: 1,
+		onResidual(pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 2) {
+				if (!this.canSwitch(pokemon.side) || pokemon.forceSwitchFlag || pokemon.switchFlag) return;
+				for (const side of this.sides) {
+					for (const active of side.active) {
+						active.switchFlag = false;
+					}
+				}
+				pokemon.switchFlag = true;
+				this.add('-activate', pokemon, 'ability: Emergency Exit');
+			};
 		},
 	},
 

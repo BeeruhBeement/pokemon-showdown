@@ -2371,4 +2371,13 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Brain Power",
 		shortDesc: "This Pokemon's Special Attack is doubled.",
 	},
+	finesse: {
+		name: "Finesse",
+		desc: "This Pokemon's Special Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 1 stage if it attacks and KOes another Pokemon.",
+	},
+	gelatinousbody: {
+		name: "Gelatinous Body",
+		shortDesc: "When using a Physical move Special Attack is swapped with Attack.",
+	}
 };

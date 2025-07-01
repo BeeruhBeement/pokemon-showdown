@@ -32,6 +32,8 @@ Ratings and how they work:
 
 */
 
+import { sodium_mprotect_noaccess } from 'sodium-native';
+
 export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	noability: {
 		isNonstandard: "Past",
@@ -5789,7 +5791,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyAtkPriority: 6,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (attacker.hp <= attacker.maxhp / 2) {
-				this.debug('Superpower attack boost');
+				this.debug('Superhero attack boost');
 				return this.chainModify(1.3);
 			}
 		},
@@ -6019,11 +6021,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 5023,
 	},
-	kleptomancy: {
+	finesse: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({ spa: length }, source);
+			}
+		},
 		flags: {},
-		name: "Kleptomancy",
-		rating: 0,
-		num: 0,
-		desc: " When coins are scattered, recovers 1/3 max HP. 2/3 if holding Amulet Coin.",
+		name: "Finesse",
+		rating: 3,
+		num: 5024,
+	},
+	gelatinousbody: {
+		// Reuniclus Sig
+		onTryMovePriority: 6,
+		onTryMove(source, target, move) {
+			if (move.category === 'Physical' || move.category === 'Special') {
+				this.add('-ability', source, 'Gelatinous Body');
+				const oldAtk = source.storedStats.atk;
+				source.storedStats.atk = source.storedStats.spa;
+				source.storedStats.spa = oldAtk;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Gelatinous Body",
+		rating: 4,
+		num: 169,
 	},
 };

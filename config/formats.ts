@@ -192,22 +192,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Heat Rock', 'Damp Rock'],
 	},
 	{
-		name: "[Gen 1] Mod",
-
-		mod: 'gen1mod',
-		ruleset: ['Standard', 'Allow Tradeback'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 9] Fakemons",
-		mod: 'fakemons',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Sleep Moves Clause'],
-		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-		],
-	},
-	{
 		name: "[Gen 3] P/S Split",
 		mod: 'gen3pssplit',
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
