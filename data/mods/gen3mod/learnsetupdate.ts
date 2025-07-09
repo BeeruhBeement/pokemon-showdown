@@ -1036,6 +1036,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "castform").learnset.energyball = ["3M"];
 	dex.modData("Learnsets", "castform").learnset.sludgebomb = ["3M"];
 	dex.modData("Learnsets", "castform").learnset.lunarbeam = ["3M"];
+	dex.modData("Learnsets", "castform").learnset.nightfall = ["3M"];
 
 	dex.modData("Learnsets", "kecleon").learnset.recover = ["3E"];
 	dex.modData("Learnsets", "kecleon").learnset.nastyplot = ["3E"];

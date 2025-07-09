@@ -14771,7 +14771,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			calmmind: ["3M"],
 			dazzlinggleam: ["3M", "3L40"],
 			drainingkiss: ["3L20"],
-			earthpower: ["3M"],
 			endure: ["3M"],
 			extrasensory: ["3L45"],
 			facade: ["3M"],
