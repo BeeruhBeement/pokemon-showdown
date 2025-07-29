@@ -17,13 +17,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	sneasel: {
 		inherit: true,
-	},
-	sneaselhisui: {
-		inherit: true,
+		types: ["Dark", "Ice", "Fighting", "Normal"],
+		abilities: { 0: "Guts", 1: "No Guard", H: "Dazzling", S: "Sheer Force" },
 	},
 	copperajah: {
 		inherit: true,
+		types: ["Steel", "Rock"],
 		abilities: { 0: "Sheer Force", 1: "Refrigerate", H: "Heavy Metal" },
+	},
+	xatu: {
+		inherit: true,
+		types: ["Steel", "Flying"],
+		baseStats: { hp: 65, atk: 75, def: 70, spa: 95, spd: 130, spe: 95 },
+		abilities: { 0: "Flash Fire", H: "Magic Bounce" },
 	},
 };
 
@@ -32,15 +38,15 @@ const cutDex: {[k: string]: number} = {
 	"magearna": 2,
 	"sawsbuck": 3,
 	"sneasel": 4,
-	"sneaselhisui": 5,
-	"copperajah": 6,
+	"copperajah": 5,
+	"xatu": 6,
 };
 
 for (const key in {...Base, ...Pokedex}) {
 	const id = key as keyof typeof Base;
 	if (!Pokedex[id]) Pokedex[id] = {inherit: true};
 
-	if (cutDex[id]) Pokedex[id] = {...Pokedex[id], isNonstandard: null, gen: 9};
+	if (cutDex[id]) Pokedex[id] = {...Pokedex[id], isNonstandard: null, tier: "OU", gen: 9};
 	else Pokedex[id] = {...Pokedex[id], isNonstandard: "Custom", tier: "Illegal"};
 }
 
