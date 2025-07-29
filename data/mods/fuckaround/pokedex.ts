@@ -9,20 +9,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	magearna: {
 		inherit: true,
-		num: -15000,
+		num: -15001,
 	},
 	sawsbuck: {
 		inherit: true,
 		types: ["Dark", "Fairy"],
 		abilities: { 0: "Sheer Force", 1: "Moxie", H: "Hubris" },
-		num: -15000,
+		num: -15002,
 	},
 	sneasel: {
 		inherit: true,
-		num: -15000,
+		num: -15003,
 	},
 	sneaselhisui: {
 		inherit: true,
-		num: -15000,
+		num: -15004,
 	},
 };

@@ -6,10 +6,12 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		for (const i in this.data.Pokedex) {
 			this.modData('Pokedex', i).isNonstandard = null;
-			if (this.data.Pokedex[i].num !== -15000) {
-				this.modData('Pokedex', i).tier = 'Illegal';
+		}
+		for (const i in this.data.FormatsData) {
+			if (this.data.Pokedex[i].num <= -15000) {
+				this.modData('FormatsData', i).tier = 'Illegal';
 			} else {
-				this.modData('Pokedex', i).tier = 'OU';
+				this.modData('FormatsData', i).tier = 'OU';
 			}
 		}
 		for (const i in this.data.Abilities) {
