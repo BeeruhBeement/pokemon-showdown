@@ -1,3 +1,4 @@
+import { Pokedex as Base } from '../../pokedex';
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
@@ -5,24 +6,41 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		types: ["Grass", "Steel"],
 		abilities: { 0: "Rough Skin", 1: "Queenly Majesty", H: "Hubris" },
-		num: -15000,
 	},
 	magearna: {
 		inherit: true,
-		num: -15001,
 	},
 	sawsbuck: {
 		inherit: true,
 		types: ["Dark", "Fairy"],
 		abilities: { 0: "Sheer Force", 1: "Moxie", H: "Hubris" },
-		num: -15002,
 	},
 	sneasel: {
 		inherit: true,
-		num: -15003,
 	},
 	sneaselhisui: {
 		inherit: true,
-		num: -15004,
+	},
+	copperajah: {
+		inherit: true,
+		abilities: { 0: "Sheer Force", 1: "Refrigerate", H: "Heavy Metal" },
 	},
 };
+
+const cutDex: {[k: string]: number} = {
+	"tsareena": 1,
+	"magearna": 2,
+	"sawsbuck": 3,
+	"sneasel": 4,
+	"sneaselhisui": 5,
+	"copperajah": 6,
+};
+
+for (const key in {...Base, ...Pokedex}) {
+	const id = key as keyof typeof Base;
+	if (!Pokedex[id]) Pokedex[id] = {inherit: true};
+
+	if (cutDex[id]) Pokedex[id] = {...Pokedex[id], isNonstandard: null, gen: 9};
+	else Pokedex[id] = {...Pokedex[id], isNonstandard: "Custom", tier: "Illegal"};
+}
+

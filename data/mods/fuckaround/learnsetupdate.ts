@@ -10,4 +10,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "sawsbuck").learnset.dazzlinggleam = ["9M"];
 	dex.modData("Learnsets", "sawsbuck").learnset.playrough = ["9M"];
 	delete dex.modData('Learnsets', 'sawsbuck').learnset.synthesis;
+	
+	dex.modData("Learnsets", "copperajah").learnset.boomburst = ["9M"];
 }
