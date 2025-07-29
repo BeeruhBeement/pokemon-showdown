@@ -23,9 +23,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom",
 	},
 	{
-		name: "[Gen 3] Modded",
+		name: "[Gen 3] Dental OU",
 
-		mod: 'gen3mod',
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber'],
 	},
@@ -120,16 +120,16 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Experimental/Unfinished",
 	},
 	{
-		name: "[Gen 3] Modded Uber",
+		name: "[Gen 3] Dental Uber",
 
-		mod: 'gen3mod',
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: [],
 	},
 	{
-		name: "[Gen 3] Modded UU",
+		name: "[Gen 3] Dental UU",
 
-		mod: 'gen3mod',
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: [
 			'Uber', 'OU', 'UUBL', 
@@ -137,9 +137,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 3] Modded RU",
+		name: "[Gen 3] Dental RU",
 
-		mod: 'gen3mod',
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: [
 			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 
@@ -147,9 +147,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 3] Modded NU",
+		name: "[Gen 3] Dental NU",
 
-		mod: 'gen3mod',
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: [
 			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 
@@ -157,9 +157,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 3] Modded PU",
+		name: "[Gen 3] Dental PU",
 
-		mod: 'gen3mod',
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: [
 			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 
@@ -167,9 +167,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 3] Modded ZU",
+		name: "[Gen 3] Dental ZU",
 
-		mod: 'gen3mod',
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: [
 			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL', 
@@ -177,8 +177,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 3] Modded NFE",
-		mod: 'gen3mod',
+		name: "[Gen 3] Dental NFE",
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Not Fully Evolved', 'Data Mod'],
 		banlist: [
 			'Chansey', 'Haunter', 'Kadabra', 'Magneton', 'Porygon2', 'Rhydon', 'Golbat', 'Scyther', 'Jynx', 'Electabuzz', 'Magmar',
@@ -186,8 +186,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 3] Modded LC",
-		mod: 'gen3mod',
+		name: "[Gen 3] Dental LC",
+		mod: 'gen3dental',
 		ruleset: ['Standard', 'Little Cup', 'Data Mod'],
 		banlist: ['Heat Rock', 'Damp Rock'],
 	},
@@ -196,6 +196,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen3pssplit',
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
 		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
+	},
+	{
+		name: "[Gen 9] Fuckaround",
+
+		mod: 'fuckaround',
+		ruleset: ['Standard', 'Data Mod'],
 	},
 
 	{
