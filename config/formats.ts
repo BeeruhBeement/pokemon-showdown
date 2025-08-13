@@ -197,44 +197,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
 		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
 	},
-	{
-		name: "[Gen 9] Fuckaround",
-
-		mod: 'fuckaround',
-		ruleset: ['Standard', 'Data Mod'],
-	},
-
-	{
-		section: "National Dex Lower Tiers",
-	},
-	{
-		name: "[Gen 9] National Dex NU",
-
-		mod: 'gen9',
-		ruleset: ['[Gen 9] National Dex RU'],
-		banlist: ['ND RU', 'ND NUBL']
-	},
-	{
-		name: "[Gen 9] National Dex PU",
-
-		mod: 'gen9',
-		ruleset: ['[Gen 9] National Dex NU'],
-		banlist: ['ND NU', 'ND PUBL', 'Damp Rock']
-	},
-	{
-		name: "[Gen 9] National Dex ZU",
-
-		mod: 'gen9',
-		ruleset: ['[Gen 9] National Dex PU'],
-		banlist: ['ND PU', 'ND ZUBL', 'Shell Smash']
-	},
-	{
-		name: "[Gen 9] National Dex SU",
-
-		mod: 'gen9',
-		ruleset: ['[Gen 9] National Dex ZU'],
-		banlist: ['ND ZU', 'ND SUBL', 'Heat Rock'],
-	},
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
