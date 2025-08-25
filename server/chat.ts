@@ -79,6 +79,7 @@ interface Handlers {
 	onDisconnect: (user: User) => void;
 	onRoomDestroy: (roomid: RoomID) => void;
 	onBattleEnd: (battle: RoomBattle, winner: ID, players: ID[]) => void;
+	onBattleCreate: (battle: RoomBattle, players: ID[]) => void;
 	onLadderSearch: (user: User, connection: Connection, format: ID) => void;
 	onBattleRanked: (
 		battle: Rooms.RoomBattle, winner: ID, ratings: (AnyObject | null | undefined)[], players: ID[]
@@ -161,9 +162,11 @@ const MAX_PLUGIN_LOADING_DEPTH = 3;
 
 import { formatText, linkRegex, stripFormatting } from './chat-formatter';
 
-// @ts-expect-error no typedef available
-import ProbeModule = require('probe-image-size');
-const probe: (url: string) => Promise<{ width: number, height: number }> = ProbeModule;
+let probe: null | ((url: string) => Promise<{ width: number, height: number }>) = null;
+
+try {
+	probe = require('probe-image-size');
+} catch {}
 
 const EMOJI_REGEX = /[\p{Emoji_Modifier_Base}\p{Emoji_Presentation}\uFE0F]/u;
 
@@ -235,7 +238,8 @@ class PatternTester {
  * Outside of a command/page context, it would still cause a crash.
  */
 export class ErrorMessage extends Error {
-	constructor(message: string) {
+	constructor(message: string | string[]) {
+		if (Array.isArray(message)) message = message.join('\n');
 		super(message);
 		this.name = 'ErrorMessage';
 		Error.captureStackTrace(this, ErrorMessage);
@@ -471,7 +475,7 @@ export class PageContext extends MessageContext {
 			res = await handler.call(this, parts, this.user, this.connection);
 		} catch (err: any) {
 			if (err.name?.endsWith('ErrorMessage')) {
-				if (err.message) this.errorReply(err.message);
+				if (err.message) this.errorReply(err.message.replace(/\n/g, '<br />'));
 				return;
 			}
 			if (err.name.endsWith('Interruption')) {
@@ -492,6 +496,11 @@ export class PageContext extends MessageContext {
 		if (typeof res === 'string') {
 			this.setHTML(res);
 			res = undefined;
+		}
+		if (res === Rooms.RETRY_AFTER_LOGIN) {
+			this.setHTML(
+				`Please log in before accessing this page (don't worry, it will load automatically once you do so).`
+			);
 		}
 		return res;
 	}
@@ -595,7 +604,9 @@ export class CommandContext extends MessageContext {
 			return this.popupReply(`You tried to send "${message}" to the room "${this.room.roomid}" but it failed because you were not in that room.`);
 		}
 
-		if (this.user.statusType === 'idle' && !['unaway', 'unafk', 'back'].includes(this.cmd)) {
+		if (this.user.statusType === 'idle' &&
+			this.message !== '/cmd rooms' &&
+			!['unaway', 'unafk', 'back'].includes(this.cmd)) {
 			this.user.setStatusType('online');
 		}
 
@@ -693,7 +704,7 @@ export class CommandContext extends MessageContext {
 					!Users.globalAuth.atLeast(this.user, blockInvites as GroupSymbol)
 				) {
 					Chat.maybeNotifyBlocked(`invite`, this.pmTarget, this.user);
-					return this.errorReply(`${this.pmTarget.name} is blocking room invites.`);
+					throw new Chat.ErrorMessage(`${this.pmTarget.name} is blocking room invites.`);
 				}
 			}
 			Chat.PrivateMessages.send(message, this.user, this.pmTarget);
@@ -707,9 +718,8 @@ export class CommandContext extends MessageContext {
 	run(handler: string | AnnotatedChatHandler) {
 		if (typeof handler === 'string') handler = Chat.commands[handler] as AnnotatedChatHandler;
 		if (!handler.broadcastable && this.cmdToken === '!') {
-			this.errorReply(`The command "${this.fullCmd}" can't be broadcast.`);
-			this.errorReply(`Use /${this.fullCmd} instead.`);
-			return false;
+			throw new Chat.ErrorMessage([`The command "${this.fullCmd}" can't be broadcast.`,
+				`Use /${this.fullCmd} instead.`]);
 		}
 		let result: any = handler.call(this, this.target, this.room, this.user, this.connection, this.cmd, this.message);
 		if (result === undefined) result = false;
@@ -1024,9 +1034,7 @@ export class CommandContext extends MessageContext {
 	}
 	canUseConsole() {
 		if (!this.user.hasConsoleAccess(this.connection)) {
-			throw new Chat.ErrorMessage(
-				(this.cmdToken + this.fullCmd).trim() + " - Requires console access, please set up `Config.consoleips`."
-			);
+			throw new Chat.ErrorMessage(`${(this.cmdToken + this.fullCmd).trim()} - Requires console access, please set up \`Config.consoleips\`.`);
 		}
 		return true;
 	}
@@ -1039,20 +1047,20 @@ export class CommandContext extends MessageContext {
 		}
 
 		if (this.user.locked && !(this.room?.roomid.startsWith('help-') || this.pmTarget?.can('lock'))) {
-			this.errorReply(`You cannot broadcast this command's information while locked.`);
-			throw new Chat.ErrorMessage(`To see it for yourself, use: /${this.message.slice(1)}`);
+			throw new Chat.ErrorMessage([`You cannot broadcast this command's information while locked.`,
+				`To see it for yourself, use: /${this.message.slice(1)}`]);
 		}
 
 		if (this.room && !this.user.can('show', null, this.room, this.cmd, this.cmdToken)) {
 			const perm = this.room.settings.permissions?.[`!${this.cmd}`];
 			const atLeast = perm ? `at least rank ${perm}` : 'voiced';
-			this.errorReply(`You need to be ${atLeast} to broadcast this command's information.`);
-			throw new Chat.ErrorMessage(`To see it for yourself, use: /${this.message.slice(1)}`);
+			throw new Chat.ErrorMessage([`You need to be ${atLeast} to broadcast this command's information.`,
+				`To see it for yourself, use: /${this.message.slice(1)}`]);
 		}
 
 		if (!this.room && !this.pmTarget) {
-			this.errorReply(`Broadcasting a command with "!" in a PM or chatroom will show it that user or room.`);
-			throw new Chat.ErrorMessage(`To see it for yourself, use: /${this.message.slice(1)}`);
+			throw new Chat.ErrorMessage([`Broadcasting a command with "!" in a PM or chatroom will show it that user or room.`,
+				`To see it for yourself, use: /${this.message.slice(1)}`]);
 		}
 
 		// broadcast cooldown
@@ -1388,24 +1396,22 @@ export class CommandContext extends MessageContext {
 
 				if (tagName === 'img') {
 					if (!this.room || (this.room.settings.isPersonal && !this.user.can('lock'))) {
-						throw new Chat.ErrorMessage(
-							`This tag is not allowed: <${tagContent}>. Images are not allowed outside of chatrooms.`
-						);
+						throw new Chat.ErrorMessage(`This tag is not allowed: <${tagContent}>. Images are not allowed outside of chatrooms.`);
 					}
 					if (!/width ?= ?(?:[0-9]+|"[0-9]+")/i.test(tagContent) || !/height ?= ?(?:[0-9]+|"[0-9]+")/i.test(tagContent)) {
 						// Width and height are required because most browsers insert the
 						// <img> element before width and height are known, and when the
 						// image is loaded, this changes the height of the chat area, which
 						// messes up autoscrolling.
-						this.errorReply(`This image is missing a width/height attribute: <${tagContent}>`);
-						throw new Chat.ErrorMessage(`Images without predefined width/height cause problems with scrolling because loading them changes their height.`);
+						throw new Chat.ErrorMessage([`This image is missing a width/height attribute: <${tagContent}>`,
+							`Images without predefined width/height cause problems with scrolling because loading them changes their height.`]);
 					}
 					const srcMatch = / src ?= ?(?:"|')?([^ "']+)(?: ?(?:"|'))?/i.exec(tagContent);
 					if (srcMatch) {
 						this.checkEmbedURI(srcMatch[1]);
 					} else {
-						this.errorReply(`This image has a broken src attribute: <${tagContent}>`);
-						throw new Chat.ErrorMessage(`The src attribute must exist and have no spaces in the URL`);
+						throw new Chat.ErrorMessage([`This image has a broken src attribute: <${tagContent}>`,
+							`The src attribute must exist and have no spaces in the URL`]);
 					}
 				}
 				if (tagName === 'button') {
@@ -1418,16 +1424,18 @@ export class CommandContext extends MessageContext {
 							const [pmTarget] = buttonValue.replace(msgCommandRegex, '').split(',');
 							const auth = this.room ? this.room.auth : Users.globalAuth;
 							if (auth.get(toID(pmTarget)) !== '*' && toID(pmTarget) !== this.user.id) {
-								this.errorReply(`This button is not allowed: <${tagContent}>`);
-								throw new Chat.ErrorMessage(`Your scripted button can't send PMs to ${pmTarget}, because that user is not a Room Bot.`);
+								throw new Chat.ErrorMessage([`This button is not allowed: <${tagContent}>`,
+									`Your scripted button can't send PMs to ${pmTarget}, because that user is not a Room Bot.`]);
 							}
 						} else if (buttonName === 'send' && buttonValue && botmsgCommandRegex.test(buttonValue)) {
 							// no need to validate the bot being an actual bot; `/botmsg` will do it for us and is not abusable
 						} else if (buttonName) {
-							this.errorReply(`This button is not allowed: <${tagContent}>`);
-							this.errorReply(`You do not have permission to use most buttons. Here are the two types you're allowed to use:`);
-							this.errorReply(`1. Linking to a room: <a href="/roomid"><button>go to a place</button></a>`);
-							throw new Chat.ErrorMessage(`2. Sending a message to a Bot: <button name="send" value="/msgroom BOT_ROOMID, /botmsg BOT_USERNAME, MESSAGE">send the thing</button>`);
+							throw new Chat.ErrorMessage([
+								`This button is not allowed: <${tagContent}>`,
+								`You do not have permission to use most buttons. Here are the two types you're allowed to use:`,
+								`1. Linking to a room: <a href="/roomid"><button>go to a place</button></a>`,
+								`2. Sending a message to a Bot: <button name="send" value="/msgroom BOT_ROOMID, /botmsg BOT_USERNAME, MESSAGE">send the thing</button>`,
+							]);
 						}
 					}
 				}
@@ -1813,7 +1821,7 @@ export const Chat = new class {
 	 */
 	database = SQL(module, {
 		file: global.Config?.nofswriting ? ':memory:' : PLUGIN_DATABASE_PATH,
-		processes: global.Config?.chatdbprocesses,
+		processes: global.Config?.subprocessescache?.chatdb ?? 1,
 	});
 	databaseReadyPromise: Promise<void> | null = null;
 
@@ -1944,12 +1952,12 @@ export const Chat = new class {
 
 	loadPluginFile(file: string) {
 		if (!file.endsWith('.js')) return;
-		this.loadPlugin(require(file), this.getPluginName(file));
+		this.loadPlugin(require(FS(file).path), this.getPluginName(file));
 	}
 
 	loadPluginDirectory(dir: string, depth = 0) {
 		for (const file of FS(dir).readdirSync()) {
-			const path = pathModule.resolve(dir, file);
+			const path = pathModule.join(dir, file);
 			if (FS(path).isDirectorySync()) {
 				depth++;
 				if (depth > MAX_PLUGIN_LOADING_DEPTH) continue;
@@ -1964,11 +1972,11 @@ export const Chat = new class {
 			}
 		}
 	}
-	annotateCommands(commandTable: AnyObject, namespace = ''): AnnotatedChatCommands {
+	annotateCommands(commandTable: AnyObject, namespace = '', pluginName?: string): AnnotatedChatCommands {
 		for (const cmd in commandTable) {
 			const entry = commandTable[cmd];
 			if (typeof entry === 'object') {
-				this.annotateCommands(entry, `${namespace}${cmd} `);
+				this.annotateCommands(entry, `${namespace}${cmd} `, pluginName);
 			}
 			if (typeof entry === 'string') {
 				const base = commandTable[entry];
@@ -1985,6 +1993,7 @@ export const Chat = new class {
 			entry.broadcastable = cmd.endsWith('help') || /\bthis\.(?:(check|can|run|should)Broadcast)\(/.test(handlerCode);
 			entry.isPrivate = /\bthis\.(?:privately(Check)?Can|commandDoesNotExist)\(/.test(handlerCode);
 			entry.requiredPermission = /this\.(?:checkCan|privately(?:Check)?Can)\(['`"]([a-zA-Z0-9]+)['"`](\)|, )/.exec(handlerCode)?.[1];
+			entry.plugin = pluginName;
 			if (!entry.aliases) entry.aliases = [];
 
 			// assign properties from the base command if the current command uses CommandContext.run.
@@ -2011,7 +2020,7 @@ export const Chat = new class {
 		// in the plugin.roomSettings = [plugin.roomSettings] action. So, we have to make them not getters
 		plugin = { ...plugin };
 		if (plugin.commands) {
-			Object.assign(Chat.commands, this.annotateCommands(plugin.commands));
+			Object.assign(Chat.commands, this.annotateCommands(plugin.commands, '', name));
 		}
 		if (plugin.pages) {
 			Object.assign(Chat.pages, plugin.pages);
@@ -2508,6 +2517,12 @@ export const Chat = new class {
 	 * Gets the dimension of the image at url. Returns 0x0 if the image isn't found, as well as the relevant error.
 	 */
 	getImageDimensions(url: string): Promise<{ height: number, width: number }> {
+		if (Config.noNetRequests) {
+			return Promise.reject(new Error(`Net requests are disabled.`));
+		}
+		if (!probe) {
+			return Promise.reject(new Error(`Images not supported.`));
+		}
 		return probe(url);
 	}
 
@@ -2693,7 +2708,7 @@ export interface Monitor {
 
 // explicitly check this so it doesn't happen in other child processes
 if (!process.send) {
-	Chat.database.spawn(Config.chatdbprocesses || 1);
+	Chat.database.spawn(global.Config?.subprocessescache?.chatdb ?? 1);
 	Chat.databaseReadyPromise = Chat.prepareDatabase();
 	// we need to make sure it is explicitly JUST the child of the original parent db process
 	// no other child processes

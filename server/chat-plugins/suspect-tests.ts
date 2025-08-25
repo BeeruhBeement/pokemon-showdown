@@ -17,7 +17,7 @@ interface SuspectsFile {
 
 export let suspectTests: SuspectsFile = JSON.parse(FS(SUSPECTS_FILE).readIfExistsSync() || "{}");
 
-function saveSuspectTests() {
+export function saveSuspectTests() {
 	FS(SUSPECTS_FILE).writeUpdate(() => JSON.stringify(suspectTests));
 }
 
@@ -49,8 +49,7 @@ export const commands: Chat.ChatCommands = {
 			if (!this.runBroadcast()) return;
 
 			let buffer = '<strong>Suspect tests currently running:</strong>';
-			for (const i of Object.keys(suspects)) {
-				const test = suspects[i];
+			for (const test of Object.values(suspects)) {
 				buffer += '<br />';
 				buffer += `${Utils.escapeHTML(test.tier)}: <a href="${test.url}">${Utils.escapeHTML(test.suspect)}</a> (${test.date})`;
 			}
@@ -78,7 +77,7 @@ export const commands: Chat.ChatCommands = {
 
 			const reqData: Record<string, number> = {};
 			if (!reqs.length) {
-				return this.errorReply("At least one requirement for qualifying must be provided.");
+				throw new Chat.ErrorMessage("At least one requirement for qualifying must be provided.");
 			}
 			for (const req of reqs) {
 				let [k, v] = req.split('=');
@@ -88,17 +87,17 @@ export const commands: Chat.ChatCommands = {
 					continue;
 				}
 				if (!['elo', 'gxe', 'coil'].includes(k)) {
-					return this.errorReply(`Invalid requirement type: ${k}. Must be 'coil', 'gxe', or 'elo'.`);
+					throw new Chat.ErrorMessage(`Invalid requirement type: ${k}. Must be 'coil', 'gxe', or 'elo'.`);
 				}
 				if (k === 'coil' && !reqs.some(x => toID(x).startsWith('b'))) {
 					throw new Chat.ErrorMessage("COIL reqs are specified, but you have not provided a B value (with the argument `b=num`)");
 				}
 				const val = Number(v);
 				if (isNaN(val) || val < 0) {
-					return this.errorReply(`Invalid value: ${v}`);
+					throw new Chat.ErrorMessage(`Invalid value: ${v}`);
 				}
 				if (reqData[k]) {
-					return this.errorReply(`Requirement type ${k} specified twice.`);
+					throw new Chat.ErrorMessage(`Requirement type ${k} specified twice.`);
 				}
 				reqData[k] = val;
 			}
@@ -110,14 +109,15 @@ export const commands: Chat.ChatCommands = {
 				throw new Chat.ErrorMessage("Error adding suspect test: " + (out?.actionerror || error?.message));
 			}
 
-			this.privateGlobalModAction(`${user.name} ${suspectTests.suspects[format.id] ? "edited the" : "added a"} ${format.name} suspect test.`);
-			this.globalModlog('SUSPECTTEST', null, `${suspectTests.suspects[format.id] ? "edited" : "added"} ${format.name}`);
+			const prevSuspect = suspectTests.suspects[format.id];
+			this.privateGlobalModAction(`${user.name} ${prevSuspect ? "edited the" : "added a"} ${format.name} suspect test.`);
+			this.globalModlog('SUSPECTTEST', null, `${prevSuspect ? "edited" : "added"} ${format.name}`);
 
 			suspectTests.suspects[format.id] = {
 				tier: format.name,
 				suspect: suspectString,
 				date: dateActual,
-				url: out.url,
+				url: out.url || prevSuspect.url,
 			};
 			saveSuspectTests();
 			this.sendReply(`Added a suspect test notice for ${suspectString} in ${format.name}.`);
@@ -131,7 +131,7 @@ export const commands: Chat.ChatCommands = {
 
 			const format = toID(target);
 			const test = suspectTests.suspects[format];
-			if (!test) return this.errorReply(`There is no suspect test for '${target}'. Check spelling?`);
+			if (!test) throw new Chat.ErrorMessage(`There is no suspect test for '${target}'. Check spelling?`);
 
 			const [out, error] = await LoginServer.request('suspects/end', {
 				format,
@@ -276,7 +276,7 @@ export const commands: Chat.ChatCommands = {
 			`<code>/suspects</code>: displays currently running suspect tests.<br />` +
 			`<code>/suspects add [tier], [suspect], [date], [...reqs]</code>: adds a suspect test. Date in the format MM/DD. ` +
 			`Reqs in the format [key]=[value], where valid keys are 'coil', 'elo', and 'gxe', delimited by commas. At least one is required. <br />` +
-			`(note that if you are using COIL, you must set a B value indepedently with <code>/suspects setcoil</code>). Requires: ~<br />` +
+			`(note that if you are using COIL, you must set a B value independently with <code>/suspects setcoil</code>). Requires: ~<br />` +
 			`<code>/suspects remove [tier]</code>: deletes a suspect test. Requires: ~<br />` +
 			`<code>/suspects whitelist [username]</code>: allows [username] to add suspect tests. Requires: ~<br />` +
 			`<code>/suspects unwhitelist [username]</code>: disallows [username] from adding suspect tests. Requires: ~<br />` +
