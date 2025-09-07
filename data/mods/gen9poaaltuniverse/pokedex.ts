@@ -1,5 +1,3 @@
-import { Pokedex as Base } from '../../pokedex';
-
 export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
 	spotalat: {
 		num: -60000,
@@ -10,16 +8,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		heightm: 1.5,
 		weightkg: 50,
 		eggGroups: ["Undiscovered"],
+		tier: "OU",
+		isNonstandard: null,
 	},
 };
-
-const customDex = new Set(["spotalat"]);
-
-for (const key in {...Base, ...Pokedex}) {
-	const id = key as keyof typeof Base;
-	if (!Pokedex[id]) Pokedex[id] = {inherit: true};
-
-	if (customDex.has(id)) Pokedex[id] = {...Pokedex[id], isNonstandard: null, gen: 9};
-	else Pokedex[id] = {...Pokedex[id], isNonstandard: "Custom", tier: "Illegal"};
-}
-
