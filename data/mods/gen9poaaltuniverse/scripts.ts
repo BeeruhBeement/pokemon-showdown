@@ -1,11 +1,6 @@
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 9,
 	inherit: 'gen9',
-	init() {
-		for (const i in this.data.Pokedex) {
-			if (this.modData('Pokedex', i).num > -60000) this.modData('Pokedex', i).isNonstandard === "Past";
-		}
-	},	
 	actions: {
 		inherit: true,
 		hitStepAccuracy(targets: Pokemon[], pokemon: Pokemon, move: ActiveMove) {

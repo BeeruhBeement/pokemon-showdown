@@ -26,8 +26,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] PoA Alternate Universe",
 
 		mod: 'gen9poaaltuniverse',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
+		banlist: [ 'Uber' ],
 	},
 	{
 		name: "[Gen 3] Dental OU",
