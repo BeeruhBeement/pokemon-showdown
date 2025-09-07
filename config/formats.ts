@@ -25,7 +25,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 3] PoA Alternate Universe",
 
-		mod: 'gen9poaalternateuniverse',
+		mod: 'gen9poaaltuniverse',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber'],
 	},
