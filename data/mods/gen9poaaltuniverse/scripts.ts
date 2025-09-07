@@ -3,7 +3,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen9',
 	init() {
 		for (const i in this.data.Pokedex) {
-			if (this.modData('Pokedex', i).num > -60000) this.modData('FormatsData', i).isNonstandard === "Past";
+			if (this.modData('Pokedex', i).num > -60000) this.modData('Pokedex', i).isNonstandard === "Past";
 		}
 	},	
 	actions: {

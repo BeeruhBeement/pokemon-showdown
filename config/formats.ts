@@ -23,7 +23,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom",
 	},
 	{
-		name: "[Gen 3] PoA Alternate Universe",
+		name: "[Gen 9] PoA Alternate Universe",
 
 		mod: 'gen9poaaltuniverse',
 		ruleset: ['Standard', 'Data Mod'],
