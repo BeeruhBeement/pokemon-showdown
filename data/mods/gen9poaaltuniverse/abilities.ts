@@ -2,11 +2,7 @@ import { ModdedAbilityData } from "../../../sim/dex-abilities";
 
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	crypticluminance: {
-		onEffectiveness(typeMod, target, type, move) {
-			if (move.type === 'Dark' && target?.ability === 'crypticluminance') {
-				return 2;
-			}
-		},
+		// Dark resist in scripts.ts in pokemon
 		onModifyMove(move) {
 			move.ignoreEvasion = true;
 		},
