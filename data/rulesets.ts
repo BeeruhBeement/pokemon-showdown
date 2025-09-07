@@ -3200,4 +3200,20 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			if (!speciesMods.length) throw new Error('This format has no rules that modify base stats.');
 		},
 	},
+	datamod: {
+		effectType: 'Rule',
+		name: 'Data Mod',
+		desc: 'When a Pokémon switches in, its types, base Speed, and abilities are displayed to both players.',
+		onSwitchIn(pokemon) {
+			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (target.hasAbility('illusion')) { 
+				this.add('-start', target, 'typechange', (target.illusion || target).getTypes(true).join('/'), '[silent]');
+			}
+		},
+		onAfterMega(pokemon) {
+			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
+		},
+	},
 };

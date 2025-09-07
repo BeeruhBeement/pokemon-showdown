@@ -23,6 +23,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom",
 	},
 	{
+		name: "[Gen 3] PoA Alternate Universe",
+
+		mod: 'gen9poaalternateuniverse',
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber'],
+	},
+	{
 		name: "[Gen 3] Dental OU",
 
 		mod: 'gen3dental',
