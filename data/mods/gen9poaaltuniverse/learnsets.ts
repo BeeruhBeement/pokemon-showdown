@@ -348,6 +348,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			firepunch: ["9M"],
 			firespin: ["9M"],
 			flamethrower: ["9M"],
+			flareblitz: ["9M"],
 			flashcannon: ["9M"],
 			focusblast: ["9M"],
 			frustration: ["9M"],
