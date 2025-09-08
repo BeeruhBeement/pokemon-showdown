@@ -77,7 +77,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	vulguile: {
 		num: -60006,
-		name: "Magmander",
+		name: "Vulguile",
 		types: ["Water"],
 		baseStats: { hp: 75, atk: 105, def: 125, spa: 65, spd: 95, spe: 70 },
 		abilities: { 0: "Strong Jaw", 1: "Suction Cups", H: "Mold Breaker" },
