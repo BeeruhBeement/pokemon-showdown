@@ -19,4 +19,14 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 50,
 		eggGroups: ["Undiscovered"],
 	},
+	rockatoo: {
+		num: -60002,
+		name: "Rockatoo",
+		types: ["Dark", "Flying"],
+		baseStats: { hp: 106, atk: 62, def: 101, spa: 86, spd: 98, spe: 42 },
+		abilities: { 0: "Heavy Metal", 1: "Patronize", H: "Punk Rock" },
+		heightm: 1.5,
+		weightkg: 50,
+		eggGroups: ["Undiscovered"],
+	},
 };

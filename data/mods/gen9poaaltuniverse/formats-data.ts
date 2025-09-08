@@ -11,6 +11,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	rockatoo: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
 };
 
 for (const pokemon in Base) {

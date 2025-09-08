@@ -27,4 +27,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 0,
 		shortDesc: "If this Pokemon is hit by a physical attack, Stealth Rock is set on the opposing side.",
 	},
+	patronize: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Patronize', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ spa: -1 }, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Patronize",
+		rating: 3.5,
+		num: 0,
+	},
 };
