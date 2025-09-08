@@ -46,5 +46,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Patronize",
 		rating: 3.5,
 		num: 0,
+			desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Pokemon lowers the Sp. Atk of opponents by 1 stage.",
 	},
 };
