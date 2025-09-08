@@ -86,4 +86,14 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		prevo: "Mawile-Yuugenian",
 		eggGroups: ["Undiscovered"],
 	},
+	chugghoul: {
+		num: -60007,
+		name: "Chugghoul",
+		types: ["Ghost"],
+		baseStats: { hp: 83, atk: 114, def: 104, spa: 64, spd: 77, spe: 103 },
+		abilities: { 0: "Cursed Body", H: "Flash Fire" },
+		heightm: 1.5,
+		weightkg: 50,
+		eggGroups: ["Undiscovered"],
+	},
 };
