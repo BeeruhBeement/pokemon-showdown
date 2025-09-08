@@ -29,4 +29,14 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 50,
 		eggGroups: ["Undiscovered"],
 	},
+	toxophose: {
+		num: -60003,
+		name: "Toxophose",
+		types: ["Bug", "Ground"],
+		baseStats: { hp: 86, atk: 102, def: 123, spa: 69, spd: 78, spe: 42 },
+		abilities: { 0: "Swarm", 1: "Long Reach", H: "Rough Skin" },
+		heightm: 1.5,
+		weightkg: 50,
+		eggGroups: ["Undiscovered"],
+	},
 };
