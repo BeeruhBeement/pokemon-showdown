@@ -107,7 +107,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			incinerate: ["9M"],
 			ironhead: ["9M"],
 			lightscreen: ["9M"],
-			magnetude: ["9M"],
+			magnitude: ["9M"],
 			memento: ["9M"],
 			metalclaw: ["9M"],
 			meteorbeam: ["9M"],

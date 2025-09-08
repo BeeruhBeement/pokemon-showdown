@@ -10,7 +10,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	kaskall: {
-		num: -60000,
+		num: -60001,
 		name: "Kaskall",
 		types: ["Ice", "Rock"],
 		baseStats: { hp: 88, atk: 107, def: 56, spa: 84, spd: 88, spe: 92 },
