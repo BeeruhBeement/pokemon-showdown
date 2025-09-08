@@ -8,7 +8,15 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		heightm: 1.5,
 		weightkg: 50,
 		eggGroups: ["Undiscovered"],
-		tier: "OU",
-		isNonstandard: null,
+	},
+	kaskall: {
+		num: -60000,
+		name: "Spotalat",
+		types: ["Ice", "Rock"],
+		baseStats: { hp: 88, atk: 107, def: 56, spa: 84, spd: 88, spe: 92 },
+		abilities: { 0: "Calcite Calving", H: "Refrigerate" },
+		heightm: 1.5,
+		weightkg: 50,
+		eggGroups: ["Undiscovered"],
 	},
 };
