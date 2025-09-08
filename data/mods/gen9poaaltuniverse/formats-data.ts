@@ -21,6 +21,26 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	eelava: {
+		inherit: true,
+		tier: "LC",
+		isNonstandard: null,
+	},
+	magmander: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	mawileyuugenian: {
+		inherit: true,
+		tier: "NFE",
+		isNonstandard: null,
+	},
+	vulguile: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
 };
 
 for (const pokemon in Base) {

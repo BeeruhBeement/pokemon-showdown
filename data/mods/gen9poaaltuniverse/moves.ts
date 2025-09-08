@@ -20,6 +20,23 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "This move's type effectiveness against Dark is changed to be super effective no matter what this move's type is.",
 		shortDesc: "Super effective on Dark.",
 	},
+	toxicdrain: {
+		num: 0,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Toxic Drain",
+		pp: 15,
+		priority: 0,
+		flags: { bite: 1, contact: 1, protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		drain: [1, 2],
+		secondary: null,
+		target: "normal",
+		type: "Poison",
+		contestType: "Clever",
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		shortDesc: "User recovers 50% of the damage dealt.",
+	},
 
 	// MIA
 	spiritsiphon: {
@@ -64,6 +81,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		type: "Rock",
 		contestType: "Beautiful",
+	},
+	boulderbash: {
+		num: 0,
+		accuracy: 100,
+		basePower: 40,
+		category: "Physical",
+		name: "Boulder Bash",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		multihit: 2,
+		secondary: null,
+		target: "normal",
+		type: "Rock",
+		zMove: {basePower: 140},
+		maxMove: {basePower: 120},
+		contestType: "Cool",
+		shortDesc: "Hits twice.",
 	},
 
 	haze: {

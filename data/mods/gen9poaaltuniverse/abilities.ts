@@ -49,4 +49,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune.",
 		shortDesc: "On switch-in, this Pokemon lowers the Sp. Atk of opponents by 1 stage.",
 	},
+	moltenhands: {
+		onModifyMove(move, pokemon, target) {
+			if (move.flags['contact']) move.category = "Special";
+		},
+		flags: {},
+		name: "Molten Hands",
+		rating: 3.5,
+		num: 0,
+		shortDesc: "This Pokemon's contact moves are Special.",
+	},
 };

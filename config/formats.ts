@@ -28,7 +28,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen9poaaltuniverse',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
-		banlist: [ 'Uber' ],
+		banlist: [ 'Uber', 'Mawilite' ],
 	},
 
 	{
