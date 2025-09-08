@@ -82,6 +82,25 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Rock",
 		contestType: "Beautiful",
 	},
+	shockbombs: {
+		num: 0,
+		accuracy: 95,
+		basePower: 25,
+		category: "Physical",
+		name: "Shock Bombs",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+		pp: 30,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
+		multihit: [2, 5],
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		zMove: {basePower: 140},
+		maxMove: {basePower: 130},
+		contestType: "Cool",
+	},
 	boulderbash: {
 		num: 0,
 		accuracy: 100,
@@ -99,6 +118,115 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		maxMove: {basePower: 120},
 		contestType: "Cool",
 		shortDesc: "Hits twice.",
+	},
+	vengefulpulse: {
+		num: 0,
+		accuracy: 100,
+		basePower: 70,
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.status && pokemon.status !== 'slp') {
+				this.debug('BP boost from status condition');
+				return move.basePower * 1.5;
+			}
+			return move.basePower;
+		},
+		onTryHit(target, source, move) {
+			if (source.status && source.status !== 'slp') move.status = source.status;
+		},
+		self: {
+			onHit(pokemon) {
+				if (pokemon.status !== 'slp') {
+					pokemon.cureStatus();
+				}
+			},
+		},
+		category: "Special",
+		name: "Vengeful Pulse",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		zMove: {basePower: 160},
+		contestType: "Clever",
+		shortDesc: "1.5x power if user is burn/poison/paralyzed. Transfers status.",
+	},
+	heavycleave: {
+		num: 0,
+		accuracy: 90,
+		basePower: 80,
+		category: "Physical",
+		name: "Heavy Cleave",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, contact: 1, mirror: 1, metronome: 1, slicing: 1},
+		secondary: {
+			chance: 20,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "allAdjacentFoes",
+		type: "Steel",
+		shortDesc: "20% chance to lower foe(s) Defense by 1 stage.",
+	},
+	throwingknives: {
+		num: 0,
+		accuracy: 100,
+		basePower: 25,
+		category: "Physical",
+		name: "Throwing Knives",
+		pp: 30,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, slicing: 1},
+		multihit: [2, 5],
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		shortDesc: "Hits 2-5 times.",
+	},
+	pheroblast: {
+		num: 0,
+		accuracy: 90,
+		basePower: 130,
+		category: "Special",
+		name: "Pheroblast",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		self: {
+			boosts: {
+				spa: -2,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Bug",
+		contestType: "Beautiful",
+		shortDesc: "Lowers user's Sp.Atk by 2 stages after use.",
+	},
+	meltdown: {
+		num: 0,
+		accuracy: 100,
+		basePower: 180,
+		category: "Special",
+		name: "Meltdown",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, noparentalbond: 1},
+		onBasePower(basePower, source) {
+			if (this.field.isWeather('fallout')) {
+				this.debug('fallout boost');
+				return this.chainModify(1.5);
+			}
+		},
+		selfdestruct: "always",
+		secondary: null,
+		target: "allAdjacent",
+		type: "Fire",
+		contestType: "Beautiful",
+		shortDesc: "User faints. 1.5x power during Fallout.",
 	},
 
 	haze: {
