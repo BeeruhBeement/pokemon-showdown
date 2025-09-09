@@ -349,7 +349,7 @@ export class ModdedDex {
 			return {
 				type: hpTypes[tr(hpTypeX * 15 / 63)],
 				// After Gen 6, Hidden Power is always 60 base power
-				power: (this.gen && (this.gen < 6 || this.formats.get('gen3mod'))) ? tr(hpPowerX * 40 / 63) + 30 : 60,
+				power: (this.gen && (this.gen < 6 || this.formats.get('gen3denise'))) ? tr(hpPowerX * 40 / 63) + 30 : 60,
 			};
 		}
 	}
