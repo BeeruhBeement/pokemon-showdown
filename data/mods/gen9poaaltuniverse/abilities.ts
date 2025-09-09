@@ -59,4 +59,28 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 0,
 		shortDesc: "This Pokemon's contact moves are Special.",
 	},
+	instability: {
+		onModifyMove(move, pokemon) {
+			if (move.secondaries) {
+				delete move.secondaries;
+				// Technically not a secondary effect, but it is negated
+				delete move.self;
+				if (move.id === 'clangoroussoulblaze') delete move.selfBoost;
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+
+			if (this.randomChance(1, 10)) {
+				target.trySetStatus('psn', source);
+			}
+		},
+		flags: {},
+		name: "Instability",
+		rating: 3.5,
+		num: 125,
+		desc: "This Pokemon's attacks have a 10% chance of badly poisoning, but the secondary effects are removed.",
+		shortDesc: "This Pokemon's attacks have a 10% chance of poisoning; nullifies secondary effects.",
+	},
 };
