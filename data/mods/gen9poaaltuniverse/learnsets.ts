@@ -791,7 +791,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			thunderwave: ["9M"],
 			thunderbolt: ["9M"],
 			toxic: ["9M"],
-			universalmoves: ["9M"],
 			wish: ["9M"],
 			zenheadbutt: ["9M"],
 		},
