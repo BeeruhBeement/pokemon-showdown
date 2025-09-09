@@ -22,7 +22,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	metiel: {
 		num: -60002,
-		name: "Rockatoo",
+		name: "Metiel",
 		types: ["Dark", "Flying"],
 		baseStats: { hp: 57, atk: 28, def: 45, spa: 47, spd: 36, spe: 32 },
 		abilities: { 0: "Big Pecks", 1: "Patronize", H: "Own Tempo" },
@@ -33,7 +33,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	cockatune: {
 		num: -60003,
-		name: "Rockatoo",
+		name: "Cockatune",
 		types: ["Dark", "Flying"],
 		baseStats: { hp: 84, atk: 35, def: 64, spa: 68, spd: 62, spe: 53 },
 		abilities: { 0: "Big Pecks", 1: "Patronize", H: "Punk Rock" },
