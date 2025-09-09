@@ -11,6 +11,16 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	metiel: {
+		inherit: true,
+		tier: "LC",
+		isNonstandard: null,
+	},
+	cockatune: {
+		inherit: true,
+		tier: "NFE",
+		isNonstandard: null,
+	},
 	rockatoo: {
 		inherit: true,
 		tier: "OU",
