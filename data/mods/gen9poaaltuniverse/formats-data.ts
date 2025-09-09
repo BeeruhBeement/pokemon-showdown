@@ -56,6 +56,16 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	smyelit: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	faerrce: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
 };
 
 for (const pokemon in Base) {
