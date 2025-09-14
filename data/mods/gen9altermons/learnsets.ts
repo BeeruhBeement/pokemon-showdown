@@ -95,6 +95,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			xscissor: ["9M"],
 		},
 	},
+	lucariomega: {
+		learnset: {
+		},
+	},
 	crawdaunt: {
 		learnset: {
 			ancientpower: ["9M"],
