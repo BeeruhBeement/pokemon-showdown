@@ -1,6 +1,10 @@
 import { ModdedLearnsetData } from "../../../sim/dex-species";
 
 export const Learnsets: {[k: string]: ModdedLearnsetData} = {
+	elgyem: {
+		learnset: {
+		},
+	},
 	beheeyem: {
 		learnset: {
 			attract: ["9M"],
@@ -34,6 +38,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			substitute: ["9M"],
 			teleport: ["9M"],
 			toxic: ["9M"],
+		},
+	},
+	riolu: {
+		learnset: {
 		},
 	},
 	lucario: {
@@ -95,7 +103,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			xscissor: ["9M"],
 		},
 	},
-	lucariomega: {
+	corphish: {
 		learnset: {
 		},
 	},
@@ -220,6 +228,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["9M"],
 		},
 	},
+	applin: {
+		learnset: {
+		},
+	},
 	hydrapple: {
 		learnset: {
 			attract: ["9M"],
@@ -289,6 +301,14 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			willowisp: ["9M"],
 			wish: ["9M"],
 			zenheadbutt: ["9M"],
+		},
+	},
+	mudkip: {
+		learnset: {
+		},
+	},
+	marshtomp: {
+		learnset: {
 		},
 	},
 	swampert: {
@@ -436,6 +456,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			wildcharge: ["9M"],
 			workup: ["9M"],
 			zapcannon: ["9M"],
+		},
+	},
+	voltorb: {
+		learnset: {
 		},
 	},
 	electrode: {
