@@ -545,7 +545,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			submission: ["9M"],
 			substitute: ["9M"],
 			suckerpunch: ["9M"],
-			supercell: ["9M"],
+			supercellslam: ["9M"],
 			superpower: ["9M"],
 			supersonic: ["9M"],
 			swagger: ["9M"],
