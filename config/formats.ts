@@ -35,6 +35,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Other Mods",
 	},
 	{
+		name: "[Gen 9] Altermons",
+
+		mod: 'gen9altermons',
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
+		banlist: [ 'Uber' ],
+	},
+	{
 		name: "[Gen 3] Denise OU",
 
 		mod: 'gen3denise',

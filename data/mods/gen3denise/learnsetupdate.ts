@@ -32,6 +32,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "pidgey").learnset.dualwingbeat = ["3T"];
 	dex.modData("Learnsets", "pidgeotto").learnset.roost = ["3L42"];
 	dex.modData("Learnsets", "pidgeotto").learnset.dualwingbeat = ["3T"];
+	dex.modData("Learnsets", "pidgeot").learnset.heatwave = ["3L1"];
 	dex.modData("Learnsets", "pidgeot").learnset.roost = ["3L44"];
 	dex.modData("Learnsets", "pidgeot").learnset.hurricane = ["3L68"];
 	dex.modData("Learnsets", "pidgeot").learnset.dualwingbeat = ["3T"];
