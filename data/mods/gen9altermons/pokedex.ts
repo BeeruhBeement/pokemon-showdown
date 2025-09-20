@@ -75,4 +75,8 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Rock", "Poison"],
 	},
+	mantine: {
+		inherit: true,
+		types: ["Dark", "Ground"],
+	},
 };
