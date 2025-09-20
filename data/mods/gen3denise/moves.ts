@@ -527,7 +527,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onFoeDisableMove(pokemon) {
 				for (const moveSlot of this.effectState.source.moveSlots) {
 					if (moveSlot.id === 'struggle') continue;
-					pokemon.disableMove(moveSlot.id, 'hidden');
+					pokemon.disableMove(moveSlot.id, true);
 				}
 				pokemon.maybeDisabled = true;
 			},
@@ -561,6 +561,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "User switches out.",
+		onHit(target) {
+			return;
+		},
 		self: {
 			onHit(source) { return },
 		},

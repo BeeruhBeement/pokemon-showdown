@@ -232,6 +232,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 		},
 	},
+	dipplin: {
+		learnset: {
+		},
+	},
 	hydrapple: {
 		learnset: {
 			attract: ["9M"],
