@@ -504,6 +504,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		pp: 30,
 		priority: 1,
 	},
+	dragonrage: {
+		inherit: true,
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
+		type: "Dragon",
+		basePower: 40,
+		pp: 30,
+		priority: 1,
+	},
 	supersonic: {
 		inherit: true,
 		type: "Sound",

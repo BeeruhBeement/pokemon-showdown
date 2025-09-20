@@ -960,10 +960,15 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			}
 			return 5;
 		},
-		onModifySpAPriority: 10,
-		onModifySpA(spa, pokemon) {
-			if (pokemon.hasType('Dark') && this.field.isWeather('night')) {
-				return this.modify(spa, 1.5);
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Dark') {
+				this.debug('night dark boost');
+				return this.chainModify(1.5);
+			}
+			if (move.type === 'Fairy') {
+				this.debug('night fairy suppress');
+				return this.chainModify(0.5);
 			}
 		},
 		onFieldStart(field, source, effect) {

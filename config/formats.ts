@@ -216,7 +216,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		searchShow: false,
 		mod: 'gen3denise',
 		ruleset: ['Standard', 'Little Cup', 'Data Mod'],
-		banlist: ['Heat Rock', 'Damp Rock'],
+		banlist: ['Heat Rock', 'Damp Rock', 'Scyther', 'Gligar', 'Tangela', 'Murkrow', 'Misdreavus', 'Girafarig', 'Dunsparce', 'Sneasel', 'Stantler', 'Duraludon', 'Basculin-White-Striped', 'Meditite', 'Type: Null', 'Qwilfish-Hisui'],
 	},
 	{
 		name: "[Gen 3] P/S Split",

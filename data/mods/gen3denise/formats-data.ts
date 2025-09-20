@@ -641,7 +641,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	scyther: {
-		tier: "PU",
+		tier: "PUBL",
 	},
 	scizor: {
 		tier: "UU",
