@@ -974,7 +974,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			boneclub: ["9M"],
 			bulldoze: ["9M"],
 			dig: ["9M"],
-			landswwrath: ["9M"],
+			landswrath: ["9M"],
 			magnitude: ["9M"],
 			mudshot: ["9M"],
 			mudbomb: ["9M"],
