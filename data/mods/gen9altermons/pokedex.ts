@@ -47,4 +47,32 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Psychic", "Fairy"],
 	},
+	banette: {
+		inherit: true,
+		types: ["Fighting"],
+	},
+	banettemega: {
+		inherit: true,
+		types: ["Fighting", "Fairy"],
+	},
+	skeledirge: {
+		inherit: true,
+		types: ["Steel", "Fairy"],
+	},
+	kyogre: {
+		inherit: true,
+		types: ["Fire"],
+	},
+	rhyperior: {
+		inherit: true,
+		types: ["Water", "Poison"],
+	},
+	centiskorch: {
+		inherit: true,
+		types: ["Steel", "Grass"],
+	},
+	bronzong: {
+		inherit: true,
+		types: ["Rock", "Poison"],
+	},
 };
