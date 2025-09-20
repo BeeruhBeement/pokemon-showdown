@@ -1155,6 +1155,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			banefulbunker: ["9M"],
 		},
 	},
+	salandit: {
+		learnset: {
+		},
+	},
 	salazzle: {
 		learnset: {
 			attract: ["9M"],
