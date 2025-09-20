@@ -106,6 +106,36 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	klawf: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	accelgor: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	gyarados: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	tsareena: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	bewear: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	espathra: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
 };
 
 for (const pokemon in Base) {

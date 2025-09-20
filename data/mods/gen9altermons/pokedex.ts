@@ -83,4 +83,28 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Bug", "Electric"],
 	},
+	klawf: {
+		inherit: true,
+		types: ["Water"],
+	},
+	accelgor: {
+		inherit: true,
+		types: ["Ghost"],
+	},
+	gyarados: {
+		inherit: true,
+		types: ["Ground", "Dragon"],
+	},
+	tsareena: {
+		inherit: true,
+		types: ["Fighting"],
+	},
+	bewear: {
+		inherit: true,
+		types: ["Ghost", "Fairy"],
+	},
+	espathra: {
+		inherit: true,
+		types: ["Ice", "Rock"],
+	},
 };
