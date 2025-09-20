@@ -79,4 +79,8 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Dark", "Ground"],
 	},
+	salazzle: {
+		inherit: true,
+		types: ["Bug", "Electric"],
+	},
 };
