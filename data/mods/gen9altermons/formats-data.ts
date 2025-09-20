@@ -61,6 +61,46 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	banette: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	banettemega: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	bronzong: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	rhyperior: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	mantine: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	kyogre: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	centiskorch: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	skeledirge: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
 };
 
 for (const pokemon in Base) {
