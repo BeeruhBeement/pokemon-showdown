@@ -1917,7 +1917,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	heatran: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	regigigas: {
 		tier: "Illegal",
@@ -2365,10 +2365,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	stunfisk: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	stunfiskgalar: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	mienfoo: {
 		tier: "ZU",
@@ -3359,6 +3359,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	grimmsnarl: {
 		tier: "NU",
 	},
+	grimmsnarlmega: {
+		tier: "OU",
+	},
 	grimmsnarlgmax: {
 		tier: "Illegal",
 	},
@@ -3396,10 +3399,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	morpeko: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	morpekohangry: {
-		tier: "Illegal",
 	},
 	cufant: {
 		tier: "Illegal",

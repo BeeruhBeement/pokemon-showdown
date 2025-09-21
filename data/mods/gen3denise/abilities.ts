@@ -537,6 +537,31 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			};
 		},
 	},
+	mirrorarmor: {
+		inherit: true,
+		onTryBoost(boost, target, source, effect) {
+			return;
+		},
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		desc: "Pokemon not making contact with this Pokemon lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon not making contact with this Pokemon lose 1/8 of their max HP.",
+	},
+	hungerswitch: {
+		inherit: true,
+		onResidual(pokemon) {
+			if (pokemon.species.baseSpecies !== 'Morpeko' || pokemon.terastallized) return;
+			const targetForme = pokemon.species.name === 'Morpeko' ? 'Morpeko-Hangry' : 'Morpeko';
+			pokemon.formeChange(targetForme);
+			if (targetForme === 'Morpeko-Hangry') this.boost({ atk: 1 });
+		},
+		desc: "If this Pokemon is a Morpeko, it changes formes between its Full Belly Mode and Hangry Mode at the end of each turn. +1 Attack when Hangry.",
+		shortDesc: "If Morpeko, it changes between Full Belly and Hangry Mode at the end of each turn. +1 Atk when Hangry.",
+	},
 
 	// -ate abilities
 

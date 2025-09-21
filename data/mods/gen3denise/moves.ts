@@ -1472,6 +1472,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+	aurawheel: {
+		inherit: true,
+		basePower: 90,
+		onTry(source) {
+			return;
+		},
+		onModifyType(move, pokemon) {
+			return;
+		},
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "100% chance to raise the user's Speed by 1.",
+	},
 	hiddenpower: {
 		inherit: true,
 		basePower: 60,

@@ -603,4 +603,18 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
+	
+	grimmsnarlite: {
+		name: "Grimmsnarlite",
+		spritenum: 576,
+		megaStone: "Grimmsnarl-Mega",
+		megaEvolves: "Grimmsnarl",
+		itemUser: ["Grimmsnarl"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 0,
+		gen: 0,
+	},
 };

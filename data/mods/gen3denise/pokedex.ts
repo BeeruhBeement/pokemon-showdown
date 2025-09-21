@@ -1179,6 +1179,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Prankster", 1: "Defiant", H: "Pickpocket"},
 	},
+	grimmsnarlmega: {
+		num: 359,
+		name: "Grimmsnarl-Mega",
+		baseSpecies: "Grimmsnarl",
+		forme: "Mega",
+		types: ["Dark", "Fairy"],
+		baseStats: { hp: 95, atk: 130, def: 85, spa: 125, spd: 85, spe: 90 },
+		abilities: { 0: "Moonrise" },
+		heightm: 1.7,
+		weightkg: 81,
+		color: "Purple",
+		eggGroups: ["Fairy", "Human-Like"],
+		requiredItem: "Grimmsnarlite",
+	},
 	milcery: {
 		inherit: true,
 		abilities: {0: "Sweet Veil", H: "Aroma Veil"},
@@ -1242,6 +1256,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sandyshocks: {
 		inherit: true,
 		abilities: {0: "Protosynthesis", H: "Magnet Pull"},
+	},
+	irontreads: {
+		inherit: true,
+		abilities: {0: "Protosynthesis", H: "Sand Force"},
 	},
 	ironjugulis: {
 		inherit: true,
