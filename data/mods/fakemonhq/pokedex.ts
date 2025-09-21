@@ -1,6 +1,6 @@
 export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
 	citricity: {
-		num: -10000,
+		num: -90000,
 		name: "Citricty",
 		types: ["Poison", "Electric"],
 		gender: "N",

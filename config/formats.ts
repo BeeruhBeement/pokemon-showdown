@@ -49,10 +49,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber'],
 	},
 	{
-		name: "[Gen 9] Fakemon HQ (Modded)",
+		name: "[Gen 9] Fakemon HQ Modded",
 
 		mod: 'fakemonhq',
-		ruleset: ['Standard', 'Data Mod'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
 		banlist: ['Uber'],
 	},
 	{
