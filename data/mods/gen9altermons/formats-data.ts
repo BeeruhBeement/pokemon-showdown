@@ -1,6 +1,11 @@
 import { Pokedex as Base } from '../../pokedex';
 
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
+	luxray: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
 	beheeyem: {
 		inherit: true,
 		tier: "OU",
@@ -112,6 +117,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 	},
 	accelgor: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	hydreigon: {
 		inherit: true,
 		tier: "OU",
 		isNonstandard: null,

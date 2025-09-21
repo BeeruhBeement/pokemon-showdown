@@ -1,4 +1,8 @@
 export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
+	luxray: {
+		inherit: true,
+		types: ["Normal"],
+	},
 	beheeyem: {
 		inherit: true,
 		types: ["Fire", "Dragon"],
@@ -90,6 +94,10 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	accelgor: {
 		inherit: true,
 		types: ["Ghost"],
+	},
+	hydreigon: {
+		inherit: true,
+		types: ["Psychic", "Poison"],
 	},
 	gyarados: {
 		inherit: true,
