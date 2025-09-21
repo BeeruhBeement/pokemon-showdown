@@ -3740,7 +3740,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	irontreads: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	ironmoth: {
 		tier: "Illegal",
