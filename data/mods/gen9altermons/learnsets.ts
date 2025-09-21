@@ -248,7 +248,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			darkpulse: ["9M"],
 			dig: ["9M"],
 			doubleedge: ["9M"],
-			doubleironbash: ["9M"],
 			dragonclaw: ["9M"],
 			dragonpulse: ["9M"],
 			earthquake: ["9M"],
