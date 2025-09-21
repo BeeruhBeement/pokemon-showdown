@@ -30,10 +30,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
 		banlist: [ 'Uber', 'Mawilite' ],
 	},
-
-	{
-		section: "Other Mods",
-	},
 	{
 		name: "[Gen 9] Altermons",
 
@@ -41,10 +37,21 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
 		banlist: [ 'Uber' ],
 	},
+
+	{
+		section: "Other Mods",
+	},
 	{
 		name: "[Gen 3] Denise OU",
 
 		mod: 'gen3denise',
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber'],
+	},
+	{
+		name: "[Gen 9] Fakemon HQ (Modded)",
+
+		mod: 'fakemonhq',
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber'],
 	},
