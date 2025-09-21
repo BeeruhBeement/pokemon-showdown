@@ -1512,7 +1512,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			attract: ["9M"],
 			aurorabeam: ["9M"],
 			auroraveil: ["9M"],
-			avalache: ["9M"],
+			avalanche: ["9M"],
 			blizzard: ["9M"],
 			captivate: ["9M"],
 			drillpeck: ["9M"],
