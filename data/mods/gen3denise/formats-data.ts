@@ -524,7 +524,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	electrode: {
-		tier: "PU",
+		tier: "PUBL",
 	},
 	electrodehisui: {
 		tier: "NU",
@@ -809,7 +809,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "ZU",
 	},
 	dragonite: {
-		tier: "OU",
+		tier: "Uber",
 	},
 	mewtwo: {
 		tier: "Uber",
@@ -1723,7 +1723,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	luxray: {
-		tier: "OU",
+		tier: "UU",
 	},
 	cranidos: {
 		tier: "LC",
@@ -3399,7 +3399,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	morpeko: {
-		tier: "OU",
+		tier: "UU",
 	},
 	morpekohangry: {
 	},
@@ -3578,7 +3578,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	veluza: {
-		tier: "PU",
+		tier: "PUBL",
 	},
 	finizen: {
 		tier: "Illegal",
