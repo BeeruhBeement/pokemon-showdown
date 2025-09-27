@@ -28,14 +28,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen9poaaltuniverse',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
-		banlist: [ 'Uber', 'Mawilite' ],
+		banlist: [ 'Uber',
+			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
+		],
 	},
 	{
 		name: "[Gen 9] Altermons",
 
 		mod: 'gen9altermons',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
-		banlist: [ 'Uber' ],
+		banlist: [ 'Uber',
+			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
+		],
 	},
 
 	{
