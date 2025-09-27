@@ -238,13 +238,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	},
 	{
         name: "[Gen 9] Spookymod",
-        desc: [
-            "jumpscaare",
-        ],
+        desc: "jumpscaare",
         threads: [
             `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">Spookymod on Smogon Forums</a>`,
               ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Spokymod'],
+        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Spokymod'],
         banlist: [],
 		teambuilderFormat: "National Dex",
         onValidateTeam(team, format) {
@@ -266,13 +264,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     },
 	{
         name: "[Gen 9] Spookymod Random Battle",
-        desc: [
-            "jumpscaare",
-        ],
+        desc: "jumpscaare",
         threads: [
             `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">Spookymod on Smogon Forums</a>`,
               ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Spokymod'],
+        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Spokymod', '!Team Preview'],
         banlist: [],
 		team: 'random',
         mod: 'spookymod',
