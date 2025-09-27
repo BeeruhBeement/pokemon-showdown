@@ -374,7 +374,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "ZU",
 	},
 	bellossom: {
-		tier: "ZU",
+		tier: "ZUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "SU",
 	},
@@ -3609,7 +3609,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	thundurus: {
 		tier: "RUBL",
 		doublesTier: "DUU",
-		natDexTier: "RU",
+		natDexTier: "RUBL",
 	},
 	thundurustherian: {
 		tier: "UU",
@@ -5433,7 +5433,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	fluttermane: {
 		tier: "Uber",
-		doublesTier: "DOU",
+		doublesTier: "DUber",
 		natDexTier: "Uber",
 	},
 	slitherwing: {
@@ -5579,7 +5579,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	okidogi: {
 		tier: "UUBL",
 		doublesTier: "(DUU)",
-		natDexTier: "NU",
+		natDexTier: "RUBL",
 	},
 	munkidori: {
 		tier: "NU",
