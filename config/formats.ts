@@ -53,6 +53,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber'],
 	},
 	{
+		name: "[Gen 3] Denise Random Battle",
+
+		team: 'random',
+		mod: 'gen3denise',
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: [],
+	},
+	{
 		name: "[Gen 9] Fakemon HQ Modded",
 
 		mod: 'fakemonhq',

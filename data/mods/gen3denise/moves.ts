@@ -1009,15 +1009,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Psychic",
 	},
-	hyperbeam: {
-		inherit: true,
-		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move. Has a 30% chance to paralyze the target.",
-		shortDesc: "User cannot move next turn. 30% para chance.",
-		secondary: {
-			chance: 30,
-			status: 'par',
-		},
-	},
 	smellingsalts: {
 		inherit: true,
 		type: "Rock",
