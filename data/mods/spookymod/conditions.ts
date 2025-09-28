@@ -36,7 +36,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Water' && move.category !== 'Status') {
-				this.add('-curestatus', pokemon, 'brn', '[from] move: ' + move);
+				this.add('-curestatus', target, 'brn', '[from] move: ' + move);
 				target.cureStatus();
 			}
 		},
