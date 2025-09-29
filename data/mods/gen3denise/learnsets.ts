@@ -1502,12 +1502,12 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			torment: ["3M"],
 			toxic: ["3M"],
 
-			aromatherapy: ["8L24"],
-			dazzlinggleam: ["8M"],
-			defog: ["8L1"],
-			fairywind: ["8L1"],
-			mistyterrain: ["8M", "8L68"],
-			strangesteam: ["8L1"],
+			aromatherapy: ["3L24"],
+			dazzlinggleam: ["3M"],
+			defog: ["3L1"],
+			fairywind: ["3L1"],
+			mistyterrain: ["3M", "3L68"],
+			strangesteam: ["3L1"],
 		},
 	},
 	rhyperior: {
