@@ -88,6 +88,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	forecast: {
 		inherit: true,
+		desc: "If this Pokemon is a Castform, its type changes to the current weather condition's type. This effect is prevented if this Pokemon is holding a Utility Umbrella and the weather is Rain Dance or Sunny Day.",
+		shortDesc: "Castform's type changes to the current weather condition's type.",
 		onStart(pokemon) {
 			this.singleEvent('WeatherChange', this.effect, this.effectState, pokemon);
 		},
@@ -204,7 +206,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				'hyperbeam', 'icebeam', 'lightofruin', 'lightthatburnsthesky', 'meteorbeam',
 				'moongeistbeam', 'prismaticlaser', 'psybeam', 'signalbeam', 'solarbeam',
 				'solarblade', 'steelbeam', 'doomdesire', 'glitzyglow', 'fleurcannon',
-				'lusterpurge', 'mirrorshot', 'moonblast', 'photongeyser', 'powergem'
+				'lusterpurge', 'mirrorshot', 'moonblast', 'photongeyser', 'powergem',
+				'flash'
 			];
 			if (boostedMoves.includes(move.id)) {
 				this.debug('Illuminate boost');

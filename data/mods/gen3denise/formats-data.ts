@@ -419,7 +419,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	slowbromega: {
-		tier: "(OU)",
+		tier: "OU",
 	},
 	slowbrogalar: {
 		tier: "Illegal",
@@ -2248,7 +2248,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	reuniclus: {
-		tier: "OU",
+		tier: "UU",
 	},
 	ducklett: {
 		tier: "LC",
@@ -2365,10 +2365,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	stunfisk: {
-		tier: "OU",
+		tier: "UU",
 	},
 	stunfiskgalar: {
-		tier: "OU",
+		tier: "UU",
 	},
 	mienfoo: {
 		tier: "ZU",
@@ -2946,7 +2946,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	golisopod: {
-		tier: "OU",
+		tier: "UU",
 	},
 	sandygast: {
 		tier: "Illegal",
@@ -3255,7 +3255,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	coalossal: {
-		tier: "OU",
+		tier: "UU",
 	},
 	coalossalgmax: {
 		tier: "Illegal",

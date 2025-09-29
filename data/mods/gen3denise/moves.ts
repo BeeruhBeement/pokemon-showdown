@@ -1075,6 +1075,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			}
 		},
 	},
+	ceaselessedge: {
+		inherit: true,
+		basePower: 50,
+	},
+	stoneaxe: {
+		inherit: true,
+		basePower: 50,
+	},
+	strangesteam: {
+		inherit: true,
+		basePower: 75,
+		secondary: {
+			chance: 100,
+			volatileStatus: 'torment',
+		},
+		desc: "Applies Torment on the target.",
+		shortDesc: "Applies Torment on the target.",
+	},
 
 	// Move Base Power updates
 
