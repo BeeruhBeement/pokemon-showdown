@@ -575,7 +575,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	weezinggalar: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	rhyhorn: {
 		tier: "LC",

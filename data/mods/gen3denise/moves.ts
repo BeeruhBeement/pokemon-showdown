@@ -1083,6 +1083,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 50,
 	},
+	torment: {
+		inherit: true,
+		condition: {
+			noCopy: true,
+			onStart(pokemon, source, effect) {
+				if (pokemon.volatiles['dynamax']) {
+					delete pokemon.volatiles['torment'];
+					return false;
+				}
+				if (effect?.id === 'gmaxmeltdown' || effect?.id === 'strangesteam') this.effectState.duration = 3;
+				this.add('-start', pokemon, 'Torment');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Torment');
+			},
+			onDisableMove(pokemon) {
+				if (pokemon.lastMove && pokemon.lastMove.id !== 'struggle') pokemon.disableMove(pokemon.lastMove.id);
+			},
+		},
+	},
 	strangesteam: {
 		inherit: true,
 		basePower: 75,
@@ -1090,8 +1110,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			chance: 100,
 			volatileStatus: 'torment',
 		},
-		desc: "Applies Torment on the target.",
-		shortDesc: "Applies Torment on the target.",
+		desc: "Applies Torment on the target for 3 turns.",
+		shortDesc: "Applies Torment on the target for 3 turns.",
 	},
 
 	// Move Base Power updates
