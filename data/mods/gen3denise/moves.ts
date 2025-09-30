@@ -1503,6 +1503,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	aurawheel: {
 		inherit: true,
+		type: "Dark",
 		basePower: 90,
 		onTry(source) {
 			return;

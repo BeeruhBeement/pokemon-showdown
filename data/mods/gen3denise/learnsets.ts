@@ -12922,7 +12922,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			metalburst: ["3L43"],
 			metalclaw: ["3L1"],
 			metalsound: ["3L13"],
-			meteorbeam: ["3T"],
 			morningsun: ["3L31"],
 			protect: ["3M"],
 			psychic: ["3M"],
