@@ -191,4 +191,12 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Rock", "Poison"],
 	},
+	palafin: {
+		inherit: true,
+		types: ["Normal", "Fighting"],
+	},
+	palafinhero: {
+		inherit: true,
+		types: ["Bug", "Fighting"],
+	},
 };
