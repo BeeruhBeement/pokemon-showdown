@@ -110,7 +110,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Fails if no stat boosts. Steals the target's stat boosts.",
 		inherit: true,
 		isNonstandard: null,
-		onTry(source) {
+		onTry(source, target) {
 			if(target.positiveBoosts() === 0) return false;
 		},
 	},
