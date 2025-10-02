@@ -2058,10 +2058,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	drilbur: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	excadrill: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	audino: {
 		tier: "Illegal",
@@ -2584,7 +2584,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	furfrou: {
-		tier: "PU",
+		tier: "NU",
 	},
 	espurr: {
 		tier: "Illegal",
