@@ -1041,7 +1041,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bodypress: ["9M"],
 			charm: ["9M"],
 			darkpulse: ["9M"],
-			defencecurl: ["9M"],
+			defensecurl: ["9M"],
 			doubleslap: ["9M"],
 			endure: ["9M"],
 			facade: ["9M"],
