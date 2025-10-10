@@ -66,6 +66,51 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	tarpain: {
+		inherit: true,
+		tier: "NFE",
+		isNonstandard: null,
+	},
+	tarmera: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	elephun: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	mourninstar: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	modeerialis: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	sludgrakon: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	arcadenid: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	choypentine: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	cerebaal: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
 };
 
 for (const pokemon in Base) {

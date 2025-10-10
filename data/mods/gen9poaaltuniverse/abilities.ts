@@ -83,4 +83,106 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon's attacks have a 10% chance of badly poisoning, but the secondary effects are removed.",
 		shortDesc: "This Pokemon's attacks have a 10% chance of poisoning; nullifies secondary effects.",
 	},
+	irrelephant: {
+		onModifyMove(move, pokemon, target) {
+			if (!target || !target.hp) return;
+			const curType = target.getTypes();
+			target.setType('???');
+			move.ignoreImmunity = {};
+			for (const type of this.dex.types.all()) {
+				if (target.runImmunity(type.name)) {
+					move.ignoreImmunity[type.name] = true;
+				}
+			}
+			target.setType(curType);
+		},
+		flags: {},
+		name: "Irrelephant",
+		shortDesc: "User ignores all type-based immunities.",
+		rating: 4,
+		num: 0,
+	},
+	lostonesweeping: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special') {
+				if (this.randomChance(2, 10)) {
+					this.boost({ spd: -1 }, target, target);
+					return target.addVolatile('trapped', source, move, 'trapper');
+				}
+			}
+		},
+		flags: {},
+		name: "Lost One's Weeping",
+		shortDesc: "When hit with a Special Attack, this ability has a 20% chance to lower the attackers Def, and trap them.",
+		rating: 4,
+		num: 0,
+	},
+	graupel: {
+		onDamagingHit(damage, target, source, move) {
+			this.field.setWeather('hail');
+		},
+		flags: {},
+		name: "Graupel",
+		rating: 1,
+		num: 0,
+		shortDesc: "When this Pokemon is hit by an attack, the effect of Hail begins.",
+	},
+	powerup: {
+		isNonstandard: "Custom",
+		flags: {},
+		name: "Power Up",
+		rating: 2,
+		num: 5000,
+		onPrepareHit(pokemon, target, move) {
+			if (move.type !== 'Electric') {
+				const types = pokemon.getTypes();
+				if (pokemon.hasType('Electric')) return;
+
+				if (types.length > 1) {
+					const primary = types[0];
+					const newTypes = [primary, 'Electric'];
+					pokemon.setType(newTypes);
+					this.add('-start', pokemon, 'typechange', newTypes.join('/'), '[from] ability: Power Up');
+					return;
+				}
+
+				if (!pokemon.addType('Electric')) return;
+				this.add('-start', pokemon, 'typeadd', 'Electric', '[from] ability: Power Up');
+			}
+			if (move.id === 'powerdown') {
+				this.add('-end', pokemon, 'typechange', '[silent]');
+				this.add('-end', pokemon, 'typeadd', '[silent]');
+			}
+		},
+	},
+	rooted: {
+		onDragOutPriority: 1,
+		onDragOut(pokemon) {
+			this.add('-activate', pokemon, 'ability: Rooted');
+			return null;
+		},
+		flags: { breakable: 1 },
+		name: "Rooted",
+		rating: 1,
+		num: 0,
+	},
+	zealousflock: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!source.getVolatile('zealousflock')) source.addVolatile('zealousflock', target);
+		},
+		condition: {
+			onStart(pokemon, source) {
+				this.add('-start', pokemon, 'Zealous Flock', '[of] ' + source);
+			},
+			onResidualOrder: 12,
+			onResidual(pokemon) {
+				this.damage(pokemon.baseMaxhp / 16);
+			},
+		},
+		name: "Zealous Flock",
+		shortDesc: "If the User is hit by an attack, the attacker loses 1/16 HP per turn until switched out.",
+		rating: 4,
+		num: 0,
+	},
 };

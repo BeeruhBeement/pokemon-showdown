@@ -54,6 +54,102 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
+	venomousroar: {
+		num: 0,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Venomous Roar",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, sound: 1, bypasssub: 1},
+		secondary: {
+			chance: 20,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Dragon",
+		contestType: "Tough",
+		desc: "Has a 30% chance to poison the target.",
+		shortDesc: "30% chance to poison the target.",
+	},
+	powerdown: {
+		num: 0,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Power Down",
+		pp: 5,
+		priority: 0,
+		flags: { snatch: 1, heal: 1, metronome: 1 },
+		onHit(pokemon) {
+			let factor = 0.5;
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (pokemon.types.includes('Steel')) {
+				pokemon.setType(pokemon.getTypes(true).map(type => type === "Steel" ? "Electric" : "Electric"));
+				this.add('-start', pokemon, 'typechange', pokemon.getTypes().join('/'), '[from] move: Power Down');
+			}
+			return success;
+		},
+		secondary: null,
+		target: "self",
+		type: "Ground",
+		zMove: { effect: 'clearnegativeboost' },
+		contestType: "Beautiful",
+	},
+	suddenstrike: {
+		num: 0,
+		accuracy: 100,
+		basePower: 40,
+		category: "Physical",
+		name: "Sudden Strike",
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
+		pp: 30,
+		priority: 1,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cool",
+	},
+	flockshock: {
+		num: 0,
+		accuracy: 100,
+		basePower: 75,
+		category: "Special",
+		name: "Flock Shock",
+		pp: 10,
+		priority: 0,
+		flags: { allyanim: 1, metronome: 1, futuremove: 1 },
+		ignoreImmunity: false,
+		onTry(source, target) {
+			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
+			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
+				move: 'flockshock',
+				source,
+				moveData: {
+					id: 'flockshock',
+					name: "Flock Shock",
+					accuracy: 100,
+					basePower: 75,
+					category: "Special",
+					priority: 0,
+					flags: { allyanim: 1, metronome: 1, futuremove: 1 },
+					ignoreImmunity: false,
+					effectType: 'Move',
+					type: 'Electric',
+				},
+			});
+			this.add('-start', source, 'move: Flock Shock');
+			return this.NOT_FAIL;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+		shortDesc: "Electric version hits again two turns after being used.",
+	},
 
 	// MIA
 	spiritsiphon: {

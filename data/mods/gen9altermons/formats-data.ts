@@ -46,6 +46,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	gyaradosmega: {
+		inherit: true,
+		tier: "Uber",
+		isNonstandard: null,
+	},
 	tsareena: {
 		inherit: true,
 		tier: "OU",
@@ -63,7 +68,12 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	},
 	kyogre: {
 		inherit: true,
-		tier: "OU",
+		tier: "Uber",
+		isNonstandard: null,
+	},
+	kyogreprimal: {
+		inherit: true,
+		tier: "Uber",
 		isNonstandard: null,
 	},
 	reuniclus: {
@@ -77,6 +87,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 	},
 	scizor: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	scizormega: {
 		inherit: true,
 		tier: "OU",
 		isNonstandard: null,
@@ -191,6 +206,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	swampertmega: {
+		inherit: true,
+		tier: "Uber",
+		isNonstandard: null,
+	},
 	altaria: {
 		inherit: true,
 		tier: "OU",
@@ -214,6 +234,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	latias: {
 		inherit: true,
 		tier: "OU",
+		isNonstandard: null,
+	},
+	latiasmega: {
+		inherit: true,
+		tier: "Uber",
 		isNonstandard: null,
 	},
 	electrode: {
@@ -242,6 +267,21 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 	},
 	palafin: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	zapdosgalar: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	articunogalar: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	moltresgalar: {
 		inherit: true,
 		tier: "OU",
 		isNonstandard: null,

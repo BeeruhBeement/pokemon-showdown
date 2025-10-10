@@ -35,6 +35,10 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Ground", "Dragon"],
 	},
+	gyaradosmega: {
+		inherit: true,
+		types: ["Ground", "Dragon"],
+	},
 	tsareena: {
 		inherit: true,
 		types: ["Fighting"],
@@ -51,6 +55,10 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Fire"],
 	},
+	kyogreprimal: {
+		inherit: true,
+		types: ["Fire"],
+	},
 	reuniclus: {
 		inherit: true,
 		types: ["Grass", "Poison"],
@@ -60,6 +68,10 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		types: ["Dragon", "Grass"],
 	},
 	scizor: {
+		inherit: true,
+		types: ["Electric", "Ice"],
+	},
+	scizormega: {
 		inherit: true,
 		types: ["Electric", "Ice"],
 	},
@@ -151,6 +163,10 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Dark", "Poison"],
 	},
+	swampertmega: {
+		inherit: true,
+		types: ["Dark", "Poison"],
+	},
 	altaria: {
 		inherit: true,
 		types: ["Grass", "Fire"],
@@ -168,6 +184,10 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		types: ["Water", "Grass"],
 	},
 	latias: {
+		inherit: true,
+		types: ["Electric", "Steel"],
+	},
+	latiasmega: {
 		inherit: true,
 		types: ["Electric", "Steel"],
 	},
@@ -190,6 +210,18 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	bronzong: {
 		inherit: true,
 		types: ["Rock", "Poison"],
+	},
+	zapdosgalar: {
+		inherit: true,
+		types: ["Dark", "Dragon"],
+	},
+	articunogalar: {
+		inherit: true,
+		types: ["Electric", "Dragon"],
+	},
+	moltresgalar: {
+		inherit: true,
+		types: ["Fighting", "Dragon"],
 	},
 	palafin: {
 		inherit: true,
