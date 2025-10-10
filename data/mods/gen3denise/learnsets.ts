@@ -7201,7 +7201,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			metalclaw: ["3L15"],
 			mudslap: ["3L1"],
 			mudsport: ["3L1"],
-			poisonjab: ["3M"],
 			protect: ["3M"],
 			rapidspin: ["3L1"],
 			rest: ["3M"],

@@ -125,6 +125,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			flamethrower: ["9M"],
 			fireblast: ["9M"],
 			eruption: ["9M"],
+			earthquake: ["9M"],
 		},
 	},
 	salandit: {
@@ -623,6 +624,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			uturn: ["9M"],
 			vitalthrow: ["9M"],
 			wakeupslap: ["9M"],
+			rapidspin: ["9M"],
 		},
 	},
 	stufful: {
@@ -880,7 +882,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sleeptalk: ["9M"],
 			snore: ["9M"],
 			substitute: ["9M"],
-			swordsdance: ["9M"],
 			toxic: ["9M"],
 		},
 	},
@@ -985,7 +986,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			snore: ["9M"],
 			substitute: ["9M"],
 			suckerpunch: ["9M"],
-			swordsdance: ["9M"],
 			taunt: ["9M"],
 			throatchop: ["9M"],
 			torment: ["9M"],
@@ -1054,6 +1054,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			wish: ["9M"],
 			wonderroom: ["9M"],
 			zenheadbutt: ["9M"],
+			psychic: ["9M"],
 		},
 	},
 	yamask: {
@@ -1133,7 +1134,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			brine: ["9M"],
 			aquaring: ["9M"],
 			muddywater: ["9M"],
-			crabhammer: ["9M"],
 			clamp: ["9M"],
 			jetpunch: ["9M"],
 			soak: ["9M"],
@@ -1407,6 +1407,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			wavecrash: ["9M"],
 			whirlpool: ["9M"],
 			wildboltstorm: ["9M"],
+			taunt: ["9M"],
+			thunderpunch: ["9M"],
+			earthquake: ["9M"],
 		},
 	},
 	helioptile: {
@@ -2034,6 +2037,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["9M"],
 			triattack: ["9M"],
 			uturn: ["9M"],
+			hypervoice: ["9M"],
 		},
 	},
 	mudkip: {
@@ -2697,6 +2701,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			corrosivegas: ["9M"],
 			clearsmog: ["9M"],
 			magnetrise: ["9M"],
+		},
+	},
+	finizen: {
+		learnset: {
 		},
 	},
 	palafin: {
