@@ -113,7 +113,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		flags: {},
 		name: "Lost One's Weeping",
-		shortDesc: "When hit with a Special Attack, this ability has a 20% chance to lower the attackers Def, and trap them.",
+		shortDesc: "20 % chance when hit by a Special Attack to lower the attackers Def. and trap.",
 		rating: 4,
 		num: 0,
 	},
@@ -154,6 +154,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-end', pokemon, 'typeadd', '[silent]');
 			}
 		},
+		shortDesc: "The user's secondary typing permanently becomes Electric when using an Electric type move.",
 	},
 	rooted: {
 		onDragOutPriority: 1,
@@ -165,6 +166,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Rooted",
 		rating: 1,
 		num: 0,
+		shortDesc: "This Pokemon cannot be forced to switch out by another Pokemon's attack or item.",
 	},
 	zealousflock: {
 		onDamagingHitOrder: 1,

@@ -96,6 +96,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
+	plugnid: {
+		inherit: true,
+		tier: "LC",
+		isNonstandard: null,
+	},
 	arcadenid: {
 		inherit: true,
 		tier: "OU",

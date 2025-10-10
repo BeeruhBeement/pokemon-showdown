@@ -54,6 +54,27 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
+	plushtusk: {
+		num: 0,
+		accuracy: 90,
+		basePower: 100,
+		category: "Physical",
+		name: "Razor Shell",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 25,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cool",
+		desc: "Has a 25% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "25% chance to lower the target's Defense by 1.",
+	},
 	venomousroar: {
 		num: 0,
 		accuracy: 100,
@@ -85,7 +106,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onHit(pokemon) {
 			let factor = 0.5;
 			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
-			if (pokemon.types.includes('Steel')) {
+			if (success && pokemon.types.includes('Steel')) {
 				pokemon.setType(pokemon.getTypes(true).map(type => type === "Steel" ? "Electric" : "Electric"));
 				this.add('-start', pokemon, 'typechange', pokemon.getTypes().join('/'), '[from] move: Power Down');
 			}
@@ -93,9 +114,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Ground",
+		type: "Steel",
 		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Beautiful",
+		shortDesc: "Heals 50% max HP. Steel type becomes Electric type.",
 	},
 	suddenstrike: {
 		num: 0,

@@ -154,7 +154,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	tarmera: {
 		num: -60013,
 		name: "Tarmera",
-		types: ["Water"],
+		types: ["Dark", "Poison"],
 		baseStats: { hp: 102, atk: 103, def: 130, spa: 62, spd: 73, spe: 52 },
 		abilities: { 0: "Insomnia" },
 		heightm: 1.5,
@@ -234,7 +234,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	cerebaal: {
 		num: -60020,
-		name: "Choypentine",
+		name: "Cerebaal",
 		types: ["Electric", "Psychic"],
 		baseStats: { hp: 105, atk: 48, def: 93, spa: 100, spd: 103, spe: 79 },
 		abilities: { 0: "Neuroforce", 1: "Regenerator", H: "Zealous Flock" },
