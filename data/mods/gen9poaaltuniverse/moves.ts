@@ -59,7 +59,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		accuracy: 90,
 		basePower: 100,
 		category: "Physical",
-		name: "Razor Shell",
+		name: "Plush Tusk",
 		pp: 10,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
