@@ -46,7 +46,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Patronize",
 		rating: 3.5,
 		num: 0,
-			desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune.",
+		desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune.",
 		shortDesc: "On switch-in, this Pokemon lowers the Sp. Atk of opponents by 1 stage.",
 	},
 	moltenhands: {
@@ -128,7 +128,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "When this Pokemon is hit by an attack, the effect of Hail begins.",
 	},
 	powerup: {
-		isNonstandard: "Custom",
 		flags: {},
 		name: "Power Up",
 		rating: 2,

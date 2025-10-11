@@ -30,6 +30,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
 		banlist: [ 'Uber',
 			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
+			'Baton Pass', 
 		],
 	},
 	{
