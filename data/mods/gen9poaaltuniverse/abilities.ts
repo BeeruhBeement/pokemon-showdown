@@ -106,7 +106,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {
 				if (this.randomChance(2, 10)) {
-					this.boost({ spd: -1 }, target, target);
+					this.boost({ spd: -1 }, source, target);
 					return target.addVolatile('trapped', source, move, 'trapper');
 				}
 			}

@@ -173,7 +173,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	mourninstar: {
-		num: -60014,
+		num: -60015,
 		name: "Mourninstar",
 		types: ["Ghost", "Steel"],
 		baseStats: { hp: 89, atk: 106, def: 79, spa: 78, spd: 110, spe: 86 },
@@ -183,7 +183,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	modeerialis: {
-		num: -60015,
+		num: -60016,
 		name: "Modeerialis",
 		types: ["Ice", "Poison"],
 		baseStats: { hp: 72, atk: 58, def: 57, spa: 85, spd: 155, spe: 74 },
@@ -193,7 +193,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	sludgrakon: {
-		num: -60016,
+		num: -60017,
 		name: "Sludgrakon",
 		types: ["Dragon", "Poison"],
 		baseStats: { hp: 86, atk: 66, def: 106, spa: 99, spd: 106, spe: 59 },
@@ -203,7 +203,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	plugnid: {
-		num: -60017,
+		num: -60018,
 		name: "Plugnid",
 		types: ["Bug", "Electric"],
 		baseStats: { hp: 65, atk: 60, def: 65, spa: 75, spd: 85, spe: 60 },
@@ -213,7 +213,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	arcadenid: {
-		num: -60018,
+		num: -60019,
 		name: "Arcadenid",
 		types: ["Bug", "Steel"],
 		baseStats: { hp: 80, atk: 85, def: 90, spa: 110, spd: 125, spe: 75 },
@@ -223,7 +223,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	choypentine: {
-		num: -60019,
+		num: -60020,
 		name: "Choypentine",
 		types: ["Grass", "Dark"],
 		baseStats: { hp: 150, atk: 105, def: 100, spa: 40, spd: 55, spe: 40 },
@@ -233,7 +233,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 	},
 	cerebaal: {
-		num: -60020,
+		num: -60021,
 		name: "Cerebaal",
 		types: ["Electric", "Psychic"],
 		baseStats: { hp: 105, atk: 48, def: 93, spa: 100, spd: 103, spe: 79 },

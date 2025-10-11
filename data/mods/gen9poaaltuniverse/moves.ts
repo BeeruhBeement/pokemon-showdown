@@ -146,7 +146,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: { allyanim: 1, metronome: 1, futuremove: 1 },
 		ignoreImmunity: false,
 		onTry(source, target) {
-			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
 			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
 				move: 'flockshock',
 				source,
@@ -164,7 +163,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				},
 			});
 			this.add('-start', source, 'move: Flock Shock');
-			return this.NOT_FAIL;
 		},
 		secondary: null,
 		target: "normal",
