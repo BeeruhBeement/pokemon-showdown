@@ -106,8 +106,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onHit(pokemon) {
 			let factor = 0.5;
 			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
-			if (success && pokemon.types.includes('Steel')) {
-				pokemon.setType(pokemon.getTypes(true).map(type => type === "Steel" ? "Electric" : "Electric"));
+			if (success && pokemon.types.includes('Electric')) {
+				pokemon.setType(pokemon.getTypes(true).map(type => type === "Electric" ? "Steel" : "Steel"));
 				this.add('-start', pokemon, 'typechange', pokemon.getTypes().join('/'), '[from] move: Power Down');
 			}
 			return success;
@@ -117,7 +117,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Steel",
 		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Beautiful",
-		shortDesc: "Heals 50% max HP. Steel type becomes Electric type.",
+		shortDesc: "Heals 50% max HP. Electric type becomes Steel type.",
 	},
 	suddenstrike: {
 		num: 0,

@@ -1653,7 +1653,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hyperbeam: ["9M"],
 			hypervoice: ["9M"],
 			ironhead: ["9M"],
-			judgement: ["9M"],
+			judgment: ["9M"],
 			lastresort: ["9M"],
 			lavaplume: ["9M"],
 			morningsun: ["9M"],

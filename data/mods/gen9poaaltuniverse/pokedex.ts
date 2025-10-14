@@ -169,7 +169,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		baseStats: { hp: 129, atk: 104, def: 51, spa: 64, spd: 92, spe: 55 },
 		abilities: { 0: "Cotton Down", 1: "Filter", H: "Irrelephant" },
 		heightm: 1.5,
-		weightkg: 50,
+		weightkg: 9.9,
 		eggGroups: ["Undiscovered"],
 	},
 	mourninstar: {
@@ -188,8 +188,8 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		types: ["Ice", "Poison"],
 		baseStats: { hp: 72, atk: 58, def: 57, spa: 85, spd: 155, spe: 74 },
 		abilities: { 0: "Clear Body", 1: "Ice Body", H: "Graupel" },
-		heightm: 1.5,
-		weightkg: 50,
+		heightm: 0.3,
+		weightkg: 0.5,
 		eggGroups: ["Undiscovered"],
 	},
 	sludgrakon: {
