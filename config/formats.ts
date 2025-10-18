@@ -30,7 +30,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
 		banlist: [ 'Uber',
 			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
-			'Baton Pass', 
+			'Baton Pass',
 		],
 	},
 	{
@@ -40,6 +40,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod', '+Light of Ruin'],
 		banlist: [ 'Uber',
 			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
+			'Baton Pass',
 		],
 	},
 
@@ -66,7 +67,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'fakemonhq',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
-		banlist: ['Uber'],
+		banlist: ['Uber', 'Baton Pass'],
 	},
 	{
 		name: "[Gen 9] National Dex Sky Battles",
@@ -78,6 +79,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 			// Move bans (not nonsky flag moves)
+			'Baton Pass',
 			
 			// Ability bans (Terrain summoning abilities)
 			'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge', 'Hadron Engine', 'Seed Sower',
@@ -117,6 +119,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster', 'Indeedee',
+			'Baton Pass', 
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Indeedee-F'],
 	},
@@ -257,7 +260,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
             `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">Climate Change on Smogon Forums</a>`,
               ],
         ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
-        banlist: ['Sunny Day', 'Rain Dance', 'Sandstorm', 'Hail', 'Snowscape', 'Chilly Reception', 'Charizardite X'],
+        banlist: ['Sunny Day', 'Rain Dance', 'Sandstorm', 'Hail', 'Snowscape', 'Chilly Reception', 'Charizardite X',
+			'Baton Pass'],
 		teambuilderFormat: "National Dex",
         onValidateTeam(team, format) {
             /**@type {{[k: string]: true}} */

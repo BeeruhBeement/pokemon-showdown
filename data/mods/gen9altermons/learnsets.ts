@@ -571,7 +571,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 		},
 	},
-	stenee: {
+	steenee: {
 		learnset: {
 		},
 	},
@@ -3741,6 +3741,14 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			venoshock: ["9M"],
 			weatherball: ["9M"],
 			workup: ["9M"],
+		},
+	},
+	poliwag: {
+		learnset: {
+		},
+	},
+	poliwhirl: {
+		learnset: {
 		},
 	},
 	poliwrath: {
