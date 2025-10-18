@@ -266,11 +266,6 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		isNonstandard: null,
 	},
-	palafin: {
-		inherit: true,
-		tier: "OU",
-		isNonstandard: null,
-	},
 	zapdosgalar: {
 		inherit: true,
 		tier: "OU",
@@ -282,6 +277,121 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 	},
 	moltresgalar: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	houndoom: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	houndoommega: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	clefable: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	heatran: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	aegislash: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	glimmora: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	gliscor: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	latios: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	latiosmega: {
+		inherit: true,
+		tier: "Uber",
+		isNonstandard: null,
+	},
+	tapukoko: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	tapulele: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	tapubulu: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	tapufini: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	dudunsparce: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	poliwrath: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	politoed: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	eelektross: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	sableye: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	sableyemega: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	guzzlord: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	sigilyph: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	farigiraf: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	palafin: {
 		inherit: true,
 		tier: "OU",
 		isNonstandard: null,

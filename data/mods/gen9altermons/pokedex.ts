@@ -223,6 +223,98 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Fighting", "Dragon"],
 	},
+	houndoom: {
+		inherit: true,
+		types: ["Ice", "Ghost"],
+	},
+	houndoommega: {
+		inherit: true,
+		types: ["Ice", "Ghost"],
+	},
+	clefable: {
+		inherit: true,
+		types: ["Fire", "Steel"],
+	},
+	heatran: {
+		inherit: true,
+		types: ["Rock", "Fairy"],
+	},
+	aegislash: {
+		inherit: true,
+		types: ["Ice", "Fighting"],
+	},
+	aegislashblade: {
+		inherit: true,
+		types: ["Ice", "Fighting"],
+	},
+	glimmora: {
+		inherit: true,
+		types: ["Grass", "Ground"],
+	},
+	gliscor: {
+		inherit: true,
+		types: ["Normal", "Ghost"],
+	},
+	latios: {
+		inherit: true,
+		types: ["Electric", "Fire"],
+	},
+	latiosmega: {
+		inherit: true,
+		types: ["Electric", "Fire"],
+	},
+	tapukoko: {
+		inherit: true,
+		types: ["Bug", "Water"],
+	},
+	tapulele: {
+		inherit: true,
+		types: ["Rock", "Ground"],
+	},
+	tapubulu: {
+		inherit: true,
+		types: ["Ghost", "Steel"],
+	},
+	tapufini: {
+		inherit: true,
+		types: ["Dragon", "Poison"],
+	},
+	dudunsparce: {
+		inherit: true,
+		types: ["Poison", "Flying"],
+	},
+	poliwrath: {
+		inherit: true,
+		types: ["Electric", "Dark"],
+	},
+	politoed: {
+		inherit: true,
+		types: ["Electric", "Flying"],
+	},
+	eelektross: {
+		inherit: true,
+		types: ["Ghost", "Fighting"],
+	},
+	sableye: {
+		inherit: true,
+		types: ["Ground", "Fairy"],
+	},
+	sableyemega: {
+		inherit: true,
+		types: ["Ground", "Fairy"],
+	},
+	guzzlord: {
+		inherit: true,
+		types: ["Ground", "Steel"],
+	},
+	sigilyph: {
+		inherit: true,
+		types: ["Water", "Fairy"],
+	},
+	farigiraf: {
+		inherit: true,
+		types: ["Fairy", "Dragon"],
+	},
 	palafin: {
 		inherit: true,
 		types: ["Normal", "Fighting"],
