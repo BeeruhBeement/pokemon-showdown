@@ -37,7 +37,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Altermons",
 
 		mod: 'gen9altermons',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod', '+Light of Ruin'],
 		banlist: [ 'Uber',
 			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
 		],
