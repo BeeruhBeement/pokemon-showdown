@@ -71,7 +71,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	},
 	{
 		name: "[Gen 9] National Dex Sky Battles",
-		desc: `A National Dex mod that only allows Flying types and Pokémon with Levitate. Based on XY Sky Battles.`,
+		desc: `A National Dex format that only allows Flying types and Pokémon with Levitate. Based on XY Sky Battles.`,
 	
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'Terastal Clause'],
@@ -79,7 +79,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 			// Move bans (not nonsky flag moves)
-			'Baton Pass',
 			
 			// Ability bans (Terrain summoning abilities)
 			'Grassy Surge', 'Electric Surge', 'Misty Surge', 'Psychic Surge', 'Hadron Engine', 'Seed Sower',
@@ -119,7 +118,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster', 'Indeedee',
-			'Baton Pass', 
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Indeedee-F'],
 	},
