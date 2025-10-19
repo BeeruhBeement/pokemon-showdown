@@ -2206,10 +2206,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	trubbish: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	garbodor: {
-		tier: "Illegal",
+		tier: "UU",
+	},
+	garbodormega: {
+		tier: "OU",
 	},
 	garbodorgmax: {
 		tier: "Illegal",
@@ -2317,13 +2320,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	tynamo: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	eelektrik: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	eelektross: {
-		tier: "Illegal",
+		tier: "UU",
 	},
 	elgyem: {
 		tier: "LC",

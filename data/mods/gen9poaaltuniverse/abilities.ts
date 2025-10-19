@@ -113,7 +113,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		flags: {},
 		name: "Lost One's Weeping",
-		shortDesc: "20 % chance when hit by a Special Attack to lower the attackers Def. and trap.",
+		shortDesc: "20% chance when hit by a Special Attack to lower the attackers Def. and trap.",
 		rating: 4,
 		num: 0,
 	},

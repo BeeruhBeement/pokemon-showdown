@@ -604,6 +604,20 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 3,
 	},
 	
+	garbodorite: {
+		name: "Garbodorite",
+		spritenum: 577,
+		megaStone: "Garbodor-Mega",
+		megaEvolves: "Garbodor",
+		itemUser: ["Garbodor"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 0,
+		gen: 0,
+		shortDesc: "If held by a Garbodor, this item allows it to Mega Evolve in battle.",
+	},
 	grimmsnarlite: {
 		name: "Grimmsnarlite",
 		spritenum: 576,
