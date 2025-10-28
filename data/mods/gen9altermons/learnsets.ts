@@ -1776,6 +1776,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["9M"],
 			uturn: ["9M"],
 			xscissor: ["9M"],
+			knockoff: ["9M"],
 		},
 	},
 	corphish: {
@@ -3339,7 +3340,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sunnyday: ["9M"],
 			swagger: ["9M"],
 			swift: ["9M"],
-			swordsdance: ["9M"],
 			tailwind: ["9M"],
 			takedown: ["9M"],
 			taunt: ["9M"],
@@ -3465,6 +3465,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			wildcharge: ["9M"],
 			withdraw: ["9M"],
 			zingzap: ["9M"],
+			zenheadbutt: ["9M"],
+			highhorsepower: ["9M"],
 		},
 	},
 	tapulele: {
@@ -3599,6 +3601,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			toxic: ["9M"],
 			withdraw: ["9M"],
 			zenheadbutt: ["9M"],
+			shadowclaw: ["9M"],
 		},
 	},
 	tapufini: {
@@ -4138,6 +4141,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["9M"],
 			whirlpool: ["9M"],
 			wonderroom: ["9M"],
+			recover: ["9M"],
 		},
 	},
 	girafarig: {
