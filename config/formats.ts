@@ -48,7 +48,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3puffypink',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'Drizzle + Swift Swim', 'Sand Stream + Sand Veil'],
+		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
 	},
 
 	{
