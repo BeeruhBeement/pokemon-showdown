@@ -150,7 +150,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	transport: "Pokestar Transport",
 	pokestarufof: "Pokestar UFO",
 	pokestarufoflying: "Pokestar UFO",
-	ufo: "Pokestar UFO",
+	//ufo: "Pokestar UFO",
 	ufof: "Pokestar UFO",
 	ufoflying: "Pokestar UFO",
 	ufo2: "Pokestar UFO-2",

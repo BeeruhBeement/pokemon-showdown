@@ -353,7 +353,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 		doublesTier: "DOU",
 	},
-	tortuilding: {
+	tortuildng: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
