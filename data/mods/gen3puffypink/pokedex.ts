@@ -1153,7 +1153,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 	},
 	golem: {
-		inherit: true,
 		num: -40095,
 		name: "Golem",
 		types: ["Rock", "Fighting"],

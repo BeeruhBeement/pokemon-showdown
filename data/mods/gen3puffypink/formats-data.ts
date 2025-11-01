@@ -278,7 +278,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	squashini: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	chemitory: {
@@ -566,7 +566,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	metroid: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	noddy: {
@@ -602,7 +602,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	kirby: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 }
