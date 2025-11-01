@@ -57,7 +57,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		num: -40005,
 		name: "Flamer",
 		genderRatio: { M: 0.875, F: 0.125 },
-		types: ["Grass"],
+		types: ["Fire"],
 		baseStats: { hp: 55, atk: 55, def: 65, spa: 95, spd: 70, spe: 85 },
 		abilities: { 0: "Blaze" },
 		heightm: 1.5,
