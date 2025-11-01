@@ -73,3 +73,4 @@ pip-log.txt
 *.rdb
 scripts/convert_kirby_movepools.py
 scripts/input.txt
+scripts/rename_sprites.py
