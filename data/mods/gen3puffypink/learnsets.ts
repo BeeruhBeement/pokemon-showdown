@@ -4855,7 +4855,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			crosschop: ["3M"],
 			machpunch: ["3M"],
 			doubleslap: ["3M"],
-			smellingsalt: ["3M"],
+			smellingsalts: ["3M"],
 			thunderpunch: ["3M"],
 			megapunch: ["3M"],
 			bodyslam: ["3M"],

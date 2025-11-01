@@ -74,3 +74,5 @@ pip-log.txt
 scripts/convert_kirby_movepools.py
 scripts/input.txt
 scripts/rename_sprites.py
+scripts/process_icons.py
+scripts/sprite_removebg_resize.py
