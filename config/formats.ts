@@ -43,6 +43,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Baton Pass',
 		],
 	},
+	{
+		name: "[Gen 3] Puffy Pink OU",
+
+		mod: 'gen3puffypink',
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber'],
+	},
 
 	{
 		section: "Other Mods",
