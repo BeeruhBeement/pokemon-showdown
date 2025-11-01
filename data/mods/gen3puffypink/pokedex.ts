@@ -1152,7 +1152,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous"],
 		color: "Purple",
 	},
-	golem: {
+	golemkirby: {
 		num: -40095,
 		name: "Golem",
 		types: ["Rock", "Fighting"],
