@@ -5,7 +5,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 		doublesTier: "DOU",
 	},
-	whispywoods: {
+	whispy: {
 		tier: "NFE",
 		doublesTier: "DOU",
 	},
@@ -289,7 +289,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 		doublesTier: "DOU",
 	},
-	mastergreen: {
+	mrgreen: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
@@ -361,7 +361,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 		doublesTier: "DOU",
 	},
-	poisoncroakom: {
+	croakom: {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
