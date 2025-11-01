@@ -55,7 +55,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom Draft",
 	},
 	{
-		name: "RPA Z-A Modded Draft",
+		name: "[Gen 9] RPA Z-A Modded Draft",
 
 		mod: 'zarpadraft',
 		searchShow: false,
