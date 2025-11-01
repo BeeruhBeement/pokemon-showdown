@@ -530,7 +530,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	darkmatter: {
-		tier: "OU",
+		tier: "LC",
 		doublesTier: "DOU",
 	},
 	miracle: {

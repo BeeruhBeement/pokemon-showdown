@@ -20,7 +20,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
 				move.type = 'Dark';
 				move.category = 'Special';
-				move.typeChangerBoosted = this.effect;
 			}
 		},
 		flags: {},

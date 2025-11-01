@@ -48,7 +48,19 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen3puffypink',
 		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber'],
+		banlist: ['Uber', 'Metroid', 'Kirby', 'Squashini', 'Drizzle + Swift Swim', 'Sand Stream + Sand Veil'],
+	},
+
+	{
+		section: "Custom Draft",
+	},
+	{
+		name: "RPA Z-A Modded Draft",
+
+		mod: 'zarpadraft',
+		searchShow: false,
+		teraPreviewDefault: true,
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 
 	{
