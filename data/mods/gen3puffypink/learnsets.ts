@@ -589,7 +589,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			scratch: ["3M"],
 			growl: ["3M"],
 			harden: ["3M"],
-			vicegrip: ["3M"],
+			visegrip: ["3M"],
 			flamethrower: ["3M"],
 			crabhammer: ["3M"],
 			swordsdance: ["3M"],
@@ -803,7 +803,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aircutter: ["3M"],
 			meanlook: ["3M"],
 			sunnyday: ["3M"],
-			hijumpkick: ["3M"],
+			highjumpkick: ["3M"],
 			gust: ["3M"],
 			leer: ["3M"],
 			pursuit: ["3M"],
@@ -1795,7 +1795,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			crosschop: ["3M"],
 			scaryface: ["3M"],
-			faintattack: ["3M"],
+			feintattack: ["3M"],
 			shockwave: ["3M"],
 			swordsdance: ["3M"],
 			meteormash: ["3M"],
@@ -2809,7 +2809,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			fakeout: ["3M"],
 			firepunch: ["3M"],
 			icepunch: ["3M"],
-			faintattack: ["3M"],
+			feintattack: ["3M"],
 			doubleslap: ["3M"],
 			swift: ["3M"],
 			thunderpunch: ["3M"],
@@ -2921,7 +2921,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			meanlook: ["3M"],
 			takedown: ["3M"],
 			confuseray: ["3M"],
-			faintattack: ["3M"],
+			feintattack: ["3M"],
 			tackle: ["3M"],
 			leer: ["3M"],
 			thief: ["3M"],
@@ -4014,7 +4014,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 	gooey: {
 		learnset: {
-			faintattack: ["3M"],
+			feintattack: ["3M"],
 			flamewheel: ["3M"],
 			sludgebomb: ["3M"],
 			recover: ["3M"],
@@ -5008,7 +5008,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	miracle: {
 		learnset: {
 			spikecannon: ["3M"],
-			faintattack: ["3M"],
+			feintattack: ["3M"],
 			icywind: ["3M"],
 			calmmind: ["3M"],
 			psychoboost: ["3M"],
@@ -5250,7 +5250,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			confuseray: ["3M"],
 			knockoff: ["3M"],
-			faintattack: ["3M"],
+			feintattack: ["3M"],
 			batonpass: ["3M"],
 			calmmind: ["3M"],
 			confusion: ["3M"],
@@ -6885,7 +6885,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 	void: {
 		learnset: {
-			faintattack: ["3M"],
+			feintattack: ["3M"],
 			hyperbeam: ["3M"],
 			psychoboost: ["3M"],
 			confusion: ["3M"],
