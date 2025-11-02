@@ -11,8 +11,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		shortDesc: "Pokemon making contact with this Pokemon lose 1/16 of their max HP.",
 	},
 	pitchblack: {
-		onModifyTypePriority: -1,
-		onModifyType(move, pokemon) {
+		onModifyMovePriority: -1,
+		onModifyMove(move, pokemon) {
 			const noModifyType = [
 				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
 			];
