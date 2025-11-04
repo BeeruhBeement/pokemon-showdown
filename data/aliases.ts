@@ -1201,7 +1201,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	terra: "Terrakion",
 	tflame: "Talonflame",
 	timb: "Timburr",
-	ting: "Ting-Lu",
+	//ting: "Ting-Lu",
 	toed: "Politoed",
 	tomb: "Spiritomb",
 	torb: "Voltorb",
