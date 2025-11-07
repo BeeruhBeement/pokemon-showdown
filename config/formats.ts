@@ -292,6 +292,29 @@ export const Formats: import('../sim/dex-formats').FormatList = [
         },
         mod: 'weatherwar',
     },
+	{
+        name: "[Gen 9] PTest OU",
+        desc: [
+            "poamons",
+        ],
+        threads: [
+            `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">hi</a>`,
+              ],
+        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
+        banlist: ['Arena Trap', 'Baton Pass'],
+		teambuilderFormat: "National Dex",
+        onValidateTeam(team, format) {
+            /**@type {{[k: string]: true}} */
+            let speciesTable = {};
+            for (const set of team) {
+                let template = this.dex.species.get(set.species);
+                if (template.tier !== 'POU') {
+                    return [set.species + ' is not usable in PTest OU.'];
+                }
+            }
+        },
+        mod: 'ptestou',
+    },
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 
