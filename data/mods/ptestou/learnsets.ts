@@ -1319,8 +1319,6 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			frustration: ["9L1"],
 			facade: ["9L1"],
 			endure: ["9L1"],
-			toxic: ["9L1"],
-			hiddenpower: ["9L1"],
 			terablast: ["9L1"],
 		},
 	},
