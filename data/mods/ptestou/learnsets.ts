@@ -1280,7 +1280,6 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			stoneedge: ["9L1"],
 			rockslide: ["9L1"],
 			powergem: ["9L1"],
-			cometstrike: ["9L1"],
 			nightslash: ["9L1"],
 			thunderbolt: ["9L1"],
 			thunder: ["9L1"],
