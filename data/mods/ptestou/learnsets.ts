@@ -1081,7 +1081,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			whirlwind: ["9L1"],
 		},
 	},
-	nuclearstomp: {
+	cyaneedle: {
 		learnset: {
 			protect: ["9L1"],
 			substitute: ["9L1"],
@@ -1163,7 +1163,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			skydrop: ["9L1"],
 		},
 	},
-	charley: {
+	nuclearstomp: {
 		learnset: {
 			stomp: ["9L1"],
 			explosion: ["9L1"],
@@ -1258,7 +1258,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			shellsmash: ["9L1"],
 		},
 	},
-	killerfish: {
+	charley: {
 		learnset: {
 			iceshard: ["9L1"],
 			icespinner: ["9L1"],
@@ -1320,10 +1320,12 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			frustration: ["9L1"],
 			facade: ["9L1"],
 			endure: ["9L1"],
+			toxic: ["9L1"],
+			hiddenpower: ["9L1"],
 			terablast: ["9L1"],
 		},
 	},
-	nkazuya: {
+	killerfish: {
 		learnset: {
 			acrobatics: ["9L1"],
 			airslash: ["9L1"],
@@ -1410,9 +1412,8 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			zapcannon: ["9L1"],
 		},
 	},
-	slowbro: {
+	nkazuya: {
 		learnset: {
-			inherit: true,
 			afteryou: ["9L1"],
 			alluringvoice: ["9L1"],
 			aurorabeam: ["9L1"],
@@ -1500,8 +1501,9 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			zapcannon: ["9L1"],
 		},
 	},
-	ruo: {
+	slowbro: {
 		learnset: {
+			inherit: true,
 			uturn: ["9L1"],
 			beakblast: ["9L1"],
 			protect: ["9L1"],
@@ -1557,7 +1559,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			encore: ["9L1"],
 		},
 	},
-	flampoke: {
+	ruo: {
 		learnset: {
 			alluringvoice: ["9L1"],
 			aromatherapy: ["9L1"],
@@ -1637,7 +1639,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			yawn: ["9L1"],
 		},
 	},
-	ttk: {
+	flampoke: {
 		learnset: {
 			absorb: ["9L1"],
 			agility: ["9L1"],
@@ -1749,7 +1751,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			zenheadbutt: ["9L1"],
 		},
 	},
-	thurisaz: {
+	ttk: {
 		learnset: {
 			acrobatics: ["9L1"],
 			aerialace: ["9L1"],
@@ -1821,7 +1823,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			uturn: ["9L1"],
 		},
 	},
-	ghostsword: {
+	thurisaz: {
 		learnset: {
 			agility: ["9L1"],
 			bite: ["9L1"],
@@ -1897,7 +1899,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			willowisp: ["9L1"],
 		},
 	},
-	luigiguy: {
+	ghostsword: {
 		learnset: {
 			swordsdance: ["9L1"],
 			facade: ["9L1"],
@@ -1910,7 +1912,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			psychocut: ["9L1"],
 		},
 	},
-	definitelyelite: {
+	luigiguy: {
 		learnset: {
 			toxicspikes: ["9L1"],
 			knockoff: ["9L1"],
@@ -1945,7 +1947,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			acidspray: ["9L1"],
 		},
 	},
-	mendoza: {
+	definitely_elite: {
 		learnset: {
 			aurasphere: ["9L1"],
 			bulkup: ["9L1"],
@@ -1968,7 +1970,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			toxic: ["9L1"],
 		},
 	},
-	serpexnessie: {
+	mendoza: {
 		learnset: {
 			surf: ["9L1"],
 			wavecrash: ["9L1"],
@@ -2042,6 +2044,90 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			endure: ["9L1"],
 			hiddenpower: ["9L1"],
 			terablast: ["9L1"],
+		},
+	},
+	serpexnessie: {
+		learnset: {
+			amnesia: ["9L1"],
+			afteryou: ["9L1"],
+			allyswitch: ["9L1"],
+			babydolleyes: ["9L1"],
+			bulletseed: ["9L1"],
+			calmmind: ["9L1"],
+			charm: ["9L1"],
+			covet: ["9L1"],
+			curse: ["9L1"],
+			dazzlinggleam: ["9L1"],
+			doubleedge: ["9L1"],
+			drainingkiss: ["9L1"],
+			dreameater: ["9L1"],
+			echoedvoice: ["9L1"],
+			endeavor: ["9L1"],
+			encore: ["9L1"],
+			endure: ["9L1"],
+			ember: ["9L1"],
+			energyball: ["9L1"],
+			facade: ["9L1"],
+			fairywind: ["9L1"],
+			faketears: ["9L1"],
+			fireblast: ["9L1"],
+			firepunch: ["9L1"],
+			firespin: ["9L1"],
+			flameburst: ["9L1"],
+			flamecharge: ["9L1"],
+			flamethrower: ["9L1"],
+			flareblitz: ["9L1"],
+			flash: ["9L1"],
+			flashcannon: ["9L1"],
+			fling: ["9L1"],
+			focusblast: ["9L1"],
+			gigaimpact: ["9L1"],
+			grassknot: ["9L1"],
+			healbell: ["9L1"],
+			healpulse: ["9L1"],
+			heatwave: ["9L1"],
+			helpinghand: ["9L1"],
+			hyperbeam: ["9L1"],
+			hypervoice: ["9L1"],
+			incinerate: ["9L1"],
+			lastresort: ["9L1"],
+			lavaplume: ["9L1"],
+			leer: ["9L1"],
+			lightscreen: ["9L1"],
+			magiccoat: ["9L1"],
+			mistyexplosion: ["9L1"],
+			mistyterrain: ["9L1"],
+			moonblast: ["9L1"],
+			nastyplot: ["9L1"],
+			overheat: ["9L1"],
+			playrough: ["9L1"],
+			protect: ["9L1"],
+			psychup: ["9L1"],
+			raindance: ["9L1"],
+			reflect: ["9L1"],
+			rest: ["9L1"],
+			rocktomb: ["9L1"],
+			round: ["9L1"],
+			searingshot: ["9L1"],
+			shadowball: ["9L1"],
+			sleeptalk: ["9L1"],
+			snore: ["9L1"],
+			solarbeam: ["9L1"],
+			storedpower: ["9L1"],
+			substitute: ["9L1"],
+			sunnyday: ["9L1"],
+			swift: ["9L1"],
+			taunt: ["9L1"],
+			temperflare: ["9L1"],
+			terablast: ["9L1"],
+			thief: ["9L1"],
+			thunderwave: ["9L1"],
+			toxic: ["9L1"],
+			weatherball: ["9L1"],
+			wonderroom: ["9L1"],
+			workup: ["9L1"],
+			selfdestruct: ["9L1"],
+			explosion: ["9L1"],
 		},
 	},
 
