@@ -43,7 +43,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
-	jackiefreeze: {
+	jas: {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
@@ -52,10 +52,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "DOU",
 	},
 	rydalis: {
-		tier: "POU",
-		doublesTier: "DOU",
-	},
-	ghostsword: {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
@@ -83,7 +79,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
-	ruoska: {
+	ruo: {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
@@ -95,7 +91,27 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
-	ashley: {
+	thurisaz: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	ghostsword: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	luigiguy: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	definitely_elite: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	mendoza: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	serpexnessie: {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
