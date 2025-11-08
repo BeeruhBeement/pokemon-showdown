@@ -214,6 +214,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 25, atk: 105, def: 65, spa: 80, spd: 105, spe: 65},
+		weightkg: 72.7,
 	},
 	mendoza: {
 		num: 6727,
