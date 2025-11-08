@@ -1152,6 +1152,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous"],
 		color: "Purple",
 	},
+	graveler: {
+		inherit: true,
+		evos: undefined,
+	},
 	golem: {
 		num: -40095,
 		name: "Golem",
