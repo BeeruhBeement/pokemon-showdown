@@ -301,8 +301,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
             `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">hi</a>`,
               ],
         ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
-        banlist: ['Arena Trap', 'Baton Pass'],
-		unbanlist: ['Bouncy Bubble', 'Freezy Frost'],
+        banlist: ['Arena Trap', 'Baton Pass', 'Slowbronite'],
+		unbanlist: ['Bouncy Bubble'],
 		teambuilderFormat: "National Dex",
         onValidateTeam(team, format) {
             /**@type {{[k: string]: true}} */
