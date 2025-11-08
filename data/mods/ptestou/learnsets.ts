@@ -549,6 +549,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			knockoff: ["9L1"],
 			rest: ["9L1"],
 			lifedew: ["9L1"],
+			shadowball: ["9L1"],
 		},
 	},
 	gaboswampert: {
