@@ -114,7 +114,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			rest: ["9L1"],
 			return: ["9L1"],
 			shelter: ["9L1"],
-			shiftgear: ["9L1"],
+			autotomize: ["9L1"],
 			sleeptalk: ["9L1"],
 			steelbeam: ["9L1"],
 			substitute: ["9L1"],
@@ -1502,7 +1502,6 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 	},
 	slowbro: {
 		learnset: {
-			inherit: true,
 			uturn: ["9L1"],
 			beakblast: ["9L1"],
 			protect: ["9L1"],
