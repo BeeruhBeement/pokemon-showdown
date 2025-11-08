@@ -164,6 +164,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		num: 6720,
 		name: "Ruo",
 		types: ["Ice", "Fairy"],
+		gender: "N",
 		baseStats: {hp: 130, atk: 65, def: 80, spa: 50, spd: 80, spe: 50},
 		weightkg: 78,
 	},
