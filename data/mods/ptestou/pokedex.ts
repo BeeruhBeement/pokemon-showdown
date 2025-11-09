@@ -292,4 +292,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Magician", 1: "Levitate", H: "Misty Surge"},
 		weightkg: 60,
 	},
+	beeruh: {
+		num: 6733,
+		species: "Beeruh",
+		types: ["Steel"],
+		gender: "M",
+		baseStats: {hp: 60, atk: 45, def: 80, spa: 55, spd: 125, spe: 95},
+		abilities: {0: "Cloud Nine", 1: "Overcoat", H: "Magic Guard"},
+		weightkg: 52,
+	},
+
 };
