@@ -283,5 +283,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Technician", 1: "Speed Boost", H: "Own Tempo"},
 		weightkg: 3,
 	},
-
+	supercraig: {
+		num: 6732,
+		species: "Super Craig",
+		types: ["Fairy", "Poison"],
+		gender: "M",
+		baseStats: {hp: 70, atk: 30, def: 80, spa: 130, spd: 130, spe: 20},
+		abilities: {0: "Magician", 1: "Levitate", H: "Misty Surge"},
+		weightkg: 60,
+	},
 };

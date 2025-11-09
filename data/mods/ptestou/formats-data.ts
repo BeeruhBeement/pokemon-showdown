@@ -127,4 +127,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	supercraig: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 };
