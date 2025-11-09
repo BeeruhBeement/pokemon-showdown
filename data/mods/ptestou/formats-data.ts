@@ -103,7 +103,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
-	definitely_elite: {
+	definitelyelite: {
 		tier: "POU",
 		doublesTier: "DOU",
 	},

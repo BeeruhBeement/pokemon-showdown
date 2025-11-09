@@ -1256,6 +1256,10 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			toxicspikes: ["9L1"],
 			zenheadbutt: ["9L1"],
 			shellsmash: ["9L1"],
+			wish: ["9L1"],
+			knockoff: ["9L1"],
+			uturn: ["9L1"],
+			spikyshield: ["9L1"],
 		},
 	},
 	charley: {
@@ -1945,7 +1949,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			acidspray: ["9L1"],
 		},
 	},
-	definitely_elite: {
+	definitelyelite: {
 		learnset: {
 			aurasphere: ["9L1"],
 			bulkup: ["9L1"],
