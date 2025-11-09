@@ -123,4 +123,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	nosh: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 };

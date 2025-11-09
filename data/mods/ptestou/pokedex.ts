@@ -32,6 +32,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ghost", "Psychic"],
 		gender: "M",
 		baseStats: {hp: 30, atk: 40, def: 130, spa: 80, spd: 50, spe: 130},
+		abilities: {0: "Serene Grace", 1: "Magic Guard", H: "Synchronize"},
 		weightkg: 19,
 	},
 	mad0130: {
@@ -40,6 +41,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Ice"],
 		gender: "M",
 		baseStats: {hp: 105, atk: 90, def: 60, spa: 105, spd: 75, spe: 25},
+		abilities: {0: "Hospitality", 1: "Technician", H: "Own Tempo"},
 		weightkg: 132.5,
 	},
 	milk: {
@@ -48,6 +50,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ice"],
 		gender: "M",
 		baseStats: {hp: 65, atk: 85, def: 65, spa: 85, spd: 75, spe: 75},
+		abilities: {0: "Overcoat", 1: "Steely Spirit", H: "Slush Rush"},
 		weightkg: 999,
 	},
 	fiend: {
@@ -56,6 +59,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ghost"],
 		gender: "N",
 		baseStats: {hp: 70, atk: 55, def: 55, spa: 170, spd: 55, spe: 55},
+		abilities: {0: "Gluttony", 1: "Disguise", H: "Technician"},
 		weightkg: 0.1,
 	},
 	greed2: {
@@ -64,6 +68,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Steel", "Ghost"],
 		gender: "N",
 		baseStats: {hp: 105, atk: 25, def: 80, spa: 95, spd: 105, spe: 40},
+		abilities: {0: "Hospitality", 1: "Shadow Shield", H: "Cursed Body"},
 		weightkg: 182.1,
 	},
 	gaboswampert: {
@@ -72,6 +77,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fire", "Ground"],
 		gender: "M",
 		baseStats: {hp: 85, atk: 85, def: 85, spa: 70, spd: 105, spe: 30},
+		abilities: {0: "Vital Spirit", 1: "Own Tempo", H: "Arena Trap"},
 		weightkg: 0.1,
 	},
 	anaconja: {
@@ -80,6 +86,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Dragon", "Fighting"],
 		gender: "M",
 		baseStats: {hp: 70, atk: 55, def: 55, spa: 145, spd: 55, spe: 70},
+		abilities: {0: "Mimicry", 1: "Competitive", H: "Contrary"},
 		weightkg: 69,
 	},
 	enderwither02: {
@@ -88,6 +95,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy", "Water"],
 		gender: "M",
 		baseStats: {hp: 100, atk: 90, def: 40, spa: 100, spd: 90, spe: 40},
+		abilities: {0: "Technician", 1: "Friend Guard", H: "Serene Grace"},
 		weightkg: 0.1,
 	},
 	jas: {
@@ -95,6 +103,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Jas",
 		types: ["Dark", "Grass"],
 		baseStats: {hp: 110, atk: 95, def: 55, spa: 55, spd: 95, spe: 40},
+		abilities: {0: "Leaf Guard", 1: "Chlorophyll", H: "Flower Veil"},
 		weightkg: 67,
 	},
 	larex: {
@@ -103,6 +112,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy"],
 		gender: "M",
 		baseStats: {hp: 118, atk: 40, def: 75, spa: 105, spd: 90, spe: 22},
+		abilities: {0: "Friend Guard", 1: "Own Tempo", H: "Purifying Salt"},
 		weightkg: 400,
 	},
 	rydalis: {
@@ -110,6 +120,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Rydalis",
 		types: ["Steel", "Dragon"],
 		baseStats: {hp: 75, atk: 85, def: 85, spa: 64, spd: 75, spe: 76},
+		abilities: {0: "Inner Focus", 1: "Levitate", H: "Serene Grace"},
 		weightkg: 330,
 	},
 	cyaneedle: {
@@ -118,6 +129,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Grass"],
 		gender: "M",
 		baseStats: {hp: 115, atk: 40, def: 40, spa: 125, spd: 100, spe: 40},
+		abilities: {0: "Flower Veil", 1: "Hospitality", H: "Serene Grace"},
 	},
 	nuclearstomp: {
 		num: 6715,
@@ -125,6 +137,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Rock", "Grass"],
 		gender: "M",
 		baseStats: {hp: 60, atk: 40, def: 100, spa: 60, spd: 115, spe: 80},
+		abilities: {0: "Sand Stream", 1: "Disguise", H: "Unaware"},
 		weightkg: 226.8,
 	},
 	charley: {
@@ -133,14 +146,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ice", "Dragon"],
 		gender: "F",
 		baseStats: {hp: 50, atk: 130, def: 115, spa: 30, spd: 65, spe: 65},
+		abilities: {0: "Tough Claws", 1: "Sand Rush", H: "Poison Point"},
 		weightkg: 45,
 	},
 	killerfish: {
 		num: 6717,
-		name: "KillerFish",
+		name: "Killer Fish",
 		types: ["Flying", "Electric"],
 		gender: "M",
 		baseStats: {hp: 120, atk: 40, def: 105, spa: 40, spd: 80, spe: 65},
+		abilities: {0: "Thick Fat", 1: "Fluffy", H: "Friend Guard"},
 		weightkg: 105.2,
 	},
 	nkazuya: {
@@ -149,6 +164,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Steel", "Electric"],
 		gender: "N",
 		baseStats: {hp: 60, atk: 60, def: 155, spa: 60, spd: 60, spe: 60},
+		abilities: {0: "Sand Veil", 1: "Regenerator", H: "Contrary"},
 		weightkg: 0.1,
 	},
 	slowbro: {
@@ -158,6 +174,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ground", "Flying"],
 		gender: "M",
 		baseStats: {hp: 70, atk: 50, def: 115, spa: 50, spd: 100, spe: 75},
+		abilities: {0: "Thick Fat", 1: "Swarm", H: "Steadfast"},
 		weightkg: 190,
 	},
 	ruo: {
@@ -166,6 +183,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ice", "Fairy"],
 		gender: "N",
 		baseStats: {hp: 130, atk: 65, def: 80, spa: 50, spd: 80, spe: 50},
+		abilities: {0: "Flower Veil", 1: "Slush Rush", H: "Prankster"},
 		weightkg: 78,
 	},
 	flampoke: {
@@ -174,6 +192,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Normal", "Grass"],
 		gender: "M",
 		baseStats: {hp: 90, atk: 90, def: 65, spa: 65, spd: 100, spe: 50},
+		abilities: {0: "Intimidate", 1: "Lightning Rod", H: "Flower Veil"},
 		weightkg: 70.4,
 	},
 	ttk: {
@@ -182,6 +201,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fighting", "Flying"],
 		gender: "M",
 		baseStats: {hp: 90, atk: 90, def: 65, spa: 80, spd: 90, spe: 45},
+		abilities: {0: "Thick Fat", 1: "Contrary", H: "Defiant"},
 		weightkg: 58.2,
 	},
 	thurisaz: {
@@ -190,6 +210,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Normal", "Fire"],
 		gender: "M",
 		baseStats: {hp: 95, atk: 60, def: 60, spa: 95, spd: 85, spe: 50},
+		abilities: {0: "Healer", 1: "Gluttony", H: "Cute Charm"},
 		weightkg: 1,
 	},
 	ghostsword: {
@@ -198,6 +219,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Normal", "Psychic"],
 		gender: "M",
 		baseStats: {hp: 90, atk: 90, def: 55, spa: 45, spd: 90, spe: 90},
+		abilities: {0: "Guts", 1: "Friend Guard", H: "Magician"},
 		weightkg: 82,
 	},
 	luigiguy: {
@@ -206,6 +228,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Dark", "Poison"],
 		gender: "M",
 		baseStats: {hp: 75, atk: 85, def: 85, spa: 40, spd: 85, spe: 85},
+		abilities: {0: "Poison Point", 1: "Sheer Force", H: "Contrary"},
 		weightkg: 61,
 	},
 	definitelyelite: {
@@ -214,6 +237,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 25, atk: 105, def: 65, spa: 80, spd: 105, spe: 65},
+		abilities: {0: "Moody", 1: "Magic Guard", H: "Competitive"},
 		weightkg: 72.7,
 	},
 	mendoza: {
@@ -222,6 +246,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Ground"],
 		gender: "M",
 		baseStats: {hp: 95, atk: 95, def: 110, spa: 35, spd: 85, spe: 25},
+		abilities: {0: "Defiant", 1: "Regenerator", H: "Stamina"},
 	},
 	serpexnessie: {
 		num: 6728,
@@ -229,6 +254,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Fairy", "Fire"],
 		gender: "F",
 		baseStats: {hp: 135, atk: 49, def: 50, spa: 100, spd: 65, spe: 51},
+		abilities: {0: "Prankster", 1: "Misty Surge", H: "Rattled"},
 		weightkg: 62,
 	},
 	taurossweep: {
@@ -242,12 +268,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	airy: {
 		num: 6730,
-		species: "airy",
+		name: "airy",
 		types: ["Grass", "Water"],
 		gender: "M",
 		baseStats: {hp: 150, atk: 40, def: 55, spa: 55, spd: 95, spe: 55},
 		abilities: {0: "Overgrow", 1: "Hospitality", H: "Flower Veil"},
 		weightkg: 31,
+	},
+	nosh: {
+		num: 6731,
+		name: "nosh",
+		types: ["Fairy", "Ice"],
+		baseStats: {hp: 100, atk: 50, def: 60, spa: 115, spd: 60, spe: 75},
+		abilities: {0: "Technician", 1: "Speed Boost", H: "Own Tempo"},
+		weightkg: 3,
 	},
 
 };
