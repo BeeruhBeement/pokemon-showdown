@@ -383,7 +383,6 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			focuspunch: ["9L1"],
 			focusblast: ["9L1"],
 			machpunch: ["9L1"],
-			drainpunch: ["9L1"],
 			thunderpunch: ["9L1"],
 			thunder: ["9L1"],
 			thunderbolt: ["9L1"],
@@ -1559,6 +1558,8 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			bodyslam: ["9L1"],
 			taunt: ["9L1"],
 			encore: ["9L1"],
+			reflect: ["9L1"],
+			lightscreen: ["9L1"],
 		},
 	},
 	ruo: {
