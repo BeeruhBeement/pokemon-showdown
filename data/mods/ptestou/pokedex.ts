@@ -13,7 +13,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "livii",
 		types: ["Steel", "Fighting"],
 		gender: "F",
-		baseStats: {hp: 85, atk: 85, def: 85, spa: 65, spd: 77, spe: 53},
+		baseStats: {hp: 85, atk: 85, def: 85, spa: 65, spd: 73, spe: 57},
 		abilities: {0: "Thick Fat", 1: "Contrary", H: "Defiant"},
 		weightkg: 70.2,
 	},
