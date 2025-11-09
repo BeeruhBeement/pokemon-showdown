@@ -5,7 +5,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Bug", "Grass"],
 		gender: "F",
 		baseStats: {hp: 65, atk: 30, def: 55, spa: 85, spd: 85, spe: 140},
-		abilities: {0: "Intimidate", 1: "Lightning Rod", H: "Flower Veil"},
+		abilities: {0: "Regenerator", 1: "Battle Armor", H: "Contrary"},
 		weightkg: 45.8,
 	},
 	livii: {
@@ -14,7 +14,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Steel", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 85, atk: 85, def: 85, spa: 65, spd: 73, spe: 57},
-		abilities: {0: "Thick Fat", 1: "Contrary", H: "Defiant"},
+		abilities: {0: "Water Bubble", 1: "Sturdy", H: "Friend Guard"},
 		weightkg: 70.2,
 	},
 	frambuesa: {
@@ -23,7 +23,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Normal", "Steel"],
 		gender: "N",
 		baseStats: {hp: 105, atk: 90, def: 80, spa: 80, spd: 60, spe: 45},
-		abilities: {0: "Healer", 1: "Gluttony", H: "Cute Charm"},
+		abilities: {0: "Magician", 1: "Lightning Rod", H: "Steadfast"},
 		weightkg: 109,
 	},
 	r: {
