@@ -231,5 +231,23 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 135, atk: 49, def: 50, spa: 100, spd: 65, spe: 51},
 		weightkg: 62,
 	},
+	taurossweep: {
+		num: 6729,
+		name: "Tauros sweep",
+		types: ["Ground", "Poison"],
+		gender: "M",
+		baseStats: {hp: 45, atk: 100, def: 100, spa: 55, spd: 55, spe: 100},
+		abilities: {0: "Tough Claws", 1: "Limber", H: "Anger Point"},
+		weightkg: 78.5,
+	},
+	airy: {
+		num: 6730,
+		species: "airy",
+		types: ["Grass", "Water"],
+		gender: "M",
+		baseStats: {hp: 150, atk: 40, def: 55, spa: 55, spd: 95, spe: 55},
+		abilities: {0: "Overgrow", 1: "Hospitality", H: "Flower Veil"},
+		weightkg: 31,
+	},
 
 };

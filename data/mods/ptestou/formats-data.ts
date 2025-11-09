@@ -115,5 +115,12 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
-
+	taurossweep: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	airy: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 };
