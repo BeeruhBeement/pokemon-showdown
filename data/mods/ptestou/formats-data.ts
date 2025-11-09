@@ -135,4 +135,21 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	rowlet: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	gaysexor: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	dunscy: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	boshifanfic: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+
 };
