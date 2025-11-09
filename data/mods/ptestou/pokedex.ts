@@ -285,7 +285,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	supercraig: {
 		num: 6732,
-		species: "Super Craig",
+		name: "Super Craig",
 		types: ["Fairy", "Poison"],
 		gender: "M",
 		baseStats: {hp: 70, atk: 30, def: 80, spa: 130, spd: 130, spe: 20},
@@ -294,7 +294,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	beeruh: {
 		num: 6733,
-		species: "Beeruh",
+		name: "Beeruh",
 		types: ["Steel"],
 		gender: "M",
 		baseStats: {hp: 60, atk: 45, def: 80, spa: 55, spd: 125, spe: 95},
