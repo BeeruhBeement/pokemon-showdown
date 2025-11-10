@@ -151,5 +151,21 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	jozar: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	zxgzxg: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	arcato: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	nidotheking: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 
 };
