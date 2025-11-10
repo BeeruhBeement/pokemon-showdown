@@ -374,5 +374,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Thick Fat", 1: "Lightning Rod", H: "Slush Rush"},
 		weightkg: 999.9,
 	},
+	dottwodot: {
+		num: 6742,
+		name: "DotTwoDot",
+		types: ["Flying", "Water"],
+		gender: "F",
+		baseStats: {hp: 75, atk: 85, def: 85, spa: 50, spd: 75, spe: 75},
+		abilities: {0: "Stamina", 1: "Volt Absorb", H: "Thick Fat"},
+		weightkg: 62,
+	},
 
 };

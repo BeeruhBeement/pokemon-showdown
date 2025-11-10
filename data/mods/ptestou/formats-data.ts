@@ -167,5 +167,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	dottwodot: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 
 };
