@@ -318,6 +318,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			toxicspikes: ["9L1"],
 			tripleaxel: ["9L1"],
 			tripledive: ["9L1"],
+			trickroom: ["9L1"],
 			twineedle: ["9L1"],
 			watergun: ["9L1"],
 			waterpulse: ["9L1"],
