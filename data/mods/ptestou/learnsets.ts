@@ -1717,6 +1717,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			petaldance: ["9L1"],
 			playrough: ["9L1"],
 			pollenpuff: ["9L1"],
+			powerwhip: ["9L1"],
 			protect: ["9L1"],
 			psychup: ["9L1"],
 			raindance: ["9L1"],
