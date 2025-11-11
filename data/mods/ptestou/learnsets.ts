@@ -1275,6 +1275,8 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			knockoff: ["9L1"],
 			uturn: ["9L1"],
 			spikyshield: ["9L1"],
+			bounce: ["9L1"],
+			tropkick: ["9L1"],
 		},
 	},
 	charley: {
