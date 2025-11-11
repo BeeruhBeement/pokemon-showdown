@@ -1152,9 +1152,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous"],
 		color: "Purple",
 	},
+	geodude: {
+		inherit: true,
+		evos: undefined,
+	},
 	graveler: {
 		inherit: true,
 		evos: undefined,
+		prevo: undefined,
 	},
 	golem: {
 		num: -40095,
@@ -1166,6 +1171,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Mineral"],
 		color: "Gray",
+		prevo: undefined,
 	},
 	madoo: {
 		num: -40096,
