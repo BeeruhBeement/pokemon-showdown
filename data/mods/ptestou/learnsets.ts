@@ -723,6 +723,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			spectralthief: ["9L1"],
 			uturn: ["9L1"],
 			healorder: ["9L1"],
+			trick: ["9L1"],
 		},
 	},
 	enderwither02: {
