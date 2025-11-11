@@ -385,7 +385,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	bandite: {
 		num: 6743,
-		species: "Bandite",
+		name: "Bandite",
 		types: ["Water", "Ground"],
 		baseStats: {hp: 95, atk: 80, def: 95, spa: 35, spd: 60, spe: 95},
 		abilities: {0: "Overgrow", 1: "Hospitality", H: "Snow Warning"},
@@ -393,7 +393,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	xthegamemaster: {
 		num: 6744,
-		species: "XtheGAMEmaster",
+		name: "XtheGAMEmaster",
 		types: ["Ice", "Flying"],
 		baseStats: {hp: 105, atk: 70, def: 45, spa: 95, spd: 95, spe: 35},
 		abilities: {0: "Ice Scales", 1: "Friend Guard", H: "Hydration"},
