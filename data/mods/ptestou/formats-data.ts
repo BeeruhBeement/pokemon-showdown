@@ -171,5 +171,13 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	bandite: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
+	xthegamemaster: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 
 };
