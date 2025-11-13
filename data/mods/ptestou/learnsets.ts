@@ -1270,7 +1270,7 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			swordsdance: ["9L1"],
 			toxicspikes: ["9L1"],
 			zenheadbutt: ["9L1"],
-			shellsmash: ["9L1"],
+			calmmind: ["9L1"],
 			wish: ["9L1"],
 			knockoff: ["9L1"],
 			uturn: ["9L1"],
