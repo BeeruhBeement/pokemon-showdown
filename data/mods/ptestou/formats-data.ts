@@ -179,5 +179,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	cyberpunkninja: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 
 };

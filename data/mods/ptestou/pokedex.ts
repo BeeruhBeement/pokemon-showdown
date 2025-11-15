@@ -399,5 +399,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Ice Scales", 1: "Friend Guard", H: "Hydration"},
 		weightkg: 52,
 	},
+	cyberpunkninja: {
+		num: 6745,
+		name: "Cyberpunkninja",
+		types: ["Grass", "Steel"],
+		baseStats: {hp: 135, atk: 45, def: 60, spa: 45, spd: 120, spe: 45},
+		abilities: {0: "Flower Veil", 1: "Lightning Rod", H: "Sweet Veil"},
+		weightkg: 59,
+	},
 
 };
