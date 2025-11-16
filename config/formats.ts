@@ -3199,7 +3199,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 	{
 		section: "Pet Mods",
-	},
+	},/*
 	{
 		name: "[Gen 9] spookymod Random Battle",
 		desc: `A Gen 9 Halloween-themed solomod comprised of entirely Ghost-types, some with more than 2 types.`,
@@ -3242,7 +3242,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 			}
 		},
-	},
+	},*/
 	{
 		name: "[Gen 9] ChatBats",
 		desc: `A Random Battles Solomod made by the Pet Mods chatroom on Showdown.`,

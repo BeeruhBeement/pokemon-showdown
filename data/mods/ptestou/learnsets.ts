@@ -2640,7 +2640,6 @@ export const Learnsets: {[speciesid: string]: ModdedLearnsetData} = {
 			substitute: ["9L1"],
 			swagger: ["9L1"],
 			toxic: ["9L1"],
-			toxic: ["9L1"],
 			aquaring: ["9L1"],
 			crabhammer: ["9L1"],
 			electroweb: ["9L1"],
