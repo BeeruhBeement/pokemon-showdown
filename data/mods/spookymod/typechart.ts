@@ -1,4 +1,4 @@
-export const TypeChart: {[k: string]: ModdedTypeData | null} = {
+export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 	ark: {
 		damageTaken: {
 			Bug: 1,
@@ -20,8 +20,6 @@ export const TypeChart: {[k: string]: ModdedTypeData | null} = {
 			Steel: 0,
 			Water: 0,
 		},
-		HPivs: {},
-		HPdvs: {}
 	},
 	critcele: {
 		damageTaken: {
@@ -44,8 +42,6 @@ export const TypeChart: {[k: string]: ModdedTypeData | null} = {
 			Steel: 1,
 			Water: 0,
 		},
-		HPivs: {},
-		HPdvs: {}
 	},
 	pdark: {
 		damageTaken: {
@@ -68,8 +64,6 @@ export const TypeChart: {[k: string]: ModdedTypeData | null} = {
 			Steel: 0,
 			Water: 0,
 		},
-		HPivs: {},
-		HPdvs: {}
 	},
 	prock: {
 		damageTaken: {
@@ -92,8 +86,6 @@ export const TypeChart: {[k: string]: ModdedTypeData | null} = {
 			Steel: 1,
 			Water: 1,
 		},
-		HPivs: {},
-		HPdvs: {}
 	},
 	retaw: {
 		damageTaken: {
@@ -116,7 +108,5 @@ export const TypeChart: {[k: string]: ModdedTypeData | null} = {
 			Steel: 1,
 			Water: 1,
 		},
-		HPivs: {},
-		HPdvs: {}
 	},
-}
+};

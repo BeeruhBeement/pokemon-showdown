@@ -1,50 +1,84 @@
-export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
+export const Scripts: ModdedBattleScriptsData = {
 	gen: 9,
-	teambuilderConfig: {
-		// for micrometas to only show custom tiers
-		excludeStandardTiers: true,
-		// only to specify the order of custom tiers
+	// the below is all commented out due to an ability that requires checkFainted, but it seems like we can't edit checkFainted
+	/* checkFainted() {
+		for (const side of this.sides) {
+			for (const pokemon of side.active) {
+				if (pokemon.fainted) {
+					pokemon.status = 'fnt' as ID;
+					pokemon.switchFlag = true;
+				} else if (pokemon.effectState.zombie) {
+					pokemon.status = '';
+					pokemon.switchFlag = true;
+				}
+			}
+		}
 	},
-	faintMessages(lastFirst = false) {
+	faintMessages(lastFirst = false, forceCheck = false, checkWin = true) {
 		if (this.ended) return;
 		const length = this.faintQueue.length;
-		if (!length) return false;
+		if (!length) {
+			if (forceCheck && this.checkWin()) return true;
+			return false;
+		}
 		if (lastFirst) {
 			this.faintQueue.unshift(this.faintQueue[this.faintQueue.length - 1]);
 			this.faintQueue.pop();
 		}
-		let faintData;
+		let faintQueueLeft, faintData;
 		while (this.faintQueue.length) {
+			faintQueueLeft = this.faintQueue.length;
 			faintData = this.faintQueue.shift()!;
 			const pokemon: Pokemon = faintData.target;
-			if (!pokemon.fainted &&
-					this.runEvent('BeforeFaint', pokemon, faintData.source, faintData.effect)) {
+			if (!pokemon.fainted && this.runEvent('BeforeFaint', pokemon, faintData.source, faintData.effect)) {
 				this.add('faint', pokemon);
 				if (
-					!(pokemon.species.name === 'Trevenant' && pokemon.ability === 'revive' && !pokemon.zombie &&
-					  !pokemon.transformed && this.canSwitch(pokemon.side))
+					!(pokemon.species.name === 'Trevenant' && pokemon.ability === 'revive' && !this.effectState.zombie &&
+						!pokemon.transformed && this.canSwitch(pokemon.side))
 				) {
 					pokemon.side.pokemonLeft--;
 				}
 				this.runEvent('Faint', pokemon, faintData.source, faintData.effect);
-				this.singleEvent('End', pokemon.getAbility(), pokemon.abilityData, pokemon);
+				this.singleEvent('End', pokemon.getAbility(), pokemon.abilityState, pokemon);
+				this.singleEvent('End', pokemon.getItem(), pokemon.itemState, pokemon);
+				if (pokemon.formeRegression && !pokemon.transformed) {
+					// before clearing volatiles
+					pokemon.baseSpecies = this.dex.species.get(pokemon.set.species || pokemon.set.name);
+					pokemon.baseAbility = toID(pokemon.set.ability);
+				}
 				pokemon.clearVolatile(false);
-				if (!pokemon.zombie) {
+				if (!this.effectState.zombie) {
 					pokemon.fainted = true;
 				} else {
-					pokemon.faintQueued = null;
+					pokemon.faintQueued = false;
 				}
 				pokemon.illusion = null;
 				pokemon.isActive = false;
 				pokemon.isStarted = false;
+				delete pokemon.terastallized;
+				if (pokemon.formeRegression) {
+					// after clearing volatiles
+					pokemon.details = pokemon.getUpdatedDetails();
+					this.add('detailschange', pokemon, pokemon.details, '[silent]');
+					pokemon.updateMaxHp();
+					pokemon.formeRegression = false;
+				}
 				pokemon.side.faintedThisTurn = pokemon;
+				if (this.faintQueue.length >= faintQueueLeft) checkWin = true;
 			}
 		}
-
 		if (this.gen <= 1) {
 			// in gen 1, fainting skips the rest of the turn
 			// residuals don't exist in gen 1
 			this.queue.clear();
+			// Fainting clears accumulated Bide damage
+			for (const pokemon of this.getAllActive()) {
+				if (pokemon.volatiles['bide']?.damage) {
+					pokemon.volatiles['bide'].damage = 0;
+					this.hint("Desync Clause Mod activated!");
+					this.hint("In Gen 1, Bide's accumulated damage is reset to 0 when a Pokemon faints.");
+				}
+			}
 		} else if (this.gen <= 3 && this.gameType === 'singles') {
 			// in gen 3 or earlier, fainting in singles skips to residuals
 			for (const pokemon of this.getAllActive()) {
@@ -57,52 +91,11 @@ export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
 				}
 			}
 		}
-
-		let team1PokemonLeft = this.sides[0].pokemonLeft;
-		let team2PokemonLeft = this.sides[1].pokemonLeft;
-		const team3PokemonLeft = this.gameType === 'free-for-all' && this.sides[2]!.pokemonLeft;
-		const team4PokemonLeft = this.gameType === 'free-for-all' && this.sides[3]!.pokemonLeft;
-		if (this.gameType === 'multi') {
-			team1PokemonLeft = this.sides.reduce((total, side) => total + (side.n % 2 === 0 ? side.pokemonLeft : 0), 0);
-			team2PokemonLeft = this.sides.reduce((total, side) => total + (side.n % 2 === 1 ? side.pokemonLeft : 0), 0);
-		}
-		if (!team1PokemonLeft && !team2PokemonLeft && !team3PokemonLeft && !team4PokemonLeft) {
-			this.win(faintData && this.gen > 4 ? faintData.target.side : null);
-			return true;
-		}
-		if (!team2PokemonLeft && !team3PokemonLeft && !team4PokemonLeft) {
-			this.win(this.sides[0]);
-			return true;
-		}
-		if (!team1PokemonLeft && !team3PokemonLeft && !team4PokemonLeft) {
-			this.win(this.sides[1]);
-			return true;
-		}
-		if (!team1PokemonLeft && !team2PokemonLeft && !team4PokemonLeft) {
-			this.win(this.sides[2]);
-			return true;
-		}
-		if (!team1PokemonLeft && !team2PokemonLeft && !team3PokemonLeft) {
-			this.win(this.sides[3]);
-			return true;
-		}
-
-		if (faintData) {
+		if (checkWin && this.checkWin(faintData)) return true;
+		if (faintData && length) {
 			this.runEvent('AfterFaint', faintData.target, faintData.source, faintData.effect, length);
 		}
 		return false;
 	},
-	checkFainted() {
-		for (const side of this.sides) {
-			for (const pokemon of side.active) {
-				if (pokemon.fainted) {
-					pokemon.status = 'fnt' as ID;
-					pokemon.switchFlag = true;
-				} else if (pokemon.zombie) {
-					pokemon.status = '';
-					pokemon.switchFlag = true;
-				}
-			}
-		}
-	},
+	*/
 };

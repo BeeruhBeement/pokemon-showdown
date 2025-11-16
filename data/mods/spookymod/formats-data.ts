@@ -1,128 +1,126 @@
-import { ModdedSpeciesFormatsData } from "../../../sim/dex-species";
-
-export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
+export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
 	aegislash: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	banettemega: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	ceruledge: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	dofagrigus: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	eddyazbear: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	fluttermane: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	fluttermane2: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	gourgeisttiny: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	gourgeist: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	gourgeistlarge: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	gourgeistgigantic: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	houndstone: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	indeedee: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	jableye: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	jobapplication: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	lanturnevil: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	merasmus: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	nursola: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	okestarspirit: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	ppiritomb: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	quagsiredead: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	rotom: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	shedinja: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	trevenant: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	ursalunabloodmoon: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	kilotic: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	vampharos: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	wunala: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	xorygonz: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	yveltal: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	zoroarkhisui: {
-		tier: "SM",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	aegislashshrunken: {
