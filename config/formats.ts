@@ -232,42 +232,48 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
 	},
 	{
-        name: "[Gen 9] Spookymod",
-        desc: "jumpscaare",
-        threads: [
-            `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">Spookymod on Smogon Forums</a>`,
-              ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Spokymod'],
-        banlist: [],
-		teambuilderFormat: "National Dex",
-        onValidateTeam(team, format) {
-            /**@type {{[k: string]: true}} */
-            let speciesTable = {};
-            let f = false;
-            let ff = false;
-            for (const set of team) {
-                if (set.species === 'Flutter Mane') f = true;
-                else if (set.species === 'Flutter Mane 2') ff = true;
-                if(f && ff) return ['Did you think you could bring two Flutter Manes to a game? Are you stupid?'];
-                let template = this.dex.species.get(set.species);
-                if (template.tier !== 'SM') {
-                    return [set.species + ' is not usable in Spookymod.'];
-                }
-            }
-        },
-        mod: 'spookymod',
-    },
+		name: "[Gen 9] spookymod Random Battle",
+		desc: `A Gen 9 Halloween-themed solomod comprised of entirely Ghost-types, some with more than 2 types.`,
+		mod: 'spookymod',
+		team: 'randomSPM',
+		ruleset: ['Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod', 'Terastal Clause', 'Data Preview', 'Sprite Viewer', 'Spokymod'],
+		onBegin() {
+			this.add(`raw|<div class='broadcast-green'><b>Need help with all of the new moves, abilities, and wacky stuff?<br />Then make sure to check out the <a href="https://docs.google.com/spreadsheets/d/1gE9pr0ghm1_Y8kPk0c-jXP93X57xlEr1OzzyXUVH90w/edit#gid=0" target="_blank">spookymod Spreadsheet</a> or use /dt!</b></div>`);
+		},
+		onSwitchInPriority: 100,
+		onSwitchIn(pokemon) {
+			if ((pokemon.illusion || pokemon).getTypes(true, true).join('/') !==
+				this.dex.forGen(9).species.get((pokemon.illusion || pokemon).species.name).types.join('/') &&
+				!pokemon.terastallized) {
+				this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
+			}
+		},
+	},
 	{
-        name: "[Gen 9] Spookymod Random Battle",
-        desc: "jumpscaare",
-        threads: [
-            `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">Spookymod on Smogon Forums</a>`,
-              ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Spokymod', '!Team Preview'],
-        banlist: [],
-		team: 'random',
-        mod: 'spookymod',
-    },
+		name: "[Gen 9] spookymod", // roomtours
+		desc: `A Gen 9 Halloween-themed solomod comprised of entirely Ghost-types, some with more than 2 types.`,
+		mod: 'spookymod',
+		searchShow: false,
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Preview', 'Sprite Viewer', 'Spokymod'],
+		banlist: ['All Pokemon'],
+		unbanlist: [
+			'Aegislash', 'Banette-Mega', 'Ceruledge', 'Dofagrigus', 'Eddy Azbear', 'Flutter Mane', 'Flutter Mane 2',
+			'Gourgeist-Tiny', 'Gourgeist', 'Gourgeist-Large', 'Gourgeist-Gigantic', 'Houndstone', 'Indeedee', 'Jableye',
+			'JOB APPLICATION', 'Kilotic', 'Lanturn-Evil', 'MERASMUS', 'Nursola', 'Okestar Spirit', 'PPiritomb', 'Quagsire-Dead',
+			'Rotom', 'Shedinja', 'Trevenant', 'Ursaluna-Bloodmoon', 'Vampharos', 'Wunala', 'XORygon-Z', 'Yveltal', 'Zoroark-Hisui',
+		],
+		onBegin() {
+			this.add(`raw|<div class='broadcast-green'><b>Need help with all of the new moves, abilities, and wacky stuff?<br />Then make sure to check out the <a href="https://docs.google.com/spreadsheets/d/1gE9pr0ghm1_Y8kPk0c-jXP93X57xlEr1OzzyXUVH90w/edit#gid=0" target="_blank">spookymod Spreadsheet</a> or use /dt!</b></div>`);
+		},
+		onSwitchInPriority: 100,
+		onSwitchIn(pokemon) {
+			if ((pokemon.illusion || pokemon).getTypes(true, true).join('/') !==
+				this.dex.forGen(9).species.get((pokemon.illusion || pokemon).species.name).types.join('/') &&
+				!pokemon.terastallized) {
+				this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
+			}
+		},
+	},
 	{
         name: "[Gen 9] Climate Change",
         desc: [
