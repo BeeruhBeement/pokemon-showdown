@@ -106,8 +106,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onHit(pokemon) {
 			let factor = 0.5;
 			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
-			if (success && pokemon.types.includes('Electric')) {
-				pokemon.setType(pokemon.getTypes(true).map(type => type === "Electric" ? "Steel" : "Steel"));
+			if (success && pokemon.hasType('Electric')) {
+				const types = pokemon.getTypes(true);
+				const newTypes = types.map(t => t === 'Electric' ? 'Steel' : t);
+				pokemon.setType(newTypes);
 				this.add('-start', pokemon, 'typechange', pokemon.getTypes().join('/'), '[from] move: Power Down');
 			}
 			return success;
