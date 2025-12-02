@@ -128,6 +128,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "greninja").learnset.psyshock = ["9M"];
 	dex.modData("Learnsets", "greninja").learnset.flipturn = ["9M"];
 	
+	dex.modData("Learnsets", "greninjabond").learnset.nastyplot = ["9M"];
+	dex.modData("Learnsets", "greninjabond").learnset.psyshock = ["9M"];
+	dex.modData("Learnsets", "greninjabond").learnset.flipturn = ["9M"];
+	
 	dex.modData("Learnsets", "talonflame").learnset.whirlwind = ["9M"];
 	dex.modData("Learnsets", "talonflame").learnset.flamewheel = ["9M"];
 	
