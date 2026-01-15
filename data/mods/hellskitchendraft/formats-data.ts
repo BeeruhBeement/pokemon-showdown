@@ -77,4 +77,70 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	falinksmega: {
 		natDexTier: "OU",
 	},
+	raichumegax: {
+		natDexTier: "OU",
+	},
+	raichumegay: {
+		natDexTier: "OU",
+	},
+	chimechomega: {
+		natDexTier: "OU",
+	},
+	absolmegaz: {
+		natDexTier: "OU",
+	},
+	staraptormega: {
+		natDexTier: "OU",
+	},
+	garchompmegaz: {
+		natDexTier: "OU",
+	},
+	lucariomegaz: {
+		natDexTier: "OU",
+	},
+	heatranmega: {
+		natDexTier: "OU",
+	},
+	darkraimega: {
+		natDexTier: "OU",
+	},
+	golurkmega: {
+		natDexTier: "OU",
+	},
+	meowsticmega: {
+		natDexTier: "OU",
+	},
+	crabominablemega: {
+		natDexTier: "OU",
+	},
+	golisopodmega: {
+		natDexTier: "OU",
+	},
+	magearnamega: {
+		natDexTier: "OU",
+	},
+	magearnaoriginalmega: {
+		natDexTier: "OU",
+	},
+	zeraoramega: {
+		natDexTier: "OU",
+	},
+	scovillainmega: {
+		natDexTier: "OU",
+	},
+	glimmoramega: {
+		natDexTier: "OU",
+	},
+	tatsugiricurlymega: {
+		natDexTier: "OU",
+	},
+	tatsugiridroopymega: {
+		natDexTier: "OU",
+	},
+	tatsugiristretchymega: {
+		natDexTier: "OU",
+	},
+	baxcaliburmega: {
+		natDexTier: "OU",
+	},
 }
