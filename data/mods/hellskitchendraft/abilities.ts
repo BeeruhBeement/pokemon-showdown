@@ -10,6 +10,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 4,
 	},
 	
+	solarborne: {
+		// implemented elsewhere, like util umbrella
+		name: "Solarborne",
+		num: 0,
+	},
 	perfectorganism: {
 		onModifySpAPriority: 5,
 		onModifySpA(spa) {

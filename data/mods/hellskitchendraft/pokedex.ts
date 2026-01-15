@@ -158,7 +158,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Speed Boost"},
 	},
-	meowsticmega: {
+	meowsticmmega: {
+		inherit: true,
+		abilities: {0: "Psychic Surge"},
+	},
+	meowsticfmega: {
 		inherit: true,
 		abilities: {0: "Psychic Surge"},
 	},
