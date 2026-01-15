@@ -56,7 +56,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'hellskitchendraft',
 		searchShow: false,
 		teraPreviewDefault: true,
-		ruleset: ['Standard NatDex', 'Terastal Clause', '+Unobtainable', '+Past', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Clause Mod'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Moves Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
@@ -72,7 +72,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'zarpadraft',
 		searchShow: false,
 		teraPreviewDefault: true,
-		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
+		ruleset: ['Standard Draft', 'Min Source Gen = 1', 'Terastal Clause', 'Sleep Moves Clause'],
 	},
 	{
 		name: "[Gen 9] Hell's Kitchen Modded Draft",
