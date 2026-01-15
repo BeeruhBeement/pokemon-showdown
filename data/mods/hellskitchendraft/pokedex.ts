@@ -655,6 +655,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	houndoommega: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
+		abilities: {0: "Desolate Land"},
 	},
 };
