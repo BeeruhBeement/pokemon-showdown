@@ -51,7 +51,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
 	},
 	{
-		name: "[Gen 9] Hell's Kitchen OU",
+		name: "[Gen 9] Hells Kitchen OU",
 
 		mod: 'hellskitchendraft',
 		searchShow: false,
@@ -75,7 +75,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard Draft', 'Min Source Gen = 1', 'Terastal Clause', 'Sleep Moves Clause'],
 	},
 	{
-		name: "[Gen 9] Hell's Kitchen Modded Draft",
+		name: "[Gen 9] Hells Kitchen Modded Draft",
 
 		mod: 'hellskitchendraft',
 		searchShow: false,
