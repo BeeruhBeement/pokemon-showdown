@@ -186,7 +186,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Dark Aura"},
 	},
-	venusaurmega: {
+	venusaurmegag: {
 		num: 3,
 		name: "Venusaur-Mega-G",
 		baseSpecies: "Venusaur",

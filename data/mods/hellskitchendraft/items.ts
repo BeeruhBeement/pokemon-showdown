@@ -384,8 +384,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		}
 	},
-	centiskorch: {
-		name: "Centiskorch",
+	centiskorchite: {
+		name: "Centiskorchite",
 		megaStone: { "Centiskorch": "Centiskorch-Mega" },
 		itemUser: ["Centiskorch"],
 		onTakeItem(item, source) {
