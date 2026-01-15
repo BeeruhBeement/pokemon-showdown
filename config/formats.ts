@@ -50,6 +50,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard', 'Data Mod'],
 		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
 	},
+	{
+		name: "[Gen 9] Hell's Kitchen OU",
+
+		mod: 'hellskitchendraft',
+		searchShow: false,
+		teraPreviewDefault: true,
+		ruleset: ['Standard NatDex', 'Terastal Clause', '+Unobtainable', '+Past', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Clause Mod'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
+	},
 
 	{
 		section: "Custom Draft",
@@ -58,6 +70,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] RPA Z-A Modded Draft",
 
 		mod: 'zarpadraft',
+		searchShow: false,
+		teraPreviewDefault: true,
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
+	},
+	{
+		name: "[Gen 9] Hell's Kitchen Modded Draft",
+
+		mod: 'hellskitchendraft',
 		searchShow: false,
 		teraPreviewDefault: true,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
