@@ -1,4 +1,14 @@
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
+	deoxysspeed: {
+		natDexTier: "OU",
+	},
+	darkrai: {
+		natDexTier: "OU",
+	},
+	dragapult: {
+		natDexTier: "OU",
+	},
+
 	clefablemega: {
 		natDexTier: "OU",
 	},
@@ -117,10 +127,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		natDexTier: "OU",
 	},
 	magearnamega: {
-		natDexTier: "OU",
+		natDexTier: "Uber",
 	},
 	magearnaoriginalmega: {
-		natDexTier: "OU",
+		natDexTier: "Uber",
 	},
 	zeraoramega: {
 		natDexTier: "OU",
@@ -142,5 +152,105 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	},
 	baxcaliburmega: {
 		natDexTier: "OU",
+	},
+
+	venusaurmegag: {
+		natDexTier: "OU",
+	},
+	charizardmegag: {
+		natDexTier: "OU",
+	},
+	blastoisemegag: {
+		natDexTier: "OU",
+	},
+	butterfreemega: {
+		natDexTier: "OU",
+	},
+	pikachumega: {
+		natDexTier: "OU",
+	},
+	meowthmega: {
+		natDexTier: "OU",
+	},
+	machampmega: {
+		natDexTier: "OU",
+	},
+	gengarmegag: {
+		natDexTier: "OU",
+	},
+	kinglermega: {
+		natDexTier: "OU",
+	},
+	laprasmega: {
+		natDexTier: "OU",
+	},
+	eeveemega: {
+		natDexTier: "OU",
+	},
+	snorlaxmega: {
+		natDexTier: "OU",
+	},
+	garbodormega: {
+		natDexTier: "OU",
+	},
+	melmetalmega: {
+		natDexTier: "OU",
+	},
+	rillaboommega: {
+		natDexTier: "OU",
+	},
+	cinderacemega: {
+		natDexTier: "OU",
+	},
+	inteleonmega: {
+		natDexTier: "OU",
+	},
+	corviknightmega: {
+		natDexTier: "OU",
+	},
+	orbeetlemega: {
+		natDexTier: "OU",
+	},
+	drednawmega: {
+		natDexTier: "OU",
+	},
+	coalossalmega: {
+		natDexTier: "OU",
+	},
+	flapplemega: {
+		natDexTier: "OU",
+	},
+	appletunmega: {
+		natDexTier: "OU",
+	},
+	sandacondamega: {
+		natDexTier: "OU",
+	},
+	toxtricitymega: {
+		natDexTier: "OU",
+	},
+	centiskorchmega: {
+		natDexTier: "OU",
+	},
+	hatterenemega: {
+		natDexTier: "OU",
+	},
+	grimmsnarlmega: {
+		natDexTier: "OU",
+	},
+	alcremiemega: {
+		natDexTier: "OU",
+	},
+	copperajahmega: {
+		natDexTier: "OU",
+	},
+	duraludonmega: {
+		natDexTier: "OU",
+	},
+	urshifumega: {
+		natDexTier: "Uber",
+	},
+	urshifurapidstrikemega: {
+		natDexTier: "Uber",
 	},
 }
