@@ -117,7 +117,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	golurkmega: {
 		natDexTier: "OU",
 	},
-	meowsticmega: {
+	meowsticmmega: {
+		natDexTier: "OU",
+	},
+	meowsticfmega: {
 		natDexTier: "OU",
 	},
 	crabominablemega: {
