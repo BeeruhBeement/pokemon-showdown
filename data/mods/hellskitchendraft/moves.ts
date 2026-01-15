@@ -25,6 +25,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, nosketch: 1 },
 		target: "normal",
+		desc: "User recovers 50% of damage dealt, doubled power on sleeping foes.",
+		shortDesc: "User recovers 50% of damage dealt, doubled power on sleeping foes.",
 	},
 	
 	"10000000voltthunderbolt": {
