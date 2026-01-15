@@ -251,7 +251,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
 		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
 	},
-	{
+	/*{
 		name: "[Gen 9] spookymod Random Battle",
 		desc: `A Gen 9 Halloween-themed solomod comprised of entirely Ghost-types, some with more than 2 types.`,
 		mod: 'spookymod',
@@ -293,7 +293,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 			}
 		},
-	},
+	},*/
 	{
         name: "[Gen 9] Climate Change",
         desc: [
