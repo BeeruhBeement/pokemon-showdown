@@ -72,7 +72,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'zarpadraft',
 		searchShow: false,
 		teraPreviewDefault: true,
-		ruleset: ['Standard Draft', 'Min Source Gen = 1', 'Terastal Clause', 'Sleep Moves Clause'],
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 	{
 		name: "[Gen 9] Hells Kitchen Modded Draft",

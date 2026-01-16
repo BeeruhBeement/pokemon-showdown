@@ -142,7 +142,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Tough Claws"},
 	},
-	garcompmegaz: {
+	garchompmegaz: {
 		inherit: true,
 		abilities: {0: "Mach 10"},
 	},
