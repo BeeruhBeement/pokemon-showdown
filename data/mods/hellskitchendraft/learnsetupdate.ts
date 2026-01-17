@@ -435,9 +435,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "cofagrigus").learnset.stealthrock = ["9M"];
 	dex.modData("Learnsets", "cofagrigus").learnset.icywind = ["9M"];
 	
-	dex.modData("Learnsets", "amoongus").learnset.toxicspikes = ["9M"];
-	dex.modData("Learnsets", "amoongus").learnset.dazzlinggleam = ["9M"];
-	dex.modData("Learnsets", "amoongus").learnset.firstimpression = ["9M"];
+	dex.modData("Learnsets", "amoonguss").learnset.toxicspikes = ["9M"];
+	dex.modData("Learnsets", "amoonguss").learnset.dazzlinggleam = ["9M"];
+	dex.modData("Learnsets", "amoonguss").learnset.firstimpression = ["9M"];
 	
 	dex.modData("Learnsets", "eelektross").learnset.poisonfang = ["9M"];
 	dex.modData("Learnsets", "eelektross").learnset.psychicfangs = ["9M"];
