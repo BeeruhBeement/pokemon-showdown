@@ -175,7 +175,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				opp.volatiles['meltingpoint'].turns--;
 				if (opp.volatiles['meltingpoint'].turns === 0) {
 					opp.removeVolatile('meltingpoint');
-					opp.trySetStatus('brn', pokemon);
+					opp.trySetStatus('burn', pokemon);
 				}
 			}
 		},
