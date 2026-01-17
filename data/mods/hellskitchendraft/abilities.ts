@@ -11,7 +11,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	
 	solarborne: {
-		// implemented elsewhere, like util umbrella
 		name: "Solarborne",
 		num: 0,
 	},

@@ -15,15 +15,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			if (target.status === 'slp' || target.hasAbility('comatose')) return move.basePower * 2;
 			return move.basePower;
 		},
-		onModifyMove(move, pokemon, target) {
-			if (target && (target.status === 'slp' || target.hasAbility('comatose'))) {
-				move.drain = [1, 2];
-			}
-		},
 		category: "Special",
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, nosketch: 1 },
+		drain: [1, 2],
 		target: "normal",
 		status: "",
 		desc: "User recovers 50% of damage dealt, doubled power on sleeping foes.",
