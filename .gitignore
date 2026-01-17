@@ -76,3 +76,11 @@ scripts/input.txt
 scripts/rename_sprites.py
 scripts/process_icons.py
 scripts/sprite_removebg_resize.py
+generate_learnset_diffs.py
+learnset_additions.txt
+learnset_comparator.py
+learnset_diff_script.py
+learnset_diffs_full.txt
+learnset_diffs_output.ts
+compare_learnsets.py
+compare2.py

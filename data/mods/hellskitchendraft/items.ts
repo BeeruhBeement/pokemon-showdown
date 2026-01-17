@@ -402,7 +402,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	toxtricitite: {
 		name: "Toxtricitite",
-		megaStone: { "Toxtricity": "Toxtricity-Mega" },
+		megaStone: {
+			"Toxtricity": "Toxtricity-Mega",
+			"Toxtricity-Low-Key": "Toxtricity-Mega",
+		},
 		itemUser: ["Toxtricity"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];

@@ -56,7 +56,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'hellskitchendraft',
 		searchShow: false,
 		teraPreviewDefault: true,
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Moves Clause'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Moves Clause', '+lightofruin'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
