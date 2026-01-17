@@ -2,7 +2,7 @@ import { ModdedDex } from "../../../sim/dex";
 
 export function learnsetUpdate(dex: ModdedDex) {
 	// base
-	dex.modData("Learnsets", "venusaur").learnset.sludgewave = ["9M"];
+	/*dex.modData("Learnsets", "venusaur").learnset.sludgewave = ["9M"];
 	
 	dex.modData("Learnsets", "blastoise").learnset.ironhead = ["9M"];
 	
@@ -677,7 +677,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "baxcalibur").learnset.icehammer = ["9M"];
 	dex.modData("Learnsets", "baxcalibur").learnset.psychicfangs = ["9M"];
 	
-	dex.modData("Learnsets", "gholdengo").learnset.surf = ["9M"];
+	dex.modData("Learnsets", "gholdengo").learnset.surf = ["9M"];*/
 
 	// additions
 
