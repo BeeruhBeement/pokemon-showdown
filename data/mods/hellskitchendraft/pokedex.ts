@@ -247,6 +247,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 32,
 		color: "White",
 		eggGroups: ["Bug"],
+		requiredItem: "Butterfrite",
 	},
 	pikachumega: {
 		num: 25,
@@ -260,6 +261,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Field", "Fairy"],
+		requiredItem: "Pikachunite",
 	},
 	meowthmega: {
 		num: 52,
@@ -273,6 +275,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 4.2,
 		color: "Yellow",
 		eggGroups: ["Field"],
+		requiredItem: "Meowthite",
 	},
 	machampmega: {
 		num: 68,
@@ -287,6 +290,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 130,
 		color: "Gray",
 		eggGroups: ["Human-Like"],
+		requiredItem: "Machampite",
 	},
 	gengarmegag: {
 		num: 94,
@@ -314,6 +318,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 60,
 		color: "Red",
 		eggGroups: ["Water 3"],
+		requiredItem: "Kinglerite",
 	},
 	laprasmega: {
 		num: 131,
@@ -327,6 +332,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 220,
 		color: "Blue",
 		eggGroups: ["Monster", "Water 1"],
+		requiredItem: "Laprasite",
 	},
 	eeveemega: {
 		num: 133,
@@ -341,6 +347,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 6.5,
 		color: "Brown",
 		eggGroups: ["Field"],
+		requiredItem: "Eeveenite",
 	},
 	snorlaxmega: {
 		num: 143,
@@ -355,6 +362,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 460,
 		color: "Black",
 		eggGroups: ["Monster"],
+		requiredItem: "Snorlaxite",
 	},
 	garbodormega: {
 		num: 569,
@@ -368,6 +376,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 107.3,
 		color: "Green",
 		eggGroups: ["Mineral"],
+		requiredItem: "Garbodorite",
 	},
 	melmetalmega: {
 		num: 809,
@@ -383,6 +392,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		tags: ["Mythical"],
 		eggGroups: ["Undiscovered"],
+		requiredItem: "Melmetalite",
 	},
 	rillaboommega: {
 		num: 812,
@@ -397,6 +407,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 90,
 		color: "Green",
 		eggGroups: ["Field", "Grass"],
+		requiredItem: "Rillaboomite",
 	},
 	cinderacemega: {
 		num: 815,
@@ -411,6 +422,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 33,
 		color: "White",
 		eggGroups: ["Field", "Human-Like"],
+		requiredItem: "Cinderacite",
 	},
 	inteleonmega: {
 		num: 818,
@@ -425,6 +437,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 45.2,
 		color: "Blue",
 		eggGroups: ["Water 1", "Field"],
+		requiredItem: "Inteleonite",
 	},
 	corviknightmega: {
 		num: 823,
@@ -438,6 +451,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 75,
 		color: "Purple",
 		eggGroups: ["Flying"],
+		requiredItem: "Corviknite",
 	},
 	orbeetlemega: {
 		num: 826,
@@ -451,6 +465,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 40.8,
 		color: "Red",
 		eggGroups: ["Bug"],
+		requiredItem: "Orbeetlite",
 	},
 	drednawmega: {
 		num: 834,
@@ -464,6 +479,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 115.5,
 		color: "Green",
 		eggGroups: ["Monster", "Water 1"],
+		requiredItem: "Drednawite",
 	},
 	coalossalmega: {
 		num: 839,
@@ -477,6 +493,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 310.5,
 		color: "Black",
 		eggGroups: ["Mineral"],
+		requiredItem: "Coalossalite",
 	},
 	flapplemega: {
 		num: 841,
@@ -490,6 +507,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 1,
 		color: "Green",
 		eggGroups: ["Grass", "Dragon"],
+		requiredItem: "Flapplite",
 	},
 	appletunmega: {
 		num: 842,
@@ -503,6 +521,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 13,
 		color: "Green",
 		eggGroups: ["Grass", "Dragon"],
+		requiredItem: "Appletunite",
 	},
 	sandacondamega: {
 		num: 844,
@@ -516,6 +535,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 65.5,
 		color: "Green",
 		eggGroups: ["Field", "Dragon"],
+		requiredItem: "Sandacondite",
 	},
 	toxtricitymega: {
 		num: 849,
@@ -529,6 +549,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 40,
 		color: "Purple",
 		eggGroups: ["Human-Like"],
+		requiredItem: "Toxtricitite",
 	},
 	centiskorchmega: {
 		num: 851,
@@ -542,6 +563,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 120,
 		color: "Red",
 		eggGroups: ["Bug"],
+		requiredItem: "Centiskorchite",
 	},
 	hatterenemega: {
 		num: 858,
@@ -556,6 +578,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 5.1,
 		color: "Pink",
 		eggGroups: ["Fairy"],
+		requiredItem: "Hatterenite",
 	},
 	grimmsnarlmega: {
 		num: 861,
@@ -570,6 +593,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 61,
 		color: "Purple",
 		eggGroups: ["Fairy", "Human-Like"],
+		requiredItem: "Grimmsnarite",
 	},
 	alcremiemega: {
 		num: 869,
@@ -584,6 +608,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 0.5,
 		color: "White",
 		eggGroups: ["Fairy", "Amorphous"],
+		requiredItem: "Alcremite",
 	},
 	copperajahmega: {
 		num: 879,
@@ -597,6 +622,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 650,
 		color: "Green",
 		eggGroups: ["Field", "Mineral"],
+		requiredItem: "Copperajite",
 	},
 	duraludonmega: {
 		num: 884,
@@ -610,6 +636,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 40,
 		color: "White",
 		eggGroups: ["Mineral", "Dragon"],
+		requiredItem: "Duraludonite",
 	},
 	urshifumega: {
 		num: 892,
@@ -625,6 +652,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		tags: ["Sub-Legendary"],
 		eggGroups: ["Undiscovered"],
+		requiredItem: "Wicked Urshifite",
 	},
 	urshifurapidstrikemega: {
 		num: 892,
@@ -639,6 +667,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 105,
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
+		requiredItem: "Surging Urshifite",
 	},
 
 	magnemite: {
