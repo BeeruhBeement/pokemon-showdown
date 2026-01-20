@@ -28,36 +28,28 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	
 	"10000000voltthunderbolt": {
 		inherit: true,
-		onTry(source) {
-			if (source.species.name === 'Pikachu') {
+		onTry(source, target, move) {
+			if ((source.species.name === 'Pikachu' || source.baseSpecies.name === "Pikachu-Mega")|| move.hasBounced) {
 				return;
 			}
-			this.hint("Only a Pokemon whose form is Pikachu can use this move.");
-			if (source.species.name === 'Pikachu') {
-				this.attrLastMove('[still]');
-				this.add('-fail', source, 'move: 10,000,000 Volt Thunderbolt', '[forme]');
-				return null;
-			}
-			this.attrLastMove('[still]');
 			this.add('-fail', source, 'move: 10,000,000 Volt Thunderbolt');
+			this.hint("Only a Pokemon whose form is Pikachu can use this move.");
 			return null;
 		},
+		isZ: false,
+		noPPBoosts: true,
 	},
 	extremeevoboost: {
 		inherit: true,
-		onTry(source) {
-			if (source.species.name === 'Eevee') {
+		onTry(source, target, move) {
+			if ((source.species.name === 'Eevee' || source.baseSpecies.name === "Eevee-Mega") || move.hasBounced) {
 				return;
 			}
-			this.hint("Only a Pokemon whose form is Eevee can use this move.");
-			if (source.species.name === 'Eevee') {
-				this.attrLastMove('[still]');
-				this.add('-fail', source, 'move: Extreme Evoboost', '[forme]');
-				return null;
-			}
-			this.attrLastMove('[still]');
 			this.add('-fail', source, 'move: Extreme Evoboost');
+			this.hint("Only a Pokemon whose form is Eevee can use this move.");
 			return null;
 		},
+		isZ: false,
+		noPPBoosts: true,
 	},
 };
