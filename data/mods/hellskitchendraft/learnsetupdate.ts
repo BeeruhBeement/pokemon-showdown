@@ -2476,7 +2476,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "raichu").learnset.icepunch = ["9M"];
 	dex.modData("Learnsets", "raichu").learnset.bulkup = ["9M"];
 	
-	dex.modData("Learnsets", "golurk").learnset.bulkup = ["9M"];
+	dex.modData("Learnsets", "golurk").learnset.shiftgear = ["9M"];
 	
 	dex.modData("Learnsets", "scovillain").learnset.darkpulse = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.knockoff = ["9M"];
