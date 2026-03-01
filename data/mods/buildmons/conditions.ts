@@ -13,13 +13,12 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	par: {
 		inherit: true,
 		onResidual(pokemon) {
-			if (this.effectState.duration && this.effectState.duration % 2 === 0) {
-				this.damage(pokemon.baseMaxhp / 10);
-			}
-			const turns = pokemon.activeTurns;
-			const chance = Math.min(turns, 5);
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
+			if (this.effectState.duration) {
+				if (this.effectState.duration % 2 === 0) this.damage(pokemon.baseMaxhp / 10);
+				const chance = Math.min(this.effectState.duration, 5);
+				if (this.randomChance(chance, 5)) {
+					pokemon.cureStatus();
+				}
 			}
 		},
 		onBeforeMove() { return },
@@ -28,10 +27,11 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		inherit: true,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 20);
-			const turns = pokemon.activeTurns;
-			const chance = Math.min(turns, 5);
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
+			if (this.effectState.duration) {
+				const chance = Math.min(this.effectState.duration, 5);
+				if (this.randomChance(chance, 5)) {
+					pokemon.cureStatus();
+				}
 			}
 		},
 	},
@@ -39,37 +39,42 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		inherit: true,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 10);
-			const turns = pokemon.activeTurns;
-			const chance = Math.min(turns, 5);
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
+			if (this.effectState.duration) {
+				const chance = Math.min(this.effectState.duration, 5);
+				if (this.randomChance(chance, 5)) {
+					pokemon.cureStatus();
+				}
 			}
 		},
 	},
 	tox: {
 		inherit: true,
 		onResidual(pokemon) {
-			if (this.effectState.stage < 4) {
+			if (this.effectState.stage < 3) {
 				this.effectState.stage++;
 			}
-			this.damage(this.clampIntRange(pokemon.baseMaxhp / 20, 1) * this.effectState.stage);
-			const turns = pokemon.activeTurns;
-			const chance = Math.min(turns, 5);
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
+			const inverseStage = 5 - this.effectState.stage; 
+			this.damage(this.clampIntRange(pokemon.baseMaxhp / 20, 1) * inverseStage);
+			if (this.effectState.duration) {
+				const chance = Math.min(this.effectState.duration, 5);
+				if (this.randomChance(chance, 5)) {
+					pokemon.cureStatus();
+				}
 			}
 		},
 	},
 	bld: {
+		// still need to implement healing
 		name: 'bld',
 		effectType: 'Status',
 		onResidualOrder: 9,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
-			const turns = pokemon.activeTurns;
-			const chance = Math.min(turns, 5);
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
+			if (this.effectState.duration) {
+				const chance = Math.min(this.effectState.duration, 5);
+				if (this.randomChance(chance, 5)) {
+					pokemon.cureStatus();
+				}
 			}
 		},
 	},
@@ -89,10 +94,11 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
-			const turns = pokemon.activeTurns;
-			const chance = Math.min(turns, 5);
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
+			if (this.effectState.duration) {
+				const chance = Math.min(this.effectState.duration, 5);
+				if (this.randomChance(chance, 5)) {
+					pokemon.cureStatus();
+				}
 			}
 		},
 	},

@@ -1,7 +1,168 @@
 import { RESTORATIVE_BERRIES } from "../../../sim/pokemon";
+import {Dex, toID} from '../../../sim/dex';
 
 export const Scripts: ModdedBattleScriptsData = {
+	init() {
+		for (const i in this.data.Pokedex) {
+			this.modData('Pokedex', i).isNonstandard = null;
+		}
+		for (const i in this.data.Abilities) {
+			this.modData('Abilities', i).isNonstandard = null;
+		}
+		for (const i in this.data.Moves) {
+			this.modData('Moves', i).isNonstandard = null;
+		}
+		for (const i in this.data.Items) {
+			if (this.modData('Items', i).isNonstandard != 'Custom') {
+				this.modData('Items', i).isNonstandard = 'Past';
+			}
+		}
+	},	
 	actions: {
+		/**
+		 * 0 is a success dealing 0 damage, such as from False Swipe at 1 HP.
+		 *
+		 * Normal PS return value rules apply:
+		 * undefined = success, null = silent failure, false = loud failure
+		 */
+		getDamage(
+			source: Pokemon, target: Pokemon, move: string | number | ActiveMove,
+			suppressMessages = false
+		): number | undefined | null | false {
+			if (typeof move === 'string') move = this.dex.getActiveMove(move);
+
+			if (typeof move === 'number') {
+				const basePower = move;
+				move = new Dex.Move({
+					basePower,
+					type: '???',
+					category: 'Physical',
+					willCrit: false,
+				}) as ActiveMove;
+				move.hit = 0;
+			}
+
+			if (!target.runImmunity(move, !suppressMessages)) {
+				return false;
+			}
+
+			if (move.ohko) return this.battle.gen === 3 ? target.hp : target.maxhp;
+			if (move.damageCallback) return move.damageCallback.call(this.battle, source, target);
+			if (move.damage === 'level') {
+				return source.level;
+			} else if (move.damage) {
+				return move.damage;
+			}
+
+			const category = this.battle.getCategory(move);
+
+			let basePower: number | false | null = move.basePower;
+			if (move.basePowerCallback) {
+				basePower = move.basePowerCallback.call(this.battle, source, target, move);
+			}
+			if (!basePower) return basePower === 0 ? undefined : basePower;
+			basePower = this.battle.clampIntRange(basePower, 1);
+
+			let critMult;
+			let critRatio = this.battle.runEvent('ModifyCritRatio', source, target, move, move.critRatio || 0);
+			if (this.battle.gen <= 5) {
+				critRatio = this.battle.clampIntRange(critRatio, 0, 5);
+				critMult = [0, 16, 8, 4, 3, 2];
+			} else {
+				critRatio = this.battle.clampIntRange(critRatio, 0, 4);
+				if (this.battle.gen === 6) {
+					critMult = [0, 16, 8, 2, 1];
+				} else {
+					critMult = [0, 24, 8, 2, 1];
+				}
+			}
+
+			const moveHit = target.getMoveHitData(move);
+			moveHit.crit = move.willCrit || false;
+			if (move.willCrit === undefined) {
+				if (critRatio) {
+					moveHit.crit = this.battle.randomChance(1, critMult[critRatio]);
+				}
+			}
+
+			if (moveHit.crit) {
+				moveHit.crit = this.battle.runEvent('CriticalHit', target, null, move);
+			}
+
+			// happens after crit calculation
+			basePower = this.battle.runEvent('BasePower', source, target, move, basePower, true);
+
+			if (!basePower) return 0;
+			basePower = this.battle.clampIntRange(basePower, 1);
+			// Hacked Max Moves have 0 base power, even if you Dynamax
+			if ((!source.volatiles['dynamax'] && move.isMax) || (move.isMax && this.dex.moves.get(move.baseMove).isMax)) {
+				basePower = 0;
+			}
+
+			const dexMove = this.dex.moves.get(move.id);
+			if (source.terastallized && (source.terastallized === 'Stellar' ?
+				!source.stellarBoostedTypes.includes(move.type) : source.hasType(move.type)) &&
+				basePower < 60 && dexMove.priority <= 0 && !dexMove.multihit &&
+				// Hard move.basePower check for moves like Dragon Energy that have variable BP
+				!((move.basePower === 0 || move.basePower === 150) && move.basePowerCallback)
+			) {
+				basePower = 60;
+			}
+
+			const level = source.level;
+
+			const attacker = move.overrideOffensivePokemon === 'target' ? target : source;
+			const defender = move.overrideDefensivePokemon === 'source' ? source : target;
+
+			const isPhysical = move.category === 'Physical';
+			let attackStat: StatIDExceptHP = move.overrideOffensiveStat || (isPhysical ? 'atk' : 'spa');
+			const defenseStat: StatIDExceptHP = move.overrideDefensiveStat || (isPhysical ? 'def' : 'spd');
+
+			const statTable = { atk: 'Atk', def: 'Def', spa: 'SpA', spd: 'SpD', spe: 'Spe' };
+
+			let atkBoosts = attacker.boosts[attackStat];
+			let defBoosts = defender.boosts[defenseStat];
+
+			let ignoreNegativeOffensive = !!move.ignoreNegativeOffensive;
+			let ignorePositiveDefensive = !!move.ignorePositiveDefensive;
+
+			if (moveHit.crit) {
+				ignoreNegativeOffensive = true;
+				ignorePositiveDefensive = true;
+			}
+			const ignoreOffensive = !!(move.ignoreOffensive || (ignoreNegativeOffensive && atkBoosts < 0));
+			const ignoreDefensive = !!(move.ignoreDefensive || (ignorePositiveDefensive && defBoosts > 0));
+
+			if (ignoreOffensive) {
+				this.battle.debug('Negating (sp)atk boost/penalty.');
+				atkBoosts = 0;
+			}
+			if (ignoreDefensive) {
+				this.battle.debug('Negating (sp)def boost/penalty.');
+				defBoosts = 0;
+			}
+
+			let attack = attacker.calculateStat(attackStat, atkBoosts, 1, source);
+			let defense = defender.calculateStat(defenseStat, defBoosts, 1, target);
+
+			attackStat = (category === 'Physical' ? 'atk' : 'spa');
+
+			// Apply Stat Modifiers
+			attack = this.battle.runEvent('Modify' + statTable[attackStat], source, target, move, attack);
+			defense = this.battle.runEvent('Modify' + statTable[defenseStat], target, source, move, defense);
+
+			if (this.battle.gen <= 4 && ['explosion', 'selfdestruct'].includes(move.id) && defenseStat === 'def') {
+				defense = this.battle.clampIntRange(Math.floor(defense / 2), 1);
+			}
+
+			const tr = this.battle.trunc;
+
+			// int(int(int(2 * L / 5 + 2) * A * P / D) / 50);
+			const baseDamage = tr(tr(tr(tr(2 * 85 / 5 + 2) * basePower * attack) / defense) / 50);
+
+			// Calculate damage modifiers separately (order differs between generations)
+			return this.modifyDamage(baseDamage, source, target, move, suppressMessages);
+		},
 		modifyDamage(baseDamage, pokemon, target, move, suppressMessages) {
 			const tr = this.battle.trunc;
 			if (!move.type) move.type = '???';
@@ -97,6 +258,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			if (isCrit && !suppressMessages) this.battle.add('-crit', target);
 
+			// does this work?
 			if (target.status === 'brn') {
 				baseDamage = this.battle.modify(baseDamage, 1.2);
 			}
@@ -124,6 +286,96 @@ export const Scripts: ModdedBattleScriptsData = {
 		},
 	},
 	pokemon: {
+		calculateStat(statName: StatIDExceptHP, boost: number, modifier?: number, statUser?: Pokemon) {
+			statName = toID(statName) as StatIDExceptHP;
+			// @ts-expect-error type checking prevents 'hp' from being passed, but we're paranoid
+			if (statName === 'hp') throw new Error("Please read `maxhp` directly");
+	
+			// base stat
+			let stat = this.storedStats[statName];
+	
+			// Wonder Room swaps defenses before calculating anything else
+			if ('wonderroom' in this.battle.field.pseudoWeather) {
+				if (statName === 'def') {
+					stat = this.storedStats['spd'];
+				} else if (statName === 'spd') {
+					stat = this.storedStats['def'];
+				}
+			}
+	
+			// stat boosts
+			let boosts: SparseBoostsTable = {};
+			const boostName = statName as BoostID;
+			boosts[boostName] = boost;
+			boosts = this.battle.runEvent('ModifyBoost', statUser || this, null, null, boosts);
+			boost = boosts[boostName]!;
+			const boostTable = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6];
+			if (boost > 6) boost = 6;
+			if (boost < -6) boost = -6;
+			if (boost >= 0) {
+				stat = Math.floor(stat * boostTable[boost]);
+			} else {
+				stat = Math.floor(stat / boostTable[-boost]);
+			}
+	
+			// stat modifier
+			return this.battle.modify(stat, (modifier || 1));
+		},
+		getStat(statName: StatIDExceptHP, unboosted?: boolean, unmodified?: boolean) {
+			statName = toID(statName) as StatIDExceptHP;
+			// @ts-expect-error type checking prevents 'hp' from being passed, but we're paranoid
+			if (statName === 'hp') throw new Error("Please read `maxhp` directly");
+	
+			// base stat
+			let stat = this.storedStats[statName];
+	
+			// Download ignores Wonder Room's effect, but this results in
+			// stat stages being calculated on the opposite defensive stat
+			if (unmodified && 'wonderroom' in this.battle.field.pseudoWeather) {
+				if (statName === 'def') {
+					statName = 'spd';
+				} else if (statName === 'spd') {
+					statName = 'def';
+				}
+			}
+	
+			// stat boosts
+			if (!unboosted) {
+				let boosts = this.boosts;
+				if (!unmodified) {
+					boosts = this.battle.runEvent('ModifyBoost', this, null, null, { ...boosts });
+				}
+				let boost = boosts[statName];
+				const boostTable = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6];
+				if (boost > 6) boost = 6;
+				if (boost < -6) boost = -6;
+				if (boost >= 0) {
+					stat = Math.floor(stat * boostTable[boost]);
+				} else {
+					stat = Math.floor(stat / boostTable[-boost]);
+				}
+			}
+	
+			// stat modifier effects
+			if (!unmodified) {
+				const statTable: { [s in StatIDExceptHP]: string } = { atk: 'Atk', def: 'Def', spa: 'SpA', spd: 'SpD', spe: 'Spe' };
+				stat = this.battle.runEvent('Modify' + statTable[statName], this, null, null, stat);
+			}
+	
+			if (statName === 'spe' && stat > 10000 && !this.battle.format.battle?.trunc) stat = 10000;
+			return stat;
+		},
+		getActionSpeed() {
+			let speed = this.getStat('spe', false, false);
+			const trickRoomCheck = this.battle.ruleTable.has('twisteddimensionmod') ?
+				!this.battle.field.getPseudoWeather('trickroom') : this.battle.field.getPseudoWeather('trickroom');
+			if (trickRoomCheck) {
+				speed = 10000 - speed;
+			}
+			const speedRoll = Math.floor(Math.random() * 50);
+    		speed += speedRoll;
+			return this.battle.trunc(speed, 13);
+		},
 		getItem() {
 			const item = this.battle.dex.items.getByID(this.item);
 			if (item.exists) return item;
@@ -137,6 +389,37 @@ export const Scripts: ModdedBattleScriptsData = {
 					return bmmItem.name || this.id;
 				},
 			} as Item;
+		},
+		runEffectiveness(move: ActiveMove) {
+			let totalTypeMod = 0;
+			if (this.terastallized && move.type === 'Stellar') {
+				totalTypeMod = 1;
+			} else {
+				for (const type of this.getTypes()) {
+					let typeMod = this.battle.dex.getEffectiveness(move, type);
+					typeMod = this.battle.singleEvent('Effectiveness', move, null, this, type, move, typeMod);
+					totalTypeMod += this.battle.runEvent('Effectiveness', this, type, move, typeMod);
+				}
+			}
+			if (this.species.name === 'Terapagos-Terastal' && this.hasAbility('Tera Shell') &&
+				!this.battle.suppressingAbility(this)) {
+				if (this.abilityState.resisted) return -1; // all hits of multi-hit move should be not very effective
+				if (move.category === 'Status' || move.id === 'struggle' || !this.runImmunity(move) ||
+					totalTypeMod < 0 || this.hp < this.maxhp) {
+					return totalTypeMod;
+				}
+
+				this.battle.add('-activate', this, 'ability: Tera Shell');
+				this.abilityState.resisted = true;
+				return -1;
+			}
+			if (this.hasAbility('Battle Armor') && !this.battle.suppressingAbility(this)) {
+				if (totalTypeMod > 0 && (move.category === 'Status' || move.id === 'struggle' || this.hp < this.maxhp)) {
+					this.battle.add('-activate', this, 'ability: Battle Armor');
+					return 0;
+				}
+			}
+			return totalTypeMod;
 		},
 		/**
 		 * Override runImmunity so type immunities no longer block moves. This mirrors
@@ -538,7 +821,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 
 			return true;
-		},
+		}
 	},
 	field: {
 		suppressingWeather() {

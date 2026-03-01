@@ -345,7 +345,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Buildmons",
 		mod: 'buildmons',
-		ruleset: ['Standard OMs', 'Terastal Clause'],
+		ruleset: ['Standard OMs', 'Terastal Clause', 'Max Total Level = 400'],
 		validateSet(set, teamHas) {
 			const dex = this.dex;
 			let species = dex.species.get(set.species);

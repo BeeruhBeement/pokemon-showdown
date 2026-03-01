@@ -1,12 +1,7 @@
-import { ModdedItemData } from "../../../sim/dex-items";
-
-export const Items: {[k: string]: ModdedItemData} = {
+export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	bottledlightning: {
 		name: "Bottled Lightning",
 		shortDesc: "Adds Thunder to the user's moveset.",
-		onTakeItem() {
-			return false;
-		},
 		onStart(pokemon) {
 			pokemon.moveSlots.push({
 				move: 'thunder' as ID,
@@ -17,5 +12,17 @@ export const Items: {[k: string]: ModdedItemData} = {
 				used: false
 			});
 		},
+		isNonstandard: "Custom",
+	},
+	ukulele: {
+		name: "Ukulele",
+		shortDesc: "This Pokemon's sound-based moves become Electric type.",
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Electric';
+			}
+		},
+		isNonstandard: "Custom",
 	},
 };

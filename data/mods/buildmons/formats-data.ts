@@ -1,7 +1,28 @@
 import { Pokedex as Base } from '../../pokedex';
 
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
-	glalie: {
+	hitmonlee: {
+		tier: "OU",
+	},
+	corviknight: {
+		tier: "OU",
+	},
+	probopass: {
+		tier: "OU",
+	},
+	cofagrigus: {
+		tier: "OU",
+	},
+	ludicolo: {
+		tier: "OU",
+	},
+	ribombee: {
+		tier: "OU",
+	},
+	houndoom: {
+		tier: "OU",
+	},
+	floatzel: {
 		tier: "OU",
 	},
 }
