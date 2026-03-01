@@ -97,10 +97,12 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			if (isCrit && !suppressMessages) this.battle.add('-crit', target);
 
-			if (pokemon.status === 'brn' && move.category === 'Physical' && !pokemon.hasAbility('guts')) {
-				if (this.battle.gen < 6 || move.id !== 'facade') {
-					baseDamage = this.battle.modify(baseDamage, 0.5);
-				}
+			if (target.status === 'brn') {
+				baseDamage = this.battle.modify(baseDamage, 1.2);
+			}
+
+			if (pokemon.status === 'frz') {
+				baseDamage = this.battle.modify(baseDamage, 0.8);
 			}
 
 			// Generation 5, but nothing later, sets damage to 1 before the final damage modifiers

@@ -1,4 +1,122 @@
 export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDataTable = {
+	brn: {
+		inherit: true,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 20);
+			const turns = pokemon.activeTurns;
+			const chance = Math.min(turns, 5);
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	par: {
+		inherit: true,
+		onResidual(pokemon) {
+			if (this.effectState.duration && this.effectState.duration % 2 === 0) {
+				this.damage(pokemon.baseMaxhp / 10);
+			}
+			const turns = pokemon.activeTurns;
+			const chance = Math.min(turns, 5);
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+		onBeforeMove() { return },
+	},
+	frz: {
+		inherit: true,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 20);
+			const turns = pokemon.activeTurns;
+			const chance = Math.min(turns, 5);
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	psn: {
+		inherit: true,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 10);
+			const turns = pokemon.activeTurns;
+			const chance = Math.min(turns, 5);
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	tox: {
+		inherit: true,
+		onResidual(pokemon) {
+			if (this.effectState.stage < 4) {
+				this.effectState.stage++;
+			}
+			this.damage(this.clampIntRange(pokemon.baseMaxhp / 20, 1) * this.effectState.stage);
+			const turns = pokemon.activeTurns;
+			const chance = Math.min(turns, 5);
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	bld: {
+		name: 'bld',
+		effectType: 'Status',
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 8);
+			const turns = pokemon.activeTurns;
+			const chance = Math.min(turns, 5);
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	wet: {
+		name: 'wet',
+		effectType: 'Status',
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'wet', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'wet');
+			}
+		},
+		onFractionalPriorityPriority: -1,
+		onFractionalPriority(priority, pokemon, target, move) {
+			return -0.1;
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			const turns = pokemon.activeTurns;
+			const chance = Math.min(turns, 5);
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	ptr: {
+		name: 'ptr',
+		effectType: 'Status',
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'ptr');
+			}
+		},
+		onBeforeMovePriority: 1,
+		onBeforeMove(pokemon) {
+			if (this.effectState.duration && this.effectState.duration >= 2) {
+				pokemon.cureStatus();
+			} else {
+				this.add('cant', pokemon, 'ptr');
+				return false;
+			}
+		},
+	},
+
 	choicelock: {
 		inherit: true,
 		onBeforeMove(pokemon, target, move) {
