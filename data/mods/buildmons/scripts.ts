@@ -2,22 +2,6 @@ import { RESTORATIVE_BERRIES } from "../../../sim/pokemon";
 import {Dex, toID} from '../../../sim/dex';
 
 export const Scripts: ModdedBattleScriptsData = {
-	init() {
-		for (const i in this.data.Pokedex) {
-			this.modData('Pokedex', i).isNonstandard = null;
-		}
-		for (const i in this.data.Abilities) {
-			this.modData('Abilities', i).isNonstandard = null;
-		}
-		for (const i in this.data.Moves) {
-			this.modData('Moves', i).isNonstandard = null;
-		}
-		for (const i in this.data.Items) {
-			if (this.modData('Items', i).isNonstandard != 'Custom') {
-				this.modData('Items', i).isNonstandard = 'Past';
-			}
-		}
-	},	
 	actions: {
 		/**
 		 * 0 is a success dealing 0 damage, such as from False Swipe at 1 HP.

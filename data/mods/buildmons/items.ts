@@ -12,7 +12,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				used: false
 			});
 		},
-		isNonstandard: "Custom",
 	},
 	ukulele: {
 		name: "Ukulele",
@@ -23,6 +22,5 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				move.type = 'Electric';
 			}
 		},
-		isNonstandard: "Custom",
 	},
 };
