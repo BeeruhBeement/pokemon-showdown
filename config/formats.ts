@@ -342,6 +342,179 @@ export const Formats: import('../sim/dex-formats').FormatList = [
         },
         mod: 'ptestou',
     },
+	{
+		name: "[Gen 9] Buildmons",
+		mod: 'buildmons',
+		ruleset: ['Standard OMs'],
+		validateSet(set, teamHas) {
+			const dex = this.dex;
+			let species = dex.species.get(set.species);
+			let requiredItems: string[] = [];
+			let requiredMove = '';
+			let requiredAbility = '';
+			if (species.requiredItems) requiredItems = species.requiredItems;
+			if (species.requiredMove) requiredMove = species.requiredMove;
+			if (species.requiredAbility) requiredAbility = species.requiredAbility;
+			if (species.battleOnly) species = dex.species.get(species.battleOnly as string);
+
+			// ability slot must contain a real ability
+			const ability = dex.abilities.get(set.ability);
+			if (ability.id && !ability.exists) {
+				return [`"${set.ability}" is an invalid ability.`];
+			}
+
+			const allThings = [set.item, ...set.moves].filter(Boolean);
+			for (const thing of allThings) {
+				if (!dex.moves.get(thing).exists && !dex.items.get(thing).exists) {
+					return [`${thing} does not exist.`];
+				}
+				if (dex.abilities.get(thing).exists) {
+					return [`${thing} is not allowed in an item or move slot.`];
+				}
+			}
+
+			const moves = allThings.map(e => dex.moves.get(e)).filter(m => m.exists && m.id !== 'metronome');
+			const items = allThings.map(e => dex.items.get(e)).filter(i => i.exists);
+
+			if (moves.length > 2) {
+				return [`${set.species} has ${moves.length} moves, which is more than the limit of 2.`];
+			}
+			if (!moves.length) {
+				return [`${set.species} requires at least one move.`];
+			}
+			if (items.length > 4) {
+				return [`${set.species} has ${items.length} items, which is more than the limit of 4.`];
+			}
+
+			for (const m of moves) {
+				if (this.ruleTable.isBanned(`move:${m.id}`)) return [`${set.species}'s move ${m.name} is banned.`];
+			}
+			for (const i of items) {
+				if (this.ruleTable.isBanned(`item:${i.id}`)) return [`${set.species}'s item ${i.name} is banned.`];
+			}
+
+			const setHas: { [k: string]: true } = {};
+			for (const thing of [...moves, ...items]) {
+				if (setHas[thing.id]) return [`${set.species} has multiple copies of ${thing.name}.`];
+				setHas[thing.id] = true;
+			}
+
+			if (requiredAbility && this.toID(set.ability) !== this.toID(requiredAbility)) {
+				return [`${set.species} requires ${requiredAbility} on its set.`];
+			}
+			if (requiredMove && !moves.map(m => m.id).includes(this.toID(requiredMove))) {
+				return [`${set.species} requires ${requiredMove} on its set.`];
+			}
+			if (!items.length && requiredItems.length) {
+				return [`${set.species} requires ${requiredItems.join(', ')} on its set.`];
+			}
+
+			const normalItem = set.item;
+			const normalMoves = set.moves;
+			const normalAbility = set.ability;
+
+			for (const curMove of moves) {
+				set.moves = [curMove.id];
+				set.item = items.length ? items[0].id : '';
+				let problems = this.validateSet(set, teamHas);
+				if (problems) return problems;
+			}
+
+			set.item = normalItem;
+			set.moves = normalMoves;
+			set.ability = normalAbility;
+			return null;
+		},
+		onBeforeSwitchIn(pokemon) {
+			let ngas = false;
+			for (const poke of this.getAllActive()) {
+				if (this.toID(poke.ability) === ('neutralizinggas' as ID)) {
+					ngas = true;
+					break;
+				}
+			}
+			if (pokemon.hasItem('abilityshield') ||
+				pokemon.m.scrambled.items.some((e: { thing: string }) => this.toID(e.thing) === 'abilityshield')) {
+				ngas = false;
+			}
+			for (const item of pokemon.m.scrambled.items) {
+				if (ngas && item.inSlot === 'Ability') continue;
+				const effect = 'item:' + this.toID(item.thing);
+				pokemon.volatiles[effect] = this.initEffectState({ id: effect, target: pokemon });
+				pokemon.volatiles[effect].inSlot = item.inSlot;
+			}
+			if (ngas) {
+				if ((pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Ability') >= 0) {
+					const isMove = (pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Ability');
+					const indexOfMove = pokemon.moveSlots.findIndex(m => this.toID(pokemon.m.scrambled.moves[isMove].thing) === m.id);
+					if (indexOfMove >= 0) pokemon.moveSlots.splice(indexOfMove, 1);
+				}
+			}
+			if (this.field.getPseudoWeather('magicroom')) {
+				if ((pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
+					const isMove = (pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
+					const indexOfMove = pokemon.moveSlots.findIndex(m => this.toID(pokemon.m.scrambled.moves[isMove].thing) === m.id);
+					if (indexOfMove >= 0) pokemon.moveSlots.splice(indexOfMove, 1);
+				}
+			}
+		},
+		onBegin() {
+			for (const pokemon of this.getAllPokemon()) {
+				pokemon.m.scrambled = {
+					items: [] as object[],
+					moves: [] as object[],
+				};
+
+				if (this.dex.items.get(pokemon.set.item).exists) {
+					pokemon.m.scrambled.items.push({ thing: this.dex.items.get(pokemon.set.item).name, inSlot: 'Item' });
+				} else if (this.dex.moves.get(pokemon.set.item).exists && this.dex.moves.get(pokemon.set.item).id !== 'metronome') {
+					pokemon.m.scrambled.moves.push({ thing: this.dex.moves.get(pokemon.set.item).name, inSlot: 'Item' });
+				}
+
+				for (const move of pokemon.set.moves) {
+					if (this.dex.moves.get(move).id === 'metronome') continue;
+					if (this.dex.items.get(move).exists) {
+						pokemon.m.scrambled.items.push({ thing: this.dex.items.get(move).name, inSlot: 'Move' });
+					}
+				}
+
+				const newMoveSlots = [];
+				for (const moveSlot of pokemon.baseMoveSlots) {
+					if (moveSlot.id === 'metronome') {
+						const TeamValidator: typeof import('../sim/team-validator').TeamValidator =
+							require('../sim/team-validator').TeamValidator;
+						const cantMetronome = TeamValidator.get(this.format).checkCanLearn(this.dex.moves.get('metronome'), pokemon.species);
+						if (!cantMetronome) {
+							newMoveSlots.push(moveSlot);
+						} else {
+							pokemon.m.scrambled.items.push({ thing: this.dex.items.get('metronome').name, inSlot: 'Move' });
+						}
+						continue;
+					}
+					if (!this.dex.moves.get(moveSlot.id).exists) continue;
+					newMoveSlots.push(moveSlot);
+				}
+
+				(pokemon as any).baseMoveSlots = newMoveSlots;
+
+				for (const scrambledMove of pokemon.m.scrambled.moves) {
+					const move = this.dex.moves.get(scrambledMove.thing);
+					const newMove = {
+						move: move.name,
+						id: move.id,
+						pp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
+						maxpp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
+						target: move.target,
+						disabled: false,
+						used: false,
+					};
+					pokemon.baseMoveSlots.push(newMove);
+				}
+				pokemon.moveSlots = pokemon.baseMoveSlots.slice();
+			}
+		},
+	},
+
 	// Likeshop Spotlight
 	///////////////////////////////////////////////////////////////////
 
