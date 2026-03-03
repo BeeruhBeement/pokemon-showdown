@@ -120,24 +120,26 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			});
 		},
 		onAfterMove(pokemon, target, move) {
-			if (target && target.hp <= 0) {
-				delete pokemon.volatiles['mustrecharge'];
-				return;
-			}
-			this.add('-enditem', pokemon, 'Glass Bull');
-			if (target.item === 'glassbull') {
-				target.item = '';
-				this.clearEffectState(target.itemState);
-			} else {
-				const isBMM = target.volatiles['item:glassbull']?.inSlot;
-				if (isBMM) {
-					target.removeVolatile('item:glassbull');
-					target.m.scrambled.items.splice((target.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-						this.toID(e.thing) === 'glassbull' && e.inSlot === isBMM), 1);
+			if (move.id !== 'hyperbeam') {
+				if (target && target.hp <= 0) {
+					delete pokemon.volatiles['mustrecharge'];
+					return;
 				}
+				this.add('-enditem', pokemon, 'Glass Bull');
+				if (target.item === 'glassbull') {
+					target.item = '';
+					this.clearEffectState(target.itemState);
+				} else {
+					const isBMM = target.volatiles['item:glassbull']?.inSlot;
+					if (isBMM) {
+						target.removeVolatile('item:glassbull');
+						target.m.scrambled.items.splice((target.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+							this.toID(e.thing) === 'glassbull' && e.inSlot === isBMM), 1);
+					}
+				}
+				this.runEvent('AfterUseItem', target, null, null, this.dex.items.get('glassbull'));
+				this.add('-mustrecharge', pokemon);
 			}
-			this.runEvent('AfterUseItem', target, null, null, this.dex.items.get('glassbull'));
-			this.add('-mustrecharge', pokemon);
 		},
 		gen: -1,
 	},
@@ -222,10 +224,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
 			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
-			if (this.checkMoveMakesContact(move, target, source)) {
-				if (this.randomChance(1, 10)) {
-					target.trySetStatus('bld', source);
-				}
+			if (this.randomChance(1, 10)) {
+				target.trySetStatus('bld', source);
 			}
 		},
 		gen: -1,
@@ -234,7 +234,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Leaking Pipe",
 		shortDesc: "Use Water Gun when hit.",
 		onDamagingHitOrder: 2,
-		onDamagingHit(damage, target, source, move) {
+		onFoeDamagingHit(damage, target, source, move) {
 			this.actions.useMove('watergun', source);
 		},
 		gen: -1,
@@ -242,8 +242,11 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	heavyshackles: {
 		name: "Heavy Shackles",
 		shortDesc: "Use Stomp on switch-in. 1.5x Weight.",
-		onSwitchIn(pokemon) {
+		onStart(pokemon) {
 			this.actions.useMove('stomp', pokemon.adjacentFoes()[0]);
+		},
+		onModifyWeight(weighthg) {
+			return this.trunc(weighthg * 1.5);
 		},
 		gen: -1,
 	},
