@@ -24,9 +24,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	houndoom: {
 		inherit: true,
 	},
-	lopunny: {
+	/*lopunny: {
 		inherit: true,
-	},
+	},*/
 	lanturn: {
 		inherit: true,
 	},

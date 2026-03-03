@@ -20,6 +20,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	metronome: {
 		inherit: true,
+		shortDesc: "Damage of moves used on consecutive turns is increased. Max 1.5x after 5 turns.",
 		condition: {
 			onStart(pokemon) {
 				this.effectState.lastMove = '';
