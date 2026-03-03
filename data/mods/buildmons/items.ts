@@ -20,7 +20,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	metronome: {
 		inherit: true,
-		shortDesc: "Damage of moves used on consecutive turns is increased. Max 1.5x after 5 turns.",
+		shortDesc: "Damage of moves used on consecutive turns is increased. Max 1.25x after 5 turns.",
 		condition: {
 			onStart(pokemon) {
 				this.effectState.lastMove = '';
@@ -88,7 +88,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.drain) {
 				this.debug('Devil Horns boost');
-				return this.chainModify(move.drain?.[0] / move.drain?.[1]);
+				return basePower + basePower * (move.drain?.[0] / move.drain?.[1]);
 			}
 		},
 		onTryHealPriority: 1,
@@ -160,7 +160,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	shieldgenerator: {
 		name: "Shield Generator",
-		shortDesc: "On switch-in gain a single use protect.",
+		shortDesc: "On switch-in adds Protect to the user's moveset with 1 PP.",
 		onSwitchIn(pokemon) {
 			pokemon.moveSlots.push({
 				move: 'protect' as ID,
@@ -230,7 +230,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
-	leakingpipe: {
+	/*leakingpipe: {
 		name: "Leaking Pipe",
 		shortDesc: "Use Water Gun when hit.",
 		onDamagingHitOrder: 2,
@@ -249,5 +249,5 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return this.trunc(weighthg * 1.5);
 		},
 		gen: -1,
-	},
+	},*/
 };
