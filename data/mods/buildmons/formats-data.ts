@@ -25,6 +25,27 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	floatzel: {
 		tier: "OU",
 	},
+	lopunny: {
+		tier: "OU",
+	},
+	lanturn: {
+		tier: "OU",
+	},
+	toxicroak: {
+		tier: "OU",
+	},
+	musharna: {
+		tier: "OU",
+	},
+	cetitan: {
+		tier: "OU",
+	},
+	turtonator: {
+		tier: "OU",
+	},
+	sandslash: {
+		tier: "OU",
+	},
 }
 
 for (const pokemon in Base) {

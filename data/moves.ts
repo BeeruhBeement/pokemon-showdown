@@ -22301,6 +22301,42 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ghost",
 		contestType: "Cool",
 	},
+	familiar: {
+		isNonstandard: "Custom",
+		num: 0,
+		accuracy: 90,
+		basePower: 0,
+		category: "Status",
+		name: "Familiar",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, metronome: 1 },
+		volatileStatus: 'familiar',
+		condition: {
+			duration: 4,
+			onStart(target) {
+				this.add('-start', target, 'move: Familiar');
+			},
+			onResidualOrder: 8,
+			onResidual(pokemon) {
+				const target = this.getAtSlot(pokemon.volatiles['familiar'].sourceSlot);
+				if (!target || target.fainted || target.hp <= 0) {
+					this.debug('Nothing for familiar to damage');
+					return;
+				}
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('familiar')), -6, 6);
+				this.damage(pokemon.baseMaxhp * (2 ** typeMod) / 8, pokemon, target);
+			},
+			onEnd(target) {
+				this.add('-end', target, 'move: Familiar');
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		zMove: { effect: 'clearnegativeboost' },
+		contestType: "Clever",
+	},
 
 	// CAP moves
 

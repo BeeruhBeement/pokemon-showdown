@@ -30,7 +30,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 
 		learnsetUpdate(this);
-	},	
+	},
 	actions: {
 		inherit: true,
 		getDamage(

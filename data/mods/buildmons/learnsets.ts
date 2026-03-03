@@ -17,6 +17,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			focuspunch: ["9M"],
 			swordsdance: ["9M"],
 			focusblast: ["9M"],
+			protect: ["9M"],
 		},
 	},
 	rookidee: {
@@ -36,6 +37,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			airslash: ["9M"],
 			flashcannon: ["9M"],
 			steelwing: ["9M"],
+			protect: ["9M"],
 		},
 	},
 	nosepass: {
@@ -57,6 +59,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sandstorm: ["9M"],
 			thunderwave: ["9M"],
 			painsplit: ["9M"],
+			rockblast: ["9M"],
+			protect: ["9M"],
 		},
 	},
 	yamask: {
@@ -88,6 +92,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			protect: ["9M"],
 			leechseed: ["9M"],
 			hypervoice: ["9M"],
+			watergun: ["9M"],
 		},
 	},
 	cutiefly: {
@@ -105,6 +110,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			roost: ["9M"],
 			powder: ["9M"],
 			uturn: ["9M"],
+			drainingkiss: ["9M"],
+			protect: ["9M"],
 		},
 	},
 	houndour: {
@@ -124,6 +131,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			firefang: ["9M"],
 			willowisp: ["9M"],
 			pursuit: ["9M"],
+			familiar: ["9M"],
+			protect: ["9M"],
 		},
 	},
 	buizel: {
@@ -138,6 +147,126 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			icepunch: ["9M"],
 			raindance: ["9M"],
 			surf: ["9M"],
+			protect: ["9M"],
+			watergun: ["9M"],
+		},
+	},
+	buneary: {
+		learnset: {},
+	},
+	lopunny: {
+		learnset: {
+			lastresort: ["9M"],
+			quickattack: ["9M"],
+			icepunch: ["9M"],
+			thunderpunch: ["9M"],
+			jumpkick: ["9M"],
+			fakeout: ["9M"],
+			hypervoice: ["9M"],
+			shadowball: ["9M"],
+			thunderbolt: ["9M"],
+			icebeam: ["9M"],
+			facade: ["9M"],
+			protect: ["9M"],
+		},
+	},
+	chinchou: {
+		learnset: {},
+	},
+	lanturn: {
+		learnset: {
+			thunderbolt: ["9M"],
+			surf: ["9M"],
+			discharge: ["9M"],
+			flipturn: ["9M"],
+			thunder: ["9M"],
+			voltswitch: ["9M"],
+			raindance: ["9M"],
+			protect: ["9M"],
+			thunderwave: ["9M"],
+			watergun: ["9M"],
+		},
+	},
+	croagunk: {
+		learnset: {},
+	},
+	toxicroak: {
+		learnset: {
+			poisonjab: ["9M"],
+			sludgebomb: ["9M"],
+			drainpunch: ["9M"],
+			bulkup: ["9M"],
+			taunt: ["9M"],
+			suckerpunch: ["9M"],
+			focusblast: ["9M"],
+			vacuumwave: ["9M"],
+			nastyplot: ["9M"],
+			toxic: ["9M"],
+			protect: ["9M"],
+		},
+	},
+	munna: {
+		learnset: {},
+	},
+	musharna: {
+		learnset: {
+			psychic: ["9M"],
+			psyshock: ["9M"],
+			moonblast: ["9M"],
+			shadowball: ["9M"],
+			calmmind: ["9M"],
+			rest: ["9M"],
+			sleeptalk: ["9M"],
+			healbell: ["9M"],
+			protect: ["9M"],
+		},
+	},
+	cetoddle: {
+		learnset: {},
+	},
+	cetitan: {
+		learnset: {
+			iceshard: ["9M"],
+			iciclecrash: ["9M"],
+			slackoff: ["9M"],
+			liquidation: ["9M"],
+			protect: ["9M"],
+			heavyslam: ["9M"],
+			bodyslam: ["9M"],
+			iciclespear: ["9M"],
+		},
+	},
+	turtonator: {
+		learnset: {
+			rapidspin: ["9M"],
+			scorchingsands: ["9M"],
+			flamethrower: ["9M"],
+			dragonpulse: ["9M"],
+			dragontail: ["9M"],
+			willowisp: ["9M"],
+			irondefense: ["9M"],
+			toxic: ["9M"],
+			protect: ["9M"],
+		},
+	},
+	sandshrew: {
+		learnset: {
+		},
+	},
+	sandslash: {
+		learnset: {
+			rapidspin: ["9M"],
+			scorchingsands: ["9M"],
+			focusblast: ["9M"],
+			earthpower: ["9M"],
+			drillrun: ["9M"],
+			stoneedge: ["9M"],
+			honeclaws: ["9M"],
+			earthquake: ["9M"],
+			poisonjab: ["9M"],
+			slash: ["9M"],
+			protect: ["9M"],
+			furyswipes: ["9M"],
 		},
 	},
 };

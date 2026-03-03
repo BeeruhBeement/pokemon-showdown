@@ -69,7 +69,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		effectType: 'Status',
 		onResidualOrder: 9,
 		onResidual(pokemon) {
-			this.damage(pokemon.baseMaxhp / 8);
+			this.damage(pokemon.baseMaxhp / 20);
 			if (this.effectState.duration) {
 				const chance = Math.min(this.effectState.duration, 5);
 				if (this.randomChance(chance, 5)) {
@@ -119,6 +119,61 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			} else {
 				this.add('cant', pokemon, 'ptr');
 				return false;
+			}
+		},
+	},
+
+	// weather is implemented here since it's so important to the game
+
+	raindance: {
+		inherit: true,
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Water') {
+				this.debug('rain water boost');
+				return this.chainModify(1.1);
+			}
+			if (move.type === 'Fire') {
+				this.debug('rain fire suppress');
+				return this.chainModify(0.75);
+			}
+		},
+	},
+	primordialsea: {
+		inherit: true,
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Water') {
+				this.debug('Rain water boost');
+				return this.chainModify(1.1);
+			}
+		},
+	},
+	sunnyday: {
+		inherit: true,
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (move.id === 'hydrosteam' && !attacker.hasItem('utilityumbrella')) {
+				this.debug('Sunny Day Hydro Steam boost');
+				return this.chainModify(1.1);
+			}
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Fire') {
+				this.debug('Sunny Day fire boost');
+				return this.chainModify(1.1);
+			}
+			if (move.type === 'Water') {
+				this.debug('Sunny Day water suppress');
+				return this.chainModify(0.75);
+			}
+		},
+	},
+	desolateland: {
+		inherit: true,
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Fire') {
+				this.debug('Sunny Day fire boost');
+				return this.chainModify(1.1);
 			}
 		},
 	},

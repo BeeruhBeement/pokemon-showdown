@@ -24,4 +24,25 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	houndoom: {
 		inherit: true,
 	},
+	lopunny: {
+		inherit: true,
+	},
+	lanturn: {
+		inherit: true,
+	},
+	toxicroak: {
+		inherit: true,
+	},
+	musharna: {
+		inherit: true,
+	},
+	cetitan: {
+		inherit: true,
+	},
+	turtonator: {
+		inherit: true,
+	},
+	sandslash: {
+		inherit: true,
+	},
 };

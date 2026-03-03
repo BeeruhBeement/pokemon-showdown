@@ -7713,4 +7713,12 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		prepare: "  [POKEMON] absorbed darkness!",
 	},
+	familiar: {
+		name: "Familiar",
+		shortDesc: "Deals 1/10 typed damage to target for 4 turns.",
+
+		start: "  Familiar locked on [POKEMON]!",
+		end: "  The Familiar has returned to its master!",
+		damage: "  The Familiar's onslaught continues!",
+	},
 };

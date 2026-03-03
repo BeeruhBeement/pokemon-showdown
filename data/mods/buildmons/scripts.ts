@@ -1,7 +1,20 @@
 import { RESTORATIVE_BERRIES } from "../../../sim/pokemon";
 import {Dex, toID} from '../../../sim/dex';
 
+export interface NatureData {
+	name: string;
+	plus?: StatID;
+	minus?: StatID;
+}
+
 export const Scripts: ModdedBattleScriptsData = {
+	init() {
+		for (const i in this.data.Items) {
+			if (this.data.Items[i].gen && this.data.Items[i].gen > 0) {
+				this.modData('Items', i).isNonstandard = 'Future';
+			}
+		}
+	},
 	actions: {
 		/**
 		 * 0 is a success dealing 0 damage, such as from False Swipe at 1 HP.
@@ -93,8 +106,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				basePower = 60;
 			}
 
-			const level = source.level;
-
 			const attacker = move.overrideOffensivePokemon === 'target' ? target : source;
 			const defender = move.overrideDefensivePokemon === 'source' ? source : target;
 
@@ -142,7 +153,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			const tr = this.battle.trunc;
 
 			// int(int(int(2 * L / 5 + 2) * A * P / D) / 50);
-			const baseDamage = tr(tr(tr(tr(2 * 85 / 5 + 2) * basePower * attack) / defense) / 50);
+			const baseDamage = tr(tr(tr(tr(2 * 50 / 5 + 2) * basePower * attack) / defense) / 50);
 
 			// Calculate damage modifiers separately (order differs between generations)
 			return this.modifyDamage(baseDamage, source, target, move, suppressMessages);
@@ -805,7 +816,26 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 
 			return true;
+		},
+	},
+	statModify(baseStats: StatsTable, set: PokemonSet, statName: StatID): number {
+		const tr = this.trunc;
+		let stat = baseStats[statName];
+		let plusmult, minusmult;
+		stat = tr(tr(2 * stat + set.ivs[statName] + tr(set.evs[statName] / 4)) * set.level / 100 + 5);
+		const nature = this.dex.natures.get(set.nature);
+		// Natures are calculated with 16-bit truncation.
+		// This only affects Eternatus-Eternamax in Pure Hackmons.
+		if (nature.name === 'Fighter' || nature.name === 'Sorcerer' || nature.name === 'Tank')
+		{ plusmult = 120; minusmult = 80; } else { plusmult = 110; minusmult = 90; }
+		if (nature.plus === statName) {
+			stat = this.ruleTable.has('overflowstatmod') ? Math.min(stat, 595) : stat;
+			stat = tr(tr(stat * plusmult, 16) / 100);
+		} else if (nature.minus === statName) {
+			stat = this.ruleTable.has('overflowstatmod') ? Math.min(stat, 728) : stat;
+			stat = tr(tr(stat * minusmult, 16) / 100);
 		}
+		return stat;
 	},
 	field: {
 		suppressingWeather() {
