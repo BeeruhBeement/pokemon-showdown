@@ -151,25 +151,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			watergun: ["9M"],
 		},
 	},
-	/*buneary: {
-		learnset: {},
-	},
-	lopunny: {
-		learnset: {
-			lastresort: ["9M"],
-			quickattack: ["9M"],
-			icepunch: ["9M"],
-			thunderpunch: ["9M"],
-			jumpkick: ["9M"],
-			fakeout: ["9M"],
-			hypervoice: ["9M"],
-			shadowball: ["9M"],
-			thunderbolt: ["9M"],
-			icebeam: ["9M"],
-			facade: ["9M"],
-			protect: ["9M"],
-		},
-	},*/
 	chinchou: {
 		learnset: {},
 	},

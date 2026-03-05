@@ -25,9 +25,6 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	floatzel: {
 		tier: "OU",
 	},
-	/*lopunny: {
-		tier: "OU",
-	},*/
 	lanturn: {
 		tier: "OU",
 	},
