@@ -154,19 +154,23 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		shortDesc: "Using a Poison attack on burned target applies Miasma until the burn is cured.",
 		onSourceHit(target, source, move) {
 			if (move.type === 'Poison' && target.status === 'brn') {
-				target.addVolatile('miasma');
+				target.addVolatile('miasmiccandle');
 			}
 		},
 		condition: {
 			onStart(target) {
-				this.add('-start', target, 'item: Miasma');
+				this.add('-start', target, 'Miasma');
 			},
-			onResidualOrder: 8,
+			onResidualOrder: 15,
 			onResidual(pokemon) {
-				this.damage(pokemon.baseMaxhp / 10);
-				if (!pokemon.status || pokemon.status !== 'brn') {
-					pokemon.removeVolatile('miasma');
+				if (pokemon.status !== 'brn') {
+					pokemon.removeVolatile('miasmiccandle');
+				} else {
+					this.damage(pokemon.baseMaxhp / 10);
 				}
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Miasma');
 			},
 		},
 		gen: -1,
@@ -212,7 +216,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	noxiousthorn: {
 		name: "Noxious Thorn",
-		shortDesc: "Gain 10% chance to bleed. Critical hit damage on statused targets is multiplied by 1.15.",
+		shortDesc: "Gain 10% chance to bleed. Critical damage on statused targets is multiplied by 1.15.",
 		onModifyDamage(damage, source, target, move) {
 			if (target.getMoveHitData(move).crit) {
 				this.debug('Sniper boost');

@@ -1,10 +1,10 @@
 export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDataTable = {
 	brn: {
 		inherit: true,
+		duration: 5,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 20);
-			const turns = pokemon.activeTurns;
-			const chance = Math.min(turns, 5);
+			const chance = 4 - this.effectState.duration!;
 			if (this.randomChance(chance, 5)) {
 				pokemon.cureStatus();
 			}
@@ -12,38 +12,37 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	par: {
 		inherit: true,
+		duration: 5,
 		onResidual(pokemon) {
-			if (this.effectState.duration) {
-				if (this.effectState.duration % 2 === 0) this.damage(pokemon.baseMaxhp / 10);
-				const chance = Math.min(this.effectState.duration, 5);
-				if (this.randomChance(chance, 5)) {
-					pokemon.cureStatus();
-				}
+			if (this.effectState.duration && this.effectState.duration % 2 === 1) {
+				this.damage(pokemon.baseMaxhp / 10);
+			}
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
 			}
 		},
 		onBeforeMove() { return },
 	},
 	frz: {
 		inherit: true,
+		duration: 5,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 20);
-			if (this.effectState.duration) {
-				const chance = Math.min(this.effectState.duration, 5);
-				if (this.randomChance(chance, 5)) {
-					pokemon.cureStatus();
-				}
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
 			}
 		},
 	},
 	psn: {
 		inherit: true,
+		duration: 5,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 10);
-			if (this.effectState.duration) {
-				const chance = Math.min(this.effectState.duration, 5);
-				if (this.randomChance(chance, 5)) {
-					pokemon.cureStatus();
-				}
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
 			}
 		},
 	},
@@ -55,8 +54,8 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 			const inverseStage = 5 - this.effectState.stage; 
 			this.damage(this.clampIntRange(pokemon.baseMaxhp / 20, 1) * inverseStage);
-			if (this.effectState.duration) {
-				const chance = Math.min(this.effectState.duration, 5);
+			if (this.effectState.stage && this.effectState.stage > 0) {
+				const chance = 4 - this.effectState.stage;
 				if (this.randomChance(chance, 5)) {
 					pokemon.cureStatus();
 				}
@@ -67,20 +66,27 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		// still need to implement healing
 		name: 'bld',
 		effectType: 'Status',
+		duration: 5,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'bld', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
+			} else {
+				this.add('-status', target, 'bld');
+			}
+		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 20);
-			if (this.effectState.duration) {
-				const chance = Math.min(this.effectState.duration, 5);
-				if (this.randomChance(chance, 5)) {
-					pokemon.cureStatus();
-				}
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
 			}
 		},
 	},
 	wet: {
 		name: 'wet',
 		effectType: 'Status',
+		duration: 5,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'wet', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
@@ -94,17 +100,16 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
-			if (this.effectState.duration) {
-				const chance = Math.min(this.effectState.duration, 5);
-				if (this.randomChance(chance, 5)) {
-					pokemon.cureStatus();
-				}
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
 			}
 		},
 	},
 	ptr: {
 		name: 'ptr',
 		effectType: 'Status',
+		duration: 1,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
@@ -114,12 +119,8 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 		onBeforeMovePriority: 1,
 		onBeforeMove(pokemon) {
-			if (this.effectState.duration && this.effectState.duration >= 2) {
-				pokemon.cureStatus();
-			} else {
-				this.add('cant', pokemon, 'ptr');
-				return false;
-			}
+			this.add('cant', pokemon, 'ptr');
+			return false;
 		},
 	},
 
