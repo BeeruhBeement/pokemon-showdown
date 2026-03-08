@@ -36,10 +36,19 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	gravitycore: {
 		name: "Gravity Core",
-		shortDesc: "All moves make contact.",
+		shortDesc: "All moves on the field make contact.",
 		onModifyMovePriority: 1,
 		onAnyModifyMove(move) {
 			if (!move.flags['contact']) this.add(move.flags['contact']);
+		},
+		gen: -1,
+	},
+	hangmansnoose: {
+		name: "Hangman's Noose",
+		shortDesc: "On switch-in, sets the user's HP to 1/3 of its max HP.",
+		onSwitchInPriority: -1,
+		onStart(pokemon) {
+			pokemon.sethp(pokemon.maxhp / 3);
 		},
 		gen: -1,
 	},
@@ -55,6 +64,24 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				disabled: false,
 				used: false
 			});
+		},
+		gen: -1,
+	},
+	jestersmask: {
+		name: "Jester's Mask",
+		shortDesc: "Adds Taunt to moveset. Taunted targets get crit.",
+		onStart(pokemon) {
+			pokemon.moveSlots.push({
+				move: 'taunt' as ID,
+				pp: 5,
+				maxpp: 5,
+				id: 'taunt' as ID,
+				disabled: false,
+				used: false
+			});
+		},
+		onModifyCritRatio(critRatio, source, target) {
+			if (target && target.volatiles['taunt']) return 5;
 		},
 		gen: -1,
 	},
@@ -121,29 +148,34 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
-	noxiousthorn: {
-		name: "Noxious Thorn",
-		shortDesc: "Gain 10% chance to bleed. Critical hit damage on statused targets is multiplied by 1.15.",
-		onModifyDamage(damage, source, target, move) {
-			if (target.getMoveHitData(move).crit) {
-				this.debug('Sniper boost');
-				return this.chainModify(1.15);
+	miasmiccandle: {
+		name: "Miasmic Candle",
+		desc: "Using a Poison-type attack on a burned target applies the volatile status Miasma (1/10 damage end of turn) until the burn is cured.",
+		shortDesc: "Using a Poison attack on burned target applies Miasma until the burn is cured.",
+		onSourceHit(target, source, move) {
+			if (move.type === 'Poison' && target.status === 'brn') {
+				target.addVolatile('miasma');
 			}
 		},
-		onSourceDamagingHit(damage, target, source, move) {
-			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
-			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
-			if (this.randomChance(1, 10)) {
-				target.trySetStatus('bld', source);
-			}
+		condition: {
+			onStart(target) {
+				this.add('-start', target, 'item: Miasma');
+			},
+			onResidualOrder: 8,
+			onResidual(pokemon) {
+				this.damage(pokemon.baseMaxhp / 10);
+				if (!pokemon.status || pokemon.status !== 'brn') {
+					pokemon.removeVolatile('miasma');
+				}
+			},
 		},
 		gen: -1,
 	},
-	overheater: {
-		name: "Overheater",
+	moltenhammer: {
+		name: "Molten Hammer",
 		shortDesc: "After using a move more than twice consecutively every subsequent hit burns.",
 		onStart(pokemon) {
-			pokemon.addVolatile('overheater');
+			pokemon.addVolatile('moltenhammer');
 		},
 		condition: {
 			onStart(pokemon) {
@@ -152,8 +184,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			},
 			onTryMovePriority: -2,
 			onTryMove(pokemon, target, move) {
-				if (!pokemon.hasItem('overheater')) {
-					pokemon.removeVolatile('overheater');
+				if (!pokemon.hasItem('moltenhammer')) {
+					pokemon.removeVolatile('moltenhammer');
 					return;
 				}
 				if (move.callsMove) return;
@@ -175,6 +207,24 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 					target.trySetStatus('brn', source);
 				}
 			},
+		},
+		gen: -1,
+	},
+	noxiousthorn: {
+		name: "Noxious Thorn",
+		shortDesc: "Gain 10% chance to bleed. Critical hit damage on statused targets is multiplied by 1.15.",
+		onModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).crit) {
+				this.debug('Sniper boost');
+				return this.chainModify(1.15);
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (this.randomChance(1, 10)) {
+				target.trySetStatus('bld', source);
+			}
 		},
 		gen: -1,
 	},

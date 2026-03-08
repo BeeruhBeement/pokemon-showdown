@@ -178,7 +178,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Soul-Heart"},
 	},
-	tatsugirimega: {
+	tatsugiricurlymega: {
+		inherit: true,
+		abilities: {0: "Contrary"},
+	},
+	tatsugiridroopymega: {
+		inherit: true,
+		abilities: {0: "Contrary"},
+	},
+	tatsugiristretchymega: {
 		inherit: true,
 		abilities: {0: "Contrary"},
 	},
