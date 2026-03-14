@@ -34,6 +34,10 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				pokemon.cureStatus();
 			}
 		},
+		onBeforeMove(pokemon, target, move) { },
+		onModifyMove(move, pokemon) { },
+		onAfterMoveSecondary(target, source, move) { },
+		onDamagingHit(damage, target, source, move) { },
 	},
 	psn: {
 		inherit: true,

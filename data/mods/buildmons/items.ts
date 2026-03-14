@@ -313,7 +313,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	foulsteak: {
 		name: "Foul Steak",
-		shortDesc: "On switch-in take 20% max HP as damage. Contact with the user poisons. Damage can't kill user.",
+		shortDesc: "Switch-in damages for 20% max HP. Contact with user poisons. Can't kill user.",
 		onSwitchIn(pokemon) {
 			if (pokemon.hp > Math.floor(pokemon.maxhp / 5)) {
 				this.damage(Math.floor(pokemon.maxhp / 5), pokemon, pokemon);
@@ -406,14 +406,16 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 
 			const queueMoves = move.type === 'Electric' ? iceMoves : electricMoves;
 
-			for (const id of queueMoves) {
-				if (id === move.id) continue;
+			/*for (const id of queueMoves) {
 				this.queue.addChoice({
 					choice: 'move',
 					pokemon: source,
 					moveid: id,
 					targetLoc: 0,
 				});
+			}*/
+			for (const id of queueMoves) {
+				this.actions.runMove(id, source, 0);
 			}
 		},
 		condition: {
