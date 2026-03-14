@@ -27,97 +27,27 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'bld',
 		},
 	},
-	watergun: {
+	spikes: {
 		inherit: true,
-		shortDesc: "30% chance to wet.",
-		secondary: {
-			chance: 30,
-			status: 'wet',
-		},
-	},
-	curse: {
-		inherit: true,
-		desc: "Applies a status based curse to every statused Pokemon on the field.",
-		shortDesc: "Applies a status based curse to every statused Pokemon on the field.",
-		onModifyMove(move, source, target) { return },
-		onTryHit(target, source, move) {
-			if (move.volatileStatus && target.volatiles['curse']) {
-				return false;
-			}
-		},
-		onHit(target, source) { return },
+		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Can be used up to three times before failing. Opponents lose 5% of their maximum HP with one layer, 10% of their maximum HP with two layers, and 15% of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
 		condition: {
-			onStart(pokemon, source) {
-				switch (pokemon.status) {
-					case 'brn':
-						// implement
-						this.add('-start', pokemon, 'Curse of Ignition', `[of] ${source}`);
-						break;
-					case 'par':
-						this.add('-start', pokemon, 'Curse', `[of] ${source}`);
-						break;
-					case 'frz':
-						this.add('-start', pokemon, 'Curse', `[of] ${source}`);
-						break;
-					case 'psn':
-						this.add('-start', pokemon, 'Curse of Blight', `[of] ${source}`);
-						break;	
-					case 'tox':
-						this.add('-start', pokemon, 'Curse', `[of] ${source}`);
-						break;
-					case 'slp':
-						this.add('-start', pokemon, 'Curse', `[of] ${source}`);
-						break;
-					case 'bld':
-						this.add('-start', pokemon, 'Curse of Deathwish', `[of] ${source}`);
-						break;
-					case 'wet':
-						this.add('-start', pokemon, 'Curse', `[of] ${source}`);
-						break;
-					case 'ptr':
-						// implement
-						this.add('-start', pokemon, 'Curse of Crumbling', `[of] ${source}`);
-						break;
-				}
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'Spikes');
+				this.effectState.layers = 1;
 			},
-			onResidualOrder: 12,
-			onResidual(pokemon) {
-				switch (pokemon.status) {
-					case 'psn':
-						this.damage(pokemon.baseMaxhp / 5);
-						break;
-					case 'bld':
-						if (pokemon.hp > pokemon.maxhp / 3) {
-							this.damage(pokemon.hp - pokemon.maxhp / 3);
-						}
-						break;
-				}
+			onSideRestart(side) {
+				if (this.effectState.layers >= 3) return false;
+				this.add('-sidestart', side, 'Spikes');
+				this.effectState.layers++;
 			},
-			onModifyPriority(priority, pokemon, target, move) {
-				/*if (pokemon.status === 'brn') {
-					return priority + 1;
-				}*/
-			},
-			onModifyMove(move, source, target) {
-				if (source.status === 'psn') {
-					if (move.drain) {
-						move.drain = [Math.floor(move.drain[0] * 1.25), move.drain[1]];
-					} 
-					else if (move.category !== 'Status') {
-						move.drain = [1, 4];
-					}
-				}
-			},
-			onModifyDamage(damage, source, target, move) {
-				if (source.status === 'bld') {
-					return this.chainModify(1.25);
-				}
+			onSwitchIn(pokemon) {
+				if (!pokemon.isGrounded() || pokemon.hasItem('heavydutyboots')) return;
+				const damageAmounts = [0, 1, 2, 3]; // 1/8, 1/6, 1/4
+				this.damage(damageAmounts[this.effectState.layers] * pokemon.maxhp / 20);
 			},
 		},
-		secondary: null,
-		target: "all",
 	},
-	
 	familiar: {
 		inherit: true,
 		condition: {

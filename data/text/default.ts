@@ -382,4 +382,12 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		activate: "  [POKEMON] is rotten!",
 		damage: "The rot is wearing it down!",
 	},
+	bld: {
+		start: "  [POKEMON] started bleeding!",
+		startFromItem: "  [POKEMON] was injured by the [ITEM]!",
+		alreadyStarted: "  [POKEMON] is already bleeding!",
+		end: "  [POKEMON]'s bleeding has stopped!",
+		endFromItem: "  [POKEMON]'s [ITEM] stopped the bleeding!",
+		damage: "  [POKEMON] was hurt by its bleeding!",
+	},
 };

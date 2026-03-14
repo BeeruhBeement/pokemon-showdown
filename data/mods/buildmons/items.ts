@@ -3,10 +3,34 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		gen: -1,
 	},
+	bladedgloves: {
+		name: "Bladed Gloves",
+		shortDesc: "Punching moves are also Slicing.",
+		onModifyMovePriority: 1,
+		onModifyMove(move) {
+			if (!move.flags['slicing'] && move.flags['punch']) this.add(move.flags['slicing']);
+		},
+		gen: -1,
+	},
+	bloodletterleech: {
+		name: "Bloodletter Leech",
+		shortDesc: "User Bleeds. Moves without drain gain 1/5 drain if the user is bleeding.",
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('bld', pokemon);
+		},
+		onModifyMovePriority: 1,
+		onModifyMove(move, pokemon, target) {
+			if (!move.drain && pokemon.status === 'bld') move.drain = [1, 4];
+		},
+		gen: -1,
+	},
 	bottledlightning: {
 		name: "Bottled Lightning",
-		shortDesc: "Adds Thunder to the user's moveset.",
+		shortDesc: "Adds Thunder to the user's moveset if the user doesn't have it already.",
 		onStart(pokemon) {
+			if (pokemon.moveSlots.some(move => move.id === 'thunder')) return;
 			pokemon.moveSlots.push({
 				move: 'thunder' as ID,
 				pp: 5,
@@ -20,7 +44,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	devilhorns: {
 		name: "Devil Horns",
-		shortDesc: "Disables draining. Half of the drain is transformed into damage.",
+		shortDesc: "Disables draining. Half of draining is transformed into damage.",
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.drain) {
@@ -30,16 +54,37 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		onTryHealPriority: 1,
 		onTryHeal(damage, target, source, effect) {
-			return false;
+			if (effect.id === 'drain') {
+				return false;
+			}
 		},
 		gen: -1,
 	},
-	gravitycore: {
-		name: "Gravity Core",
-		shortDesc: "All moves on the field make contact.",
-		onModifyMovePriority: 1,
-		onAnyModifyMove(move) {
-			if (!move.flags['contact']) this.add(move.flags['contact']);
+	elementalinverter: {
+		name: "Elemental Inverter",
+		shortDesc: "Swaps the types of the first 2 moveslots.",
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const move1 = this.dex.getActiveMove(pokemon.moveSlots[0]?.move).id;
+			const move2 = this.dex.getActiveMove(pokemon.moveSlots[1]?.move).id;
+			if (!move1 || !move2) return;
+			if (move.id === move1) {
+				move.type = this.dex.getActiveMove(move2).type;
+			} else if (move.id === move2) {
+				move.type = this.dex.getActiveMove(move1).type;
+			}
+		},
+		gen: -1,
+	},
+	fanofknives: {
+		name: "Fan of Knives",
+		shortDesc: "Wind moves apply Bleed to the target.",
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.flags['wind']) {
+				target.trySetStatus('bld', source);
+			}
 		},
 		gen: -1,
 	},
@@ -49,28 +94,15 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onSwitchInPriority: -1,
 		onStart(pokemon) {
 			pokemon.sethp(pokemon.maxhp / 3);
-		},
-		gen: -1,
-	},
-	icekingsmemento: {
-		name: "Ice King's Memento",
-		shortDesc: "Adds Blizzard to the user's moveset.",
-		onStart(pokemon) {
-			pokemon.moveSlots.push({
-				move: 'blizzard' as ID,
-				pp: 5,
-				maxpp: 5,
-				id: 'blizzard' as ID,
-				disabled: false,
-				used: false
-			});
+			this.add('-sethp', pokemon, pokemon.getHealth);
 		},
 		gen: -1,
 	},
 	jestersmask: {
 		name: "Jester's Mask",
-		shortDesc: "Adds Taunt to moveset. Taunted targets get crit.",
+		shortDesc: "Adds Taunt to the user's moveset. Using Taunt on a Pokemon burns it.",
 		onStart(pokemon) {
+			if (pokemon.moveSlots.some(move => move.id === 'taunt')) return;
 			pokemon.moveSlots.push({
 				move: 'taunt' as ID,
 				pp: 5,
@@ -80,29 +112,9 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				used: false
 			});
 		},
-		onModifyCritRatio(critRatio, source, target) {
-			if (target && target.volatiles['taunt']) return 5;
-		},
-		gen: -1,
-	},
-	heavyshackles: {
-		name: "Heavy Shackles",
-		shortDesc: "Use Stomp on switch-in. 1.5x Weight.",
-		onStart(pokemon) {
-			this.actions.useMove('stomp', pokemon.adjacentFoes()[0]);
-		},
-		onModifyWeight(weighthg) {
-			return this.trunc(weighthg * 1.5);
-		},
-		gen: -1,
-	},
-	leakingpipe: {
-		name: "Leaking Pipe",
-		shortDesc: "Use Water Gun when hit by a contact move.",
-		onDamagingHitOrder: 2,
-		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target)) {
-				this.actions.useMove('watergun', source);
+		onAfterMove(source, target, move) {
+			if (move.id === 'taunt') {
+				target.trySetStatus('brn', source);
 			}
 		},
 		gen: -1,
@@ -121,8 +133,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			},
 			onTryMovePriority: -2,
 			onTryMove(pokemon, target, move) {
-				if (!pokemon.hasItem('overheater')) {
-					pokemon.removeVolatile('overheater');
+				if (!pokemon.hasItem('metronome')) {
+					pokemon.removeVolatile('metronome');
 					return;
 				}
 				if (move.callsMove) return;
@@ -250,12 +262,63 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
-	rottensteak: {
-		name: "Rotten Steak",
-		shortDesc: "On switch-in take 20 damage unless it would kill. Contact with the user poisons.",
+	punchingglove: {
+		inherit: true,
+		gen: -1,
+	},
+	rabbitspaw: {
+		name: "Rabbit's Paw",
+		shortDesc: "All of the holder's moves crit. Getting crit breaks the item.",
+		onModifyCritRatio(critRatio, source, target) {
+			return 5;
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (target.getMoveHitData(move).crit) {
+				this.add('-enditem', target, `Rabbit's Paw`);
+				if (target.item === 'rabbitspaw') {
+					target.item = '';
+					this.clearEffectState(target.itemState);
+				} else {
+					const isBMM = target.volatiles['item:rabbitspaw']?.inSlot;
+					if (isBMM) {
+						target.removeVolatile('item:rabbitspaw');
+						target.m.scrambled.items.splice((target.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+							this.toID(e.thing) === 'rabbitspaw' && e.inSlot === isBMM), 1);
+					}
+				}
+				this.runEvent('AfterUseItem', target, null, null, this.dex.items.get('airballoon'));
+			}
+		},
+		onAfterSubDamage(damage, target, source, effect) {
+			if (target.getMoveHitData(effect).crit) {
+				this.debug('effect: ' + effect.id);
+				if (effect.effectType === 'Move') {
+					this.add('-enditem', target, `Rabbit's Paw`);
+					if (target.item === 'rabbitspaw') {
+						target.item = '';
+						this.clearEffectState(target.itemState);
+					} else {
+						const isBMM = target.volatiles['item:rabbitspaw']?.inSlot;
+						if (isBMM) {
+							target.removeVolatile('item:rabbitspaw');
+							target.m.scrambled.items.splice((target.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+								this.toID(e.thing) === 'rabbitspaw' && e.inSlot === isBMM), 1);
+						}
+					}
+					this.runEvent('AfterUseItem', target, null, null, this.dex.items.get('rabbitspaw'));
+				}
+			}
+		},
+		gen: -1,
+	},
+	foulsteak: {
+		name: "Foul Steak",
+		shortDesc: "On switch-in take 20% max HP as damage. Contact with the user poisons. Damage can't kill user.",
 		onSwitchIn(pokemon) {
-			if (pokemon.hp > 20) {
-				this.damage(20, pokemon, pokemon);
+			if (pokemon.hp > Math.floor(pokemon.maxhp / 5)) {
+				this.damage(Math.floor(pokemon.maxhp / 5), pokemon, pokemon);
+			} else {
+				this.damage(pokemon.hp - 1, pokemon, pokemon);
 			}
 		},
 		onDamagingHit(damage, target, source, move) {
@@ -267,16 +330,94 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	shieldgenerator: {
 		name: "Shield Generator",
-		shortDesc: "On switch-in adds Protect to the user's moveset with 1 PP.",
-		onSwitchIn(pokemon) {
+		shortDesc: "Adds Protect to the user's moveset if the user doesn't have it already.",
+		onStart(pokemon) {
+			if (pokemon.moveSlots.some(move => move.id === 'protect')) return;
 			pokemon.moveSlots.push({
 				move: 'protect' as ID,
-				pp: 1,
-				maxpp: 1,
+				pp: 5,
+				maxpp: 5,
 				id: 'protect' as ID,
 				disabled: false,
 				used: false
 			});
+		},
+		gen: -1,
+	},
+	snowglobe: {
+		name: "Snowglobe",
+		shortDesc: "Adds Blizzard to the user's moveset if the user doesn't have it already.",
+		onStart(pokemon) {
+			if (pokemon.moveSlots.some(move => move.id === 'blizzard')) return;
+			pokemon.moveSlots.push({
+				move: 'blizzard' as ID,
+				pp: 5,
+				maxpp: 5,
+				id: 'blizzard' as ID,
+				disabled: false,
+				used: false
+			});
+		},
+		gen: -1,
+	},
+	steak: {
+		name: "Steak",
+		shortDesc: "On switchin Gain 30 Max HP.",
+		onSwitchInPriority: -1,
+		// for some reason it's doubled so 15 instead of 30
+		onSwitchIn(pokemon) {
+			pokemon.maxhp += 15;
+			pokemon.heal(15);
+			this.add('-heal', pokemon, pokemon.getHealth, '[from] item: Steak');
+		},
+		onSwitchOut(pokemon) {
+			if (pokemon.maxhp > 15) {
+				pokemon.maxhp -= 15;
+			} else {
+				pokemon.maxhp = 1;
+			}
+		},
+		gen: -1,
+	},
+	stormcatalyst: {
+		name: "Storm Catalyst",
+		shortDesc: "Halves Electric/Ice power. If user knows both, using one triggers the other.",
+		onBasePower(basePower, user, target, move) {
+			if (move.type === 'Electric' || move.type === 'Ice') {
+				return this.chainModify(0.5);
+			}
+		},
+		onAfterMove(source, target, move) {
+			if (move.type !== 'Electric' && move.type !== 'Ice') return;
+
+			if (source.volatiles['stormcatalyst']) return;
+			source.addVolatile('stormcatalyst');
+
+			const electricMoves: string[] = [];
+			const iceMoves: string[] = [];
+
+			for (const m of source.moveSlots) {
+				const moveData = this.dex.moves.get(m.id);
+				if (moveData.type === 'Electric') electricMoves.push(m.id);
+				if (moveData.type === 'Ice') iceMoves.push(m.id);
+			}
+
+			if (!electricMoves.length || !iceMoves.length) return;
+
+			const queueMoves = move.type === 'Electric' ? iceMoves : electricMoves;
+
+			for (const id of queueMoves) {
+				if (id === move.id) continue;
+				this.queue.addChoice({
+					choice: 'move',
+					pokemon: source,
+					moveid: id,
+					targetLoc: 0,
+				});
+			}
+		},
+		condition: {
+			duration: 1,
 		},
 		gen: -1,
 	},
@@ -287,6 +428,21 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyType(move, pokemon) {
 			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
 				move.type = 'Electric';
+			}
+		},
+		gen: -1,
+	},
+	unicornhorn: {
+		name: "Unicorn Horn",
+		shortDesc: "Physical moves are Special, Special moves are Physical, Status moves self target.",
+		onModifyTypePriority: -1,
+		onModifyMove(move, pokemon, target) {
+			if (move.category === 'Physical') {
+				move.category = 'Special';
+			} else if (move.category === 'Special') {
+				move.category = 'Physical';
+			} else if (move.category === 'Status') {
+				move.target = 'self';
 			}
 		},
 		gen: -1,
@@ -308,9 +464,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			onSwitchIn(target) {
 				const state = this.effectState as any;
 				if (!state.status) return;
-				if (target.status) return;
 
-				target.setStatus(state.status, state.source);
+				if (!target.status) target.setStatus(state.status, state.source);
 
 				target.side.removeSideCondition('witchsmemento');
 			},

@@ -146,8 +146,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: { allyanim: 1, metronome: 1, futuremove: 1 },
-		ignoreImmunity: false,
-		onHit(source, target) {
+		onAfterMove(source, target, move) {
+			if (!source.moveThisTurnResult) return;
 			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
 			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
 				move: 'flockshock',
@@ -160,12 +160,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					category: "Special",
 					priority: 0,
 					flags: { allyanim: 1, metronome: 1, futuremove: 1 },
-					ignoreImmunity: false,
 					effectType: 'Move',
 					type: 'Electric',
 				},
 			});
 			this.add('-start', source, 'move: Flock Shock');
+			return this.NOT_FAIL;
 		},
 		secondary: null,
 		target: "normal",
