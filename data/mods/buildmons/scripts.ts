@@ -337,7 +337,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					if (!move.ohko && pokemon.hasItem('blunderpolicy') && pokemon.useItem()) {
 						this.battle.boost({ spe: 2 }, pokemon);
 					}
-					if (!move.ohko && pokemon.hasItem('snakeeyes')) {
+					if (!move.ohko && pokemon.hasItem('snakeeyes') && !pokemon.volatiles['laserfocus']) {
 						pokemon.addVolatile('laserfocus');
 					}
 					hitResults[i] = false;

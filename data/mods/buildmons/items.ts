@@ -298,11 +298,11 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Razor Penny",
 		shortDesc: "All moveslots gain 2 PP on landing a crit.",
 		onHit(target, source, move) {
-			if (target.getMoveHitData(move).crit) {
+			const hitData = target.getMoveHitData(move);
+			if (hitData?.crit) {
 				for (const m of source.moveSlots) {
-					if (!m) return;
-					m.pp += 2;
-					if (m.pp > m.maxpp) m.pp = m.maxpp;
+					if (!m) continue;
+					m.pp = Math.min(m.pp + 2, m.maxpp);
 				}
 			}
 		},
