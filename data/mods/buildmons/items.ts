@@ -3,15 +3,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		gen: -1,
 	},
-	bladedgloves: {
-		name: "Bladed Gloves",
-		shortDesc: "Punching moves are also Slicing.",
-		onModifyMovePriority: 1,
-		onModifyMove(move) {
-			if (!move.flags['slicing'] && move.flags['punch']) this.add(move.flags['slicing']);
-		},
-		gen: -1,
-	},
 	bloodletterleech: {
 		name: "Bloodletter Leech",
 		shortDesc: "User Bleeds. Moves without drain gain 1/5 drain if the user is bleeding.",
@@ -76,6 +67,14 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	executionerhood: {
+		name: "Executioner Hood",
+		shortDesc: "Moves deal 30% more damage to targets below 40% HP.",
+		onModifyDamage(damage, source, target, move) {
+			if (target && target.hp < target.maxhp * 4 / 10) this.chainModify([13, 10]);
+		},
+		gen: -1,
+	},
 	fanofknives: {
 		name: "Fan of Knives",
 		shortDesc: "Wind moves apply Bleed to the target.",
@@ -95,6 +94,25 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onStart(pokemon) {
 			pokemon.sethp(pokemon.maxhp / 3);
 			this.add('-sethp', pokemon, pokemon.getHealth);
+		},
+		gen: -1,
+	},
+	juicysteak: {
+		name: "Juicy Steak",
+		shortDesc: "On switchin Gain 30 Max HP.",
+		onSwitchInPriority: -1,
+		// for some reason it's doubled so 15 instead of 30
+		onSwitchIn(pokemon) {
+			pokemon.maxhp += 15;
+			pokemon.heal(15);
+			this.add('-heal', pokemon, pokemon.getHealth, '[from] item: Steak');
+		},
+		onSwitchOut(pokemon) {
+			if (pokemon.maxhp > 15) {
+				pokemon.maxhp -= 15;
+			} else {
+				pokemon.maxhp = 1;
+			}
 		},
 		gen: -1,
 	},
@@ -226,6 +244,16 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	muscleband: {
+		inherit: true,
+		shortDesc: "Holder's physical attacks have a 7.5% power boost.",
+		onBasePower(basePower, user, target, move) {
+			if (move.category === 'Physical') {
+				return this.chainModify([1075, 1000]);
+			}
+		},
+		gen: -1,
+	},
 	noxiousthorn: {
 		name: "Noxious Thorn",
 		shortDesc: "Gain 10% chance to bleed. Critical damage on statused targets is multiplied by 1.15.",
@@ -266,46 +294,15 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		gen: -1,
 	},
-	rabbitspaw: {
-		name: "Rabbit's Paw",
-		shortDesc: "All of the holder's moves crit. Getting crit breaks the item.",
-		onModifyCritRatio(critRatio, source, target) {
-			return 5;
-		},
-		onDamagingHit(damage, target, source, move) {
+	razorpenny: {
+		name: "Razor Penny",
+		shortDesc: "All moveslots gain 2 PP on landing a crit.",
+		onHit(target, source, move) {
 			if (target.getMoveHitData(move).crit) {
-				this.add('-enditem', target, `Rabbit's Paw`);
-				if (target.item === 'rabbitspaw') {
-					target.item = '';
-					this.clearEffectState(target.itemState);
-				} else {
-					const isBMM = target.volatiles['item:rabbitspaw']?.inSlot;
-					if (isBMM) {
-						target.removeVolatile('item:rabbitspaw');
-						target.m.scrambled.items.splice((target.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-							this.toID(e.thing) === 'rabbitspaw' && e.inSlot === isBMM), 1);
-					}
-				}
-				this.runEvent('AfterUseItem', target, null, null, this.dex.items.get('airballoon'));
-			}
-		},
-		onAfterSubDamage(damage, target, source, effect) {
-			if (target.getMoveHitData(effect).crit) {
-				this.debug('effect: ' + effect.id);
-				if (effect.effectType === 'Move') {
-					this.add('-enditem', target, `Rabbit's Paw`);
-					if (target.item === 'rabbitspaw') {
-						target.item = '';
-						this.clearEffectState(target.itemState);
-					} else {
-						const isBMM = target.volatiles['item:rabbitspaw']?.inSlot;
-						if (isBMM) {
-							target.removeVolatile('item:rabbitspaw');
-							target.m.scrambled.items.splice((target.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-								this.toID(e.thing) === 'rabbitspaw' && e.inSlot === isBMM), 1);
-						}
-					}
-					this.runEvent('AfterUseItem', target, null, null, this.dex.items.get('rabbitspaw'));
+				for (const m of source.moveSlots) {
+					if (!m) return;
+					m.pp += 2;
+					if (m.pp > m.maxpp) m.pp = m.maxpp;
 				}
 			}
 		},
@@ -328,6 +325,19 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	rustyknife: {
+		name: "Rusty Knife",
+		shortDesc: "Holder's attacks have a 15% chance of bleeding.",
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+
+			if (this.randomChance(3, 20)) {
+				target.trySetStatus('bld', source);
+			}
+		},
+		gen: -1,
+	},
 	shieldgenerator: {
 		name: "Shield Generator",
 		shortDesc: "Adds Protect to the user's moveset if the user doesn't have it already.",
@@ -344,6 +354,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	snakeeyes: {
+		name: "Snake Eyes",
+		shortDesc: "Missing grants Laser Focus.",
+		// Effect immplemented in scripts.ts under hitStepAccuracy
+		gen: -1,
+	},
 	snowglobe: {
 		name: "Snowglobe",
 		shortDesc: "Adds Blizzard to the user's moveset if the user doesn't have it already.",
@@ -357,25 +373,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				disabled: false,
 				used: false
 			});
-		},
-		gen: -1,
-	},
-	steak: {
-		name: "Steak",
-		shortDesc: "On switchin Gain 30 Max HP.",
-		onSwitchInPriority: -1,
-		// for some reason it's doubled so 15 instead of 30
-		onSwitchIn(pokemon) {
-			pokemon.maxhp += 15;
-			pokemon.heal(15);
-			this.add('-heal', pokemon, pokemon.getHealth, '[from] item: Steak');
-		},
-		onSwitchOut(pokemon) {
-			if (pokemon.maxhp > 15) {
-				pokemon.maxhp -= 15;
-			} else {
-				pokemon.maxhp = 1;
-			}
 		},
 		gen: -1,
 	},
@@ -406,17 +403,39 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 
 			const queueMoves = move.type === 'Electric' ? iceMoves : electricMoves;
 
-			/*for (const id of queueMoves) {
-				this.queue.addChoice({
-					choice: 'move',
-					pokemon: source,
-					moveid: id,
-					targetLoc: 0,
-				});
-			}*/
 			for (const id of queueMoves) {
 				this.actions.runMove(id, source, 0);
 			}
+		},
+		condition: {
+			duration: 1,
+		},
+		gen: -1,
+	},
+	taser: {
+		name: "Taser",
+		shortDesc: "Holder's attacks have a 15% chance of paralyzing.",
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+
+			if (this.randomChance(3, 20)) {
+				target.trySetStatus('par', source);
+			}
+		},
+		gen: -1,
+	},
+	timewornresidue: {
+		name: "Timeworn Residue",
+		shortDesc: "Triggers holder's effects that happen on residual twice.",
+		onResidualOrder: 26,
+		onResidualSubOrder: 1,
+		onResidual(pokemon) {
+			if (pokemon.volatiles['timewornresidue']) return;
+			
+			pokemon.addVolatile('timewornresidue');
+			
+			this.queue.insertChoice({choice: 'residual', pokemon: pokemon});
 		},
 		condition: {
 			duration: 1,
@@ -449,6 +468,16 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	wiseglasses: {
+		inherit: true,
+		shortDesc: "Holder's special attacks have a 7.5% power boost.",
+		onBasePower(basePower, user, target, move) {
+			if (move.category === 'Special') {
+				return this.chainModify([1075, 1000]);
+			}
+		},
+		gen: -1,
+	},
 	witchsmemento: {
 		name: "Witch's Memento",
 		shortDesc: "Killing a statused target transfers the status to the Pokemon switching in.",
@@ -471,6 +500,14 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 
 				target.side.removeSideCondition('witchsmemento');
 			},
+		},
+		gen: -1,
+	},
+	woodenmask: {
+		name: "Wooden Mask",
+		shortDesc: "Heal for 7.5% of max HP after hit.",
+		onHit(pokemon, source, move) {
+			this.heal(source.maxhp * 3 / 40, source, source, move);
 		},
 		gen: -1,
 	},
