@@ -439,20 +439,6 @@ export const Scripts: ModdedBattleScriptsData = {
     		speed += speedRoll;
 			return this.battle.trunc(speed, 13);
 		},
-		getItem() {
-			const item = this.battle.dex.items.getByID(this.item);
-			if (item.exists) return item;
-			let bmmItem = this.battle.dex.abilities.getByID(this.item) as Ability | Move;
-			if (!bmmItem.exists) bmmItem = this.battle.dex.moves.getByID(this.item);
-			return {
-				id: this.item,
-				name: bmmItem.name || this.name,
-				effectType: "Item",
-				toString() {
-					return bmmItem.name || this.id;
-				},
-			} as Item;
-		},
 		runEffectiveness(move: ActiveMove) {
 			let totalTypeMod = 0;
 			if (this.terastallized && move.type === 'Stellar') {
@@ -516,6 +502,20 @@ export const Scripts: ModdedBattleScriptsData = {
 				}
 			}
 			return true;
+		},
+		getItem() {
+			const item = this.battle.dex.items.getByID(this.item);
+			if (item.exists) return item;
+			let bmmItem = this.battle.dex.abilities.getByID(this.item) as Ability | Move;
+			if (!bmmItem.exists) bmmItem = this.battle.dex.moves.getByID(this.item);
+			return {
+				id: this.item,
+				name: bmmItem.name || this.name,
+				effectType: "Item",
+				toString() {
+					return bmmItem.name || this.id;
+				},
+			} as Item;
 		},
 		hasItem(item) {
 			if (this.ignoringItem()) return false;

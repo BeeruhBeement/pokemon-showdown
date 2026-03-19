@@ -4,8 +4,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		shortDesc: "Increases healing effectiveness by 1.25x.",
 		onTryHealPriority: 1,
 		onTryHeal(damage, target, source, effect) {
-			const heals = ['heal', 'ingrain', 'aquaring', 'strengthsap', 'rest', 'wish'];
-			if (heals.includes(effect.id)) {
+			const noheals = ['drain', 'leechseed'];
+			if (!noheals.includes(effect.id)) {
 				return this.chainModify([125, 100]);
 			}
 		},
@@ -62,16 +62,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
-	bodybag: {
-		name: "Bodybag",
-		shortDesc: "Holder consumes item to fully heal if it attacks and KOes another Pokemon.",
-		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
-				this.heal(source.maxhp);
-			}
-		},
-		gen: -1,
-	},
 	bottledlightning: {
 		name: "Bottled Lightning",
 		shortDesc: "Adds Thunder to the user's moveset if the user doesn't have it already.",
@@ -90,25 +80,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	brokenstopwatch: {
 		name: "Broken Stopwatch",
-		shortDesc: "Future moves hit instantly. Wish heals instantly.",
+		shortDesc: "Future attacks hit instantly.",
 		onModifyMovePriority: 1,
 		onModifyMove(move, pokemon, target) {
 			if (move.flags.futuremove) {
 				move.ignoreImmunity = false;
 				move.onTry = undefined;
-			}
-			if (move.id === 'wish') {
-				move.slotCondition = undefined;
-				move.condition = {};
-			}
-		},
-		onTryMovePriority: -1,
-		onTryMove(source, target, move) {
-			if (move.id === 'wish'  && source.hp != source.baseMaxhp && source.useItem()) {
-				const damage = this.heal(source.baseMaxhp / 2, source, source);
-				if (damage) {
-					this.add('-heal', source, source.getHealth, '[from] move: Wish', '[wisher] ' + source.name);
-				}
 			}
 		},
 		gen: -1,
@@ -344,8 +321,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
-			if (!pokemon.status) this.heal(pokemon.baseMaxhp / 20);
-			else this.damage(pokemon.baseMaxhp / 20);
+			if (!pokemon.status) return this.heal(pokemon.baseMaxhp / 20);
+			else return this.damage(pokemon.baseMaxhp / 20);
 		},
 		gen: -1,
 	},
@@ -454,12 +431,13 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
 		},
 		onUpdate(pokemon) {
-			if (!pokemon.ignoringItem()) return;
+			if (!this.effectState.inactive) return;
+			this.effectState.inactive = false;
 			this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
 		},
 		onEnd(pokemon) {
-			if (!pokemon.ignoringItem()) return;
 			this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+			this.effectState.inactive = true;
 		},
 		gen: -1,
 	},
@@ -480,17 +458,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				disabled: false,
 				used: false
 			});
-		},
-		gen: -1,
-	},
-	slowhourglass: {
-		name: "Slow Hourglass",
-		shortDesc: "Duration of status and volatile status is doubled on holder.",
-		onSetStatus(status, target, source, effect) {
-			if (status.duration) status.duration *= 2;
-		},
-		onTryAddVolatile(status, target, source, sourceEffect) {
-			if (status.duration) status.duration *= 2;
 		},
 		gen: -1,
 	},
