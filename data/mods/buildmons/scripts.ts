@@ -70,7 +70,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				if (this.battle.gen === 6) {
 					critMult = [0, 16, 8, 2, 1];
 				} else {
-					critMult = [0, 24, 8, 2, 1];
+					critMult = [0, 20, 10, 5, 1];
 				}
 			}
 
@@ -885,6 +885,23 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			return true;
 		},
+		
+		/**
+		 * Like Field.effectiveWeather(), but ignores sun and rain if
+		 * the Utility Umbrella is active for the Pokemon.
+		 */
+		effectiveWeather() {
+			const weather = this.battle.field.effectiveWeather();
+			if (this.hasItem('sandbucket')) return 'sandstorm' as ID;
+			switch (weather) {
+			case 'sunnyday':
+			case 'raindance':
+			case 'desolateland':
+			case 'primordialsea':
+				if (this.hasItem('utilityumbrella')) return '';
+			}
+			return weather;
+		}
 	},
 	statModify(baseStats: StatsTable, set: PokemonSet, statName: StatID): number {
 		const tr = this.trunc;

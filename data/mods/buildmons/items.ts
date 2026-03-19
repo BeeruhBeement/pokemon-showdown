@@ -1,7 +1,52 @@
 export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
+	aloevera: {
+		name: "Aloe Vera",
+		shortDesc: "Increases healing effectiveness by 1.25x.",
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			const heals = ['heal', 'ingrain', 'aquaring', 'strengthsap', 'rest', 'wish'];
+			if (heals.includes(effect.id)) {
+				return this.chainModify([125, 100]);
+			}
+		},
+		gen: -1,
+	},
+	amuletofthemoon: {
+		name: "Amulet of the Moon",
+		shortDesc: "10% damage boost under Night. Always active if also holding Amulet of the Sun.",
+		onBasePower(basePower, user, target, move) {
+			if (['night'].includes(user.effectiveWeather()) || user.hasItem("amuletofthesun")) {
+				return this.chainModify([11, 10]);
+			}
+		},
+		gen: -1,
+	},
+	amuletofthesun: {
+		name: "Amulet of the Sun",
+		shortDesc: "10% damage boost under Sun. Always active if also holding Amulet of the Moon.",
+		onBasePower(basePower, user, target, move) {
+			if (['sunnyday', 'desolateland'].includes(user.effectiveWeather()) || user.hasItem("amuletofthemoon")) {
+				return this.chainModify([11, 10]);
+			}
+		},
+		gen: -1,
+	},
 	bigroot: {
 		inherit: true,
+		shortDesc: "Holder gains 1.3x HP from draining.",
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			const heals = ['drain', 'leechseed'];
+			if (heals.includes(effect.id)) {
+				return this.chainModify([13, 10]);
+			}
+		},
 		gen: -1,
+	},
+	bindingband: {
+		inherit: true,
+		gen: -1,
+		shortDesc: "Holder's partial-trapping moves deal 1/10 max HP per turn instead of 1/20.",
 	},
 	bloodletterleech: {
 		name: "Bloodletter Leech",
@@ -14,6 +59,16 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyMovePriority: 1,
 		onModifyMove(move, pokemon, target) {
 			if (!move.drain && pokemon.status === 'bld') move.drain = [1, 4];
+		},
+		gen: -1,
+	},
+	bodybag: {
+		name: "Bodybag",
+		shortDesc: "Holder consumes item to fully heal if it attacks and KOes another Pokemon.",
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.heal(source.maxhp);
+			}
 		},
 		gen: -1,
 	},
@@ -30,6 +85,31 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				disabled: false,
 				used: false
 			});
+		},
+		gen: -1,
+	},
+	brokenstopwatch: {
+		name: "Broken Stopwatch",
+		shortDesc: "Future moves hit instantly. Wish heals instantly.",
+		onModifyMovePriority: 1,
+		onModifyMove(move, pokemon, target) {
+			if (move.flags.futuremove) {
+				move.ignoreImmunity = false;
+				move.onTry = undefined;
+			}
+			if (move.id === 'wish') {
+				move.slotCondition = undefined;
+				move.condition = {};
+			}
+		},
+		onTryMovePriority: -1,
+		onTryMove(source, target, move) {
+			if (move.id === 'wish'  && source.hp != source.baseMaxhp && source.useItem()) {
+				const damage = this.heal(source.baseMaxhp / 2, source, source);
+				if (damage) {
+					this.add('-heal', source, source.getHealth, '[from] move: Wish', '[wisher] ' + source.name);
+				}
+			}
 		},
 		gen: -1,
 	},
@@ -85,6 +165,10 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				target.trySetStatus('bld', source);
 			}
 		},
+		gen: -1,
+	},
+	gripclaw: {
+		inherit: true,
 		gen: -1,
 	},
 	hangmansnoose: {
@@ -254,6 +338,17 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	nanobots: {
+		name: "Nanobots",
+		shortDesc: "At the end of every turn, holder restores 1/20 of max HP. Damages if user is statused.",
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			if (!pokemon.status) this.heal(pokemon.baseMaxhp / 20);
+			else this.damage(pokemon.baseMaxhp / 20);
+		},
+		gen: -1,
+	},
 	noxiousthorn: {
 		name: "Noxious Thorn",
 		shortDesc: "Gain 10% chance to bleed. Critical damage on statused targets is multiplied by 1.15.",
@@ -287,6 +382,20 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				pokemon.setType(newTypes);
 				this.add('-start', pokemon, 'typechange', newTypes.join('/'), '[silent]');
 			}
+		},
+		gen: -1,
+	},
+	psychicnullifier: {
+		name: "Psychic Nullifier",
+		shortDesc: "All damage received is Physical. Sp. Atk and Sp. Def are set to 5.",
+		onFoeModifyMove(move, pokemon, target) {
+			move.overrideDefensiveStat = 'def';
+		},
+		onModifySpA() {
+			return 5;
+		},
+		onModifySpD() {
+			return 5;
 		},
 		gen: -1,
 	},
@@ -337,6 +446,27 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	sandbucket: {
+		name: "Sand Bucket",
+		shortDesc: "Holder acts as if it were affected by Sandstorm.",
+		onStart(pokemon) {
+			if (!pokemon.ignoringItem()) return;
+			this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+		},
+		onUpdate(pokemon) {
+			if (!pokemon.ignoringItem()) return;
+			this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+		},
+		onEnd(pokemon) {
+			if (!pokemon.ignoringItem()) return;
+			this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+		},
+		gen: -1,
+	},
+	scopelens: {
+		inherit: true,
+		gen: -1,
+	},
 	shieldgenerator: {
 		name: "Shield Generator",
 		shortDesc: "Adds Protect to the user's moveset if the user doesn't have it already.",
@@ -350,6 +480,17 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				disabled: false,
 				used: false
 			});
+		},
+		gen: -1,
+	},
+	slowhourglass: {
+		name: "Slow Hourglass",
+		shortDesc: "Duration of status and volatile status is doubled on holder.",
+		onSetStatus(status, target, source, effect) {
+			if (status.duration) status.duration *= 2;
+		},
+		onTryAddVolatile(status, target, source, sourceEffect) {
+			if (status.duration) status.duration *= 2;
 		},
 		gen: -1,
 	},
@@ -464,6 +605,18 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			} else if (move.category === 'Status') {
 				move.target = 'self';
 			}
+		},
+		gen: -1,
+	},
+	utilityumbrella: {
+		inherit: true,
+		gen: -1,
+	},
+	vengefuldagger: {
+		name: "Vengeful Dagger",
+		shortDesc: "Holder gains Focus Energy when switching in if an ally fainted last turn.",
+		onSwitchIn(pokemon) {
+			if (pokemon.side.faintedLastTurn) pokemon.addVolatile('focusenergy');
 		},
 		gen: -1,
 	},

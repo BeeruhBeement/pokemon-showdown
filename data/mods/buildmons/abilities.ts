@@ -1,4 +1,17 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
+	banshee: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.flags["sound"]) {
+				target.trySetStatus('fz', source);
+			}
+		},
+		flags: {},
+		name: "Banshee",
+		num: 0,
+		shortDesc: "Damaging Sound moves freeze targets.",
+	},
 	corrosiveaura: {
 		onResidualOrder: 5,
 		onResidualSubOrder: 2,

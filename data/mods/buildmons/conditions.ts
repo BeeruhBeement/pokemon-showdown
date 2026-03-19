@@ -127,6 +127,14 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			return false;
 		},
 	},
+	partiallytrapped: {
+		inherit: true,
+		onStart(pokemon, source) {
+			this.add('-activate', pokemon, 'move: ' + this.effectState.sourceEffect, `[of] ${source}`);
+			this.effectState.boundDivisor = source.hasItem('bindingband') ? 20 : 10;
+		},
+		onTrapPokemon(pokemon) {},
+	},
 
 	// weather is implemented here since it's so important to the game
 
@@ -179,6 +187,34 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			if (move.type === 'Fire') {
 				this.debug('Sunny Day fire boost');
 				return this.chainModify(1.1);
+			}
+		},
+	},
+	sandstorm: {
+		inherit: true,
+		// This should be applied directly to the stat before any of the other modifiers are chained
+		// So we give it increased priority.
+		onModifySpDPriority: 10,
+		onModifySpD(spd, pokemon) {
+			if (pokemon.hasType('Rock') && this.field.isWeather('sandstorm')) {
+				return this.modify(spd, 1.2);
+			}
+		},
+		onWeather(target) {
+			this.damage(target.baseMaxhp / 20);
+		},
+	},
+	night: {
+		inherit: true,
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Dark') {
+				this.debug('night dark boost');
+				return this.chainModify(1.1);
+			}
+			if (move.type === 'Fairy') {
+				this.debug('night fairy suppress');
+				return this.chainModify(0.75);
 			}
 		},
 	},
