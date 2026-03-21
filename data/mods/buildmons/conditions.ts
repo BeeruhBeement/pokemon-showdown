@@ -88,14 +88,51 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	wet: {
-		name: 'wet',
+		name: 'ptr',
 		effectType: 'Status',
 		duration: 5,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'wet', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
 			} else {
-				this.add('-status', target, 'wet');
+				this.add('-status', target, 'ptr');
+			}
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			let stats: BoostID[] = [];
+			const boost: SparseBoostsTable = {};
+
+			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
+
+			stats = [];
+			let statMinus: BoostID;
+			for (statMinus in pokemon.boosts) {
+				if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
+				if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
+					stats.push(statMinus);
+				}
+			}
+			randomStat = stats.length ? this.sample(stats) : undefined;
+			if (randomStat) boost[randomStat] = -1;
+
+			this.boost(boost, pokemon, pokemon);
+			
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	ptr: {
+		name: 'ptr',
+		effectType: 'Status',
+		duration: 5,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'ptr');
 			}
 		},
 		onFractionalPriorityPriority: -1,
@@ -108,23 +145,6 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			if (this.randomChance(chance, 5)) {
 				pokemon.cureStatus();
 			}
-		},
-	},
-	ptr: {
-		name: 'ptr',
-		effectType: 'Status',
-		duration: 1,
-		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
-			} else {
-				this.add('-status', target, 'ptr');
-			}
-		},
-		onBeforeMovePriority: 1,
-		onBeforeMove(pokemon) {
-			this.add('cant', pokemon, 'ptr');
-			return false;
 		},
 	},
 	partiallytrapped: {

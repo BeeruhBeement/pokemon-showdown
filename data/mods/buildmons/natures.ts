@@ -12,6 +12,7 @@ export const Natures: {[k: string]: ModdedNatureData} = {
 	},
 	healer: {
 		name: "Healer",
+		plus: "hp",
 		minus: "atk",
 	},
 	hexer: {
@@ -22,6 +23,7 @@ export const Natures: {[k: string]: ModdedNatureData} = {
 	hunter: {
 		name: "Hunter",
 		plus: "atk",
+		minus: "hp",
 	},
 	invoker: {
 		name: "Invoker",
@@ -45,10 +47,12 @@ export const Natures: {[k: string]: ModdedNatureData} = {
 	},
 	survivalist: {
 		name: "Survivalist",
+		plus: "hp",
 		minus: "spd",
 	},
 	tank: {
 		name: "Tank",
+		plus: "hp",
 		minus: "spe",
 	},
 	warlock: {

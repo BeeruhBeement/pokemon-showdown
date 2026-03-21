@@ -15,10 +15,10 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 			const itemTable = new this.dex.Multiset<string>();
 			for (const set of team) {
 				const item = this.toID(set.item);
-				itemTable.add(item);
+				if (item) itemTable.add(item);
 				for (const itemid of set.moves) {
 					const item = this.toID(itemid);
-					itemTable.add(item);
+					if (item) itemTable.add(item);
 				}
 				if (!item) continue;
 			}

@@ -504,9 +504,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			return true;
 		},
 		getItem() {
-			const item = this.battle.dex.items.getByID(this.item);
-			if (item.exists) return item;
-			let bmmItem = this.battle.dex.abilities.getByID(this.item) as Ability | Move;
+			// const item = this.battle.dex.items.getByID(this.item);
+			// if (item.exists) return item;
+			let bmmItem = this.battle.dex.moves.getByID(this.item) as Move;
 			if (!bmmItem.exists) bmmItem = this.battle.dex.moves.getByID(this.item);
 			return {
 				id: this.item,
@@ -541,12 +541,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (this.battle.runEvent('TakeItem', this, source, null, item)) {
 				this.item = '';
 				let wrongSlot = (this.m.scrambled.abilities as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
-				if (wrongSlot >= 0) {
-					const dexAbil = this.battle.dex.abilities.get(this.m.scrambled.abilities[wrongSlot].thing);
-					if (dexAbil.flags['failskillswap']) return false;
-					this.removeVolatile('ability:' + this.battle.toID(this.m.scrambled.abilities[wrongSlot].thing));
-					this.m.scrambled.abilities.splice(wrongSlot, 1);
-				} else if ((this.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
+				if ((this.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
 					wrongSlot = (this.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
 					let indexOfMove = this.baseMoveSlots.findIndex(m => this.battle.toID(this.m.scrambled.moves[wrongSlot].thing) === m.id);
 					if (indexOfMove >= 0) this.baseMoveSlots.splice(indexOfMove, 1);
@@ -581,12 +576,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					item = this.battle.dex.items.get(item);
 				} else {
 					const itemString = item;
-					let newData = this.battle.dex.abilities.get(itemString) as Ability | Move;
-					if (!newData.exists) {
-						newData = this.battle.dex.moves.get(itemString);
-					} else {
-						if ((newData as Ability).flags['failskillswap']) return false;
-					}
+					let newData = this.battle.dex.moves.get(itemString) as Move;
 					item = {
 						id: newData.id || itemString,
 						name: newData.name || itemString,
@@ -633,26 +623,19 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.battle.singleEvent('Start', item, this.itemState, this, source, effect);
 			}
 			if (isBMMItem) {
-				if (this.battle.dex.abilities.get(item.id).exists) {
-					this.m.scrambled.abilities.push({ thing: item.id, inSlot: 'Item' });
-					const abileffect = 'ability:' + this.battle.toID(item.id);
-					this.addVolatile(abileffect);
-					this.volatiles[abileffect].inSlot = 'Item';
-				} else {
-					this.m.scrambled.moves.push({ thing: item.id, inSlot: 'Item' });
-					const move = Dex.moves.get(item.id);
-					const newMove = {
-						move: move.name,
-						id: move.id,
-						pp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
-						maxpp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
-						target: move.target,
-						disabled: false,
-						used: false,
-					};
-					this.baseMoveSlots.push(newMove);
-					this.moveSlots.push(newMove);
-				}
+				this.m.scrambled.moves.push({ thing: item.id, inSlot: 'Item' });
+				const move = Dex.moves.get(item.id);
+				const newMove = {
+					move: move.name,
+					id: move.id,
+					pp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
+					maxpp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
+					target: move.target,
+					disabled: false,
+					used: false,
+				};
+				this.baseMoveSlots.push(newMove);
+				this.moveSlots.push(newMove);
 			}
 			return true;
 		},
@@ -661,15 +644,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			const item = sourceEffect?.effectType === 'Item' ? sourceEffect :
 				this.battle.effect.effectType === 'Item' ? this.battle.effect : this.getItem();
 			if (!item) return false;
-			if ((!this.hp && this.battle.toID(item.name) !== 'jabocaberry' && this.battle.toID(item.name) !== 'rowapberry') ||
-				!this.isActive) return false;
+
+			if ((!this.hp && item.id !== 'jabocaberry' && item.id !== 'rowapberry') || !this.isActive) return false;
 
 			if (!sourceEffect && this.battle.effect) sourceEffect = this.battle.effect;
 			if (!source && this.battle.event?.target) source = this.battle.event.target;
-			// if (sourceEffect?.effectType === 'Item' && this.item !== sourceEffect.id && source === this) {
-			// 	// if an item is telling us to eat it but we aren't holding it, we probably shouldn't eat what we are holding
-			// 	return false;
-			// }
+
 			if (
 				this.battle.runEvent('UseItem', this, null, null, Dex.items.get(item.name)) &&
 				(force || this.battle.runEvent('TryEatItem', this, null, null, Dex.items.get(item.name)))
@@ -691,18 +671,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					this.pendingStaleness = undefined;
 				}
 
-				const isBMM = this.volatiles[item.id]?.inSlot;
-				if (isBMM) {
-					const dexItem = this.battle.dex.items.get(item.name);
-					this.removeVolatile(item.id);
-					const itemIndex = (this.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-						this.battle.toID(e.thing) === dexItem.id && e.inSlot === isBMM);
-					if (itemIndex >= 0) this.m.scrambled.items.splice(itemIndex, 1);
-					if (isBMM === 'Ability') this.setAbility('No Ability');
-				} else {
-					this.lastItem = this.item;
-					this.item = '';
-				}
+
 				this.battle.clearEffectState(this.itemState);
 				this.usedItemThisTurn = true;
 				this.ateBerry = true;
@@ -711,10 +680,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 			return false;
 		},
-
 		useItem(source, sourceEffect) {
 			const item = sourceEffect?.effectType === 'Item' ? sourceEffect :
 				this.battle.effect.effectType === 'Item' ? this.battle.effect : this.getItem();
+
 			if ((!this.hp && !item.isGem) || !this.isActive) return false;
 			if (!item) return false;
 
@@ -738,24 +707,13 @@ export const Scripts: ModdedBattleScriptsData = {
 					}
 					break;
 				}
+
 				if (item.boosts) {
 					this.battle.boost(item.boosts, this, source, Dex.items.get(item.name));
 				}
 
 				this.battle.singleEvent('Use', Dex.items.get(item.name), this.itemState, this, source, sourceEffect);
 
-				const isBMM = this.volatiles[item.id]?.inSlot;
-				if (isBMM) {
-					const dexItem = this.battle.dex.items.get(item.name);
-					this.removeVolatile(item.id);
-					const itemIndex = (this.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-						this.battle.toID(e.thing) === dexItem.id && e.inSlot === isBMM);
-					if (itemIndex >= 0) this.m.scrambled.items.splice(itemIndex, 1);
-					if (isBMM === 'Ability') this.setAbility('No Ability');
-				} else {
-					this.lastItem = this.item;
-					this.item = '';
-				}
 				this.battle.clearEffectState(this.itemState);
 				this.usedItemThisTurn = true;
 				this.battle.runEvent('AfterUseItem', this, null, null, item);
@@ -921,19 +879,5 @@ export const Scripts: ModdedBattleScriptsData = {
 			stat = tr(tr(stat * minusmult, 16) / 100);
 		}
 		return stat;
-	},
-	field: {
-		suppressingWeather() {
-			for (const pokemon of this.battle.getAllActive()) {
-				const innates = Object.keys(pokemon.volatiles).filter(x => x.startsWith('ability:'));
-				if (pokemon && !pokemon.ignoringAbility() &&
-					(pokemon.getAbility().suppressWeather || innates.some(x => (
-						this.battle.dex.abilities.get(x.replace('ability:', '')).suppressWeather
-					)))) {
-					return true;
-				}
-			}
-			return false;
-		},
 	},
 };
