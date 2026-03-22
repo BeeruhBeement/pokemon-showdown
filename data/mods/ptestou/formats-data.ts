@@ -51,10 +51,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
-	rydalis: {
-		tier: "POU",
-		doublesTier: "DOU",
-	},
 	cyaneedle: {
 		tier: "POU",
 		doublesTier: "DOU",

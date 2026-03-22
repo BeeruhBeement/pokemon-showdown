@@ -116,15 +116,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Friend Guard", 1: "Own Tempo", H: "Purifying Salt"},
 		weightkg: 400,
 	},
-	rydalis: {
-		num: 6713,
-		name: "Rydalis",
-		types: ["Steel", "Dragon"],
-		gender: "N",
-		baseStats: {hp: 75, atk: 85, def: 85, spa: 64, spd: 75, spe: 76},
-		abilities: {0: "Inner Focus", 1: "Levitate", H: "Serene Grace"},
-		weightkg: 330,
-	},
 	cyaneedle: {
 		num: 6714,
 		name: "Cyaneedle",
