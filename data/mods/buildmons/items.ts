@@ -1,4 +1,8 @@
 export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
+	abilityshield: {
+		inherit: true,
+		gen: -1,
+	},
 	aloevera: {
 		name: "Aloe Vera",
 		shortDesc: "Increases healing effectiveness by 1.25x.",
@@ -161,18 +165,25 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	juicysteak: {
 		name: "Juicy Steak",
 		shortDesc: "On switchin Gain 30 Max HP.",
-		onSwitchInPriority: -1,
-		// for some reason it's doubled so 15 instead of 30
-		onSwitchIn(pokemon) {
-			pokemon.maxhp += 15;
-			pokemon.heal(15);
-			this.add('-heal', pokemon, pokemon.getHealth, '[from] item: Steak');
+		onStart(pokemon) {
+			if (pokemon.bondTriggered) return;
+			this.effectState.oldmaxhp = pokemon.maxhp;
+			pokemon.maxhp += 30;
+			pokemon.sethp(pokemon.hp + (pokemon.maxhp - this.effectState.oldmaxhp));
+			pokemon.bondTriggered = true;
 		},
-		onSwitchOut(pokemon) {
-			if (pokemon.maxhp > 15) {
-				pokemon.maxhp -= 15;
-			} else {
-				pokemon.maxhp = 1;
+		gen: -1,
+	},
+	icecoldcoffee: {
+		name: "Ice Cold Coffee",
+		shortDesc: "Swaps burn and freeze. Doubles burn and freeze chances.",
+		onModifyMovePriority: -2,
+		onModifyMove(move) {
+			if (move.secondaries) {
+				this.debug('doubling secondary chance');
+				for (const secondary of move.secondaries) {
+					if (secondary.chance && (secondary.status === 'brn' || secondary.status === 'frz')) secondary.chance *= 2;
+				}
 			}
 		},
 		gen: -1,
@@ -445,6 +456,21 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		gen: -1,
 	},
+	severedrobothand: {
+		name: "Severed Robot Hand",
+		shortDesc: "Cannot heal above 50% HP. 10% damage boost when at or below 50% HP.",
+		onBasePower(basePower, user, target, move) {
+			if (user.hp <= user.maxhp / 2) {
+				return this.chainModify([11, 10]);
+			}
+		},
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			if (source.hp >= source.maxhp / 2) return false;
+			if (source.hp + damage > source.maxhp / 2) return source.maxhp / 2 - source.hp;
+		},
+		gen: -1,
+	},
 	shieldgenerator: {
 		name: "Shield Generator",
 		shortDesc: "Adds Protect to the user's moveset if the user doesn't have it already.",
@@ -516,6 +542,50 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		condition: {
 			duration: 1,
+		},
+		gen: -1,
+	},
+	strongdrink: {
+		name: "Strong Drink",
+		shortDesc: "User's max HP is boosted by 30% but cannot heal in any way.",
+		onStart(pokemon) {
+			if (pokemon.bondTriggered) return;
+			this.effectState.oldmaxhp = pokemon.maxhp;
+			pokemon.maxhp = Math.trunc(pokemon.maxhp * 1.3);
+			pokemon.sethp(pokemon.hp + (pokemon.maxhp - this.effectState.oldmaxhp));
+			pokemon.bondTriggered = true;
+		},
+		onTryHealPriority: 1,
+		onTryHeal() {
+			return false;
+		},
+		gen: -1,
+	},
+	sweetroll: {
+		name: "Sweet Roll",
+		shortDesc: "At the end of every other turn, holder restores 1/10 of its max HP.",
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			if (pokemon.activeTurns % 2 === 0) return this.heal(pokemon.baseMaxhp / 20);
+		},
+		gen: -1,
+	},
+	syntheticplant: {
+		name: "Synthetic Plant",
+		desc: "At the end of each turn, removes a random volatile status.",
+		onResidualOrder: 1,
+		onResidual(pokemon) {
+			const volatiles = Object.keys(pokemon.volatiles).filter(id => {
+				const vol = pokemon.volatiles[id];
+				return vol && typeof vol.duration === 'number' && vol.duration > 0;
+			});
+			if (!volatiles.length) return;
+
+			const randomVolatile = this.sample(volatiles);
+			pokemon.removeVolatile(randomVolatile);
+
+			this.add('-message', `${pokemon.name} had its ${randomVolatile} removed!`);
 		},
 		gen: -1,
 	},

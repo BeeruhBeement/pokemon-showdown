@@ -326,7 +326,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
         threads: [
             `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">hi</a>`,
               ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/, 'Sleep Clause Mod'],
+        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
         banlist: ['Arena Trap', 'Baton Pass', 'Slowbronite', 'Moody'],
 		unbanlist: ['Bouncy Bubble', 'Freezy Frost', 'Sparkly Swirl', 'Noxious Torque', 'Sappy Seed', 'Splishy Splash'],
 		teambuilderFormat: "National Dex",
