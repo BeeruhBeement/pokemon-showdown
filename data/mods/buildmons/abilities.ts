@@ -1,5 +1,5 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
-	banshee: {
+	/*banshee: {
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
 			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
@@ -27,4 +27,11 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		num: 0,
 		shortDesc: "Uses Smog at the end of each turn.",
 	},
+	intimidate: {
+		inherit: true,
+		onAfterTerastallization(pokemon) {
+			this.boost({ atk: 2 }, pokemon);
+		},
+	}*/
+	
 };

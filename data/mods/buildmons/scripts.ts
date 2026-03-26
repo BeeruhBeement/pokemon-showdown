@@ -346,7 +346,18 @@ export const Scripts: ModdedBattleScriptsData = {
 				hitResults[i] = true;
 			}
 			return hitResults;
-		}
+		},
+		
+		// ability activation
+		terastallize(pokemon) {
+			if (!pokemon.canTerastallize) return;
+
+			pokemon.canTerastallize = false;
+
+			this.battle.add('-message', `${pokemon.name} activated its ${pokemon.getAbility().name}.`);
+
+			this.battle.runEvent('AfterTerastallization', pokemon);
+		},
 	},
 	pokemon: {
 		calculateStat(statName: StatIDExceptHP, boost: number, modifier?: number, statUser?: Pokemon) {
