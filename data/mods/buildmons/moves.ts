@@ -48,27 +48,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	familiar: {
-		inherit: true,
-		condition: {
-			duration: 4,
-			onStart(target) {
-				this.add('-start', target, 'move: Familiar');
-			},
-			onResidualOrder: 8,
-			onResidual(pokemon) {
-				const target = this.getAtSlot(pokemon.volatiles['familiar'].sourceSlot);
-				if (!target || target.fainted || target.hp <= 0) {
-					this.debug('Nothing to attack');
-					return;
-				}
-				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('familiar')), -6, 6);
-				this.damage(pokemon.baseMaxhp * (2 ** typeMod) / 10, pokemon, target);
-			},
-			onEnd(target) {
-				this.add('-end', target, 'move: Familiar');
-			},
-		},
-		isNonstandard: null,
+	
+	soulchomp: {
+		num: 0,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		overrideDefensiveStat: 'spd',
+		name: "Soul Chomp",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Tough",
 	},
 };

@@ -102,13 +102,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: [],
 	},
 	{
-		name: "[Gen 9] Fakemon HQ Modded",
-
-		mod: 'fakemonhq',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
-		banlist: ['Uber', 'Baton Pass'],
-	},
-	{
 		name: "[Gen 9] National Dex Sky Battles",
 		desc: `A National Dex format that only allows Flying types and Pokémon with Levitate. Based on XY Sky Battles.`,
 	
@@ -345,7 +338,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Buildmons",
 		mod: 'buildmons',
-		ruleset: ['Standard NatDex', 'Max Total Level = 400', 'Item Clause = 1', 'Ability Clause = 1', 'Max Move Count = 2'],
+		ruleset: ['Standard NatDex', 'Data Mod', 'Max Total Level = 400', 'Item Clause = 1', 'Ability Clause = 1', 'Max Move Count = 2'],
 		validateSet(set, teamHas) {
 			const dex = this.dex;
 			let species = dex.species.get(set.species);
