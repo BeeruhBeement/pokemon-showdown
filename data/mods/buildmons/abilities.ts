@@ -23,18 +23,11 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 		onAfterTerastallization(pokemon) {
-			const stealthRock = this.dex.getActiveMove('stealthrock');
-			for (const target of pokemon.adjacentFoes()) {
-				if (!target || target.fainted || target.status !== 'ptr') continue;
-				const typeMod = this.clampIntRange(target.runEffectiveness(stealthRock), -6, 6);
-				this.damage(target.maxhp * (2 ** typeMod) / 20, target, pokemon, stealthRock);
-				target.cureStatus();
-			}
-			if (!pokemon.canTerastallize) pokemon.canTerastallize = pokemon.teraType;
+			pokemon.adjacentFoes().forEach(foe => { if (foe.status === 'ptr') foe.addVolatile('flinch'); });
 		},
 		flags: {},
 		name: "Entombing Jaws",
-		shortDesc: "Biting moves petrify targets. On activation petrified Pokemon take 1/20th Rock damage.",
+		shortDesc: "Biting moves petrify targets. On activation flinch petrified foes.",
 	},
 	greedy: {
 		onAfterTerastallization(pokemon) {
