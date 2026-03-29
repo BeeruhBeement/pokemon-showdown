@@ -42,5 +42,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Greedy",
+		shortDesc: "On activation uses Punishment that steals the target's positive stat changes.",
 	},
 };
