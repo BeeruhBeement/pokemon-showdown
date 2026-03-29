@@ -38,6 +38,42 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Greedy",
 		shortDesc: "On activation uses Punishment.",
 	},
+	heatengine: {
+		onStart(pokemon) {
+			this.effectState.heat = 0;
+		},
+		onEnd(pokemon) {
+			this.effectState.heat = 0;
+      		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
+		},
+		onAfterMove(source, target, move) {
+			if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
+			this.effectState.heat = Math.min(5, (this.effectState.heat || 0) + 1);
+      		if (this.effectState.heat > 0) { this.add('-end', source, `Heat: ${this.effectState.heat - 1}x`, '[silent]'); }
+      		this.add('-start', source, `Heat: ${this.effectState.heat}x`, '[silent]');
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, source, target, move) {
+			const heat = this.effectState.heat || 0;
+			if (!heat) return;
+			return this.chainModify(1 + 0.05 * heat);
+		},
+		onAfterTerastallization(pokemon) {
+			const heat = this.effectState.heat || 0;
+			if (!heat) return;
+			const damageRatio = 0.1 * heat;
+			pokemon.adjacentFoes().forEach(foe => {
+				if (!foe || foe.fainted) return;
+				this.damage(Math.floor(foe.maxhp * damageRatio), foe, pokemon);
+			});
+			this.effectState.heat = 0;
+      		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
+			pokemon.canTerastallize = pokemon.teraType;
+		},
+		flags: {},
+		name: "Heat Engine",
+		shortDesc: "Each attack adds 5% power (max 25%). On activation deal 10% per stack to foes and reset.",
+	},
 	scrappy: {
 		inherit: true,
 		onModifyMove(move, pokemon, target) {

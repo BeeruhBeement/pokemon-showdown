@@ -130,7 +130,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	scovillain: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Double Down", 1: "Heat Engine" }
 	},
 	wugtrio: {
 		inherit: true,

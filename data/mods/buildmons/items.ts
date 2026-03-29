@@ -328,12 +328,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	nanobots: {
 		name: "Nanobots",
-		shortDesc: "At the end of every turn, holder restores 1/20 of max HP. Damages if user is statused.",
+		shortDesc: "At the end of every turn, holder restores 1/15 of max HP. Damages if user is statused.",
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
-			if (!pokemon.status) return this.heal(pokemon.baseMaxhp / 20);
-			else return this.damage(pokemon.baseMaxhp / 20);
+			if (!pokemon.status) return this.heal(pokemon.maxhp / 20);
+			else return this.damage(pokemon.maxhp * 3 / 40);
 		},
 		gen: -1,
 	},
@@ -563,11 +563,11 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	sweetroll: {
 		name: "Sweet Roll",
-		shortDesc: "At the end of every other turn, holder restores 1/10 of its max HP.",
+		shortDesc: "At the end of every other turn, holder restores 10% of its max HP.",
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
-			if (pokemon.activeTurns % 2 === 0) return this.heal(pokemon.baseMaxhp / 20);
+			if (pokemon.activeTurns % 2 === 0) return this.heal(pokemon.maxhp / 10);
 		},
 		gen: -1,
 	},
@@ -696,7 +696,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Wooden Mask",
 		shortDesc: "Heal for 7.5% of max HP after using a move.",
 		onAfterMoveSecondarySelf(pokemon, source, move) {
-			this.heal(pokemon.maxhp * 3 / 40, pokemon, pokemon);
+			this.heal(pokemon.maxhp / 20, pokemon, pokemon);
 		},
 		gen: -1,
 	},

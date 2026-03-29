@@ -100,9 +100,9 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		duration: 5,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+				this.add('-status', target, 'wet', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
 			} else {
-				this.add('-status', target, 'ptr');
+				this.add('-status', target, 'wet');
 			}
 		},
 		onResidualOrder: 9,

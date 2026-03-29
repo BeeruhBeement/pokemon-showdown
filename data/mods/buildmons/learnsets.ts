@@ -2561,6 +2561,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			bravebird: ["9M"],
 			curse: ["9M"],
 			darkpulse: ["9M"],
+			drillpeck: ["9M"],
 			drillrun: ["9M"],
 			dualwingbeat: ["9M", "9L42"],
 			endeavor: ["9M"],
