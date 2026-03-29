@@ -88,7 +88,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	wet: {
-		name: 'ptr',
+		name: 'wet',
 		effectType: 'Status',
 		duration: 5,
 		onStart(target, source, sourceEffect) {

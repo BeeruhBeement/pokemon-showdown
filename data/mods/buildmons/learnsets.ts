@@ -1824,6 +1824,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["7M", "6M", "5M"],
 			waterpledge: ["7T"],
 			waterpulse: ["7T", "6T"],
+			wetslap: ["9M"],
 			workup: ["7M", "5M"],
 		},
 	},
@@ -1898,6 +1899,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			venoshock: ["8M", "7M", "6M", "5M"],
 			waterpulse: ["7T", "6T"],
 			weatherball: ["8M"],
+			wetslap: ["9M"],
 		},
 	},
 	vanilluxe: {
