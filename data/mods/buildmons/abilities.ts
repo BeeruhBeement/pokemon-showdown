@@ -31,4 +31,16 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		shortDesc: "Critical hit damage is multiplied by 1.15. On activation gain Laser Focus.",
 	},
+	greedy: {
+		onAfterTerastallization(pokemon) {
+			const move = this.dex.getActiveMove('punishment');
+			move.stealsBoosts = true;
+			const target = pokemon.foes()[0];
+			if (target && !target.fainted) {
+				this.actions.useMove(move, pokemon, { target });
+			}
+		},
+		flags: {},
+		name: "Greedy",
+	},
 };
