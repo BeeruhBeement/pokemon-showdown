@@ -537,7 +537,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			const queueMoves = move.type === 'Electric' ? iceMoves : electricMoves;
 
 			for (const id of queueMoves) {
-				this.actions.runMove(id, source, 0);
+				if (target && !target.fainted) this.actions.runMove(id, source, 0);
 			}
 		},
 		condition: {
@@ -694,9 +694,9 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	woodenmask: {
 		name: "Wooden Mask",
-		shortDesc: "Heal for 7.5% of max HP after hit.",
+		shortDesc: "Heal for 7.5% of max HP after using a move.",
 		onAfterMoveSecondarySelf(pokemon, source, move) {
-			this.heal(source.maxhp * 3 / 40, source, source, move);
+			this.heal(pokemon.maxhp * 3 / 40, pokemon, pokemon);
 		},
 		gen: -1,
 	},

@@ -15,8 +15,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		onAfterTerastallization(pokemon) {
 			this.actions.useMove('bulkup', pokemon);
 		},
-		desc: "Moves ignore immunities. On activtion use Bulk Up.",
-		shortDesc: "Moves ignore immunities. On activtion use Bulk Up.",
+		desc: "Moves ignore immunities. On activation use Bulk Up.",
+		shortDesc: "Moves ignore immunities. On activation use Bulk Up.",
 	},
 	sniper: {
 		inherit: true,
@@ -31,17 +31,28 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		shortDesc: "Critical hit damage is multiplied by 1.15. On activation gain Laser Focus.",
 	},
+	
+	doubledown: {
+		onAfterTerastallization(pokemon) {
+			if (!pokemon.volatiles['doubledown']) pokemon.addVolatile('doubledown');
+		},
+		condition: {
+			onAfterMove(source, target, move) {
+				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
+				if (target && !target.fainted && source.lastMoveUsed?.id) this.actions.useMove(source.lastMoveUsed.id, target, { target });
+			},
+		},
+		flags: {},
+		name: "Double Down",
+		shortDesc: "On activation uses its next attacking move twice.",
+	},
 	greedy: {
 		onAfterTerastallization(pokemon) {
-			const move = this.dex.getActiveMove('punishment');
-			move.stealsBoosts = true;
 			const target = pokemon.foes()[0];
-			if (target && !target.fainted) {
-				this.actions.useMove(move, pokemon, { target });
-			}
+			if (target && !target.fainted) this.actions.useMove('punishment', pokemon, { target });
 		},
 		flags: {},
 		name: "Greedy",
-		shortDesc: "On activation uses Punishment that steals the target's positive stat changes.",
+		shortDesc: "On activation uses Punishment.",
 	},
 };
