@@ -390,4 +390,18 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		endFromItem: "  [POKEMON]'s [ITEM] stopped the bleeding!",
 		damage: "  [POKEMON] was hurt by its bleeding!",
 	},
+	wet: {
+		start: "  [POKEMON] got wet!",
+		startFromItem: "  [POKEMON] was wet by the [ITEM]!",
+		alreadyStarted: "  [POKEMON] is already wet!",
+		end: "  [POKEMON] dried off!",
+		endFromItem: "  [POKEMON]'s [ITEM] dried it off!",
+	},
+	ptr: {
+		start: "  [POKEMON] was petrified!",
+		startFromItem: "  [POKEMON] was petrified by the [ITEM]!",
+		alreadyStarted: "  [POKEMON] is already petrified!",
+		end: "  [POKEMON] is no longer petrified!",
+		endFromItem: "  [POKEMON]'s [ITEM] cured it of petrification!",
+	},
 };
