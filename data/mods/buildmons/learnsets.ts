@@ -2672,10 +2672,11 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 };
 
 for (const mon in BasePokedex) {
-	const id = mon as keyof typeof Learnsets;
+  if (Object.prototype.hasOwnProperty.call(Learnsets, mon)) continue;
 
-	Learnsets[id] = {
-		inherit: undefined,
-		learnset: {},
-	};
+  const id = mon as keyof typeof Learnsets;
+  Learnsets[id] = {
+    inherit: undefined,
+    learnset: {},
+  };
 }
