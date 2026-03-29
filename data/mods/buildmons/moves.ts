@@ -18,6 +18,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		isNonstandard: null,
 	},
+	rockcrunch: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	slash: {
 		inherit: true,
 		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
@@ -48,6 +52,38 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+	stealthrock: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	bestow: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	corrosivegas: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	covet: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	fling: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	switcheroo: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	thief: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	trick: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
 	
 	soulchomp: {
 		num: 0,
@@ -58,7 +94,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		name: "Soul Chomp",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, contact: 1, bite: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Ghost",

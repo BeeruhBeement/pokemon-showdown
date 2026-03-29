@@ -1,204 +1,141 @@
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
-	citricity: {
-		num: -90000,
-		name: "Citricity",
-		types: ["Poison", "Electric"],
-		gender: "N",
-		baseStats: { hp: 53, atk: 149, def: 97, spa: 113, spd: 79, spe: 79 },
-		abilities: { 0: "Beast Boost" },
-		heightm: 1.2,
-		weightkg: 56,
-		color: "Yellow",
-		tags: ["Ultra Beast"],
-		eggGroups: ["Undiscovered"],
+	poliwrath: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	hairpunch: {
-		num: -90001,
-		name: "Hairpunch",
-		types: ["Fighting", "Fairy"],
-		baseStats: { hp: 68, atk: 102, def: 80, spa: 98, spd: 75, spe: 92 },
-		abilities: { 0: "Insomnia", 1: "Flare Boost", H: "Competitive" },
-		heightm: 1.5,
-		weightkg: 55.5,
-		color: "Red",
-		eggGroups: ["Human-Like"],
+	rapidashgalar: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	doppelguy: {
-		num: -90002,
-		name: "Doppelguy",
-		types: ["Ghost"],
-		baseStats: { hp: 75, atk: 110, def: 85, spa: 65, spd: 95, spe: 65 },
-		abilities: { 0: "Mirror Armor", H: "Magic Bounce" },
-		heightm: 1.8,
-		weightkg: 25.7,
-		color: "Blue",
-		eggGroups: ["Mineral", "Amorphous"],
+	seaking: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	poisonbite: {
-		num: -90003,
-		name: "Poisonbite",
-		types: ["Poison"],
-		baseStats: { hp: 130, atk: 105, def: 95, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+	granbull: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	stellapod: {
-		num: -90004,
-		name: "Stellapod",
-		types: ["Bug", "Water"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+	donphan: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	ironrose: {
-		num: -90005,
-		name: "Iron Rose",
-		types: ["Grass", "Steel"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+	shiftry: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	psycho: {
-		num: -90006,
-		name: "Psycho",
-		types: ["Psychic", "Flying"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+	masquerain: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	roastimp: {
-		num: -90007,
-		name: "Roastimp",
-		types: ["Fire", "Fairy"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+	exploud: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	steelbird: {
-		num: -90008,
-		name: "Steelbird",
-		types: ["Steel", "Flying"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+	hariyama: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	pirate: {
-		num: -90009,
-		name: "Pirate",
-		types: ["Water", "Ice"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+	sableye: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
 	},
-	polterslice: {
-		num: -90010,
-		name: "Polterslice",
+	manectric: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	camerupt: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	claydol: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	rampardos: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	bastiodon: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	drifblim: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	abomasnow: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	simisage: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	simisear: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	simipour: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	seismitoad: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	vanilluxe: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	slurpuff: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	toucannon: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	shiinotic: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	bewear: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	turtonator: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	togedemaru: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	dubwool: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	perrserker: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	scovillain: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	wugtrio: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	bombirdier: {
+		inherit: true,
+		abilities: {0: "", 1: "", H: "" }
+	},
+	houndstone: {
+		inherit: true,
 		types: ["Ghost", "Rock"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
-	},
-	cultist: {
-		num: -90011,
-		name: "Cultist",
-		types: ["Fire", "Ghost"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
-	},
-	lumenova: {
-		num: -90012,
-		name: "Lumenova",
-		types: ["Electric", "Steel"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
-	},
-	clocklizard: {
-		num: -90013,
-		name: "Clocklizard",
-		types: ["Psychic", "Electric"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
-	},
-	chessquen: {
-		num: -90014,
-		name: "Chessquen",
-		types: ["Steel", "Fairy"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
-	},
-	sheriff: {
-		num: -90015,
-		name: "Sheriff",
-		types: ["Dark", "Ground"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
-	},
-	statue: {
-		num: -90016,
-		name: "Statue",
-		types: ["Rock", "Dark"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
-	},
-	grasslug: {
-		num: -90017,
-		name: "Grasslug",
-		types: ["Grass", "Bug"],
-		baseStats: { hp: 70, atk: 131, def: 100, spa: 86, spd: 90, spe: 40 },
-		abilities: { 0: "Strong Jaw" },
-		heightm: 3.9,
-		weightkg: 210,
-		color: "Green",
-		eggGroups: [],
+		abilities: {0: "", 1: "", H: "" }
 	},
 };
