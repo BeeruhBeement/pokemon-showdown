@@ -65,6 +65,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 		tier: "OU",
 	},
+	drapion: {
+		isNonstandard: null,
+		tier: "OU",
+	},
 	abomasnow: {
 		isNonstandard: null,
 		tier: "OU",

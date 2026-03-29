@@ -85,6 +85,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		isNonstandard: "Future",
 	},
+	batonpass: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	strengthsap: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
 	bestow: {
 		inherit: true,
 		isNonstandard: "Future",

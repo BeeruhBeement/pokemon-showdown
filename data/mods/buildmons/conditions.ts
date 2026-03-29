@@ -67,7 +67,6 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	bld: {
-		// still need to implement healing
 		name: 'bld',
 		effectType: 'Status',
 		duration: 5,
@@ -86,64 +85,12 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				pokemon.cureStatus();
 			}
 		},
-	},
-	wet: {
-		name: 'wet',
-		effectType: 'Status',
-		duration: 5,
-		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
-			} else {
-				this.add('-status', target, 'ptr');
-			}
-		},
-		onResidualOrder: 9,
-		onResidual(pokemon) {
-			let stats: BoostID[] = [];
-			const boost: SparseBoostsTable = {};
-
-			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
-
-			stats = [];
-			let statMinus: BoostID;
-			for (statMinus in pokemon.boosts) {
-				if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
-				if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
-					stats.push(statMinus);
-				}
-			}
-			randomStat = stats.length ? this.sample(stats) : undefined;
-			if (randomStat) boost[randomStat] = -1;
-
-			this.boost(boost, pokemon, pokemon);
-			
-			const chance = 4 - this.effectState.duration!;
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
-			}
-		},
-	},
-	ptr: {
-		name: 'ptr',
-		effectType: 'Status',
-		duration: 5,
-		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
-			} else {
-				this.add('-status', target, 'ptr');
-			}
-		},
-		onFractionalPriorityPriority: -1,
-		onFractionalPriority(priority, pokemon, target, move) {
-			return -0.1;
-		},
-		onResidualOrder: 9,
-		onResidual(pokemon) {
-			const chance = 4 - this.effectState.duration!;
-			if (this.randomChance(chance, 5)) {
-				pokemon.cureStatus();
+		// halved healing
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			const noheals = ['drain', 'leechseed'];
+			if (!noheals.includes(effect.id)) {
+				return this.chainModify([1, 2]);
 			}
 		},
 	},

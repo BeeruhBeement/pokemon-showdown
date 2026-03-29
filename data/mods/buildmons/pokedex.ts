@@ -31,7 +31,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	exploud: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Scrappy" }
 	},
 	hariyama: {
 		inherit: true,
@@ -143,6 +143,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	houndstone: {
 		inherit: true,
 		types: ["Ghost", "Rock"],
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Entombing Jaws" }
 	},
 };
