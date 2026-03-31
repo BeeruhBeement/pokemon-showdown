@@ -1,3 +1,4 @@
+import { crypto_box_MACBYTES } from "sodium-native";
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
@@ -12,6 +13,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	seaking: {
 		inherit: true,
 		abilities: { 0: "Double Down" }
+	},
+	crobat: {
+		inherit: true,
+		abilities: { 0: "Leecher", 1: "Vampiric" }
 	},
 	granbull: {
 		inherit: true,
@@ -54,7 +59,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	claydol: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "All-Sight" }
 	},
 	rampardos: {
 		inherit: true,
@@ -66,7 +71,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	drifblim: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Double Down", 1: "Heat Engine" }
 	},
 	drapion: {
 		inherit: true,
@@ -124,13 +129,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: { 0: "Double Down" }
 	},
+	flapple: {
+		inherit: true,
+		abilities: { 0: "Scrappy" }
+	},
 	perrserker: {
 		inherit: true,
 		abilities: { 0: "Double Down" }
 	},
 	scovillain: {
 		inherit: true,
-		abilities: { 0: "Double Down", 1: "Heat Engine" }
+		abilities: { 0: "Heat Engine", 1: "Double Down" }
 	},
 	wugtrio: {
 		inherit: true,

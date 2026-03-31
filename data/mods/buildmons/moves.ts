@@ -77,26 +77,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-	stealthrock: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	return: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	frustration: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	batonpass: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	strengthsap: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
 	bestow: {
 		inherit: true,
 		isNonstandard: "Future",

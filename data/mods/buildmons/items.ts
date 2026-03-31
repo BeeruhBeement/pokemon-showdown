@@ -112,6 +112,16 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	dragonwing: {
+		name: "Dragon Wing",
+		shortDesc: "Abilities can be activated again after using a Dragon-type move.",
+		onAfterMove(source, target, move) {
+			if (move.type === 'Dragon') {
+				source.canTerastallize = source.teraType;
+			}
+		},
+		gen: -1,
+	},
 	elementalinverter: {
 		name: "Elemental Inverter",
 		shortDesc: "Swaps the types of the first 2 moveslots.",

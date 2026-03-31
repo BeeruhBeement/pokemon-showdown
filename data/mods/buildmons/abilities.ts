@@ -43,13 +43,13 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.effectState.heat = 0;
 		},
 		onEnd(pokemon) {
-			this.effectState.heat = 0;
       		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
+			this.effectState.heat = 0;
 		},
 		onAfterMove(source, target, move) {
-			if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
+			if (move.category === 'Status') return;
+      		this.add('-end', source, `Heat: ${this.effectState.heat}x`, '[silent]');
 			this.effectState.heat = Math.min(5, (this.effectState.heat || 0) + 1);
-      		if (this.effectState.heat > 0) { this.add('-end', source, `Heat: ${this.effectState.heat - 1}x`, '[silent]'); }
       		this.add('-start', source, `Heat: ${this.effectState.heat}x`, '[silent]');
 		},
 		onBasePowerPriority: 23,
@@ -66,13 +66,31 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 				if (!foe || foe.fainted) return;
 				this.damage(Math.floor(foe.maxhp * damageRatio), foe, pokemon);
 			});
-			this.effectState.heat = 0;
       		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
+			this.effectState.heat = 0;
 			pokemon.canTerastallize = pokemon.teraType;
 		},
 		flags: {},
 		name: "Heat Engine",
-		shortDesc: "Each attack adds 5% power (max 25%). On activation deal 10% per stack to foes and reset.",
+		shortDesc: "Each attack adds 5% power (max 25%). Activation deals 10% per stack to foes and reset.",
+	},
+	leecher: {
+		onAfterMoveSecondarySelf(pokemon, target, move) {
+			this.heal(pokemon.lastDamage / 6, pokemon, pokemon);
+		},
+		onAfterTerastallization(pokemon) {
+			if (!pokemon.volatiles['leecher']) pokemon.addVolatile('leecher');
+		},
+		condition: {
+			onAfterMoveSecondarySelf(pokemon, target, move) {
+				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
+				this.heal(pokemon.lastDamage, pokemon, pokemon);
+				pokemon.removeVolatile('leecher');
+			},
+		},
+		flags: {},
+		name: "Leecher",
+		shortDesc: "Moves drain 1/6th of damage dealt. On activation next attack gains +100% drain.",
 	},
 	scrappy: {
 		inherit: true,
@@ -105,5 +123,24 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			if (!pokemon.volatiles['laserfocus']) pokemon.addVolatile('laserfocus');
 		},
 		shortDesc: "Critical hit damage is multiplied by 1.15. On activation gain Laser Focus.",
+	},
+	vampiric: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.flags['bite'] || move.flags['slicing'] || move.drain) {
+				target.trySetStatus('bld', source);
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.adjacentFoes().forEach(foe => { if (foe.status === 'bld') {
+				this.damage(foe.maxhp / 4, foe, pokemon); }
+				this.heal(foe.maxhp / 4, pokemon, foe);
+				foe.cureStatus();
+			});
+		},
+		flags: {},
+		name: "Vampiric",
+		shortDesc: "Biting, Slicing, Draining bleed. Activation drains 1/4th of bleeding foes HP and heal bleed.",
 	},
 };

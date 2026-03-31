@@ -13,6 +13,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 		tier: "OU",
 	},
+	crobat: {
+		isNonstandard: null,
+		tier: "OU",
+	},
 	granbull: {
 		isNonstandard: null,
 		tier: "OU",
@@ -118,6 +122,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 	},
 	dubwool: {
+		isNonstandard: null,
+		tier: "OU",
+	},
+	flapple: {
 		isNonstandard: null,
 		tier: "OU",
 	},
