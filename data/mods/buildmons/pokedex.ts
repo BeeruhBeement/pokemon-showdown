@@ -8,7 +8,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rapidashgalar: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Double Down", 1: "Perplexing" }
 	},
 	seaking: {
 		inherit: true,
@@ -44,8 +44,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	sableye: {
 		inherit: true,
-		baseStats: { hp: 70, atk: 85, def: 95, spa: 85, spd: 85, spe: 50 },
-		abilities: { 0: "Greedy" }
+		baseStats: { hp: 70, atk: 95, def: 95, spa: 85, spd: 85, spe: 50 },
+		abilities: { 0: "Greedy", 1: "Soul Brand" }
 	},
 	manectric: {
 		inherit: true,
@@ -55,11 +55,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	camerupt: {
 		inherit: true,
 		baseStats: { hp: 95, atk: 100, def: 70, spa: 105, spd: 75, spe: 40 },
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Searing Insight" }
 	},
 	claydol: {
 		inherit: true,
-		abilities: { 0: "All-Sight" }
+		abilities: { 0: "Searing Insight", 1: "Perplexing" }
 	},
 	rampardos: {
 		inherit: true,
@@ -75,7 +75,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	drapion: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Plaguebearer" }
 	},
 	abomasnow: {
 		inherit: true,

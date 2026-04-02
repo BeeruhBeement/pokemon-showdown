@@ -94,6 +94,55 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	ceramicshotgun: {
+		name: "Ceramic Shotgun",
+		shortDesc: "Bullet moves hit twice at 55% power but critting breaks it.",
+		onModifyMovePriority: 1,
+		onModifyMove(move, pokemon, target) {
+			if (move.flags.bullet) {
+				move.multihit = 2;
+				move.basePower = Math.ceil(move.basePower * 0.55);
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			if (target.getMoveHitData(move).crit && move.flags.bullet) {
+				this.add('-enditem', source, `Ceramic Shotgun`);
+				if (source.item === 'ceramicshotgun') {
+					source.item = '';
+					this.clearEffectState(source.itemState);
+				} else {
+					const isBMM = source.volatiles['item:ceramicshotgun']?.inSlot;
+					if (isBMM) {
+						source.removeVolatile('item:ceramicshotgun');
+						source.m.scrambled.items.splice((source.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+							this.toID(e.thing) === 'ceramicshotgun' && e.inSlot === isBMM), 1);
+					}
+				}
+				this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicshotgun'));
+			}
+		},
+		onSourceAfterSubDamage(damage, target, source, effect) {
+			if (target.getMoveHitData(effect).crit) {
+				this.debug('effect: ' + effect.id);
+				if (effect.effectType === 'Move' && effect.flags.bullet) {
+					this.add('-enditem', source, `Ceramic Shotgun`);
+					if (source.item === 'ceramicshotgun') {
+						source.item = '';
+						this.clearEffectState(source.itemState);
+					} else {
+						const isBMM = source.volatiles['item:ceramicshotgun']?.inSlot;
+						if (isBMM) {
+							source.removeVolatile('item:ceramicshotgun');
+							source.m.scrambled.items.splice((source.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+								this.toID(e.thing) === 'ceramicshotgun' && e.inSlot === isBMM), 1);
+						}
+					}
+					this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicshotgun'));
+				}
+			}
+		},
+		gen: -1,
+	},
 	devilhorns: {
 		name: "Devil Horns",
 		shortDesc: "Disables draining. Half of draining is transformed into damage.",
@@ -110,6 +159,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				return false;
 			}
 		},
+		gen: -1,
+	},
+	dirtybandage: {
+		name: "Dirty Bandage",
+		shortDesc: "If user is afflicted by bleed it will be replaced by poison.",
+		// in scripts.ts in pokemon setStatus
 		gen: -1,
 	},
 	dragonwing: {

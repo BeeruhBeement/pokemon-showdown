@@ -221,7 +221,6 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		inherit: true,
 		// This should be applied directly to the stat before any of the other modifiers are chained
 		// So we give it increased priority.
-		onModifySpDPriority: 10,
 		onModifySpD(spd, pokemon) {
 			if (pokemon.hasType('Rock') && this.field.isWeather('sandstorm')) {
 				return this.modify(spd, 1.2);
@@ -229,6 +228,20 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 		onWeather(target) {
 			this.damage(target.baseMaxhp / 20);
+		},
+	},
+	hail: {
+		inherit: true,
+		onWeather(target) {
+			this.damage(target.baseMaxhp / 20);
+		},
+	},
+	snowscape: {
+		inherit: true,
+		onModifyDef(def, pokemon) {
+			if (pokemon.hasType('Ice') && this.field.isWeather('snowscape')) {
+				return this.modify(def, 1.2);
+			}
 		},
 	},
 	night: {
@@ -286,6 +299,37 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 					pokemon.disableMove(moveSlot.id, false, this.effectState.sourceEffect);
 				}
 			}
+		},
+	},
+
+	// for moves and abilities and items etc
+	soulbrand: {
+		name: 'soulbrand',
+		effectType: 'Status', // a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'Soul Brand', '[from] ability: ' + sourceEffect?.name);
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Soul Brand');
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			return this.chainModify(1.1);
+		},
+	},
+	brittle: {
+		// 15% more damage from physical moves
+		onDamage(damage, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				let move = effect as Move;
+				if (move.category === 'Physical') {
+					this.debug('Brittle increase');
+					return this.chainModify(1.15);
+				}
+			}
+		},
+		duration: 3,
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'brittle');
 		},
 	},
 };

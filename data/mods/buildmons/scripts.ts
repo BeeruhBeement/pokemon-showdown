@@ -547,9 +547,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				status = this.battle.dex.conditions.get('brn');
 				icecoldcoffeeproc = true;
 			}
+			if (this.hasItem('dirtybandage') && status.id === 'bld') {
+				status = this.battle.dex.conditions.get('psn');
+			}
 
 			if (
-				!ignoreImmunities && status.id && !(source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id))
+				!ignoreImmunities && status.id && !((source?.hasAbility('corrosion') || this.hasAbility('plaguebearer')) && ['tox', 'psn'].includes(status.id))
 			) {
 				// the game currently never ignores immunities
 				if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
