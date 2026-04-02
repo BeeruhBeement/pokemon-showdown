@@ -159,7 +159,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Plaguebearer",
-		shortDesc: "If poisoned, take 10% less damage. Activation: Poison Powder on every Pokemon, including user.",
+		shortDesc: "Poisoned: 10% less damage. Activation: Poison Powder on every Pokemon, including user.",
 	},
 	scrappy: {
 		inherit: true,
@@ -198,7 +198,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Searing Insight",
-		shortDesc: "15% more special damage to burned targets. Activation reveals random foe move/item and burns.",
+		shortDesc: "15% more special damage to burned targets. Activation burns adjacent foes.",
 	},
 	sniper: {
 		inherit: true,
@@ -249,7 +249,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Soul Brand",
-		shortDesc: "Switch-ins: Death Brand. Gain essence for kill on branded. Activation consumes, damaging user.",
+		shortDesc: "Switch-ins: Death Brand. Gain essence for kill on branded. Activation consumes essence.",
 	},
 	vampiric: {
 		onSourceDamagingHit(damage, target, source, move) {

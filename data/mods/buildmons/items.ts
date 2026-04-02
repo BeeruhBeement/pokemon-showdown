@@ -759,7 +759,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	woodenmask: {
 		name: "Wooden Mask",
-		shortDesc: "Heal for 7.5% of max HP after using a move.",
+		shortDesc: "Heal for 5% of max HP after using a move.",
 		onAfterMoveSecondarySelf(pokemon, source, move) {
 			this.heal(pokemon.maxhp / 20, pokemon, pokemon);
 		},
