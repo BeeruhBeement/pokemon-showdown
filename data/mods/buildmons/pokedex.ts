@@ -57,6 +57,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: { hp: 95, atk: 100, def: 70, spa: 105, spd: 75, spe: 40 },
 		abilities: { 0: "Searing Insight" }
 	},
+	cacturne: {
+		inherit: true,
+		abilities: { 0: "High Noon" }
+	},
 	claydol: {
 		inherit: true,
 		abilities: { 0: "Searing Insight", 1: "Perplexing" }
@@ -99,6 +103,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	vanilluxe: {
 		inherit: true,
+		types: ["Ice", "Poison"],
 		abilities: { 0: "Double Down" }
 	},
 	slurpuff: {
@@ -139,7 +144,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	scovillain: {
 		inherit: true,
-		abilities: { 0: "Heat Engine", 1: "Double Down" }
+		abilities: { 0: "Heat Engine", 1: "Double Down", H: "High Noon" }
 	},
 	wugtrio: {
 		inherit: true,

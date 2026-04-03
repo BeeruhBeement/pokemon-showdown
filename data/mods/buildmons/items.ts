@@ -94,8 +94,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
-	ceramicshotgun: {
-		name: "Ceramic Shotgun",
+	ceramicblunderbuss: {
+		name: "Ceramic Blunderbuss",
 		shortDesc: "Bullet moves hit twice at 55% power but critting breaks it.",
 		onModifyMovePriority: 1,
 		onModifyMove(move, pokemon, target) {
@@ -106,19 +106,19 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		onSourceDamagingHit(damage, target, source, move) {
 			if (target.getMoveHitData(move).crit && move.flags.bullet) {
-				this.add('-enditem', source, `Ceramic Shotgun`);
-				if (source.item === 'ceramicshotgun') {
+				this.add('-enditem', source, `Ceramic Blunderbuss`);
+				if (source.item === 'ceramicblunderbuss') {
 					source.item = '';
 					this.clearEffectState(source.itemState);
 				} else {
-					const isBMM = source.volatiles['item:ceramicshotgun']?.inSlot;
+					const isBMM = source.volatiles['item:ceramicblunderbuss']?.inSlot;
 					if (isBMM) {
-						source.removeVolatile('item:ceramicshotgun');
+						source.removeVolatile('item:ceramicblunderbuss');
 						source.m.scrambled.items.splice((source.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-							this.toID(e.thing) === 'ceramicshotgun' && e.inSlot === isBMM), 1);
+							this.toID(e.thing) === 'ceramicblunderbuss' && e.inSlot === isBMM), 1);
 					}
 				}
-				this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicshotgun'));
+				this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicblunderbuss'));
 			}
 		},
 		onSourceAfterSubDamage(damage, target, source, effect) {
@@ -126,18 +126,18 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				this.debug('effect: ' + effect.id);
 				if (effect.effectType === 'Move' && effect.flags.bullet) {
 					this.add('-enditem', source, `Ceramic Shotgun`);
-					if (source.item === 'ceramicshotgun') {
+					if (source.item === 'ceramicblunderbuss') {
 						source.item = '';
 						this.clearEffectState(source.itemState);
 					} else {
-						const isBMM = source.volatiles['item:ceramicshotgun']?.inSlot;
+						const isBMM = source.volatiles['item:ceramicblunderbuss']?.inSlot;
 						if (isBMM) {
-							source.removeVolatile('item:ceramicshotgun');
+							source.removeVolatile('item:ceramicblunderbuss');
 							source.m.scrambled.items.splice((source.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-								this.toID(e.thing) === 'ceramicshotgun' && e.inSlot === isBMM), 1);
+								this.toID(e.thing) === 'ceramicblunderbuss' && e.inSlot === isBMM), 1);
 						}
 					}
-					this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicshotgun'));
+					this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicblunderbuss'));
 				}
 			}
 		},
@@ -171,7 +171,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Dragon Wing",
 		shortDesc: "Abilities can be activated again after using a Dragon-type move.",
 		onAfterMove(source, target, move) {
-			if (move.type === 'Dragon') {
+			if (move.type === 'Dragon' && source.canTerastallize != null) {
 				source.canTerastallize = source.teraType;
 			}
 		},

@@ -29,6 +29,78 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		isNonstandard: "Future",
 	},
+	
+	electricterrain: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Flying' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move weakened by electric terrain');
+					return this.chainModify(0.75);
+				}
+				if (move.type === 'Electric' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+					this.debug('electric terrain boost');
+					return this.chainModify(1.1);
+				}
+			},
+		},
+	},
+	grassyterrain: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Ground' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move weakened by grassy terrain');
+					return this.chainModify(0.75);
+				}
+				if (move.type === 'Grass' && attacker.isGrounded()) {
+					this.debug('grassy terrain boost');
+					return this.chainModify(1.1);
+				}
+			},
+			onResidual(pokemon) {
+				if (pokemon.isGrounded() && !pokemon.isSemiInvulnerable()) {
+					this.heal(pokemon.baseMaxhp / 20, pokemon, pokemon);
+				} else {
+					this.debug(`Pokemon semi-invuln or not grounded; Grassy Terrain skipped`);
+				}
+			},
+		},
+	},
+	mistyterrain: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Dragon' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move weakened by misty terrain');
+					return this.chainModify(0.75);
+				}
+				if (move.type === 'Fairy' && attacker.isGrounded()) {
+					this.debug('misty terrain boost');
+					return this.chainModify(1.1);
+				}
+			},
+		},
+	},
+	psychicterrain: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Fighting' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move weakened by psychic terrain');
+					return this.chainModify(0.75);
+				}
+				if (move.type === 'Psychic' && attacker.isGrounded()) {
+					this.debug('psychic terrain boost');
+					return this.chainModify(1.1);
+				}
+			},
+		},
+	},
 
 	knockoff: {
 		inherit: true,
@@ -59,7 +131,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onSwitchIn(pokemon) {
 				if (!pokemon.isGrounded() || pokemon.hasItem('heavydutyboots')) return;
-				const damageAmounts = [0, 1, 2, 3]; // 1/8, 1/6, 1/4
+				const damageAmounts = [0, 1, 2, 3]; // 5%, 10%, 15%
 				this.damage(damageAmounts[this.effectState.layers] * pokemon.maxhp / 20);
 			},
 		},
@@ -151,6 +223,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Fighting",
 		desc: "Has a 30% chance to paralyze the target.",
 		shortDesc: "30% chance to paralyze adjacent Pokemon.",
+	},
+	chromaclaw: {
+		inherit: true,
+		type: "Normal",
+		basePower: 70,
+		accuracy: 100,
+		category: "Physical",
+		flags: {protect: 1, mirror: 1, contact: 1},
+		critRatio: 2,
+		shortDesc: "Random type. High crit ratio.",
+		onModifyType(move, source, target) {
+			const types = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy'];
+			move.type = this.sample(types);
+		},
 	},
 	deepfreeze: {
 		inherit: true,

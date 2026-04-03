@@ -72,6 +72,10 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
       		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
 			this.effectState.heat = 0;
 		},
+		onUpdate(pokemon) {
+			if (this.effectState.heat === 0) pokemon.canTerastallize = false;
+			else pokemon.canTerastallize = pokemon.teraType;
+		},
 		onAfterMove(source, target, move) {
 			if (move.category === 'Status') return;
       		this.add('-end', source, `Heat: ${this.effectState.heat}x`, '[silent]');
@@ -87,10 +91,12 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		onAfterTerastallization(pokemon) {
 			const heat = this.effectState.heat || 0;
 			if (!heat) return;
-			const damageRatio = 0.1 * heat;
+			const damageRatio = 0.05 * heat;
 			pokemon.adjacentFoes().forEach(foe => {
-				if (!foe || foe.fainted) return;
 				this.damage(Math.floor(foe.maxhp * damageRatio), foe, pokemon);
+				if (this.randomChance(heat, 5)) {
+					foe.trySetStatus('brn', pokemon);
+				}
 			});
       		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
 			this.effectState.heat = 0;
@@ -98,7 +104,32 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Heat Engine",
-		shortDesc: "Each attack adds 5% power (max 25%). Activation deals 10% per stack to foes and reset.",
+		shortDesc: "Each attack adds 5% power (max 25%). Activation damages and 20% burn per stack.",
+	},
+	highnoon: {
+		onAnyModifyDamage(relayVar, source, target, move) {
+			if (this.field.isWeather('sandstorm')) {
+				return this.chainModify(1.15);
+			}
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
+		onAfterTerastallization(pokemon) {
+			this.field.setWeather('sandstorm');
+			pokemon.addVolatile('highnoon');
+		},
+		condition: {
+			onModifyPriority(priority, pokemon, target, move) {
+				return priority + 1;
+			},
+			onAfterMove(source, target, move) {
+				source.removeVolatile('highnoon');
+			},
+		},
+		flags: {},
+		name: "High Noon",
+		shortDesc: "All damage is 1.15 in Sandstorm. Activation: Sandstorm and +1 prio on next move.",
 	},
 	leecher: {
 		onAfterMoveSecondarySelf(pokemon, target, move) {
@@ -124,7 +155,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		onResidual(pokemon) {
 			if (!pokemon.hp) return;
 			for (const target of pokemon.foes()) {
-				if (this.field.pseudoWeather['wonderroom']) {
+				if (this.field.pseudoWeather['magicroom'] || this.field.pseudoWeather['trickroom'] || this.field.pseudoWeather['wonderroom']) {
 					this.damage(target.baseMaxhp / 15, target, pokemon);
 				}
 			}
@@ -149,8 +180,9 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 		onAfterTerastallization(pokemon) {
-			const move = this.dex.getActiveMove('poisonpowder');
+			const move = this.dex.getActiveMove('poisongas');
 			move.accuracy = 100;
+			move.target = 'normal';
 			for (const target of this.getAllActive()) {
 				if (target && !target.fainted) {
 					this.actions.useMove(move, pokemon, { target });
@@ -159,7 +191,18 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Plaguebearer",
-		shortDesc: "Poisoned: 10% less damage. Activation: Poison Powder on every Pokemon, including user.",
+		shortDesc: "Poisoned: 15% less damage. Activation: Poison Gas on every Pokemon, including user.",
+	},
+	prismatic: {
+		onPrepareHit(source, target, move) {
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if (!source.setType(type)) return;
+				this.add('-start', source, 'typechange', type, '[from] ability: Prismatic');
+			}
+		},
+		flags: {},
+		name: "Prismatic",
 	},
 	scrappy: {
 		inherit: true,
