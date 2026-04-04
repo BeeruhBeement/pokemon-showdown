@@ -17,6 +17,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 		tier: "OU",
 	},
+	sudowoodo: {
+		isNonstandard: null,
+		tier: "OU",
+	},
 	granbull: {
 		isNonstandard: null,
 		tier: "OU",
