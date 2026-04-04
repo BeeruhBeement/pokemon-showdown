@@ -21,6 +21,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 		tier: "OU",
 	},
+	steelix: {
+		isNonstandard: null,
+		tier: "OU",
+	},
 	granbull: {
 		isNonstandard: null,
 		tier: "OU",
