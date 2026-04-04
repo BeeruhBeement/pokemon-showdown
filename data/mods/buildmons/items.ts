@@ -509,6 +509,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				return false;
 			}
 		},
+		gen: -1,
 		desc: "Holder can only be damaged by direct attacks when at or below 20% HP. Curse and Substitute on use, Belly Drum, Pain Split, Struggle recoil, and confusion damage are considered direct damage.",
 		shortDesc: "Holder can only be damaged by direct attacks below 20% HP.",
 	},
