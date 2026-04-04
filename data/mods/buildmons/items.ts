@@ -523,18 +523,47 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	gasmask: {
 		name: "Gas Mask",
 		shortDesc: "Immune to being poisoned and secondary effects of wind moves. Breaks after 3 uses.",
+		onStart(pokemon) {
+			this.effectState.uses = 0;
+			if (pokemon.swordBoost) this.effectState.uses++;
+			if (pokemon.shieldBoost) this.effectState.uses++;
+			if (pokemon.syrupTriggered) this.effectState.uses++;
+		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox') return;
 			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] ability: Immunity');
+				this.add('-immune', target, '[from] item: Gas Mask');
 			}
-			this.effectState.uses++;
+			if (!target.syrupTriggered && target.shieldBoost)  {
+				target.syrupTriggered = true;
+				this.effectState.uses++;
+			}
+			if (!target.shieldBoost && target.swordBoost)  {
+				target.shieldBoost = true;
+				this.effectState.uses++;
+			}
+			if (!target.swordBoost) {
+				target.swordBoost = true;
+				this.effectState.uses++;
+			}
+
 			return false;
 		},
 		onHit(pokemon, source, move) {
 			if (move.flags['wind']) {
 				if (move.secondaries) delete move.secondaries;
-				this.effectState.uses++;
+				if (!pokemon.syrupTriggered && pokemon.shieldBoost)  {
+					pokemon.syrupTriggered = true;
+					this.effectState.uses++;
+				}
+				if (!pokemon.shieldBoost && pokemon.swordBoost)  {
+					pokemon.shieldBoost = true;
+					this.effectState.uses++;
+				}
+				if (!pokemon.swordBoost) {
+					pokemon.swordBoost = true;
+					this.effectState.uses++;
+				}
 			}
 		},
 		onUpdate(pokemon) {

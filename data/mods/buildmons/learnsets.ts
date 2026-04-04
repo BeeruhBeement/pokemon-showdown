@@ -468,6 +468,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			roar: ["7M", "7V", "6M", "5M", "4M", "3M"],
 			rockblast: ["8M"],
 			rockclimb: ["4M"],
+			rockcrunch: ["9M"],
 			rockpolish: ["8L1", "7M", "6M", "5M", "4M", "4L30"],
 			rockslide: ["8M", "8L20", "7M", "7L34", "6M", "6L34", "5M", "5L34", "4M", "3T"],
 			rocksmash: ["7V", "6M", "5M", "4M", "3M"],

@@ -425,6 +425,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 
 				this.actions.useMove(move, source);
 			},
+			onUpdate(pokemon) {
+				pokemon.types = pokemon.baseSpecies.types;
+			},
 			onTryHeal() {
 				return false;
 			},
