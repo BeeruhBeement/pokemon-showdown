@@ -40,6 +40,26 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Double Down",
 		shortDesc: "On activation uses its next attacking move twice.",
 	},
+	engineer: {
+		onEnd(pokemon) {
+			this.effectState.used = false;
+		},
+		onUpdate(pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 2 || pokemon.volatiles['turret'] || this.effectState.used) {
+				pokemon.canTerastallize = false;
+			} else {
+				pokemon.canTerastallize = pokemon.teraType;
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			this.directDamage(pokemon.maxhp / 2);
+			pokemon.addVolatile('turret');
+			this.effectState.used = true;
+		},
+		flags: {},
+		name: "Engineer",
+		shortDesc: "On activation summons a Turret in exchange for 1/2 of the user's max HP.",
+	},
 	entombingjaws: {
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
@@ -205,9 +225,10 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			const type = move.type;
 			if (type && type !== '???' && source.getTypes().join() !== type) {
 				if (!source.setType(type)) return;
+      			this.add('-end', source, `Prism: ${this.effectState.prism}x`, '[silent]');
 				this.effectState.prism++;
 				this.add('-start', source, 'typechange', type, '[from] ability: Prismatic');
-      			this.add('start', source, `Prism: ${this.effectState.prism}x`, '[silent]');
+      			this.add('-start', source, `Prism: ${this.effectState.prism}x`, '[silent]');
 			}
 		},
 		onAfterTerastallization(pokemon) {
@@ -221,6 +242,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Prismatic",
+		shortDesc: "Changes type to move type. On activation heals 5% per type change.",
 	},
 	scrappy: {
 		inherit: true,

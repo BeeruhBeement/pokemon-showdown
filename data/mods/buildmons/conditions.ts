@@ -301,13 +301,26 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 		},
 	},
+	supression: {
+		name: 'suppression',
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'Suppression');
+			if (target.canTerastallize !== null && target.canTerastallize) {
+				this.effectState.abilitywasusable = true;
+				target.canTerastallize = false;
+			}
+		},
+		onEnd(target) {
+			if (target.canTerastallize !== null && this.effectState.abilitywasusable) target.canTerastallize = target.teraType;
+			this.add('-end', target, 'Suppression');
+		},
+	},
 
 	// for moves and abilities and items etc
 	soulbrand: {
 		name: 'soulbrand',
-		effectType: 'Status', // a volatile status
 		onStart(target, source, sourceEffect) {
-			this.add('-start', target, 'Soul Brand', '[from] ability: ' + sourceEffect?.name);
+			this.add('-start', target, 'Soul Brand');
 		},
 		onEnd(target) {
 			this.add('-end', target, 'Soul Brand');

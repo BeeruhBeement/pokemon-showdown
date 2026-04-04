@@ -52,6 +52,23 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		gen: -1,
 		shortDesc: "Holder's partial-trapping moves deal 1/10 max HP per turn instead of 1/20.",
 	},
+	blessedblindfold: {
+		name: "Blessed Blindfold",
+		shortDesc: "Move accuracy set to 50%. Missing grants 20% damage reduction on next hit.",
+		onModifyMovePriority: -1,
+		onModifyMove(move) {
+			move.accuracy = 50;
+		},
+		// missing is in scripts.ts
+		condition: {
+			onSourceModifyDamage(relayVar, source, target, move) {
+				this.debug('Blessed Blindfold weaken');
+				target.removeVolatile('blessedblindfold');
+				return this.chainModify(0.8);
+			},
+		},
+		gen: -1,
+	},
 	bloodletterleech: {
 		name: "Bloodletter Leech",
 		shortDesc: "User Bleeds. Moves without drain gain 1/5 drain if the user is bleeding.",
@@ -79,6 +96,17 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				disabled: false,
 				used: false
 			});
+		},
+		gen: -1,
+	},
+	brittlecrown: {
+		name: "Brittle Crown",
+		desc: "Applying petrify applies Brittle, causing targets to take 15% more Physical damage.",
+		shortDesc: "Applying petrify applies Brittle (take 15% more Physical damage).",
+		onAnyAfterSetStatus(status, target, source, effect) {
+			if (status.id === 'ptr') {
+				target.addVolatile('brittle');
+			}
 		},
 		gen: -1,
 	},
@@ -121,25 +149,31 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicblunderbuss'));
 			}
 		},
-		onSourceAfterSubDamage(damage, target, source, effect) {
-			if (target.getMoveHitData(effect).crit) {
-				this.debug('effect: ' + effect.id);
-				if (effect.effectType === 'Move' && effect.flags.bullet) {
-					this.add('-enditem', source, `Ceramic Shotgun`);
-					if (source.item === 'ceramicblunderbuss') {
-						source.item = '';
-						this.clearEffectState(source.itemState);
-					} else {
-						const isBMM = source.volatiles['item:ceramicblunderbuss']?.inSlot;
-						if (isBMM) {
-							source.removeVolatile('item:ceramicblunderbuss');
-							source.m.scrambled.items.splice((source.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
-								this.toID(e.thing) === 'ceramicblunderbuss' && e.inSlot === isBMM), 1);
-						}
-					}
-					this.runEvent('AfterUseItem', source, null, null, this.dex.items.get('ceramicblunderbuss'));
-				}
+		gen: -1,
+	},
+	chocolate: {
+		name: "Chocolate",
+		shortDesc: "Reducing a target's speed stat stage with a move poisons it.",
+		onAnyAfterBoost(boost, target, source, effect) {
+			if (target === source) return;
+			if (boost.spe && boost.spe < 0 && effect?.effectType === 'Move') {
+				target.trySetStatus('psn', source);
 			}
+		},
+		gen: -1,
+	},
+	detachedsniperscope: {
+		name: "Detached Sniper Scope",
+		shortDesc: "Cannot get random critical hits. Super effective hits are critical.",    
+		onModifyCritRatio(critRatio, source, target, move) {
+			const typeMod = this.dex.getEffectiveness(move.type, target);
+			if (typeMod > 0) return 5;
+			return 0;
+		},
+		onFoeCriticalHit(pokemon, source, move) {
+			const typeMod = this.dex.getEffectiveness(move.type, pokemon);
+			if (typeMod > 0) return true;
+			return false;
 		},
 		gen: -1,
 	},
@@ -326,18 +360,17 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		condition: {
 			onStart(target) {
+				if (target.status !== 'brn') {
+					return false;
+				}
 				this.add('-start', target, 'Miasma');
 			},
 			onResidualOrder: 15,
 			onResidual(pokemon) {
-				if (pokemon.status !== 'brn') {
-					pokemon.removeVolatile('miasmiccandle');
-				} else {
-					this.damage(pokemon.baseMaxhp / 10);
-				}
+				this.damage(pokemon.baseMaxhp / 10);
 			},
 			onEnd(target) {
-				this.add('-end', target, 'Miasma');
+				this.add('-end', target, 'Miasma', '[silent]');
 			},
 		},
 		gen: -1,
@@ -423,7 +456,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	philosophersstone: {
 		name: "Philosopher's Stone",
 		shortDesc: "Turns Steel-type into Rock-type. If shiny turns Steel-type into Fairy-type.",
-		onStart(pokemon) {
+		onUpdate(pokemon) {
 			let type = 'Rock';
 			if (pokemon.set.shiny) type = 'Fairy';
 
@@ -441,6 +474,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	psychicnullifier: {
 		name: "Psychic Nullifier",
 		shortDesc: "All damage received is Physical. Sp. Atk and Sp. Def are set to 5.",
+		onModifyMovePriority: -1,
 		onFoeModifyMove(move, pokemon, target) {
 			move.overrideDefensiveStat = 'def';
 		},
@@ -482,6 +516,63 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
 				source.trySetStatus('psn', target);
+			}
+		},
+		gen: -1,
+	},
+	gasmask: {
+		name: "Gas Mask",
+		shortDesc: "Immune to being poisoned and secondary effects of wind moves. Breaks after 3 uses.",
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'psn' && status.id !== 'tox') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Immunity');
+			}
+			this.effectState.uses++;
+			return false;
+		},
+		onHit(pokemon, source, move) {
+			if (move.flags['wind']) {
+				if (move.secondaries) delete move.secondaries;
+				this.effectState.uses++;
+			}
+		},
+		onUpdate(pokemon) {
+			if (this.effectState.uses >= 3) {
+				this.add('-enditem', pokemon, `Gas Mask`);
+				if (pokemon.item === 'gasmask') {
+					pokemon.item = '';
+					this.clearEffectState(pokemon.itemState);
+				} else {
+					const isBMM = pokemon.volatiles['item:gasmask']?.inSlot;
+					if (isBMM) {
+						pokemon.removeVolatile('item:gasmask');
+						pokemon.m.scrambled.items.splice((pokemon.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+							this.toID(e.thing) === 'gasmask' && e.inSlot === isBMM), 1);
+					}
+				}
+				this.runEvent('AfterUseItem', pokemon, null, null, this.dex.items.get('gasmask'));
+			}
+		},
+		gen: -1,
+	},
+	riotshield: {
+		name: "Riot Shield",
+		shortDesc: "10% damage reduction when attacking move selected but can only use BP<=60.",
+		onDisableMove(pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(moveSlot.id);
+				if (move.basePower > 60 || typeof move.basePowerCallback === 'function') {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
+		onSourceModifyDamage(relayVar, source, target, move) {
+			const action = this.queue.willMove(source);
+			const usedMove = action?.choice === 'move' ? action.move : null;
+			if (usedMove && usedMove.category !== 'Status') {
+				this.debug('Riot Shield weaken');
+				return this.chainModify(0.9);
 			}
 		},
 		gen: -1,
@@ -531,8 +622,29 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	scaleplate: {
+		name: "Scale Plate",
+		shortDesc: "Take 7.5% less damage when health is between 30% and 70%.",
+		onSourceModifyDamage(relayVar, source, target, move) {
+			if (source.hp > source.maxhp * 3 / 10 && source.hp < source.maxhp * 7 / 10) {
+				this.debug('Scale Plate weaken');
+				return this.chainModify(0.925);
+			}
+		},
+		gen: -1,
+	},
 	scopelens: {
 		inherit: true,
+		gen: -1,
+	},
+	scrapmetalshield: {
+		name: "Scrap Metal Shield",
+		shortDesc: "Take 10% less damage but bleed when hit.",
+		onSourceModifyDamage(relayVar, source, target, move) {
+			this.debug('Scrap Metal Shield weaken');
+			target.trySetStatus('bld', source);
+			return this.chainModify(0.9);
+		},
 		gen: -1,
 	},
 	severedrobothand: {
@@ -726,14 +838,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	utilityumbrella: {
 		inherit: true,
-		gen: -1,
-	},
-	vengefuldagger: {
-		name: "Vengeful Dagger",
-		shortDesc: "Holder gains Focus Energy when switching in if an ally fainted last turn.",
-		onSwitchIn(pokemon) {
-			if (pokemon.side.faintedLastTurn) pokemon.addVolatile('focusenergy');
-		},
 		gen: -1,
 	},
 	wiseglasses: {

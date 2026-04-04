@@ -157,7 +157,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		section: "Experimental/Unfinished",
 	},
-	{
+	/*{
 		name: "[Gen 3] Denise Uber",
 
 		searchShow: false,
@@ -236,7 +236,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen3denise',
 		ruleset: ['Standard', 'Little Cup', 'Data Mod'],
 		banlist: ['Heat Rock', 'Damp Rock', 'Scyther', 'Gligar', 'Tangela', 'Murkrow', 'Misdreavus', 'Girafarig', 'Dunsparce', 'Sneasel', 'Stantler', 'Duraludon', 'Basculin-White-Striped', 'Meditite', 'Type: Null', 'Qwilfish-Hisui'],
-	},
+	},*/
 	{
 		name: "[Gen 3] P/S Split",
 		searchShow: false,

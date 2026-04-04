@@ -30,6 +30,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: "Future",
 	},
 	
+	metronome: {
+		inherit: true,
+		isNonstandard: "Future",
+	},
+	
 	electricterrain: {
 		inherit: true,
 		condition: {
@@ -311,6 +316,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		isNonstandard: null,
 	},
+	frostbite: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	quicksand: {
 		accuracy: 100,
 		basePower: 40,
@@ -341,6 +350,94 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Ghost",
 		desc: "Deals damage to the target based on its Special Defense instead of Defense.",
 		shortDesc: "Damages target based on Sp. Def, not Defense.",
+	},
+	turret: {
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Turret",
+		pp: 10,
+		priority: 0,
+		flags: { snatch: 1, nonsky: 1, metronome: 1 },
+		volatileStatus: 'turret',
+		onTryHit(source) {
+			if (source.volatiles['turret']) {
+				this.add('-fail', source, 'move: Turret');
+				return this.NOT_FAIL;
+			}
+			if (source.hp <= source.maxhp / 2 || source.maxhp === 1) { // Shedinja clause
+				this.add('-fail', source, 'move: Turret', '[weak]');
+				return this.NOT_FAIL;
+			}
+		},
+		onHit(target) {
+			this.directDamage(target.maxhp / 2);
+		},
+		condition: {
+			onStart(target, source, effect) {
+				this.add('-start', target, 'Turret');
+				this.effectState.hp = Math.floor(target.maxhp / 2);
+				if (target.volatiles['partiallytrapped']) {
+					this.add('-end', target, target.volatiles['partiallytrapped'].sourceEffect, '[partiallytrapped]', '[silent]');
+					delete target.volatiles['partiallytrapped'];
+				}
+			},
+			onTryPrimaryHitPriority: -1,
+			onTryPrimaryHit(target, source, move) {
+				if (target === source || move.flags['bypasssub'] || move.infiltrates) {
+					return;
+				}
+				target.types = ['Steel'];
+				let damage = this.actions.getDamage(source, target, move);
+				if (!damage && damage !== 0) {
+					this.add('-fail', source);
+					this.attrLastMove('[still]');
+					return null;
+				}
+				if (damage > target.volatiles['turret'].hp) {
+					damage = target.volatiles['turret'].hp as number;
+				}
+				target.volatiles['turret'].hp -= damage;
+				source.lastDamage = damage;
+				if (target.volatiles['turret'].hp <= 0) {
+					if (move.ohko) this.add('-ohko');
+					target.removeVolatile('turret');
+				} else {
+					this.add('-activate', target, 'move: Turret', '[damage]');
+				}
+				if (move.recoil || move.id === 'chloroblast') {
+					this.damage(this.actions.calcRecoilDamage(damage, move, source), source, target, 'recoil');
+				}
+				if (move.drain) {
+					this.heal(Math.ceil(damage * move.drain[0] / move.drain[1]), source, target, 'drain');
+				}
+				this.singleEvent('AfterSubDamage', move, null, target, source, move, damage);
+				this.runEvent('AfterSubDamage', target, source, move, damage);
+				return this.HIT_SUBSTITUTE;
+			},
+			onResidualOrder: 5,
+			onResidual() {
+				const source = this.effectState.source;
+				if (!source || source.fainted) return;
+
+				const move = this.dex.getActiveMove('flashcannon');
+				move.target = 'randomNormal';
+
+				this.actions.useMove(move, source);
+			},
+			onTryHeal() {
+				return false;
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Turret');
+				target.types = target.baseSpecies.types;
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Steel",
+		desc: "The user takes 1/2 of its maximum HP, rounded down, and puts it into a turret to take its place in battle. The turret is removed once enough damage is inflicted on it, if the user switches out or faints, or if any Pokemon uses Tidy Up. Baton Pass can be used to transfer the turret to an ally, and the turret will keep its remaining HP. Until the turret is broken, it receives damage from all attacks made by other Pokemon and shields the user from status effects and stat stage changes caused by other Pokemon. Sound-based moves and Pokemon with the Infiltrator Ability ignore turrets. The user still takes normal damage from weather and status effects while behind its turret. If the turret breaks during a multi-hit attack, the user will take damage from any remaining hits. If a turret is created while the user is trapped by a binding move, the binding effect ends immediately. Fails if the user does not have enough HP remaining to create a turret without fainting, or if it already has a turret. Turrets have Steel-type effectiveness and use Flash Cannon on a random adjacent foe at the end of every turn they are active. While behind a Turret the user cannot heal by any means. The turret has Steel STAB even if the user does not.",
+		shortDesc: "User takes 1/2 its max HP to put in a turret.",
 	},
 	wetslap: {
 		accuracy: 100,

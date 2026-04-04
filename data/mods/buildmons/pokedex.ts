@@ -1,4 +1,3 @@
-import { crypto_box_MACBYTES } from "sodium-native";
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
@@ -23,6 +22,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Rock", "Grass"],
 		baseStats: { hp: 80, atk: 100, def: 115, spa: 30, spd: 65, spe: 40 },
 		abilities: { 0: "Stressed" }
+	},
+	steelix: {
+		inherit: true,
+		abilities: { 0: "Entombing Jaws" }
 	},
 	granbull: {
 		inherit: true,
@@ -81,7 +84,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	bastiodon: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Engineer" }
 	},
 	drifblim: {
 		inherit: true,
