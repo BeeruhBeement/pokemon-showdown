@@ -499,6 +499,19 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
+	safetygoggles: {
+		inherit: true,
+		onImmunity(type, pokemon) {},
+		onTryHit(pokemon, source, move) {},
+		onDamage(damage, target, source, effect) {
+			if (effect.effectType !== 'Move' && target.hp <= target.maxhp / 5) {
+				if (effect.effectType === 'Ability') this.add('-activate', source, 'ability: ' + effect.name);
+				return false;
+			}
+		},
+		desc: "Holder can only be damaged by direct attacks when at or below 20% HP. Curse and Substitute on use, Belly Drum, Pain Split, Struggle recoil, and confusion damage are considered direct damage.",
+		shortDesc: "Holder can only be damaged by direct attacks below 20% HP.",
+	},
 	sandbucket: {
 		name: "Sand Bucket",
 		shortDesc: "Holder acts as if it were affected by Sandstorm.",

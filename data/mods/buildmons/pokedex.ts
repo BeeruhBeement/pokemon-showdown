@@ -12,11 +12,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	seaking: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Stressed" }
 	},
 	crobat: {
 		inherit: true,
 		abilities: { 0: "Leecher", 1: "Vampiric" }
+	},
+	sudowoodo: {
+		inherit: true,
+		types: ["Rock", "Grass"],
+		baseStats: { hp: 80, atk: 100, def: 115, spa: 30, spd: 65, spe: 40 },
+		abilities: { 0: "Stressed" }
 	},
 	granbull: {
 		inherit: true,
@@ -64,6 +70,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	claydol: {
 		inherit: true,
 		abilities: { 0: "Searing Insight", 1: "Perplexing" }
+	},
+	kecleon: {
+		inherit: true,
+		abilities: { 0: "Prismatic" }
 	},
 	rampardos: {
 		inherit: true,

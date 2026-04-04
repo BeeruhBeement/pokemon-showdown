@@ -248,11 +248,11 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (defender.hasItem('utilityumbrella')) return;
-			if (move.type === 'Dark') {
+			if (move.type === 'Dark' || move.id === 'moonblast') {
 				this.debug('night dark boost');
 				return this.chainModify(1.1);
 			}
-			if (move.type === 'Fairy') {
+			if (move.type === 'Fairy' && move.id !== 'moonblast') {
 				this.debug('night fairy suppress');
 				return this.chainModify(0.75);
 			}

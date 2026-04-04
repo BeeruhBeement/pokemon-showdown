@@ -141,13 +141,36 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 25,
 	},
-	slash: {
+	belch: {
 		inherit: true,
-		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio. 30% chance to bleed.",
-		secondary: {
-			chance: 30,
-			status: 'bld',
+		flags: { protect: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1, sound: 1 },
+		onDisableMove(pokemon) {
+			if (pokemon.hp < pokemon.maxhp / 2) pokemon.disableMove('belch');
+		},
+		desc: "Cannot be selected if the user is below 50% HP.",
+		shortDesc: "Cannot be selected if the user is below 50% HP.",
+	},
+	crushclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	direclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	dragonclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	dreameater: {
+		inherit: true,
+		desc: "The target is unaffected by this move unless it or the user is asleep. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		shortDesc: "User gains 1/2 HP inflicted. Sleeping target/user.",
+		onTry(source) {
+			if (source.status === 'slp' || source.hasAbility('comatose')) return true;
+		},
+		onTryImmunity(target, source) {
+			return target.status === 'slp' || target.hasAbility('comatose') || source.status === 'slp' || source.hasAbility('comatose');
 		},
 	},
 	drillpeck: {
@@ -161,6 +184,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		critRatio: 2,
 	},
 	fireblast: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+	},
+	flashcannon: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+	},
+	glare: {
+		inherit: true,
+		status: 'ptr',
+		desc: "Petrifies the target.",
+		shortDesc: "Petrifies the target.",
+	},
+	metalclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	moonblast: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
 	},
@@ -184,9 +225,34 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'wet',
 		},
 	},
+	ominouswind: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
+	},
+	silverwind: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
+	},
+	slash: {
+		inherit: true,
+		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. 30% chance to bleed.",
+		secondary: {
+			chance: 30,
+			status: 'bld',
+		},
+	},
+	shadowclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
 	stoneedge: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	tripleaxel: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, dance: 1 },
 	},
 	
 	asteroidbelt: {
@@ -225,18 +291,21 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "30% chance to paralyze adjacent Pokemon.",
 	},
 	chromaclaw: {
-		inherit: true,
-		type: "Normal",
 		basePower: 70,
 		accuracy: 100,
 		category: "Physical",
-		flags: {protect: 1, mirror: 1, contact: 1},
+		name: "Chroma Claw",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 		critRatio: 2,
-		shortDesc: "Random type. High crit ratio.",
 		onModifyType(move, source, target) {
 			const types = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy'];
 			move.type = this.sample(types);
 		},
+		target: "normal",
+		type: "Normal",
+		shortDesc: "Random type. High crit ratio.",
 	},
 	deepfreeze: {
 		inherit: true,

@@ -194,12 +194,30 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		shortDesc: "Poisoned: 15% less damage. Activation: Poison Gas on every Pokemon, including user.",
 	},
 	prismatic: {
+		onStart(pokemon) {
+			this.effectState.prism = 0;
+		},
+		onEnd(pokemon) {
+      		this.add('-end', pokemon, `Prism: ${this.effectState.prism}x`, '[silent]');
+			this.effectState.prism = 0;
+		},
 		onPrepareHit(source, target, move) {
 			const type = move.type;
 			if (type && type !== '???' && source.getTypes().join() !== type) {
 				if (!source.setType(type)) return;
+				this.effectState.prism++;
 				this.add('-start', source, 'typechange', type, '[from] ability: Prismatic');
+      			this.add('start', source, `Prism: ${this.effectState.prism}x`, '[silent]');
 			}
+		},
+		onAfterTerastallization(pokemon) {
+			const prism = this.effectState.prism || 0;
+			if (!prism) return;
+			const heal = 0.05 * prism;
+			this.heal(Math.floor(pokemon.maxhp * heal), pokemon, pokemon);
+      		this.add('-end', pokemon, `Prism: ${this.effectState.prism}x`, '[silent]');
+			this.effectState.prism = 0;
+			pokemon.canTerastallize = pokemon.teraType;
 		},
 		flags: {},
 		name: "Prismatic",
@@ -293,6 +311,40 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		name: "Soul Brand",
 		shortDesc: "Switch-ins: Death Brand. Gain essence for kill on branded. Activation consumes essence.",
+	},
+	stressed: {
+		onModifySpe(spe, pokemon) {
+			return spe + (pokemon.maxhp - pokemon.hp);
+		},
+		onUpdate(pokemon) {
+			if (pokemon.hp >= pokemon.maxhp) {
+				pokemon.canTerastallize = false;
+			} else {
+				pokemon.canTerastallize = pokemon.teraType;
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('stressed', pokemon);
+		},
+		condition: {
+			onStart(target, source, sourceEffect) {
+				const missing = source.maxhp - source.hp;
+				this.effectState.boost = Math.floor(missing / 10);
+				this.add('-activate', target, 'ability: Stressed', `Missing HP: ${missing}`);
+			},
+			onEnd(target) {
+				this.add('-end', target, 'ability: Stressed');
+			},
+			onModifyDamage(relayVar, source, target, move) {
+				if (this.effectState.boost) {
+					this.debug('Stressed boost');
+					return this.chainModify(1 + 0.01 * this.effectState.boost);
+				}
+			},
+		},
+		flags: {},
+		name: "Stressed",
+		shortDesc: "Missing HP is added to Speed. On activation gain a damage boost for missing HP / 10.",
 	},
 	vampiric: {
 		onSourceDamagingHit(damage, target, source, move) {

@@ -53,7 +53,15 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 		tier: "OU",
 	},
+	cacturne: {
+		isNonstandard: null,
+		tier: "OU",
+	},
 	claydol: {
+		isNonstandard: null,
+		tier: "OU",
+	},
+	kecleon: {
 		isNonstandard: null,
 		tier: "OU",
 	},
