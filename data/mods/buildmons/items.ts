@@ -57,7 +57,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		shortDesc: "User Bleeds. Moves without drain gain 1/5 drain if the user is bleeding.",
 		onResidualOrder: 28,
 		onResidualSubOrder: 3,
-		onResidual(pokemon) {
+		onUpdate(pokemon) {
 			pokemon.trySetStatus('bld', pokemon);
 		},
 		onModifyMovePriority: 1,

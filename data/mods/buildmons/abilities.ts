@@ -330,10 +330,10 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			onStart(target, source, sourceEffect) {
 				const missing = source.maxhp - source.hp;
 				this.effectState.boost = Math.floor(missing / 10);
-				this.add('-activate', target, 'ability: Stressed', `Missing HP: ${missing}`);
+				this.add('-start', target, `Missing HP: ${missing}`);
 			},
 			onEnd(target) {
-				this.add('-end', target, 'ability: Stressed');
+				this.add('-end', target, `Missing HP`);
 			},
 			onModifyDamage(relayVar, source, target, move) {
 				if (this.effectState.boost) {
