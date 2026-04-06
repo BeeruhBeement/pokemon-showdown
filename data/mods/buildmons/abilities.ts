@@ -26,6 +26,12 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		shortDesc: "On activation reveals a random foe move/item and burns that foe.",
 	},
 	doubledown: {
+		onModifyDamage(damage, source, target, move) {
+			if (target.hp < target.maxhp / 2) {
+				this.debug('Double Down boost');
+				return this.chainModify(1.1);
+			}
+		},
 		onAfterTerastallization(pokemon) {
 			if (!pokemon.volatiles['doubledown']) pokemon.addVolatile('doubledown');
 		},
@@ -38,7 +44,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Double Down",
-		shortDesc: "On activation uses its next attacking move twice.",
+		shortDesc: "Damage on targets with 1/2 health or less is increased by 10%. On activation uses its next attacking move twice.",
 	},
 	engineer: {
 		onEnd(pokemon) {

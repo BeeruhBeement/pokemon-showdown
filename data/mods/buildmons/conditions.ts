@@ -304,6 +304,10 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	supression: {
 		name: 'suppression',
 		onStart(target, source, sourceEffect) {
+			if (target.getAbility().flags['cantsuppress'] || target.hasItem('abilityshield')) {
+				this.add('-immune', target);
+				target.removeVolatile('suppression');
+			}
 			this.add('-start', target, 'Suppression');
 			if (target.canTerastallize !== null && target.canTerastallize) {
 				this.effectState.abilitywasusable = true;
@@ -311,7 +315,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 		},
 		onEnd(target) {
-			if (target.canTerastallize !== null && this.effectState.abilitywasusable) target.canTerastallize = target.teraType;
+			if (this.effectState.abilitywasusable) target.canTerastallize = target.teraType;
 			this.add('-end', target, 'Suppression');
 		},
 	},

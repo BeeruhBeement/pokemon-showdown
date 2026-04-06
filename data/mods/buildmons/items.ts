@@ -474,9 +474,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	psychicnullifier: {
 		name: "Psychic Nullifier",
 		shortDesc: "All damage received is Physical. Sp. Atk and Sp. Def are set to 5.",
-		onModifyMovePriority: -1,
 		onFoeModifyMove(move, pokemon, target) {
-			move.overrideDefensiveStat = 'def';
+			if (move.overrideDefensiveStat === null) move.overrideDefensiveStat = 'def';
 		},
 		onModifySpA() {
 			return 5;
@@ -836,6 +835,17 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		condition: {
 			duration: 1,
+		},
+		gen: -1,
+	},
+	tundracrossbow: {
+		name: "Tundra Crossbow",
+		shortDesc: "On ability activation uses Ice Shard that is guaranteed to crit.",
+		onAfterTerastallization(pokemon) {
+			const target = pokemon.foes()[0];
+			const move = this.dex.getActiveMove('iceshard');
+			move.willCrit = true;
+			if (target && !target.fainted) this.actions.useMove(move, pokemon, { target });
 		},
 		gen: -1,
 	},
