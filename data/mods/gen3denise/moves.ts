@@ -618,9 +618,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "The target is unaffected by this move unless it or the user is asleep. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User gains 1/2 HP inflicted. Sleeping target/user.",
-		onTry(source) {
-			if (source.status === 'slp' || source.hasAbility('comatose')) return true;
-		},
+		sleepUsable: true,
 		onTryImmunity(target, source) {
 			return target.status === 'slp' || target.hasAbility('comatose') || source.status === 'slp' || source.hasAbility('comatose');
 		},

@@ -337,6 +337,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     },
 	{
 		name: "[Gen 9] Buildmons",
+		gameType: "doubles",
 		mod: 'buildmons',
 		ruleset: ['Standard NatDex', 'Data Mod', 'Open Team Sheets', 'Sleep Moves Clause', 'Max Total Level = 400', 'Item Clause = 1', 'Ability Clause = 1', 'Max Move Count = 2'],
 		validateSet(set, teamHas) {

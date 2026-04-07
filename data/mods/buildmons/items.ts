@@ -15,26 +15,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
-	amuletofthemoon: {
-		name: "Amulet of the Moon",
-		shortDesc: "10% damage boost under Night. Always active if also holding Amulet of the Sun.",
-		onBasePower(basePower, user, target, move) {
-			if (['night'].includes(user.effectiveWeather()) || user.hasItem("amuletofthesun")) {
-				return this.chainModify([11, 10]);
-			}
-		},
-		gen: -1,
-	},
-	amuletofthesun: {
-		name: "Amulet of the Sun",
-		shortDesc: "10% damage boost under Sun. Always active if also holding Amulet of the Moon.",
-		onBasePower(basePower, user, target, move) {
-			if (['sunnyday', 'desolateland'].includes(user.effectiveWeather()) || user.hasItem("amuletofthemoon")) {
-				return this.chainModify([11, 10]);
-			}
-		},
-		gen: -1,
-	},
 	bigroot: {
 		inherit: true,
 		shortDesc: "Holder gains 1.3x HP from draining.",
@@ -160,6 +140,11 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				target.trySetStatus('psn', source);
 			}
 		},
+		gen: -1,
+	},
+	comfypillow: {
+		name: "Comfy Pillow",
+		shortDesc: "Sleep duration is extended by 2 turns. While asleep cannot be crit.",
 		gen: -1,
 	},
 	detachedsniperscope: {
@@ -310,6 +295,16 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	loadeddice: {
 		inherit: true,
+		gen: -1,
+	},
+	lunaramulet: {
+		name: "Lunar Amulet",
+		shortDesc: "10% damage boost under Night. Always active if also holding Solar Amulet.",
+		onBasePower(basePower, user, target, move) {
+			if (['night'].includes(user.effectiveWeather()) || user.hasItem("solaramulet")) {
+				return this.chainModify([11, 10]);
+			}
+		},
 		gen: -1,
 	},
 	metronome: {
@@ -665,11 +660,11 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		gen: -1,
 	},
-	scrapmetalshield: {
-		name: "Scrap Metal Shield",
+	scrapmetalbuckler: {
+		name: "Scrap Metal Buckler",
 		shortDesc: "Take 10% less damage but bleed when hit.",
 		onSourceModifyDamage(relayVar, source, target, move) {
-			this.debug('Scrap Metal Shield weaken');
+			this.debug('Scrap Metal Buckler weaken');
 			target.trySetStatus('bld', source);
 			return this.chainModify(0.9);
 		},
@@ -725,6 +720,16 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				disabled: false,
 				used: false
 			});
+		},
+		gen: -1,
+	},
+	solaramulet: {
+		name: "Solar Amulet",
+		shortDesc: "10% damage boost under Sun. Always active if also holding Lunar Amulet.",
+		onBasePower(basePower, user, target, move) {
+			if (['sunnyday', 'desolateland'].includes(user.effectiveWeather()) || user.hasItem("lunaramulet")) {
+				return this.chainModify([11, 10]);
+			}
 		},
 		gen: -1,
 	},
@@ -863,7 +868,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	unicornhorn: {
 		name: "Unicorn Horn",
 		shortDesc: "Physical moves are Special, Special moves are Physical, Status moves self target.",
-		onModifyTypePriority: -1,
+		onModifyMovePriority: -1,
 		onModifyMove(move, pokemon, target) {
 			if (move.category === 'Physical') {
 				move.category = 'Special';
@@ -877,6 +882,17 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	utilityumbrella: {
 		inherit: true,
+		gen: -1,
+	},
+	voodoodoll: {
+		name: "Voodoo Doll",
+		shortDesc: "Self targeting moves are instead used on the target.",
+		onModifyMovePriority: -1,
+		onModifyMove(move, pokemon, target) {
+			if (move.target === 'self') {
+				move.target = 'normal';
+			}
+		},
 		gen: -1,
 	},
 	wiseglasses: {

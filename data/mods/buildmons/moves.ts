@@ -171,9 +171,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "The target is unaffected by this move unless it or the user is asleep. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User gains 1/2 HP inflicted. Sleeping target/user.",
-		onTry(source) {
-			if (source.status === 'slp' || source.hasAbility('comatose')) return true;
-		},
+		sleepUsable: true,
 		onTryImmunity(target, source) {
 			return target.status === 'slp' || target.hasAbility('comatose') || source.status === 'slp' || source.hasAbility('comatose');
 		},
@@ -187,6 +185,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'bld',
 		},
 		critRatio: 2,
+	},
+	fairywind: {
+		inherit: true,
+		basePower: 80,
 	},
 	fireblast: {
 		inherit: true,
@@ -234,6 +236,28 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
 	},
+	razorwind: {
+		inherit: true,
+		type: "Steel",
+		onTryMove(attacker, defender, move) {},
+		secondary: {
+			chance: 30,
+			status: 'bld',
+		},
+		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
+		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. 30% chance to bleed.",
+	},
+	rest: {
+		inherit: true,
+		onHit(target, source, move) {
+			const result = target.setStatus('slp', source, move);
+			if (!result) return result;
+			target.statusState.time = target.hasItem('comfypillow') ? 5 : 3;
+			target.statusState.startTime = target.hasItem('comfypillow') ? 5 : 3;
+			this.heal(target.maxhp); // Aesthetic only as the healing happens after you fall asleep in-game
+		},
+	},
 	silverwind: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
@@ -250,6 +274,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	shadowclaw: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	snore: {
+		inherit: true,
+		basePower: 95,
 	},
 	stoneedge: {
 		inherit: true,

@@ -154,6 +154,28 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 		},
 	},
+	slp: {
+		inherit: true,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
+			} else if (sourceEffect && sourceEffect.effectType === 'Move') {
+				this.add('-status', target, 'slp', `[from] move: ${sourceEffect.name}`);
+			} else {
+				this.add('-status', target, 'slp');
+			}
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			if (target.hasItem('comfypillow')) {
+				this.effectState.startTime += 2;
+			}
+			this.effectState.time = this.effectState.startTime;
+
+			if (target.removeVolatile('nightmare')) {
+				this.add('-end', target, 'Nightmare', '[silent]');
+			}
+		},
+	},
 	partiallytrapped: {
 		inherit: true,
 		onStart(pokemon, source) {
