@@ -1103,7 +1103,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	klef: "Klefki",
 	koff: "Koffing",
 	koko: "Tapu Koko",
-	kommo: "Kommo-o",
+	//kommo: "Kommo-o",
 	kou: "Raikou",
 	krook: "Krookodile",
 	kyu: "Kyurem",
