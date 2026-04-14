@@ -268,9 +268,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			// Final modifier. Modifiers that modify damage after min damage check, such as Life Orb.
 			baseDamage = this.battle.runEvent('ModifyDamage', pokemon, target, move, baseDamage);
 
-			if (move.isZOrMaxPowered && target.getMoveHitData(move).zBrokeProtect) {
-				baseDamage = this.battle.modify(baseDamage, 0.25);
-				this.battle.add('-zbroken', target);
+			if (target.getMoveHitData(move).zBrokeProtect) {
+				baseDamage = this.battle.modify(baseDamage, 0.5);
 			}
 
 			// Generation 6-7 moves the check for minimum 1 damage after the final modifier...
@@ -937,6 +936,28 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			return true;
 		},
+
+		ignoringAbility() {
+			if (this.battle.gen >= 5 && !this.isActive) return true;
+
+			// Certain Abilities won't activate while Transformed, even if they ordinarily couldn't be suppressed (e.g. Disguise)
+			if (this.getAbility().flags['notransform'] && this.transformed) return true;
+			if (this.getAbility().flags['cantsuppress']) return false;
+			if (this.volatiles['gastroacid']) return true;
+			if (this.volatiles['suppression']) return true;
+
+			// Check if any active pokemon have the ability Neutralizing Gas
+			if (this.hasItem('Ability Shield') || this.ability === ('neutralizinggas' as ID)) return false;
+			for (const pokemon of this.battle.getAllActive()) {
+				// can't use hasAbility because it would lead to infinite recursion
+				if (pokemon.ability === ('neutralizinggas' as ID) && !pokemon.volatiles['gastroacid'] &&
+					!pokemon.transformed && !pokemon.abilityState.ending && !this.volatiles['commanding']) {
+					return true;
+				}
+			}
+
+			return false;
+		},
 		
 		/**
 		 * Like Field.effectiveWeather(), but ignores sun and rain if
@@ -953,7 +974,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				if (this.hasItem('utilityumbrella')) return '';
 			}
 			return weather;
-		}
+		},
 	},
 	statModify(baseStats: StatsTable, set: PokemonSet, statName: StatID): number {
 		const tr = this.trunc;

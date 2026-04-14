@@ -32,6 +32,21 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		gen: -1,
 		shortDesc: "Holder's partial-trapping moves deal 1/10 max HP per turn instead of 1/20.",
 	},
+	bladedboomerang: {
+		name: "Bladed Boomerang",
+		shortDesc: "Slicing moves hit twice at half power with the second hit being a crit.",
+		onModifyMovePriority: 1,
+		onModifyMove(move, pokemon, target) {
+			if (move.flags.slicing && !move.multihit) {
+				move.multihit = 2;
+				move.basePower*=.5;
+			}
+		},
+		onCriticalHit(pokemon, target, move) {
+			if (move.hit >= 2 && move.flags.slicing) return true;
+		},
+		gen: -1,
+	},
 	blessedblindfold: {
 		name: "Blessed Blindfold",
 		shortDesc: "Move accuracy set to 50%. Missing grants 20% damage reduction on next hit.",
@@ -52,8 +67,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	bloodletterleech: {
 		name: "Bloodletter Leech",
 		shortDesc: "User Bleeds. Moves without drain gain 1/5 drain if the user is bleeding.",
-		onResidualOrder: 28,
-		onResidualSubOrder: 3,
 		onUpdate(pokemon) {
 			pokemon.trySetStatus('bld', pokemon);
 		},
@@ -107,7 +120,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		shortDesc: "Bullet moves hit twice at 55% power but critting breaks it.",
 		onModifyMovePriority: 1,
 		onModifyMove(move, pokemon, target) {
-			if (move.flags.bullet) {
+			if (move.flags.bullet && !move.multihit) {
 				move.multihit = 2;
 				move.basePower = Math.ceil(move.basePower * 0.55);
 			}
@@ -145,11 +158,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	comfypillow: {
 		name: "Comfy Pillow",
 		shortDesc: "Sleep duration is extended by 2 turns. While asleep cannot be crit.",
+		onCriticalHit: false,
 		gen: -1,
 	},
 	detachedsniperscope: {
 		name: "Detached Sniper Scope",
-		shortDesc: "Cannot get random critical hits. Super effective hits are critical.",    
+		shortDesc: "Cannot get random critical hits. Super effective hits are critical.",
 		onModifyCritRatio(critRatio, source, target, move) {
 			const typeMod = this.dex.getEffectiveness(move.type, target);
 			if (typeMod > 0) return 5;
@@ -367,6 +381,18 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			onEnd(target) {
 				this.add('-end', target, 'Miasma', '[silent]');
 			},
+		},
+		gen: -1,
+	},
+	mittens: {
+		name: "Mittens",
+		shortDesc: "Immune to Burn and Freeze.",
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'brn' && status.id !== 'frz') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] item: Mittens');
+			}
+			return false;
 		},
 		gen: -1,
 	},

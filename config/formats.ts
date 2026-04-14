@@ -508,6 +508,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			}
 		},
 	},
+	{
+		name: "[Gen 9] National Dex Type Shift",
+		mod: 'typeshift',
+		searchShow: false,
+		ruleset: ['National Dex', 'Sleep Moves Clause', 'Data Mod'],
+		banlist: ['Uber'],
+	},
 
 	// Likeshop Spotlight
 	///////////////////////////////////////////////////////////////////

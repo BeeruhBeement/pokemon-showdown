@@ -49,7 +49,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					return this.chainModify(1.1);
 				}
 			},
+			onResidual(target, source, effect) {
+				if (target.types.includes('Electric') && target.isGrounded() && !target.isSemiInvulnerable()) target.addVolatile("charge");
+			},
 		},
+		desc: "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot fall asleep and ground Electric-type Pokemon get the effect of Charge at the end of every turn; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
+		shortDesc: "5 turns. Grounded: +Electric power, Electric get charge.",
 	},
 	grassyterrain: {
 		inherit: true,
@@ -155,6 +160,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Cannot be selected if the user is below 50% HP.",
 		shortDesc: "Cannot be selected if the user is below 50% HP.",
 	},
+	charge: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Electric') {
+					this.debug('charge boost');
+					return this.chainModify(1.35);
+				}
+			},
+			onModifyMovePriority: 1,
+			onModifyMove(move, pokemon, target) {
+				if (move.type === 'Electric') move.recoil = [1, 2];
+			},
+		},
+		desc: "Raises the user's Special Defense by 1 stage. The user's next Electric-type attack will have 1.35x power; the effect ends when the user is no longer active, or after the user attempts to use any Electric-type move besides Charge, even if it is not successful.",
+		shortDesc: "+1 SpD, user's next Electric move 1.35x power.",
+	},
 	crushclaw: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
@@ -162,6 +185,17 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	direclaw: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	dragonbreath: {
+		inherit: true,
+		basePower: 75,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+		secondary: {
+			chance: 70,
+			status: 'brn',
+		},
+		target: "allAdjacent",
+		shortDesc: "Hits adjacent. 70% chance to burn the target.",
 	},
 	dragonclaw: {
 		inherit: true,
@@ -186,6 +220,41 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		critRatio: 2,
 	},
+	electroball: {
+		inherit: true,
+		basePower: 80,
+		category: "Physical",
+		basePowerCallback(pokemon, target, move) { const bp = move.basePower; return bp; },
+		ignoreImmunity: true,
+		onTry(source, target) {
+			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
+			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
+				move: 'electroball',
+				source,
+				moveData: {
+					id: 'electroball',
+					name: "Electro Ball",
+					accuracy: 100,
+					basePower: 80,
+					category: "Physical",
+					priority: 0,
+					flags: { bullet: 1, allyanim: 1, metronome: 1, futuremove: 1 },
+					ignoreImmunity: false,
+					effectType: 'Move',
+					type: 'Electric',
+					secondary: {
+						chance: 100,
+						status: 'par',
+					},
+				},
+			});
+			//this.add('-start', source, 'move: Electro Ball', );
+			return this.NOT_FAIL;
+		},
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1, allyanim: 1, futuremove: 1 },
+		desc: "Deals damage one turn after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Doom Desire is already in effect for the target's position. When the move hits it has a 100% chance to paralyze the target.",
+		shortDesc: "Hits next turn and paralyzes target.",
+	},
 	fairywind: {
 		inherit: true,
 		basePower: 80,
@@ -193,6 +262,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	fireblast: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+	},
+	flamethrower: {
+		inherit: true,
+		basePower: 10,
+		multihit: 10,
+		desc: "Hits 10 times. Each hit has a 10% chance to burn.",
+		shortDesc: "Hits 10 times. 10% chance to burn.",
 	},
 	flashcannon: {
 		inherit: true,
@@ -236,6 +312,50 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
 	},
+	powdersnow: {
+		inherit: true,
+		basePower: 75,
+		flags: { protect: 1, mirror: 1, metronome: 1, powder: 1 },
+		secondary: {
+			chance: 30,
+			status: 'frz',
+		},
+		desc: "Has a 30% chance to freeze the target.",
+		shortDesc: "30% chance to freeze the foe(s).",
+	},
+	protect: {
+		inherit: true,
+		stallingMove: false,
+		volatileStatus: undefined,
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			if (pokemon.volatiles["protect"]) this.effectState.stacks++;
+			else pokemon.addVolatile("protect");
+		},
+		condition: {
+			duration: 0,
+			onStart(target) {
+				this.effectState.stacks = 1;
+				this.add('-start', target, 'Protect', this.effectState.stacks);
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+				target.getMoveHitData(move).zBrokeProtect = true;
+				this.add('-end', target, 'Protect', this.effectState.stacks);
+				this.effectState.stacks--;
+				this.add('-start', target, 'Protect', this.effectState.stacks);
+				return;
+			},
+			onUpdate(pokemon) {
+				if (this.effectState.stacks <= 0) pokemon.removeVolatile("protect");
+			},
+		},
+		desc: "Halves damage taken. Each use adds a stack which increases number of uses before breaking.",
+		shortDesc: "Halves damage taken. Each use adds a stack which increases uses.",
+	},
 	razorwind: {
 		inherit: true,
 		type: "Steel",
@@ -258,6 +378,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			this.heal(target.maxhp); // Aesthetic only as the healing happens after you fall asleep in-game
 		},
 	},
+	rockclimb: {
+		inherit: true,
+		self: {
+			volatileStatus: 'magnetrise',
+		},
+		type: "Rock",
+		desc: "Has a 20% chance to confuse the target. The becomes ungrounded if the move hits.",
+		shortDesc: "20% chance to confuse target. Ungrounds user.",
+	},
 	silverwind: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
@@ -278,6 +407,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	snore: {
 		inherit: true,
 		basePower: 95,
+	},
+	spotlight: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			onAnyAccuracy(accuracy, target, source, move) {
+				if (target.volatiles['spotlight']) {
+					return true;
+				}
+				return accuracy;
+			},
+		},
 	},
 	stoneedge: {
 		inherit: true,
@@ -340,13 +481,207 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Normal",
 		shortDesc: "Random type. High crit ratio.",
 	},
+	dartthrow: {
+		accuracy: 90,
+		basePower: 25,
+		category: "Physical",
+		name: "Dart Throw",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1, slicing: 1 },
+		multihit: [2, 5],
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
 	deepfreeze: {
 		inherit: true,
 		isNonstandard: null,
 	},
+	fightingterrain: {
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Fighting Terrain",
+		pp: 10,
+		priority: 0,
+		flags: { nonsky: 1, metronome: 1 },
+		terrain: 'fightingterrain',
+		condition: {
+			effectType: 'Terrain',
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onCriticalHit(pokemon, source, move) {
+				if (move.type === "Fighting") return true;
+				return false;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Psychic' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move weakened by fighting terrain');
+					return this.chainModify(0.75);
+				}
+				if (move.type === 'Fighting' && attacker.isGrounded()) {
+					this.debug('fighting terrain boost');
+					return this.chainModify(1.1);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Fighting Terrain', '[from] ability: ' + effect.name, `[of] ${source}`);
+				} else {
+					this.add('-fieldstart', 'move: Fighting Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Fighting Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Fighting",
+		shortDesc: "5 turns. Grounded: +Fighting power, only Fighting moves can crit.",
+	},
 	frostbite: {
 		inherit: true,
 		isNonstandard: null,
+	},
+	fulmination: {
+		accuracy: 100,
+		basePower: 80,
+		onHit(target, source, move) {
+			if (source.volatiles['charge']) {
+				for (const enemies of target.adjacentAllies()) {
+					this.damage(target.lastDamage / 2, enemies, source, move);
+				}
+			}
+		},
+		category: "Physical",
+		name: "Fulmination",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		target: "normal",
+		type: "Electric",
+		shortDesc: "If user has charge chains for 50% dmg.",
+	},
+	gravityrush: {
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Gravity Rush",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, contact: 1 },
+		volatileStatus: 'telekinesis',
+		target: "normal",
+		type: "Psychic",
+		shortDesc: "Ungrounds the target.",
+	},
+	heatsink: {
+		accuracy: 100,
+		basePower: 75,
+		onModifyMove(move, source, target) {
+			if (target?.status === 'brn') {
+				move.drain = [1, 1];
+			}
+		},
+		category: "Special",
+		name: "Heat Sink",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, heal: 1 },
+		drain: [1, 2],
+		target: "normal",
+		type: "Fire",
+		shortDesc: "50% drain. 100% drain if target is Burned.",
+	},
+	iceterrain: {
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Ice Terrain",
+		pp: 10,
+		priority: 0,
+		flags: { nonsky: 1, metronome: 1 },
+		terrain: 'iceterrain',
+		condition: {
+			effectType: 'Terrain',
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Psychic' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move weakened by ice terrain');
+					return this.chainModify(0.75);
+				}
+				if (move.type === 'Ice' && attacker.isGrounded()) {
+					this.debug('ice terrain boost');
+					return this.chainModify(1.1);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Ice Terrain', '[from] ability: ' + effect.name, `[of] ${source}`);
+				} else {
+					this.add('-fieldstart', 'move: Ice Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Ice Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Ice",
+		shortDesc: "5 turns. Grounded: +Ice power.",
+	},
+	icywhip: {
+		accuracy: 90,
+		basePower: 100,
+		category: "Physical",
+		name: "Icy Whip",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onHit(target, source, move) {
+			target.damage(target.baseMaxhp / 15, source, move);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ice",
+		shortDesc: "Deals an additional 7.5% damage.",
+	},
+	piledriver: {
+		accuracy: 95,
+		basePower: 90,
+		category: "Physical",
+		name: "Piledriver",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, nonsky: 1, metronome: 1, contact: 1 },
+		volatileStatus: 'smackdown',
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		desc: "This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If this move hits a target under the effect of Bounce, Fly, Magnet Rise, or Telekinesis, the effect ends. If the target is a Flying type that has not used Roost this turn or a Pokemon with the Levitate Ability, it loses its immunity to Ground-type attacks and the Arena Trap Ability as long as it remains active. During the effect, Magnet Rise fails for the target and Telekinesis fails against the target.",
+		shortDesc: "Removes the target's Ground immunity.",
 	},
 	quicksand: {
 		accuracy: 100,
@@ -359,10 +694,28 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		secondary: null,
 		target: "normal",
 		type: "Ground",
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
 	},
 	rockcrunch: {
 		inherit: true,
 		isNonstandard: null,
+	},
+	signalflare: {
+		accuracy: true,
+		basePower: 70,
+		category: "Special",
+		name: "Signal Flare",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+		onHit(target, source, move) {
+			target.addVolatile('spotlight');
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fire",
+		shortDesc: "Applies Spotlight on target.",
 	},
 	soulchomp: {
 		accuracy: 100,
@@ -378,6 +731,59 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Ghost",
 		desc: "Deals damage to the target based on its Special Defense instead of Defense.",
 		shortDesc: "Damages target based on Sp. Def, not Defense.",
+	},
+	steelterrain: {
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Steel Terrain",
+		pp: 10,
+		priority: 0,
+		flags: { nonsky: 1, metronome: 1 },
+		terrain: 'steelterrain',
+		condition: {
+			effectType: 'Terrain',
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Fairy' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move weakened by steel terrain');
+					this.chainModify(0.75);
+				}
+				if (move.type === 'Steel' && attacker.isGrounded()) {
+					this.debug('steel terrain boost');
+					this.chainModify(1.1);
+				}
+				const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
+				this.debug(`Base Power: ${basePowerAfterMultiplier}`);
+				if (basePowerAfterMultiplier <= 60) {
+					this.debug('Steel terrain boost');
+					this.chainModify(1.25);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Steel Terrain', '[from] ability: ' + effect.name, `[of] ${source}`);
+				} else {
+					this.add('-fieldstart', 'move: Steel Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Steel Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Steel",
+		shortDesc: "5 turns. Grounded: +Steel power, 1.25x power on <= 60BP.",
 	},
 	turret: {
 		accuracy: true,

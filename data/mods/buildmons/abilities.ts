@@ -25,6 +25,32 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "All-Seeing",
 		shortDesc: "On activation reveals a random foe move/item and burns that foe.",
 	},
+	covertoperative: {
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.position !== defender.position) {
+				return this.chainModify(1.25);
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			let success = true;
+			// Fail in formats where you don't control allies
+			if (this.format.gameType !== 'doubles' && this.format.gameType !== 'triples') success = false;
+
+			// Fail in triples if the Pokemon is in the middle
+			if (pokemon.side.active.length === 3 && pokemon.position === 1) success = false;
+
+			const newPosition = (pokemon.position === 0 ? pokemon.side.active.length - 1 : 0);
+			if (!pokemon.side.active[newPosition]) success = false;
+			if (pokemon.side.active[newPosition].fainted) success = false;
+			if (!success) {
+				this.attrLastMove('[still]');
+				return this.NOT_FAIL;
+			}
+			this.swapPosition(pokemon, newPosition);
+		},
+		name: "Covert Operative",
+		shortDesc: "Deal 1.25x damage when not attacking in front. On activation switch with ally.",
+	},
 	doubledown: {
 		onModifyDamage(damage, source, target, move) {
 			if (target.hp < target.maxhp / 2) {
@@ -44,7 +70,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Double Down",
-		shortDesc: "Damage on targets with 1/2 health or less is increased by 10%. On activation uses its next attacking move twice.",
+		shortDesc: "Targets 1/2 or less max HP take 10% more damage. Activation uses its next attacking move twice.",
 	},
 	engineer: {
 		onEnd(pokemon) {
@@ -249,6 +275,127 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		name: "Prismatic",
 		shortDesc: "Changes type to move type. On activation heals 5% per type change.",
+	},
+	punisher: {
+		onDamagingHit(damage, target, source, move) {
+			source.addVolatile('punisher', target);
+		},
+		onAfterTerastallization(pokemon) {
+			for (const target of pokemon.adjacentFoes()) {
+				pokemon.adjacentFoes().forEach(foe => { if (foe.volatiles['punisher']) foe.addVolatile('flinch'); });
+			}
+		},
+		condition: {
+			onStart(target, source, sourceEffect) {
+				this.add('-start', target, 'guilty');
+			},
+			onDamage(damage, target, source, effect) {
+				if (effect && effect.effectType === 'Move') {
+					this.debug('Guilty increase');
+					return this.chainModify(1.1);
+				}
+			},
+			onUpdate(pokemon) {
+				const source = this.effectState.source;			
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns || !source.hasAbility('punisher'))) {
+					delete pokemon.volatiles['guilty'];
+					return;
+				}
+			},
+		},
+		flags: {},
+		name: "Punisher",
+		shortDesc: "Applies Guilty on being hit. On activation flinch all guilty Pokemon.",
+	},
+	pyromaniac: {
+		onBasePowerPriority: 21,
+		onBasePower(basePower, pokemon) {
+			let boosted = true;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (!this.queue.willMove(target)) {
+					boosted = false;
+					break;
+				}
+			}
+			if (boosted) {
+				this.debug('Rapid boost');
+				return this.chainModify([11, 10]);
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			for (const target of pokemon.adjacentFoes()) {
+				if (target.status === 'brn') target.addVolatile('suppression');
+			}
+		},
+		flags: {},
+		name: "Pyromaniac",
+		shortDesc: "Burn foes boosting their stat stage. Activation suppresses burned foes.",
+	},
+	rampart: {
+		name: "Rampart",
+		onAllyHit(target, source, move) {
+			if (!source || !move) return;
+
+			const rampartUser = this.effectState.target;
+			if (!rampartUser.hp || rampartUser.fainted) return;
+			if (rampartUser.volatiles['followme']) return;
+
+			this.add('-activate', rampartUser, 'ability: Rampart');
+
+			rampartUser.addVolatile('followme');
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('rampart');
+		},
+		condition: {
+			duration: 1,
+			onStart(target, source, effect) {
+				if (effect?.id === 'zpower') {
+					this.add('-singleturn', target, 'move: Follow Me', '[zeffect]');
+				} else {
+					this.add('-singleturn', target, 'move: Follow Me');
+				}
+			},
+			onFoeRedirectTargetPriority: 1,
+			onFoeRedirectTarget(target, source, source2, move) {
+				if (!this.effectState.target.isSkyDropped() && this.validTarget(this.effectState.target, source, move.target)) {
+					if (move.smartTarget) move.smartTarget = false;
+					this.debug("Follow Me redirected target of move");
+					return this.effectState.target;
+				}
+			},
+			onSourceModifyDamage(relayVar, source, target, move) {
+				this.debug('Rampart weaken');
+				return this.chainModify([2, 3]);
+			},
+		},
+		shortDesc: "If ally hit gain Follow Me. Activation redirects moves, takes 2/3rd damage.",
+	},
+	rapid: {
+		onBasePowerPriority: 21,
+		onBasePower(basePower, pokemon) {
+			let boosted = true;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (!this.queue.willMove(target)) {
+					boosted = false;
+					break;
+				}
+			}
+			if (boosted) {
+				this.debug('Rapid boost');
+				return this.chainModify([11, 10]);
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			for (const pokemon of this.getAllActive()) {
+				pokemon.addVolatile('haste');
+			}
+		},
+		flags: {},
+		name: "Rapid",
+		shortDesc: "10% boost if first to move. On activation grant Haste to user's side for 2 turns.",
 	},
 	scrappy: {
 		inherit: true,

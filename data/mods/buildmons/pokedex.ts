@@ -11,7 +11,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	seaking: {
 		inherit: true,
-		abilities: { 0: "Stressed" }
+		abilities: { 0: "Stressed", 1: "Punisher" }
 	},
 	crobat: {
 		inherit: true,
@@ -49,7 +49,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	hariyama: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Double Down", 1: "Rampart" }
 	},
 	sableye: {
 		inherit: true,
@@ -64,7 +64,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	camerupt: {
 		inherit: true,
 		baseStats: { hp: 95, atk: 100, def: 70, spa: 105, spd: 75, spe: 40 },
-		abilities: { 0: "Searing Insight" }
+		abilities: { 0: "Searing Insight", 1: "Pyromaniac" }
 	},
 	cacturne: {
 		inherit: true,
@@ -76,7 +76,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	kecleon: {
 		inherit: true,
-		abilities: { 0: "Prismatic" }
+		abilities: { 0: "Prismatic", 1: "Covert Operative" }
 	},
 	rampardos: {
 		inherit: true,
@@ -84,7 +84,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	bastiodon: {
 		inherit: true,
-		abilities: { 0: "Engineer" }
+		abilities: { 0: "Engineer", 1: "Rampart" }
 	},
 	drifblim: {
 		inherit: true,
@@ -125,7 +125,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	toucannon: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Punisher" }
 	},
 	shiinotic: {
 		inherit: true,
@@ -133,7 +133,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	bewear: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Punisher" }
 	},
 	turtonator: {
 		inherit: true,
@@ -153,7 +153,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	perrserker: {
 		inherit: true,
-		abilities: { 0: "Double Down" }
+		abilities: { 0: "Punisher" }
 	},
 	scovillain: {
 		inherit: true,

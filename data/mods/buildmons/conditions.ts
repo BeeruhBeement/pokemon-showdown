@@ -281,6 +281,39 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 
+	mustrecharge: {
+		inherit: true,
+		onStart(target) {
+			this.add('-start', target, 'move: Recharge');
+		},
+		onResidualOrder: 15,
+		onEnd(target) {
+			this.add('-end', target, 'move: Recharge');
+		},
+		onDisableMove(pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(moveSlot.id);
+				if (move.category !== 'Status' || move.id === 'mefirst') {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
+		onBeforeMovePriority: 5,
+		onBeforeMove(attacker, defender, move) {
+			if (!(move.isZ && move.isZOrMaxPowered) && move.category === 'Status' && move.id !== 'mefirst') {
+				this.add('cant', attacker, 'move: Taunt', move);
+				return false;
+			}
+		},
+	},
+	futuremove: {
+		inherit: true,
+		onStart(target) {
+			this.effectState.targetSlot = target.getSlot();
+			const oneturn = ['electroball'];
+			this.effectState.endingTurn = (this.turn - 1) + (oneturn.includes(this.effectState.move) ? 2 : 1);
+		},
+	},
 	choicelock: {
 		inherit: true,
 		onBeforeMove(pokemon, target, move) {
@@ -323,6 +356,9 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 		},
 	},
+
+	//general
+
 	supression: {
 		name: 'suppression',
 		onStart(target, source, sourceEffect) {
@@ -336,9 +372,26 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				target.canTerastallize = false;
 			}
 		},
+		onUpdate(pokemon) {
+			if (pokemon.canTerastallize !== null && pokemon.canTerastallize) pokemon.removeVolatile('suppression');
+		},
 		onEnd(target) {
 			if (this.effectState.abilitywasusable) target.canTerastallize = target.teraType;
 			this.add('-end', target, 'Suppression');
+		},
+	},
+	haste: {
+		name: 'haste',
+		duration: 2,
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'Haste');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Haste');
+		},
+		onModifySpe(spe, pokemon) {
+			this.debug('Haste boost');
+			return this.chainModify(1.35);
 		},
 	},
 
