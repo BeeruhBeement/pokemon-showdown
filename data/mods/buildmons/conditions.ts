@@ -424,4 +424,41 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.add('-start', target, 'brittle');
 		},
 	},
+	shield: {
+		name: 'shield',
+		onStart(target, source, sourceEffect) {
+			if (this.effectState.shield === undefined) {
+				this.effectState.shield = 0;
+			}
+		},
+		onUpdate(target) {
+			if (this.effectState.shield > target.maxhp) {
+				this.effectState.shield = target.maxhp;
+			}
+		},
+		onDamage(damage, target, source, effect) {
+			const shield = this.effectState.shield || 0;
+			if (shield <= 0) {
+				return damage;
+			}
+			
+			const shieldAbsorbed = Math.min(damage, shield);
+			this.effectState.shield -= shieldAbsorbed;
+			const remainingDamage = damage - shieldAbsorbed;
+			
+			// Update shield display
+			if (this.effectState.shield > 0) {
+				this.add('-end', target, 'Shield', '[silent]');
+				this.add('-start', target, `Shield: ${Math.floor(this.effectState.shield)}`, '[silent]');
+			} else {
+				this.add('-end', target, 'Shield', '[silent]');
+				target.removeVolatile('shield');
+			}
+			
+			return remainingDamage;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Shield');
+		},
+	},
 };

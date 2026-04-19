@@ -512,8 +512,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Type Shift Modded",
 		mod: 'typeshift',
 		searchShow: false,
-		ruleset: ['National Dex', 'Sleep Moves Clause', 'Data Mod'],
-		banlist: ['Uber'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
 	},
 
 	// Likeshop Spotlight

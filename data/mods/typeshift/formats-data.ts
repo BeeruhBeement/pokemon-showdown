@@ -1,35 +1,33 @@
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
-	deoxysspeed: {
+	archaludon: {
 		natDexTier: "OU",
 	},
-	gougingfire: {
+	ogerponhearthflame: {
 		natDexTier: "OU",
 	},
-	darkrai: {
+	regieleki: {
 		natDexTier: "OU",
 	},
-	dragapult: {
+	terapagos: {
 		natDexTier: "OU",
 	},
-	palafin: {
+	terapagosterastal: {
 		natDexTier: "OU",
 	},
-	magearna: {
+	urshifurapidstrike: {
 		natDexTier: "OU",
 	},
-	ursalunabloodmoon: {
-		natDexTier: "OU",
+	
+	dragonite: {
+		natDexTier: "Uber",
 	},
-	walkingwake: {
-		natDexTier: "OU",
-	},
-	ironbundle: {
-		natDexTier: "OU",
-	},
-	ogerponheartflame: {
-		natDexTier: "OU",
+	ironmoth: {
+		natDexTier: "Uber",
 	},
 	shedinja: {
+		natDexTier: "Uber",
+	},
+	zamazenta: {
 		natDexTier: "Uber",
 	},
 };

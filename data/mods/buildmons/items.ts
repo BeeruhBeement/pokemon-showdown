@@ -873,7 +873,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Tundra Crossbow",
 		shortDesc: "On ability activation uses Ice Shard that is guaranteed to crit.",
 		onAfterTerastallization(pokemon) {
-			const target = pokemon.foes()[0];
+			const target = pokemon.foes()[1 - pokemon.position];
 			const move = this.dex.getActiveMove('iceshard');
 			move.willCrit = true;
 			if (target && !target.fainted) this.actions.useMove(move, pokemon, { target });

@@ -481,6 +481,29 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Normal",
 		shortDesc: "Random type. High crit ratio.",
 	},
+	counterattack: {
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Counterattack",
+		pp: 20,
+		priority: 1,
+		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, metronome: 1 },
+		volatileStatus: 'counterattack',
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Counterattack');
+			},
+			onHit(pokemon, source, move) {
+				this.damage(pokemon.lastDamage, source);
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Fighting",
+		shortDesc: "Returns direct damage taken until end of turn.",
+	},
 	dartthrow: {
 		accuracy: 90,
 		basePower: 25,
@@ -492,7 +515,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "Flying",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
@@ -668,6 +691,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Ice",
 		shortDesc: "Deals an additional 7.5% damage.",
 	},
+	morningstar: {
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Morning Star",
+		pp: 10,
+		priority: 2,
+		flags: { bullet: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTry(source) {
+			if (source.activeMoveActions > 1) {
+				this.hint("Morning Star only works on your first turn out.");
+				return false;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		desc: "Fails unless it is the user's first turn on the field.",
+		shortDesc: "Nearly always goes first. First turn out only.",
+	},
 	piledriver: {
 		accuracy: 95,
 		basePower: 90,
@@ -784,6 +827,22 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "all",
 		type: "Steel",
 		shortDesc: "5 turns. Grounded: +Steel power, 1.25x power on <= 60BP.",
+	},
+	stingerlance: {
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Stinger Lance",
+		pp: 20,
+		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1 },
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness(move.type, type);
+		},
+		priority: 0,
+		secondary: null,
+		target: "any",
+		type: "Bug",
+		shortDesc: "Doubled type effectiveness.",
 	},
 	turret: {
 		accuracy: true,

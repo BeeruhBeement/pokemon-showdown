@@ -70,7 +70,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Double Down",
-		shortDesc: "Targets 1/2 or less max HP take 10% more damage. Activation uses its next attacking move twice.",
+		shortDesc: "Targets with <= 1/2 HP take 10% more damage. Activation uses next attacking move twice.",
 	},
 	engineer: {
 		onEnd(pokemon) {
@@ -436,6 +436,53 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Searing Insight",
 		shortDesc: "15% more special damage to burned targets. Activation burns adjacent foes.",
 	},
+	shockquills: {
+		onSourceAfterMove(pokemon, target, move) {
+			if (move.type === 'Electric' && target && !target.fainted) {
+				const shieldAmount = pokemon.maxhp / 10;
+
+				if (!pokemon.volatiles['shield']) {
+					pokemon.addVolatile('shield');
+				}
+
+				const volatile = pokemon.volatiles['shield'];
+				if (volatile) {
+					if (!volatile.effectState) {
+						volatile.effectState = {};
+					}
+					const oldShield = volatile.effectState.shield || 0;
+					const newShield = Math.min(oldShield + shieldAmount, pokemon.maxhp);
+					volatile.effectState.shield = newShield;
+					
+					this.add('-end', pokemon, `Shield: ${Math.floor(oldShield)}`);
+					this.add('-start', pokemon, `Shield: ${Math.floor(newShield)}`);
+				}
+			}
+		},
+		onStart(pokemon) {
+			this.effectState.activated = false;
+		},
+		onUpdate(pokemon) {
+			const shieldVolatile = pokemon.volatiles['shield'];
+			if (shieldVolatile?.effectState?.shield >= pokemon.maxhp * 0.2 && !this.effectState.activated) {
+				pokemon.canTerastallize = pokemon.teraType;
+			} else {
+				pokemon.canTerastallize = false;
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.adjacentAllies().forEach(ally => {
+				ally.trySetStatus('par', pokemon);
+			});
+			pokemon.adjacentFoes().forEach(foe => {
+				foe.trySetStatus('par', pokemon);
+			});
+			this.effectState.activated = true;
+		},
+		flags: {},
+		name: "Shock Quills",
+		shortDesc: "Using Electric move grants 10% shield. If shield >= 20% can activate to paralyze field.",
+	},
 	sniper: {
 		inherit: true,
 		onModifyDamage(damage, source, target, move) {
@@ -520,6 +567,19 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		name: "Stressed",
 		shortDesc: "Missing HP is added to Speed. On activation gain a damage boost for missing HP / 10.",
+	},
+	trapper: {
+		onHit(target, source, move) {
+			if (move.basePower > 60) {
+				if (target && !target.fainted) this.actions.useMove('bite', target, { target: source });
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.heal(pokemon.maxhp / 2);
+		},
+		flags: {},
+		name: "Trapper",
+		shortDesc: "When hit by a move above 60 BP retaliates with Bite. On activation heal 50% HP.",
 	},
 	vampiric: {
 		onSourceDamagingHit(damage, target, source, move) {
