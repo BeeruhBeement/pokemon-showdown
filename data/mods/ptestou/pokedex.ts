@@ -406,5 +406,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Friend Guard", 1: "Slush Rush", H: "Tough Claws"},
 		weightkg: 68,
 	},
+	aevilok: {
+		num: 6747,
+		name: "Aevilok",
+		types: ["Ground", "Dragon"],
+		baseStats: {hp: 75, atk: 85, def: 85, spa: 45, spd: 85, spe: 85},
+		abilities: {0: "Unseen Fist", 1: "Sand Rush", H: "Sturdy"},
+	},
+
 
 };

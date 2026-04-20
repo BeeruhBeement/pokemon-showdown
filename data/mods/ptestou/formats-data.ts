@@ -183,5 +183,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "POU",
 		doublesTier: "DOU",
 	},
+	aevilok: {
+		tier: "POU",
+		doublesTier: "DOU",
+	},
 
 };
