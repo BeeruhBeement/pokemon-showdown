@@ -17,6 +17,21 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	urshifurapidstrike: {
 		natDexTier: "OU",
 	},
+	deoxysspeed: {
+		natDexTier: "OU",
+	},
+	dragapult: {
+		natDexTier: "OU",
+	},
+	darkrai: {
+		natDexTier: "OU",
+	},
+	gougingfire: {
+		natDexTier: "OU",
+	},
+	walkingwake: {
+		natDexTier: "OU",
+	},
 	
 	dragonite: {
 		natDexTier: "Uber",
@@ -30,74 +45,77 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	zamazenta: {
 		natDexTier: "Uber",
 	},
+	volcarona: {
+		natDexTier: "Uber",
+	},
 	
 	clefablemega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	victreebelmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	starmiemega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	dragonitemega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	meganiummega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	feraligatrmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	skarmorymega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	chimechomega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	froslassmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	emboarmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	excadrillmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	chandeluremega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	golurkmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	chesnaughtmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	delphoxmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	greninjamega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	floettemega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	meowsticmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	hawluchamega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	crabominablemega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	drampamega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	scovillainmega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 	glimmoramega: {
-		tier: "OU",
+		natDexTier: "OU",
 	},
 };

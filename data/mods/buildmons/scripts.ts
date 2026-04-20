@@ -268,7 +268,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			// Final modifier. Modifiers that modify damage after min damage check, such as Life Orb.
 			baseDamage = this.battle.runEvent('ModifyDamage', pokemon, target, move, baseDamage);
 
-			if (target.getMoveHitData(move).zBrokeProtect) {
+			if (target.getMoveHitData(move).bypassProtect) {
 				baseDamage = this.battle.modify(baseDamage, 0.5);
 			}
 
@@ -554,7 +554,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 
 			if (
-				!ignoreImmunities && status.id && !((source?.hasAbility('corrosion') || this.hasAbility('plaguebearer')) && ['tox', 'psn'].includes(status.id))
+				!ignoreImmunities && status.id && !(source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id))
 			) {
 				// the game currently never ignores immunities
 				if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {

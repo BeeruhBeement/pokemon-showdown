@@ -343,7 +343,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
 				if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-				target.getMoveHitData(move).zBrokeProtect = true;
+				target.getMoveHitData(move).bypassProtect = true;
 				this.add('-end', target, 'Protect', this.effectState.stacks);
 				this.effectState.stacks--;
 				this.add('-start', target, 'Protect', this.effectState.stacks);
@@ -499,7 +499,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.damage(pokemon.lastDamage, source);
 			},
 		},
-		secondary: null,
 		target: "self",
 		type: "Fighting",
 		shortDesc: "Returns direct damage taken until end of turn.",
@@ -513,7 +512,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1, slicing: 1 },
 		multihit: [2, 5],
-		secondary: null,
 		target: "normal",
 		type: "Flying",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
@@ -569,7 +567,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.add('-fieldend', 'move: Fighting Terrain');
 			},
 		},
-		secondary: null,
 		target: "all",
 		type: "Fighting",
 		shortDesc: "5 turns. Grounded: +Fighting power, only Fighting moves can crit.",
@@ -670,7 +667,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.add('-fieldend', 'move: Ice Terrain');
 			},
 		},
-		secondary: null,
 		target: "all",
 		type: "Ice",
 		shortDesc: "5 turns. Grounded: +Ice power.",
@@ -686,7 +682,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onHit(target, source, move) {
 			target.damage(target.baseMaxhp / 15, source, move);
 		},
-		secondary: null,
 		target: "normal",
 		type: "Ice",
 		shortDesc: "Deals an additional 7.5% damage.",
@@ -705,7 +700,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				return false;
 			}
 		},
-		secondary: null,
 		target: "normal",
 		type: "Steel",
 		desc: "Fails unless it is the user's first turn on the field.",
@@ -720,7 +714,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, nonsky: 1, metronome: 1, contact: 1 },
 		volatileStatus: 'smackdown',
-		secondary: null,
 		target: "normal",
 		type: "Fighting",
 		desc: "This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If this move hits a target under the effect of Bounce, Fly, Magnet Rise, or Telekinesis, the effect ends. If the target is a Flying type that has not used Roost this turn or a Pokemon with the Levitate Ability, it loses its immunity to Ground-type attacks and the Arena Trap Ability as long as it remains active. During the effect, Magnet Rise fails for the target and Telekinesis fails against the target.",
@@ -734,7 +727,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		pp: 30,
 		priority: 1,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
-		secondary: null,
 		target: "normal",
 		type: "Ground",
 		desc: "No additional effect.",
@@ -755,7 +747,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onHit(target, source, move) {
 			target.addVolatile('spotlight');
 		},
-		secondary: null,
 		target: "normal",
 		type: "Fire",
 		shortDesc: "Applies Spotlight on target.",
@@ -769,7 +760,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1, contact: 1, bite: 1 },
-		secondary: null,
 		target: "normal",
 		type: "Ghost",
 		desc: "Deals damage to the target based on its Special Defense instead of Defense.",
@@ -823,7 +813,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.add('-fieldend', 'move: Steel Terrain');
 			},
 		},
-		secondary: null,
 		target: "all",
 		type: "Steel",
 		shortDesc: "5 turns. Grounded: +Steel power, 1.25x power on <= 60BP.",
@@ -839,7 +828,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			return typeMod + this.dex.getEffectiveness(move.type, type);
 		},
 		priority: 0,
-		secondary: null,
 		target: "any",
 		type: "Bug",
 		shortDesc: "Doubled type effectiveness.",
@@ -929,7 +917,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				target.types = target.baseSpecies.types;
 			},
 		},
-		secondary: null,
 		target: "self",
 		type: "Steel",
 		desc: "The user takes 1/2 of its maximum HP, rounded down, and puts it into a turret to take its place in battle. The turret is removed once enough damage is inflicted on it, if the user switches out or faints, or if any Pokemon uses Tidy Up. Baton Pass can be used to transfer the turret to an ally, and the turret will keep its remaining HP. Until the turret is broken, it receives damage from all attacks made by other Pokemon and shields the user from status effects and stat stage changes caused by other Pokemon. Sound-based moves and Pokemon with the Infiltrator Ability ignore turrets. The user still takes normal damage from weather and status effects while behind its turret. If the turret breaks during a multi-hit attack, the user will take damage from any remaining hits. If a turret is created while the user is trapped by a binding move, the binding effect ends immediately. Fails if the user does not have enough HP remaining to create a turret without fainting, or if it already has a turret. Turrets have Steel-type effectiveness and use Flash Cannon on a random adjacent foe at the end of every turn they are active. While behind a Turret the user cannot heal by any means. The turret has Steel STAB even if the user does not.",

@@ -1,4 +1,57 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
+	doubledown: {
+		onAfterTerastallization(pokemon) {
+			if (!pokemon.volatiles['doubledown']) pokemon.addVolatile('doubledown');
+		},
+		condition: {
+			onAfterMove(source, target, move) {
+				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
+				if (target && !target.fainted && source.lastMoveUsed?.id) this.actions.useMove(source.lastMoveUsed.id, source, { target });
+				source.removeVolatile('doubledown');
+			},
+		},
+		flags: {},
+		name: "Double Down",
+		shortDesc: "On activation uses its next attacking move twice.",
+	},
+	desperado: {
+		onStart(pokemon) {
+			this.effectState.stacks = 0;
+			pokemon.canTerastallize = false;
+		},
+		onEnd(pokemon) {
+			this.effectState.stacks = 0;
+		},
+		onModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).crit) {
+				this.effectState.stacks = Math.min(6, (this.effectState.stacks || 0) + 1);
+				this.add('-start', source, `Desperado: ${this.effectState.stacks}x`, '[silent]');
+			}
+			const stacks = this.effectState.stacks || 0;
+			if (stacks) {
+				return this.chainModify(1 + 0.1 * stacks);
+			}
+		},
+		flags: {},
+		name: "Desperado",
+		shortDesc: "Critical hits grant a stack that boosts damage by 10% for each, up to 60%.",
+	},
+	teslacoils: {
+		onStart(pokemon) {
+			pokemon.canTerastallize = false;
+		},
+		onResidual(pokemon) {
+			if (pokemon.activeTurns % 2 === 0) {
+				if (!pokemon.volatiles['charge']) {
+					pokemon.addVolatile('charge');
+				}
+			}
+		},
+		flags: {},
+		name: "Tesla Coils",
+		shortDesc: "Gains Charge every other turn.",
+	},
+	/*
 	allseeing: {
 		onAfterTerastallization(pokemon) {
 			const foes = pokemon.foes().filter(foe => foe && !foe.fainted);
@@ -50,27 +103,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		name: "Covert Operative",
 		shortDesc: "Deal 1.25x damage when not attacking in front. On activation switch with ally.",
-	},
-	doubledown: {
-		onModifyDamage(damage, source, target, move) {
-			if (target.hp < target.maxhp / 2) {
-				this.debug('Double Down boost');
-				return this.chainModify(1.1);
-			}
-		},
-		onAfterTerastallization(pokemon) {
-			if (!pokemon.volatiles['doubledown']) pokemon.addVolatile('doubledown');
-		},
-		condition: {
-			onAfterMove(source, target, move) {
-				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
-				if (target && !target.fainted && source.lastMoveUsed?.id) this.actions.useMove(source.lastMoveUsed.id, source, { target });
-				source.removeVolatile('doubledown');
-			},
-		},
-		flags: {},
-		name: "Double Down",
-		shortDesc: "Targets with <= 1/2 HP take 10% more damage. Activation uses next attacking move twice.",
 	},
 	engineer: {
 		onEnd(pokemon) {
@@ -599,5 +631,5 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		name: "Vampiric",
 		shortDesc: "Biting, Slicing, Draining bleed. Activation drains 1/4th of bleeding foes HP and heal bleed.",
-	},
+	},*/
 };

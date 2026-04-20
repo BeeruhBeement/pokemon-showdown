@@ -404,4 +404,11 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		end: "  [POKEMON] is no longer petrified!",
 		endFromItem: "  [POKEMON]'s [ITEM] cured it of petrification!",
 	},
+	rad: {
+		start: "  [POKEMON] was irradiated!",
+		startFromItem: "  [POKEMON] was irradiated by the [ITEM]!",
+		alreadyStarted: "  [POKEMON] is already irradiated!",
+		end: "  [POKEMON] is no longer irradiated!",
+		endFromItem: "  [POKEMON]'s [ITEM] cured it of irradiation!",
+	},
 };

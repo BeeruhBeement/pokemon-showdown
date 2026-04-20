@@ -175,6 +175,53 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				this.add('-end', target, 'Nightmare', '[silent]');
 			}
 		},
+		onBeforeMove(pokemon, target, move) {
+			if (pokemon.hasAbility('earlybird')) {
+				pokemon.statusState.time--;
+			}
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
+			if (this.randomChance(1, 2)) {
+				this.add('cant', pokemon, 'slp');
+				return false;
+			}
+			if (move.sleepUsable) {
+				return;
+			}
+			return false;
+		},
+	},
+	rad: {
+		name: 'rad',
+		effectType: 'Status',
+		duration: 5,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'rad', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'rad');
+			}
+		},
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			if (source.hp >= source.maxhp / 5 * 4) return false;
+			if (source.hp + damage > source.maxhp / 5 * 4) return source.maxhp / 2 - source.hp;
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			if (pokemon.hp > pokemon.maxhp * 0.8) {
+				const damageNeeded = pokemon.hp - (pokemon.maxhp * 0.8);
+				this.damage(damageNeeded);
+			}
+			
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
 	},
 	partiallytrapped: {
 		inherit: true,
@@ -301,7 +348,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onBeforeMovePriority: 5,
 		onBeforeMove(attacker, defender, move) {
 			if (!(move.isZ && move.isZOrMaxPowered) && move.category === 'Status' && move.id !== 'mefirst') {
-				this.add('cant', attacker, 'move: Taunt', move);
+				this.add('cant', attacker, 'Recharge', move);
 				return false;
 			}
 		},
@@ -361,6 +408,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 
 	supression: {
 		name: 'suppression',
+		duration: 3,
 		onStart(target, source, sourceEffect) {
 			if (target.getAbility().flags['cantsuppress'] || target.hasItem('abilityshield')) {
 				this.add('-immune', target);
@@ -396,18 +444,6 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 
 	// for moves and abilities and items etc
-	soulbrand: {
-		name: 'soulbrand',
-		onStart(target, source, sourceEffect) {
-			this.add('-start', target, 'Soul Brand');
-		},
-		onEnd(target) {
-			this.add('-end', target, 'Soul Brand');
-		},
-		onSourceModifyDamage(damage, source, target, move) {
-			return this.chainModify(1.1);
-		},
-	},
 	brittle: {
 		// 15% more damage from physical moves
 		onDamage(damage, target, source, effect) {
