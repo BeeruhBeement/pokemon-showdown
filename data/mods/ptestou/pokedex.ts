@@ -398,5 +398,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Flower Veil", 1: "Lightning Rod", H: "Sweet Veil"},
 		weightkg: 59,
 	},
+	epictoxie: {
+		num: 6746,
+		name: "EpicToxie",
+		types: ["Ground"],
+		baseStats: {hp: 55, atk: 105, def: 95, spa: 75, spd: 82, spe: 38},
+		abilities: {0: "Friend Guard", 1: "Slush Rush", H: "Tough Claws"},
+		weightkg: 68,
+	},
 
 };
