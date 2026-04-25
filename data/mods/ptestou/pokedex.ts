@@ -412,7 +412,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Ground", "Dragon"],
 		baseStats: {hp: 75, atk: 85, def: 85, spa: 45, spd: 85, spe: 85},
 		abilities: {0: "Unseen Fist", 1: "Sand Rush", H: "Sturdy"},
+		weightkg: 90.7,
 	},
-
+	oshawott: {
+		num: 6748,
+		name: "Oshawott",
+		types: ["Ice", "Dragon"],
+		baseStats: {hp: 75, atk: 100, def: 85, spa: 110, spd: 50, spe: 40},
+		abilities: {0: "Friend Guard", H: "Berserk"},
+		evos: null,
+	},
 
 };
