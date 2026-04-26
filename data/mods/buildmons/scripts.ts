@@ -60,25 +60,15 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (!basePower) return basePower === 0 ? undefined : basePower;
 			basePower = this.battle.clampIntRange(basePower, 1);
 
-			let critMult;
-			let critRatio = this.battle.runEvent('ModifyCritRatio', source, target, move, move.critRatio || 0);
-			if (this.battle.gen <= 5) {
-				critRatio = this.battle.clampIntRange(critRatio, 0, 5);
-				critMult = [0, 16, 8, 4, 3, 2];
-			} else {
-				critRatio = this.battle.clampIntRange(critRatio, 0, 4);
-				if (this.battle.gen === 6) {
-					critMult = [0, 16, 8, 2, 1];
-				} else {
-					critMult = [0, 20, 10, 5, 1];
-				}
-			}
+			// Crit rate is now percentage-based (0-100)
+			let critChance = this.battle.runEvent('ModifyCritRatio', source, target, move, move.critRatio || 0);
+			critChance = this.battle.clampIntRange(critChance, 0, 100);
 
 			const moveHit = target.getMoveHitData(move);
 			moveHit.crit = move.willCrit || false;
 			if (move.willCrit === undefined) {
-				if (critRatio) {
-					moveHit.crit = this.battle.randomChance(1, critMult[critRatio]);
+				if (critChance) {
+					moveHit.crit = this.battle.randomChance(critChance, 100);
 				}
 			}
 
@@ -380,19 +370,15 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 	
 			// stat boosts
+			// percentage based (e.g., 50 = 50% boost, -25 = invalid but clamped to 0)
 			let boosts: SparseBoostsTable = {};
 			const boostName = statName as BoostID;
 			boosts[boostName] = boost;
 			boosts = this.battle.runEvent('ModifyBoost', statUser || this, null, null, boosts);
 			boost = boosts[boostName]!;
-			const boostTable = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6];
-			if (boost > 6) boost = 6;
-			if (boost < -6) boost = -6;
-			if (boost >= 0) {
-				stat = Math.floor(stat * boostTable[boost]);
-			} else {
-				stat = Math.floor(stat / boostTable[-boost]);
-			}
+			if (boost < 0) boost = 0;
+			const boostMultiplier = 1 + (boost / 100);
+			stat = Math.floor(stat * boostMultiplier);
 	
 			// stat modifier
 			return this.battle.modify(stat, (modifier || 1));
@@ -415,21 +401,17 @@ export const Scripts: ModdedBattleScriptsData = {
 				}
 			}
 	
-			// stat boosts
+			// stat boosts 
+			// percentage based (e.g., 50 = 50% boost)
 			if (!unboosted) {
 				let boosts = this.boosts;
 				if (!unmodified) {
 					boosts = this.battle.runEvent('ModifyBoost', this, null, null, { ...boosts });
 				}
 				let boost = boosts[statName];
-				const boostTable = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6];
-				if (boost > 6) boost = 6;
-				if (boost < -6) boost = -6;
-				if (boost >= 0) {
-					stat = Math.floor(stat * boostTable[boost]);
-				} else {
-					stat = Math.floor(stat / boostTable[-boost]);
-				}
+				if (boost < 0) boost = 0;
+				const boostMultiplier = 1 + (boost / 100);
+				stat = Math.floor(stat * boostMultiplier);
 			}
 	
 			// stat modifier effects

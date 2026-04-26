@@ -6,6 +6,26 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		doublesTier: "DOU",
 	},
+	bandit: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	paladin: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	arson: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	ghoul: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
 };
 
 for (const pokemon in Base) {

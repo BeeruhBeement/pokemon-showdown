@@ -406,6 +406,118 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 
 	//general
 
+	// stat down
+	atkdown: {
+		name: 'atkdown',
+		duration: 3,
+		onStart(target, source, sourceEffect) {
+			if (target.boosts.atk > 0) {
+				this.boost({ atk: -target.boosts.atk }, target, target, this.effectState.sourceEffect);
+			}
+			this.add('-start', target, 'Atk Down');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Atk Down');
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (boost.atk && boost.atk > 0) {
+				delete boost.atk;
+			}
+		},
+		onModifyAtk(atk, pokemon) {
+			this.debug('Atk Down debuff');
+			return this.chainModify(0.75);
+		},
+	},
+	defdown: {
+		name: 'defdown',
+		duration: 3,
+		onStart(target, source, sourceEffect) {
+			if (target.boosts.def > 0) {
+				this.boost({ def: -target.boosts.def }, target, target, this.effectState.sourceEffect);
+			}
+			this.add('-start', target, 'Def Down');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Def Down');
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (boost.def && boost.def > 0) {
+				delete boost.def;
+			}
+		},
+		onModifyDef(def, pokemon) {
+			this.debug('Def Down debuff');
+			return this.chainModify(0.75);
+		},
+	},
+	spadown: {
+		name: 'spadown',
+		duration: 3,
+		onStart(target, source, sourceEffect) {
+			if (target.boosts.spa > 0) {
+				this.boost({ spa: -target.boosts.spa }, target, target, this.effectState.sourceEffect);
+			}
+			this.add('-start', target, 'SpA Down');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'SpA Down');
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (boost.spa && boost.spa > 0) {
+				delete boost.spa;
+			}
+		},
+		onModifySpA(spa, pokemon) {
+			this.debug('SpA Down debuff');
+			return this.chainModify(0.75);
+		},
+	},
+	spddown: {
+		name: 'spddown',
+		duration: 3,
+		onStart(target, source, sourceEffect) {
+			if (target.boosts.spd > 0) {
+				this.boost({ spd: -target.boosts.spd }, target, target, this.effectState.sourceEffect);
+			}
+			this.add('-start', target, 'SpD Down');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'SpD Down');
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (boost.spd && boost.spd > 0) {
+				delete boost.spd;
+			}
+		},
+		onModifySpD(spd, pokemon) {
+			this.debug('SpD Down debuff');
+			return this.chainModify(0.75);
+		},
+	},
+	spedown: {
+		name: 'spedown',
+		duration: 3,
+		onStart(target, source, sourceEffect) {
+			if (target.boosts.spe > 0) {
+				this.boost({ spe: -target.boosts.spe }, target, target, this.effectState.sourceEffect);
+			}
+			this.add('-start', target, 'Spe Down');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Spe Down');
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (boost.spe && boost.spe > 0) {
+				delete boost.spe;
+			}
+		},
+		onModifySpe(spe, pokemon) {
+			this.debug('Spe Down debuff');
+			return this.chainModify(0.75);
+		},
+	},
+
 	supression: {
 		name: 'suppression',
 		duration: 3,
@@ -417,7 +529,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.add('-start', target, 'Suppression');
 			if (target.canTerastallize !== null && target.canTerastallize) {
 				this.effectState.abilitywasusable = true;
-				target.canTerastallize = false;
+				target.canTerastallize = null;
 			}
 		},
 		onUpdate(pokemon) {
@@ -440,6 +552,19 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onModifySpe(spe, pokemon) {
 			this.debug('Haste boost');
 			return this.chainModify(1.35);
+		},
+	},
+	regen: {
+		name: 'regen',
+		duration: 3,
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'Regen');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Regen');
+		},
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 10);
 		},
 	},
 

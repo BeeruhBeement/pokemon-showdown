@@ -1,18 +1,32 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
-	doubledown: {
+	brutal: {
 		onAfterTerastallization(pokemon) {
-			if (!pokemon.volatiles['doubledown']) pokemon.addVolatile('doubledown');
+			pokemon.addVolatile('doubletap');
+			pokemon.addVolatile('brutal');
 		},
 		condition: {
-			onAfterMove(source, target, move) {
-				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
-				if (target && !target.fainted && source.lastMoveUsed?.id) this.actions.useMove(source.lastMoveUsed.id, source, { target });
-				source.removeVolatile('doubledown');
+			duration: 3,
+			onStart(target) {
+				this.add('-start', target, 'Brutal Mode');
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Brutal Mode');
+			},
+			onAfterMoveSecondarySelf(pokemon, target, move) {
+				if (move.category !== 'Status') {
+					const drain = Math.floor(pokemon.lastDamage * 0.25);
+					this.heal(drain, pokemon, pokemon);
+					this.add('-heal', pokemon, pokemon.hp, `[drain] ${drain}`);
+				}
+			},
+			onResidualOrder: 26,
+			onResidual(pokemon) {
+				this.damage(Math.floor(pokemon.maxhp * 0.25), pokemon, pokemon);
 			},
 		},
 		flags: {},
-		name: "Double Down",
-		shortDesc: "On activation uses its next attacking move twice.",
+		name: "Brutal",
+		shortDesc: "On activation gain Double Tap, moves gain 25% drain and lose 25% HP at the end of turn for 3 turns.",
 	},
 	desperado: {
 		onStart(pokemon) {
@@ -36,20 +50,116 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Desperado",
 		shortDesc: "Critical hits grant a stack that boosts damage by 10% for each, up to 60%.",
 	},
-	teslacoils: {
+	divine: {
+		onHit(target, source, move) {
+			if (target.getMoveHitData(move).crit) {
+				for (const ally of source.side.active) {
+					if (ally && !ally.fainted && !ally.volatiles['regen']) {
+						ally.addVolatile('regen');
+					}
+				}
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('divine');
+		},
+		condition: {
+			onStart(target) {
+				this.add('-start', target, 'Divine Blessing');
+			},
+			onBeforeMove(pokemon, target, move) {
+				move.accuracy = true;
+			},
+			onModifyMove(move, pokemon) {
+				move.willCrit = true;
+			},
+			onEffectiveness(typeMod, target, type, move) {
+				if (typeMod <= 0) {
+					return 1;
+				}
+			},
+			onAfterMove(source) {
+				source.removeVolatile('divine');
+			},
+		},
+		flags: {},
+		name: "Divine",
+		shortDesc: "Critical hits grant Regen to user's side. Activation: next attack always hits, crits, and super-effective.",
+	},
+	doubletap: {
+		onAfterTerastallization(pokemon) {
+			if (!pokemon.volatiles['doubletap']) pokemon.addVolatile('doubletap');
+		},
+		condition: {
+			onAfterMove(source, target, move) {
+				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
+				if (target && !target.fainted && source.lastMoveUsed?.id) this.actions.useMove(source.lastMoveUsed.id, source, { target });
+				source.removeVolatile('doubletap');
+			},
+		},
+		flags: {},
+		name: "Double Tap",
+		shortDesc: "On activation uses its next attacking move twice.",
+	},
+	pyromaniac: {
+		onStart(pokemon) {
+			this.effectState.fireTotal = 0;
+			pokemon.canTerastallize = false;
+		},
+		onUpdate(pokemon) {
+			pokemon.trySetStatus('brn', pokemon);
+		},
+		onDamage(damage, target, source, effect) {
+			if (effect.id === 'brn') {
+				return false;
+			}
+		},
+		onPrepareHit(source, target, move) {
+			if (move.type === 'Fire' && source.canTerastallize !== null) {
+				this.effectState.fireTotal = (this.effectState.fireTotal || 0) + (move.basePower || 0);
+				if (this.effectState.fireTotal >= 250) {
+					source.canTerastallize = source.teraType;
+				}
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('spedown');
+			pokemon.addVolatile('suppression');
+			this.boost({ spa: 100 }, pokemon, pokemon);
+		},
+		flags: {},
+		name: "Pyromaniac",
+		shortDesc: "Burns but immune. Using Fire for 250 BP enables Activation: Spe Down, Suppression, 100% SpA.",
+	},
+	feral: {
 		onStart(pokemon) {
 			pokemon.canTerastallize = false;
 		},
+		onResidualOrder: 27,
 		onResidual(pokemon) {
-			if (pokemon.activeTurns % 2 === 0) {
-				if (!pokemon.volatiles['charge']) {
-					pokemon.addVolatile('charge');
+			if (pokemon.activeTurns && (!pokemon.lastMoveUsed || pokemon.lastMove?.category === 'Status')) {
+				pokemon.addVolatile('taunt');
+				this.boost({ atk: 50 }, pokemon, pokemon);
+			}
+		},
+		onAfterMove(pokemon, target, move) {
+			if (move.category !== 'Status') {
+				// Remove all stat boosts
+				const boosts: SparseBoostsTable = {};
+				for (const stat in pokemon.boosts) {
+					const statKey = stat as BoostID;
+					if (pokemon.boosts[statKey] !== 0) {
+						boosts[statKey] = -pokemon.boosts[statKey];
+					}
+				}
+				if (Object.keys(boosts).length) {
+					this.boost(boosts, pokemon, pokemon);
 				}
 			}
 		},
 		flags: {},
-		name: "Tesla Coils",
-		shortDesc: "Gains Charge every other turn.",
+		name: "Feral",
+		shortDesc: "If doesn't attack for a turn: Taunt and 50% Attack boost. Boosts are lost after attacking.",
 	},
 	/*
 	allseeing: {
