@@ -41,7 +41,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	tsareena: {
 		inherit: true,
-		types: ["Fighting"],
+		types: ["Fighting", "Rock"],
 	},
 	bewear: {
 		inherit: true,
