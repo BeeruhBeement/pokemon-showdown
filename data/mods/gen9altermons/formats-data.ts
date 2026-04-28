@@ -93,7 +93,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	},
 	scizormega: {
 		inherit: true,
-		tier: "Uber",
+		tier: "OU",
 		isNonstandard: null,
 	},
 	kleavor: {
@@ -208,7 +208,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	},
 	swampertmega: {
 		inherit: true,
-		tier: "Uber",
+		tier: "OU",
 		isNonstandard: null,
 	},
 	altaria: {
@@ -392,6 +392,86 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		isNonstandard: null,
 	},
 	palafin: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	miltank: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	alomomola: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	greattusk: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	clodsire: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	floetteeternal: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	floettemega: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	gigalith: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	uxie: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	azelf: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	mesprit: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	bellibolt: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	kyurem: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	blissey: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	flareon: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	drifblim: {
+		inherit: true,
+		tier: "OU",
+		isNonstandard: null,
+	},
+	celebi: {
 		inherit: true,
 		tier: "OU",
 		isNonstandard: null,
