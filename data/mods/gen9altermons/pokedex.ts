@@ -323,4 +323,68 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Bug", "Fighting"],
 	},
+	miltank: {
+		inherit: true,
+		types: ["Fighting", "Ground"],
+	},
+	alomomola: {
+		inherit: true,
+		types: ["Fire", "Flying"],
+	},
+	greattusk: {
+		inherit: true,
+		types: ["Dark", "Steel"],
+	},
+	clodsire: {
+		inherit: true,
+		types: ["???"],
+	},
+	floetteeternal: {
+		inherit: true,
+		types: ["Grass", "Electric"],
+	},
+	floettemega: {
+		inherit: true,
+		types: ["Grass", "Electric"],
+	},
+	gigalith: {
+		inherit: true,
+		types: ["Ice", "Ground"],
+	},
+	uxie: {
+		inherit: true,
+		types: ["Dark", "Fairy"],
+	},
+	azelf: {
+		inherit: true,
+		types: ["Poison", "Fighting"],
+	},
+	mesprit: {
+		inherit: true,
+		types: ["Dragon", "Steel"],
+	},
+	bellibolt: {
+		inherit: true,
+		types: ["Fairy", "Normal"],
+	},
+	kyurem: {
+		inherit: true,
+		types: ["Rock", "Flying"],
+	},
+	blissey: {
+		inherit: true,
+		types: ["Dark"],
+	},
+	flareon: {
+		inherit: true,
+		types: ["Steel", "Electric"],
+	},
+	drifblim: {
+		inherit: true,
+		types: ["Electric", "Fairy"],
+	},
+	celebi: {
+		inherit: true,
+		types: ["Dark", "Flying"],
+	},
 };
