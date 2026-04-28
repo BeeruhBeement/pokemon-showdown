@@ -1056,7 +1056,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	empo: "Empoleon",
 	enam: "Enamorus",
 	esca: "Escavalier",
-	feral: "Feraligatr",
+	//feral: "Feraligatr",
 	ferro: "Ferrothorn",
 	fez: "Fezandipiti",
 	fini: "Tapu Fini",

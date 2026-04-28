@@ -852,7 +852,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 		gen: -1,
 	},
-	timewornresidue: {
+	/*timewornresidue: {
 		name: "Timeworn Residue",
 		shortDesc: "Triggers holder's effects that happen on residual twice.",
 		onResidualOrder: 26,
@@ -868,7 +868,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			duration: 1,
 		},
 		gen: -1,
-	},
+	},*/
 	tundracrossbow: {
 		name: "Tundra Crossbow",
 		shortDesc: "On ability activation uses Ice Shard that is guaranteed to crit.",

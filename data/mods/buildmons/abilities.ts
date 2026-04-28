@@ -53,6 +53,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	divine: {
 		onHit(target, source, move) {
 			if (target.getMoveHitData(move).crit) {
+				this.add('-ability', target, 'Divine');
 				for (const ally of source.side.active) {
 					if (ally && !ally.fainted && !ally.volatiles['regen']) {
 						ally.addVolatile('regen');
@@ -65,7 +66,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		condition: {
 			onStart(target) {
-				this.add('-start', target, 'Divine Blessing');
+				this.add('-start', target, 'Divine');
 			},
 			onBeforeMove(pokemon, target, move) {
 				move.accuracy = true;

@@ -4,7 +4,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	commando: {
 		num: 1,
 		name: "Commando",
-		types: ["Bug", "Dragon"],
+		types: ["Dragon"],
 		baseStats: { hp: 70, atk: 95, def: 102, spa: 90, spd: 70, spe: 91 },
 		abilities: { 0: "Double Tap" },
 		heightm: 1.5,
@@ -49,7 +49,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		num: 24,
 		name: "Ghoul",
 		types: ["Normal", "Grass"],
-		baseStats: { hp: 70, atk: 70, def: 70, spa: 115, spd: 80, spe: 95 },
+		baseStats: { hp: 65, atk: 125, def: 75, spa: 55, spd: 106, spe: 75 },
 		abilities: { 0: "Feral", 1: "Brutal" },
 		heightm: 1.5,
 		weightkg: 55,

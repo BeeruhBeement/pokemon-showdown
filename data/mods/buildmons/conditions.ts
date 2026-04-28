@@ -330,13 +330,6 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 
 	mustrecharge: {
 		inherit: true,
-		onStart(target) {
-			this.add('-start', target, 'move: Recharge');
-		},
-		onResidualOrder: 15,
-		onEnd(target) {
-			this.add('-end', target, 'move: Recharge');
-		},
 		onDisableMove(pokemon) {
 			for (const moveSlot of pokemon.moveSlots) {
 				const move = this.dex.moves.get(moveSlot.id);
@@ -347,11 +340,12 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 		onBeforeMovePriority: 5,
 		onBeforeMove(attacker, defender, move) {
-			if (!(move.isZ && move.isZOrMaxPowered) && move.category === 'Status' && move.id !== 'mefirst') {
-				this.add('cant', attacker, 'Recharge', move);
+			if (!(!(move.isZ && move.isZOrMaxPowered) && move.category === 'Status' && move.id !== 'mefirst')) {
+				this.add('cant', attacker, 'recharge', move);
 				return false;
 			}
 		},
+		onLockMove: undefined,
 	},
 	futuremove: {
 		inherit: true,

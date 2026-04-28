@@ -339,6 +339,8 @@ interface ModdedBattlePokemon {
 	queryLinkMove?: (
 		this: Pokemon, move: ActiveMove, ignoreDisabled?: boolean
 	) => { linkIndex: number, linkedMoves: [ActiveMove, ActiveMove] };
+
+	getCappedBoost?: (this: Pokemon, boosts: SparseBoostsTable) => SparseBoostsTable;
 }
 
 interface ModdedBattleQueue extends Partial<BattleQueue> {

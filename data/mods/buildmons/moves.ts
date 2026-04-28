@@ -424,6 +424,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 	},
+	swordsdance: {
+		inherit: true,
+		boosts: {
+			atk: 100,
+		},
+	},
 	tripleaxel: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, dance: 1 },
@@ -704,6 +710,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Steel",
 		desc: "Fails unless it is the user's first turn on the field.",
 		shortDesc: "Nearly always goes first. First turn out only.",
+	},
+	nightfall: {
+		inherit: true,
+		isNonstandard: null,
 	},
 	piledriver: {
 		accuracy: 95,
