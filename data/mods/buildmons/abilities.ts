@@ -31,7 +31,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	desperado: {
 		onStart(pokemon) {
 			this.effectState.stacks = 0;
-			pokemon.canTerastallize = false;
+			pokemon.canTerastallize = null;
 		},
 		onEnd(pokemon) {
 			this.effectState.stacks = 0;
@@ -102,6 +102,33 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Double Tap",
 		shortDesc: "On activation uses its next attacking move twice.",
 	},
+	dualwielding: {
+		onStart(pokemon) {
+			pokemon.canTerastallize = null;
+		},
+		onBasePower(basePower, user, target, move) {
+			if (this.dex.getActiveMove(user.moveSlots[0].id).category !== 'Status' && this.dex.getActiveMove(user.moveSlots[1].id).category !== 'Status') {
+				return this.chainModify(0.75);
+			}
+		},
+		onAfterMove(source, target, move) {
+			if (this.dex.getActiveMove(source.moveSlots[0].id).category === 'Status' || this.dex.getActiveMove(source.moveSlots[1].id).category === 'Status') return;
+
+			if (source.volatiles['dualwielding']) return;
+			source.addVolatile('dualwielding');
+			
+			if (target && !target.fainted) {
+				if (move === this.dex.getActiveMove(source.moveSlots[0].id)) this.actions.runMove(this.dex.getActiveMove(source.moveSlots[1].id), source, target.position);
+				else this.actions.runMove(this.dex.getActiveMove(source.moveSlots[0].id), source, target.position);
+			} 
+		},
+		condition: {
+			duration: 1,
+		},
+		flags: {},
+		name: "Dual Wielding",
+		shortDesc: "If user's first 2 moveslots are attacking moves they have 75% BP and using one uses the other.",
+	},
 	pyromaniac: {
 		onStart(pokemon) {
 			this.effectState.fireTotal = 0;
@@ -134,7 +161,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	feral: {
 		onStart(pokemon) {
-			pokemon.canTerastallize = false;
+			pokemon.canTerastallize = null;
 		},
 		onResidualOrder: 27,
 		onResidual(pokemon) {

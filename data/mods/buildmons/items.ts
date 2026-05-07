@@ -161,6 +161,18 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onCriticalHit: false,
 		gen: -1,
 	},
+	deskfan: {
+		name: "Desk Fan",
+		shortDesc: "Cannot critically hit. Ignores target's boosts when attacking.",
+		onFoeCriticalHit(pokemon, source, move) {
+			return false;
+		},
+		onModifyMovePriority: 1,
+		onModifyMove(move) {
+			move.ignoreDefensive = true;
+		},
+		gen: -1,
+	},
 	detachedsniperscope: {
 		name: "Detached Sniper Scope",
 		shortDesc: "Cannot get random critical hits. Super effective hits are critical.",
@@ -787,7 +799,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			const queueMoves = move.type === 'Electric' ? iceMoves : electricMoves;
 
 			for (const id of queueMoves) {
-				if (target && !target.fainted) this.actions.runMove(id, source, 0);
+				if (target && !target.fainted) this.actions.runMove(id, source, target.position);
 			}
 		},
 		condition: {
