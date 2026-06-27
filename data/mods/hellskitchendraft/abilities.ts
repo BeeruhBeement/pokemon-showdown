@@ -237,4 +237,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 4.5,
 		num: 185,
 	},
+	piercingdrill: {
+		inherit: true,
+		onModifyMove(move) {
+			move.ignoreAbility = true;
+		},
+		isNonstandard: null,
+		shortDesc: "Contact moves ignore target's protection and deal 1/4 damage. Ignores abilities.",
+	},
 };

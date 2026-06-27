@@ -52,4 +52,81 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		isZ: false,
 		noPPBoosts: true,
 	},
+	armthrust: {
+		inherit: true,
+		basePower: 25,
+	},
+	geargrind: {
+		inherit: true,
+		basePower: 60,
+		accuracy: 90,
+	},
+	shadowclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	dragonclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	direclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	metalclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	crushclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	axekick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	blazekick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	doublekick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	highjumpkick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	lowkick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	megakick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	rollingkick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	thunderouskick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	triplekick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	tripleaxel: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	tropkick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
+	jumpkick: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
+	},
 };

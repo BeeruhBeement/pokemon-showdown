@@ -484,4 +484,17 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		shortDesc: "If held by an Urshifu-Rapid-Strike, this item allows it to Mega Evolve in battle.",
 	},
+	leek: {
+		inherit: true,
+		onModifyCritRatio(critRatio, user) {},
+		megaStone: { "Meloetta": "Meloetta-Mega" },
+		itemUser: ["Meloetta"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by an Meloetta-Strike, this item allows it to Mega Evolve in battle.",
+		num: 259,
+		gen: 9,
+		isNonstandard: null,
+	},
 };

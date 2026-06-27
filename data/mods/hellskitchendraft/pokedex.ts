@@ -989,7 +989,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 6.5,
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
-		requiredItem: "Meloettite",
+		requiredItem: "Leek",
 	},
 	genesectmega: {
 		num: 649,
