@@ -81,12 +81,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			this.effectState.count++;
 			if (this.effectState.count === 3) {
 				this.effectState.count = 0;
-				this.heal(pokemon.baseMaxhp / 2);
+				this.heal(pokemon.baseMaxhp*0.75);
 			}
 		},
 		flags: {},
 		name: "Eternal Youth",
-		shortDesc: "Every 3 turns, this Pokemon automatically recovers 50% of its max HP.",
+		shortDesc: "Every 3 turns, this Pokemon automatically recovers 75% of its max HP.",
 		num: 0,
 	},
 	searingcleats: {
@@ -117,11 +117,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	highground: {
 		onModifyMove(move) {
-			if (!move.flags['contact']) delete move.flags['protect'];
+			if (!move.flags['contact']) {
+				delete move.flags['protect'];
+				move.infiltrates = true;
+			}
 		},
 		flags: {},
 		name: "High Ground",
-		shortDesc: "This Pokemon's non-contact moves ignore the target's protection.",
+		shortDesc: "This Pokemon's non-contact moves ignore the target's protection, screens, and substitute.",
 		num: 0,
 	},
 	skyspacescraper: {
@@ -150,7 +153,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		flags: {},
 		name: "Acierate",
-		shortDesc: "This Pokemon's Normal-type moves become Steel-type.",
+		shortDesc: "Levitates and user's Normal-type moves become Steel-type.",
 		num: 0,
 	},
 	mach10: {
@@ -244,5 +247,92 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		isNonstandard: null,
 		shortDesc: "Contact moves ignore target's protection and deal 1/4 damage. Ignores abilities.",
+	},
+	criminalmind: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Fairy') {
+				if (!this.boost({ atk: 1 })) {
+					this.add('-immune', target, '[from] ability: Criminal Mind');
+				}
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Criminal Mind",
+		rating: 3,
+		num: 0,
+		shortDesc: "Fairy immunity; +1 Atk if hit by Fairy-type move.",
+	},
+	dunetune: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Ground';
+			}
+		},
+		flags: {},
+		name: "Dune Tune",
+		rating: 1.5,
+		num: 0,
+		shortDesc: "This Pokemon's sound-based moves become Ground type.",
+	},
+	freakyfunhouse: {
+		onStart(source) {
+			if (!this.field.pseudoWeather.gravity) {
+				this.add('-activate', source, 'ability: Freaky Funhouse');
+				this.field.addPseudoWeather('magicroom');
+			} 
+				
+		},
+		flags: {},
+		name: "Freaky Funhouse",
+		rating: 4.5,
+		num: 0,
+		shortDesc: "On Switch-in, this Pokemon summons Magic Room.",
+	},
+	fullsteamahead: {
+		onDamagingHit(damage, target, source, move) {
+			if (['Water', 'Fire'].includes(move.type)) {
+				this.boost({ spe: 6, atk: 2, spa: 2 });
+			}
+		},
+		flags: {},
+		name: "Full Steam Ahead",
+		rating: 2,
+		num: 0,
+		shortDesc: "+2 Atk, +2 Sp. Aatk, +6 Speed after it is damaged by Fire/Water moves.",
+	},
+	genomeflux: {
+		onUpdate(pokemon) {
+			if (pokemon.transformed && !this.effectState.transformed) {
+				pokemon.boostBy({atk: 1, def: 1, spa: 1, spd: 1, spe: 1})
+				this.effectState.transformed = true;
+			}
+		},
+		flags: {},
+		name: "Genome Flux",
+		rating: 2,
+		num: 0,
+		shortDesc: "Omniboost on transform.",
+	},
+	instanttransmission: {
+		onModifyMove(move, pokemon, target) {
+			if (move.id === 'aurasphere') move.selfSwitch = true;
+		},
+		flags: {},
+		name: "Instant Transmission",
+		rating: 2,
+		num: 0,
+		shortDesc: "Switches out after hitting with Aura Sphere.",
+	},
+	lunchrush: {
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move?.type === 'Dragon' && pokemon.hp >= pokemon.maxhp / 2) return priority + 1;
+		},
+		flags: {},
+		name: "Lunch Rush",
+		rating: 2,
+		num: 0,
+		shortDesc: "+1 priority on Dragon-type moves when above 50% max HP.",
 	},
 };
