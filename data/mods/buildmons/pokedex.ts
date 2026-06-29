@@ -1,59 +1,20 @@
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
-	commando: {
-		num: 1,
-		name: "Commando",
-		types: ["Dragon"],
-		baseStats: { hp: 70, atk: 95, def: 102, spa: 90, spd: 70, spe: 91 },
-		abilities: { 0: "Double Tap" },
-		heightm: 1.5,
-		weightkg: 55,
-		color: "Yellow",
-		eggGroups: ["Bug", "Dragon"],
+	lapras: {
+		inherit: true,
+		abilities: { skill: "Double Tap", 0: "Telepathy", 1: "Hydration", 4: "Ride the Wave" },
 	},
-	bandit: {
-		num: 2,
-		name: "Bandit",
-		types: ["Ground", "Dark"],
-		baseStats: { hp: 55, atk: 115, def: 75, spa: 60, spd: 80, spe: 115 },
-		abilities: { 0: "Desperado" },
-		heightm: 1.5,
-		weightkg: 55,
-		color: "Brown",
-		eggGroups: ["Human-Like"],
+	escavalier: {
+		inherit: true,
+		abilities: { skill: "Divine Blessing", 0: "Justified", 1: "Cutting Edge", 2: "Exoskeleton", 4: "Duelist" },
 	},
-	paladin: {
-		num: 8,
-		name: "Paladin",
-		types: ["Steel", "Fighting"],
-		baseStats: { hp: 95, atk: 120, def: 80, spa: 55, spd: 80, spe: 75 },
-		abilities: { 0: "Divine" },
-		heightm: 1.5,
-		weightkg: 55,
-		color: "Brown",
-		eggGroups: ["Human-Like"],
+	coalossal: {
+		inherit: true,
+		abilities: { skill: "Coal Mines", 2: "Pain Train", 4: "Explosive Charge" },
 	},
-	arson: {
-		num: 16,
-		name: "Arson",
-		types: ["Fire"],
-		baseStats: { hp: 80, atk: 105, def: 80, spa: 115, spd: 70, spe: 65 },
-		abilities: { 0: "Pyromaniac" },
-		heightm: 1.5,
-		weightkg: 55,
-		color: "Brown",
-		eggGroups: ["Human-Like"],
-	},
-	ghoul: {
-		num: 24,
-		name: "Ghoul",
-		types: ["Normal", "Grass"],
-		baseStats: { hp: 65, atk: 125, def: 75, spa: 55, spd: 106, spe: 75 },
-		abilities: { 0: "Feral", 1: "Brutal" },
-		heightm: 1.5,
-		weightkg: 55,
-		color: "White",
-		eggGroups: ["Field"],
+	grimmsnarl: {
+		inherit: true,
+		abilities: { skill: "Double Tap", 0: "Tangling Hair", 2: "Prankster" },
 	},
 };

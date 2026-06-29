@@ -1,27 +1,22 @@
 import { Pokedex as Base } from '../../pokedex';
 
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
-	commando: {
+	lapras: {
 		isNonstandard: null,
 		tier: "OU",
 		doublesTier: "DOU",
 	},
-	bandit: {
+	escavalier: {
 		isNonstandard: null,
 		tier: "OU",
 		doublesTier: "DOU",
 	},
-	paladin: {
+	coalossal: {
 		isNonstandard: null,
 		tier: "OU",
 		doublesTier: "DOU",
 	},
-	arson: {
-		isNonstandard: null,
-		tier: "OU",
-		doublesTier: "DOU",
-	},
-	ghoul: {
+	grimmsnarl: {
 		isNonstandard: null,
 		tier: "OU",
 		doublesTier: "DOU",

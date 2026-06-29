@@ -1,4 +1,153 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
+	// skills
+	coalmines: {
+		onAfterTerastallization(pokemon) {
+			this.add('-ability', pokemon, 'Coal Mines');
+			pokemon.foes().forEach(foe => {
+				foe.addVolatile('tarshot');
+			})
+		},
+		flags: {},
+		name: "Coal Mines",
+		shortDesc: "On activation applies Tar Shot on all active foes.",
+	},
+	divineblessing: {
+		onHit(target, source, move) {
+			if (target.getMoveHitData(move).crit) {
+				source.canTerastallize = source.teraType;
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			this.add('-ability', pokemon, 'Divine Blessing');
+			for (const ally of pokemon.side.active) {
+				if (ally && !ally.fainted && !ally.volatiles['regen']) {
+					ally.addVolatile('regen');
+				}
+			}
+		},
+		flags: {},
+		name: "Divine Blessing",
+		shortDesc: "Grants regen on user's side. Critical hits allow reactivation.",
+	},
+	doubletap: {
+		onAfterTerastallization(pokemon) {
+			this.add('-ability', pokemon, 'Double Tap');
+			if (!pokemon.volatiles['doubletap']) pokemon.addVolatile('doubletap');
+		},
+		condition: {
+			onAfterMove(source, target, move) {
+				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
+				if (target && !target.fainted && source.lastMoveUsed?.id) this.actions.useMove(source.lastMoveUsed.id, source, { target });
+				source.removeVolatile('doubletap');
+			},
+		},
+		flags: {},
+		name: "Double Tap",
+		shortDesc: "On activation uses its next attacking move twice.",
+	},
+
+	// perks
+	justified: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Dark') {
+				this.boost({ atk: 50 });
+			}
+		},
+		shortDesc: "This Pokemon's Attack is raised by 50% after it is damaged by a Dark-type move.",
+	},
+	cuttingedge: {
+		onHit(target, source, move) {
+			if (target.getMoveHitData(move).crit) {
+				this.heal((source.maxhp - source.hp) / 2);
+			}
+		},
+		flags: {},
+		name: "Cutting Edge",
+		shortDesc: "Critical hits heal for 50% of missing HP.",
+	},
+	duelist: {
+		onSourceDamagingHit(damage, target, source, move) {
+			let duelCount = 0;
+			this.getAllActive().forEach(pokemon => {
+				if (pokemon.volatiles.includes["duel"]) duelCount++;
+			})
+			if (move.flags.slicing && duelCount == 0) {
+				source.addVolatile('duel', target);
+				target.addVolatile('duel', source);
+			}
+		},
+		flags: {},
+		name: "Duelist",
+		shortDesc: "Slicing initiates duel: both sides deal 20% more damage to eachother. Only one duel active.",
+	},
+	exoskeleton: {
+		onDamagingHit(damage, target, source, move) {
+			move.damage = Math.min(target.lastDamage - (target.level / 4), 1)
+		},
+		flags: {},
+		name: "Exoskeleton",
+		shortDesc: "Gains flat damage reduction equals to 1/4th of its level."
+	},
+	explosivecharge: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (target.types.includes("Rock") && source.activeMoveActions > 1) {
+				move.willCrit = true;
+				move.selfSwitch = true;
+			}
+		},
+		flags: {},
+		name: "Explosive Charge",
+		shortDesc: "After active for more than 1 turn, when hitting Rock type: crit and switch out."
+	},
+	paintrain: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (damage >= target.maxhp / 10) this.boost({ spe: 50 });
+		},
+		flags: {},
+		name: "Pain Train",
+		shortDesc: "Gain a 25% Speed Boost after attacking for >= 10% of target's max HP."
+	},
+	ridethewave: {
+		onFoeModifyDef(spd, target, source, move) {
+			if (move.type === "Water" && !target.isAlly) 
+			{
+				this.debug('Ride the Wave SpD drop');
+				return this.chainModify(0.8);
+			}
+		},
+		onFoeModifySpD(spd, target, source, move) {
+			if (move.type === "Water" && !target.isAlly) 
+			{
+				this.debug('Ride the Wave SpD drop');
+				return this.chainModify(0.8);
+			}
+		},
+		flags: {},
+		name: "Ride the Wave",
+		shortDesc: "Water-type moves ignore 20% of the foe's defenses.",
+	},
+	tanglinghair: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.add('-ability', target, 'Tangling Hair');
+				source.addVolatile('spedown', target);
+			}
+		},
+	},
+	telepathy: {
+		inherit: true,
+		onTryHit(target, source, move) {
+			if (target !== source && source.isAlly(target) && move.category !== 'Status') {
+				move.basePower = 0;
+			}
+		},
+		flags: {},
+		shortDesc: "This Pokemon does damage its allies with attacks.",
+	},
+
+	/*
 	brutal: {
 		onAfterTerastallization(pokemon) {
 			pokemon.addVolatile('doubletap');
@@ -87,21 +236,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Divine",
 		shortDesc: "Critical hits grant Regen to user's side. Activation: next attack always hits, crits, and super-effective.",
 	},
-	doubletap: {
-		onAfterTerastallization(pokemon) {
-			if (!pokemon.volatiles['doubletap']) pokemon.addVolatile('doubletap');
-		},
-		condition: {
-			onAfterMove(source, target, move) {
-				if (move.category === 'Status' || move.flags['charge'] || move.flags['recharge'] || move.flags['futuremove']) return;
-				if (target && !target.fainted && source.lastMoveUsed?.id) this.actions.useMove(source.lastMoveUsed.id, source, { target });
-				source.removeVolatile('doubletap');
-			},
-		},
-		flags: {},
-		name: "Double Tap",
-		shortDesc: "On activation uses its next attacking move twice.",
-	},
 	dualwielding: {
 		onStart(pokemon) {
 			pokemon.canTerastallize = null;
@@ -189,7 +323,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Feral",
 		shortDesc: "If doesn't attack for a turn: Taunt and 50% Attack boost. Boosts are lost after attacking.",
 	},
-	/*
 	allseeing: {
 		onAfterTerastallization(pokemon) {
 			const foes = pokemon.foes().filter(foe => foe && !foe.fainted);
@@ -704,53 +837,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Soul Brand",
 		shortDesc: "Switch-ins: Death Brand. Gain essence for kill on branded. Activation consumes essence.",
 	},
-	stressed: {
-		onModifySpe(spe, pokemon) {
-			return spe + (pokemon.maxhp - pokemon.hp);
-		},
-		onUpdate(pokemon) {
-			if (pokemon.hp >= pokemon.maxhp) {
-				pokemon.canTerastallize = false;
-			} else {
-				pokemon.canTerastallize = pokemon.teraType;
-			}
-		},
-		onAfterTerastallization(pokemon) {
-			pokemon.addVolatile('stressed', pokemon);
-		},
-		condition: {
-			onStart(target, source, sourceEffect) {
-				const missing = source.maxhp - source.hp;
-				this.effectState.boost = Math.floor(missing / 10);
-				this.add('-start', target, `Missing HP: ${missing}`);
-			},
-			onEnd(target) {
-				this.add('-end', target, `Missing HP`);
-			},
-			onModifyDamage(relayVar, source, target, move) {
-				if (this.effectState.boost) {
-					this.debug('Stressed boost');
-					return this.chainModify(1 + 0.01 * this.effectState.boost);
-				}
-			},
-		},
-		flags: {},
-		name: "Stressed",
-		shortDesc: "Missing HP is added to Speed. On activation gain a damage boost for missing HP / 10.",
-	},
-	trapper: {
-		onHit(target, source, move) {
-			if (move.basePower > 60) {
-				if (target && !target.fainted) this.actions.useMove('bite', target, { target: source });
-			}
-		},
-		onAfterTerastallization(pokemon) {
-			pokemon.heal(pokemon.maxhp / 2);
-		},
-		flags: {},
-		name: "Trapper",
-		shortDesc: "When hit by a move above 60 BP retaliates with Bite. On activation heal 50% HP.",
-	},
 	vampiric: {
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
@@ -769,5 +855,126 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		name: "Vampiric",
 		shortDesc: "Biting, Slicing, Draining bleed. Activation drains 1/4th of bleeding foes HP and heal bleed.",
+	},
+
+	// passives
+	steady: {
+		onAfterTerastallization(pokemon) {
+			this.boost({ accuracy: 1 }, pokemon);
+		},
+		flags: {},
+		name: "Steady",
+		shortDesc: "Boost accuracy 1 stage after Skill activation.",
+	},
+	extendedmagazine: {
+		onModifyMove(move) {
+			if (move.flags['bullet']) {
+				move.pp *= 1.5;
+			}
+		},
+		flags: {},
+		name: "Extended Magazine",
+		shortDesc: "Bullet moves have 50% more PP.",
+	},
+	quickreflexes: {
+		onDamagingHit(damage, target, source, move) {
+			if (!source.isAlly(target) && this.getCategory(move) != 'Status') {
+				target.addVolatile('quickreflexes');
+			}
+		},
+		condition: {
+			duration: 1,
+			onModifyDamage(damage, source, target, move) {
+				if (target.getMoveHitData(move).crit) {
+					this.debug('Quick Reflexes boost');
+					return this.chainModify(1.25);
+				}
+			},
+			onModifyCritRatio(critRatio, source, target) {
+				if (this.randomChance(1, 4)) return 5;
+			},
+		},
+		flags: {},
+		name: "Quick Reflexes",
+		shortDesc: "If attacked this turn, gain 25% increased critical hit chance and damage.",
+	},
+	stress: {
+		onModifySpe(spe, pokemon) {
+			return spe + (pokemon.maxhp - pokemon.hp);
+		},
+		flags: {},
+		name: "Stress",
+		shortDesc: "Missing HP is added to Speed.",
+	},
+	suppressivefire: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.flags['bullet']) {
+				if (this.randomChance(3, 10)) {
+					target.addVolatile('supression', source);
+				}
+			}
+		},
+		flags: {},
+		name: "Suppressive Fire",
+		shortDesc: "Bullet moves have a 30% chance to apply suppresion.",
+	},
+	crossfire: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move' && source.volatiles.includes['doubletap']) {
+				source.canTerastallize = source.teraType;
+			}
+		},
+		flags: {},
+		name: "Crossfire",
+		shortDesc: "Killing an enemy with Double Tap active allows activation again.",
+	},
+
+	numb: {
+		onSourceModifyDamage(relayVar, source, target, move) {
+			this.debug('Numb weaken');
+			if (target.status === 'brn') return this.chainModify(0.9);
+		},
+		flags: {},
+		name: "Numb",
+		shortDesc: "If the Pokémon is burned, it takes 10% less damage from attacks.",
+	},
+	contagion: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (source.status) {
+				if (this.randomChance(3, 10)) {
+					target.trySetStatus(source.status, source);
+				}
+			}
+		},
+		flags: {},
+		name: "Contagion",
+		shortDesc: "If the Pokémon is statused, 30% chance to pass that status to targets.",
+	},
+	biofuel: {
+		onModifyMovePriority: 1,
+		onModifyMove(move, pokemon, target) {
+			if (!move.drain && target && target.status === 'brn') move.drain = [1, 4];
+		},
+		flags: {},
+		name: "Biofuel",
+		shortDesc: "If the target is burned, moves gain 25% drain.",
+	},
+	
+	trapper: {
+		onHit(target, source, move) {
+			if (move.basePower > 60) {
+				if (target && !target.fainted) this.actions.useMove('bite', target, { target: source });
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.heal(pokemon.maxhp / 2);
+		},
+		flags: {},
+		name: "Trapper",
+		shortDesc: "When hit by a move above 60 BP retaliates with Bite. On activation heal 50% HP.",
 	},*/
 };

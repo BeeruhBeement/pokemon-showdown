@@ -189,7 +189,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	dragonbreath: {
 		inherit: true,
 		basePower: 75,
-		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
 		secondary: {
 			chance: 70,
 			status: 'brn',
@@ -219,6 +219,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'bld',
 		},
 		critRatio: 2,
+		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, slicing: 1 },
+	},
+	drillrun: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, slicing: 1 },
 	},
 	electroball: {
 		inherit: true,
@@ -259,6 +264,29 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 80,
 	},
+	falsesurrender: {
+		inherit: true,
+		priority: -3,
+		flags: { protect: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failinstruct: 1, contact: 1 },
+		priorityChargeCallback(pokemon) {
+			pokemon.addVolatile('falsesurrender');
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: False Surrender');
+			},
+			onHit(target, source, move) {
+				source.addVolatile('torment', target);
+			},
+		},
+		// FIXME: onMoveAborted(pokemon) {pokemon.removeVolatile('beakblast')},
+		onAfterMove(pokemon) {
+			pokemon.removeVolatile('falsesurrender');
+		},
+		desc: "Torments if user is hit before it moves.",
+		shortDesc: "Torments if user is hit before it moves.",
+	},
 	fireblast: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
@@ -283,6 +311,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	metalclaw: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	mistyexplosion: {
+		inherit: true,
+		secondary: {
+			chance: 100,
+			status: 'rad',
+		},
+		desc: "If the current terrain is Misty Terrain and the user is grounded, this move's power is multiplied by 1.5. The user faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. Has a 100% chance to irradiate the targets.",
+		shortDesc: "User faints. Misty Terrain: 1.5x power. 100% rad.",
 	},
 	moonblast: {
 		inherit: true,
@@ -391,6 +428,17 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
 	},
+	scaleshot: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+		selfBoost: {},
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
+	shadowclaw: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
 	slash: {
 		inherit: true,
 		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
@@ -400,9 +448,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'bld',
 		},
 	},
-	shadowclaw: {
-		inherit: true,
+	smartstrike: {
+		num: 684,
+		accuracy: true,
+		basePower: 70,
+		category: "Physical",
+		name: "Smart Strike",
+		pp: 10,
+		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
 	},
 	snore: {
 		inherit: true,
@@ -423,6 +480,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	stoneedge: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	strangesteam: {
+		inherit: true,
+		secondary: {
+			chance: 20,
+			status: 'rad',
+		},
+		desc: "Has a 20% chance to irradiate the target.",
+		shortDesc: "20% chance to irradiate the target.",
 	},
 	swordsdance: {
 		inherit: true,
@@ -833,7 +899,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		category: "Physical",
 		name: "Stinger Lance",
 		pp: 20,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, slicing: 1 },
 		onEffectiveness(typeMod, target, type, move) {
 			return typeMod + this.dex.getEffectiveness(move.type, type);
 		},

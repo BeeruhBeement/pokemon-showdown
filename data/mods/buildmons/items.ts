@@ -66,7 +66,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	bloodletterleech: {
 		name: "Bloodletter Leech",
-		shortDesc: "User Bleeds. Moves without drain gain 1/5 drain if the user is bleeding.",
+		shortDesc: "User Bleeds. Moves without drain gain 1/4 drain if the user is bleeding.",
 		onUpdate(pokemon) {
 			pokemon.trySetStatus('bld', pokemon);
 		},
@@ -146,10 +146,10 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	chocolate: {
 		name: "Chocolate",
-		shortDesc: "Reducing a target's speed stat stage with a move poisons it.",
-		onAnyAfterBoost(boost, target, source, effect) {
-			if (target === source) return;
-			if (boost.spe && boost.spe < 0 && effect?.effectType === 'Move') {
+		shortDesc: "Applying Speed Down to a target poisons it.",
+		onAnyTryAddVolatile(status, target, source, sourceEffect) {
+			if (source !== this.effectState.target || target === source) return;
+			if (status.name === 'spedown') {
 				target.trySetStatus('psn', source);
 			}
 		},
@@ -212,7 +212,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		// in scripts.ts in pokemon setStatus
 		gen: -1,
 	},
-	dragonwing: {
+	/*dragonwing: {
 		name: "Dragon Wing",
 		shortDesc: "Abilities can be activated again after using a Dragon-type move.",
 		onAfterMove(source, target, move) {
@@ -221,7 +221,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
-	},
+	},*/
 	elementalinverter: {
 		name: "Elemental Inverter",
 		shortDesc: "Swaps the types of the first 2 moveslots.",

@@ -2612,8 +2612,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "arcaninehisui").learnset.burnup = ["9M"];
 	dex.modData("Learnsets", "arcaninehisui").learnset.irontail = ["9M"];
 	
-	dex.modData("Learnsets", "taurospaldea").learnset.irontail = ["9M"];
-	dex.modData("Learnsets", "taurospaldea").learnset.megahorn = ["9M"];
+	dex.modData("Learnsets", "taurospaldeacombat").learnset.irontail = ["9M"];
+	dex.modData("Learnsets", "taurospaldeacombat").learnset.megahorn = ["9M"];
 	
 	dex.modData("Learnsets", "taurospaldeablaze").learnset.irontail = ["9M"];
 	dex.modData("Learnsets", "taurospaldeablaze").learnset.megahorn = ["9M"];

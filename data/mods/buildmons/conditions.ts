@@ -397,6 +397,16 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 		},
 	},
+	confusion: {
+		inherit: true,
+		onModifySpDPriority: -101,
+		onModifySpD(spd, pokemon) {
+			// Copied from paralysis
+			spd = this.finalModify(spd);
+			spd = Math.floor(spd * 90 / 100);
+			return spd;
+		},
+	},
 
 	//general
 
@@ -614,6 +624,27 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 		onEnd(target) {
 			this.add('-end', target, 'Shield');
+		},
+	},
+	
+	// ability specific
+	duel: {
+		name: 'duel',
+		duration: 3,
+		onResidual(pokemon) {
+			let noDuel = true;
+			this.getAllActive().forEach(mon => {
+				if (mon.volatiles.includes["duel"] && mon != pokemon) noDuel = false;
+			})
+			if (noDuel) pokemon.removeVolatile("duel");
+		},
+		onDamage(damage, target, source, effect) {
+			if (effect && effect.effectType === 'Move' && source.volatiles["duel"]) {
+				return 1.2;
+			}
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Duel');
 		},
 	},
 };

@@ -1,11 +1,22 @@
 import { RESTORATIVE_BERRIES } from "../../../sim/pokemon";
 import {Dex, toID} from '../../../sim/dex';
 import { MoveRequestData } from "../../../sim/side";
+import { learnsetUpdate } from "./learnsetupdate";
 
 export interface NatureData {
 	name: string;
 	plus?: StatID;
 	minus?: StatID;
+}
+
+interface SpeciesAbility {
+	skill?: string;
+	0?: string;
+	1?: string;
+	2?: string;
+	3?: string;
+	4?: string;
+	5?: string;
 }
 
 export const Scripts: ModdedBattleScriptsData = {
@@ -15,6 +26,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.modData('Items', i).isNonstandard = 'Future';
 			}
 		}
+
+		learnsetUpdate(this);
 	},
 	actions: {
 		/**
@@ -920,27 +933,11 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			return true;
 		},
-
-		ignoringAbility() {
-			if (this.battle.gen >= 5 && !this.isActive) return true;
-
-			// Certain Abilities won't activate while Transformed, even if they ordinarily couldn't be suppressed (e.g. Disguise)
-			if (this.getAbility().flags['notransform'] && this.transformed) return true;
-			if (this.getAbility().flags['cantsuppress']) return false;
-			if (this.volatiles['gastroacid']) return true;
-			if (this.volatiles['suppression']) return true;
-
-			// Check if any active pokemon have the ability Neutralizing Gas
-			if (this.hasItem('Ability Shield') || this.ability === ('neutralizinggas' as ID)) return false;
-			for (const pokemon of this.battle.getAllActive()) {
-				// can't use hasAbility because it would lead to infinite recursion
-				if (pokemon.ability === ('neutralizinggas' as ID) && !pokemon.volatiles['gastroacid'] &&
-					!pokemon.transformed && !pokemon.abilityState.ending && !this.volatiles['commanding']) {
-					return true;
-				}
-			}
-
-			return false;
+		
+		hasAbility(ability) {
+			if (Array.isArray(ability)) return ability.some(abil => this.hasAbility(abil));
+			ability = this.battle.toID(ability);
+			return this.ability === ability || !!this.volatiles['ability:' + ability];
 		},
 		
 		/**
