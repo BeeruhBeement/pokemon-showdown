@@ -75,7 +75,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 	{
-		name: "[Gen 9] Hells Kitchen Modded Draft",
+		name: "[Gen 9] Hells Kitchen Draft",
 
 		mod: 'hellskitchendraft',
 		searchShow: false,
@@ -518,6 +518,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 
+	/*
 	// Likeshop Spotlight
 	///////////////////////////////////////////////////////////////////
 
@@ -4188,7 +4189,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			this.add(`raw|Anyone who is there can help create a new set for a random mon, changing moves, abilities, stats, and even custom formes.`);
 		},
 	},*/
-	{
+	/*{
 		name: "[Gen 9] Legends Z-A OU",
 		desc: `Speculative turn-based metagame using Pok&eacute;mon obtainable in Legends: Z-A, but with National Dex learnsets.`,
 		threads: [
@@ -6190,5 +6191,5 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		debug: true,
 		battle: { trunc: Math.trunc },
 		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Desync Clause Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
-	},
+	},*/
 ];
