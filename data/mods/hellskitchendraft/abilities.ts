@@ -597,4 +597,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 228,
 		shortDesc: "On switch-in, this Pokemon summons Misty Terrain. 1.33x Sp. Def in Misty Terrain.",
 	},
+	wildfire: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.type === 'Fire') {
+				target.addVolatile('wildfire')
+			}
+		},
+		condition: {
+			name: 'wildfire',
+			duration: 4,
+			onResidualOrder: 13,
+			onResidual(pokemon) {
+				this.damage(pokemon.baseMaxhp / 8);
+			},
+		},
+		flags: {},
+		name: "Wildfire",
+		rating: 3.5,
+		num: 173,
+		shortDesc: "Fire-type moves cause target to lose 1/8 max HP every turn for 4 turns."
+	},
 };
