@@ -15,13 +15,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 0,
 	},
 	perfectorganism: {
-		onModifySpAPriority: 5,
-		onModifySpA(spa) {
-			return this.chainModify(1.5);
+		onSwitchIn(pokemon) {
+			pokemon.boostBy({spa: 1});
 		},
 		flags: {},
 		name: "Perfect Organism",
-		shortDesc: "This Pokemon's Special Attack is multiplied by 1.5.",
+		shortDesc: "+1 Sp. Atk on switch-in.",
 		num: 0,
 	},
 	dimensionaltwist: {
@@ -110,9 +109,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return false;
 			}
 		},
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.flags.kicking) {
+				if (this.randomChance(3, 10)) {
+					target.trySetStatus('brn', source);
+				}
+			}
+		},
 		flags: {},
 		name: "Searing Cleats",
-		shortDesc: "This Pokemon is immune to Entry Hazards.",
+		shortDesc: "This Pokemon is immune to Entry Hazards. 20% burn chance with kicking moves.",
 		num: 0,
 	},
 	highground: {
@@ -212,14 +220,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (move.category != 'Physical' || move.multihit || move.flags['noparentalbond'] || move.flags['charge'] ||
 				move.flags['futuremove'] || move.spreadHit || move.isZ || move.isMax) return;
 			move.multihit = 6;
-			move.multihitType = 'megazord' as 'parentalbond';
 		},
-		// Damage modifier implemented in BattleActions#modifyDamage()
 		onSourceModifySecondaries(secondaries, target, source, move) {
-			if (move.multihitType === 'parentalbond' && move.id === 'secretpower' && move.hit < 2) {
+			if (move.id === 'secretpower' && move.hit < 2) {
 				// hack to prevent accidentally suppressing King's Rock/Razor Fang
 				return secondaries.filter(effect => effect.volatileStatus === 'flinch');
 			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.category === 'Physical') return this.chainModify(0.2);
 		},
 		onModifyMove(move, pokemon, target) {
 			this.effectState.move = {...move};
@@ -236,9 +246,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		flags: {},
-		name: "Parental Bond",
+		name: "Megazord",
 		rating: 4.5,
 		num: 185,
+		shortDesc: "Physical moves hit 6 times at 0.2x power."
 	},
 	piercingdrill: {
 		inherit: true,
@@ -334,5 +345,256 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: 0,
 		shortDesc: "+1 priority on Dragon-type moves when above 50% max HP.",
+	},
+	metalmorphosis: {
+		onTryMovePriority: -2,
+		onTryMove(pokemon, target, move) {
+			if (move.id === 'stealthrock') {
+				for (const side of pokemon.side.foeSidesWithConditions()) {
+					side.addSideCondition('gmaxsteelsurge');
+				}
+				return null;
+			}
+		},
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball', 'laserpulse',
+			];
+			if (move.type === 'Rock' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Steel';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+		},
+		flags: {},
+		name: "Foundry",
+		desc: "This Pokemon's Rock-type moves become Steel-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type. Stealth Rock sets a Steelsurge instead.",
+		shortDesc: "This Pokemon's Rock-type moves become Steel type and have 1.2x power.",
+		rating: 4,
+		num: 0,
+	},
+	mikumikubeam: {
+		onAfterMove(pokemon, target, move) {
+			if (pokemon.volatiles["mustrecharge"]) {
+				pokemon.removeVolatile("mustrecharge");
+				this.add("cant", pokemon, "recharge");
+				return;
+			}
+		},
+		flags: {},
+		name: "Miku Miku Beam",
+		shortDesc: "Does not have to recharge after using a recharge move.",
+		rating: 3,
+		num: 0,
+	},
+	morotezuki: {
+		onModifyMove(move, pokemon, target) {
+			if (move.flags.punch) move.multihit = 2;
+		},
+		onBasePower(basePower, source, target, move) {
+			if (move.flags.punch) return this.chainModify(0.5);
+		},
+		flags: {},
+		name: "Morote-Zuki",
+		shortDesc: "Punching moves hit twice at 50% power.",
+		rating: 3,
+		num: 0,
+	},
+	prophet: {
+		onAfterMove(source, target, move) {
+			if (!move.flags.futuremove) return;
+			if (target.side.slotConditions[target.position]?.['futuremove']) {
+				let moveData = target.side.slotConditions[target.position]['futuremove'].moveData
+				moveData = {
+					...moveData,
+					basePower: moveData.basePower*1.3
+				};
+				target.side.slotConditions[target.position]['futuremove'].moveData = moveData;
+			}
+		},
+		flags: {},
+		name: "Prophet",
+		rating: 3.5,
+		num: 0,
+		shortDesc: "User's future moves have 1.3x power.",
+	},
+	rainbowshift: {
+		onPrepareHit(source, target, move) {
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if (!source.setType(type)) return;
+				this.add('-start', source, 'typechange', type, '[from] ability: Hue Shift');
+			}
+		},
+		onSwitchIn() {},
+		flags: {},
+		name: "Rainbow Shift",
+		desc: "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+		shortDesc: "This Pokemon's type changes to match the type of the move it is about to use.",
+		rating: 4,
+		num: 0,
+	},
+	searingsolvent: {
+		onModifyMovePriority: -5,
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Poison'] = true;
+			}
+		},
+		onModifyDamage(damage, source, target, move) { // simulates resistance
+			if (move && target.hasType('Steel') && move.type === 'Poison') {
+				return this.chainModify(2);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Searing Solvent",
+		shortDesc: "Poison-type moves hit Steel for supereffective.",
+		rating: 5,
+		num: 0,
+	},
+	splinterarmor: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const spikes = side.sideConditions['spikes'];
+			if (move.category === 'Physical' && (!spikes || spikes.layers < 3)) {
+				this.add('-activate', target, 'ability: Splinter Armor');
+				side.addSideCondition('spikes', target);
+			}
+		},
+		flags: {},
+		name: "Splinter Armor",
+		rating: 3.5,
+		num: 0,
+		shortDesc: "If this Pokemon is hit by a physical attack, Spikes are set on the opposing side.",
+	},
+	striker: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags.kicking) {
+				return this.chainModify(1.2);
+			}
+		},
+		onModifyMove(move, pokemon, target) {
+			if (move.flags.kicking && move.flags.contact) delete move.flags['contact'];
+		},
+		flags: {},
+		name: "Striker",
+		rating: 3.5,
+		num: 173,
+		shortDesc: "1.2x power on kicking moves. Kicking moves no longer make contact."
+	},
+	teamplayer: {
+		onStart(pokemon) {
+			if (pokemon.side.totalFainted) {
+				this.add('-activate', pokemon, 'ability: Supreme Overlord');
+				const fallen = Math.min(pokemon.side.totalFainted, 5);
+				this.add('-start', pokemon, `fallen${fallen}`, '[silent]');
+				this.effectState.fallen = fallen;
+			}
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, `fallen${this.effectState.fallen}`, '[silent]');
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.fallen) {
+				const powMod = [6144, 5734, 5325, 4915, 4506, 4096];
+				this.debug(`Team Player boost: ${powMod[this.effectState.fallen]}/4096`);
+				return this.chainModify([powMod[this.effectState.fallen], 4096]);
+			}
+		},
+		flags: {},
+		name: "Team Player",
+		rating: 4,
+		num: 293,
+	},
+	sweetdreams: {
+		onStart(pokemon) {
+			this.add('-ability', pokemon, 'Sweet Dreams');
+		},
+		onAnySetStatus(status, target, source, effect) {
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Sweet Dreams');
+			}
+			return false;
+		},
+		// Permanent sleep "status" implemented in the relevant sleep-checking effects
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
+		name: "Comatose",
+		rating: 4,
+		num: 213,
+	},
+	tyrannicalreign: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (!move.flags.contact) {
+				return this.chainModify(1.2);
+			}
+		},
+		flags: {},
+		name: "Tyrannical Reign",
+		rating: 3.5,
+		num: 173,
+		shortDesc: "1.2x power on non-contact moves."
+	},
+	unkemptmane: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags.contact) {
+				target.addVolatile('unkemptmane')
+			}
+		},
+		condition: {
+			name: 'bind',
+			duration: 3,
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: ' + this.effectState.sourceEffect, `[of] ${source}`);
+				this.effectState.boundDivisor = source.hasItem('bindingband') ? 6 : 8;
+			},
+			onResidualOrder: 13,
+			onResidual(pokemon) {
+				const source = this.effectState.source;
+				// G-Max Centiferno and G-Max Sandblast continue even after the user leaves the field
+				const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns) && !gmaxEffect) {
+					delete pokemon.volatiles['partiallytrapped'];
+					this.add('-end', pokemon, this.effectState.sourceEffect, '[partiallytrapped]', '[silent]');
+					return;
+				}
+				this.damage(pokemon.baseMaxhp / this.effectState.boundDivisor);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, this.effectState.sourceEffect, '[partiallytrapped]');
+			},
+			onTrapPokemon(pokemon) {
+				const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
+				if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
+			},
+		},
+		flags: {},
+		name: "Unkempt Mane",
+		rating: 3.5,
+		num: 173,
+		shortDesc: "Contact moves also apply bind for 3 turns."
+	},
+	whippedwonderland: {
+		onStart(source) {
+			this.field.setTerrain('mistyterrain');
+		},
+		onModifySpDPriority: 6,
+		onModifySpD(spd, pokemon) {
+			if (this.field.isTerrain('mistyterrain')) return this.chainModify([4, 3]);
+		},
+		flags: {},
+		name: "Whipped Wonderland",
+		rating: 3.5,
+		num: 228,
+		shortDesc: "On switch-in, this Pokemon summons Misty Terrain. 1.33x Sp. Def in Misty Terrain.",
 	},
 };
