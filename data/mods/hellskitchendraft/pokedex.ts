@@ -643,7 +643,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Copperajah-Mega",
 		baseSpecies: "Copperajah",
 		forme: "Mega",
-		types: ["Steel", "Water"],
+		types: ["Steel"],
 		baseStats: { hp: 122, atk: 146, def: 131, spa: 50, spd: 121, spe: 30 },
 		abilities: { 0: "Metalmorphosis" },
 		heightm: 3,
