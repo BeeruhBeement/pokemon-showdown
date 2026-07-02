@@ -1003,7 +1003,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 82.5,
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
-		requiredItem: "Genesectite",
+		requiredItem: "Absolute Drive",
 	},
 	orangurumega: {
 		num: 765,
@@ -1101,7 +1101,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 2.4,
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
-		requiredItem: "Squawkabillyite",
+		requiredItem: "Squawkabillite",
 	},
 	
 	magnemite: {

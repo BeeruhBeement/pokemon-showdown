@@ -372,7 +372,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
 		},
 		flags: {},
-		name: "Foundry",
+		name: "Metalmorphosis",
 		desc: "This Pokemon's Rock-type moves become Steel-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type. Stealth Rock sets a Steelsurge instead.",
 		shortDesc: "This Pokemon's Rock-type moves become Steel type and have 1.2x power.",
 		rating: 4,

@@ -510,4 +510,248 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 9,
 		isNonstandard: null,
 	},
+	
+	arbokite: {
+		name: "Arbokite",
+		megaStone: { "Arbok": "Arbok-Mega" },
+		itemUser: ["Arbok"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by an Arbok, this item allows it to Mega Evolve in battle.",
+	},
+	nidoqueenite: {
+		name: "Nidoqueenite",
+		megaStone: { "Nidoqueen": "Nidoqueen-Mega" },
+		itemUser: ["Nidoqueen"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Nidoqueen, this item allows it to Mega Evolve in battle.",
+	},
+	nidokingite: {
+		name: "Nidokingite",
+		megaStone: { "Nidoking": "Nidoking-Mega" },
+		itemUser: ["Nidoking"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Nidoking, this item allows it to Mega Evolve in battle.",
+	},
+	arcanite: {
+		name: "Arcanite",
+		megaStone: { "Arcanine": "Arcanine-Mega" },
+		itemUser: ["Arcanine"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by an Arcanine, this item allows it to Mega Evolve in battle.",
+	},
+	dittonite: {
+		name: "Dittonite",
+		megaStone: { "Ditto": "Ditto-Mega" },
+		itemUser: ["Ditto"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Ditto, this item allows it to Mega Evolve in battle.",
+	},
+	sunflorite: {
+		name: "Sunflorite",
+		megaStone: { "Sunflora": "Sunflora-Mega" },
+		itemUser: ["Sunflora"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Sunflora, this item allows it to Mega Evolve in battle.",
+	},
+	slowkingite: {
+		name: "Slowkingite",
+		megaStone: { "Slowking": "Slowking-Mega" },
+		itemUser: ["Slowking"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Slowking, this item allows it to Mega Evolve in battle.",
+	},
+	kingdranite: {
+		name: "Kingdranite",
+		megaStone: { "Kingdra": "Kingdra-Mega" },
+		itemUser: ["Kingdra"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Kingdra, this item allows it to Mega Evolve in battle.",
+	},
+	grumpigite: {
+		name: "Grumpigite",
+		megaStone: { "Grumpig": "Grumpig-Mega" },
+		itemUser: ["Grumpig"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Grumpig, this item allows it to Mega Evolve in battle.",
+	},
+	flygonite: {
+		name: "Flygonite",
+		megaStone: { "Flygon": "Flygon-Mega" },
+		itemUser: ["Flygon"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Flygon, this item allows it to Mega Evolve in battle.",
+	},
+	armaldonite: {
+		name: "Armaldonite",
+		megaStone: { "Armaldo": "Armaldo-Mega" },
+		itemUser: ["Armaldo"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by an Armaldo, this item allows it to Mega Evolve in battle.",
+	},
+	kecleonite: {
+		name: "Kecleonite",
+		megaStone: { "Kecleon": "Kecleon-Mega" },
+		itemUser: ["Kecleon"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Kecleon, this item allows it to Mega Evolve in battle.",
+	},
+	luvdiscite: {
+		name: "Luvdiscite",
+		megaStone: { "Luvdisc": "Luvdisc-Mega" },
+		itemUser: ["Luvdisc"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Luvdisc, this item allows it to Mega Evolve in battle.",
+	},
+	jirachite: {
+		name: "Jirachite",
+		megaStone: { "Jirachi": "Jirachi-Mega" },
+		itemUser: ["Jirachi"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Jirachi, this item allows it to Mega Evolve in battle.",
+	},
+	drapionite: {
+		name: "Drapionite",
+		megaStone: { "Drapion": "Drapion-Mega" },
+		itemUser: ["Drapion"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Drapion, this item allows it to Mega Evolve in battle.",
+	},
+	simisagite: {
+		name: "Simisagite",
+		megaStone: { "Simisage": "Simisage-Mega" },
+		itemUser: ["Simisage"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Simisage, this item allows it to Mega Evolve in battle.",
+	},
+	simisearite: {
+		name: "Simisearite",
+		megaStone: { "Simisear": "Simisear-Mega" },
+		itemUser: ["Simisear"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Simisear, this item allows it to Mega Evolve in battle.",
+	},
+	simipourite: {
+		name: "Simipourite",
+		megaStone: { "Simipour": "Simipour-Mega" },
+		itemUser: ["Simipour"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Simipour, this item allows it to Mega Evolve in battle.",
+	},
+	musharnite: {
+		name: "Musharnite",
+		megaStone: { "Musharna": "Musharna-Mega" },
+		itemUser: ["Musharna"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Musharna, this item allows it to Mega Evolve in battle.",
+	},
+	vanilluxite: {
+		name: "Vanilluxite",
+		megaStone: { "Vanilluxe": "Vanilluxe-Mega" },
+		itemUser: ["Vanilluxe"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Vanilluxe, this item allows it to Mega Evolve in battle.",
+	},
+	orangurite: {
+		name: "Orangurite",
+		megaStone: { "Oranguru": "Oranguru-Mega" },
+		itemUser: ["Oranguru"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Oranguru, this item allows it to Mega Evolve in battle.",
+	},
+	passimianite: {
+		name: "Passimianite",
+		megaStone: { "Passimian": "Passimian-Mega" },
+		itemUser: ["Passimian"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Passimian, this item allows it to Mega Evolve in battle.",
+	},
+	boltundite: {
+		name: "Boltundite",
+		megaStone: { "Boltund": "Boltund-Mega" },
+		itemUser: ["Boltund"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Boltund, this item allows it to Mega Evolve in battle.",
+	},
+	spidopsite: {
+		name: "Spidopsite",
+		megaStone: { "Spidops": "Spidops-Mega" },
+		itemUser: ["Spidops"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Spidops, this item allows it to Mega Evolve in battle.",
+	},
+	dachsbunite: {
+		name: "Dachsbunite",
+		megaStone: { "Dachsbun": "Dachsbun-Mega" },
+		itemUser: ["Dachsbun"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Dachsbun, this item allows it to Mega Evolve in battle.",
+	},
+	arbolivite: {
+		name: "Arbolivite",
+		megaStone: { "Arboliva": "Arboliva-Mega" },
+		itemUser: ["Arboliva"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Arboliva, this item allows it to Mega Evolve in battle.",
+	},
+	squawkabillite: {
+		name: "Squawkabillite",
+		megaStone: { "Squawkabilly": "Squawkabilly-Mega" },
+		itemUser: ["Squawkabilly"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		shortDesc: "If held by a Squawkabilly, this item allows it to Mega Evolve in battle.",
+	},
 };
