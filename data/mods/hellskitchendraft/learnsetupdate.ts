@@ -2671,7 +2671,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "copperajah").learnset.waterspout = ["9M"];
 	
 	dex.modData("Learnsets", "centiskorch").learnset.uturn = ["9M"];
-	dex.modData("Learnsets", "earthquake").learnset.uturn = ["9M"];
+	dex.modData("Learnsets", "centiskorch").learnset.earthquake = ["9M"];
 	
 	dex.modData("Learnsets", "gengar").learnset.shadowsneak = ["9M"];
 	dex.modData("Learnsets", "gengar").learnset.bulkup = ["9M"];
