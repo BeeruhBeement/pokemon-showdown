@@ -3742,6 +3742,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Temporary Tour Metas",
 	}, */
 
+	/*
 	// National Dex
 	///////////////////////////////////////////////////////////////////
 
