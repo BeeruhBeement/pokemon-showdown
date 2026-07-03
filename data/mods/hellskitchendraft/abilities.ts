@@ -16,7 +16,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	perfectorganism: {
 		onSwitchIn(pokemon) {
-			pokemon.boostBy({spa: 1});
+			this.boost({spa: 1}, pokemon);
 		},
 		flags: {},
 		name: "Perfect Organism",
@@ -316,7 +316,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	genomeflux: {
 		onUpdate(pokemon) {
 			if (pokemon.transformed && !this.effectState.transformed) {
-				pokemon.boostBy({atk: 1, def: 1, spa: 1, spd: 1, spe: 1})
+				this.boost({atk: 1, def: 1, spa: 1, spd: 1, spe: 1}, pokemon);
 				this.effectState.transformed = true;
 			}
 		},
@@ -393,15 +393,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 0,
 	},
 	morotezuki: {
+		onModifyMovePriority: 1,
 		onModifyMove(move, pokemon, target) {
-			if (move.flags.punch) move.multihit = 2;
+			if (move.flags.punch) {
+				move.multihit = 2;
+				delete move.flags['contact'];
+			}
 		},
 		onBasePower(basePower, source, target, move) {
 			if (move.flags.punch) return this.chainModify(0.5);
 		},
 		flags: {},
 		name: "Morote-Zuki",
-		shortDesc: "Punching moves hit twice at 50% power.",
+		shortDesc: "Punching moves hit twice at 50% power and no contact.",
 		rating: 3,
 		num: 0,
 	},
@@ -448,10 +452,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.ignoreImmunity['Poison'] = true;
 			}
 		},
-		onModifyDamage(damage, source, target, move) { // simulates resistance
-			if (move && target.hasType('Steel') && move.type === 'Poison') {
-				return this.chainModify(2);
-			}
+		onEffectiveness(typeMod, target, type, move) {
+			if (type === 'Steel' && move.type === 'Poison') return 1;
 		},
 		flags: { breakable: 1 },
 		name: "Searing Solvent",
@@ -493,22 +495,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	teamplayer: {
 		onStart(pokemon) {
 			if (pokemon.side.totalFainted) {
-				this.add('-activate', pokemon, 'ability: Supreme Overlord');
+				this.add('-activate', pokemon, 'ability: Team Player');
 				const fallen = Math.min(pokemon.side.totalFainted, 5);
-				this.add('-start', pokemon, `fallen${fallen}`, '[silent]');
+				this.add('-start', pokemon, `teammates${fallen}`, '[silent]');
 				this.effectState.fallen = fallen;
 			}
 		},
 		onEnd(pokemon) {
-			this.add('-end', pokemon, `fallen${this.effectState.fallen}`, '[silent]');
+			this.add('-end', pokemon, `teammates${this.effectState.fallen}`, '[silent]');
 		},
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
-			if (this.effectState.fallen) {
-				const powMod = [6144, 5734, 5325, 4915, 4506, 4096];
-				this.debug(`Team Player boost: ${powMod[this.effectState.fallen]}/4096`);
-				return this.chainModify([powMod[this.effectState.fallen], 4096]);
-			}
+			const powMod = [6144, 5734, 5325, 4915, 4506, 4096];
+			this.debug(`Team Player boost: ${powMod[this.effectState.fallen]}/4096`);
+			return this.chainModify([powMod[this.effectState.fallen], 4096]);
 		},
 		flags: {},
 		name: "Team Player",
@@ -547,35 +547,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	unkemptmane: {
 		onSourceDamagingHit(damage, target, source, move) {
 			if (move.flags.contact) {
-				target.addVolatile('unkemptmane')
+				target.addVolatile('partiallytrapped')
 			}
-		},
-		condition: {
-			name: 'bind',
-			duration: 3,
-			onStart(pokemon, source) {
-				this.add('-activate', pokemon, 'move: ' + this.effectState.sourceEffect, `[of] ${source}`);
-				this.effectState.boundDivisor = source.hasItem('bindingband') ? 6 : 8;
-			},
-			onResidualOrder: 13,
-			onResidual(pokemon) {
-				const source = this.effectState.source;
-				// G-Max Centiferno and G-Max Sandblast continue even after the user leaves the field
-				const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
-				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns) && !gmaxEffect) {
-					delete pokemon.volatiles['partiallytrapped'];
-					this.add('-end', pokemon, this.effectState.sourceEffect, '[partiallytrapped]', '[silent]');
-					return;
-				}
-				this.damage(pokemon.baseMaxhp / this.effectState.boundDivisor);
-			},
-			onEnd(pokemon) {
-				this.add('-end', pokemon, this.effectState.sourceEffect, '[partiallytrapped]');
-			},
-			onTrapPokemon(pokemon) {
-				const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
-				if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
-			},
 		},
 		flags: {},
 		name: "Unkempt Mane",
