@@ -79,6 +79,11 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// arbok
 	dex.modData("Learnsets", "arbok").learnset.poisonfang = ["9M"];
 	dex.modData("Learnsets", "arbok").learnset.tackle = ["9M"];
+	dex.modData("Learnsets", "arbok").learnset.dragonrush = ["9M"];
+	dex.modData("Learnsets", "arbok").learnset.outrage = ["9M"];
+	dex.modData("Learnsets", "arbok").learnset.dracometeor = ["9M"];
+	dex.modData("Learnsets", "arbok").learnset.mortalspin = ["9M"];
+	dex.modData("Learnsets", "arbok").learnset.crosspoison = ["9M"];
 
 	// arctibax
 	dex.modData("Learnsets", "arctibax").learnset.dragonrush = ["9M"];
