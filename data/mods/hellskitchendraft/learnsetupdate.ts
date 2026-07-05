@@ -2750,4 +2750,8 @@ export function learnsetUpdate(dex: ModdedDex) {
    dex.modData("Learnsets", "spidops").learnset.swordsdance = ["9M"];
 
 	dex.modData("Learnsets", "arboliva").learnset.calmmind = ["9M"];
+
+	dex.modData("Learnsets", "butterfree").learnset.dazzlinggleam = ["9M"];
+	dex.modData("Learnsets", "butterfree").learnset.moonblast = ["9M"];
+
 }
