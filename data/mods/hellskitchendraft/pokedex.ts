@@ -268,7 +268,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Butterfree-Mega",
 		baseSpecies: "Butterfree",
 		forme: "Mega",
-		types: ["Bug", "Ghost"],
+		types: ["Bug", "Fairy"],
 		baseStats: { hp: 60, atk: 45, def: 60, spa: 140, spd: 90, spe: 100 },
 		abilities: { 0: "Tinted Lens" },
 		heightm: 1.1,
