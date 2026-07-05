@@ -1740,6 +1740,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "pidgeot").learnset.dualwingbeat = ["9M"];
 	dex.modData("Learnsets", "pidgeot").learnset.growl = ["9M"];
 	dex.modData("Learnsets", "pidgeot").learnset.focusblast = ["9M"];
+	dex.modData("Learnsets", "pidgeot").learnset.hypervoice = ["9M"];
 
 	// pidgeotto
 	dex.modData("Learnsets", "pidgeotto").learnset.bravebird = ["9M"];
