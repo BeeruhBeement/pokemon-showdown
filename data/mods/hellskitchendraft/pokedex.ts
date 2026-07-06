@@ -801,7 +801,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseSpecies: "Kingdra",
 		forme: "Mega",
 		types: ["Water", "Dragon"],
-		baseStats: { hp: 75, atk: 100, def: 95, spa: 145, spd: 115, spe: 105 },
+		baseStats: { hp: 75, atk: 105, def: 95, spa: 145, spd: 115, spe: 105 },
 		abilities: { 0: "Primordial Sea" },
 		heightm: 3.5,
 		weightkg: 152,
