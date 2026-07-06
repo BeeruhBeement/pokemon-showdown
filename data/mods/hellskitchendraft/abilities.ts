@@ -494,12 +494,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	teamplayer: {
 		onStart(pokemon) {
-			if (pokemon.side.totalFainted) {
-				this.add('-activate', pokemon, 'ability: Team Player');
-				const fallen = Math.min(pokemon.side.totalFainted, 5);
-				this.add('-start', pokemon, `teammates${fallen}`, '[silent]');
-				this.effectState.fallen = fallen;
-			}
+			this.add('-activate', pokemon, 'ability: Team Player');
+			const fallen = Math.min(pokemon.side.totalFainted, 5);
+			this.add('-start', pokemon, `teammates${fallen}`, '[silent]');
+			this.effectState.fallen = fallen;
 		},
 		onEnd(pokemon) {
 			this.add('-end', pokemon, `teammates${this.effectState.fallen}`, '[silent]');
@@ -573,16 +571,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	wildfire: {
 		onSourceDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fire') {
-				target.addVolatile('wildfire')
+				target.addVolatile('gmaxwildfire')
 			}
-		},
-		condition: {
-			name: 'wildfire',
-			duration: 4,
-			onResidualOrder: 13,
-			onResidual(pokemon) {
-				this.damage(pokemon.baseMaxhp / 8);
-			},
 		},
 		flags: {},
 		name: "Wildfire",
