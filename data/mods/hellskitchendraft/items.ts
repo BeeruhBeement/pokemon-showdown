@@ -477,8 +477,13 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	surgingurshifite: {
 		name: "Surging Urshifite",
-		megaStone: { "Urshifu-Rapid-Strike": "Urshifu-Rapid-Strike-Mega" },
+		megaStone: { "Urshifu": "Urshifu-Rapid-Strike-Mega" },
 		itemUser: ["Urshifu-Rapid-Strike"],
+		onStart(pokemon) {
+			if (pokemon.baseSpecies.name != "Urshifu-Rapid-Strike-Mega") {
+				pokemon.canMegaEvo = 'Urshifu-Rapid-Strike-Mega';
+			}
+		},
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},

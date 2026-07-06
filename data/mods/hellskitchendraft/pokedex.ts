@@ -681,6 +681,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Sub-Legendary"],
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Wicked Urshifite",
+		battleOnly: "Urshifu",
 	},
 	urshifurapidstrikemega: {
 		num: 892,
@@ -696,6 +697,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Surging Urshifite",
+		battleOnly: "Urshifu-Rapid-Strike",
 	},
 	arbokmega: {
 		num: 24,
