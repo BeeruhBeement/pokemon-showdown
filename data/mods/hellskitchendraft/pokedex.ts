@@ -185,7 +185,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Spicy Spray"},
 	},
-	gengarmegas: {
+	gengarmega: {
 		inherit: true,
 		abilities: {0: "Neutralizing Gas"},
 		baseStats: { hp: 60, atk: 90, def: 80, spa: 145, spd: 95, spe: 130 },
