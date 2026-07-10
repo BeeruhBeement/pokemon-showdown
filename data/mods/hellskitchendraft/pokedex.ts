@@ -188,7 +188,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	gengarmega: {
 		inherit: true,
 		abilities: {0: "Neutralizing Gas"},
-		baseStats: { hp: 60, atk: 90, def: 80, spa: 145, spd: 95, spe: 130 },
+		baseStats: { hp: 60, atk: 85, def: 80, spa: 150, spd: 95, spe: 130 },
 	},
 	steelixmega: {
 		inherit: true,
