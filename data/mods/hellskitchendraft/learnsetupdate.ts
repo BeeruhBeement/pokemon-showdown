@@ -2638,7 +2638,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData("Learnsets", "pikachu").learnset["10000000voltthunderbolt"] = ["9M"];
 	
-	dex.modData("Learnsets", "eevee").learnset.extremeeevoboost = ["9M"];
+	dex.modData("Learnsets", "eevee").learnset.extremeevoboost = ["9M"];
 	
 	dex.modData("Learnsets", "audino").learnset.batonpass = ["9M"];
 	dex.modData("Learnsets", "audino").learnset.teleport = ["9M"];
