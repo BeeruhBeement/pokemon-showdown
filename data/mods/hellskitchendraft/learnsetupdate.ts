@@ -57,6 +57,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "ampharos").learnset.flashcannon = ["9M"];
 	dex.modData("Learnsets", "ampharos").learnset.paraboliccharge = ["9M"];
 	dex.modData("Learnsets", "ampharos").learnset.risingvoltage = ["9M"];
+	dex.modData("Learnsets", "ampharos").learnset.calmmind = ["9M"];
 
 	// annihilape
 	dex.modData("Learnsets", "annihilape").learnset.circlethrow = ["9M"];
