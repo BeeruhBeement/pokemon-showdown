@@ -53,7 +53,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Hells Kitchen OU",
 
-		mod: 'hellskitchendraft',
+		mod: 'gen9hellskitchen',
 		searchShow: false,
 		teraPreviewDefault: true,
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Moves Clause', '+lightofruin'],
@@ -77,7 +77,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Hells Kitchen Draft",
 
-		mod: 'hellskitchendraft',
+		mod: 'gen9hellskitchen',
 		searchShow: false,
 		teraPreviewDefault: true,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
@@ -149,7 +149,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-			'Lopunny-Mega', 'Swampert-Mega', 'Linoone', 'Cloyster', 'Indeedee',
+			'Lopunny-Mega'
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Indeedee-F'],
 	},
@@ -512,6 +512,19 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] NatDex Type Shift",
 		mod: 'typeshift',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
+	},
+
+	{
+		section: "National Dex Lower Tiers",
+	},
+	{
+		name: "[Gen 9] National Dex ZU",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
