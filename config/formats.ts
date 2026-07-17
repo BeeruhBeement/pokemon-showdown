@@ -67,14 +67,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom Draft",
 	},
 	{
-		name: "[Gen 9] RPA Z-A Modded Draft",
-
-		mod: 'zarpadraft',
-		searchShow: false,
-		teraPreviewDefault: true,
-		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
-	},
-	{
 		name: "[Gen 9] Hells Kitchen Draft",
 
 		mod: 'gen9hellskitchen',
@@ -522,7 +514,34 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "National Dex Lower Tiers",
 	},
 	{
+		name: "[Gen 9] National Dex NU",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex PU",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
+	},
+	{
 		name: "[Gen 9] National Dex ZU",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex SU",
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'Terastal Clause'],
 		banlist: [
@@ -3755,7 +3774,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Temporary Tour Metas",
 	}, */
 
-	/*
 	// National Dex
 	///////////////////////////////////////////////////////////////////
 
@@ -3829,7 +3847,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web',
 		],
 	},
-	{
+	/*{
 		name: "[Gen 9] National Dex Monotype",
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'Same Type Clause', 'Terastal Clause'],
