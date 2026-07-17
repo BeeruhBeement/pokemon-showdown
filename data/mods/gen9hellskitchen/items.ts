@@ -492,23 +492,17 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		shortDesc: "If held by an Meloetta, this item allows it to Mega Evolve in battle.",
-		num: 259,
-		gen: 9,
+		shortDesc: "If held by a Meloetta, this item allows it to Mega Evolve in battle.",
 		isNonstandard: null,
 	},
 	absolutedrive: {
-		inherit: true,
-		onModifyCritRatio(critRatio, user) {},
+		name: "Absolute Drive",
 		megaStone: { "Genesect": "Genesect-Mega" },
 		itemUser: ["Genesect"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		shortDesc: "If held by an Genesect, this item allows it to Mega Evolve in battle.",
-		num: 259,
-		gen: 9,
-		isNonstandard: null,
+		shortDesc: "If held by a Genesect, this item allows it to Mega Evolve in battle.",
 	},
 	
 	arbokite: {

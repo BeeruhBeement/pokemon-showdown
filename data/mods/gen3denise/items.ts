@@ -417,11 +417,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		gen: 3,
 	},
-	soundmemory: {
-		inherit: true,
-		gen: 3,
-		isNonstandard: null,
-	},
 	steelmemory: {
 		inherit: true,
 		gen: 3,

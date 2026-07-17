@@ -516,37 +516,33 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] National Dex NU",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		ruleset: ['National Dex RU'],
 		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+			'ND RU', 'ND NUBL',
 		],
 	},
 	{
 		name: "[Gen 9] National Dex PU",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		ruleset: ['National Dex NU'],
 		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+			'ND NU', 'ND PUBL',
 		],
 	},
 	{
 		name: "[Gen 9] National Dex ZU",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		ruleset: ['National Dex PU'],
 		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+			'ND PU', 'ND ZUBL',
 		],
 	},
 	{
 		name: "[Gen 9] National Dex SU",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		ruleset: ['National Dex ZU'],
 		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+			'ND ZU', 'ND SUBL',
 		],
 	},
 
@@ -3789,12 +3785,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 		],
 	},
-	{
+	/*{
 		name: "[Gen 8] National Dex",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Dynamax Clause'],
 		banlist: ['ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Baton Pass'],
-	},
+	},*/
 
 	// National Dex Other Tiers
 	///////////////////////////////////////////////////////////////////
