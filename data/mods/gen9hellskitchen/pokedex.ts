@@ -1176,6 +1176,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Tangeline",
 		evoLevel: 32,
 		eggGroups: ["Grass"],
+		natDexTier: "OU",
 	},
 	embah: {
 		num: 9004,
@@ -1215,6 +1216,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Goatinder",
 		evoLevel: 32,
 		eggGroups: ["Field"],
+		natDexTier: "OU",
 	},
 	geezel: {
 		num: 9007,
@@ -1254,6 +1256,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Tangeline",
 		evoLevel: 32,
 		eggGroups: ["Grass"],
+		natDexTier: "OU",
 	},
 	ampharosmegaz: {
 		num: 181,
