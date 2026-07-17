@@ -147,10 +147,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Bug", "Ghost"],
 		baseStats: {hp: 60, atk: 95, def: 100, spa: 60, spd: 80, spe: 30},
 	},
-	parasong: {
-		inherit: true,
-		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 100, spe: 30},
-	},
 	diglett: {
 		inherit: true,
 		abilities: {0: "Sharp", 1: "Arena Trap", H: "Sand Force"},
@@ -704,8 +700,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	castform: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 70, def: 70, spa: 70, spd: 70, spe: 90},
-		otherFormes: ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy"],
-		formeOrder: ["Castform", "Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy"],
 	},
 	castformsunny: {
 		inherit: true,
@@ -718,14 +712,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	castformsnowy: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 70, def: 100, spa: 70, spd: 70, spe: 90},
-	},
-	castformsandy: {
-		inherit: true,
-		baseStats: {hp: 90, atk: 100, def: 70, spa: 70, spd: 70, spe: 90},
-	},
-	castformnight: {
-		inherit: true,
-		baseStats: {hp: 90, atk: 70, def: 70, spa: 100, spd: 70, spe: 90},
 	},
 	kecleon: {
 		inherit: true,
@@ -1125,12 +1111,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	silvally: {
 		inherit: true,
-		otherFormes: ["Silvally-Bug", "Silvally-Dark", "Silvally-Dragon", "Silvally-Electric", "Silvally-Fairy", "Silvally-Fighting", "Silvally-Fire", "Silvally-Flying", "Silvally-Ghost", "Silvally-Grass", "Silvally-Ground", "Silvally-Ice", "Silvally-Poison", "Silvally-Psychic", "Silvally-Rock", "Silvally-Steel", "Silvally-Water", "Silvally-Sound"],
-		formeOrder: [
-			"Silvally", "Silvally-Fighting", "Silvally-Flying", "Silvally-Poison", "Silvally-Ground", "Silvally-Rock", "Silvally-Bug", "Silvally-Ghost", "Silvally-Steel",
-			"Silvally-Fire", "Silvally-Water", "Silvally-Grass", "Silvally-Electric", "Silvally-Psychic", "Silvally-Ice", "Silvally-Dragon", "Silvally-Dark", "Silvally-Fairy", 
-			"Silvally-Sound",
-		],
 	},
 	togedemaru: {
 		inherit: true,

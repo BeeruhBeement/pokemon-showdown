@@ -256,4 +256,32 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	urshifurapidstrikemega: {
 		natDexTier: "Uber",
 	},
+	
+	kitquat: {
+		natDexTier: "LC",
+	},
+	tangeline: {
+		natDexTier: "NFE",
+	},
+	citrodon: {
+		natDexTier: "OU",
+	},
+	embah: {
+		natDexTier: "LC",
+	},
+	goatinder: {
+		natDexTier: "NFE",
+	},
+	ferramous: {
+		natDexTier: "OU",
+	},
+	geezel: {
+		natDexTier: "LC",
+	},
+	fledgelet: {
+		natDexTier: "NFE",
+	},
+	thaumusturge: {
+		natDexTier: "OU",
+	},
 }
