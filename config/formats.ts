@@ -510,42 +510,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 
-	{
-		section: "National Dex Lower Tiers",
-	},
-	{
-		name: "[Gen 9] National Dex NU",
-		mod: 'gen9',
-		ruleset: ['National Dex RU'],
-		banlist: [
-			'ND RU', 'ND NUBL',
-		],
-	},
-	{
-		name: "[Gen 9] National Dex PU",
-		mod: 'gen9',
-		ruleset: ['National Dex NU'],
-		banlist: [
-			'ND NU', 'ND PUBL',
-		],
-	},
-	{
-		name: "[Gen 9] National Dex ZU",
-		mod: 'gen9',
-		ruleset: ['National Dex PU'],
-		banlist: [
-			'ND PU', 'ND ZUBL',
-		],
-	},
-	{
-		name: "[Gen 9] National Dex SU",
-		mod: 'gen9',
-		ruleset: ['National Dex ZU'],
-		banlist: [
-			'ND ZU', 'ND SUBL',
-		],
-	},
-
 	/*
 	// Likeshop Spotlight
 	///////////////////////////////////////////////////////////////////
@@ -3817,6 +3781,40 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['[Gen 9] National Dex UU'],
 		banlist: ['ND UU', 'ND RUBL', 'Slowbronite'],
 	},
+	
+	{
+		name: "[Gen 9] National Dex NU",
+		mod: 'gen9',
+		ruleset: ['National Dex RU'],
+		banlist: [
+			'ND RU', 'ND NUBL',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex PU",
+		mod: 'gen9',
+		ruleset: ['National Dex NU'],
+		banlist: [
+			'ND NU', 'ND PUBL',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex ZU",
+		mod: 'gen9',
+		ruleset: ['National Dex PU'],
+		banlist: [
+			'ND PU', 'ND ZUBL',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex SU",
+		mod: 'gen9',
+		ruleset: ['National Dex ZU'],
+		banlist: [
+			'ND ZU', 'ND SUBL',
+		],
+	},
+
 	{
 		name: "[Gen 9] National Dex Ubers UU",
 		mod: 'gen9',
