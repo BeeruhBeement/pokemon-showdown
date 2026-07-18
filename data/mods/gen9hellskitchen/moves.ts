@@ -166,11 +166,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon, source) {
+				for (const poke of this.getAllActive()) {
+					if (poke.hasAbility('sweetdreams')) return true;
+				}
 				if (pokemon.status !== 'slp' && !pokemon.hasAbility('comatose')) {
 					return false;
-				}
-				for (const poke of this.getAllActive()) {
-					if (poke.hasAbility('sweetdreams')) return false;
 				}
 				this.add('-start', pokemon, 'Nightmare');
 			},

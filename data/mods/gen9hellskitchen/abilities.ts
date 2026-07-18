@@ -525,7 +525,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		// Permanent sleep "status" implemented in the relevant sleep-checking effects
 		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
-		name: "Comatose",
+		name: "Sweet Dreams",
 		rating: 4,
 		num: 213,
 	},
