@@ -682,6 +682,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Wicked Urshifite",
 		battleOnly: "Urshifu",
+		isNonstandard: "Custom",
 	},
 	urshifurapidstrikemega: {
 		num: 892,
