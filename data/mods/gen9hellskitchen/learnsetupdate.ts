@@ -186,6 +186,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "beedrill").learnset.crosspoison = ["9M"];
 	dex.modData("Learnsets", "beedrill").learnset.pollenpuff = ["9M"];
 	dex.modData("Learnsets", "beedrill").learnset.skittersmack = ["9M"];
+	dex.modData("Learnsets", "beedrill").learnset.gunkshot = ["9M"];
 
 	// beldum
 	dex.modData("Learnsets", "beldum").learnset.agility = ["9M"];
@@ -236,6 +237,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// camerupt
 	dex.modData("Learnsets", "camerupt").learnset.ancientpower = ["9M"];
 	dex.modData("Learnsets", "camerupt").learnset.burningjealousy = ["9M"];
+	dex.modData("Learnsets", "camerupt").learnset.slackoff = ["9M"];
 
 	// carbink
 	dex.modData("Learnsets", "carbink").learnset.magnetbomb = ["9M"];
@@ -1771,6 +1773,10 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "pinsir").learnset.lunge = ["9M"];
 	dex.modData("Learnsets", "pinsir").learnset.tackle = ["9M"];
 	dex.modData("Learnsets", "pinsir").learnset.hardpress = ["9M"];
+	dex.modData("Learnsets", "pinsir").learnset.uturn = ["9M"];
+	dex.modData("Learnsets", "pinsir").learnset.megahorn = ["9M"];
+	dex.modData("Learnsets", "pinsir").learnset.roost = ["9M"];
+	dex.modData("Learnsets", "pinsir").learnset.leechlife = ["9M"];
 
 	// porygon
 	dex.modData("Learnsets", "porygon").learnset.confuseray = ["9M"];
@@ -2073,6 +2079,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "simisage").learnset.swordsdance = ["9M"];
 	dex.modData("Learnsets", "simisage").learnset.slackoff = ["9M"];
 	dex.modData("Learnsets", "simisage").learnset.powerwhip = ["9M"];
+	dex.modData("Learnsets", "simisage").learnset.uturn = ["9M"];
 
 	// simisear
 	dex.modData("Learnsets", "simisear").learnset.amnesia = ["9M"];
@@ -2459,6 +2466,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	// victreebel
 	dex.modData("Learnsets", "victreebel").learnset.toxicspikes = ["9M"];
+	dex.modData("Learnsets", "victreebel").learnset.appleacid = ["9M"];
+	dex.modData("Learnsets", "victreebel").learnset.leechseed = ["9M"];
 
 	// virizion
 	dex.modData("Learnsets", "virizion").learnset.headbutt = ["9M"];
@@ -2649,6 +2658,14 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData("Learnsets", "manectric").learnset.aurorabeam = ["9M"];
 	dex.modData("Learnsets", "manectric").learnset.supercellslam = ["9M"];
+
+	dex.modData("Learnsets", "gardevoir").learnset.icebeam = ["9M"];
+
+	dex.modData("Learnsets", "kingler").learnset.icehammer = ["9M"];
+
+	dex.modData("Learnsets", "sharpedo").learnset.jawlock = ["9M"];
+	dex.modData("Learnsets", "sharpedo").learnset.icefang = ["9M"];
+	dex.modData("Learnsets", "sharpedo").learnset.firefang = ["9M"];
 	
 	dex.modData("Learnsets", "sceptile").learnset.dracometeor = ["9M"];
 	dex.modData("Learnsets", "sceptile").learnset.uturn = ["9M"];
