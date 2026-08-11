@@ -31,6 +31,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	emboarmega: {
 		inherit: true,
+		abilities: {0: "Iron Fist"},
 	},
 	excadrillmega: {
 		inherit: true,
