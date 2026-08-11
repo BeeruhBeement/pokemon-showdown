@@ -99,12 +99,6 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onFieldStart(field, source, effect) {
 			this.add('-weather', 'HyperboreanStorm', '[from] ability: ' + effect.name, `[of] ${source}`);
 		},
-		onModifyDefPriority: 10,
-		onModifyDef(def, pokemon) {
-			if (pokemon.hasType('Ice') && pokemon.effectiveWeather() === 'hyperboreanstorm') {
-				return this.modify(def, 1.5);
-			}
-		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
 			this.add('-weather', 'HyperboreanStorm', '[upkeep]');

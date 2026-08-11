@@ -631,8 +631,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Arid Wasteland",
 		rating: 4.5,
 		num: 190,
-		desc: "On switch-in, the weather becomes Arid Wasteland, which includes all the effects of Sandstorm and prevents damaging Ice-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Delta Stream or Desolate Land Abilities.",
-		shortDesc: "On switch-in, heavy sand begins until this Ability is not active in battle.",
 	},
 	hyperboreanstorm: {
 		onStart(source) {
@@ -657,7 +655,5 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Hyperborean Storm",
 		rating: 4.5,
 		num: 190,
-		desc: "On switch-in, the weather becomes Hyperborean Storm, which includes all the effects of Snowscape and prevents damaging Rock-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Delta Stream or Desolate Land Abilities.",
-		shortDesc: "On switch-in, heavy snow begins until this Ability is not active in battle.",
 	},
 };
