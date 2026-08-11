@@ -8178,16 +8178,4 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
-	
-	// Custom
-
-	moonrock: {
-		name: "Moon Rock",
-		spritenum: 88,
-		fling: {
-			basePower: 60,
-		},
-		num: -5002,
-		isNonstandard: "Custom",
-	},
 };

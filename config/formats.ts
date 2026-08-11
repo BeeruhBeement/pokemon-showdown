@@ -79,21 +79,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Other Mods",
 	},
 	{
-		name: "[Gen 3] Denise OU",
-
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber'],
-	},
-	{
-		name: "[Gen 3] Denise Random Battle",
-
-		team: 'random',
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [],
-	},
-	{
 		name: "[Gen 9] National Dex Sky Battles",
 		desc: `A National Dex format that only allows Flying types and Pokémon with Levitate. Based on XY Sky Battles.`,
 	
@@ -149,86 +134,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		section: "Experimental/Unfinished",
 	},
-	/*{
-		name: "[Gen 3] Denise Uber",
-
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [],
-	},
-	{
-		name: "[Gen 3] Denise UU",
-
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
-	},
-	{
-		name: "[Gen 3] Denise RU",
-
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
-	},
-	{
-		name: "[Gen 3] Denise NU",
-
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
-	},
-	{
-		name: "[Gen 3] Denise PU",
-
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
-	},
-	{
-		name: "[Gen 3] Denise ZU",
-
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: [
-			'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL', 
-			'Heat Rock', 'Damp Rock'
-		],
-	},
-	{
-		name: "[Gen 3] Denise NFE",
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Not Fully Evolved', 'Data Mod'],
-		banlist: [
-			'Chansey', 'Haunter', 'Kadabra', 'Magneton', 'Porygon2', 'Rhydon', 'Golbat', 'Scyther', 'Jynx', 'Electabuzz', 'Magmar',
-			'Heat Rock', 'Damp Rock'
-		],
-	},
-	{
-		name: "[Gen 3] Denise LC",
-		searchShow: false,
-		mod: 'gen3denise',
-		ruleset: ['Standard', 'Little Cup', 'Data Mod'],
-		banlist: ['Heat Rock', 'Damp Rock', 'Scyther', 'Gligar', 'Tangela', 'Murkrow', 'Misdreavus', 'Girafarig', 'Dunsparce', 'Sneasel', 'Stantler', 'Duraludon', 'Basculin-White-Striped', 'Meditite', 'Type: Null', 'Qwilfish-Hisui'],
-	},*/
 	{
 		name: "[Gen 3] P/S Split",
 		searchShow: false,
@@ -4294,7 +4199,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			if (this.dex.species.get(name).exists || this.dex.moves.get(name).exists ||
 				this.dex.abilities.get(name).exists || name === 'blitz') {
 				// Certain pokemon have volatiles named after their id
-				// To prevent overwriting those, and to prevent accidenisely leaking
+				// To prevent overwriting those, and to prevent accidentally leaking
 				// that a pokemon is on a team through the onStart even triggering
 				// at the start of a match, users with pokemon names will need their
 				// statuses to end in "user".

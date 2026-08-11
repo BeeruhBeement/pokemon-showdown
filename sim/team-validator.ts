@@ -1062,7 +1062,7 @@ export class TeamValidator {
 				// Ability Capsule allows this in Gen 6+
 				problems.push(`${name} has a Gen 4 ability and isn't evolved - it can't use moves from Gen 3.`);
 			}
-			const canUseAbilityPatch = (dex.gen >= 8 && format.mod !== 'gen8dlc1') || format.mod === 'gen3denise';
+			const canUseAbilityPatch = (dex.gen >= 8 && format.mod !== 'gen8dlc1');
 			if (setSources.isHidden && !canUseAbilityPatch && setSources.maxSourceGen() < 5) {
 				problems.push(`${name} has a Hidden Ability - it can't use moves from before Gen 5.`);
 			}
@@ -2255,7 +2255,7 @@ export class TeamValidator {
 					problems.push(`${name} must have its Hidden Ability${etc}.`);
 				}
 
-				const canUseAbilityPatch = (dex.gen >= 8 && this.format.mod !== 'gen8dlc1') || this.format.mod === 'gen3denise';
+				const canUseAbilityPatch = (dex.gen >= 8 && this.format.mod !== 'gen8dlc1');
 				if (isHidden && !eventData.isHidden && !canUseAbilityPatch) {
 					if (fastReturn) return true;
 					problems.push(`${name} must not have its Hidden Ability${etc}.`);

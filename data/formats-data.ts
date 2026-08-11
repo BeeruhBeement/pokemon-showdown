@@ -6250,17 +6250,4 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
-	
-	castformsandy: {
-		isNonstandard: "Custom",
-		tier: "Illegal",
-	},
-	parasong: {
-		isNonstandard: "Custom",
-		tier: "Illegal",
-	},
-	ironmongrel: {
-		isNonstandard: "Custom",
-		tier: "Illegal",
-	},
 };
