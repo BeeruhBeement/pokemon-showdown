@@ -218,6 +218,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Instant Transmission"},
 	},
+	abomasnowmega: {
+		inherit: true,
+		abilities: {0: "Hyperborean Storm"},
+	},
 	venusaurmegag: {
 		num: 3,
 		name: "Venusaur-Mega-G",
@@ -232,6 +236,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Monster", "Grass"],
 		requiredItem: "Venusaurite G",
+		isNonstandard: "Modded",
 	},
 	charizardmegag: {
 		num: 6,
@@ -247,6 +252,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Red",
 		eggGroups: ["Monster", "Dragon"],
 		requiredItem: "Charizardite G",
+		isNonstandard: "Modded",
 	},
 	blastoisemegag: {
 		num: 9,
@@ -262,6 +268,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		eggGroups: ["Monster", "Water 1"],
 		requiredItem: "Blastoisinite G",
+		isNonstandard: "Modded",
 	},
 	butterfreemega: {
 		num: 12,
@@ -276,6 +283,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "White",
 		eggGroups: ["Bug"],
 		requiredItem: "Butterfrite",
+		isNonstandard: "Modded",
 	},
 	pikachumega: {
 		num: 25,
@@ -290,6 +298,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Field", "Fairy"],
 		requiredItem: "Pikachunite",
+		isNonstandard: "Modded",
 	},
 	meowthmega: {
 		num: 52,
@@ -304,6 +313,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Field"],
 		requiredItem: "Meowthite",
+		isNonstandard: "Modded",
 	},
 	machampmega: {
 		num: 68,
@@ -319,6 +329,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Human-Like"],
 		requiredItem: "Machampite",
+		isNonstandard: "Modded",
 	},
 	gengarmegag: {
 		num: 94,
@@ -333,6 +344,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 		eggGroups: ["Amorphous"],
 		requiredItem: "Gengarite G",
+		isNonstandard: "Modded",
 	},
 	kinglermega: {
 		num: 99,
@@ -347,6 +359,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Red",
 		eggGroups: ["Water 3"],
 		requiredItem: "Kinglerite",
+		isNonstandard: "Modded",
 	},
 	laprasmega: {
 		num: 131,
@@ -361,6 +374,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		eggGroups: ["Monster", "Water 1"],
 		requiredItem: "Laprasite",
+		isNonstandard: "Modded",
 	},
 	eeveemega: {
 		num: 133,
@@ -376,6 +390,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Brown",
 		eggGroups: ["Field"],
 		requiredItem: "Eeveenite",
+		isNonstandard: "Modded",
 	},
 	snorlaxmega: {
 		num: 143,
@@ -391,6 +406,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Black",
 		eggGroups: ["Monster"],
 		requiredItem: "Snorlaxite",
+		isNonstandard: "Modded",
 	},
 	garbodormega: {
 		num: 569,
@@ -405,6 +421,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Mineral"],
 		requiredItem: "Garbodorite",
+		isNonstandard: "Modded",
 	},
 	melmetalmega: {
 		num: 809,
@@ -421,6 +438,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Mythical"],
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Melmetalite",
+		isNonstandard: "Modded",
 	},
 	rillaboommega: {
 		num: 812,
@@ -436,6 +454,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Field", "Grass"],
 		requiredItem: "Rillaboomite",
+		isNonstandard: "Modded",
 	},
 	cinderacemega: {
 		num: 815,
@@ -451,6 +470,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "White",
 		eggGroups: ["Field", "Human-Like"],
 		requiredItem: "Cinderacite",
+		isNonstandard: "Modded",
 	},
 	inteleonmega: {
 		num: 818,
@@ -466,6 +486,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		eggGroups: ["Water 1", "Field"],
 		requiredItem: "Inteleonite",
+		isNonstandard: "Modded",
 	},
 	corviknightmega: {
 		num: 823,
@@ -480,6 +501,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 		eggGroups: ["Flying"],
 		requiredItem: "Corviknite",
+		isNonstandard: "Modded",
 	},
 	orbeetlemega: {
 		num: 826,
@@ -494,6 +516,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Red",
 		eggGroups: ["Bug"],
 		requiredItem: "Orbeetlite",
+		isNonstandard: "Modded",
 	},
 	drednawmega: {
 		num: 834,
@@ -508,6 +531,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Monster", "Water 1"],
 		requiredItem: "Drednawite",
+		isNonstandard: "Modded",
 	},
 	coalossalmega: {
 		num: 839,
@@ -522,6 +546,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Black",
 		eggGroups: ["Mineral"],
 		requiredItem: "Coalossalite",
+		isNonstandard: "Modded",
 	},
 	flapplemega: {
 		num: 841,
@@ -536,6 +561,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Grass", "Dragon"],
 		requiredItem: "Flapplite",
+		isNonstandard: "Modded",
 	},
 	appletunmega: {
 		num: 842,
@@ -550,6 +576,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Grass", "Dragon"],
 		requiredItem: "Appletunite",
+		isNonstandard: "Modded",
 	},
 	sandacondamega: {
 		num: 844,
@@ -564,6 +591,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Field", "Dragon"],
 		requiredItem: "Sandacondite",
+		isNonstandard: "Modded",
 	},
 	toxtricitymega: {
 		num: 849,
@@ -578,6 +606,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 		eggGroups: ["Human-Like"],
 		requiredItem: "Toxtricitite",
+		isNonstandard: "Modded",
 	},
 	centiskorchmega: {
 		num: 851,
@@ -592,6 +621,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Red",
 		eggGroups: ["Bug"],
 		requiredItem: "Centiskorchite",
+		isNonstandard: "Modded",
 	},
 	hatterenemega: {
 		num: 858,
@@ -607,6 +637,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Pink",
 		eggGroups: ["Fairy"],
 		requiredItem: "Hatterenite",
+		isNonstandard: "Modded",
 	},
 	grimmsnarlmega: {
 		num: 861,
@@ -622,6 +653,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 		eggGroups: ["Fairy", "Human-Like"],
 		requiredItem: "Grimmsnarite",
+		isNonstandard: "Modded",
 	},
 	alcremiemega: {
 		num: 869,
@@ -637,6 +669,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "White",
 		eggGroups: ["Fairy", "Amorphous"],
 		requiredItem: "Alcremite",
+		isNonstandard: "Modded",
 	},
 	copperajahmega: {
 		num: 879,
@@ -651,6 +684,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		eggGroups: ["Field", "Mineral"],
 		requiredItem: "Copperajite",
+		isNonstandard: "Modded",
 	},
 	duraludonmega: {
 		num: 884,
@@ -665,6 +699,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "White",
 		eggGroups: ["Mineral", "Dragon"],
 		requiredItem: "Duraludonite",
+		isNonstandard: "Modded",
 	},
 	urshifumega: {
 		num: 892,
@@ -682,7 +717,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Wicked Urshifite",
 		battleOnly: "Urshifu",
-		isNonstandard: "Custom",
+		isNonstandard: "Modded",
 	},
 	urshifurapidstrikemega: {
 		num: 892,
@@ -699,6 +734,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Surging Urshifite",
 		battleOnly: "Urshifu-Rapid-Strike",
+		isNonstandard: "Modded",
 	},
 	arbokmega: {
 		num: 24,
@@ -713,6 +749,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Arbokite",
+		isNonstandard: "Modded",
 	},
 	nidoqueenmega: {
 		num: 31,
@@ -727,6 +764,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Nidoqueenite",
+		isNonstandard: "Modded",
 	},
 	nidokingmega: {
 		num: 34,
@@ -741,6 +779,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Nidokingite",
+		isNonstandard: "Modded",
 	},
 	arcaninemega: {
 		num: 59,
@@ -755,6 +794,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Arcanite",
+		isNonstandard: "Modded",
 	},
 	dittomega: {
 		num: 132,
@@ -769,6 +809,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Dittite",
+		isNonstandard: "Modded",
 	},
 	sunfloramega: {
 		num: 192,
@@ -783,6 +824,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Sunflorite",
+		isNonstandard: "Modded",
 	},
 	slowkingmega: {
 		num: 199,
@@ -797,6 +839,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Slowkingite",
+		isNonstandard: "Modded",
 	},
 	kingdramega: {
 		num: 230,
@@ -811,6 +854,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Kingdrite",
+		isNonstandard: "Modded",
 	},
 	grumpigmega: {
 		num: 326,
@@ -825,6 +869,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Grumpigite",
+		isNonstandard: "Modded",
 	},
 	flygonmega: {
 		num: 330,
@@ -839,6 +884,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Flygonite",
+		isNonstandard: "Modded",
 	},
 	armaldomega: {
 		num: 348,
@@ -853,6 +899,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Armaldite",
+		isNonstandard: "Modded",
 	},
 	kecleonmega: {
 		num: 352,
@@ -867,6 +914,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Kecleonite",
+		isNonstandard: "Modded",
 	},
 	luvdiscmega: {
 		num: 370,
@@ -881,6 +929,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Luvdiscite",
+		isNonstandard: "Modded",
 	},
 	jirachimega: {
 		num: 385,
@@ -895,6 +944,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Jirachite",
+		isNonstandard: "Modded",
 	},
 	drapionmega: {
 		num: 452,
@@ -909,6 +959,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Drapionite",
+		isNonstandard: "Modded",
 	},
 	simisagemega: {
 		num: 512,
@@ -923,6 +974,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Simisagite",
+		isNonstandard: "Modded",
 	},
 	simisearmega: {
 		num: 514,
@@ -937,6 +989,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Simisearite",
+		isNonstandard: "Modded",
 	},
 	simipourmega: {
 		num: 516,
@@ -951,6 +1004,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Simipourite",
+		isNonstandard: "Modded",
 	},
 	musharnamega: {
 		num: 518,
@@ -965,6 +1019,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Musharnite",
+		isNonstandard: "Modded",
 	},
 	vanilluxemega: {
 		num: 584,
@@ -979,6 +1034,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Vanilluxite",
+		isNonstandard: "Modded",
 	},
 	meloettamega: {
 		num: 648,
@@ -993,6 +1049,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Leek",
+		isNonstandard: "Modded",
 	},
 	genesectmega: {
 		num: 649,
@@ -1007,6 +1064,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Absolute Drive",
+		isNonstandard: "Modded",
 	},
 	orangurumega: {
 		num: 765,
@@ -1021,6 +1079,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Orangurite",
+		isNonstandard: "Modded",
 	},
 	passimianmega: {
 		num: 766,
@@ -1035,6 +1094,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Passimianite",
+		isNonstandard: "Modded",
 	},
 	boltundmega: {
 		num: 836,
@@ -1049,6 +1109,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Boltundite",
+		isNonstandard: "Modded",
 	},
 	spidopsmega: {
 		num: 918,
@@ -1057,12 +1118,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		forme: "Mega",
 		types: ["Bug", "Dark"],
 		baseStats: { hp: 60, atk: 149, def: 102, spa: 22, spd: 116, spe: 55 },
-		abilities: { 0: "Stakeout" },
+		abilities: { 0: "Thwip Thwip" },
 		heightm: 3.5,
 		weightkg: 18.5,
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Spidopsite",
+		isNonstandard: "Modded",
 	},
 	dachsbunmega: {
 		num: 927,
@@ -1077,6 +1139,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Dachsbunite",
+		isNonstandard: "Modded",
 	},
 	arbolivamega: {
 		num: 930,
@@ -1091,6 +1154,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Arbolivite",
+		isNonstandard: "Modded",
 	},
 	squawkabillymega: {
 		num: 931,
@@ -1105,6 +1169,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Squawkabillite",
+		isNonstandard: "Modded",
 	},
 	
 	magnemite: {
@@ -1127,6 +1192,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Desolate Land"},
 	},
+	tyranitarmega: {
+		inherit: true,
+		abilities: {0: "Arid Wasteland"},
+	},
 	hitmonlee: {
 		inherit: true,
 		abilities: { 0: "Striker", 1: "Reckless", H: "Unburden" },
@@ -1139,7 +1208,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: { 0: "Striker", 1: "Queenly Majesty", H: "Sweet Veil" },
 	},
-	kitquat: {
+	/*kitquat: {
 		num: 9001,
 		name: "Kitquat",
 		types: ["Grass"],
@@ -1270,5 +1339,5 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Pink",
 		eggGroups: ["Monster", "Field"],
 		requiredItem: "Ampharosite Z",
-	},
+	},*/
 };

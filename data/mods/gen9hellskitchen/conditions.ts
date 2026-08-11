@@ -54,4 +54,58 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			return false;
 		},
 	},
+
+	aridwasteland: {
+		name: 'AridWasteland',
+		effectType: 'Weather',
+		duration: 0,
+		onTryMovePriority: 1,
+		onTryMove(attacker, defender, move) {
+			if (move.type === 'Ice' && move.category !== 'Status') {
+				this.debug('Arid Wasteland ice suppress');
+				this.add('-fail', attacker, move, '[from] Arid Wasteland');
+				this.attrLastMove('[still]');
+				return null;
+			}
+		},
+		onFieldStart(field, source, effect) {
+			this.add('-weather', 'AridWasteland', '[from] ability: ' + effect.name, `[of] ${source}`);
+		},
+		onFieldResidualOrder: 1,
+		onFieldResidual() {
+			this.add('-weather', 'AridWasteland', '[upkeep]');
+			this.eachEvent('Weather');
+		},
+		onWeather(target) {
+			this.damage(target.baseMaxhp / 16);
+		},
+		onFieldEnd() {
+			this.add('-weather', 'none');
+		},
+	},
+	hyperboreanstorm: {
+		name: 'HyperboreanStorm',
+		effectType: 'Weather',
+		duration: 0,
+		onTryMovePriority: 1,
+		onTryMove(attacker, defender, move) {
+			if (move.type === 'Rock' && move.category !== 'Status') {
+				this.debug('Hyperborean Storm rock suppress');
+				this.add('-fail', attacker, move, '[from] Hyperborean Storm');
+				this.attrLastMove('[still]');
+				return null;
+			}
+		},
+		onFieldStart(field, source, effect) {
+			this.add('-weather', 'HyperboreanStorm', '[from] ability: ' + effect.name, `[of] ${source}`);
+		},
+		onFieldResidualOrder: 1,
+		onFieldResidual() {
+			this.add('-weather', 'HyperboreanStorm', '[upkeep]');
+			this.eachEvent('Weather');
+		},
+		onFieldEnd() {
+			this.add('-weather', 'none');
+		},
+	},
 };

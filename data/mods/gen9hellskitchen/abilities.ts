@@ -580,4 +580,80 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 173,
 		shortDesc: "Fire-type moves cause target to lose 1/8 max HP every turn for 4 turns."
 	},
+	thwipthwip: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const stickyweb = side.sideConditions['stickyweb'];
+			if (move.category === 'Physical' && (!stickyweb)) {
+				this.add('-activate', target, 'ability: Thwip Thwip');
+				side.addSideCondition('stickyweb', target);
+			}
+		},
+		flags: {},
+		name: "Thwip Thwip",
+		rating: 3.5,
+		num: 295,
+	},
+	desolateland: {
+		inherit: true,
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream', 'aridwasteland', 'hyperboreanstorm'];
+			if (this.field.getWeather().id === 'desolateland' && !strongWeathers.includes(weather.id)) return false;
+		},
+	},
+	primordialsea: {
+		inherit: true,
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream', 'aridwasteland', 'hyperboreanstorm'];
+			if (this.field.getWeather().id === 'primordialsea' && !strongWeathers.includes(weather.id)) return false;
+		},
+	},
+	aridwasteland: {
+		onStart(source) {
+			this.field.setWeather('aridwasteland');
+		},
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream', 'aridwasteland', 'hyperboreanstorm'];
+			if (this.field.getWeather().id === 'aridwasteland' && !strongWeathers.includes(weather.id)) return false;
+		},
+		onEnd(pokemon) {
+			if (this.field.weatherState.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('aridwasteland')) {
+					this.field.weatherState.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		flags: {},
+		name: "Arid Wasteland",
+		rating: 4.5,
+		num: 190,
+	},
+	hyperboreanstorm: {
+		onStart(source) {
+			this.field.setWeather('hyperboreanstorm');
+		},
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream', 'aridwasteland', 'hyperboreanstorm'];
+			if (this.field.getWeather().id === 'hyperboreanstorm' && !strongWeathers.includes(weather.id)) return false;
+		},
+		onEnd(pokemon) {
+			if (this.field.weatherState.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('hyperboreanstorm')) {
+					this.field.weatherState.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		flags: {},
+		name: "Hyperborean Storm",
+		rating: 4.5,
+		num: 190,
+	},
 };
