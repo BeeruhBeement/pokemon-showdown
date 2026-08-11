@@ -314,11 +314,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "+2 Atk, +2 Sp. Aatk, +6 Speed after it is damaged by Fire/Water moves.",
 	},
 	genomeflux: {
-		onUpdate(pokemon) {
-			if (pokemon.transformed && !this.effectState.transformed) {
-				this.boost({atk: 1, def: 1, spa: 1, spd: 1, spe: 1}, pokemon);
-				this.effectState.transformed = true;
-			}
+		onStart(pokemon) {
+			pokemon.addVolatile('genomeflux');
+		},
+		condition: {
+			noCopy: true,
+			onUpdate(pokemon) {
+				if (pokemon.transformed && !this.effectState.transformed) {
+					this.boost({ atk: 1, def: 1, spa: 1, spd: 1, spe: 1 }, pokemon);
+					this.effectState.transformed = true;
+				}
+			},
 		},
 		flags: {},
 		name: "Genome Flux",
