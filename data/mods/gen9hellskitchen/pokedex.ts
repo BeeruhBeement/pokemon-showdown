@@ -809,7 +809,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 6,
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
-		requiredItem: "Dittite",
+		requiredItem: "Dittonite",
 		isNonstandard: "Modded",
 	},
 	sunfloramega: {
