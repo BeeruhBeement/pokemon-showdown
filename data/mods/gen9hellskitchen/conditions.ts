@@ -71,6 +71,12 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onFieldStart(field, source, effect) {
 			this.add('-weather', 'AridWasteland', '[from] ability: ' + effect.name, `[of] ${source}`);
 		},
+		onModifySpDPriority: 10,
+		onModifySpD(spd, pokemon) {
+			if (pokemon.hasType('Rock') && pokemon.effectiveWeather() === 'sandstorm') {
+				return this.modify(spd, 1.5);
+			}
+		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
 			this.add('-weather', 'AridWasteland', '[upkeep]');
