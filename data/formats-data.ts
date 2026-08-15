@@ -8,7 +8,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	venusaur: {
 		tier: "ZU",
 		doublesTier: "(DUU)",
-		natDexTier: "SUBL",
+		natDexTier: "SU",
 	},
 	venusaurmega: {
 		isNonstandard: "Past",

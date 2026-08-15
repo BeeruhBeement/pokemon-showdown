@@ -3924,7 +3924,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen9',
 		ruleset: ['National Dex ZU'],
 		banlist: [
-			'ND ZU', 'ND SUBL',
+			'ND ZU', 'ND SUBL', 'Heat Rock'
 		],
 	},
 
