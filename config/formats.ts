@@ -24,7 +24,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		column: 1,
 	},
 	{
-		name: "[Gen 9] PoA Alternate Universe",
+		name: "[Gen 9] PoA Alternate Universe OU",
 
 		mod: 'gen9poaaltuniverse',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
@@ -34,7 +34,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 9] Altermons",
+		name: "[Gen 9] Altermons OU",
 
 		mod: 'gen9altermons',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod', '+Light of Ruin'],
@@ -233,7 +233,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
         mod: 'ptestou',
     },
 	{
-		name: "[Gen 9] Buildmons",
+		name: "[Gen 9] Buildmons OU",
 		gameType: "triples",
 		mod: 'buildmons',
 		ruleset: ['Standard NatDex', 'Data Mod', 'Open Team Sheets', 'Sleep Moves Clause', 'Max Total Level = 400', 'Item Clause = 1', 'Ability Clause = 1', 'Max Move Count = 2'],
