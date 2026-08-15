@@ -13,6 +13,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous", "Grass"],
 		evoLevel: 16,
 		evos: ["Whispy"],
+		isNonstandard: "Modded",
 	},
 	whispy: {
 		num: -40002,
@@ -27,6 +28,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Whispy Jr.",
 		evoLevel: 36,
 		evos: ["Yggy Woods"],
+		isNonstandard: "Modded",
 	},
 	yggywoods: {
 		num: -40003,
@@ -39,6 +41,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Amorphous", "Grass"],
 		prevo: "Whispy",
+		isNonstandard: "Modded",
 	},
 	bobo: {
 		num: -40004,
@@ -52,6 +55,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Amorphous"],
 		evoLevel: 16,
 		evos: ["Flamer"],
+		isNonstandard: "Modded",
 	},
 	flamer: {
 		num: -40005,
@@ -66,6 +70,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Bobo",
 		evoLevel: 16,
 		evos: ["Mr. Bright"],
+		isNonstandard: "Modded",
 	},
 	mrbright: {
 		num: -40006,
@@ -78,6 +83,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Amorphous"],
 		prevo: "Flamer",
+		isNonstandard: "Modded",
 	},
 	gussa: {
 		num: -40007,
@@ -91,6 +97,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Monster", "Water 1"],
 		evoLevel: 16,
 		evos: ["Joe"],
+		isNonstandard: "Modded",
 	},
 	joe: {
 		num: -40008,
@@ -105,6 +112,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Gussa",
 		evoLevel: 16,
 		evos: ["Gobbler"],
+		isNonstandard: "Modded",
 	},
 	gobbler: {
 		num: -40009,
@@ -117,6 +125,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Monster", "Water 1"],
 		prevo: "Joe",
+		isNonstandard: "Modded",
 	},
 	pupa: {
 		num: -40010,
@@ -129,6 +138,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Bug"],
 		evoLevel: 8,
 		evos: ["Como"],
+		isNonstandard: "Modded",
 	},
 	como: {
 		num: -40011,
@@ -142,6 +152,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Pupa",
 		evoLevel: 18,
 		evos: ["Spideroo"],
+		isNonstandard: "Modded",
 	},
 	spideroo: {
 		num: -40012,
@@ -153,6 +164,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Bug"],
 		prevo: "Como",
+		isNonstandard: "Modded",
 	},
 	capiller: {
 		num: -40013,
@@ -165,6 +177,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Bug"],
 		evoLevel: 8,
 		evos: ["Needlous"],
+		isNonstandard: "Modded",
 	},
 	needlous: {
 		num: -40014,
@@ -178,6 +191,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Capiller",
 		evoLevel: 18,
 		evos: ["Pierce"],
+		isNonstandard: "Modded",
 	},
 	pierce: {
 		num: -40015,
@@ -189,6 +203,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Bug"],
 		prevo: "Needlous",
+		isNonstandard: "Modded",
 	},
 	brontoburt: {
 		num: -40016,
@@ -201,6 +216,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Flying"],
 		evoLevel: 18,
 		evos: ["Birdon"],
+		isNonstandard: "Modded",
 	},
 	birdon: {
 		num: -40017,
@@ -214,6 +230,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "BrontoBurt",
 		evoLevel: 38,
 		evos: ["Dyna Blade"],
+		isNonstandard: "Modded",
 	},
 	dynablade: {
 		num: -40018,
@@ -225,6 +242,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Flying"],
 		prevo: "Birdon",
+		isNonstandard: "Modded",
 	},
 	awoofy: {
 		num: -40019,
@@ -237,6 +255,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field"],
 		evoLevel: 20,
 		evos: ["Garuroofy"],
+		isNonstandard: "Modded",
 	},
 	garuroofy: {
 		num: -40020,
@@ -248,6 +267,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Field"],
 		prevo: "Awoofy",
+		isNonstandard: "Modded",
 	},
 	blockin: {
 		num: -40021,
@@ -260,6 +280,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Mineral"],
 		evoLevel: 22,
 		evos: ["Blocky"],
+		isNonstandard: "Modded",
 	},
 	blocky: {
 		num: -40022,
@@ -271,6 +292,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Mineral"],
 		prevo: "Blockin",
+		isNonstandard: "Modded",
 	},
 	cappy: {
 		num: -40023,
@@ -283,6 +305,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Mineral"],
 		evoLevel: 22,
 		evos: ["PoisonMash"],
+		isNonstandard: "Modded",
 	},
 	poisonmash: {
 		num: -40024,
@@ -294,6 +317,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Grass"],
 		prevo: "Cappy",
+		isNonstandard: "Modded",
 	},
 	krackojr: {
 		num: -40025,
@@ -305,6 +329,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Amorphous"],
 		evos: ["Kracko"],
+		isNonstandard: "Modded",
 	},
 	kracko: {
 		num: -40026,
@@ -318,6 +343,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Kracko Jr.",
 		evoType: "useItem",
 		evoItem: "Thunder Stone",
+		isNonstandard: "Modded",
 	},
 	kabu: {
 		num: -40027,
@@ -330,6 +356,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field"],
 		evoLevel: 24,
 		evos: ["Dekabu"],
+		isNonstandard: "Modded",
 	},
 	dekabu: {
 		num: -40028,
@@ -341,6 +368,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Field"],
 		prevo: "Kabu",
+		isNonstandard: "Modded",
 	},
 	waddledee: {
 		num: -40029,
@@ -352,6 +380,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Big Dee", "Puppet Dee", "BandanaDee"],
 		eggGroups: ["Monster", "Field"],
+		isNonstandard: "Modded",
 	},
 	bigdee: {
 		num: -40030,
@@ -365,6 +394,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 20,
 		evoCondition: "with an Atk stat > its Def stat",
 		eggGroups: ["Monster", "Field"],
+		isNonstandard: "Modded",
 	},
 	granddee: {
 		num: -40031,
@@ -377,6 +407,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Big Dee",
 		evoLevel: 30,
 		eggGroups: ["Monster", "Field"],
+		isNonstandard: "Modded",
 	},
 	puppetdee: {
 		num: -40032,
@@ -390,6 +421,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 20,
 		evoCondition: "with an Atk stat equal to its Def stat",
 		eggGroups: ["Monster", "Field"],
+		isNonstandard: "Modded",
 	},
 	tankdee: {
 		num: -40033,
@@ -402,6 +434,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Puppet Dee",
 		evoLevel: 30,
 		eggGroups: ["Monster", "Field"],
+		isNonstandard: "Modded",
 	},
 	bandanadee: {
 		num: -40034,
@@ -415,6 +448,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 20,
 		evoCondition: "with an Atk stat equal to its Def stat",
 		eggGroups: ["Monster", "Field"],
+		isNonstandard: "Modded",
 	},
 	caper: {
 		num: -40035,
@@ -426,6 +460,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Tedhaun"],
 		eggGroups: ["Amorphous"],
+		isNonstandard: "Modded",
 	},
 	tedhaun: {
 		num: -40036,
@@ -438,6 +473,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Caper",
 		evoLevel: 26,
 		eggGroups: ["Amorphous"],
+		isNonstandard: "Modded",
 	},
 	embird: {
 		num: -40037,
@@ -449,6 +485,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Hot Wings"],
 		eggGroups: ["Field", "Flying"],
+		isNonstandard: "Modded",
 	},
 	hotwings: {
 		num: -40038,
@@ -461,6 +498,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Embird",
 		evoLevel: 20,
 		eggGroups: ["Field", "Flying"],
+		isNonstandard: "Modded",
 	},
 	puffy: {
 		num: -40039,
@@ -472,6 +510,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Cool Spook"],
 		eggGroups: ["Flying", "Amorphous"],
+		isNonstandard: "Modded",
 	},
 	coolspook: {
 		num: -40040,
@@ -484,6 +523,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Puffy",
 		evoType: "levelFriendship",
 		eggGroups: ["Flying", "Amorphous"],
+		isNonstandard: "Modded",
 	},
 	blinkbat: {
 		num: -40041,
@@ -495,6 +535,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Orbserver"],
 		eggGroups: ["Amorphous"],
+		isNonstandard: "Modded",
 	},
 	orbserver: {
 		num: -40042,
@@ -507,6 +548,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Blinkbat",
 		evoLevel: 22,
 		eggGroups: ["Amorphous"],
+		isNonstandard: "Modded",
 	},
 	flora: {
 		num: -40043,
@@ -518,6 +560,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Lovely"],
 		eggGroups: ["Grass"],
+		isNonstandard: "Modded",
 	},
 	lovely: {
 		num: -40044,
@@ -531,6 +574,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 20,
 		evos: ["Lady Ivy"],
 		eggGroups: ["Grass"],
+		isNonstandard: "Modded",
 	},
 	ladyivy: {
 		num: -40045,
@@ -544,6 +588,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoType: "useItem",
 		evoItem: "Leaf Stone",
 		eggGroups: ["Grass"],
+		isNonstandard: "Modded",
 	},
 	beanbon: {
 		num: -40046,
@@ -555,6 +600,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Zombon"],
 		eggGroups: ["Grass"],
+		isNonstandard: "Modded",
 	},
 	zombon: {
 		num: -40047,
@@ -567,6 +613,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Beanbon",
 		evoLevel: 24,
 		eggGroups: ["Grass"],
+		isNonstandard: "Modded",
 	},
 	beetley: {
 		num: -40048,
@@ -578,6 +625,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Hornhead"],
 		eggGroups: ["Bug"],
+		isNonstandard: "Modded",
 	},
 	hornhead: {
 		num: -40049,
@@ -590,6 +638,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Beetley",
 		evoLevel: 30,
 		eggGroups: ["Bug"],
+		isNonstandard: "Modded",
 	},
 	gawgaw: {
 		num: -40050,
@@ -601,6 +650,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Gao Gao"],
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	gaogao: {
 		num: -40051,
@@ -613,6 +663,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Gaw Gaw",
 		evoLevel: 28,
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	boxin: {
 		num: -40052,
@@ -624,6 +675,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Box Boxer"],
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	boxboxer: {
 		num: -40053,
@@ -636,6 +688,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Boxin",
 		evoLevel: 28,
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	waddledoo: {
 		num: -40054,
@@ -647,6 +700,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["King Doo"],
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	kingdoo: {
 		num: -40055,
@@ -659,6 +713,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Waddle Doo",
 		evoLevel: 30,
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	mookie: {
 		num: -40056,
@@ -670,6 +725,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Bonkers"],
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	bonkers: {
 		num: -40057,
@@ -682,6 +738,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Mookie",
 		evoLevel: 28,
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	pompey: {
 		num: -40058,
@@ -693,6 +750,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		evos: ["Pyribbit"],
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	pyribbit: {
 		num: -40059,
@@ -706,6 +764,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoType: "useItem",
 		evoItem: "Fire Stone",
 		eggGroups: ["Field"],
+		isNonstandard: "Modded",
 	},
 	blipper: {
 		num: -40060,
@@ -718,6 +777,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Mamatee"],
 		eggGroups: ["Water 1"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	mamatee: {
 		num: -40061,
@@ -732,6 +792,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["FattyWhale"],
 		eggGroups: ["Water 1"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	fattywhale: {
 		num: -40062,
@@ -746,6 +807,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Water Stone",
 		eggGroups: ["Water 1"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	dupa: {
 		num: -40063,
@@ -758,6 +820,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Dippa"],
 		eggGroups: ["Fairy"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	dippa: {
 		num: -40064,
@@ -772,6 +835,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Deppa"],
 		eggGroups: ["Fairy"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	deppa: {
 		num: -40065,
@@ -785,6 +849,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 38,
 		eggGroups: ["Fairy"],
 		color: "Purple",
+		isNonstandard: "Modded",
 	},
 	sandran: {
 		num: -40066,
@@ -796,6 +861,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Amorphous", "Mineral"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	ironmam: {
 		num: -40067,
@@ -809,6 +875,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Grand Mam"],
 		eggGroups: ["Human-Like"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	grandmam: {
 		num: -40068,
@@ -823,6 +890,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 35,
 		eggGroups: ["Human-Like"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	pumpkin: {
 		num: -40069,
@@ -835,6 +903,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Squashini"],
 		eggGroups: ["Grass"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	squashini: {
 		num: -40070,
@@ -849,6 +918,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Leaf Stone",
 		eggGroups: ["Grass"],
 		color: "Gray",
+		isNonstandard: "Modded",
 	},
 	chemitory: {
 		num: -40071,
@@ -860,6 +930,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Amorphous"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	squishy: {
 		num: -40072,
@@ -872,6 +943,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Mr. Green"],
 		eggGroups: ["Water 3"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	mrgreen: {
 		num: -40073,
@@ -886,6 +958,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Thunder Stone",
 		eggGroups: ["Water 3"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	gansan: {
 		num: -40074,
@@ -898,6 +971,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Rocky"],
 		eggGroups: ["Mineral"],
 		color: "Brown",
+		isNonstandard: "Modded",
 	},
 	rocky: {
 		num: -40075,
@@ -912,6 +986,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Moundo"],
 		eggGroups: ["Mineral"],
 		color: "Brown",
+		isNonstandard: "Modded",
 	},
 	moundo: {
 		num: -40076,
@@ -925,6 +1000,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 35,
 		eggGroups: ["Mineral"],
 		color: "Brown",
+		isNonstandard: "Modded",
 	},
 	galbo: {
 		num: -40077,
@@ -937,6 +1013,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Galboros"],
 		eggGroups: ["Field"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	galboros: {
 		num: -40078,
@@ -951,6 +1028,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Fire Stone",
 		eggGroups: ["Field"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	lobzilla: {
 		num: -40079,
@@ -963,6 +1041,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Ebizou"],
 		eggGroups: ["Monster", "Water 1"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	ebizou: {
 		num: -40080,
@@ -976,6 +1055,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 40,
 		eggGroups: ["Monster", "Water 1"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	ufo: {
 		num: -40081,
@@ -988,6 +1068,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Dubior"],
 		eggGroups: ["Mineral"],
 		color: "Gray",
+		isNonstandard: "Modded",
 	},
 	dubior: {
 		num: -40082,
@@ -1001,6 +1082,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 30,
 		eggGroups: ["Mineral"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	corori: {
 		num: -40083,
@@ -1012,6 +1094,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Flying", "Field"],
 		color: "Purple",
+		isNonstandard: "Modded",
 	},
 	drifter: {
 		num: -40084,
@@ -1024,6 +1107,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Jump Shoot"],
 		eggGroups: ["Flying"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	jumpshoot: {
 		num: -40085,
@@ -1037,6 +1121,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 28,
 		eggGroups: ["Flying"],
 		color: "Brown",
+		isNonstandard: "Modded",
 	},
 	frigis: {
 		num: -40086,
@@ -1049,6 +1134,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Snowl"],
 		eggGroups: ["Grass", "Field"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	snowl: {
 		num: -40087,
@@ -1062,6 +1148,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 20,
 		eggGroups: ["Flying", "Field"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	tortorner: {
 		num: -40088,
@@ -1074,6 +1161,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Tortuildng"],
 		eggGroups: ["Monster"],
 		color: "Brown",
+		isNonstandard: "Modded",
 	},
 	tortuildng: {
 		num: -40089,
@@ -1087,6 +1175,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 38,
 		eggGroups: ["Monster"],
 		color: "Brown",
+		isNonstandard: "Modded",
 	},
 	slippy: {
 		num: -40090,
@@ -1099,6 +1188,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Croakom"],
 		eggGroups: ["Water 3"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	croakom: {
 		num: -40091,
@@ -1112,6 +1202,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 30,
 		eggGroups: ["Water 3"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	skuller: {
 		num: -40092,
@@ -1124,6 +1215,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Skully"],
 		eggGroups: ["Amorphous"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	skully: {
 		num: -40093,
@@ -1138,6 +1230,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Skullseer"],
 		eggGroups: ["Amorphous"],
 		color: "Purple",
+		isNonstandard: "Modded",
 	},
 	skullseer: {
 		num: -40094,
@@ -1151,6 +1244,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 40,
 		eggGroups: ["Amorphous"],
 		color: "Purple",
+		isNonstandard: "Modded",
 	},
 	geodude: {
 		inherit: true,
@@ -1172,6 +1266,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Mineral"],
 		color: "Gray",
 		prevo: undefined,
+		isNonstandard: "Modded",
 	},
 	madoo: {
 		num: -40096,
@@ -1184,6 +1279,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Wiz"],
 		eggGroups: ["Human-Like"],
 		color: "Pink",
+		isNonstandard: "Modded",
 	},
 	wiz: {
 		num: -40097,
@@ -1197,6 +1293,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 30,
 		eggGroups: ["Human-Like"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	snoppy: {
 		num: -40098,
@@ -1209,6 +1306,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Mr. Frosty"],
 		eggGroups: ["Water 3"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	mrfrosty: {
 		num: -40099,
@@ -1222,6 +1320,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoType: "levelFriendship",
 		eggGroups: ["Water 3"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	armoroid: {
 		num: -40100,
@@ -1234,6 +1333,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Brobo"],
 		eggGroups: ["Mineral"],
 		color: "Gray",
+		isNonstandard: "Modded",
 	},
 	brobo: {
 		num: -40101,
@@ -1247,6 +1347,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 35,
 		eggGroups: ["Mineral"],
 		color: "Gray",
+		isNonstandard: "Modded",
 	},
 	boten: {
 		num: -40102,
@@ -1259,6 +1360,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Totenga"],
 		eggGroups: ["Grass"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	totenga: {
 		num: -40103,
@@ -1272,6 +1374,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 24,
 		eggGroups: ["Grass"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	phanta: {
 		num: -40104,
@@ -1284,6 +1387,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Ace Phanta"],
 		eggGroups: ["Amorphous"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	acephanta: {
 		num: -40105,
@@ -1297,6 +1401,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 34,
 		eggGroups: ["Amorphous"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	masterhand: {
 		num: -40106,
@@ -1308,6 +1413,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Human-Like"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	crazyhand: {
 		num: -40107,
@@ -1319,6 +1425,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Human-Like"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	scarfy: {
 		num: -40108,
@@ -1330,6 +1437,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Monster"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	venog: {
 		num: -40109,
@@ -1342,6 +1450,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Miasmoros"],
 		eggGroups: ["Amorphous"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	miasmoros: {
 		num: -40110,
@@ -1355,6 +1464,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 32,
 		eggGroups: ["Amorphous"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	gordo: {
 		num: -40111,
@@ -1367,6 +1477,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Blado"],
 		eggGroups: ["Mineral"],
 		color: "Gray",
+		isNonstandard: "Modded",
 	},
 	blado: {
 		num: -40112,
@@ -1380,6 +1491,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 38,
 		eggGroups: ["Mineral"],
 		color: "Gray",
+		isNonstandard: "Modded",
 	},
 	plasmawisp: {
 		num: -40113,
@@ -1391,6 +1503,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Fairy", "Amorphous"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	simirror: {
 		num: -40114,
@@ -1402,6 +1515,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Human-Like"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	buffahorn: {
 		num: -40115,
@@ -1413,6 +1527,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Field"],
 		color: "Brown",
+		isNonstandard: "Modded",
 	},
 	glunk: {
 		num: -40116,
@@ -1425,6 +1540,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Deepsee"],
 		eggGroups: ["Water 1", "Water 3"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	deepsee: {
 		num: -40117,
@@ -1438,6 +1554,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 34,
 		eggGroups: ["Water 1", "Water 3"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	gator: {
 		num: -40118,
@@ -1450,6 +1567,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Gnawcodile"],
 		eggGroups: ["Water 2"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	gnawcodile: {
 		num: -40119,
@@ -1463,6 +1581,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 38,
 		eggGroups: ["Water 2"],
 		color: "Black",
+		isNonstandard: "Modded",
 	},
 	flotzo: {
 		num: -40120,
@@ -1475,6 +1594,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Octacon"],
 		eggGroups: ["Water 3"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	octacon: {
 		num: -40121,
@@ -1489,6 +1609,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Water Stone",
 		eggGroups: ["Water 3"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	nesp: {
 		num: -40122,
@@ -1500,6 +1621,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Human-Like"],
 		color: "Black",
+		isNonstandard: "Modded",
 	},
 	caller: {
 		num: -40123,
@@ -1511,6 +1633,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Bug"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	chilly: {
 		num: -40124,
@@ -1522,6 +1645,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Amorphous"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	plugg: {
 		num: -40125,
@@ -1533,6 +1657,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Mineral"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	burninleo: {
 		num: -40126,
@@ -1544,6 +1669,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Human-Like"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	bugzzy: {
 		num: -40127,
@@ -1555,6 +1681,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Bug"],
 		color: "Purple",
+		isNonstandard: "Modded",
 	},
 	grizzo: {
 		num: -40128,
@@ -1566,6 +1693,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Field"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	butterfly: {
 		num: -40129,
@@ -1578,6 +1706,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Morpho"],
 		eggGroups: ["Bug"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	morpho: {
 		num: -40130,
@@ -1591,6 +1720,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 35,
 		eggGroups: ["Bug"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	hlobster: {
 		num: -40131,
@@ -1602,6 +1732,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Monster", "Mineral"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	droppy: {
 		num: -40132,
@@ -1613,6 +1744,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Ditto"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	darkmatter: {
 		num: -40133,
@@ -1625,6 +1757,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Miracle", "Blade", "Gooey"],
 		eggGroups: ["Amorphous"],
 		color: "Black",
+		isNonstandard: "Modded",
 	},
 	miracle: {
 		num: -40134,
@@ -1639,6 +1772,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Crystal Shard",
 		eggGroups: ["Amorphous"],
 		color: "Black",
+		isNonstandard: "Modded",
 	},
 	blade: {
 		num: -40135,
@@ -1653,6 +1787,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Rainbow Drop",
 		eggGroups: ["Amorphous"],
 		color: "Black",
+		isNonstandard: "Modded",
 	},
 	gooey: {
 		num: -40136,
@@ -1667,6 +1802,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Heart Star",
 		eggGroups: ["Amorphous"],
 		color: "Black",
+		isNonstandard: "Modded",
 	},
 	comvirus: {
 		num: -40137,
@@ -1678,6 +1814,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Mineral"],
 		color: "Black",
+		isNonstandard: "Modded",
 	},
 	qbby: {
 		num: -40138,
@@ -1691,6 +1828,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Qudy"],
 		eggGroups: ["Mineral"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	qudy: {
 		num: -40139,
@@ -1705,6 +1843,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 45,
 		eggGroups: ["Mineral"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	jobski: {
 		num: -40140,
@@ -1718,6 +1857,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Jobsking"],
 		eggGroups: ["Mineral"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	jobsking: {
 		num: -40141,
@@ -1732,6 +1872,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 45,
 		eggGroups: ["Mineral"],
 		color: "White",
+		isNonstandard: "Modded",
 	},
 	metroid: {
 		num: -40142,
@@ -1743,6 +1884,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Amorphous"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	noddy: {
 		num: -40143,
@@ -1754,6 +1896,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Field"],
 		color: "Pink",
+		isNonstandard: "Modded",
 	},
 	kine: {
 		num: -40144,
@@ -1766,6 +1909,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Undiscovered"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	rick: {
 		num: -40145,
@@ -1778,6 +1922,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Undiscovered"],
 		color: "Yellow",
+		isNonstandard: "Modded",
 	},
 	coo: {
 		num: -40146,
@@ -1790,6 +1935,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Undiscovered"],
 		color: "Purple",
+		isNonstandard: "Modded",
 	},
 	icedragon: {
 		num: -40147,
@@ -1801,6 +1947,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Water 1", "Dragon"],
 		color: "Blue",
+		isNonstandard: "Modded",
 	},
 	tornadon: {
 		num: -40148,
@@ -1812,6 +1959,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Water 2", "Dragon"],
 		color: "Green",
+		isNonstandard: "Modded",
 	},
 	landia: {
 		num: -40149,
@@ -1823,6 +1971,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 50,
 		eggGroups: ["Dragon"],
 		color: "Red",
+		isNonstandard: "Modded",
 	},
 	void: {
 		num: -40150,
@@ -1836,6 +1985,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Kirby"],
 		eggGroups: ["Undiscovered"],
 		color: "Purple",
+		isNonstandard: "Modded",
 	},
 	kirby: {
 		num: -40151,
@@ -1850,5 +2000,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoType: "levelFriendship",
 		eggGroups: ["Undiscovered"],
 		color: "Pink",
+		isNonstandard: "Modded",
 	},
 };

@@ -256,32 +256,91 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	urshifurapidstrikemega: {
 		natDexTier: "Uber",
 	},
-	
-	kitquat: {
-		natDexTier: "LC",
-	},
-	tangeline: {
-		natDexTier: "NFE",
-	},
-	citrodon: {
+	arbokmega: {
 		natDexTier: "OU",
 	},
-	embah: {
-		natDexTier: "LC",
-	},
-	goatinder: {
-		natDexTier: "NFE",
-	},
-	ferramous: {
+	nidoqueenmega: {
 		natDexTier: "OU",
 	},
-	geezel: {
-		natDexTier: "LC",
+	nidokingmega: {
+		natDexTier: "OU",
 	},
-	fledgelet: {
-		natDexTier: "NFE",
+	arcaninemega: {
+		natDexTier: "OU",
 	},
-	thaumusturge: {
+	dittomega: {
+		natDexTier: "OU",
+	},
+	sunfloramega: {
+		natDexTier: "OU",
+	},
+	slowkingmega: {
+		natDexTier: "OU",
+	},
+	kingdramega: {
+		natDexTier: "OU",
+	},
+	grumpigmega: {
+		natDexTier: "OU",
+	},
+	flygonmega: {
+		natDexTier: "OU",
+	},
+	armaldomega: {
+		natDexTier: "OU",
+	},
+	kecleonmega: {
+		natDexTier: "OU",
+	},
+	luvdiscmega: {
+		natDexTier: "OU",
+	},
+	jirachimega: {
+		natDexTier: "OU",
+	},
+	drapionmega: {
+		natDexTier: "OU",
+	},
+	simisagemega: {
+		natDexTier: "OU",
+	},
+	simisearmega: {
+		natDexTier: "OU",
+	},
+	simipourmega: {
+		natDexTier: "OU",
+	},
+	musharnamega: {
+		natDexTier: "OU",
+	},
+	vanilluxemega: {
+		natDexTier: "OU",
+	},
+	meloettamega: {
+		natDexTier: "OU",
+	},
+	genesectmega: {
+		natDexTier: "OU",
+	},
+	orangurumega: {
+		natDexTier: "OU",
+	},
+	passimianmega: {
+		natDexTier: "OU",
+	},
+	boltundmega: {
+		natDexTier: "OU",
+	},
+	spidopsmega: {
+		natDexTier: "OU",
+	},
+	dachsbunmega: {
+		natDexTier: "OU",
+	},
+	arbolivamega: {
+		natDexTier: "OU",
+	},
+	squawkabillymega: {
 		natDexTier: "OU",
 	},
 }
