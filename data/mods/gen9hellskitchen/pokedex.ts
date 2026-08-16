@@ -1131,7 +1131,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseSpecies: "Dachsbun",
 		forme: "Mega",
 		types: ["Fairy", "Ground"],
-		baseStats: { hp: 57, atk: 120, def: 135, spa: 50, spd: 130, spe: 85 },
+		baseStats: { hp: 57, atk: 120, def: 135, spa: 40, spd: 130, spe: 95 },
 		abilities: { 0: "Purifying Salt" },
 		heightm: 3.5,
 		weightkg: 14.9,
