@@ -646,7 +646,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Dark", "Fairy"],
 		gender: "M",
 		baseStats: { hp: 95, atk: 135, def: 85, spa: 95, spd: 105, spe: 95 },
-		abilities: { 0: "Unkept Mane" },
+		abilities: { 0: "Unkempt Mane" },
 		heightm: 1.5,
 		weightkg: 61,
 		color: "Purple",

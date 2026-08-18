@@ -54,6 +54,14 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			return false;
 		},
 	},
+	partiallytrapped: {
+		inherit: true,
+		durationCallback(target, source) {
+			if (this.effect?.name === 'Unkempt Mane') return 3;
+			if (source?.hasItem('gripclaw')) return 8;
+			return this.random(5, 7);
+		},
+	},
 
 	aridwasteland: {
 		name: 'AridWasteland',

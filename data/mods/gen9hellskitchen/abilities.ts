@@ -166,7 +166,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	mach10: {
 		onStart(pokemon) {
-			this.field.addPseudoWeather('tailwind');
+			if (pokemon.side.getSideCondition('tailwind')) return;
+			this.add('-activate', pokemon, 'ability: Mach 10');
+			pokemon.side.addSideCondition('tailwind');
 		},
 		flags: {},
 		name: "Mach 10",
@@ -551,7 +553,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	unkemptmane: {
 		onSourceDamagingHit(damage, target, source, move) {
 			if (move.flags.contact) {
-				target.addVolatile('partiallytrapped')
+				target.addVolatile('partiallytrapped', source, this.effect)
 			}
 		},
 		flags: {},
