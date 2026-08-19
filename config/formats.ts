@@ -415,6 +415,87 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 
+	// National Dex Other Tiers
+	///////////////////////////////////////////////////////////////////
+
+	{
+		section: "National Dex",
+	},
+	{
+		name: "[Gen 9] National Dex",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex Ubers",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', '!Evasion Clause', 'Evasion Moves Clause', 'Evasion Items Clause', 'Mega Rayquaza Clause'],
+		banlist: ['ND AG', 'Shedinja', 'Assist', 'Baton Pass'],
+	},
+	{
+		name: "[Gen 9] National Dex UU",
+		mod: 'gen9',
+		ruleset: ['[Gen 9] National Dex'],
+		banlist: ['ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay', 'Slowbro-Base + Slowbronite'],
+	},
+	{
+		name: "[Gen 9] National Dex RU",
+		mod: 'gen9',
+		searchShow: false,
+		ruleset: ['[Gen 9] National Dex UU'],
+		banlist: ['ND UU', 'ND RUBL', 'Slowbronite'],
+	},
+	
+	{
+		name: "[Gen 9] National Dex NU",
+		mod: 'gen9',
+		ruleset: ['National Dex RU'],
+		banlist: [
+			'ND RU', 'ND NUBL',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex PU",
+		mod: 'gen9',
+		ruleset: ['National Dex NU'],
+		banlist: [
+			'ND NU', 'ND PUBL',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex ZU",
+		mod: 'gen9',
+		ruleset: ['National Dex PU'],
+		banlist: [
+			'ND PU', 'ND ZUBL',
+		],
+	},
+	{
+		name: "[Gen 9] National Dex SU",
+		mod: 'gen9',
+		ruleset: ['National Dex ZU'],
+		banlist: [
+			'ND ZU', 'ND SUBL', 'Heat Rock'
+		],
+	},
+
+	{
+		name: "[Gen 9] National Dex LC",
+		mod: 'gen9',
+		searchShow: false,
+		ruleset: ['Standard NatDex', 'Little Cup'],
+		banlist: [
+			'Aipom', 'Basculin-White-Striped', 'Clamperl', 'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Dunsparce', 'Duraludon', 'Flittle', 'Girafarig',
+			'Gligar', 'Meditite', 'Misdreavus', 'Murkrow', 'Porygon', 'Qwilfish-Hisui', 'Rufflet', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
+			'Stantler', 'Swirlix', 'Tangela', 'Voltorb-Hisui', 'Woobat', 'Yanma', 'Zigzagoon-Base', 'Chlorophyll', 'Moody', 'Eevium Z', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web',
+		],
+	},
+
 	/*
 	// Likeshop Spotlight
 	///////////////////////////////////////////////////////////////////
@@ -3859,87 +3940,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'Dynamax Clause'],
 		banlist: ['ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Baton Pass'],
 	},*/
-
-	// National Dex Other Tiers
-	///////////////////////////////////////////////////////////////////
-
-	{
-		section: "National Dex",
-	},
-	{
-		name: "[Gen 9] National Dex",
-		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Terastal Clause'],
-		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-		],
-	},
-	{
-		name: "[Gen 9] National Dex Ubers",
-		mod: 'gen9',
-		ruleset: ['Standard NatDex', '!Evasion Clause', 'Evasion Moves Clause', 'Evasion Items Clause', 'Mega Rayquaza Clause'],
-		banlist: ['ND AG', 'Shedinja', 'Assist', 'Baton Pass'],
-	},
-	{
-		name: "[Gen 9] National Dex UU",
-		mod: 'gen9',
-		ruleset: ['[Gen 9] National Dex'],
-		banlist: ['ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay', 'Slowbro-Base + Slowbronite'],
-	},
-	{
-		name: "[Gen 9] National Dex RU",
-		mod: 'gen9',
-		searchShow: false,
-		ruleset: ['[Gen 9] National Dex UU'],
-		banlist: ['ND UU', 'ND RUBL', 'Slowbronite'],
-	},
-	
-	{
-		name: "[Gen 9] National Dex NU",
-		mod: 'gen9',
-		ruleset: ['National Dex RU'],
-		banlist: [
-			'ND RU', 'ND NUBL',
-		],
-	},
-	{
-		name: "[Gen 9] National Dex PU",
-		mod: 'gen9',
-		ruleset: ['National Dex NU'],
-		banlist: [
-			'ND NU', 'ND PUBL',
-		],
-	},
-	{
-		name: "[Gen 9] National Dex ZU",
-		mod: 'gen9',
-		ruleset: ['National Dex PU'],
-		banlist: [
-			'ND PU', 'ND ZUBL',
-		],
-	},
-	{
-		name: "[Gen 9] National Dex SU",
-		mod: 'gen9',
-		ruleset: ['National Dex ZU'],
-		banlist: [
-			'ND ZU', 'ND SUBL', 'Heat Rock'
-		],
-	},
-
-	{
-		name: "[Gen 9] National Dex LC",
-		mod: 'gen9',
-		searchShow: false,
-		ruleset: ['Standard NatDex', 'Little Cup'],
-		banlist: [
-			'Aipom', 'Basculin-White-Striped', 'Clamperl', 'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Dunsparce', 'Duraludon', 'Flittle', 'Girafarig',
-			'Gligar', 'Meditite', 'Misdreavus', 'Murkrow', 'Porygon', 'Qwilfish-Hisui', 'Rufflet', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
-			'Stantler', 'Swirlix', 'Tangela', 'Voltorb-Hisui', 'Woobat', 'Yanma', 'Zigzagoon-Base', 'Chlorophyll', 'Moody', 'Eevium Z', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web',
-		],
-	},
 	/*{
 		name: "[Gen 9] National Dex Monotype",
 		mod: 'gen9',
