@@ -59,7 +59,13 @@ function getMinExpForMonAtLevel(species: string, level: number) {
 
 function checkForEvolution(pokemon: PokemonSet, misc?: any) {
 	const evoList = Dex.species.get(pokemon.species).evos;
-	if (!evoList) return;
+	if (!evoList || !evoList.length) return;
+	
+    // Evolution Stone allows any Pokémon that has evolutions
+    if (typeof misc === 'string' && toID(misc) === 'evolutionstone') {
+        return evoList;
+    }
+
 	for (const newEvo of evoList) {
 		switch (Dex.species.get(newEvo).evoType) {
 		// figure out rest later
@@ -318,7 +324,7 @@ function getMovesAtTarget(pokemon: string, target: MoveLearnCategory, level?: nu
 
 function getLevelUpMovesUpTo(pokemon: string, level: number) {
 	const moves: string[] = [];
-	for (let l = 1; l <= level; l++) {
+	for (let l = 0; l <= level; l++) {
 		const atLevel = getMovesAtTarget(pokemon, 'L', l);
 		for (const m of atLevel) {
 			if (!moves.includes(m)) moves.push(m);
@@ -427,7 +433,7 @@ function genPokemon(quantity: number, level: number | number[], weighting?: Poke
 			moves: [],
 			nature: Utils.randomElement(natures),
 			evs: { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 },
-			teraType: (Math.floor(Math.random() * 20) === 0) ? Utils.randomElement(types) : Utils.randomElement(specie.types),
+			teraType: (Math.floor(Math.random() * 5) === 0) ? Utils.randomElement(types) : Utils.randomElement(specie.types),
 
 			ivs: {
 				hp: Math.floor(Math.random() * 32),
@@ -1050,6 +1056,75 @@ export class Roguelike {
 		}
 		buf += `<br /><br /><button class="button" name="send" value="/roguelike shop">Undo</button>`;
 		buf += `</center></div>`;
+		return buf;
+	}
+
+	getEvolutionOptions(speciesName: string): string[] {
+		const species = Dex.species.get(speciesName);
+		return species.evos || [];
+	}
+
+	handleEvolutionStonePurchase(game: Roguelike, targetSlotIndex: number, chosenEvo?: string) {
+		const mon = game.team[targetSlotIndex];
+		if (!mon) return "Invalid Pokémon selected.";
+
+		const possibleEvos = this.getEvolutionOptions(mon.species);
+		if (!possibleEvos.length) {
+			return `${mon.species} cannot evolve any further!`;
+		}
+
+		// Single evolution pathway or specific target chosen
+		let targetEvo = chosenEvo;
+		if (!targetEvo) {
+			if (possibleEvos.length === 1) {
+				targetEvo = possibleEvos[0];
+			} else {
+				// Triggers evolution selection choice for branching evolutions (e.g., Eevee)
+				return {
+					requiresChoice: true,
+					options: possibleEvos,
+					slot: targetSlotIndex,
+				};
+			}
+		}
+
+		if (!possibleEvos.includes(targetEvo)) {
+			return `${mon.species} cannot evolve into ${targetEvo}!`;
+		}
+
+		// Deduct BP cost and update Pokémon species
+		game.battlePoints -= 10;
+		const oldSpecies = mon.species;
+		mon.species = targetEvo;
+		mon.name = targetEvo;
+
+		// Recalculate stats and EXP targets for new species
+		const monData = game.teamData[targetSlotIndex];
+		const newDexSpecies = Dex.species.get(targetEvo);
+
+		if (newDexSpecies.maxHP) {
+			monData.maxHP = newDexSpecies.maxHP;
+		} else {
+			monData.maxHP = Math.floor(
+				(((mon.ivs['hp'] + (2 * newDexSpecies.baseStats['hp']) +
+					Math.floor(mon.evs['hp'] / 4) + 100) * mon.level) / 100) + 10
+			);
+		}
+		monData.curHP = monData.maxHP;
+
+		return `Your ${oldSpecies} evolved into ${targetEvo}!`;
+	}
+
+	genEvolutionChoiceHTML(slotIndex: number, evos: string[]) {
+		let buf = `<center><h3>Choose Evolution</h3><p>Select which species to evolve into:</p></center><br />`;
+		buf += `<div style="text-align: center;">`;
+		for (const evo of evos) {
+			const dexSpecies = Dex.species.get(evo);
+			buf += `<button class="button" name="send" value="/roguelike buy item, evolutionstone, ${slotIndex + 1}, ${toID(evo)}" style="margin: 5px;">`;
+			buf += `<img src="https://play.pokemonshowdown.com/sprites/gen5/${dexSpecies.spriteid}.png" /><br />`;
+			buf += `${evo}</button>`;
+		}
+		buf += `</div>`;
 		return buf;
 	}
 
@@ -1774,27 +1849,31 @@ export const commands: Chat.ChatCommands = {
 			const evolvedForm = userData.teamData[index].evoFlag;
 			if (!evolvedForm) throw new Chat.ErrorMessage(`This Pokemon can't evolve yet!`);
 			if (choice === 'accept') {
-				// TODO: Pupitar
-				const currentMon = userData.team[index];
-				const prevoAbilities = Object.values(Dex.species.get(currentMon.species).abilities);
-				const evoAbilities = Object.values(Dex.species.get(evolvedForm).abilities);
+                // TODO: Pupitar
+                const currentMon = userData.team[index];
 
-				const abilIndex = prevoAbilities.indexOf(currentMon.ability);
+                const evoSpecies = Dex.species.get(Array.isArray(evolvedForm) ? evolvedForm[0] : evolvedForm);
+                if (!evoSpecies.exists) throw new Chat.ErrorMessage(`Invalid evolution species!`);
+
+                const prevoAbilities = Object.values(Dex.species.get(currentMon.species)?.abilities || {});
+                const evoAbilities = Object.values(evoSpecies.abilities || {});
+
+                const abilIndex = prevoAbilities.indexOf(currentMon.ability);
 
 				// If the ability was standard (0, 1, or 'H'), map it to the corresponding evolved ability slot.
 				// If it was modified via Ability Capsule and isn't in prevoAbilities (abilIndex === -1), 
 				// keep currentMon.ability unchanged.
-				if (abilIndex >= 0 && evoAbilities[abilIndex]) {
-					currentMon.ability = evoAbilities[abilIndex];
-				}
-				
-				userData.team[index].species = evolvedForm;
-				userData.flags.prevoName = userData.team[index].name;
-				userData.team[index].name = evolvedForm;
-				userData.teamData[index].evoFlag = false;
-				userData.goToPage(`evolution-success-${index}`);
-				return;
-			} else if (choice === 'reject') {
+                if (abilIndex >= 0 && evoAbilities[abilIndex]) {
+                    currentMon.ability = evoAbilities[abilIndex];
+                }
+                
+                userData.team[index].species = evoSpecies.name;
+                userData.flags.prevoName = userData.team[index].name;
+                userData.team[index].name = evoSpecies.name;
+                userData.teamData[index].evoFlag = false;
+                userData.goToPage(`evolution-success-${index}`);
+                return;
+            } else if (choice === 'reject') {
 				userData.teamData[index].evoFlag = false;
 				if (userData.teamData.some(t => !!t.evoFlag)) {
 					userData.goToPage('evolution');

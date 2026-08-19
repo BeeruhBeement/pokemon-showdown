@@ -102,5 +102,13 @@
 		"desc": "Gives 50% Exp. to all non-fainted Pokemon not in the battle",
 		"cost": 25,
 		"minStreak": 2
+	},
+	"evolutionstone": {
+		"name": "Evolution Stone",
+		"icon": "Sun Stone",
+		"type": "evolveItem",
+		"desc": "Evolve a Pokémon.",
+		"cost": 10,
+		"minStreak": 2
 	}
 }
