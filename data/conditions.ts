@@ -3,6 +3,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'brn',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
+			if (!target.isActive) return;
 			if (sourceEffect && sourceEffect.id === 'flameorb') {
 				this.add('-status', target, 'brn', '[from] item: Flame Orb');
 			} else if (sourceEffect && sourceEffect.effectType === 'Ability') {
@@ -21,6 +22,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'par',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
+			if (!target.isActive) return;
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'par', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
 			} else {
@@ -48,12 +50,14 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'slp',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
-			} else if (sourceEffect && sourceEffect.effectType === 'Move') {
-				this.add('-status', target, 'slp', `[from] move: ${sourceEffect.name}`);
-			} else {
-				this.add('-status', target, 'slp');
+			if (target.isActive) {
+				if (sourceEffect && sourceEffect.effectType === 'Ability') {
+					this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
+				} else if (sourceEffect && sourceEffect.effectType === 'Move') {
+					this.add('-status', target, 'slp', `[from] move: ${sourceEffect.name}`);
+				} else {
+					this.add('-status', target, 'slp');
+				}
 			}
 			// 1-3 turns
 			this.effectState.startTime = this.random(2, 5);
@@ -84,6 +88,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'frz',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
+			if (!target.isActive) return;
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
 			} else {
@@ -124,6 +129,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'psn',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
+			if (!target.isActive) return;
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'psn', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
 			} else {
@@ -140,6 +146,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			this.effectState.stage = 0;
+			if (!target.isActive) return;
 			if (sourceEffect && sourceEffect.id === 'toxicorb') {
 				this.add('-status', target, 'tox', '[from] item: Toxic Orb');
 			} else if (sourceEffect && sourceEffect.effectType === 'Ability') {
@@ -951,6 +958,125 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			}
 			source.removeVolatile('rolloutstorage');
 			return bp;
+		},
+	},
+
+	
+	bld: {
+		name: 'bld',
+		effectType: 'Status',
+		duration: 5,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'bld', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
+			} else {
+				this.add('-status', target, 'bld');
+			}
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 20);
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+		// halved healing
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			const noheals = ['drain', 'leechseed'];
+			if (!noheals.includes(effect.id)) {
+				return this.chainModify([1, 2]);
+			}
+		},
+	},
+	wet: {
+		name: 'wet',
+		effectType: 'Status',
+		duration: 5,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'wet', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'wet');
+			}
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			let stats: BoostID[] = [];
+			const boost: SparseBoostsTable = {};
+
+			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
+
+			stats = [];
+			let statMinus: BoostID;
+			for (statMinus in pokemon.boosts) {
+				if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
+				if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
+					stats.push(statMinus);
+				}
+			}
+			randomStat = stats.length ? this.sample(stats) : undefined;
+			if (randomStat) boost[randomStat] = -1;
+
+			this.boost(boost, pokemon, pokemon);
+			
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	ptr: {
+		name: 'ptr',
+		effectType: 'Status',
+		duration: 5,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'ptr', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'ptr');
+			}
+		},
+		onFractionalPriorityPriority: -1,
+		onFractionalPriority(priority, pokemon, target, move) {
+			return -0.1;
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	rad: {
+		name: 'rad',
+		effectType: 'Status',
+		duration: 5,
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'rad', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'rad');
+			}
+		},
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			if (source.hp >= source.maxhp / 5 * 4) return false;
+			if (source.hp + damage > source.maxhp / 5 * 4) return source.maxhp / 2 - source.hp;
+		},
+		onResidualOrder: 9,
+		onResidual(pokemon) {
+			if (pokemon.hp > pokemon.maxhp * 0.8) {
+				const damageNeeded = pokemon.hp - (pokemon.maxhp * 0.8);
+				this.damage(damageNeeded);
+			}
+			
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
 		},
 	},
 };

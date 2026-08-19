@@ -1648,11 +1648,11 @@ export class GlobalRoomState {
 
 	onCreateBattleRoom(players: User[], room: GameRoom, options: AnyObject) {
 		for (const player of players) {
-			if (player.statusType === 'idle') {
+			if (player?.statusType === 'idle') {
 				player.setStatusType('online');
 			}
 		}
-		if (Config.reportbattles) {
+		if (Config.reportbattles && !room.battle?.format.includes('roguelike')) {
 			if (typeof Config.reportbattles === 'string') {
 				Config.reportbattles = [Config.reportbattles];
 			} else if (Config.reportbattles === true) {
@@ -2187,7 +2187,7 @@ export const Rooms = {
 	 * No need for UI; this function sends popups to users.
 	 */
 	createBattle(options: RoomBattleOptions & Partial<RoomSettings>) {
-		const players = options.players.map(player => player.user);
+		const players = options.players.map(player => player.user).filter(u => !!u);
 		const format = Dex.formats.get(options.format);
 		if (players.length > format.playerCount) {
 			throw new Error(`${players.length} players were provided, but the format is a ${format.playerCount}-player format.`);

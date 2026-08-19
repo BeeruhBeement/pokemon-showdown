@@ -1,0 +1,11 @@
+{
+	"tm001": {
+		"name": "TM001 (Double Edge)",
+		"desc": "Teaches a Pokemon Double Edge. Single use.",
+		"icon": "TR00",
+		"type": "TM",
+		"cost": 5,
+		"minStreak": 0,
+		"move": "Double Edge"
+	}
+}

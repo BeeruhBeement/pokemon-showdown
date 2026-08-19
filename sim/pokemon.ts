@@ -52,7 +52,7 @@ export class Pokemon {
 	readonly name: string;
 	/** `` `${sideid}: ${name}` `` - used to refer to pokemon in the protocol */
 	readonly fullname: string;
-	readonly level: number;
+	level: number;
 	readonly gender: GenderName;
 	readonly happiness: number;
 	readonly pokeball: ID;
@@ -1115,6 +1115,37 @@ export class Pokemon {
 			moves,
 		};
 
+		if (this.m.undecided) {
+			data.moves = [{
+				move: 'Yes',
+				id: 'yes' as ID,
+				target: 'self',
+				disabled: false,
+			}, {
+				move: 'No',
+				id: 'no' as ID,
+				target: 'self',
+				disabled: false,
+			}];
+			data.trapped = true;
+			return data;
+		}
+
+		if (this.m.overwrite) {
+			data.moves = this.battle.dex.deepClone(this.baseMoveSlots);
+			data.moves.forEach(m => {
+				m.disabled = false;
+			});
+			data.moves.push({
+				move: 'Undo',
+				id: 'undo' as ID,
+				target: 'self',
+				disabled: false,
+			});
+			data.trapped = true;
+			return data;
+		}
+
 		if (hardLocked || !isLastActive) {
 			this.maybeDisabled = false;
 			this.maybeLocked = false;
@@ -1123,7 +1154,8 @@ export class Pokemon {
 				// Discovered by selecting a valid Pokémon as a switch target and cancelling.
 				if (this.trapped) data.trapped = true;
 			}
-		} else {
+		} else if (isLastActive) {
+			this.maybeDisabled = this.maybeDisabled && !lockedMove;
 			this.maybeLocked = this.maybeLocked || this.maybeDisabled;
 			if (this.maybeDisabled) {
 				data.maybeDisabled = this.maybeDisabled;

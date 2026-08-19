@@ -87,7 +87,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				maxpp: 5,
 				id: 'thunder' as ID,
 				disabled: false,
-				used: false
+				used: false,
+				target: 'normal'
 			});
 		},
 		gen: -1,
@@ -309,7 +310,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				maxpp: 5,
 				id: 'taunt' as ID,
 				disabled: false,
-				used: false
+				used: false,
+				target: 'normal'
 			});
 		},
 		onAfterMove(source, target, move) {

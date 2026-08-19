@@ -28,7 +28,7 @@ import { type Move } from './dex-moves';
 
 /** A single action that can be chosen. Choices will have one Action for each pokemon. */
 export interface ChosenAction {
-	choice: 'move' | 'switch' | 'instaswitch' | 'revivalblessing' | 'team' | 'shift' | 'pass';// action type
+	choice: 'move' | 'switch' | 'instaswitch' | 'revivalblessing' | 'team' | 'shift' | 'pass' | 'levelup';// action type
 	pokemon?: Pokemon; // the pokemon doing the action
 	targetLoc?: number; // relative location of the target to pokemon (move action only)
 	moveid?: string; // a move to use (move action only)
@@ -171,6 +171,8 @@ export class Side {
 
 	name: string;
 	avatar: string;
+	isAI: boolean | false;
+	roguelikeTeamData: AnyObject | false;
 	foe: Side = null!; // set in battle.start()
 	/** Only exists in multi battle, for the allied side */
 	allySide: Side | null = null; // set in battle.start()
@@ -237,6 +239,8 @@ export class Side {
 
 		this.name = name;
 		this.avatar = '';
+		this.isAI = false;
+		this.roguelikeTeamData = false;
 
 		this.team = team;
 		this.pokemon = [];
@@ -344,6 +348,8 @@ export class Side {
 				return `switch ${action.target!.position + 1}`;
 			case 'team':
 				return `team ${action.pokemon!.position + 1}`;
+			case 'levelup':
+				return `move ${action.moveid}`;
 			default:
 				return action.choice;
 			}
@@ -533,6 +539,9 @@ export class Side {
 		this.battle.send('sideupdate', `${this.id}\n|error|${type} ${message}`);
 		if (updated) this.emitRequest(this.activeRequest!, true);
 		if (this.battle.strictChoices) throw new Error(`${type} ${message}`);
+		if (this.isAI) {
+			this.battle.choose(this.id, 'default');
+		}
 		return false;
 	}
 
@@ -558,17 +567,21 @@ export class Side {
 			return this.emitChoiceError(`Can't move: You need a ${this.requestState} response`);
 		}
 		const index = this.getChoiceIndex();
-		if (index >= this.active.length) {
+		if (index >= this.active.length && this.battle.requestState !== 'levelup') {
 			return this.emitChoiceError(`Can't move: You sent more choices than unfainted Pokémon.`);
 		}
 		const autoChoose = !moveText;
-		const pokemon: Pokemon = this.active[index];
+		const pokemon: Pokemon = this.active[index] || this.pokemon[0];
 
 		// Parse moveText (name or index)
 		// If the move is not found, the action is invalid without requiring further inspection.
 
-		const request = pokemon.getMoveRequestData();
+		let request = pokemon.getMoveRequestData();
 		let moveSlot: number | undefined = undefined;
+		if (this.battle.requestState === 'levelup') {
+			const relevant = this.pokemon.find(p => p.m.overwrite);
+			if (relevant) request = relevant.getMoveRequestData();
+		}
 		let moveid = '';
 		let targetType = '';
 		if (autoChoose) moveText = 1;
@@ -670,6 +683,21 @@ export class Side {
 			if (targetLoc) {
 				return this.emitChoiceError(`Can't move: You can't choose a target for ${move.name}`);
 			}
+		}
+
+		if (this.battle.requestState === 'levelup') {
+			this.choice.actions.push({
+				choice: 'levelup',
+				pokemon,
+				moveid,
+			});
+			if (!pokemon.m.undecided) {
+				const newPoke = this.pokemon.find(p => p.m.overwrite)!;
+				delete newPoke.m.undecided;
+			} else {
+				delete pokemon.m.undecided;
+			}
+			return true;
 		}
 
 		const lockedMove = pokemon.getLockedMove() || pokemon.getSemiLockedMove();

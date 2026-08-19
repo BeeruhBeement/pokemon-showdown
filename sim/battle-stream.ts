@@ -444,6 +444,7 @@ export function getPlayerStreams(stream: BattleStream) {
 				const [side, sideData] = Utils.splitFirst(data, `\n`);
 				streams[side as SideID].push(sideData);
 				break;
+			case 'sendroguelikedata':
 			case 'end':
 				// ignore
 				break;

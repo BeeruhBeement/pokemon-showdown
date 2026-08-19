@@ -54,8 +54,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Hells Kitchen OU",
 
 		mod: 'gen9hellskitchen',
-		searchShow: false,
-		teraPreviewDefault: true,
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Moves Clause', '+lightofruin', '+Nonexistent'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -70,7 +68,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Hells Kitchen Draft",
 
 		mod: 'gen9hellskitchen',
-		searchShow: false,
 		teraPreviewDefault: true,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1', '+Nonexistent'],
 	},
@@ -414,6 +411,163 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 		],
 	},
+	{
+		section: "Roguelike Formats (Alpha)",
+	},
+	{
+		name: "[Gen 9] Roguelike Battle",
+		desc: `Randomized teams of Pok&eacute;mon with sets that are generated to be competitively viable.`,
+		mod: 'gen9',
+		// team: 'random',
+		challengeShow: false,
+		searchShow: false,
+		gameType: 'doubles',
+		ruleset: ['Obtainable', 'HP Percentage Mod', 'Cancel Mod'],
+		onValidateTeam() {
+			return [`This format cannot be battled via challenge or ladder.`];
+		},
+		onSwitchIn(pokemon) {
+			if (pokemon.side.isAI) {
+				pokemon.side.foe.active[0].m.willGetEXP = true;
+				// @ts-expect-error hacky implementation
+				if (pokemon.side.foe.roguelikeTeamData.keyItems.includes('Exp. All')) {
+					pokemon.side.foe.pokemon.forEach(p => {
+						p.m.giveExpAll = true;
+						p.m.expAll = true;
+					});
+				}
+				return;
+			}
+			pokemon.m.willGetEXP = true;
+		},
+		onFaint(target, source, effect) {
+			if (target.side.isAI) {
+				if (!source || source?.side.isAI) source = target.side.foe.active[0];
+				if (source.side.pokemon.filter(p => p.m.willGetEXP).length > 1) {
+					this.expMult = 0.5;
+				} else {
+					this.expMult = 1;
+				}
+				// IDK how explosion -> gain exp works in the game so ill figure it out later
+				// if (!source.hp) source.m.willGetEXP = false;
+				if (this.findNextMonForEXP()) return this.giveExpAndEVs(target, this.findNextMonForEXP()!);
+			} else {
+				target.m.willGetEXP = false;
+			}
+		},
+		onBegin() {
+			for (const side of this.sides) {
+				if (side.isAI) continue;
+				// @ts-expect-error hacky implementation
+				if (side.roguelikeTeamData.teamData) {
+					// @ts-expect-error hacky implementation
+					const data = side.roguelikeTeamData.teamData;
+					let index = 0;
+					for (const pokemon of side.pokemon) {
+						// @ts-expect-error hacky implementation
+						if (side.roguelikeTeamData.keyItems.includes('Exp. All')) {
+							pokemon.m.giveExpAll = true;
+							pokemon.m.expAll = true;
+						}
+						const persist = data[index];
+						pokemon.m.exp = persist.exp;
+						pokemon.m.expAtNextLevel = persist.expAtNextLevel;
+						pokemon.hp = persist.curHP;
+						if (persist.status) {
+							if (persist.status === 'fnt') {
+								pokemon.faint();
+								pokemon.m.willFaint = true;
+							} else {
+								pokemon.setStatus(persist.status as ID, null, null, true);
+							}
+						}
+						let moveIndex = 0;
+						for (const move of pokemon.moveSlots) {
+							move.pp = persist.ppLeft[moveIndex];
+							moveIndex++;
+						}
+						pokemon.m.roguelikeIndex = persist.linkedTeamIndex;
+						index++;
+					}
+				}
+				// Don't implode if 1st mon gonna die
+				if (side.pokemon[0].m.willFaint) {
+					const unfainted = side.pokemon.find(newPoke => !newPoke.m.willFaint);
+					if (unfainted) {
+						const newIndex = side.pokemon.indexOf(unfainted);
+						const carry = side.pokemon.shift();
+						side.pokemon.unshift(unfainted);
+						// @ts-expect-error
+						side.pokemon[newIndex] = carry;
+						side.pokemon[newIndex].position = newIndex;
+						side.pokemon[0].position = 0;
+					}
+				}
+			}
+		},
+	},
+
+	// Past Gens OU
+	///////////////////////////////////////////////////////////////////
+
+	{
+		section: "OU",
+		column: 2,
+	},
+	{
+		name: "[Gen 9] OU",
+		mod: 'gen9',
+		ruleset: ['Standard', 'Evasion Abilities Clause', 'Sleep Moves Clause', '!Sleep Clause Mod'],
+		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Shadow Tag', 'King\'s Rock', 'Razor Fang', 'Baton Pass', 'Last Respects', 'Shed Tail', 'Tera Blast'],
+	},
+	{
+		name: "[Gen 8] OU",
+		mod: 'gen8',
+		ruleset: ['Standard', 'Dynamax Clause'],
+		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Sand Veil', 'Shadow Tag', 'Snow Cloak', 'King\'s Rock', 'Baton Pass'],
+	},
+	{
+		name: "[Gen 7] OU",
+		mod: 'gen7',
+		ruleset: ['Standard'],
+		banlist: ['Uber', 'Arena Trap', 'Power Construct', 'Shadow Tag', 'Baton Pass'],
+	},
+	{
+		name: "[Gen 6] OU",
+		mod: 'gen6',
+		ruleset: ['Standard', 'Evasion Abilities Clause'],
+		banlist: ['Uber', 'Arena Trap', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Soul Dew', 'Baton Pass', 'Swagger'],
+	},
+	{
+		name: "[Gen 5] OU",
+		mod: 'gen5',
+		ruleset: ['Standard', 'Evasion Abilities Clause', 'Sleep Moves Clause', 'Gems Clause', 'Baton Pass Stat Clause'],
+		banlist: ['Uber', 'Arena Trap', 'Drizzle ++ Swift Swim', 'Drought ++ Chlorophyll', 'Sand Rush', 'Shadow Tag', 'King\'s Rock', 'Razor Fang', 'Soul Dew', 'Assist', 'Swagger'],
+	},
+	{
+		name: "[Gen 4] OU",
+		mod: 'gen4',
+		ruleset: ['Standard', 'Evasion Abilities Clause', 'Baton Pass Stat Trap Clause', 'Freeze Clause Mod', 'Sleep Moves Clause', '!Sleep Clause Mod'],
+		banlist: ['AG', 'Uber', 'Arena Trap', 'Quick Claw', 'Soul Dew', 'Swagger'],
+	},
+	{
+		name: "[Gen 3] OU",
+		mod: 'gen3',
+		ruleset: ['Standard', 'One Boost Passer Clause', 'Accuracy Trap Clause', 'Freeze Clause Mod', 'Speed Pass Clause'],
+		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Quick Claw', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
+	},
+	{
+		name: "[Gen 2] OU",
+		mod: 'gen2',
+		ruleset: ['Standard'],
+		banlist: ['Uber', 'Mean Look + Baton Pass', 'Spider Web + Baton Pass'],
+	},
+	{
+		name: "[Gen 1] OU",
+		mod: 'gen1',
+		ruleset: ['Standard'],
+		banlist: ['Uber'],
+	},
 
 	// National Dex Other Tiers
 	///////////////////////////////////////////////////////////////////
@@ -525,51 +679,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		section: "S/V Singles",
 		column: 2,
-	},
-	{
-		name: "[Gen 9] Random Battle",
-		desc: `Randomized teams of Pok&eacute;mon with sets that are generated to be competitively viable.`,
-		mod: 'gen9',
-		team: 'random',
-		bestOfDefault: true,
-		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
-	},
-	{
-		name: "[Gen 9] Unrated Random Battle",
-		mod: 'gen9',
-		team: 'random',
-		challengeShow: false,
-		rated: false,
-		ruleset: ['Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
-	},
-	{
-		name: "[Gen 9] Free-For-All Random Battle",
-		mod: 'gen9',
-		team: 'randomFFA',
-		gameType: 'freeforall',
-		tournamentShow: false,
-		rated: false,
-		ruleset: ['Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
-	},
-	{
-		name: "[Gen 9] Random Battle (Blitz)",
-		mod: 'gen9',
-		team: 'random',
-		bestOfDefault: true,
-		ruleset: ['[Gen 9] Random Battle', 'Blitz'],
-	},
-	{
-		name: "[Gen 9] Multi Random Battle",
-		mod: 'gen9',
-		team: 'random',
-		gameType: 'multi',
-		searchShow: false,
-		tournamentShow: false,
-		rated: false,
-		ruleset: [
-			'Max Team Size = 3',
-			'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod',
-		],
 	},
 	{
 		name: "[Gen 9] OU",
@@ -2239,67 +2348,24 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 						move: moveData.id,
 						source,
 						moveData,
+		gameType: 'doubles',
+		ruleset: ['Obtainable', 'HP Percentage Mod', 'Cancel Mod'],
+		onValidateTeam() {
+			return [`This format cannot be battled via challenge or ladder.`];
+		},
+		onSwitchIn(pokemon) {
+			if (pokemon.side.isAI) {
+				pokemon.side.foe.active[0].m.willGetEXP = true;
+				// @ts-expect-error hacky implementation
+				if (pokemon.side.foe.roguelikeTeamData.keyItems.includes('Exp. All')) {
+					pokemon.side.foe.pokemon.forEach(p => {
+						p.m.giveExpAll = true;
+						p.m.expAll = true;
 					});
-					this.add('-message', `${source.name} foresaw an attack!`);
-					return this.NOT_FAIL;
-				};
-			}
-		},
-	},
-	{
-		name: "[Gen 9] Formemons",
-		desc: `Alternate formes of existing Pokemon can be used directly without required items/moves.`,
-		mod: 'gen9',
-		searchShow: false,
-		ruleset: [
-			'Standard AG', '!Obtainable Formes', '+Past', '+LGPE', 'Evasion Clause', 'Forme Clause', 'OHKO Clause', 'Overflow Stat Mod',
-			'Sleep Moves Clause', 'Species Reveal Clause', 'Hackmons Forme Legality', 'Mega Rayquaza Clause',
-		],
-		banlist: ['Calyrex-Shadow', 'Gengar-Mega', 'Miraidon', 'Moody', 'King\'s Rock', 'Razor Fang', 'Baton Pass'],
-		onValidateSet(set, format, setHas, teamHas) {
-			const species = this.dex.species.get(set.species);
-			if (this.dex.species.get(species.baseSpecies).isNonstandard) return [`${species.name} does not exist in Gen 9.`];
-			if (species.name !== species.baseSpecies && species.baseSpecies === 'Arceus' &&
-				this.dex.items.get(set.item).onPlate !== species.types[0]) {
-				return [`${species.name} is required to hold the ${species.requiredItems![0]}.`];
-			}
-		},
-	},
-	{
-		name: "[Gen 9] Fortemons",
-		desc: `Put an attacking move in the item slot to have all of a Pok&eacute;mon's attacks inherit its properties.`,
-		mod: 'gen9',
-		searchShow: false,
-		ruleset: ['Standard OMs', 'Sleep Moves Clause', 'Terastal Clause'],
-		banlist: [
-			'Annihilape', 'Arceus', 'Archaludon', 'Azumarill', 'Calyrex-Ice', 'Calyrex-Shadow', 'Chi-Yu', 'Chien-Pao', 'Cloyster', 'Comfey', 'Deoxys-Normal', 'Deoxys-Attack',
-			'Dialga-Base', 'Espathra', 'Eternatus', 'Flutter Mane', 'Giratina-Altered', 'Great Tusk', 'Groudon', 'Ho-Oh', 'Iron Bundle', 'Iron Treads', 'Koraidon', 'Kyogre',
-			'Kyurem-Black', 'Kyurem-White', 'Landorus-Incarnate', 'Lugia', 'Lunala', 'Magearna', 'Meowscarada', 'Mewtwo', 'Miraidon', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-			'Palafin', 'Palkia', 'Palkia-Origin', 'Quaquaval', 'Raging Bolt', 'Rayquaza', 'Reshiram', 'Samurott-Hisui', 'Shaymin-Sky', 'Skeledirge', 'Smeargle', 'Solgaleo',
-			'Spectrier', 'Sneasler', 'Terapagos', 'Urshifu', 'Urshifu-Rapid-Strike', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Arena Trap',
-			'Moody', 'Serene Grace', 'Shadow Tag', 'Damp Rock', 'Heat Rock', 'Light Clay', 'Baton Pass', 'Beat Up', 'Fake Out', 'Last Respects', 'move:Metronome', 'Shed Tail',
-		],
-		restricted: [
-			'Doom Desire', 'Dynamic Punch', 'Electro Ball', 'Explosion', 'Gyro Ball', 'Final Gambit', 'Flail', 'Flip Turn', 'Fury Cutter', 'Future Sight', 'Grass Knot',
-			'Grassy Glide', 'Hard Press', 'Heavy Slam', 'Heat Crash', 'Inferno', 'Low Kick', 'Misty Explosion', 'Nuzzle', 'Power Trip', 'Reversal', 'Self-Destruct',
-			'Spit Up', 'Stored Power', 'Tera Blast', 'U-turn', 'Weather Ball', 'Zap Cannon',
-		],
-		onValidateTeam(team) {
-			const itemTable = new Set<string>();
-			for (const set of team) {
-				const forte = this.toID(set.item);
-				if (!forte) continue;
-				const move = this.dex.moves.get(forte);
-				if (move.exists && move.id !== 'metronome') {
-					if (itemTable.has(forte)) {
-						return [
-							`You are limited to one of each move in the item slot per team.`,
-							`(You have more than one ${move.name}.)`,
-						];
-					}
-					itemTable.add(forte);
 				}
+				return;
 			}
+			pokemon.m.willGetEXP = true;
 		},
 		validateSet(set, teamHas) {
 			const item = set.item;
@@ -2651,15 +2717,19 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				const [familyId] = evoFamilies;
 				if (!(familyId in requiredFamilies)) {
 					requiredFamilies[familyId] = 1;
+		onFaint(target, source, effect) {
+			if (target.side.isAI) {
+				if (!source || source?.side.isAI) source = target.side.foe.active[0];
+				if (source.side.pokemon.filter(p => p.m.willGetEXP).length > 1) {
+					this.expMult = 0.5;
 				} else {
-					requiredFamilies[familyId]++;
+					this.expMult = 1;
 				}
-				if (requiredFamilies[familyId] > 1) {
-					return [
-						`You are limited to up to one inheritance from each evolution family by the Donor Clause.`,
-						`(You inherit more than once from ${this.dex.species.get(familyId).name}).`,
-					];
-				}
+				// IDK how explosion -> gain exp works in the game so ill figure it out later
+				// if (!source.hp) source.m.willGetEXP = false;
+				if (this.findNextMonForEXP()) return this.giveExpAndEVs(target, this.findNextMonForEXP()!);
+			} else {
+				target.m.willGetEXP = false;
 			}
 		},
 		onBegin() {
@@ -3364,34 +3434,51 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 							stab = isSTAB ? 2 : [4915, 4096];
 							if (pokemon.species.name !== 'Terapagos-Stellar') {
 								pokemon.stellarBoostedTypes.push(type);
+			for (const side of this.sides) {
+				if (side.isAI) continue;
+				// @ts-expect-error hacky implementation
+				if (side.roguelikeTeamData.teamData) {
+					// @ts-expect-error hacky implementation
+					const data = side.roguelikeTeamData.teamData;
+					let index = 0;
+					for (const pokemon of side.pokemon) {
+						// @ts-expect-error hacky implementation
+						if (side.roguelikeTeamData.keyItems.includes('Exp. All')) {
+							pokemon.m.giveExpAll = true;
+							pokemon.m.expAll = true;
+						}
+						const persist = data[index];
+						pokemon.m.exp = persist.exp;
+						pokemon.m.expAtNextLevel = persist.expAtNextLevel;
+						pokemon.hp = persist.curHP;
+						if (persist.status) {
+							if (persist.status === 'fnt') {
+								pokemon.faint();
+								pokemon.m.willFaint = true;
+							} else {
+								pokemon.setStatus(persist.status as ID, null, null, true);
 							}
 						}
-					} else {
-						if (pokemon.terastallized === type && pokemon.getTypes(false, true).includes(type)) {
-							stab = 2;
+						let moveIndex = 0;
+						for (const move of pokemon.moveSlots) {
+							move.pp = persist.ppLeft[moveIndex];
+							moveIndex++;
 						}
-						stab = this.battle.runEvent('ModifySTAB', pokemon, target, move, stab);
-					}
-
-					baseDamage = this.battle.modify(baseDamage, stab);
-				}
-
-				// types
-				let typeMod = target.runEffectiveness(move);
-				typeMod = this.battle.clampIntRange(typeMod, -6, 6);
-				target.getMoveHitData(move).typeMod = typeMod;
-				if (typeMod > 0) {
-					if (!suppressMessages) this.battle.add('-supereffective', target);
-
-					for (let i = 0; i < typeMod; i++) {
-						baseDamage *= 2;
+						pokemon.m.roguelikeIndex = persist.linkedTeamIndex;
+						index++;
 					}
 				}
-				if (typeMod < 0) {
-					if (!suppressMessages) this.battle.add('-resisted', target);
-
-					for (let i = 0; i > typeMod; i--) {
-						baseDamage = tr(baseDamage / 2);
+				// Don't implode if 1st mon gonna die
+				if (side.pokemon[0].m.willFaint) {
+					const unfainted = side.pokemon.find(newPoke => !newPoke.m.willFaint);
+					if (unfainted) {
+						const newIndex = side.pokemon.indexOf(unfainted);
+						const carry = side.pokemon.shift();
+						side.pokemon.unshift(unfainted);
+						// @ts-expect-error
+						side.pokemon[newIndex] = carry;
+						side.pokemon[newIndex].position = newIndex;
+						side.pokemon[0].position = 0;
 					}
 				}
 

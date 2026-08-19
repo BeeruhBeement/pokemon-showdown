@@ -61,6 +61,7 @@ export class RoomBattlePlayer extends RoomGamePlayer<RoomBattle> {
 	request: BattleRequestTracker;
 	wantsTie: boolean;
 	wantsOpenTeamSheets: boolean | null;
+	isAI: boolean | false;
 	eliminated: boolean;
 	/**
 	 * Total timer.
@@ -124,6 +125,7 @@ export class RoomBattlePlayer extends RoomGamePlayer<RoomBattle> {
 		this.request = { rqid: 0, request: '', isWait: 'cantUndo', choice: '' };
 		this.wantsTie = false;
 		this.wantsOpenTeamSheets = null;
+		this.isAI = false;
 		this.active = !!user?.connected;
 		this.eliminated = false;
 
@@ -390,7 +392,7 @@ export class RoomBattleTimer {
 	checkActivity() {
 		if (this.battle.ended) return;
 		for (const player of this.battle.players) {
-			const isActive = !!player.active;
+			const isActive = !!player.active || player.isAI;
 
 			if (isActive === player.knownActive) continue;
 
@@ -462,11 +464,14 @@ export class RoomBattleTimer {
 
 export interface RoomBattlePlayerOptions {
 	user: User;
+	username?: string;
 	/** should be '' for random teams */
 	team?: string;
 	rating?: number;
 	inviteOnly?: boolean;
 	hidden?: boolean;
+	isAI?: boolean;
+	roguelikeTeamData?: AnyObject;
 }
 
 export interface RoomBattleOptions {
@@ -496,6 +501,8 @@ export interface RoomBattleOptions {
 	 * rather than a battle.
 	 */
 	isBestOfSubBattle?: boolean;
+	isRoguelikeBattle?: boolean;
+	vsAI?: boolean;
 }
 
 export class RoomBattle extends RoomGame<RoomBattlePlayer> {
@@ -541,6 +548,8 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 	requestCount = 0;
 	options: RoomBattleOptions;
 	frozen?: boolean;
+	isRoguelikeBattle?: boolean;
+	currentData?: object[];
 	dataResolvers?: [((args: string[]) => void), ((error: Error) => void)][];
 	constructor(room: GameRoom, options: RoomBattleOptions) {
 		super(room);
@@ -573,6 +582,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 			roomid: this.roomid,
 			rated: ratedMessage,
 			seed: options.seed,
+			isRoguelikeBattle: options.isRoguelikeBattle || false,
 		};
 		if (options.inputLog) {
 			void this.stream.write(options.inputLog);
@@ -587,7 +597,8 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 		}
 		for (let i = 0; i < this.playerCap; i++) {
 			const p = options.players[i];
-			const player = this.addPlayer(p?.user || null, p || null);
+			// console.log(p);
+			const player = this.addPlayer(p?.user || p.username || null, p || null);
 			if (!player) throw new Error(`failed to create player ${i + 1} in ${room.roomid}`);
 		}
 		if (options.inputLog) {
@@ -608,7 +619,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 	}
 
 	checkActive() {
-		const active = (this.started && !this.ended && this.players.every(p => p.active));
+		const active = (this.started && !this.ended && this.players.every(p => p.active || p.isAI));
 		Rooms.global.battleCount += (active ? 1 : 0) - (this.active ? 1 : 0);
 		this.room.active = active;
 		this.active = active;
@@ -768,6 +779,12 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 			resolver(lines);
 			break;
 
+		case 'sendroguelikedata':
+			lines = lines.slice(1);
+			const teamDataRoguelike = JSON.parse(lines[0]);
+			this.currentData = teamDataRoguelike;
+			break;
+
 		case 'update':
 			for (const line of lines.slice(1)) {
 				if (line.startsWith('|turn|')) {
@@ -861,7 +878,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 		} else if (Config.logchallenges && !this.room.settings.isPrivate && !this.room.hideReplay) {
 			void this.logBattle(p1score);
 			const uploader = Users.get(winnerid || this.p1.id);
-			if (uploader?.connections[0]) {
+			if (uploader?.connections[0] && !this.isRoguelikeBattle) {
 				Chat.parse('Replay autosaved to ' + link, this.room, uploader, uploader.connections[0]);
 			}
 		} else if (!this.options.isBestOfSubBattle) {
@@ -1072,6 +1089,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 		const player = super.addPlayer(user);
 		if (typeof user === 'string') user = null;
 		if (!player) return null;
+		if (playerOpts?.isAI) player.isAI = playerOpts.isAI;
 		const slot = player.slot;
 		this[slot] = player;
 
@@ -1081,7 +1099,10 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 				avatar: user ? `${user.avatar}` : '',
 				team: playerOpts.team || undefined,
 				rating: Math.round(playerOpts.rating || 0),
+				isAI: !!playerOpts.isAI || false,
+				roguelikeTeamData: playerOpts.roguelikeTeamData || false,
 			};
+			// console.log(options);
 			void this.stream.write(`>player ${slot} ${JSON.stringify(options)}`);
 			player.hasTeam = true;
 		}
@@ -1218,7 +1239,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 			this.started = true;
 		}
 		const delayStart = this.options.delayedStart || !!this.options.inputLog;
-		const users = this.players.map(player => {
+		const users = this.players.filter(player => !player.isAI).map(player => {
 			const user = player.getUser();
 			if (!user && !delayStart) {
 				throw new Error(`User ${player.id} not found on ${this.roomid} battle creation`);
@@ -1265,6 +1286,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 
 	override destroy() {
 		if (!this.ended) {
+			Chat.runHandlers('onAbandondedBattleDestroy', this, this.players.map(p => p.id));
 			this.setEnded();
 			this.room.parent?.game?.onBattleWin?.(this.room, '');
 		}

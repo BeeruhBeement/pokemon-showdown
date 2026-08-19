@@ -24,6 +24,9 @@ import { State } from './state';
 import { BattleQueue, type Action } from './battle-queue';
 import { BattleActions } from './battle-actions';
 import { Utils } from '../lib/utils';
+import { FS } from '../lib/';
+const EXP_TABLE = JSON.parse(FS(`server/chat-plugins/roguelike/exp.json`).readSync());
+
 declare const __version: any;
 
 export type ChannelID = 0 | 1 | 2 | 3 | 4;
@@ -66,6 +69,7 @@ interface BattleOptions {
 	prng?: PRNG; // PRNG override (you usually don't need this, just pass a seed)
 	seed?: PRNGSeed; // PRNG seed
 	rated?: boolean | string; // Rated string
+	isRoguelikeBattle?: boolean;
 	p1?: PlayerOptions; // Player 1 data
 	p2?: PlayerOptions; // Player 2 data
 	p3?: PlayerOptions; // Player 3 data
@@ -104,7 +108,7 @@ type Part = string | number | boolean | Pokemon | Side | Effect | Move | null | 
 //   - '': no request. Used between turns, or when the battle is over.
 //
 // An individual Side's request state is encapsulated in its `activeRequest` field.
-export type RequestState = 'teampreview' | 'move' | 'switch' | '';
+export type RequestState = 'teampreview' | 'move' | 'switch' | 'levelup' | '';
 
 export class Battle {
 	readonly id: ID;
@@ -131,6 +135,8 @@ export class Battle {
 	reportExactHP: boolean;
 	reportPercentages: boolean;
 	supportCancel: boolean;
+	isRoguelikeBattle?: boolean;
+	expMult: number;
 
 	actions: BattleActions;
 	queue: BattleQueue;
@@ -152,6 +158,8 @@ export class Battle {
 	midTurn: boolean;
 	started: boolean;
 	ended: boolean;
+	endedMidCutscene: boolean;
+	switchAfterLevelup: boolean;
 	winner?: string;
 
 	effect: Effect;
@@ -197,6 +205,8 @@ export class Battle {
 		this.dex = Dex.forFormat(format);
 		this.gen = this.dex.gen;
 		this.ruleTable = this.dex.formats.getRuleTable(format);
+		this.isRoguelikeBattle = options.isRoguelikeBattle || false;
+		this.expMult = 1;
 
 		this.trunc = this.dex.trunc;
 		this.clampIntRange = Utils.clampIntRange;
@@ -242,6 +252,8 @@ export class Battle {
 		this.midTurn = false;
 		this.started = false;
 		this.ended = false;
+		this.endedMidCutscene = false;
+		this.switchAfterLevelup = false;
 
 		this.effect = { id: '' } as Effect;
 		this.effectState = this.initEffectState({ id: '' });
@@ -1402,8 +1414,14 @@ export class Battle {
 		}
 		this.sentRequests = false;
 
-		if (this.sides.every(side => side.isChoiceDone())) {
+		if (!this.sides.some(s => s.isAI) && this.sides.every(side => side.isChoiceDone())) {
 			throw new Error(`Choices are done immediately after a request`);
+		}
+		for (const side of this.sides) {
+			if (side?.isAI) {
+				const decision = this.roguelikeAI(side.activeRequest!);
+				if (decision) this.choose(side.id, decision);
+			}
 		}
 	}
 
@@ -1436,6 +1454,21 @@ export class Battle {
 				const side = this.sides[i];
 				const maxChosenTeamSize = this.ruleTable.pickedTeamSize || undefined;
 				requests[i] = { teamPreview: true, maxChosenTeamSize, side: side.getRequestData() };
+			}
+			break;
+
+		case 'levelup':
+			for (let i = 0; i < this.sides.length; i++) {
+				const side = this.sides[i];
+				if (side.isAI) {
+					requests[i] = { wait: true, side: side.getRequestData() };
+				} else {
+					const activeData = side.pokemon.find(pokemon => pokemon.m.overwrite)!.getMoveRequestData();
+					requests[i] = { active: [activeData], side: side.getRequestData() };
+					if (side.allySide) {
+						(requests[i] as MoveRequest).ally = side.allySide.getRequestData(true);
+					}
+				}
 			}
 			break;
 
@@ -2549,12 +2582,12 @@ export class Battle {
 			faintData = this.faintQueue.shift()!;
 			const pokemon: Pokemon = faintData.target;
 			if (!pokemon.fainted && this.runEvent('BeforeFaint', pokemon, faintData.source, faintData.effect)) {
-				this.add('faint', pokemon);
+				if (pokemon.isActive) this.add('faint', pokemon);
 				if (pokemon.side.pokemonLeft) pokemon.side.pokemonLeft--;
 				if (pokemon.side.totalFainted < 100) pokemon.side.totalFainted++;
 				this.runEvent('Faint', pokemon, faintData.source, faintData.effect);
-				this.singleEvent('End', pokemon.getAbility(), pokemon.abilityState, pokemon);
-				this.singleEvent('End', pokemon.getItem(), pokemon.itemState, pokemon);
+				if (pokemon.isActive) this.singleEvent('End', pokemon.getAbility(), pokemon.abilityState, pokemon);
+				if (pokemon.isActive) this.singleEvent('End', pokemon.getItem(), pokemon.itemState, pokemon);
 				if (pokemon.formeRegression && !pokemon.transformed) {
 					// before clearing volatiles
 					pokemon.baseSpecies = this.dex.species.get(pokemon.set.species || pokemon.set.name);
@@ -2605,11 +2638,19 @@ export class Battle {
 
 	checkWin(faintData?: Battle['faintQueue'][0]) {
 		if (this.sides.every(side => !side.pokemonLeft)) {
+			if (this.requestState === 'levelup' && !this.endedMidCutscene) {
+				this.endedMidCutscene = true;
+				return true;
+			}
 			this.win(faintData && this.gen > 4 ? faintData.target.side : null);
 			return true;
 		}
 		for (const side of this.sides) {
 			if (!side.foePokemonLeft()) {
+				if (this.requestState === 'levelup' && !this.endedMidCutscene) {
+					this.endedMidCutscene = true;
+					return true;
+				}
 				this.win(side);
 				return true;
 			}
@@ -2702,6 +2743,68 @@ export class Battle {
 			break;
 		}
 
+		case 'levelup':
+			// I will regret this later if somehow there is doubles
+			const humanSource = action.pokemon.m.overwrite ? action.pokemon : action.pokemon.side.pokemon.find(p => p.m.overwrite)!;
+			const aiTarget = this.getTarget(action.pokemon, action.move, action.targetLoc) || action.pokemon.side.foe.active[0];
+			const dexMove = this.dex.moves.get(humanSource.m.overwrite);
+			switch (action.move.id) {
+			case 'yes':
+				this.add('message', `Which move should be forgotten?`);
+				this.makeRequest('levelup');
+				break;
+			case 'undo':
+			case 'no':
+				this.add('message', `${humanSource.name} did not learn ${dexMove.name}.`);
+				delete humanSource.m.overwrite;
+				if (humanSource.m.levelUpMoves.length) {
+					const newMove = humanSource.m.levelUpMoves.shift();
+					this.processLevelUpMove(newMove, humanSource, aiTarget);
+				} else if (humanSource.m.exp >= humanSource.m.expAtNextLevel && humanSource.level < 100) {
+					this.levelUp(humanSource, aiTarget);
+				} else if (this.findNextMonForEXP()) {
+					this.giveExpAndEVs(aiTarget, this.findNextMonForEXP()!);
+				} else if (this.switchAfterLevelup) {
+					this.makeRequest('switch');
+					this.switchAfterLevelup = false;
+				} else if (this.endedMidCutscene || !aiTarget.side.foePokemonLeft()) {
+					this.checkWin();
+				}
+				break;
+			default:
+				delete humanSource.m.overwrite;
+				const sketchIndex = humanSource.moves.indexOf(action.move.id);
+				const sketchedMove = {
+					move: dexMove.name,
+					id: dexMove.id,
+					pp: dexMove.pp * (8 / 5),
+					maxpp: dexMove.pp * (8 / 5),
+					target: dexMove.target,
+					disabled: false,
+					used: false,
+				};
+				humanSource.moveSlots[sketchIndex] = sketchedMove;
+				humanSource.baseMoveSlots[sketchIndex] = sketchedMove;
+				this.add('message', `1...`);
+				this.add('message', `2...`);
+				this.add('message', `and... Poof!`);
+				this.add('message', `${humanSource.name} forgot ${action.move.name} and learned ${dexMove.name}!`);
+				if (humanSource.m.levelUpMoves.length) {
+					const newMove = humanSource.m.levelUpMoves.shift();
+					this.processLevelUpMove(newMove, humanSource, aiTarget);
+				} else if (humanSource.m.exp >= humanSource.m.expAtNextLevel && humanSource.level < 100) {
+					this.levelUp(humanSource, aiTarget);
+				} else if (this.findNextMonForEXP()) {
+					this.giveExpAndEVs(aiTarget, this.findNextMonForEXP()!);
+				} else if (this.switchAfterLevelup) {
+					this.makeRequest('switch');
+					this.switchAfterLevelup = false;
+				} else if (this.endedMidCutscene || !aiTarget.side.foePokemonLeft()) {
+					this.checkWin();
+				}
+				break;
+			}
+			break;
 		case 'move':
 			if (!action.pokemon.isActive) return false;
 			if (action.pokemon.fainted) return false;
@@ -2909,6 +3012,10 @@ export class Battle {
 
 		for (const playerSwitch of switches) {
 			if (playerSwitch) {
+				if (this.requestState === 'levelup') {
+					this.switchAfterLevelup = true;
+					return true;
+				}
 				this.makeRequest('switch');
 				return true;
 			}
@@ -3250,6 +3357,14 @@ export class Battle {
 		if (options.team && typeof options.team !== 'string') {
 			options.team = Teams.pack(options.team);
 		}
+		if (options.isAI && side.isAI !== options.isAI) {
+			side.isAI = options.isAI;
+			didSomething = true;
+		}
+		if (options.roguelikeTeamData) {
+			side.roguelikeTeamData = options.roguelikeTeamData;
+			didSomething = true;
+		}
 		if (!didSomething) return;
 		this.inputLog.push(`>player ${slot} ` + JSON.stringify(options));
 		this.add('player', side.id, side.name, side.avatar, options.rating || '');
@@ -3301,6 +3416,45 @@ export class Battle {
 				delete log.p4;
 				delete log.p4team;
 			}
+			if (this.isRoguelikeBattle) {
+				const roguelikeData = [];
+				// p1 is always the human
+				for (const mon of this.p1.pokemon) {
+					const monData = {};
+					// @ts-expect-error shut up
+					monData.curHP = mon.hp;
+					// @ts-expect-error
+					monData.status = mon.status.length ? mon.status : false;
+					// @ts-expect-error
+					if (mon.hp < 1) monData.status = 'fnt';
+					// @ts-expect-error
+					monData.ppLeft = [];
+					// @ts-expect-error shut up
+					monData.moves = [];
+					for (const move of mon.baseMoveSlots) {
+						// @ts-expect-error
+						monData.moves.push(move.move);
+						// @ts-expect-error
+						monData.ppLeft.push(move.pp);
+					}
+					// @ts-expect-error shut up
+					monData.exp = mon.m.exp;
+					// @ts-expect-error
+					monData.evs = mon.set.evs;
+					// @ts-expect-error
+					monData.level = mon.set.level;
+					// @ts-expect-error
+					monData.evoFlag = mon.m.willEvolve || false;
+					// @ts-expect-error
+					monData.item = mon.item.length ? Dex.items.get(mon.item).name : mon.item;
+					// @ts-expect-error
+					monData.linkedTeamIndex = mon.m.roguelikeIndex;
+					roguelikeData.push(monData);
+				}
+				// @ts-expect-error
+				roguelikeData.sort((a, b) => a.linkedTeamIndex - b.linkedTeamIndex);
+				this.send('sendroguelikedata', JSON.stringify(roguelikeData));
+			}
 			this.send('end', JSON.stringify(log));
 			this.sentEnd = true;
 		}
@@ -3342,6 +3496,231 @@ export class Battle {
 				delete state[k];
 			}
 		}
+	}
+
+	// Functions for Roguelike battles
+	getMinExpForMonAtLevel(species: string, level: number) {
+		species = toID(species);
+		const speciesData = EXP_TABLE[species] || EXP_TABLE[toID(this.dex.species.get(species).baseSpecies)];
+		if (level === 1) return 0;
+		switch (speciesData['expType']) {
+		case 'Erratic':
+			if (level < 50) {
+				return Math.floor((level ** 3 * (100 - level)) / 50);
+			} else if (level < 68) {
+				return Math.floor((level ** 3 * (150 - level)) / 100);
+			} if (level < 90) {
+				return Math.floor((level ** 3 * ((1911 - (10 * level)) / 3)) / 500);
+			} else {
+				return Math.floor((level ** 3 * (160 - level)) / 100);
+			}
+		case 'Fast':
+			return Math.floor((4 * level ** 3) / 5);
+		case 'Medium Fast':
+			return Math.floor(level ** 3);
+		case 'Medium Slow':
+			const a = (6 / 5) * level ** 3;
+			const b = 15 * level ** 2;
+			const c = 100 * level;
+			return Math.floor(a - b + c - 140);
+		case 'Slow':
+			return Math.floor((5 * level ** 3) / 4);
+		case 'Fluctuating':
+			if (level < 15) {
+				return Math.floor((level ** 3 * (((level + 1) / 3) + 24)) / 50);
+			} else if (level < 36) {
+				return Math.floor((level ** 3 * (level + 14)) / 50);
+			} else {
+				return Math.floor((level ** 3 * ((level / 2) + 32)) / 50);
+			}
+		}
+	}
+
+	getMovesAtTarget(pokemon: string, target: 'M' | 'T' | 'L' | 'R' | 'E' | 'D' | 'S' | 'V' | 'C' | 'any', level?: number) {
+		let genNumber = 9;
+		while (genNumber > 1) {
+			if (Dex.mod(`gen${genNumber}`).species.get(toID(pokemon)).isNonstandard) {
+				genNumber--;
+				continue;
+			}
+			break;
+		}
+		if (toID(pokemon) === 'floetteeternal') genNumber = 6;
+		const prevoList = [];
+		let dexSpecies = Dex.species.get(pokemon);
+		while (dexSpecies.prevo) {
+			prevoList.push(dexSpecies.prevo);
+			dexSpecies = Dex.species.get(dexSpecies.prevo);
+		}
+		const fullLearn = Dex.species.getFullLearnset(toID(pokemon));
+		const movesAtlevel: string[] = [];
+		for (const learnsetIndex of fullLearn) {
+			if (prevoList) {
+				prevoList.forEach(p => {
+					const learnset = Dex.species.getLearnsetData(toID(p));
+					if (learnset.species.name !== p) p = learnset.species.name;
+				});
+				if (prevoList.includes(learnsetIndex.species.name)) {
+					continue;
+				}
+			}
+			const learnset = learnsetIndex.learnset;
+			for (const move in learnset) {
+				if (target === 'any') {
+					movesAtlevel.push(move);
+					continue;
+				}
+				const learnSetstring = target === 'L' ? `${genNumber}${target}${level}` : `${genNumber}${target}`;
+				if (learnset[move].some(source => source === learnSetstring)) {
+					if (!movesAtlevel.includes(move)) {
+						movesAtlevel.push(move);
+					}
+				}
+			}
+		}
+		// randomize moves at equal level
+		this.prng.shuffle(movesAtlevel);
+		return movesAtlevel;
+	}
+
+	roguelikeAI(request: ChoiceRequest) {
+		if (request.wait) return false;
+		if (request.forceSwitch) {
+			const choiceSlot = this.random(2, request.side.pokemon.length + 1);
+			return `switch ${choiceSlot}`;
+		}
+		// @ts-expect-error jank request parser
+		if (request.active[0]) {
+			// @ts-expect-error jank request parser
+			const choiceSlot = this.random(1, request.active[0].moves.length + 1);
+			return `move ${choiceSlot}`;
+		}
+		return 'default';
+	}
+	// I will regret this function later
+	checkForlevelUpEvolution(pokemon: Pokemon) {
+		const evoList = Dex.species.get(pokemon.species).evos;
+		if (!evoList) return;
+		for (const newEvo of evoList) {
+			const newEvoLevel = Dex.species.get(newEvo).evoLevel || Infinity;
+			if (newEvoLevel <= pokemon.level) {
+				pokemon.m.willEvolve = newEvo;
+				return;
+			}
+		}
+	}
+	// @ts-expect-error
+	giveExpAndEVs(target: Pokemon, source: Pokemon) {
+		const mult = (source.m.expAll && !source.m.willGetEXP) ? 0.5 : this.expMult;
+		const species = this.toID(target.species.name);
+		const speciesData = EXP_TABLE[species] || EXP_TABLE[this.toID(Dex.species.get(species).baseSpecies)];
+		source.m.willGetEXP = false;
+		source.m.giveExpAll = false;
+		for (const stat of Object.keys(speciesData['evYield'])) {
+			const num = speciesData['evYield'][stat];
+			for (let x = num; x > 0; x--) {
+				if (Object.values(source.set.evs).reduce((a, b) => a + b, 0) >= 512) break;
+				source.set.evs[stat as StatID] = this.clampIntRange(source.set.evs[stat as StatID] + 1, 0, 255);
+			}
+		}
+		if (source.level < 100) {
+			const newEXP = Math.floor(((speciesData['expYield'] * target.level) / 7) * 1.5 * mult);
+			this.add('-message', `${source.name} gained ${newEXP} EXP!`);
+			source.m.exp += newEXP;
+		}
+		if (source.m.exp >= source.m.expAtNextLevel && source.level < 100) {
+			return this.levelUp(source, target);
+		}
+		if (this.findNextMonForEXP()) return this.giveExpAndEVs(target, this.findNextMonForEXP()!);
+		if (this.switchAfterLevelup) {
+			this.makeRequest('switch');
+			this.switchAfterLevelup = false;
+			return;
+		}
+		if (this.endedMidCutscene || !target.side.foePokemonLeft()) return this.checkWin();
+	}
+
+	findNextMonForEXP() {
+		// P1 is always the Human
+		return this.p1.pokemon.find(p => p.m.willGetEXP || (p.m.expAll && p.m.giveExpAll && !p.fainted));
+	}
+
+	// @ts-expect-error
+	levelUp(source: Pokemon, target: Pokemon) {
+		source.level++;
+		source.set.level++;
+		if (source.baseSpecies.name !== 'Shedinja') {
+			const percent = source.hp / source.baseMaxhp;
+			source.baseMaxhp = Math.floor(Math.floor(
+				2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+			) * source.level / 100 + 10);
+			source.maxhp = source.baseMaxhp;
+			source.hp = Math.floor(source.baseMaxhp * percent);
+		}
+		source.details = source.getUpdatedDetails();
+		if (source.isActive) {
+			this.add('detailschange', source, source.details);
+			this.add('-heal', source, source.getHealth, '[silent]');
+			this.add('message', `${source.name} leveled up!`);
+		}
+		const nextLevel = source.level + 1;
+		this.checkForlevelUpEvolution(source);
+		source.m.expAtNextLevel = this.getMinExpForMonAtLevel(this.toID(source.species.name), nextLevel);
+		source.m.levelUpMoves = this.getMovesAtTarget(source.species.name, 'L', source.level);
+		if (source.m.levelUpMoves.length) {
+			const newMove = source.m.levelUpMoves.shift();
+			return this.processLevelUpMove(newMove, source, target);
+		}
+		if (source.m.exp >= source.m.expAtNextLevel && source.level < 100) {
+			return this.levelUp(source, target);
+		}
+		if (this.findNextMonForEXP()) return this.giveExpAndEVs(target, this.findNextMonForEXP()!);
+		if (this.switchAfterLevelup) {
+			this.makeRequest('switch');
+			this.switchAfterLevelup = false;
+			return;
+		}
+		if (this.endedMidCutscene || !target.side.foePokemonLeft()) return this.checkWin();
+	}
+
+	// @ts-expect-error
+	processLevelUpMove(move: string, source: Pokemon, target: Pokemon) {
+		const dexMove = this.dex.moves.get(move);
+		if (!source.moves.includes(move)) {
+			const sketchedMove = {
+				move: dexMove.name,
+				id: dexMove.id,
+				pp: dexMove.pp * (8 / 5),
+				maxpp: dexMove.pp * (8 / 5),
+				target: dexMove.target,
+				disabled: false,
+				used: false,
+			};
+			if (source.moves.length < 4) {
+				source.moveSlots.push(sketchedMove);
+				source.baseMoveSlots.push(sketchedMove);
+				this.add('message', `${source.name} learned ${dexMove.name}!`);
+				if (source.m.levelUpMoves.length) {
+					const newMove = source.m.levelUpMoves.shift();
+					return this.processLevelUpMove(newMove, source, target);
+				}
+				if (source.m.exp >= source.m.expAtNextLevel && source.level < 100) {
+					return this.levelUp(source, target);
+				}
+			} else {
+				return;
+			}
+		}
+		if (source.m.exp >= source.m.expAtNextLevel && source.level < 100) {
+			return this.levelUp(source, target);
+		}
+		if (this.findNextMonForEXP()) return this.giveExpAndEVs(target, this.findNextMonForEXP()!);
+		if (this.switchAfterLevelup) {
+			this.makeRequest('switch');
+			this.switchAfterLevelup = false;
+			return;
+		}
+		if (this.endedMidCutscene || !target.side.foePokemonLeft()) return this.checkWin();
 	}
 
 	destroy() {
