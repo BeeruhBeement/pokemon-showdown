@@ -875,7 +875,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 		Chat.runHandlers('onBattleEnd', this, winnerid, this.players.map(p => p.id));
 		if (this.room.rated && !this.options.isBestOfSubBattle) {
 			void this.updateLadder(p1score, winnerid);
-		} else if (Config.logchallenges && !this.room.settings.isPrivate && !this.room.hideReplay) {
+		} else if (Config.logchallenges && !this.room.settings.isPrivate && !this.room.hideReplay && !this.isRoguelikeBattle) {
 			void this.logBattle(p1score);
 			const uploader = Users.get(winnerid || this.p1.id);
 			if (uploader?.connections[0] && !this.isRoguelikeBattle) {

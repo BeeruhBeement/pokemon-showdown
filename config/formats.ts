@@ -422,6 +422,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		challengeShow: false,
 		searchShow: false,
 		gameType: 'doubles',
+		noLog: true,
 		ruleset: ['Obtainable', 'HP Percentage Mod', 'Cancel Mod'],
 		onValidateTeam() {
 			return [`This format cannot be battled via challenge or ladder.`];

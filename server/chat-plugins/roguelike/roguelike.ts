@@ -427,6 +427,7 @@ function genPokemon(quantity: number, level: number | number[], weighting?: Poke
 			moves: [],
 			nature: Utils.randomElement(natures),
 			evs: { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 },
+			teraType: (Math.floor(Math.random() * 20) === 0) ? Utils.randomElement(types) : Utils.randomElement(specie.types),
 
 			ivs: {
 				hp: Math.floor(Math.random() * 32),
@@ -749,6 +750,7 @@ export class Roguelike {
 			buf += `<br />EXP: ${monData.exp}/${monData.expAtNextLevel}</td>`;
 			buf += `<td>`;
 			buf += `Ability: ${mon.ability}<br />`;
+			buf += `Tera Type: ${mon.teraType}<br />`;
 			const dexNature = Dex.natures.get(mon.nature);
 			for (const stat of Object.keys(dexSpecies.baseStats)) {
 				const statNumber = dexSpecies.baseStats[stat as StatID];
@@ -807,6 +809,7 @@ export class Roguelike {
 			buf += `<tr><td><img src="https://play.pokemonshowdown.com/sprites/${path}/${dexSpecies.spriteid}.png" /><br />${mon.species} ${mon.gender !== 'N' ? '(' + mon.gender + ')' : ''}<br />Level: ${mon.level ? mon.level : 100}<br />Item: ${mon.item === '' ? 'None' : mon.item}`;
 			buf += `<td>`;
 			buf += `Ability: ${mon.ability}<br />`;
+			buf += `Tera Type: ${mon.teraType}<br />`;
 			const dexNature = Dex.natures.get(mon.nature);
 			for (const stat of Object.keys(dexSpecies.baseStats)) {
 				const statNumber = dexSpecies.baseStats[stat as StatID];
@@ -869,6 +872,7 @@ export class Roguelike {
 			buf += `<td>`;
 			if (scoutData === 'revealSet') {
 				buf += `Ability: ${mon.ability}<br />`;
+				buf += `Tera Type: ${mon.teraType}<br />`;
 				const dexNature = Dex.natures.get(mon.nature);
 				for (const stat of Object.keys(dexSpecies.baseStats)) {
 					const statNumber = dexSpecies.baseStats[stat as StatID];
