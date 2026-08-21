@@ -24,33 +24,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		column: 1,
 	},
 	{
-		name: "[Gen 9] PoA Alternate Universe OU",
-
-		mod: 'gen9poaaltuniverse',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
-		banlist: [ 'Uber',
-			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
-			'Baton Pass',
-		],
-	},
-	{
-		name: "[Gen 9] Altermons OU",
-
-		mod: 'gen9altermons',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod', '+Light of Ruin'],
-		banlist: [ 'Uber',
-			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
-			'Baton Pass',
-		],
-	},
-	{
-		name: "[Gen 3] Puffy Pink OU",
-
-		mod: 'gen3puffypink',
-		ruleset: ['Standard', 'Data Mod'],
-		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
-	},
-	{
 		name: "[Gen 9] Hells Kitchen OU",
 
 		mod: 'gen9hellskitchen',
@@ -61,13 +34,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 9] Iron Fist",
+		name: "[Gen 9] Iron Fist OU",
 		threads: [
 			`<a href="https://www.smogon.com/forums/threads/.3748853/">Iron Fist</a>`,
 		],
-		mod: 'ironfist',
-		teambuilderFormat: "National Dex",
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod', 'Data Mod', 'Mega Data Mod', 'Species Clause', 'Mega Rayquaza Clause', 'Big Button Rule', 'MILF Rule', 'Ohmyrod Rule', 'Serious Rule', 'Mario Kart Wii Clause', 'I Love Hisui Rule', 'Circall Rule', 'honor student helper'],
+		mod: 'gen9ironfist',
+		ruleset: ['Standard NatDex', 'Data Mod', /*'Mega Data Mod', */'Mega Rayquaza Clause', 'Big Button Rule', 'MILF Rule', 'Ohmyrod Rule', 'Serious Rule', 'Mario Kart Wii Clause', 'I Love Hisui Rule', 'Circall Rule', 'honor student helper'],
 		banlist: ['Baton Pass', 'King\'s Rock', 'Razor Fang', 'Moody',
 		'Buginium Z', 'Darkinium Z', 'Dragonium Z', 'Electrium Z', 'Fairium Z', 'Fightinium Z', 'Firium Z', 'Flyinium Z', 'Ghostium Z', 'Grassium Z', 'Groundium Z', 'Icium Z', 'Normalium Z', 'Poisonium Z', 'Psychium Z', 'Rockium Z', 'Steelium Z', 'Waterium Z',
 		'Absolite', 'Houndoominite', 'Blue Orb', 'Fish', 'Diamond Hand', 'Hoenn', 'Bird', 'Trans'],
@@ -86,6 +58,43 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				}
 			}
 		}
+	},
+	{
+		name: "[Gen 3] Puffy Pink OU",
+
+		mod: 'gen3puffypink',
+		ruleset: ['Standard', 'Data Mod'],
+		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
+	},
+	{
+		name: "[Gen 9] Altermons OU",
+
+		mod: 'gen9altermons',
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod', '+Light of Ruin'],
+		banlist: [ 'Uber',
+			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
+			'Baton Pass',
+		],
+	},
+	{
+        name: "[Gen 9] PTest OU",
+        desc: "poamons",
+        threads: [
+            `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">hi</a>`,
+              ],
+        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
+        banlist: ['Arena Trap', 'Baton Pass', 'Slowbronite', 'Moody'],
+		unbanlist: ['Bouncy Bubble', 'Freezy Frost', 'Sparkly Swirl', 'Noxious Torque', 'Sappy Seed', 'Splishy Splash'],
+        mod: 'gen9ptestou',
+    },
+	{
+		name: "[Gen 9] NatDex Type Shift OU",
+		mod: 'typeshift',
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+		],
 	},
 
 	{
@@ -153,290 +162,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Lopunny-Mega'
 		],
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Indeedee-F'],
-	},
-
-	{
-		section: "Experimental/Unfinished",
-	},
-	{
-		name: "[Gen 3] P/S Split",
-		searchShow: false,
-		mod: 'gen3pssplit',
-		ruleset: ['Standard', 'One Boost Passer Clause', 'Freeze Clause Mod'],
-		banlist: ['Uber', 'Smeargle + Ingrain', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Swagger'],
-	},
-	/*{
-		name: "[Gen 9] spookymod Random Battle",
-		desc: `A Gen 9 Halloween-themed solomod comprised of entirely Ghost-types, some with more than 2 types.`,
-		mod: 'spookymod',
-		team: 'randomSPM',
-		ruleset: ['Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod', 'Terastal Clause', 'Data Preview', 'Sprite Viewer', 'Spokymod'],
-		onBegin() {
-			this.add(`raw|<div class='broadcast-green'><b>Need help with all of the new moves, abilities, and wacky stuff?<br />Then make sure to check out the <a href="https://docs.google.com/spreadsheets/d/1gE9pr0ghm1_Y8kPk0c-jXP93X57xlEr1OzzyXUVH90w/edit#gid=0" target="_blank">spookymod Spreadsheet</a> or use /dt!</b></div>`);
-		},
-		onSwitchInPriority: 100,
-		onSwitchIn(pokemon) {
-			if ((pokemon.illusion || pokemon).getTypes(true, true).join('/') !==
-				this.dex.forGen(9).species.get((pokemon.illusion || pokemon).species.name).types.join('/') &&
-				!pokemon.terastallized) {
-				this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
-			}
-		},
-	},
-	{
-		name: "[Gen 9] spookymod", // roomtours
-		desc: `A Gen 9 Halloween-themed solomod comprised of entirely Ghost-types, some with more than 2 types.`,
-		mod: 'spookymod',
-		searchShow: false,
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Preview', 'Sprite Viewer', 'Spokymod'],
-		banlist: ['All Pokemon'],
-		unbanlist: [
-			'Aegislash', 'Banette-Mega', 'Ceruledge', 'Dofagrigus', 'Eddy Azbear', 'Flutter Mane', 'Flutter Mane 2',
-			'Gourgeist-Tiny', 'Gourgeist', 'Gourgeist-Large', 'Gourgeist-Gigantic', 'Houndstone', 'Indeedee', 'Jableye',
-			'JOB APPLICATION', 'Kilotic', 'Lanturn-Evil', 'MERASMUS', 'Nursola', 'Okestar Spirit', 'PPiritomb', 'Quagsire-Dead',
-			'Rotom', 'Shedinja', 'Trevenant', 'Ursaluna-Bloodmoon', 'Vampharos', 'Wunala', 'XORygon-Z', 'Yveltal', 'Zoroark-Hisui',
-		],
-		onBegin() {
-			this.add(`raw|<div class='broadcast-green'><b>Need help with all of the new moves, abilities, and wacky stuff?<br />Then make sure to check out the <a href="https://docs.google.com/spreadsheets/d/1gE9pr0ghm1_Y8kPk0c-jXP93X57xlEr1OzzyXUVH90w/edit#gid=0" target="_blank">spookymod Spreadsheet</a> or use /dt!</b></div>`);
-		},
-		onSwitchInPriority: 100,
-		onSwitchIn(pokemon) {
-			if ((pokemon.illusion || pokemon).getTypes(true, true).join('/') !==
-				this.dex.forGen(9).species.get((pokemon.illusion || pokemon).species.name).types.join('/') &&
-				!pokemon.terastallized) {
-				this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
-			}
-		},
-	},*/
-	{
-        name: "[Gen 9] Climate Change",
-        desc: [
-            "weather war",
-        ],
-        threads: [
-            `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">Climate Change on Smogon Forums</a>`,
-              ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
-        banlist: ['Sunny Day', 'Rain Dance', 'Sandstorm', 'Hail', 'Snowscape', 'Chilly Reception', 'Charizardite X',
-			'Baton Pass'],
-		teambuilderFormat: "National Dex",
-        onValidateTeam(team, format) {
-            /**@type {{[k: string]: true}} */
-            let speciesTable = {};
-            for (const set of team) {
-                let template = this.dex.species.get(set.species);
-                if (template.tier !== 'CC') {
-                    return [set.species + ' is not usable in Climate Change.'];
-                }
-            }
-        },
-        mod: 'weatherwar',
-    },
-	{
-        name: "[Gen 9] PTest OU",
-        desc: [
-            "poamons",
-        ],
-        threads: [
-            `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">hi</a>`,
-              ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
-        banlist: ['Arena Trap', 'Baton Pass', 'Slowbronite', 'Moody'],
-		unbanlist: ['Bouncy Bubble', 'Freezy Frost', 'Sparkly Swirl', 'Noxious Torque', 'Sappy Seed', 'Splishy Splash'],
-		teambuilderFormat: "National Dex",
-        onValidateTeam(team, format) {
-            /**@type {{[k: string]: true}} */
-            let speciesTable = {};
-            for (const set of team) {
-                let template = this.dex.species.get(set.species);
-                if (template.tier !== 'POU') {
-                    return [set.species + ' is not usable in PTest OU.'];
-                }
-            }
-        },
-        mod: 'ptestou',
-    },
-	{
-		name: "[Gen 9] Buildmons OU",
-		gameType: "triples",
-		mod: 'buildmons',
-		ruleset: ['Standard NatDex', 'Data Mod', 'Open Team Sheets', 'Sleep Moves Clause', 'Max Total Level = 400', 'Item Clause = 1', 'Ability Clause = 1', 'Max Move Count = 2'],
-		validateSet(set, teamHas) {
-			const dex = this.dex;
-			let species = dex.species.get(set.species);
-			let requiredItems: string[] = [];
-			let requiredMove = '';
-			let requiredAbility = '';
-			if (species.requiredItems) requiredItems = species.requiredItems;
-			if (species.requiredMove) requiredMove = species.requiredMove;
-			if (species.requiredAbility) requiredAbility = species.requiredAbility;
-			if (species.battleOnly) species = dex.species.get(species.battleOnly as string);
-
-			// ability slot must contain a real ability
-			const ability = dex.abilities.get(set.ability);
-			if (ability.id && !ability.exists) {
-				return [`"${set.ability}" is an invalid ability.`];
-			}
-
-			const allThings = [set.item, ...set.moves].filter(Boolean);
-			for (const thing of allThings) {
-				if (!dex.moves.get(thing).exists && !dex.items.get(thing).exists) {
-					return [`${thing} does not exist.`];
-				}
-				if (dex.abilities.get(thing).exists) {
-					return [`${thing} is not allowed in an item or move slot.`];
-				}
-			}
-
-			const moves = allThings.map(e => dex.moves.get(e)).filter(m => m.exists && m.id !== 'metronome');
-			const items = allThings.map(e => dex.items.get(e)).filter(i => i.exists);
-
-			if (moves.length > 2) {
-				return [`${set.species} has ${moves.length} moves, which is more than the limit of 2.`];
-			}
-			if (!moves.length) {
-				return [`${set.species} requires at least one move.`];
-			}
-			if (items.length > 4) {
-				return [`${set.species} has ${items.length} items, which is more than the limit of 4.`];
-			}
-
-			for (const m of moves) {
-				if (this.ruleTable.isBanned(`move:${m.id}`)) return [`${set.species}'s move ${m.name} is banned.`];
-			}
-			for (const i of items) {
-				if (this.ruleTable.isBanned(`item:${i.id}`)) return [`${set.species}'s item ${i.name} is banned.`];
-			}
-
-			const setHas: { [k: string]: true } = {};
-			for (const thing of [...moves, ...items]) {
-				if (setHas[thing.id]) return [`${set.species} has multiple copies of ${thing.name}.`];
-				setHas[thing.id] = true;
-			}
-
-			if (requiredAbility && this.toID(set.ability) !== this.toID(requiredAbility)) {
-				return [`${set.species} requires ${requiredAbility} on its set.`];
-			}
-			if (requiredMove && !moves.map(m => m.id).includes(this.toID(requiredMove))) {
-				return [`${set.species} requires ${requiredMove} on its set.`];
-			}
-			if (!items.length && requiredItems.length) {
-				return [`${set.species} requires ${requiredItems.join(', ')} on its set.`];
-			}
-
-			const normalItem = set.item;
-			const normalMoves = set.moves;
-			const normalAbility = set.ability;
-
-			for (const curMove of moves) {
-				set.moves = [curMove.id];
-				set.item = items.length ? items[0].id : '';
-				let problems = this.validateSet(set, teamHas);
-				if (problems) return problems;
-			}
-
-			set.item = normalItem;
-			set.moves = normalMoves;
-			set.ability = normalAbility;
-			return null;
-		},
-		onBeforeSwitchIn(pokemon) {
-			let ngas = false;
-			for (const poke of this.getAllActive()) {
-				if (this.toID(poke.ability) === ('neutralizinggas' as ID)) {
-					ngas = true;
-					break;
-				}
-			}
-			if (pokemon.hasItem('abilityshield') ||
-				pokemon.m.scrambled.items.some((e: { thing: string }) => this.toID(e.thing) === 'abilityshield')) {
-				ngas = false;
-			}
-			for (const item of pokemon.m.scrambled.items) {
-				if (ngas && item.inSlot === 'Ability') continue;
-				const effect = 'item:' + this.toID(item.thing);
-				pokemon.volatiles[effect] = this.initEffectState({ id: effect, target: pokemon });
-				pokemon.volatiles[effect].inSlot = item.inSlot;
-			}
-			if (ngas) {
-				if ((pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Ability') >= 0) {
-					const isMove = (pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Ability');
-					const indexOfMove = pokemon.moveSlots.findIndex(m => this.toID(pokemon.m.scrambled.moves[isMove].thing) === m.id);
-					if (indexOfMove >= 0) pokemon.moveSlots.splice(indexOfMove, 1);
-				}
-			}
-			if (this.field.getPseudoWeather('magicroom')) {
-				if ((pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
-					const isMove = (pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
-					const indexOfMove = pokemon.moveSlots.findIndex(m => this.toID(pokemon.m.scrambled.moves[isMove].thing) === m.id);
-					if (indexOfMove >= 0) pokemon.moveSlots.splice(indexOfMove, 1);
-				}
-			}
-		},
-		onBegin() {
-			for (const pokemon of this.getAllPokemon()) {
-				pokemon.m.scrambled = {
-					items: [] as object[],
-					moves: [] as object[],
-				};
-
-				if (this.dex.items.get(pokemon.set.item).exists) {
-					pokemon.m.scrambled.items.push({ thing: this.dex.items.get(pokemon.set.item).name, inSlot: 'Item' });
-				} else if (this.dex.moves.get(pokemon.set.item).exists && this.dex.moves.get(pokemon.set.item).id !== 'metronome') {
-					pokemon.m.scrambled.moves.push({ thing: this.dex.moves.get(pokemon.set.item).name, inSlot: 'Item' });
-				}
-
-				for (const move of pokemon.set.moves) {
-					if (this.dex.moves.get(move).id === 'metronome') continue;
-					if (this.dex.items.get(move).exists) {
-						pokemon.m.scrambled.items.push({ thing: this.dex.items.get(move).name, inSlot: 'Move' });
-					}
-				}
-
-				const newMoveSlots = [];
-				for (const moveSlot of pokemon.baseMoveSlots) {
-					if (moveSlot.id === 'metronome') {
-						const TeamValidator: typeof import('../sim/team-validator').TeamValidator =
-							require('../sim/team-validator').TeamValidator;
-						const cantMetronome = TeamValidator.get(this.format).checkCanLearn(this.dex.moves.get('metronome'), pokemon.species);
-						if (!cantMetronome) {
-							newMoveSlots.push(moveSlot);
-						} else {
-							pokemon.m.scrambled.items.push({ thing: this.dex.items.get('metronome').name, inSlot: 'Move' });
-						}
-						continue;
-					}
-					if (!this.dex.moves.get(moveSlot.id).exists) continue;
-					newMoveSlots.push(moveSlot);
-				}
-
-				(pokemon as any).baseMoveSlots = newMoveSlots;
-
-				for (const scrambledMove of pokemon.m.scrambled.moves) {
-					const move = this.dex.moves.get(scrambledMove.thing);
-					const newMove = {
-						move: move.name,
-						id: move.id,
-						pp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
-						maxpp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
-						target: move.target,
-						disabled: false,
-						used: false,
-					};
-					pokemon.baseMoveSlots.push(newMove);
-				}
-				pokemon.moveSlots = pokemon.baseMoveSlots.slice();
-			}
-		},
-	},
-	{
-		name: "[Gen 9] NatDex Type Shift",
-		mod: 'typeshift',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod'],
-		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-		],
 	},
 	{
 		section: "Roguelike Formats (Alpha)",
@@ -677,6 +402,189 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web',
 		],
 	},
+	/*{
+		name: "[Gen 9] Buildmons OU",
+		gameType: "triples",
+		mod: 'buildmons',
+		ruleset: ['Standard NatDex', 'Data Mod', 'Open Team Sheets', 'Sleep Moves Clause', 'Max Total Level = 400', 'Item Clause = 1', 'Ability Clause = 1', 'Max Move Count = 2'],
+		validateSet(set, teamHas) {
+			const dex = this.dex;
+			let species = dex.species.get(set.species);
+			let requiredItems: string[] = [];
+			let requiredMove = '';
+			let requiredAbility = '';
+			if (species.requiredItems) requiredItems = species.requiredItems;
+			if (species.requiredMove) requiredMove = species.requiredMove;
+			if (species.requiredAbility) requiredAbility = species.requiredAbility;
+			if (species.battleOnly) species = dex.species.get(species.battleOnly as string);
+
+			// ability slot must contain a real ability
+			const ability = dex.abilities.get(set.ability);
+			if (ability.id && !ability.exists) {
+				return [`"${set.ability}" is an invalid ability.`];
+			}
+
+			const allThings = [set.item, ...set.moves].filter(Boolean);
+			for (const thing of allThings) {
+				if (!dex.moves.get(thing).exists && !dex.items.get(thing).exists) {
+					return [`${thing} does not exist.`];
+				}
+				if (dex.abilities.get(thing).exists) {
+					return [`${thing} is not allowed in an item or move slot.`];
+				}
+			}
+
+			const moves = allThings.map(e => dex.moves.get(e)).filter(m => m.exists && m.id !== 'metronome');
+			const items = allThings.map(e => dex.items.get(e)).filter(i => i.exists);
+
+			if (moves.length > 2) {
+				return [`${set.species} has ${moves.length} moves, which is more than the limit of 2.`];
+			}
+			if (!moves.length) {
+				return [`${set.species} requires at least one move.`];
+			}
+			if (items.length > 4) {
+				return [`${set.species} has ${items.length} items, which is more than the limit of 4.`];
+			}
+
+			for (const m of moves) {
+				if (this.ruleTable.isBanned(`move:${m.id}`)) return [`${set.species}'s move ${m.name} is banned.`];
+			}
+			for (const i of items) {
+				if (this.ruleTable.isBanned(`item:${i.id}`)) return [`${set.species}'s item ${i.name} is banned.`];
+			}
+
+			const setHas: { [k: string]: true } = {};
+			for (const thing of [...moves, ...items]) {
+				if (setHas[thing.id]) return [`${set.species} has multiple copies of ${thing.name}.`];
+				setHas[thing.id] = true;
+			}
+
+			if (requiredAbility && this.toID(set.ability) !== this.toID(requiredAbility)) {
+				return [`${set.species} requires ${requiredAbility} on its set.`];
+			}
+			if (requiredMove && !moves.map(m => m.id).includes(this.toID(requiredMove))) {
+				return [`${set.species} requires ${requiredMove} on its set.`];
+			}
+			if (!items.length && requiredItems.length) {
+				return [`${set.species} requires ${requiredItems.join(', ')} on its set.`];
+			}
+
+			const normalItem = set.item;
+			const normalMoves = set.moves;
+			const normalAbility = set.ability;
+
+			for (const curMove of moves) {
+				set.moves = [curMove.id];
+				set.item = items.length ? items[0].id : '';
+				let problems = this.validateSet(set, teamHas);
+				if (problems) return problems;
+			}
+
+			set.item = normalItem;
+			set.moves = normalMoves;
+			set.ability = normalAbility;
+			return null;
+		},
+		onBeforeSwitchIn(pokemon) {
+			let ngas = false;
+			for (const poke of this.getAllActive()) {
+				if (this.toID(poke.ability) === ('neutralizinggas' as ID)) {
+					ngas = true;
+					break;
+				}
+			}
+			if (pokemon.hasItem('abilityshield') ||
+				pokemon.m.scrambled.items.some((e: { thing: string }) => this.toID(e.thing) === 'abilityshield')) {
+				ngas = false;
+			}
+			for (const item of pokemon.m.scrambled.items) {
+				if (ngas && item.inSlot === 'Ability') continue;
+				const effect = 'item:' + this.toID(item.thing);
+				pokemon.volatiles[effect] = this.initEffectState({ id: effect, target: pokemon });
+				pokemon.volatiles[effect].inSlot = item.inSlot;
+			}
+			if (ngas) {
+				if ((pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Ability') >= 0) {
+					const isMove = (pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Ability');
+					const indexOfMove = pokemon.moveSlots.findIndex(m => this.toID(pokemon.m.scrambled.moves[isMove].thing) === m.id);
+					if (indexOfMove >= 0) pokemon.moveSlots.splice(indexOfMove, 1);
+				}
+			}
+			if (this.field.getPseudoWeather('magicroom')) {
+				if ((pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
+					const isMove = (pokemon.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
+					const indexOfMove = pokemon.moveSlots.findIndex(m => this.toID(pokemon.m.scrambled.moves[isMove].thing) === m.id);
+					if (indexOfMove >= 0) pokemon.moveSlots.splice(indexOfMove, 1);
+				}
+			}
+		},
+		onBegin() {
+			for (const pokemon of this.getAllPokemon()) {
+				pokemon.m.scrambled = {
+					items: [] as object[],
+					moves: [] as object[],
+				};
+
+				if (this.dex.items.get(pokemon.set.item).exists) {
+					pokemon.m.scrambled.items.push({ thing: this.dex.items.get(pokemon.set.item).name, inSlot: 'Item' });
+				} else if (this.dex.moves.get(pokemon.set.item).exists && this.dex.moves.get(pokemon.set.item).id !== 'metronome') {
+					pokemon.m.scrambled.moves.push({ thing: this.dex.moves.get(pokemon.set.item).name, inSlot: 'Item' });
+				}
+
+				for (const move of pokemon.set.moves) {
+					if (this.dex.moves.get(move).id === 'metronome') continue;
+					if (this.dex.items.get(move).exists) {
+						pokemon.m.scrambled.items.push({ thing: this.dex.items.get(move).name, inSlot: 'Move' });
+					}
+				}
+
+				const newMoveSlots = [];
+				for (const moveSlot of pokemon.baseMoveSlots) {
+					if (moveSlot.id === 'metronome') {
+						const TeamValidator: typeof import('../sim/team-validator').TeamValidator =
+							require('../sim/team-validator').TeamValidator;
+						const cantMetronome = TeamValidator.get(this.format).checkCanLearn(this.dex.moves.get('metronome'), pokemon.species);
+						if (!cantMetronome) {
+							newMoveSlots.push(moveSlot);
+						} else {
+							pokemon.m.scrambled.items.push({ thing: this.dex.items.get('metronome').name, inSlot: 'Move' });
+						}
+						continue;
+					}
+					if (!this.dex.moves.get(moveSlot.id).exists) continue;
+					newMoveSlots.push(moveSlot);
+				}
+
+				(pokemon as any).baseMoveSlots = newMoveSlots;
+
+				for (const scrambledMove of pokemon.m.scrambled.moves) {
+					const move = this.dex.moves.get(scrambledMove.thing);
+					const newMove = {
+						move: move.name,
+						id: move.id,
+						pp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
+						maxpp: move.noPPBoosts ? move.pp : move.pp * 8 / 5,
+						target: move.target,
+						disabled: false,
+						used: false,
+					};
+					pokemon.baseMoveSlots.push(newMove);
+				}
+				pokemon.moveSlots = pokemon.baseMoveSlots.slice();
+			}
+		},
+	},*/
+	/*{
+		name: "[Gen 9] PoA Alternate Universe OU",
+
+		mod: 'gen9poaaltuniverse',
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod'],
+		banlist: [ 'Uber',
+			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
+			'Baton Pass',
+		],
+	},*/
 
 	/*
 	// Likeshop Spotlight

@@ -1073,13 +1073,12 @@ export class Roguelike {
 			return `${mon.species} cannot evolve any further!`;
 		}
 
-		// Single evolution pathway or specific target chosen
 		let targetEvo = chosenEvo;
 		if (!targetEvo) {
 			if (possibleEvos.length === 1) {
 				targetEvo = possibleEvos[0];
 			} else {
-				// Triggers evolution selection choice for branching evolutions (e.g., Eevee)
+				// evolution selection choice for split evo
 				return {
 					requiresChoice: true,
 					options: possibleEvos,
@@ -1457,7 +1456,7 @@ export const commands: Chat.ChatCommands = {
 				userData.goToPage('forgetmove');
 			} else {
 				userData.team[index].moves.push(moveName);
-				userData.teamData[index].ppLeft.push(Dex.moves.get(moveName).pp * (8 / 5));
+				userData.teamData[index].ppLeft.push(Dex.moves.get(moveName).pp === 1 ? 1 : Dex.moves.get(moveName).pp * (8 / 5));
 				// remove learned move from pending list if present
 				if (userData.teamData[index].pendingLevelUpMoves) {
 					userData.teamData[index].pendingLevelUpMoves = userData.teamData[index].pendingLevelUpMoves!.filter((m: string) => toID(m) !== toID(moveName));
@@ -1666,7 +1665,7 @@ export const commands: Chat.ChatCommands = {
 				}
 				userData.teamData[index].ppLeft.forEach((v, i) => {
 					userData.teamData[index].ppLeft[i] =
-						Dex.moves.get(userData.team[index].moves[i]).pp * (8 / 5);
+						Dex.moves.get(userData.team[index].moves[i]).pp === 1 ? 1 : Dex.moves.get(userData.team[index].moves[i]).pp * (8 / 5);
 				});
 				userData.battlePoints -= (userData.flags.purchasedItem as ShopItem).cost;
 				// TODO: More items

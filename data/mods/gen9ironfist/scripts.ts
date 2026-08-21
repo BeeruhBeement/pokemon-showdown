@@ -1,15 +1,15 @@
 import {Dex} from '../../../sim/dex';
-export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
+export const Scripts: ModdedBattleScriptsData = {
 	gen: 9,
 	teambuilderConfig: {
 		// for micrometas to only show custom tiers
-		excludeStandardTiers: true,
+		// excludeStandardTiers: true,
 		// only to specify the order of custom tiers
 		customTiers: ['Viable', 'Untested', 'Unviable'],
 	},	
 	
 	init() {
-    	for (const id in this.dataCache.Pokedex) {
+    	/*for (const id in this.dataCache.Pokedex) {
 			if (this.dataCache.Learnsets[id] && this.dataCache.Learnsets[id].learnset) {
 				this.modData('Learnsets', this.toID(id)).learnset.fishingterrain = ["9L1"];
 				this.modData('Learnsets', this.toID(id)).learnset.holdhands = ["9L1"];
@@ -37,7 +37,7 @@ export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
 					this.modData('Learnsets', this.toID(id)).learnset.fishield = ["9L1"];
 				}
 			}
-		}
+		}*/
 	},
 	battle: {
 		runAction(action: Action) {
