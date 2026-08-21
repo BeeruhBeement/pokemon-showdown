@@ -4,6 +4,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	clefablemega: {
 		inherit: true,
 	},
+	slowbromega: {
+		inherit: true,
+		abilities: { 0: "Magic Guard" },
+	},
 	victreebelmega: {
 		inherit: true,
 	},
