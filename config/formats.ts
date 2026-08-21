@@ -85,7 +85,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
         ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
         banlist: ['Arena Trap', 'Baton Pass', 'Slowbronite', 'Moody'],
 		unbanlist: ['Bouncy Bubble', 'Freezy Frost', 'Sparkly Swirl', 'Noxious Torque', 'Sappy Seed', 'Splishy Splash'],
-        mod: 'gen9ptestou',
+        mod: 'gen9ptest',
     },
 	{
 		name: "[Gen 9] NatDex Type Shift OU",
