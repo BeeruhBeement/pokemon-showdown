@@ -124,6 +124,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	absolmegaz: {
 		inherit: true,
 		abilities: {0: "Sharpness"},
+		isNonstandard: "Modded",
 	},
 	staraptormega: {
 		inherit: true,

@@ -39,7 +39,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			`<a href="https://www.smogon.com/forums/threads/.3748853/">Iron Fist</a>`,
 		],
 		mod: 'gen9ironfist',
-		ruleset: ['Standard NatDex', 'Data Mod', /*'Mega Data Mod', */'Mega Rayquaza Clause', 'Big Button Rule', 'MILF Rule', 'Ohmyrod Rule', 'Serious Rule', 'Mario Kart Wii Clause', 'I Love Hisui Rule', 'Circall Rule', 'honor student helper'],
+		ruleset: ['Standard NatDex', 'Data Mod', 'Big Button Rule', 'MILF Rule', 'Ohmyrod Rule', 'Serious Rule', 'Mario Kart Wii Clause', 'I Love Hisui Rule', 'Circall Rule', 'honor student helper'],
 		banlist: ['Baton Pass', 'King\'s Rock', 'Razor Fang', 'Moody',
 		'Buginium Z', 'Darkinium Z', 'Dragonium Z', 'Electrium Z', 'Fairium Z', 'Fightinium Z', 'Firium Z', 'Flyinium Z', 'Ghostium Z', 'Grassium Z', 'Groundium Z', 'Icium Z', 'Normalium Z', 'Poisonium Z', 'Psychium Z', 'Rockium Z', 'Steelium Z', 'Waterium Z',
 		'Absolite', 'Houndoominite', 'Blue Orb', 'Fish', 'Diamond Hand', 'Hoenn', 'Bird', 'Trans'],

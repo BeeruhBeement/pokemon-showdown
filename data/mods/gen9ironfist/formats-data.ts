@@ -1,4 +1,6 @@
-export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
+import { Pokedex as Base } from '../../pokedex';
+
+export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
 	melmetal: {
 		tier: "Viable",
 		doublesTier: "DIF",
@@ -871,6 +873,34 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
+	minior: {
+		tier: "Untested",
+		doublesTier: "DIF",
+	},
+	miniorblue: {
+		tier: "Untested",
+		doublesTier: "DIF",
+	},
+	miniorgreen: {
+		tier: "Untested",
+		doublesTier: "DIF",
+	},
+	miniorindigo: {
+		tier: "Untested",
+		doublesTier: "DIF",
+	},
+	miniororange: {
+		tier: "Untested",
+		doublesTier: "DIF",
+	},
+	miniorviolet: {
+		tier: "Untested",
+		doublesTier: "DIF",
+	},
+	minioryellow: {
+		tier: "Untested",
+		doublesTier: "DIF",
+	},
 	kanon: {
 		tier: "Untested",
 		doublesTier: "DIF",
@@ -904,3 +934,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "DIF",
 	},
 };
+
+for (const pokemon in Base) {
+	const key = pokemon as keyof typeof FormatsData;
+	if (!FormatsData[key]) FormatsData[key] = {inherit: true, isNonstandard: "Custom", tier: "Illegal", natDexTier: "Illegal", doublesTier: "Illegal"};
+}
