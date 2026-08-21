@@ -2,195 +2,195 @@ import { Pokedex as Base } from '../../pokedex';
 
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
 	c3ll: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	livii: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	frambuesa: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	r: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	mad0130: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	milk: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	fiend: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	greed2: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	gaboswampert: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	anaconja: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	enderwither02: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	jas: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	larex: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	cyaneedle: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	nuclearstomp: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	charley: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	killerfish: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	nkazuya: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	slowbro: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	ruo: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	flampoke: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	ttk: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	thurisaz: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	ghostsword: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	luigiguy: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	definitelyelite: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	mendoza: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	serpexnessie: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	taurossweep: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	airy: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	nosh: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	supercraig: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	beeruh: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	rowlet: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	gaysexor: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	dunscy: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	boshifanfic: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	jozar: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	zxgzxg: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	arcato: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	nidotheking: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	dottwodot: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	bandite: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	xthegamemaster: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	cyberpunkninja: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	epictoxie: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	aevilok: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	oshawott: {
-		tier: "POU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 };

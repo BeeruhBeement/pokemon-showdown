@@ -1,6 +1,7 @@
 import {FS} from '../../../lib';
 import {toID} from '../../../sim/dex-data';
 import {Pokemon} from "../../../sim/pokemon";
+import { ModdedAbilityData } from "../../../sim/dex-abilities";
 
 // Similar to User.usergroups. Cannot import here due to users.ts requiring Chat
 // This also acts as a cache, meaning ranks will only update when a hotpatch/restart occurs
@@ -292,7 +293,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Bug moves; Bug immunity.",
 	},
 	growthveil: {
-		id: "growthveil",
 		name: "Growth Veil",
 		shortDesc: "Regenerator + Flower Veil",
 		desc: "Restores 1/3 max HP on switch-out; ally Grass-types can't have stats lowered or status inflicted.",
@@ -367,7 +367,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			const newMove = this.dex.getActiveMove(move.id);
 			newMove.hasBounced = true;
 			newMove.pranksterBoosted = false;
-			this.actions.useMove(newMove, target, source);
+			this.actions.useMove(newMove, target, { target: source });
 			return null;
 		},
 		onAllyTryHitSide(target, source, move) {
@@ -377,7 +377,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			const newMove = this.dex.getActiveMove(move.id);
 			newMove.hasBounced = true;
 			newMove.pranksterBoosted = false;
-			this.actions.useMove(newMove, this.effectState.target, source);
+			this.actions.useMove(newMove, this.effectState.target, { target: source });
 			return null;
 		},
 		condition: {

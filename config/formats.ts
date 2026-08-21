@@ -34,7 +34,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 	},
 	{
-		name: "[Gen 9] Iron Fist OU",
+		name: "[Gen 9] Iron Fist",
 		threads: [
 			`<a href="https://www.smogon.com/forums/threads/.3748853/">Iron Fist</a>`,
 		],
