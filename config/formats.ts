@@ -89,7 +89,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     },
 	{
 		name: "[Gen 9] NatDex Type Shift OU",
-		mod: 'typeshift',
+		mod: 'gen9typeshift',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
