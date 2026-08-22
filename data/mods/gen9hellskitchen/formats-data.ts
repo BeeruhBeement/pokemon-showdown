@@ -271,6 +271,9 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	dittomega: {
 		natDexTier: "OU",
 	},
+	ampharosmegaz: {
+		natDexTier: "OU",
+	},
 	sunfloramega: {
 		natDexTier: "OU",
 	},
