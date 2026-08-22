@@ -748,7 +748,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		shortDesc: "If held by a Squawkabilly, this item allows it to Mega Evolve in battle.",
 	},
-	ampharosizez: {
+	ampharositez: {
 		name: "Ampharosite Z",
 		megaStone: { "Ampharos": "Ampharos-Mega-Z" },
 		itemUser: ["Ampharos"],
