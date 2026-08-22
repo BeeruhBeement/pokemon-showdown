@@ -40,7 +40,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	scolipedemega: {
 		inherit: true,
-		abilities: {0: "Searing  Solvent"},
+		abilities: {0: "Searing Solvent"},
 		isNonstandard: "Modded",
 	},
 	scraftymega: {
