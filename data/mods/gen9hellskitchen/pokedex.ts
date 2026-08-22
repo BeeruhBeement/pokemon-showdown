@@ -1144,7 +1144,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseSpecies: "Boltund",
 		forme: "Mega",
 		types: ["Electric"],
-		baseStats: { hp: 69, atk: 120, def: 65, spa: 109, spd: 75, spe: 151 },
+		baseStats: { hp: 69, atk: 120, def: 65, spa: 109, spd: 75, spe: 152 },
 		abilities: { 0: "Galvanize" },
 		heightm: 3.5,
 		weightkg: 34,
