@@ -819,7 +819,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		num: 181,
 		name: "Ampharos-Mega-Z",
 		baseSpecies: "Ampharos",
-		forme: "Mega",
+		forme: "Mega-Z",
 		types: ["Electric", "Fairy"],
 		baseStats: { hp: 90, atk: 34, def: 85, spa: 125, spd: 125, spe: 151 },
 		abilities: { 0: "Pastel Veil" },
