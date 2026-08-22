@@ -426,9 +426,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "crabrawler").learnset.taunt = ["9M"];
 	dex.modData("Learnsets", "crabrawler").learnset.torment = ["9M"];
 
-	// cresceidon
-	dex.modData("Learnsets", "cresceidon").learnset.encore = ["9M"];
-
 	// crobat
 	dex.modData("Learnsets", "crobat").learnset.acidspray = ["9M"];
 	dex.modData("Learnsets", "crobat").learnset.doublehit = ["9M"];
