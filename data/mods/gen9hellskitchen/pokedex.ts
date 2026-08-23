@@ -895,7 +895,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 152,
 		color: "Gray",
 		eggGroups: ["Undiscovered"],
-		requiredItem: "Kingdrite",
+		requiredItem: "Kingdranite",
 		isNonstandard: "Modded",
 	},
 	grumpigmega: {
