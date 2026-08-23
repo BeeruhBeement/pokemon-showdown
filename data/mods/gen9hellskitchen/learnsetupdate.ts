@@ -57,6 +57,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "ampharos").learnset.flashcannon = ["9M"];
 	dex.modData("Learnsets", "ampharos").learnset.paraboliccharge = ["9M"];
 	dex.modData("Learnsets", "ampharos").learnset.risingvoltage = ["9M"];
+	dex.modData("Learnsets", "ampharos").learnset.tailglow = ["9M"];
+	dex.modData("Learnsets", "ampharos").learnset.dracometeor = ["9M"];
 	dex.modData("Learnsets", "ampharos").learnset.calmmind = ["9M"];
 	dex.modData("Learnsets", "ampharos").learnset.energyball = ["9M"];
 
@@ -121,6 +123,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// audino
 	dex.modData("Learnsets", "audino").learnset.tackle = ["9M"];
 	dex.modData("Learnsets", "audino").learnset.triattack = ["9M"];
+	dex.modData("Learnsets", "audino").learnset.batonpass = ["9M"];
+	dex.modData("Learnsets", "audino").learnset.teleport = ["9M"];
+	dex.modData("Learnsets", "audino").learnset.moonblast = ["9M"];
 
 	// aurorus
 	dex.modData("Learnsets", "aurorus").learnset.chillingwater = ["9M"];
@@ -567,6 +572,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 
 	// eevee
 	dex.modData("Learnsets", "eevee").learnset.disarmingvoice = ["9M"];
+	dex.modData("Learnsets", "eevee").learnset.extremeevoboost = ["9M"];
 
 	// ekans
 	dex.modData("Learnsets", "ekans").learnset.icefang = ["9M"];
@@ -587,6 +593,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "emboar").learnset.solarblade = ["9M"];
 	dex.modData("Learnsets", "emboar").learnset.stormthrow = ["9M"];
 	dex.modData("Learnsets", "emboar").learnset.vacuumwave = ["9M"];
+	dex.modData("Learnsets", "emboar").learnset.machpunch = ["9M"];
+	dex.modData("Learnsets", "emboar").learnset.swordsdance = ["9M"];
+	dex.modData("Learnsets", "emboar").learnset.scorchingsands = ["9M"];
 
 	// emolga
 	dex.modData("Learnsets", "emolga").learnset.razorwind = ["9M"];
@@ -617,6 +626,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "falinks").learnset.lowsweep = ["9M"];
 	dex.modData("Learnsets", "falinks").learnset.seedbomb = ["9M"];
 	dex.modData("Learnsets", "falinks").learnset.skullbash = ["9M"];
+	dex.modData("Learnsets", "falinks").learnset.powertrip = ["9M"];
+	dex.modData("Learnsets", "falinks").learnset.drainpunch = ["9M"];
 
 	// farfetchd
 	dex.modData("Learnsets", "farfetchd").learnset.trailblaze = ["9M"];
@@ -808,6 +819,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// gengar
 	dex.modData("Learnsets", "gengar").learnset.confusion = ["9M"];
 	dex.modData("Learnsets", "gengar").learnset.shadowsneak = ["9M"];
+	dex.modData("Learnsets", "gengar").learnset.shadowsneak = ["9M"];
+	dex.modData("Learnsets", "gengar").learnset.bulkup = ["9M"];
 
 	// gholdengo
 	dex.modData("Learnsets", "gholdengo").learnset.cometpunch = ["9M"];
@@ -834,6 +847,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "glalie").learnset.iciclecrash = ["9M"];
 	dex.modData("Learnsets", "glalie").learnset.ominouswind = ["9M"];
 	dex.modData("Learnsets", "glalie").learnset.skullbash = ["9M"];
+	dex.modData("Learnsets", "glalie").learnset.swordsdance = ["9M"];
+	dex.modData("Learnsets", "glalie").learnset.jawlock = ["9M"];
+	dex.modData("Learnsets", "glalie").learnset.quickattack = ["9M"];
 
 	// glimmet
 	dex.modData("Learnsets", "glimmet").learnset.magnetbomb = ["9M"];
@@ -886,6 +902,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "golurk").learnset.skullbash = ["9M"];
 	dex.modData("Learnsets", "golurk").learnset.tackle = ["9M"];
 	dex.modData("Learnsets", "golurk").learnset.headlongrush = ["9M"];
+	dex.modData("Learnsets", "golurk").learnset.shiftgear = ["9M"];
 
 	// goodra
 	dex.modData("Learnsets", "goodra").learnset.acidarmor = ["9M"];
@@ -1056,6 +1073,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "houndoom").learnset.tackle = ["9M"];
 	dex.modData("Learnsets", "houndoom").learnset.fierywrath = ["9M"];
 	dex.modData("Learnsets", "houndoom").learnset.scorchingsands = ["9M"];
+	dex.modData("Learnsets", "houndoom").learnset.fierywrath = ["9M"];
 
 	// houndour
 	dex.modData("Learnsets", "houndour").learnset.tackle = ["9M"];
@@ -1336,6 +1354,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "manectric").learnset.razorwind = ["9M"];
 	dex.modData("Learnsets", "manectric").learnset.thundershock = ["9M"];
 	dex.modData("Learnsets", "manectric").learnset.trailblaze = ["9M"];
+	dex.modData("Learnsets", "manectric").learnset.aurorabeam = ["9M"];
+	dex.modData("Learnsets", "manectric").learnset.supercellslam = ["9M"];
 
 	// mankey
 	dex.modData("Learnsets", "mankey").learnset.circlethrow = ["9M"];
@@ -1452,6 +1472,16 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "meowth").learnset.healblock = ["9M"];
 	dex.modData("Learnsets", "meowth").learnset.metronome = ["9M"];
 	dex.modData("Learnsets", "meowth").learnset.spikes = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.swordsdance = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.scaleshot = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.coil = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.dragondance = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.dragonclaw = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.breakingswipe = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.outrage = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.dragonpulse = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.earthquake = ["9M"];
+	dex.modData("Learnsets", "meowth").learnset.dracometeor = ["9M"];
 
 	// meowthalola
 	dex.modData("Learnsets", "meowthalola").learnset.falseswipe = ["9M"];
@@ -1856,6 +1886,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "raichu").learnset.drainpunch = ["9M"];
 	dex.modData("Learnsets", "raichu").learnset.magnetbomb = ["9M"];
 	dex.modData("Learnsets", "raichu").learnset.volttackle = ["9M"];
+	dex.modData("Learnsets", "raichu").learnset.icepunch = ["9M"];
+	dex.modData("Learnsets", "raichu").learnset.bulkup = ["9M"];
 
 	// raichualola
 	dex.modData("Learnsets", "raichualola").learnset.dazzlinggleam = ["9M"];
@@ -1967,6 +1999,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "sceptile").learnset.razorwind = ["9M"];
 	dex.modData("Learnsets", "sceptile").learnset.slash = ["9M"];
 	dex.modData("Learnsets", "sceptile").learnset.tackle = ["9M"];
+	dex.modData("Learnsets", "sceptile").learnset.dracometeor = ["9M"];
+	dex.modData("Learnsets", "sceptile").learnset.uturn = ["9M"];
+	dex.modData("Learnsets", "sceptile").learnset.earthpower = ["9M"];
 
 	// scizor
 	dex.modData("Learnsets", "scizor").learnset.dualchop = ["9M"];
@@ -1995,6 +2030,13 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "scovillain").learnset.rollout = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.swagger = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.thunderfang = ["9M"];
+	dex.modData("Learnsets", "scovillain").learnset.darkpulse = ["9M"];
+	dex.modData("Learnsets", "scovillain").learnset.knockoff = ["9M"];
+	dex.modData("Learnsets", "scovillain").learnset.suckerpunch = ["9M"];
+	dex.modData("Learnsets", "scovillain").learnset.fierywrath = ["9M"];
+	dex.modData("Learnsets", "scovillain").learnset.swordsdance = ["9M"];
+	dex.modData("Learnsets", "scovillain").learnset.synthesis = ["9M"];
+	dex.modData("Learnsets", "scovillain").learnset.swagger = ["9M"];
 
 	// scrafty
 	dex.modData("Learnsets", "scrafty").learnset.detect = ["9M"];
@@ -2269,6 +2311,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// steelix
 	dex.modData("Learnsets", "steelix").learnset.fissure = ["9M"];
 	dex.modData("Learnsets", "steelix").learnset.headsmash = ["9M"];
+	dex.modData("Learnsets", "steelix").learnset.spikes = ["9M"];
 
 	// stunfiskgalar
 	dex.modData("Learnsets", "stunfiskgalar").learnset.magnetbomb = ["9M"];
@@ -2449,6 +2492,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// vanilluxe
 	dex.modData("Learnsets", "vanilluxe").learnset.chillingwater = ["9M"];
 	dex.modData("Learnsets", "vanilluxe").learnset.tackle = ["9M"];
+	dex.modData("Learnsets", "vanilluxe").learnset.icespinner = ["9M"];
+	dex.modData("Learnsets", "vanilluxe").learnset.nastyplot = ["9M"];
+	dex.modData("Learnsets", "vanilluxe").learnset.earthpower = ["9M"];
 
 	// vaporeon
 	dex.modData("Learnsets", "vaporeon").learnset.disarmingvoice = ["9M"];
@@ -2588,27 +2634,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "zygarde10").learnset.coreenforcer = ["9M"];
 	dex.modData("Learnsets", "zygarde10").learnset.thousandwaves = ["9M"];
 
-	// additions
-	dex.modData("Learnsets", "emboar").learnset.machpunch = ["9M"];
-	dex.modData("Learnsets", "emboar").learnset.swordsdance = ["9M"];
-	dex.modData("Learnsets", "emboar").learnset.scorchingsands = ["9M"];
-	
-	dex.modData("Learnsets", "falinks").learnset.powertrip = ["9M"];
-	dex.modData("Learnsets", "falinks").learnset.drainpunch = ["9M"];
-	
-	dex.modData("Learnsets", "raichu").learnset.icepunch = ["9M"];
-	dex.modData("Learnsets", "raichu").learnset.bulkup = ["9M"];
-	
-	dex.modData("Learnsets", "golurk").learnset.shiftgear = ["9M"];
-	
-	dex.modData("Learnsets", "scovillain").learnset.darkpulse = ["9M"];
-	dex.modData("Learnsets", "scovillain").learnset.knockoff = ["9M"];
-	dex.modData("Learnsets", "scovillain").learnset.suckerpunch = ["9M"];
-	dex.modData("Learnsets", "scovillain").learnset.fierywrath = ["9M"];
-	dex.modData("Learnsets", "scovillain").learnset.swordsdance = ["9M"];
-	dex.modData("Learnsets", "scovillain").learnset.synthesis = ["9M"];
-	dex.modData("Learnsets", "scovillain").learnset.swagger = ["9M"];
-	
+	// sort up later
 	dex.modData("Learnsets", "nidoking").learnset.moonlight = ["9M"];
 	dex.modData("Learnsets", "nidoking").learnset.gunkshot = ["9M"];
 	dex.modData("Learnsets", "nidoking").learnset.acidspray = ["9M"];
@@ -2624,17 +2650,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "miltank").learnset.rapidspin = ["9M"];
 	
 	dex.modData("Learnsets", "toxicroak").learnset.flipturn = ["9M"];
-	
-	dex.modData("Learnsets", "meowth").learnset.swordsdance = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.scaleshot = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.coil = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.dragondance = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.dragonclaw = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.breakingswipe = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.outrage = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.dragonpulse = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.earthquake = ["9M"];
-	dex.modData("Learnsets", "meowth").learnset.dracometeor = ["9M"];
 
 	dex.modData("Learnsets", "samurotthisui").learnset.superpower = ["9M"];
 
@@ -2645,17 +2660,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "sandaconda").learnset.fissure = ["9M"];
 	
 	dex.modData("Learnsets", "pikachu").learnset["10000000voltthunderbolt"] = ["9M"];
-	
-	dex.modData("Learnsets", "eevee").learnset.extremeevoboost = ["9M"];
-	
-	dex.modData("Learnsets", "audino").learnset.batonpass = ["9M"];
-	dex.modData("Learnsets", "audino").learnset.teleport = ["9M"];
-	dex.modData("Learnsets", "audino").learnset.moonblast = ["9M"];
-	
-	dex.modData("Learnsets", "houndoom").learnset.fierywrath = ["9M"];
-	
-	dex.modData("Learnsets", "manectric").learnset.aurorabeam = ["9M"];
-	dex.modData("Learnsets", "manectric").learnset.supercellslam = ["9M"];
 
 	dex.modData("Learnsets", "gardevoir").learnset.icebeam = ["9M"];
 
@@ -2664,17 +2668,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "sharpedo").learnset.jawlock = ["9M"];
 	dex.modData("Learnsets", "sharpedo").learnset.icefang = ["9M"];
 	dex.modData("Learnsets", "sharpedo").learnset.firefang = ["9M"];
-	
-	dex.modData("Learnsets", "sceptile").learnset.dracometeor = ["9M"];
-	dex.modData("Learnsets", "sceptile").learnset.uturn = ["9M"];
-	dex.modData("Learnsets", "sceptile").learnset.earthpower = ["9M"];
-	
-	dex.modData("Learnsets", "ampharos").learnset.tailglow = ["9M"];
-	dex.modData("Learnsets", "ampharos").learnset.dracometeor = ["9M"];
-	
-	dex.modData("Learnsets", "glalie").learnset.swordsdance = ["9M"];
-	dex.modData("Learnsets", "glalie").learnset.jawlock = ["9M"];
-	dex.modData("Learnsets", "glalie").learnset.quickattack = ["9M"];
 	
 	dex.modData("Learnsets", "appletun").learnset.overheat = ["9M"];
 	
@@ -2694,9 +2687,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	
 	dex.modData("Learnsets", "centiskorch").learnset.uturn = ["9M"];
 	dex.modData("Learnsets", "centiskorch").learnset.earthquake = ["9M"];
-	
-	dex.modData("Learnsets", "gengar").learnset.shadowsneak = ["9M"];
-	dex.modData("Learnsets", "gengar").learnset.bulkup = ["9M"];
 
 	dex.modData("Learnsets", "grimmsnarl").learnset.knockoff = ["9M"];
 	
@@ -2720,8 +2710,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "typhlosionhisui").learnset.mysticalfire = ["9M"];
 	
 	dex.modData("Learnsets", "forretress").learnset.steelroller = ["9M"];
-	
-	dex.modData("Learnsets", "steelix").learnset.spikes = ["9M"];
 	
 	dex.modData("Learnsets", "kingdra").learnset.dragonrush = ["9M"];
 	dex.modData("Learnsets", "kingdra").learnset.snipeshot = ["9M"];
@@ -2748,10 +2736,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "bastiodon").learnset.steelroller = ["9M"];
 
 	dex.modData("Learnsets", "zoroarkhisui").learnset.payback = ["9M"];
-
-	dex.modData("Learnsets", "vanilluxe").learnset.icespinner = ["9M"];
-	dex.modData("Learnsets", "vanilluxe").learnset.nastyplot = ["9M"];
-	dex.modData("Learnsets", "vanilluxe").learnset.earthpower = ["9M"];
 
 	dex.modData("Learnsets", "oranguru").learnset.aurasphere = ["9M"];
 
