@@ -39,7 +39,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			`<a href="https://www.smogon.com/forums/threads/.3748853/">Iron Fist</a>`,
 		],
 		mod: 'gen9ironfist',
-		ruleset: ['Standard NatDex', 'Data Mod', 'Big Button Rule', 'MILF Rule', 'Ohmyrod Rule', 'Serious Rule', 'Mario Kart Wii Clause', 'I Love Hisui Rule', 'Circall Rule', 'honor student helper'],
+		ruleset: ['Standard NatDex', 'Data Mod', 'Big Button Rule', 'MILF Rule', 'Ohmyrod Rule', 'Serious Rule', 'Mario Kart Wii Clause', 'I Love Hisui Rule', 'Circall Rule', 'honor student helper', '+Nonexistent'],
 		banlist: ['Baton Pass', 'King\'s Rock', 'Razor Fang', 'Moody',
 		'Buginium Z', 'Darkinium Z', 'Dragonium Z', 'Electrium Z', 'Fairium Z', 'Fightinium Z', 'Firium Z', 'Flyinium Z', 'Ghostium Z', 'Grassium Z', 'Groundium Z', 'Icium Z', 'Normalium Z', 'Poisonium Z', 'Psychium Z', 'Rockium Z', 'Steelium Z', 'Waterium Z',
 		'Absolite', 'Houndoominite', 'Blue Orb', 'Fish', 'Diamond Hand', 'Hoenn', 'Bird', 'Trans'],
@@ -63,14 +63,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 3] Puffy Pink OU",
 
 		mod: 'gen3puffypink',
-		ruleset: ['Standard', 'Data Mod'],
+		ruleset: ['Standard', 'Data Mod', '+Nonexistent'],
 		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
 	},
 	{
 		name: "[Gen 9] Altermons OU",
 
 		mod: 'gen9altermons',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod', '+Light of Ruin'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Species Reveal Clause', 'Data Mod', '+Light of Ruin', '+Nonexistent'],
 		banlist: [ 'Uber',
 			'King\'s Rock', 'Razor Fang', 'Quick Claw', 'Focus Band',
 			'Baton Pass',
@@ -82,7 +82,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
         threads: [
             `&bullet; <a href="https://www.youtube.com/shorts/bbZCltuyZlM">hi</a>`,
               ],
-        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod'/*, 'Mega Data Mod'*/],
+        ruleset: ['Standard NatDex', 'Terastal Clause', 'Dynamax Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
         banlist: ['Arena Trap', 'Baton Pass', 'Slowbronite', 'Moody'],
 		unbanlist: ['Bouncy Bubble', 'Freezy Frost', 'Sparkly Swirl', 'Noxious Torque', 'Sappy Seed', 'Splishy Splash'],
         mod: 'gen9ptest',
