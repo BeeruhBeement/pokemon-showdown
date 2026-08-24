@@ -1786,6 +1786,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		baseStats: {hp: 98, atk: 108, def: 106, spa: 108, spd: 106, spe: 74},
 		abilities: {0: "awesomeability", H: "Infiltrator"},
 		eggGroups: ["Undiscovered"],
+		weightkg: 1,
 	},
 	tiredofitowl: {
 		num: -192,
@@ -1959,6 +1960,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 10.5,
 		evos: undefined,
 		prevo: undefined,
+		eggGroups: ["Bug"],
 	},
 	fatfuck: {
 		num: -200,

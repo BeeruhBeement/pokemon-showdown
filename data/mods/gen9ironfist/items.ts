@@ -616,6 +616,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		},
 		shortDesc: "On hit, force the opponent to use Big Button if not Terastallized Bug. Single use.",
 		rating: 3,
+		isNonstandard: "Modded",
 	},
 
 	//slate 6
