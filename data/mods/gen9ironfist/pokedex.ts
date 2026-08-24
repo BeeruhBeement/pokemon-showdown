@@ -66,6 +66,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Auctor Wile"},
 		weightkg: 226.2,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	gholdengo: {
 		inherit: true,
@@ -96,6 +97,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "Kinglerite",
 		weightkg: 140.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	feebas: {
 		inherit: true,
@@ -115,6 +117,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Lightning Rod", 1: "Parting Gift", H: "Transistor"},
 		weightkg: 150.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	glaceon: {
 		inherit: true,
@@ -133,6 +136,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Just a Little Guy"},
 		weightkg: 30.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	sylveon: {
 		inherit: true,
@@ -152,6 +156,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Water Absorb", 1: "Skeptic", H: "Innings Out"},
 		weightkg: 96.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	celesteela: {
 		inherit: true,
@@ -173,6 +178,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 36.0,
 		tags: ["Paradox"],
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	archeops: {
 		inherit: true,
@@ -211,6 +217,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Blaze", 1: "Intimidate", H: "Sharpness"},
 		weightkg: 90.6,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	wyrdeer: {
 		inherit: true,
@@ -229,6 +236,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Strong Jaw", 1: "Regenerator", 2: "Fashion icon", H: "Poison Point", S: "Intimidate"},
 		weightkg: 138.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fridgile: {
 		name: "Fridgile",
@@ -239,6 +247,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Snow Warning", 1: "Sand Stream", H: "Innings Out"},
 		weightkg: 1.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	zaciancrowned: {
 		inherit: true,
@@ -258,6 +267,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Iron Fist", H: "Gex Server"},
 		weightkg: 802.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	pidown: {
 		name: "Pidown",
@@ -268,6 +278,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Guts", 1: "Gluttony", H: "Mold Breaker"},
 		weightkg: 102.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	silvally: {
 		inherit: true,
@@ -292,6 +303,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 17.0,
 		prevo: undefined,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	moltres: {
 		inherit: true,
@@ -311,6 +323,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Magic Guard", 1: "Monster Mash", H: "Dark Aura"},
 		weightkg: 999.7,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	hitmontop: {
 		inherit: true,
@@ -330,6 +343,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Pride Rally", 1: "MILF", H: "Stamina"},
 		weightkg: 70.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	cascoon: {
 		inherit: true,
@@ -339,7 +353,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		types: ["Bug", "Fairy"],
 		baseStats: {hp: 105, atk: 65, def: 115, spa: 85, spd: 95, spe: 25},
 		abilities: {0: "Shed Skin", 1: "Unaware", H: "Magic Guard"},
-		evos: null,
+		evos: undefined,
 	},
 	sentret: {
 		inherit: true,
@@ -358,6 +372,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Crossover", 1: "Lightning Rod", H: "Storm Drain"},
 		weightkg: 445.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	phish: {
 		name: "Phish",
@@ -368,6 +383,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Illusion", 1: "Imposter", H: "Good as Gold"},
 		weightkg: 69.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	smelmetal: {
 		name: "Smelmetal",
@@ -377,6 +393,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Iron Nose"},
 		weightkg: 570.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	starmie: {
 		name: "Starmie",
@@ -405,6 +422,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Strong Jaw", 1: "Hustle", H: "Chlorophyll"},
 		weightkg: 312.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	tangetteeternal: {
 		name: "Tangette-Eternal",
@@ -414,6 +432,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Growth Veil"},
 		weightkg: 64.75,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	donmigo: {
 		name: "Donmigo",
@@ -424,6 +443,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "just the birds", H: "Bravery"},
 		weightkg: 78.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	dragoone: {
 		name: "Dragoone",
@@ -434,6 +454,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Snakewood"},
 		weightkg: 206.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	collachet: {
 		name: "Collachet",
@@ -445,6 +466,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "toxic masculinity", 1: "Intimidate", H: "Parting Gift"},
 		weightkg: 538.3,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	guiltrism: {
 		name: "Guiltrism",
@@ -457,6 +479,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "just the birds", H: "Prism Wings"},
 		weightkg: 77.2,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	swampert: {
 		inherit: true,
@@ -477,6 +500,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Unaware", 1: "Klutz", H: "Prankster"},
 		weightkg: 325.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	electrode: {
 		inherit: true,
@@ -496,6 +520,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Time Bomb"},
 		weightkg: 133.2,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	mariokartwii: {
 		name: "Mario Kart Wii",
@@ -505,6 +530,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Gorilla Tactics", H: "Greatest Video Game of All Time"},
 		weightkg: 1.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	impalpitoad: {
 		name: "Impalpitoad",
@@ -515,6 +541,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "DILF", H: "Impalpable"},
 		weightkg: 983.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	scrubby: {
 		name: "Scrubby",
@@ -525,6 +552,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Quick Feet", 1: "What the Sigma", H: "Screen Cleaner"},
 		weightkg: 0.1,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	palpitoadissocool: {
 		name: "palpitoad is so cool",
@@ -535,6 +563,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "MILF", H: "champion"},
 		weightkg: 17.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	spewpa: {
 		inherit: true,
@@ -557,6 +586,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 70.0,
 		requiredItem: "Moltresite",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	jirachitwo: {
 		name: "Jirachitwo",
@@ -567,6 +597,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Benevolent Blessing"},
 		weightkg: 5.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	shinxfishing: {
 		name: "Shinx-Fishing",
@@ -577,6 +608,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Fishercat", 1: "toxic masculinity", H: "Guts"},
 		weightkg: 9.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	conquescape: {
 		name: "Conquescape",
@@ -588,6 +620,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Frozen Landscape", H: "No Guard"},
 		weightkg: 999.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	daiyakuza: {
 		name: "Daiyakuza",
@@ -599,6 +632,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "What the Sigma", H: "The Diamond Hand"},
 		weightkg: 999.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	metapod: {
 		inherit: true,
@@ -639,6 +673,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Skeptic", H: "I Love Fishing"},
 		weightkg: 100.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	magnegiri: {
 		name: "Magnegiri",
@@ -649,6 +684,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Magnetic Storm"},
 		weightkg: 94.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	mario: {
 		name: "mario",
@@ -658,6 +694,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Stall", 1: "Cursed Body", H: "Mega Launcher"},
 		weightkg: 999.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	contamicow: {
 		name: "Contamicow",
@@ -667,6 +704,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		baseStats: {hp: 80, atk: 110, def: 73, spa: 73, spd: 120, spe: 79},
 		abilities: {0: "Sheer Force", 1: "Strong Jaw", H: "Cud Chew"},
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	whonhef: {
 		name: "Whonhef",
@@ -676,6 +714,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		baseStats: {hp: 80, atk: 110, def: 73, spa: 73, spd: 120, spe: 79},
 		abilities: {0: "Sharpness", 1: "Berserk", H: "Hyper Cutter"},
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fishfactory: {
 		name: "Fish Factory",
@@ -686,6 +725,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "White Smoke", 1: "MILF", H: "Flash Fire"},
 		weightkg: 999.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	cowboybandido: {
 		name: "cowboy_bandido",
@@ -695,6 +735,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Sand Rush", 1: "What the Sigma", H: "River Thief"},
 		weightkg: 58.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	basculinbluestriped: {
 		inherit: true,
@@ -723,6 +764,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Speed Boost", 1: "Steely Spirit", H: "Racer's Spirit"},
 		weightkg: 60.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	impidimp: {
 		inherit: true,
@@ -744,6 +786,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 5.5,
 		requiredItem: "Impidimpite",
 		eggGroups: ["Fairy", "Human-Like"],
+		isNonstandard: "Modded",
 	},
 	lemon: {
 		name: "Lemon",
@@ -753,6 +796,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Mold Breaker", 1: "Ripen", H: "Acidic Drizzle"},
 		weightkg: 0.1,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fishingzombie: {
 		name: "Fishing Zombie",
@@ -763,6 +807,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "PVZ Fishing", H: "Damp"},
 		weightkg: 4.8,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	pokestarmt: {
 		name: "Pokestar MT",
@@ -781,6 +826,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Poison Puppeteer", 1: "Gex Server", H: "Iron Lady"},
 		weightkg: 81.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fleshvaliant: {
 		name: "Flesh Valiant",
@@ -790,6 +836,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Skill Issue"},
 		weightkg: 50.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fleshvaliantmega: {
 		name: "Flesh Valiant-Mega",
@@ -802,6 +849,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 50.0,
 		requiredItem: "Fleshvaliantite",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	abomasnow: {
 		inherit: true,
@@ -940,6 +988,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "Lemon Memory",
 		changesFrom: "Silvally",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	ronaldreagan: {
 		name: "Ronald Reagan",
@@ -949,6 +998,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Reaganomics"},
 		weightkg: 83.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	limelips: {
 		name: "Lime Lips",
@@ -958,6 +1008,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Dazzling", H: "Strong Jaw"},
 		weightkg: 123.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	lemotic: {
 		name: "Lemotic",
@@ -967,6 +1018,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Minus", 1: "Mega Launcher", H: "Perish Body"},
 		weightkg: 150.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	zestii: {
 		name: "Zestii",
@@ -978,6 +1030,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Lemon Squeezy"},
 		weightkg: 44.6,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	sunflora: {
 		inherit: true,
@@ -997,6 +1050,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "just the birds", H: "Protosynthesis"},
 		weightkg: 360.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	boogerponclownerstone: {
 		name: "Boogerpon-CLOWNerstone",
@@ -1007,6 +1061,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Honker"},
 		weightkg: 39.8,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	boogerponclownerstonetera: {
 		name: "Boogerpon-CLOWNerstone-Tera",
@@ -1019,6 +1074,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Embody Aspect (CLOWN)"},
 		weightkg: 39.8,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	keisbergif: {
 		name: "Keisberg-IF",
@@ -1028,6 +1084,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Eternal Rice", H: "Technician"},
 		weightkg: 236.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	indeedee: {
 		name: "Indeedee",
@@ -1047,6 +1104,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Flame Body", 1: "Unaware", H: "Zesty"},
 		weightkg: 0.2,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	cinderace: {
 		inherit: true,
@@ -1066,6 +1124,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Swift Swim", 1: "Ripen", H: "Lemonade"},
 		weightkg: 9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	dracolition: {
 		name: "Dracolition",
@@ -1075,6 +1134,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Wrecking Ball", 1: "Intimidate", H: "Dragon\'s Maw"},
 		weightkg: 235.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 
 	silvallysilly: {
@@ -1089,6 +1149,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "Silly Memory",
 		changesFrom: "Silvally",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	silvallystellar: {
 		name: "Silvally-Stellar",
@@ -1102,6 +1163,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "Not Stellarium Z. Lol!",
 		changesFrom: "Silvally",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	goddease: {
 		name: "Goddease",
@@ -1111,6 +1173,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "just the birds", H: "Pressure"},
 		weightkg: 10.8,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	jableye: {
 		gen: 3,
@@ -1121,6 +1184,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Justified", 1: "Monster Mash", H: "Jankster"},
 		weightkg: 11.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	kyrum: {
 		name: "Kyrum",
@@ -1130,6 +1194,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Kyrum Aura", 1: "Tinted Lens", H: "just the birds"},
 		weightkg: 17.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	raccoon: {
 		name: "Raccoon",
@@ -1139,6 +1204,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Pickpocket", 1: "Parting Gift", H: "Prankster"},
 		weightkg: 15.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	lucariocalm: {
 		name: "Lucario-Calm",
@@ -1148,6 +1214,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Steadfast", 1: "Sheer Force", H: "Justified"},
 		weightkg: 47.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	nedontrol: {
 		name: "Nedontrol",
@@ -1159,6 +1226,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Bon Appetit"},
 		weightkg: 434.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	princirang: {
 		name: "Princirang",
@@ -1170,6 +1238,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Honor Student"},
 		weightkg: 110.3,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	ironclown: {
 		name: "Iron Clown",
@@ -1179,6 +1248,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Quark Drive", H: "Honker"},
 		weightkg: 156.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	thepearlhand: {
 		name: "The Pearl Hand",
@@ -1188,6 +1258,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Sour Sipper", H: "The Pearl Hand"},
 		weightkg: 0.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	mcfish: {
 		name: "McFish",
@@ -1197,6 +1268,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "The Ever-Growing Hunger of Capitalism™"},
 		weightkg: 999.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	applwirm: {
 		name: "Applwirm",
@@ -1206,6 +1278,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Hustle", H: "Katabatic Winds"},
 		weightkg: 7.2,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	minunandplusled: {
 		name: "minun and plusle :D",
@@ -1216,6 +1289,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "best friends"},
 		weightkg: 8.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 
 	traike: {
@@ -1227,6 +1301,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Sturdy", 1: "No Guard", H: "Sand Force"},
 		weightkg: 71.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	groudon: {
 		inherit: true,
@@ -1247,6 +1322,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Mad Scientist"},
 		weightkg: 76.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	absol: {
 		inherit: true,
@@ -1266,6 +1342,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Zombies on Your Lawn"},
 		weightkg: 0.1,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	ironboulder: {
 		name: "Iron Boulder",
@@ -1284,6 +1361,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Supersour Syrup", 1: "Regenerator", H: "Sticky Hold"},
 		weightkg: 93.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	zapdos: {
 		inherit: true,
@@ -1303,6 +1381,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Chlorophyll", 1: "Solar Power", H: "Harvest"},
 		weightkg: 8.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	
 	hiveweb: {
@@ -1313,6 +1392,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Honeyed Web", 1: "Shield Dust", H: "Compound Eyes"},
 		weightkg: 9.1,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	syndicant: {
 		num: -123,
@@ -1323,6 +1403,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Eusociality"},
 		weightkg: 128.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fishmarketing3: {
 		num: -125,
@@ -1332,6 +1413,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "buy fish"},
 		weightkg: 0.1,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	lemonganium: {
 		num: -127,
@@ -1341,6 +1423,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Sour Hour", 1: "Flower Gift", H: "Unaware"},
 		weightkg: 100.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	carnivineif: {
 		num: -129,
@@ -1350,6 +1433,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Ghoul Gobbler", 1: "Zesty", H: "What the Sigma"},
 		weightkg: 35.6,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	grumpig: {
 		inherit: true,
@@ -1370,6 +1454,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Blight of the Fallen"},
 		weightkg: 0.2,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	panderdragoon: {
 		name: "Pander Dragoon",
@@ -1379,6 +1464,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Timefrozen Body"},
 		weightkg: 1.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	soruarc: {
 		name: "Soruarc",
@@ -1388,6 +1474,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Bloodline Spell: Blazeball"},
 		weightkg: 66.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	emolga: {
 		inherit: true,
@@ -1408,6 +1495,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Rain Dish", 1: "Bathroom Break", H: "MILF"},
 		weightkg: 43.7,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	hitmontopmega: {
 		name: "Hitmontop-Mega",
@@ -1420,6 +1508,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 72.0,
 		requiredItem: "Hitmontopite",
 		eggGroups: ["Human-Like"],
+		isNonstandard: "Modded",
 	},
 	porygonz: {
 		inherit: true,
@@ -1442,6 +1531,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 34.0,
 		requiredItem: "Porygonite-Z",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	furumo: {
 		name: "Furumo",
@@ -1452,6 +1542,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Water Veil", 1: "Pixilate", H: "Refrigerate"},
 		weightkg: 36.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	megaman: {
 		name: "mega man",
@@ -1461,6 +1552,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Magic Guard", 1: "Solid Rock", H: "MILF"},
 		weightkg: 77.1,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fudgesaur: {
 		name: "Fudgesaur",
@@ -1470,6 +1562,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Disgusting, Repulsive Dessert"},
 		weightkg: 100.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	fudgesaurmega: {
 		name: "Fudgesaur-Mega",
@@ -1482,6 +1575,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 100.0,
 		requiredItem: "Fudgesaurite",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	darkpoison: {
 		name: "darkpoison",
@@ -1491,6 +1585,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Rough Skin", 1: "Shed Skin", H: "Stakeout"},
 		weightkg: 0.3,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 
 	swampertmega: {
@@ -1507,6 +1602,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Sigma Surge"},
 		weightkg: 190.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	zoruahisui: {
 		inherit: true,
@@ -1536,6 +1632,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Ultra Necrozma Clause"},
 		weightkg: 230.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	nihilego: {
 		inherit: true,
@@ -1556,6 +1653,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Bon Appetit", 1: "Pride Rally", H: "Cloud Nine"},
 		weightkg: 94.3,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	citrusjams: {
 		name: "Citrus Jams",
@@ -1565,6 +1663,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Punk Rock", 1: "Gex Server", H: "Dazzling"},
 		weightkg: 3.3,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	everhl: {
 		name: "Everhál",
@@ -1576,6 +1675,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Slayer of Beasts"},
 		weightkg: 241.8,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	rayquaza: {
 		inherit: true,
@@ -1606,6 +1706,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Unaware", 1: "Thick Fat", H: "Corrosion"},
 		weightkg: 500.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	pyroaring: {
 		name: "Pyroaring",
@@ -1615,6 +1716,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Poison Point", 1: "Water Absorb", H: "Unaware"},
 		weightkg: 81.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	houndoom: {
 		inherit: true,
@@ -1643,6 +1745,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Fruity Bars", 1: "Alpha Sigma Rizz", H: "Inner Focus"},
 		weightkg: 90.7,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	
 	abomasnowmega: {
@@ -1662,6 +1765,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Gex Server", 1: "Prankster", H: "Regenerator"},
 		weightkg: 38.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	kyogre: {
 		inherit: true,
@@ -1684,6 +1788,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Still Water"},
 		weightkg: 107.3,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	ludicolo: {
 		inherit: true,
@@ -1706,6 +1811,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Jester's Folly"},
 		weightkg: 4.7,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	talonflame: {
 		inherit: true,
@@ -1725,6 +1831,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Overgrow", 1: "Solar Power", H: "Flower Gift"},
 		weightkg: 230.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	oldduke: {
 		num: -169,
@@ -1735,6 +1842,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Defiant", H: "Toxic Wisdom"},
 		weightkg: 252.6,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	biganvil: {
 		num: -168,
@@ -1744,6 +1852,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Cute Charm", 1: "Magic Guard", H: "Unaware"},
 		weightkg: 40.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 
 	ironfist: {
@@ -1754,6 +1863,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Quark Drive", H: "Iron Fist"},
 		weightkg: 136.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	victreebelmega: {
 		num: -195,
@@ -1778,6 +1888,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 108.0,
 		requiredItem: "Lucarionite",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	awesomepossum: {
 		num: -193,
@@ -1787,6 +1898,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "awesomeability", H: "Infiltrator"},
 		eggGroups: ["Undiscovered"],
 		weightkg: 1,
+		isNonstandard: "Modded",
 	},
 	tiredofitowl: {
 		num: -192,
@@ -1796,6 +1908,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "just the birds", 1: "Sticky Hold", H: "Water Absorb", S: "Fishy Surge"},
 		weightkg: 12.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	caracal: {
 		num: -191,
@@ -1805,6 +1918,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Frisk", 1: "Sand Rush", H: "Stakeout"},
 		weightkg: 19.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	solarbeanprimal: {
 		num: -190,
@@ -1818,6 +1932,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "Red Orb",
 		battleOnly: "Solar Bean",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	circall: {
 		num: -189,
@@ -1828,6 +1943,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Friend Guard", 1: "Healer", H: "Bloodline: Greatest Achievement"},
 		weightkg: 999.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	warioforbiddenone: {
 		num: -189,
@@ -1837,6 +1953,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Bloodline: Greatest Achievement"},
 		weightkg: 999.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	kyogreoriginal: {
 		num: -175,
@@ -1849,6 +1966,8 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Original Sea"},
 		requiredItem: "Original Item",
 		eggGroups: ["Undiscovered"],
+		weightkg: 352,
+		isNonstandard: "Modded",
 	},
 	lawset: {
 		num: -187,
@@ -1860,6 +1979,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Lawbender"},
 		weightkg: 32.3,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	daiyakuzaorigin: {
 		num: -60,
@@ -1874,6 +1994,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		changesFrom: "Daiyakuza",
 		weightkg: 142.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	princirangmega: {
 		num: -185,
@@ -1886,6 +2007,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "Princirangite",
 		weightkg: 86.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	ratstagoonnewyorkian: {
 		num: -184,
@@ -1895,6 +2017,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Steelworker", 1: "Merciless", H: "Feels Like Home"},
 		weightkg: 115.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	spewpamega: {
 		num: -183,
@@ -1907,6 +2030,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 16.7,
 		requiredItem: "Spewpanite",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	zapmolcuno: {
 		num: -182,
@@ -1916,6 +2040,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Pressure", 1: "just the birds", H: "Flame Body", S: "Static"},
 		weightkg: 168.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	nosepass: {
 		inherit: true,
@@ -1949,6 +2074,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 50.5,
 		requiredItem: "Etigirafarigite",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 
 	charjabug: {
@@ -1971,6 +2097,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Thick Fat", 1: "Sap Sipper", H: "Bouncy Bastard"},
 		weightkg: 200.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	flygon: {
 		num: -199,
@@ -1996,6 +2123,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 82.0,
 		battleOnly: "Flygon",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	vishzolt: {
 		num: -198,
@@ -2005,6 +2133,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Water Absorb", 1: "Volt Absorb", H: "Hustle Jaw"},
 		weightkg: 182.5,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	flaaffy: {
 		num: -197,
@@ -2015,6 +2144,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 13.3,
 		prevo: undefined,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	murcowd: {
 		num: -196,
@@ -2024,6 +2154,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Insomnia", 1: "Regenerator", H: "Prankster"},
 		weightkg: 10.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	greenguillotina: {
 		num: -195,
@@ -2034,6 +2165,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Mmmm Green", H: "Thick Fat"},
 		weightkg: 67.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	burmysand: {
 		num: -194,
@@ -2043,6 +2175,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Class Dynamics"},
 		weightkg: 3.4,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	'1000threarthmover': {
 		num: -193,
@@ -2052,6 +2185,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Stamina", 1: "Heavy Metal", H: "The Ever-Growing Hunger of Capitalism™"},
 		weightkg: 999.9,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	pronouns: {
 		num: -192,
@@ -2061,6 +2195,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Gender Ambiguity"},
 		weightkg: 460.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	lemonganiumlemonga: {
 		num: -191,
@@ -2074,6 +2209,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "Lemonganite",
 		battleOnly: "Lemonganium",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	miniormeteor: {
 		num: -190,
@@ -2194,6 +2330,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Without Love..."},
 		weightkg: 6.7,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	kanonbluesea: {
 		num: -189,
@@ -2206,6 +2343,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 6.7,
 		battleOnly: "Kanon",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	marlboro: {
 		num: -188,
@@ -2215,6 +2353,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Thermal Exchange", H: "Habit Forming"},
 		weightkg: 0.1,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	dip: {
 		num: -187,
@@ -2224,6 +2363,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Stench", H: "I Love Sewers"},
 		weightkg: 1.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	flushmaster: {
 		num: -187,
@@ -2236,6 +2376,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 581.7,
 		battleOnly: "Dip",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	bluminion: {
 		num: -186,
@@ -2246,6 +2387,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Shield Dust", 1: "Storm Drain", H: "Regenerator"},
 		weightkg: 25.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	biganvilmega: {
 		num: -185,
@@ -2259,6 +2401,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredItem: "BIG ANVILITE",
 		battleOnly: "BIG ANVIL",
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	melmetal3: {
 		num: -184,
@@ -2268,6 +2411,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Iron Fist", H: "What the Sigma"},
 		weightkg: 804.0,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	birbevilbot: {
 		num: -183,
@@ -2277,6 +2421,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Intimidate", 1: "No Guard", H: "Guard Dog"},
 		weightkg: 40.7,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 
 };
