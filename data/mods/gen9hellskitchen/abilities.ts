@@ -15,7 +15,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 0,
 	},
 	perfectorganism: {
-		onSwitchIn(pokemon) {
+		onStart(pokemon) {
 			this.boost({spa: 1}, pokemon);
 		},
 		flags: {},
