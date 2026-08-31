@@ -426,7 +426,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		forme: "Mega",
 		types: ["Normal", "Grass"],
 		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 160, atk: 140, def: 125, spa: 45, spd: 140, spe: 20 },
+		baseStats: { hp: 160, atk: 140, def: 125, spa: 55, spd: 140, spe: 20 },
 		abilities: { 0: "Arboreal Apathy" },
 		heightm: 2.1,
 		weightkg: 560,
