@@ -94,6 +94,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		gen: 6,
 		shortDesc: "If holder uses 3 consecutive attacking moves, it gains +1 Defense and Sp. Defense.",
 		rating: 2,
+		spritenum: -1,
 	},
 	fishhook: {
 		name: "Fish Hook",
@@ -153,6 +154,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			},
 		},
 		shortDesc: "Pursuits opposing Water-types/Fish. Always works in Fishing Terrain.",
+		spritenum: -1,
 	},
 	baseball: {
 		name: "Baseball",
@@ -230,6 +232,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	rustedsword: {
 		inherit: true,
@@ -295,6 +298,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				this.boost(balanceBoost, target, target, null, true);
 			}
 		},
+		spritenum: -1,
 	},
 	buckethat: {
 		fling: {
@@ -312,6 +316,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				this.heal(pokemon.baseMaxhp / 4);
 			}
 		},
+		spritenum: -1,
 	},
 	jarofmercury: {
 		name: "Jar of Mercury",
@@ -333,6 +338,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		},
 		num: 650,
 		gen: 6,
+		spritenum: -1,
 	},
 	nervecharm: {
 		name: "Nerve Charm",
@@ -352,6 +358,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			}
 		},
 		condition: {},
+		spritenum: -1,
 	},
 	electrodite: {
 		name: "Electrodite",
@@ -363,6 +370,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 
 	//slate 3
@@ -450,6 +458,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	impidimpite: {
 		name: "Impidimpite",
@@ -461,6 +470,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	fleshvaliantite: {
 		name: "Fleshvaliantite",
@@ -472,6 +482,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 
 	//slate 4
@@ -644,6 +655,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				this.damage(pokemon.baseMaxhp / 8);
 			},
 		},
+		spritenum: -1,
 	},
 	shuriken: {
 		name: "Shuriken",
@@ -661,6 +673,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		},
 		shortDesc: "If holder uses 3 consecutive attacking moves, it gains +1 Attack and Sp. Attack.",
 		rating: 2,
+		spritenum: -1,
 	},
 	tubeofonebillionlemons: {
 		name: "Tube of One Billion Lemons",
@@ -822,6 +835,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
 			},
 		},
+		spritenum: -1,
 	},
 	hitmontopite: {
 		name: "Hitmontopite",
@@ -833,6 +847,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	goombosscrown: {
 		name: "Goomboss Crown",
@@ -863,6 +878,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.itemUser == source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	shoe: {
 		name: "Shoe",
@@ -883,6 +899,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				return this.chainModify([5325, 4096]);
 			}
 		},
+		spritenum: -1,
 	},
 	fudgesaurite: {
 		name: "Fudgesaurite",
@@ -894,6 +911,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	porygonitez: {
 		name: "Porygonite-Z",
@@ -944,6 +962,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				return this.chainModify([5325, 4096]);
 			},
 		},
+		spritenum: -1,
 	},
 	frigidseed: {
 		name: "Frigid Seed",
@@ -965,6 +984,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			spe: 1,
 		},
 		rating: 2,
+		spritenum: -1,
 	},
 	shellierbell: {
 		name: "Shellier Bell",
@@ -991,6 +1011,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			basePower: 100,
 			type: 'Steel',
 		},
+		spritenum: -1,
 	},
 	weezerberry: {
 		name: "Weezer Berry",
@@ -1015,6 +1036,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			spa: 1,
 			spd: -4,
 		},
+		spritenum: -1,
 	},
 	manyfishingtokens: {
 		name: "Many Fishing Tokens",
@@ -1026,6 +1048,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		onDamagingHit(damage, target, source, move) {
 			target.side.addFishingTokens(1);
 		},
+		spritenum: -1,
 	},
 	citroniumz: {
 		name: "Citronium Z",
@@ -1067,6 +1090,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			this.heal(pokemon.baseMaxhp / 3);
 		},
 		shortDesc: "When the holder becomes Big, restores 1/3 max HP. Single use.",
+		spritenum: -1,
 	},
 	cardcrystal: {
 		name: "Card Crystal",
@@ -1079,6 +1103,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			}
 		},
 		shortDesc: "If the holder uses Trump Card, adds an extra Trump Card use. Single use.",
+		spritenum: -1,
 	},
 	sulphurrock: {
 		name: "Sulphur Rock",
@@ -1086,6 +1111,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		fling: {
 			basePower: 60,
 		},
+		spritenum: -1,
 	},
 
 	//slate 11
@@ -1115,6 +1141,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			return true;
 		},
 		itemUser: ["Kyogre"],
+		spritenum: -1,
 	},
 	diamondheart: {
 		name: "Diamond Heart",
@@ -1145,6 +1172,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.itemUser === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	victreebelite: {
 		name: "Victreebelite",
@@ -1156,6 +1184,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	lucarionite: {
 		name: "Lucarionite",
@@ -1179,6 +1208,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	spewpanite: {
 		name: "Spewpanite",
@@ -1190,6 +1220,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	etigirafarigite: {
 		name: "Etigirafarigite",
@@ -1201,6 +1232,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	redorb: {
 		name: "Red Orb",
@@ -1252,6 +1284,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		},
 		shortDesc: "Every 2 turns: Atk/Def/SpA/SpD +1, Spe halved, switch out unless -1 token.",
 		rating: 2,
+		spritenum: -1,
 	},
 	goofyplate: {
 		name: "Goofy Plate",
@@ -1296,6 +1329,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		zMove: "Yggdrasil Justice Strike",
 		zMoveFrom: "Everstorm Halberd",
 		itemUser: ["Everhál"],
+		spritenum: -1,
 	},
 	bassjpg: {
 		name: "bass.jpg",
@@ -1318,6 +1352,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				return this.chainModify([4915, 4096]);
 			}
 		},
+		spritenum: -1,
 	},
 	fishrifle: {
 		name: "Fish Rifle",
@@ -1341,6 +1376,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				pokemon.side.foe.removeFishingTokens(1);
 			}
 		},
+		spritenum: -1,
 	},
 	lunchly: {
 		name: "Lunchly",
@@ -1355,6 +1391,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (pokemon.activeTurns < 3) this.heal(pokemon.baseMaxhp * 0.1);
 			else pokemon.trySetStatus('psn', pokemon);
 		},
+		spritenum: -1,
 	},
 	ironwillribbon: {
 		name: "Iron Will Ribbon",
@@ -1366,6 +1403,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		onSourceModifyDamage(relayVar, target, source, move) {
 			return this.chainModify(1 - (0.2 * (4 - source.moveSlots.length)));
 		},
+		spritenum: -1,
 	},
 	lemonomicsindustryconnectionscard: {
 		name: "Lemonomics industry connections card",
@@ -1385,6 +1423,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				this.actions.useMove("Fish Processing", pokemon);
 			}
 		},
+		spritenum: -1,
 	},
 	zacianorb: {
 		name: "zacian orb",
@@ -1408,6 +1447,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				else pokemon.setAbility('identitycrisis');
 			}
 		},
+		spritenum: -1,
 	},
 	ipgrabberlink: {
 		fling: {
@@ -1458,6 +1498,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		onBasePower(basePower, pokemon, target, move) {
 			if (pokemon.ipboost) return this.chainModify(1 + 0.1 * pokemon.ipboost);
 		},
+		spritenum: -1,
 	},
 	'ironfistslate13': {
 		name: "Iron Fist Slate 13",
@@ -1474,6 +1515,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		onModifyDamage(damage, source, target, move) {
 			return this.chainModify([4505, 4096]);
 		},
+		spritenum: -1,
 	},
 	lemonganite: {
 		name: "Lemonganite",
@@ -1485,6 +1527,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 	biganvilite: {
 		name: "BIG ANVILITE",
@@ -1496,5 +1539,6 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		spritenum: -1,
 	},
 }
