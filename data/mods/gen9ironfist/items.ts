@@ -298,7 +298,6 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				this.boost(balanceBoost, target, target, null, true);
 			}
 		},
-		spritenum: -1,
 	},
 	buckethat: {
 		fling: {
@@ -316,7 +315,6 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 				this.heal(pokemon.baseMaxhp / 4);
 			}
 		},
-		spritenum: -1,
 	},
 	jarofmercury: {
 		name: "Jar of Mercury",
@@ -338,7 +336,6 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		},
 		num: 650,
 		gen: 6,
-		spritenum: -1,
 	},
 	nervecharm: {
 		name: "Nerve Charm",
