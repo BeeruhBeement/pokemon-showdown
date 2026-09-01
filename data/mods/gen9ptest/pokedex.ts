@@ -1,3 +1,5 @@
+import { ModdedSpeciesData } from "../../../sim/dex-species";
+
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	c3ll: {
 		num: 6700,
@@ -7,6 +9,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 65, atk: 30, def: 55, spa: 85, spd: 85, spe: 140},
 		abilities: {0: "Regenerator", 1: "Battle Armor", H: "Contrary"},
 		weightkg: 45.8,
+		isNonstandard: "Modded",
 	},
 	livii: {
 		num: 6701,
@@ -16,6 +19,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 85, atk: 85, def: 85, spa: 65, spd: 73, spe: 57},
 		abilities: {0: "Water Bubble", 1: "Sturdy", H: "Friend Guard"},
 		weightkg: 70.2,
+		isNonstandard: "Modded",
 	},
 	frambuesa: {
 		num: 6702,
@@ -25,6 +29,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 105, atk: 90, def: 80, spa: 80, spd: 60, spe: 45},
 		abilities: {0: "Magician", 1: "Lightning Rod", H: "Steadfast"},
 		weightkg: 109,
+		isNonstandard: "Modded",
 	},
 	r: {
 		num: 6703,
@@ -34,6 +39,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 30, atk: 40, def: 130, spa: 80, spd: 50, spe: 130},
 		abilities: {0: "Serene Grace", 1: "Magic Guard", H: "Synchronize"},
 		weightkg: 19,
+		isNonstandard: "Modded",
 	},
 	mad0130: {
 		num: 6704,
@@ -43,6 +49,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 105, atk: 90, def: 60, spa: 105, spd: 75, spe: 25},
 		abilities: {0: "Hospitality", 1: "Technician", H: "Own Tempo"},
 		weightkg: 132.5,
+		isNonstandard: "Modded",
 	},
 	milk: {
 		num: 6705,
@@ -52,6 +59,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 65, atk: 85, def: 65, spa: 85, spd: 75, spe: 75},
 		abilities: {0: "Overcoat", 1: "Steely Spirit", H: "Slush Rush"},
 		weightkg: 999,
+		isNonstandard: "Modded",
 	},
 	fiend: {
 		num: 6706,
@@ -61,6 +69,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 70, atk: 55, def: 55, spa: 170, spd: 55, spe: 55},
 		abilities: {0: "Gluttony", 1: "Disguise", H: "Technician"},
 		weightkg: 0.1,
+		isNonstandard: "Modded",
 	},
 	greed2: {
 		num: 6707,
@@ -70,6 +79,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 105, atk: 25, def: 80, spa: 95, spd: 105, spe: 40},
 		abilities: {0: "Hospitality", 1: "Shadow Shield", H: "Cursed Body"},
 		weightkg: 182.1,
+		isNonstandard: "Modded",
 	},
 	gaboswampert: {
 		num: 6708,
@@ -79,6 +89,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 85, atk: 85, def: 85, spa: 70, spd: 105, spe: 30},
 		abilities: {0: "Vital Spirit", 1: "Own Tempo", H: "Arena Trap"},
 		weightkg: 0.1,
+		isNonstandard: "Modded",
 	},
 	anaconja: {
 		num: 6709,
@@ -88,6 +99,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 70, atk: 55, def: 55, spa: 145, spd: 55, spe: 70},
 		abilities: {0: "Mimicry", 1: "Competitive", H: "Contrary"},
 		weightkg: 69,
+		isNonstandard: "Modded",
 	},
 	enderwither02: {
 		num: 6710,
@@ -97,6 +109,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 90, def: 40, spa: 100, spd: 90, spe: 40},
 		abilities: {0: "Technician", 1: "Friend Guard", H: "Serene Grace"},
 		weightkg: 0.1,
+		isNonstandard: "Modded",
 	},
 	jas: {
 		num: 6711,
@@ -106,6 +119,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 110, atk: 95, def: 55, spa: 55, spd: 95, spe: 40},
 		abilities: {0: "Leaf Guard", 1: "Chlorophyll", H: "Flower Veil"},
 		weightkg: 67,
+		isNonstandard: "Modded",
 	},
 	larex: {
 		num: 6712,
@@ -115,6 +129,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 118, atk: 40, def: 75, spa: 105, spd: 90, spe: 22},
 		abilities: {0: "Friend Guard", 1: "Own Tempo", H: "Purifying Salt"},
 		weightkg: 400,
+		isNonstandard: "Modded",
 	},
 	cyaneedle: {
 		num: 6714,
@@ -123,6 +138,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gender: "M",
 		baseStats: {hp: 115, atk: 40, def: 40, spa: 125, spd: 100, spe: 40},
 		abilities: {0: "Flower Veil", 1: "Hospitality", H: "Serene Grace"},
+		isNonstandard: "Modded",
 	},
 	nuclearstomp: {
 		num: 6715,
@@ -132,6 +148,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 60, atk: 40, def: 100, spa: 60, spd: 115, spe: 80},
 		abilities: {0: "Sand Stream", 1: "Disguise", H: "Unaware"},
 		weightkg: 226.8,
+		isNonstandard: "Modded",
 	},
 	charley: {
 		num: 6716,
@@ -141,6 +158,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 50, atk: 130, def: 115, spa: 30, spd: 65, spe: 65},
 		abilities: {0: "Tough Claws", 1: "Sand Rush", H: "Poison Point"},
 		weightkg: 45,
+		isNonstandard: "Modded",
 	},
 	killerfish: {
 		num: 6717,
@@ -150,6 +168,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 120, atk: 40, def: 105, spa: 40, spd: 80, spe: 65},
 		abilities: {0: "Thick Fat", 1: "Fluffy", H: "Friend Guard"},
 		weightkg: 105.2,
+		isNonstandard: "Modded",
 	},
 	nkazuya: {
 		num: 6718,
@@ -159,6 +178,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 60, atk: 60, def: 155, spa: 60, spd: 60, spe: 60},
 		abilities: {0: "Sand Veil", 1: "Regenerator", H: "Contrary"},
 		weightkg: 0.1,
+		isNonstandard: "Modded",
 	},
 	slowbro: {
 		num: 6719,
@@ -171,6 +191,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: null,
 		otherFormes: null,
 		formeOrder: null,
+		isNonstandard: "Modded",
 	},
 	ruo: {
 		num: 6720,
@@ -180,6 +201,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 130, atk: 65, def: 80, spa: 50, spd: 80, spe: 50},
 		abilities: {0: "Flower Veil", 1: "Slush Rush", H: "Prankster"},
 		weightkg: 78,
+		isNonstandard: "Modded",
 	},
 	flampoke: {
 		num: 6721,
@@ -189,6 +211,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 90, def: 65, spa: 65, spd: 100, spe: 50},
 		abilities: {0: "Intimidate", 1: "Lightning Rod", H: "Flower Veil"},
 		weightkg: 70.4,
+		isNonstandard: "Modded",
 	},
 	ttk: {
 		num: 6722,
@@ -198,6 +221,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 90, def: 65, spa: 80, spd: 90, spe: 45},
 		abilities: {0: "Thick Fat", 1: "Contrary", H: "Defiant"},
 		weightkg: 58.2,
+		isNonstandard: "Modded",
 	},
 	thurisaz: {
 		num: 6723,
@@ -207,6 +231,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 95, atk: 60, def: 60, spa: 95, spd: 85, spe: 50},
 		abilities: {0: "Healer", 1: "Gluttony", H: "Cute Charm"},
 		weightkg: 1,
+		isNonstandard: "Modded",
 	},
 	ghostsword: {
 		num: 6724,
@@ -216,6 +241,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 90, def: 55, spa: 45, spd: 90, spe: 90},
 		abilities: {0: "Guts", 1: "Friend Guard", H: "Magician"},
 		weightkg: 82,
+		isNonstandard: "Modded",
 	},
 	luigiguy: {
 		num: 6725,
@@ -225,6 +251,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 85, def: 85, spa: 40, spd: 85, spe: 85},
 		abilities: {0: "Poison Point", 1: "Sheer Force", H: "Contrary"},
 		weightkg: 61,
+		isNonstandard: "Modded",
 	},
 	definitelyelite: {
 		num: 6726,
@@ -234,6 +261,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 25, atk: 105, def: 65, spa: 80, spd: 105, spe: 65},
 		abilities: {0: "Moody", 1: "Magic Guard", H: "Competitive"},
 		weightkg: 72.7,
+		isNonstandard: "Modded",
 	},
 	mendoza: {
 		num: 6727,
@@ -242,6 +270,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		gender: "M",
 		baseStats: {hp: 95, atk: 95, def: 110, spa: 35, spd: 85, spe: 25},
 		abilities: {0: "Defiant", 1: "Regenerator", H: "Stamina"},
+		isNonstandard: "Modded",
 	},
 	serpexnessie: {
 		num: 6728,
@@ -251,6 +280,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 135, atk: 49, def: 50, spa: 100, spd: 65, spe: 51},
 		abilities: {0: "Prankster", 1: "Misty Surge", H: "Rattled"},
 		weightkg: 62,
+		isNonstandard: "Modded",
 	},
 	taurossweep: {
 		num: 6729,
@@ -260,6 +290,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 45, atk: 100, def: 100, spa: 55, spd: 55, spe: 100},
 		abilities: {0: "Tough Claws", 1: "Limber", H: "Anger Point"},
 		weightkg: 78.5,
+		isNonstandard: "Modded",
 	},
 	airy: {
 		num: 6730,
@@ -269,6 +300,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 150, atk: 40, def: 55, spa: 55, spd: 95, spe: 55},
 		abilities: {0: "Overgrow", 1: "Hospitality", H: "Flower Veil"},
 		weightkg: 31,
+		isNonstandard: "Modded",
 	},
 	nosh: {
 		num: 6731,
@@ -277,6 +309,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 50, def: 60, spa: 115, spd: 60, spe: 75},
 		abilities: {0: "Technician", 1: "Speed Boost", H: "Own Tempo"},
 		weightkg: 3,
+		isNonstandard: "Modded",
 	},
 	supercraig: {
 		num: 6732,
@@ -286,6 +319,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 70, atk: 30, def: 80, spa: 130, spd: 130, spe: 20},
 		abilities: {0: "Magician", 1: "Levitate", H: "Misty Surge"},
 		weightkg: 60,
+		isNonstandard: "Modded",
 	},
 	beeruh: {
 		num: 6733,
@@ -295,6 +329,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 60, atk: 45, def: 80, spa: 55, spd: 125, spe: 95},
 		abilities: {0: "Cloud Nine", 1: "Overcoat", H: "Magic Guard"},
 		weightkg: 52,
+		isNonstandard: "Modded",
 	},
 	rowlet: {
 		num: 6734,
@@ -305,6 +340,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Defiant", 1: "Flower Veil", H: "Sniper"},
 		weightkg: 100,
 		evos: null,
+		isNonstandard: "Modded",
 	},
 	gaysexor: {
 		num: 6735,
@@ -313,6 +349,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 125, atk: 45, def: 60, spa: 80, spd: 110, spe: 25},
 		abilities: {0: "Thick Fat", 1: "Own Tempo", H: "Friend Guard"},
 		weightkg: 11,
+		isNonstandard: "Modded",
 	},
 	dunscy: {
 		num: 6736,
@@ -322,6 +359,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 60, atk: 55, def: 105, spa: 80, spd: 55, spe: 105},
 		abilities: {0: "Pickup", 1: "Regenerator", H: "Friend Guard"},
 		weightkg: 15,
+		isNonstandard: "Modded",
 	},
 	boshifanfic: {
 		num: 6737,
@@ -331,6 +369,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 97, atk: 80, def: 130, spa: 35, spd: 70, spe: 48},
 		abilities: {0: "Overcoat", 1: "Defiant", H: "Sharpness"},
 		weightkg: 90.7,
+		isNonstandard: "Modded",
 	},
 	jozar: {
 		num: 6738,
@@ -338,6 +377,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Bug", "Water"],
 		baseStats: {hp: 60, atk: 45, def: 90, spa: 90, spd: 90, spe: 75},
 		abilities: {0: "Regenerator", 1: "Technician", H: "Gluttony"},
+		isNonstandard: "Modded",
 	},
 	zxgzxg: {
 		num: 6739,
@@ -347,6 +387,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 115, atk: 60, def: 60, spa: 80, spd: 80, spe: 60},
 		abilities: {0: "Skill Link", 1: "Gluttony", H: "Sap Sipper"},
 		weightkg: 999.9,
+		isNonstandard: "Modded",
 	},
 	arcato: {
 		num: 6740,
@@ -356,6 +397,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 90, def: 55, spa: 90, spd: 90, spe: 35},
 		abilities: {0: "Own Tempo", 1: "Lightning Rod", H: "Poison Heal"},
 		weightkg: 88,
+		isNonstandard: "Modded",
 	},
 	nidotheking: {
 		num: 6741,
@@ -364,6 +406,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 65, def: 35, spa: 100, spd: 100, spe: 55},
 		abilities: {0: "Thick Fat", 1: "Lightning Rod", H: "Slush Rush"},
 		weightkg: 999.9,
+		isNonstandard: "Modded",
 	},
 	dottwodot: {
 		num: 6742,
@@ -373,6 +416,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 85, def: 85, spa: 50, spd: 75, spe: 75},
 		abilities: {0: "Stamina", 1: "Volt Absorb", H: "Thick Fat"},
 		weightkg: 62,
+		isNonstandard: "Modded",
 	},
 	bandite: {
 		num: 6743,
@@ -381,6 +425,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 95, atk: 80, def: 95, spa: 35, spd: 60, spe: 95},
 		abilities: {0: "Overgrow", 1: "Hospitality", H: "Snow Warning"},
 		weightkg: 2,
+		isNonstandard: "Modded",
 	},
 	xthegamemaster: {
 		num: 6744,
@@ -389,6 +434,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 105, atk: 70, def: 45, spa: 95, spd: 95, spe: 35},
 		abilities: {0: "Ice Scales", 1: "Friend Guard", H: "Hydration"},
 		weightkg: 52,
+		isNonstandard: "Modded",
 	},
 	cyberpunkninja: {
 		num: 6745,
@@ -397,6 +443,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 135, atk: 45, def: 60, spa: 45, spd: 120, spe: 45},
 		abilities: {0: "Flower Veil", 1: "Lightning Rod", H: "Sweet Veil"},
 		weightkg: 59,
+		isNonstandard: "Modded",
 	},
 	epictoxie: {
 		num: 6746,
@@ -405,6 +452,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 55, atk: 105, def: 95, spa: 75, spd: 82, spe: 38},
 		abilities: {0: "Friend Guard", 1: "Slush Rush", H: "Tough Claws"},
 		weightkg: 68,
+		isNonstandard: "Modded",
 	},
 	aevilok: {
 		num: 6747,
@@ -413,6 +461,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 85, def: 85, spa: 45, spd: 85, spe: 85},
 		abilities: {0: "Unseen Fist", 1: "Sand Rush", H: "Sturdy"},
 		weightkg: 90.7,
+		isNonstandard: "Modded",
 	},
 	oshawott: {
 		num: 6748,
@@ -421,6 +470,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 100, def: 85, spa: 110, spd: 50, spe: 40},
 		abilities: {0: "Friend Guard", H: "Berserk"},
 		evos: null,
+		isNonstandard: "Modded",
 	},
 
 };

@@ -105,6 +105,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 		mod: 'gen9hellskitchen',
 		teraPreviewDefault: true,
+		searchShow: false,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1', '+Nonexistent'],
 	},
 

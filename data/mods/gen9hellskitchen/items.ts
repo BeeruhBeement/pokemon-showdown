@@ -183,33 +183,33 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	venusauriteg: {
 		name: "Venusaurite G",
-		spritenum: 608,
 		megaStone: { "Venusaur": "Venusaur-Mega-G" },
 		itemUser: ["Venusaur"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Venusaur, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	charizarditeg: {
 		name: "Charizardite G",
-		spritenum: 586,
 		megaStone: { "Charizard": "Charizard-Mega-G" },
 		itemUser: ["Charizard"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Charizard, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	blastoisiniteg: {
 		name: "Blastoisinite G",
-		spritenum: 583,
 		megaStone: { "Blastoise": "Blastoise-Mega-G" },
 		itemUser: ["Blastoise"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	butterfrite: {
 		name: "Butterfrite",
@@ -219,6 +219,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Butterfree, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	pikachunite: {
 		name: "Pikachunite",
@@ -228,6 +229,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Pikachu, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	meowthite: {
 		name: "Meowthite",
@@ -237,6 +239,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Meowth, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	machampite: {
 		name: "Machampite",
@@ -246,6 +249,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Machamp, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	gengariteg: {
 		name: "Gengarite G",
@@ -255,6 +259,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	kinglerite: {
 		name: "Kinglerite",
@@ -264,6 +269,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Kingler, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	laprasite: {
 		name: "Laprasite",
@@ -273,6 +279,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Lapras, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	eeveenite: {
 		name: "Eeveenite",
@@ -282,6 +289,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Eevee, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	snorlaxite: {
 		name: "Snorlaxite",
@@ -291,6 +299,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Snorlax, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	garbodorite: {
 		name: "Garbodorite",
@@ -300,6 +309,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Garbodor, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	melmetalite: {
 		name: "Melmetalite",
@@ -309,6 +319,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Melmetal, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	rillaboomite: {
 		name: "Rillaboomite",
@@ -318,6 +329,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Rillaboom, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	cinderacite: {
 		name: "Cinderacite",
@@ -327,6 +339,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Cinderace, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	inteleonite: {
 		name: "Inteleonite",
@@ -336,6 +349,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Inteleon, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	corviknite: {
 		name: "Corviknite",
@@ -345,6 +359,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Corviknight, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	orbeetlite: {
 		name: "Orbeetlite",
@@ -354,6 +369,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Orbeetle, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	drednawite: {
 		name: "Drednawite",
@@ -363,6 +379,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Drednaw, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	coalossalite: {
 		name: "Coalossalite",
@@ -372,6 +389,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Coalossal, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	flapplite: {
 		name: "Flapplite",
@@ -381,6 +399,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Flapple, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	appletunite: {
 		name: "Appletunite",
@@ -390,6 +409,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Appletun, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	sandacondite: {
 		name: "Sandacondite",
@@ -399,6 +419,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Sandaconda, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	toxtricitite: {
 		name: "Toxtricitite",
@@ -411,6 +432,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Toxtricity, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	centiskorchite: {
 		name: "Centiskorchite",
@@ -420,6 +442,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Centiskorch, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	hatterenite: {
 		name: "Hatterenite",
@@ -429,6 +452,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Hatterene, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	grimmsnarite: {
 		name: "Grimmsnarite",
@@ -438,6 +462,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Grimmsnarl, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	alcremite: {
 		name: "Alcremite",
@@ -447,6 +472,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Alcremie, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	copperajite: {
 		name: "Copperajite",
@@ -456,6 +482,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Copperajah, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	duraludonite: {
 		name: "Duraludonite",
@@ -465,6 +492,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Duraludon, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	wickedurshifite: {
 		name: "Wicked Urshifite",
@@ -474,6 +502,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Urshifu, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	surgingurshifite: {
 		name: "Surging Urshifite",
@@ -483,6 +512,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Urshifu-Rapid-Strike, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	leek: {
 		inherit: true,
@@ -493,6 +523,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Meloetta, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 		isNonstandard: null,
 	},
 	absolutedrive: {
@@ -503,6 +534,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Genesect, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	
 	arbokite: {
@@ -513,6 +545,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Arbok, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	nidoqueenite: {
 		name: "Nidoqueenite",
@@ -522,6 +555,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Nidoqueen, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	nidokingite: {
 		name: "Nidokingite",
@@ -531,6 +565,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Nidoking, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	arcanite: {
 		name: "Arcanite",
@@ -540,6 +575,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Arcanine, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	dittonite: {
 		name: "Dittonite",
@@ -549,6 +585,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Ditto, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	sunflorite: {
 		name: "Sunflorite",
@@ -558,6 +595,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Sunflora, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	slowkingite: {
 		name: "Slowkingite",
@@ -567,6 +605,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Slowking, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	kingdranite: {
 		name: "Kingdranite",
@@ -576,6 +615,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Kingdra, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	grumpigite: {
 		name: "Grumpigite",
@@ -585,6 +625,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Grumpig, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	flygonite: {
 		name: "Flygonite",
@@ -594,6 +635,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Flygon, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	armaldonite: {
 		name: "Armaldonite",
@@ -603,6 +645,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Armaldo, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	kecleonite: {
 		name: "Kecleonite",
@@ -612,6 +655,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Kecleon, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	luvdiscite: {
 		name: "Luvdiscite",
@@ -621,6 +665,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Luvdisc, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	jirachite: {
 		name: "Jirachite",
@@ -630,6 +675,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Jirachi, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	drapionite: {
 		name: "Drapionite",
@@ -639,6 +685,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Drapion, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	simisagite: {
 		name: "Simisagite",
@@ -648,6 +695,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Simisage, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	simisearite: {
 		name: "Simisearite",
@@ -657,6 +705,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Simisear, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	simipourite: {
 		name: "Simipourite",
@@ -666,6 +715,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Simipour, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	musharnite: {
 		name: "Musharnite",
@@ -675,6 +725,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Musharna, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	vanilluxite: {
 		name: "Vanilluxite",
@@ -684,6 +735,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Vanilluxe, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	orangurite: {
 		name: "Orangurite",
@@ -693,6 +745,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Oranguru, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	passimianite: {
 		name: "Passimianite",
@@ -702,6 +755,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Passimian, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	boltundite: {
 		name: "Boltundite",
@@ -711,6 +765,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Boltund, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	spidopsite: {
 		name: "Spidopsite",
@@ -720,6 +775,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Spidops, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	dachsbunite: {
 		name: "Dachsbunite",
@@ -729,6 +785,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Dachsbun, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	arbolivite: {
 		name: "Arbolivite",
@@ -738,6 +795,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Arboliva, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	squawkabillite: {
 		name: "Squawkabillite",
@@ -747,6 +805,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by a Squawkabilly, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 	ampharositez: {
 		name: "Ampharosite Z",
@@ -756,5 +815,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		shortDesc: "If held by an Ampharos, this item allows it to Mega Evolve in battle.",
+		spritenum: -1,
 	},
 };

@@ -41,16 +41,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	scolipedemega: {
 		inherit: true,
 		abilities: {0: "Searing Solvent"},
-		isNonstandard: "Modded",
 	},
 	scraftymega: {
 		inherit: true,
 		abilities: {0: "Criminal Mind"},
-		isNonstandard: "Modded",
 	},
 	eelektrossmega: {
 		inherit: true,
-		isNonstandard: "Modded",
 	},
 	chandeluremega: {
 		inherit: true,
@@ -58,19 +55,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chesnaughtmega: {
 		inherit: true,
-		abilities: {0: "Bulletproof"},
 	},
 	delphoxmega: {
 		inherit: true,
-		abilities: {0: "Levitate"},
 	},
 	greninjamega: {
 		inherit: true,
-		abilities: {0: "Protean"},
 	},
 	pyroarmega: {
 		inherit: true,
-		isNonstandard: "Modded",
 	},
 	floetteeternal: {
 		inherit: true,
@@ -82,17 +75,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	malamarmega: {
 		inherit: true,
 		abilities: {0: "Dimensional Twist"},
-		isNonstandard: "Modded",
 	},
 	barbaraclemega: {
 		inherit: true,
-		abilities: {0: "Tough Claws"},
-		isNonstandard: "Modded",
 	},
 	dragalgemega: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
-		isNonstandard: "Modded",
 	},
 	hawluchamega: {
 		inherit: true,
@@ -101,7 +89,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	zygardemega: {
 		inherit: true,
 		abilities: {0: "Perfect Organism"},
-		isNonstandard: "Modded",
 	},
 	drampamega: {
 		inherit: true,
@@ -110,15 +97,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	falinksmega: {
 		inherit: true,
 		abilities: {0: "Megazord"},
-		isNonstandard: "Modded",
 	},
 	raichumegax: {
 		inherit: true,
-		isNonstandard: "Modded",
 	},
 	raichumegay: {
 		inherit: true,
-		isNonstandard: "Modded",
 	},
 	chimechomega: {
 		inherit: true,
@@ -127,41 +111,33 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	lucariomegaz: {
 		inherit: true,
 		abilities: {0: "Screen Cleaner"},
-		isNonstandard: "Modded",
 	},
 	zeraoramega: {
 		inherit: true,
 		abilities: {0: "Speed Boost"},
-		isNonstandard: "Modded",
 	},
 	baxcaliburmega: {
 		inherit: true,
 		abilities: {0: "Thermal Exchange"},
-		isNonstandard: "Modded",
 	},
 	absolmegaz: {
 		inherit: true,
 		abilities: {0: "Sharpness"},
-		isNonstandard: "Modded",
 	},
 	staraptormega: {
 		inherit: true,
-		isNonstandard: "Modded",
 	},
 	garchompmegaz: {
 		inherit: true,
 		abilities: {0: "Levitate"},
-		isNonstandard: "Modded",
 	},
 	heatranmega: {
 		inherit: true,
 		abilities: {0: "Earth Eater"},
-		isNonstandard: "Modded",
 	},
 	darkraimega: {
 		inherit: true,
 		abilities: {0: "Dark Aura"},
-		isNonstandard: "Modded",
 	},
 	golurkmega: {
 		inherit: true,
@@ -182,35 +158,28 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	golisopodmega: {
 		inherit: true,
 		abilities: {0: "Tough Claws"},
-		isNonstandard: "Modded",
 	},
 	magearnamega: {
 		inherit: true,
 		abilities: {0: "Soul-Heart"},
-		isNonstandard: "Modded",
 	},
 	tatsugiricurlymega: {
 		inherit: true,
 		abilities: {0: "Lunch Rush"},
-		isNonstandard: "Modded",
 	},
 	tatsugiridroopymega: {
 		inherit: true,
 		abilities: {0: "Lunch Rush"},
-		isNonstandard: "Modded",
 	},
 	tatsugiristretchymega: {
 		inherit: true,
 		abilities: {0: "Lunch Rush"},
-		isNonstandard: "Modded",
 	},
 	glimmoramega: {
 		inherit: true,
-		abilities: {0: "Adaptability"},
 	},
 	scovillainmega: {
 		inherit: true,
-		abilities: {0: "Spicy Spray"},
 	},
 	gengarmega: {
 		inherit: true,
