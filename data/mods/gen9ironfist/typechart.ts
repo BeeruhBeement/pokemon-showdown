@@ -523,6 +523,7 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 		HPdvs: {atk: 14, def: 13},
 	},
 	lemon: {
+		isNonstandard: "Modded",
 		damageTaken: {
 			Bug: 1,
 			Dark: 0,
@@ -548,6 +549,7 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 		},
 	},
 	silly: {
+		isNonstandard: "Modded",
 		damageTaken: {
 			confusion: 3,
 			insanity: 3,
@@ -575,6 +577,7 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 		},
 	},
 	serious: {
+		isNonstandard: "Modded",
 		damageTaken: {
 			Bug: 0,
 			Dark: 0,
@@ -599,4 +602,7 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 			Silly: 3,
 		},
 	},
+	friend: {
+		isNonstandard: "Modded",
+	}
 };
