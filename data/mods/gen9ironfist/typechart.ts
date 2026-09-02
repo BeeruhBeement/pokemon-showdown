@@ -1,4 +1,6 @@
-export const TypeChart: import('../sim/dex-data').TypeDataTable = {
+import { ModdedTypeData } from "../../../sim/dex-data";
+
+export const TypeChart: {[k: string]: ModdedTypeData} = {
 	bug: {
 		damageTaken: {
 			Bug: 0,
@@ -604,5 +606,6 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 	},
 	friend: {
 		isNonstandard: "Modded",
+		damageTaken: {},
 	}
 };
