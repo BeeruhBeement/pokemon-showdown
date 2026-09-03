@@ -2222,6 +2222,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 40.0,
 		otherFormes: ["Miniore-Red", "Miniore-Orange", "Miniore-Yellow", "Miniore-Green", "Miniore-Blue", "Miniore-Indigo", "Miniore-Violet"],
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	miniorered: {
 		num: -190,
@@ -2235,6 +2236,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredTeraType: "Fire",
 		battleOnly: "Miniore",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	minioreorange: {
 		num: -190,
@@ -2248,6 +2250,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredTeraType: "Ground",
 		battleOnly: "Miniore",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	minioreyellow: {
 		num: -190,
@@ -2261,6 +2264,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredTeraType: "Lemon",
 		battleOnly: "Miniore",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	minioregreen: {
 		num: -190,
@@ -2274,6 +2278,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredTeraType: "Silly",
 		battleOnly: "Miniore",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	minioreblue: {
 		num: -190,
@@ -2287,6 +2292,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredTeraType: "Flying",
 		battleOnly: "Miniore",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	minioreindigo: {
 		num: -190,
@@ -2300,6 +2306,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredTeraType: "Water",
 		battleOnly: "Miniore",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	minioreviolet: {
 		num: -190,
@@ -2313,6 +2320,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		requiredTeraType: "Ghost",
 		battleOnly: "Miniore",
 		eggGroups: ["Mineral"],
+		isNonstandard: "Modded",
 	},
 	kanon: {
 		num: -189,
