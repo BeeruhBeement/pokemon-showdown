@@ -817,7 +817,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Analytic", H: "Kaiju Killer"},
 		weightkg: 999.0,
 		eggGroups: ["Undiscovered"],
-		cosmeticFormes: undefined,
+		cosmeticFormes: [''],
 		isNonstandard: "Modded",
 	},
 	margaretthatcher: {
@@ -2222,7 +2222,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		baseStats: {hp: 80, atk: 80, def: 120, spa: 80, spd: 120, spe: 100},
 		abilities: {0: "Shields Up"},
 		weightkg: 40.0,
-		cosmeticFormes: undefined,
+		cosmeticFormes: [''],
 		otherFormes: ["Minior-Red", "Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
 		eggGroups: ["Undiscovered"],
 	},
