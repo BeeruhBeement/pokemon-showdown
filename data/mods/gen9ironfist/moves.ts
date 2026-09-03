@@ -4618,8 +4618,8 @@ export const Moves: {[moveid: string]: ModdedMoveData} = {
 		basePower: 110,
 		accuracy: 100,
 		pp: 10,
-		desc: "If used by Meteor form Minior, it transforms into its Core form and the move's type matches its current color's secondary type. Stellar Type if the user doesn't have a valid Core form for whatever reason. Phys if Atk > SpA.",
-		shortDesc: "Minior: changes to Core, type of user's secondary type. Phys if Atk > SpA.",
+		desc: "If used by Meteor form Miniore, it transforms into its Core form and the move's type matches its current color's secondary type. Stellar Type if the user doesn't have a valid Core form for whatever reason. Phys if Atk > SpA.",
+		shortDesc: "Miniore: changes to Core, type of user's secondary type. Phys if Atk > SpA.",
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		onPrepareHit(target, pokemon, move) {
@@ -4627,46 +4627,46 @@ export const Moves: {[moveid: string]: ModdedMoveData} = {
 			this.add('-anim', pokemon, "Meteor Beam", target);
 		},
 		onTry(source) {
-			if (source.species.baseSpecies === 'Minior-Meteor') {
+			if (source.species.baseSpecies === 'Miniore') {
 				return;
 			}
 			this.attrLastMove('[still]');
 			this.add('-fail', source, 'move: Minior Shower');
-			this.hint("Only a Pokemon whose base form is Minior can use this move.");
+			this.hint("Only a Pokemon whose base form is Miniore can use this move.");
 			return null;
 		},
 		onModifyMove(move, pokemon) {
 			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
 		},
 		onModifyType(move, pokemon) {
-			if (pokemon.species.baseSpecies !== 'Minior-Meteor' || pokemon.transformed) return;
+			if (pokemon.species.baseSpecies !== 'Miniore' || pokemon.transformed) return;
 			switch (pokemon.set.teraType) {
 				case 'Fire':
-					pokemon.formeChange('Minior');
+					pokemon.formeChange('Miniore-Red');
 					move.type = pokemon.set.teraType;
 					break;
 				case 'Ground':
-					pokemon.formeChange('Minior-Orange');
+					pokemon.formeChange('Miniore-Orange');
 					move.type = pokemon.set.teraType;
 					break;
 				case 'Lemon':
-					pokemon.formeChange('Minior-Yellow');
+					pokemon.formeChange('Miniore-Yellow');
 					move.type = pokemon.set.teraType;
 					break;
 				case 'Silly':
-					pokemon.formeChange('Minior-Green');
+					pokemon.formeChange('Miniore-Green');
 					move.type = pokemon.set.teraType;
 					break;
 				case 'Flying':
-					pokemon.formeChange('Minior-Blue');
+					pokemon.formeChange('Miniore-Blue');
 					move.type = pokemon.set.teraType;
 					break;
 				case 'Water':
-					pokemon.formeChange('Minior-Indigo');
+					pokemon.formeChange('Miniore-Indigo');
 					move.type = pokemon.set.teraType;
 					break;
 				case 'Ghost':
-					pokemon.formeChange('Minior-Violet');
+					pokemon.formeChange('Miniore-Violet');
 					move.type = pokemon.set.teraType;
 					break;
 				default:

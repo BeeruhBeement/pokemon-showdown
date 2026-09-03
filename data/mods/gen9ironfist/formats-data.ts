@@ -869,35 +869,35 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	miniormeteor: {
+	miniore: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	minior: {
+	miniorered: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	miniorblue: {
+	minioreblue: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	miniorgreen: {
+	minioregreen: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	miniorindigo: {
+	minioreindigo: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	miniororange: {
+	minioreorange: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	miniorviolet: {
+	minioreviolet: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},
-	minioryellow: {
+	minioreyellow: {
 		tier: "Untested",
 		doublesTier: "DIF",
 	},

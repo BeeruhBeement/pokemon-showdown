@@ -1,6 +1,5 @@
 import {Dex} from '../../../sim/dex';
 import type { ChosenAction } from '../../../sim/side';
-import { FS } from '../../../lib';
 import { toID } from '../../../sim/dex-data';
 
 export const Scripts: ModdedBattleScriptsData = {
