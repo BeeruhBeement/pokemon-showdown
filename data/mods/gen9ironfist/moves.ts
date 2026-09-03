@@ -1083,12 +1083,12 @@ export const Moves: {[moveid: string]: ModdedMoveData} = {
         target: "allAdjacent",
         type: "???",
     },
-	cuddie: {
+	cuddle: {
 		accuracy: true,
 		viable: false,
 		basePower: 0,
 		category: "Status",
-		name: "cuddIe",
+		name: "cuddle",
 		desc: "the pokemon have. a nice cuddle :)",
 		shortDesc: "the pokemon have. a nice cuddle :)",
 		pp: 625000,
