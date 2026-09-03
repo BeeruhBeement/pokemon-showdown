@@ -1295,7 +1295,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	unitedparty: {
 		//Death
-		onStart(pokemon) {
+		/*onStart(pokemon) {
 			const copen = pokemon.side.pokemon.filter(p => p != pokemon && !p.fainted && p.baseSpecies.copen);
 			if (copen.length > 0) {
 				this.add('-activate', pokemon, 'ability: United Party');
@@ -1303,7 +1303,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				pokemon.copen = copen.length;
 			}
 			//effects in respective fields (gonna do this later lol...)
-		},
+		},*/
 		flags: {},
 		name: "United Party",
 		shortDesc: "(Non-functional) Field effects have 1 extra turn per Copen Pokemon.",

@@ -3267,6 +3267,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		effectType: 'Rule',
 		name: 'Data Mod',
 		desc: 'When a Pokémon switches in, its types, base Speed, and abilities are displayed to both players.',
+		onSwitchInPriority: 1,
 		onSwitchIn(pokemon) {
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 		},

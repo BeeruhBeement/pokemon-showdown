@@ -1305,7 +1305,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.sideConditions[status.id].duration =
 					status.durationCallback.call(this.battle, this.active[0], source, sourceEffect);
 			}
-			if (source.hasAbility('unitedparty') && status.duration && source.copen) this.sideConditions[status.id].duration += (status.id === 'tailwind') ? Math.floor(source.copen / 2) : source.copen; 
+			// if (source.hasAbility('unitedparty') && status.duration && source.copen) this.sideConditions[status.id].duration += (status.id === 'tailwind') ? Math.floor(source.copen / 2) : source.copen; 
 			if (!this.battle.singleEvent('SideStart', status, this.sideConditions[status.id], this, source, sourceEffect)) {
 				delete this.sideConditions[status.id];
 				return false;
@@ -1404,8 +1404,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (source) {
 				this.weatherState.source = source;
 				this.weatherState.sourceSlot = source.getSlot();
-				console.log(this.effectState.copen);
-				if (source.hasAbility('unitedparty') && status.duration && source.copen) status.duration += source.copen; 
+				// console.log(this.effectState.copen);
+				// if (source.hasAbility('unitedparty') && status.duration && source.copen) status.duration += source.copen; 
 			}
 			if (status.duration) {
 				this.weatherState.duration = status.duration;
@@ -1443,7 +1443,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (status.durationCallback) {
 				this.terrainState.duration = status.durationCallback.call(this.battle, source, source, sourceEffect);
 			}
-			if (source.hasAbility('unitedparty') && status.duration && this.effectState.copen) this.terrainState.duration += this.effectState.copen; 
+			// if (source.hasAbility('unitedparty') && status.duration && this.effectState.copen) this.terrainState.duration += this.effectState.copen; 
 			if (!this.battle.singleEvent('FieldStart', status, this.terrainState, this, source, sourceEffect)) {
 				this.terrain = prevTerrain;
 				this.terrainState = prevTerrainState;

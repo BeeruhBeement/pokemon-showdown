@@ -10,7 +10,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	ninjask: {
 		inherit: true,
 		gen: 3,
-		copen: true,
+		// copen: true,
 		name: "Ninjask",
 		num: -2,
 		types: ["Bug", "Flying"],
@@ -365,7 +365,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	drigike: {
 		name: "Drigike",
-		copen: true,
+		// copen: true,
 		num: -36,
 		types: ["Rock"],
 		baseStats: {hp: 65, atk: 80, def: 60, spa: 135, spd: 65, spe: 80},
@@ -415,7 +415,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	bondra: {
 		name: "Bondra",
-		copen: true,
+		// copen: true,
 		num: -41,
 		types: ["Grass", "Fire"],
 		baseStats: {hp: 103, atk: 113, def: 93, spa: 43, spd: 93, spe: 113},
@@ -698,7 +698,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	contamicow: {
 		name: "Contamicow",
-		copen: true,
+		// copen: true,
 		num: -67,
 		types: ["Dark", "Poison"],
 		baseStats: {hp: 80, atk: 110, def: 73, spa: 73, spd: 120, spe: 79},
@@ -708,7 +708,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	whonhef: {
 		name: "Whonhef",
-		copen: true,
+		// copen: true,
 		num: -68,
 		types: ["Normal", "Fighting"],
 		baseStats: {hp: 80, atk: 110, def: 73, spa: 73, spd: 120, spe: 79},
@@ -1480,7 +1480,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		name: "Emolga",
 		num: -140,
-		copen: true,
+		// copen: true,
 		bird: true,
 		types: ["Electric", "Flying"],
 		baseStats: {hp: 55, atk: 75, def: 60, spa: 75, spd: 60, spe: 104},
