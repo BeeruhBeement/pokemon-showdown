@@ -303,6 +303,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 17.0,
 		prevo: undefined,
 		eggGroups: ["Undiscovered"],
+		isNonstandard: "Modded",
 	},
 	moltres: {
 		inherit: true,
@@ -2214,6 +2215,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	miniormeteor: {
 		num: -190,
 		name: "Minior-Meteor",
+		baseForme: "Meteor",
 		baseSpecies: undefined,
 		forme: undefined,
 		types: ["Rock"],
@@ -2228,6 +2230,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		num: -190,
 		name: "Minior",
 		baseSpecies: "Minior-Meteor",
+		baseForme: undefined,
 		forme: "Red",
 		types: ["Rock", "Fire"],
 		baseStats: {hp: 80, atk: 120, def: 80, spa: 120, spd: 80, spe: 100},
