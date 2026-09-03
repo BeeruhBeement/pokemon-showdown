@@ -177,7 +177,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		rating: 3,
 	},
 	ironfist: {
-		spritenum: 749,
+		spritenum: -1,
 		fling: {
 			basePower: 60,
 			multihit: 2,
@@ -706,7 +706,7 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		name: "Bob\'s Curse",
 		shortDesc: "Holder's bullet attacks have 1.2x power and have a 30% chance to badly poison.",
 		rating: 2,
-		spritenum: 660,
+		spritenum: -1,
 		fling: {
 			basePower: 90,
 			secondary: {

@@ -303,7 +303,6 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 17.0,
 		prevo: undefined,
 		eggGroups: ["Undiscovered"],
-		isNonstandard: "Modded",
 	},
 	moltres: {
 		inherit: true,
@@ -817,6 +816,8 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Analytic", H: "Kaiju Killer"},
 		weightkg: 999.0,
 		eggGroups: ["Undiscovered"],
+		cosmeticFormes: undefined,
+		isNonstandard: "Modded",
 	},
 	margaretthatcher: {
 		name: "Margaret Thatcher",
@@ -2144,7 +2145,6 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		weightkg: 13.3,
 		prevo: undefined,
 		eggGroups: ["Undiscovered"],
-		isNonstandard: "Modded",
 	},
 	murcowd: {
 		num: -196,
@@ -2221,12 +2221,12 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		abilities: {0: "Shields Up"},
 		weightkg: 40.0,
 		cosmeticFormes: undefined,
-		otherFormes: ["Minior", "Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
+		otherFormes: ["Minior-Red", "Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
 		eggGroups: ["Undiscovered"],
 	},
 	minior: {
 		num: -190,
-		name: "Minior",
+		name: "Minior-Red",
 		baseSpecies: "Minior-Meteor",
 		forme: "Red",
 		types: ["Rock", "Fire"],
