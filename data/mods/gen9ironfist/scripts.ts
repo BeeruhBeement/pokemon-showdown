@@ -49,7 +49,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 		
 		if (Dex.aliases) {
-    		Dex.aliases.delete(toID('cuddle'));
+    		Dex.aliases.delete(toID('miniororange'));
+			Dex.aliases.delete(toID('minioryellow'));
+			Dex.aliases.delete(toID('miniorgreen'));
+			Dex.aliases.delete(toID('miniorblue'));
+			Dex.aliases.delete(toID('miniorindigo'));
+			Dex.aliases.delete(toID('miniorviolet'));
 		}
 	},
 	battle: {
