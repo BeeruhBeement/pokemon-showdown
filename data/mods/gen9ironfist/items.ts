@@ -224,15 +224,13 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 	},
 	kinglerite: {
 		name: "Kinglerite",
-		shortDesc: "If held by a Kingler, this item allows it to Mega Evolve in battle.",
-		megaStone: "Kingler-Mega",
-		megaEvolves: "Kingler",
+		spritenum: -1,
+		megaStone: { "Kingler": "Kingler-Mega" },
 		itemUser: ["Kingler"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Kingler, this item allows it to Mega Evolve in battle.",
 	},
 	rustedsword: {
 		inherit: true,
@@ -359,15 +357,13 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 	},
 	electrodite: {
 		name: "Electrodite",
-		shortDesc: "If held by an Electrode, this item allows it to Mega Evolve in battle.",
-		megaStone: "Electrode-Mega",
-		megaEvolves: "Electrode",
+		spritenum: -1,
+		megaStone: { "Electrode": "Electrode-Mega" },
 		itemUser: ["Electrode"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by an Electrode, this item allows it to Mega Evolve in battle.",
 	},
 
 	//slate 3
@@ -447,39 +443,33 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 	},
 	moltresite: {
 		name: "Moltresite",
-		shortDesc: "If held by a Moltres, this item allows it to Mega Evolve in battle.",
-		megaStone: "Moltres-Mega",
-		megaEvolves: "Moltres",
+		spritenum: -1,
+		megaStone: { "Moltres": "Moltres-Mega" },
 		itemUser: ["Moltres"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Moltres, this item allows it to Mega Evolve in battle.",
 	},
 	impidimpite: {
 		name: "Impidimpite",
-		shortDesc: "If held by an Impidimp, this item allows it to Mega Evolve in battle.",
-		megaStone: "Impidimp-Mega",
-		megaEvolves: "Impidimp",
+		spritenum: -1,
+		megaStone: { "Impidimp": "Impidimp-Mega" },
 		itemUser: ["Impidimp"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by an Impidimp, this item allows it to Mega Evolve in battle.",
 	},
 	fleshvaliantite: {
 		name: "Fleshvaliantite",
-		shortDesc: "If held by a Flesh Valiant, this item allows it to Mega Evolve in battle.",
-		megaStone: "Flesh Valiant-Mega",
-		megaEvolves: "Flesh Valiant",
+		spritenum: -1,
+		megaStone: { "Flesh Valiant": "Flesh Valiant-Mega" },
 		itemUser: ["Flesh Valiant"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Flesh Valiant, this item allows it to Mega Evolve in battle.",
 	},
 
 	//slate 4
@@ -836,15 +826,13 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 	},
 	hitmontopite: {
 		name: "Hitmontopite",
-		shortDesc: "If held by a Hitmontop, this item allows it to Mega Evolve in battle.",
-		megaStone: "Hitmontop-Mega",
-		megaEvolves: "Hitmontop",
+		spritenum: -1,
+		megaStone: { "Hitmontop": "Hitmontop-Mega" },
 		itemUser: ["Hitmontop"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Hitmontop, this item allows it to Mega Evolve in battle.",
 	},
 	goombosscrown: {
 		name: "Goomboss Crown",
@@ -900,27 +888,23 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 	},
 	fudgesaurite: {
 		name: "Fudgesaurite",
-		shortDesc: "If held by a Fudgesaur, this item allows it to Mega Evolve in battle.",
-		megaStone: "Fudgesaur-Mega",
-		megaEvolves: "Fudgesaur",
+		spritenum: -1,
+		megaStone: { "Fudgesaur": "Fudgesaur-Mega" },
 		itemUser: ["Fudgesaur"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Fudgesaur, this item allows it to Mega Evolve in battle.",
 	},
 	porygonitez: {
 		name: "Porygonite-Z",
-		shortDesc: "If held by a Porygon-Z, this item allows it to Mega Evolve in battle.",
 		spritenum: 578,
-		megaStone: "Porygon-Z-Mega",
-		megaEvolves: "Porygon-Z",
+		megaStone: { "Porygon-Z": "Porygon-Z-Mega" },
 		itemUser: ["Porygon-Z"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
+		shortDesc: "If held by a Porygon-Z, this item allows it to Mega Evolve in battle.",
 	},
 
 	//slate 9
@@ -1173,63 +1157,52 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 	},
 	victreebelite: {
 		name: "Victreebelite",
-		shortDesc: "If held by a Victreebel, this item allows it to Mega Evolve in battle.",
-		megaStone: "Victreebel-Mega",
-		megaEvolves: "Victreebel",
+		megaStone: { "Victreebel": "Victreebel-Mega" },
 		itemUser: ["Victreebel"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Victreebel, this item allows it to Mega Evolve in battle.",
 	},
 	lucarionite: {
 		name: "Lucarionite",
 		spritenum: 594,
-		shortDesc: "If held by a Lucario-Calm, this item allows it to Mega Evolve in battle.",
-		megaStone: "Lucario-Calm-Mega",
-		megaEvolves: "Lucario-Calm",
+		megaStone: { "Lucario-Calm": "Lucario-Calm-Mega" },
 		itemUser: ["Lucario-Calm"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
+		shortDesc: "If held by a Lucario-Calm, this item allows it to Mega Evolve in battle.",
 	},
 	princirangite: {
 		name: "Princirangite",
-		shortDesc: "If held by a Princirang, this item allows it to Mega Evolve in battle.",
-		megaStone: "Princirang-Mega",
-		megaEvolves: "Princirang",
+		spritenum: -1,
+		megaStone: { "Princirangite": "Princirangite-Mega" },
 		itemUser: ["Princirang"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Princirang, this item allows it to Mega Evolve in battle.",
 	},
 	spewpanite: {
 		name: "Spewpanite",
-		shortDesc: "If held by a Spewpa, this item allows it to Mega Evolve in battle.",
-		megaStone: "Spewpa-Mega",
-		megaEvolves: "Spewpa",
+		spritenum: -1,
+		megaStone: { "Spewpa": "Spewpa-Mega" },
 		itemUser: ["Spewpa"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Spewpa, this item allows it to Mega Evolve in battle.",
 	},
 	etigirafarigite: {
 		name: "Etigirafarigite",
-		shortDesc: "If held by a Girafarig, this item allows it to Mega Evolve in battle.",
-		megaStone: "Girafarig-Mega",
-		megaEvolves: "Girafarig",
+		spritenum: -1,
+		megaStone: { "Girafarig": "Girafarig-Mega" },
 		itemUser: ["Girafarig"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a Girafarig, this item allows it to Mega Evolve in battle.",
 	},
 	redorb: {
 		name: "Red Orb",
@@ -1528,14 +1501,12 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 	},
 	biganvilite: {
 		name: "BIG ANVILITE",
-		shortDesc: "If held by a BIG ANVIL, this item allows it to Mega Evolve in battle.",
-		megaStone: "BIG ANVIL-MEGA",
-		megaEvolves: "BIG ANVIL",
+		spritenum: -1,
+		megaStone: { "BIG ANVIL": "BIG ANVIL-Mega" },
 		itemUser: ["BIG ANVIL"],
 		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		spritenum: -1,
+		shortDesc: "If held by a BIG ANVIL, this item allows it to Mega Evolve in battle.",
 	},
 }

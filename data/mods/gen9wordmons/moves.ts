@@ -1,2 +1,86 @@
 export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
+	laserbeam: {
+		num: 1,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Laser Beam",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		critRatio: 2,
+		target: "normal",
+		type: "Laser",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
+	conspiracy: {
+		num: 2,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Conspiracy",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Herd') return 1;
+		},
+		target: "normal",
+		type: "Proof",
+		desc: "This move's type effectiveness against Herd is changed to be super effective no matter what this move's type is.",
+		shortDesc: "Super effective on Herd.",
+	},
+	enrage: {
+		num: 3,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Enrage",
+		pp: 20,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		boosts: {
+			atk: 2,
+		},
+		target: "self",
+		type: "Rage",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	coblance: {
+		num: 4,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Cob Lance",
+		pp: 20,
+		flags: { protect: 1, mirror: 1, distance: 1, metronome: 1, slicing: 1 },
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness(move.type, type);
+		},
+		priority: 0,
+		target: "any",
+		type: "Corn",
+		shortDesc: "Doubled type effectiveness.",
+	},
+	kernelpop: {
+		num: 5,
+		accuracy: 100,
+		basePower: 15,
+		category: "Physical",
+		name: "Kernel Pop",
+		pp: 20,
+		onBasePower(basePower, pokemon) {
+			if (pokemon.status === 'brn') {
+				return this.chainModify(2);
+			}
+		},
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		priority: 0,
+		target: "any",
+		type: "Corn",
+		desc: "Hits two to five times. Power doubles if the user is burned. The physical damage halving effect from the user's burn is ignored.",
+		shortDesc: "Hits 2-5 times. Power doubles if user is burn.",
+	},
 };

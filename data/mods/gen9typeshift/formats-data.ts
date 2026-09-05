@@ -24,12 +24,15 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		natDexTier: "OU",
 	},
 	darkrai: {
-		natDexTier: "OU",
+		natDexTier: "Uber",
 	},
 	gougingfire: {
 		natDexTier: "OU",
 	},
 	walkingwake: {
+		natDexTier: "OU",
+	},
+	annihilape: {
 		natDexTier: "OU",
 	},
 	
@@ -59,7 +62,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		natDexTier: "OU",
 	},
 	dragonitemega: {
-		natDexTier: "OU",
+		natDexTier: "Uber",
 	},
 	meganiummega: {
 		natDexTier: "OU",
@@ -92,7 +95,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		natDexTier: "OU",
 	},
 	delphoxmega: {
-		natDexTier: "OU",
+		natDexTier: "Uber",
 	},
 	greninjamega: {
 		natDexTier: "OU",
@@ -116,6 +119,39 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		natDexTier: "OU",
 	},
 	glimmoramega: {
+		natDexTier: "OU",
+	},
+	raichumegay: {
+		natDexTier: "Uber",
+	},
+	staraptormega: {
+		natDexTier: "OU",
+	},
+	dragalgemega: {
+		natDexTier: "OU",
+	},
+	scolipedemega: {
+		natDexTier: "OU",
+	},
+	scraftymega: {
+		natDexTier: "OU",
+	},
+	falinksmega: {
+		natDexTier: "OU",
+	},
+	eelektrossmega: {
+		natDexTier: "OU",
+	},
+	pyroarmega: {
+		natDexTier: "OU",
+	},
+	malamarmega: {
+		natDexTier: "OU",
+	},
+	barbaraclemega: {
+		natDexTier: "OU",
+	},
+	raichumegax: {
 		natDexTier: "OU",
 	},
 };

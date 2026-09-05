@@ -91,4 +91,48 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		isNonstandard: null,
 	},
+	raichunitey: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	raichunitex: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	staraptite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	dragalgite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	scolipite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	scraftinite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	falinksite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	eelektrossite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	pyroarite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	malamarite: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	barbaracite: {
+		inherit: true,
+		isNonstandard: null,
+	},
 };
