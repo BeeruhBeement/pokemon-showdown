@@ -35,6 +35,9 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	annihilape: {
 		natDexTier: "OU",
 	},
+	ironbundle: {
+		natDexTier: "OU",
+	},
 	
 	dragonite: {
 		natDexTier: "Uber",
