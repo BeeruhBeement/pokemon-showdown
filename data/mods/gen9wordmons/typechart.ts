@@ -50,6 +50,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	building: {
 		isNonstandard: "Modded",
 		damageTaken: {
+			ptr: 3,
 			Biography: 0,
 			Bless: 0,
 			Building: 2,
@@ -73,6 +74,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	camera: {
 		isNonstandard: "Modded",
 		damageTaken: {
+			rad: 3,
 			Biography: 0,
 			Bless: 0,
 			Building: 0,
@@ -89,7 +91,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Legend: 2,
 			Matter: 1,
 			Proof: 2,
-			Pyramid: 0,
+			Pyramid: 2,
 			Rage: 0,
 		},
 	},
@@ -142,6 +144,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	drink: {
 		isNonstandard: "Modded",
 		damageTaken: {
+			wet: 3,
 			Biography: 0,
 			Bless: 0,
 			Building: 0,
@@ -303,6 +306,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	legend: {
 		isNonstandard: "Modded",
 		damageTaken: {
+			rot: 3,
 			Biography: 1,
 			Bless: 0,
 			Building: 0,
@@ -349,6 +353,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	proof: {
 		isNonstandard: "Modded",
 		damageTaken: {
+			plx: 3,
 			Biography: 0,
 			Bless: 2,
 			Building: 0,
@@ -372,6 +377,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	pyramid: {
 		isNonstandard: "Modded",
 		damageTaken: {
+			bld: 3,
 			Biography: 2,
 			Bless: 0,
 			Building: 2,
@@ -388,7 +394,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Legend: 0,
 			Matter: 1,
 			Proof: 1,
-			Pyramid: 0,
+			Pyramid: 1,
 			Rage: 0,
 		},
 	},

@@ -823,9 +823,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onHit(target, source, move) {
 			target.addVolatile('spotlight');
 		},
+		tracksTarget: true,
 		target: "normal",
 		type: "Fire",
-		shortDesc: "Applies Spotlight on target.",
+		shortDesc: "Applies Spotlight on target. Can't redirect.",
 	},
 	soulchomp: {
 		accuracy: 100,

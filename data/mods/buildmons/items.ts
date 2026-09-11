@@ -14,6 +14,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	bigroot: {
 		inherit: true,
@@ -26,6 +27,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	bindingband: {
 		inherit: true,
@@ -46,6 +48,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			if (move.hit >= 2 && move.flags.slicing) return true;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	blessedblindfold: {
 		name: "Blessed Blindfold",
@@ -63,6 +66,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			},
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	bloodletterleech: {
 		name: "Bloodletter Leech",
@@ -75,6 +79,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			if (!move.drain && pokemon.status === 'bld') move.drain = [1, 4];
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	bottledlightning: {
 		name: "Bottled Lightning",
@@ -92,6 +97,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			});
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	brittlecrown: {
 		name: "Brittle Crown",
@@ -103,6 +109,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	brokenstopwatch: {
 		name: "Broken Stopwatch",
@@ -115,6 +122,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	ceramicblunderbuss: {
 		name: "Ceramic Blunderbuss",
@@ -144,6 +152,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	chocolate: {
 		name: "Chocolate",
@@ -155,12 +164,14 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	comfypillow: {
 		name: "Comfy Pillow",
 		shortDesc: "Sleep duration is extended by 2 turns. While asleep cannot be crit.",
 		onCriticalHit: false,
 		gen: -1,
+		spritenum: -1,
 	},
 	deskfan: {
 		name: "Desk Fan",
@@ -173,6 +184,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			move.ignoreDefensive = true;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	detachedsniperscope: {
 		name: "Detached Sniper Scope",
@@ -188,6 +200,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return false;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	devilhorns: {
 		name: "Devil Horns",
@@ -206,12 +219,14 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	dirtybandage: {
 		name: "Dirty Bandage",
 		shortDesc: "If user is afflicted by bleed it will be replaced by poison.",
 		// in scripts.ts in pokemon setStatus
 		gen: -1,
+		spritenum: -1,
 	},
 	/*dragonwing: {
 		name: "Dragon Wing",
@@ -222,6 +237,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},*/
 	elementalinverter: {
 		name: "Elemental Inverter",
@@ -238,6 +254,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	executionerhood: {
 		name: "Executioner Hood",
@@ -246,6 +263,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			if (target && target.hp < target.maxhp * 4 / 10) this.chainModify([13, 10]);
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	fanofknives: {
 		name: "Fan of Knives",
@@ -258,6 +276,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	gripclaw: {
 		inherit: true,
@@ -272,6 +291,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			this.add('-sethp', pokemon, pokemon.getHealth);
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	juicysteak: {
 		name: "Juicy Steak",
@@ -284,6 +304,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			pokemon.bondTriggered = true;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	icecoldcoffee: {
 		name: "Ice Cold Coffee",
@@ -298,6 +319,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	jestersmask: {
 		name: "Jester's Mask",
@@ -320,6 +342,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	loadeddice: {
 		inherit: true,
@@ -334,6 +357,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	metronome: {
 		inherit: true,
@@ -371,6 +395,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			},
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	miasmiccandle: {
 		name: "Miasmic Candle",
@@ -397,6 +422,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			},
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	mittens: {
 		name: "Mittens",
@@ -409,6 +435,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return false;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	moltenhammer: {
 		name: "Molten Hammer",
@@ -448,6 +475,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			},
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	muscleband: {
 		inherit: true,
@@ -458,6 +486,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	nanobots: {
 		name: "Nanobots",
@@ -469,6 +498,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			else return this.damage(pokemon.maxhp * 3 / 40);
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	noxiousthorn: {
 		name: "Noxious Thorn",
@@ -487,6 +517,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	philosophersstone: {
 		name: "Philosopher's Stone",
@@ -505,6 +536,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	psychicnullifier: {
 		name: "Psychic Nullifier",
@@ -519,6 +551,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return 5;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	punchingglove: {
 		inherit: true,
@@ -536,6 +569,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	foulsteak: {
 		name: "Foul Steak",
@@ -553,6 +587,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	gasmask: {
 		name: "Gas Mask",
@@ -618,6 +653,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	riotshield: {
 		name: "Riot Shield",
@@ -639,6 +675,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	rustyknife: {
 		name: "Rusty Knife",
@@ -652,6 +689,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	safetygoggles: {
 		inherit: true,
@@ -664,6 +702,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 		desc: "Holder can only be damaged by direct attacks when at or below 20% HP. Curse and Substitute on use, Belly Drum, Pain Split, Struggle recoil, and confusion damage are considered direct damage.",
 		shortDesc: "Holder can only be damaged by direct attacks below 20% HP.",
 	},
@@ -684,6 +723,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			this.effectState.inactive = true;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	scaleplate: {
 		name: "Scale Plate",
@@ -695,6 +735,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	scopelens: {
 		inherit: true,
@@ -709,6 +750,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return this.chainModify(0.9);
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	severedrobothand: {
 		name: "Severed Robot Hand",
@@ -724,6 +766,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			if (source.hp + damage > source.maxhp / 2) return source.maxhp / 2 - source.hp;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	shieldgenerator: {
 		name: "Shield Generator",
@@ -740,12 +783,14 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			});
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	snakeeyes: {
 		name: "Snake Eyes",
 		shortDesc: "Missing grants Laser Focus.",
 		// Effect immplemented in scripts.ts under hitStepAccuracy
 		gen: -1,
+		spritenum: -1,
 	},
 	snowglobe: {
 		name: "Snowglobe",
@@ -762,6 +807,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			});
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	solaramulet: {
 		name: "Solar Amulet",
@@ -772,6 +818,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	stormcatalyst: {
 		name: "Storm Catalyst",
@@ -808,6 +855,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			duration: 1,
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	strongdrink: {
 		name: "Strong Drink",
@@ -824,6 +872,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return false;
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	sweetroll: {
 		name: "Sweet Roll",
@@ -834,6 +883,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			if (pokemon.activeTurns % 2 === 0) return this.heal(pokemon.maxhp / 10);
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	syntheticplant: {
 		name: "Synthetic Plant",
@@ -852,6 +902,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			this.add('-message', `${pokemon.name} had its ${randomVolatile} removed!`);
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	taser: {
 		name: "Taser",
@@ -865,6 +916,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	/*timewornresidue: {
 		name: "Timeworn Residue",
@@ -882,6 +934,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			duration: 1,
 		},
 		gen: -1,
+		spritenum: -1,
 	},*/
 	tundracrossbow: {
 		name: "Tundra Crossbow",
@@ -893,6 +946,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			if (target && !target.fainted) this.actions.useMove(move, pokemon, { target });
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	ukulele: {
 		name: "Ukulele",
@@ -904,6 +958,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	unicornhorn: {
 		name: "Unicorn Horn",
@@ -919,6 +974,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	utilityumbrella: {
 		inherit: true,
@@ -934,6 +990,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	wiseglasses: {
 		inherit: true,
@@ -944,6 +1001,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	witchsmemento: {
 		name: "Witch's Memento",
@@ -969,6 +1027,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			},
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	woodenmask: {
 		name: "Wooden Mask",
@@ -977,6 +1036,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			this.heal(pokemon.maxhp / 20, pokemon, pokemon);
 		},
 		gen: -1,
+		spritenum: -1,
 	},
 	zoomlens: {
 		inherit: true,
