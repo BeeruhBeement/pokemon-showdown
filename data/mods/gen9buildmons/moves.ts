@@ -589,10 +589,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
-	deepfreeze: {
-		inherit: true,
-		isNonstandard: null,
-	},
 	fightingterrain: {
 		accuracy: true,
 		basePower: 0,
@@ -642,10 +638,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "all",
 		type: "Fighting",
 		shortDesc: "5 turns. Grounded: +Fighting power, only Fighting moves can crit.",
-	},
-	frostbite: {
-		inherit: true,
-		isNonstandard: null,
 	},
 	fulmination: {
 		accuracy: 100,
@@ -777,10 +769,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Fails unless it is the user's first turn on the field.",
 		shortDesc: "Nearly always goes first. First turn out only.",
 	},
-	nightfall: {
-		inherit: true,
-		isNonstandard: null,
-	},
 	piledriver: {
 		accuracy: 95,
 		basePower: 90,
@@ -807,10 +795,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Ground",
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
-	},
-	rockcrunch: {
-		inherit: true,
-		isNonstandard: null,
 	},
 	signalflare: {
 		accuracy: true,
