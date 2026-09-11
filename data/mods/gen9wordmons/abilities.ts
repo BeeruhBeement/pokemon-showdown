@@ -90,23 +90,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 6,
 		shortDesc: "This Pokemon's attacks have 1.5x power if it has the lowest level on the field.",
 	},
-	futuretechnology: {
+	futuretech: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Laser') {
-				this.debug('Future Technology boost');
+				this.debug('Future Tech boost');
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Laser') {
-				this.debug('Future Technology boost');
+				this.debug('Future Tech boost');
 				return this.chainModify(1.5);
 			}
 		},
 		flags: {},
-		name: "Future Technology",
+		name: "Future Tech",
 		num: 7,
 		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Laser-type attack.",
 	},

@@ -145,7 +145,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		target: "normal",
 		type: "Honor",
-		shortDesc: "+1 prio. 100% -1 Spe. Fails unless target using Status move.",
+		shortDesc: "+1 prio. 100% -1 Spe. Only vs Status move.",
 	},
 	reap: {
 		num: 8,
@@ -586,7 +586,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	plasmacutter: {
 		num: 32,
-		accuracy: true,
+		accuracy: 100,
 		basePower: 120,
 		basePowerCallback(source, target, move) {
 			const callerMoveId = move.sourceEffect || move.id;
