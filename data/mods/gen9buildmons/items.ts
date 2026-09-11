@@ -27,7 +27,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		gen: -1,
-		spritenum: -1,
 	},
 	bindingband: {
 		inherit: true,
