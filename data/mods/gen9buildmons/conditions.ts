@@ -314,7 +314,9 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	night: {
-		inherit: true,
+		name: 'Night',
+		effectType: 'Weather',
+		duration: 5,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (defender.hasItem('utilityumbrella')) return;
 			if (move.type === 'Dark' || move.id === 'moonblast') {
@@ -325,6 +327,21 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				this.debug('night fairy suppress');
 				return this.chainModify(0.75);
 			}
+		},
+		onFieldStart(field, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				this.add('-weather', 'Night', '[from] ability: ' + effect.name, `[of] ${source}`);
+			} else {
+				this.add('-weather', 'Night');
+			}
+		},
+		onFieldResidualOrder: 1,
+		onFieldResidual() {
+			this.add('-weather', 'Night', '[upkeep]');
+			this.eachEvent('Weather');
+		},
+		onFieldEnd() {
+			this.add('-weather', 'none');
 		},
 	},
 

@@ -816,6 +816,31 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Bless",
 		shortDesc: "Does damage equal to the user's missing HP.",
 	},
+	travelmemoir: {
+		num: 44,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Travel Memoir",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onTry(source) {
+			if (source.moveSlots.length < 2) return false; // Last Resort fails unless the user knows at least 2 moves
+			let hasLastResort = false; // User must actually have Last Resort for it to succeed
+			for (const moveSlot of source.moveSlots) {
+				if (moveSlot.id === 'travelmemoir') {
+					hasLastResort = true;
+					continue;
+				}
+				if (!moveSlot.used) return false;
+			}
+			return hasLastResort;
+		},
+		target: "normal",
+		type: "Biography",
+		shortDesc: "Switches out. Fails unless all other moves used.",
+	},
 };
 
 for (const moves in Base) {

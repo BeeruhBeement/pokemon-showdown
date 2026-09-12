@@ -1,8 +1,4 @@
 export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
-	abilityshield: {
-		inherit: true,
-		gen: -1,
-	},
 	aloevera: {
 		name: "Aloe Vera",
 		shortDesc: "Increases healing effectiveness by 1.25x.",
