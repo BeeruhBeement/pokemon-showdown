@@ -31,6 +31,9 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	voidog: {
 		tier: "OU",
 	},
+	smeargle: {
+		tier: "Uber",
+	},
 }
 
 for (const pokemon in Base) {

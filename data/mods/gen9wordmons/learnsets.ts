@@ -1,6 +1,11 @@
 import { ModdedLearnsetData } from "../../../sim/dex-species";
 
 export const Learnsets: {[k: string]: ModdedLearnsetData} = {
+	smeargle: {
+		learnset: {
+			sketch: ["9M"],
+		},
+	},
 	lazurbim: {
 		learnset: {
 			laserbeam: ["9M"],
