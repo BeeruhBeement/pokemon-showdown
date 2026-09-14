@@ -79,7 +79,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Duelist",
-		shortDesc: "Slicing initiates duel: both sides deal 20% more damage to eachother. Only one duel active.",
+		shortDesc: "Slicing initiates duel: both sides do 20% more damage to eachother. Only one duel active.",
 	},
 	exoskeleton: {
 		onDamagingHit(damage, target, source, move) {
@@ -144,7 +144,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 		flags: {},
-		shortDesc: "This Pokemon does damage its allies with attacks.",
+		shortDesc: "This Pokemon does 0 damage to its allies with attacks.",
 	},
 
 	/*
