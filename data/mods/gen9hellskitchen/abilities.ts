@@ -9,6 +9,27 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon's Flying-type moves have their priority increased by 1.",
 		rating: 4,
 	},
+	runaway: {
+		inherit: true,
+		onTrapPokemonPriority: -10,
+		onTrapPokemon(pokemon) {
+			pokemon.trapped = false;
+		},
+		onMaybeTrapPokemonPriority: -10,
+		onMaybeTrapPokemon(pokemon) {
+			pokemon.maybeTrapped = false;
+		},
+		shortDesc: "Ignores trapping.",
+	},
+	auraguard: {
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.flags['contact']) return this.chainModify(0.5);
+		},
+		flags: { breakable: 1 }, // TODO check breakable
+		name: "Aura Guard",
+		rating: 3.5,
+		num: 319,
+	},
 	
 	solarborne: {
 		name: "Solarborne",
@@ -424,7 +445,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				let moveData = target.side.slotConditions[target.position]['futuremove'].moveData
 				moveData = {
 					...moveData,
-					basePower: moveData.basePower*1.3
+					basePower: moveData.basePower*1.5
 				};
 				target.side.slotConditions[target.position]['futuremove'].moveData = moveData;
 			}
@@ -433,7 +454,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Prophet",
 		rating: 3.5,
 		num: 0,
-		shortDesc: "User's future moves have 1.3x power.",
+		shortDesc: "User's future moves have 1.5x power.",
 	},
 	rainbowshift: {
 		onPrepareHit(source, target, move) {
@@ -637,8 +658,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		flags: {},
 		name: "Arid Wasteland",
-		rating: 4.5,
-		num: 190,
 		desc: "On switch-in, the weather becomes Arid Wasteland, which includes all the effects of Sandstorm and prevents damaging Ice-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Delta Stream or Desolate Land Abilities.",
 		shortDesc: "On switch-in, heavy sand begins until this Ability is not active in battle.",
 	},
@@ -663,10 +682,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		flags: {},
 		name: "Hyperborean Storm",
-		rating: 4.5,
-		num: 190,
 		desc: "On switch-in, the weather becomes Hyperborean Storm, which includes all the effects of Snowscape and prevents damaging Rock-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Delta Stream or Desolate Land Abilities.",
 		shortDesc: "On switch-in, heavy snow begins until this Ability is not active in battle.",
+	},
+	atlantean: {
+		onStart(target) {
+			if (target.hasType('Water')) return false;
+			if (!target.addType('Water')) return false;
+			this.add('-start', target, 'typeadd', 'Water', '[from] ability: Atlantean');
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['contact']) {
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		flags: {},
+		name: "Atlantean",
+		shortDesc: "Adds the Water type to the user, contact moves have 1.3x power.",
 	},
 
 	// hyperborean storm

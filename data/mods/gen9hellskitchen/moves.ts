@@ -72,6 +72,15 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	direclaw: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+		secondary: {
+			chance: 30,
+			onHit(target, source) {
+				const status = this.sample(['psn', 'par', 'slp']);
+				target.trySetStatus(status, source);
+			},
+		},
+		desc: "Has a 30% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
+		shortDesc: "30% chance to sleep, poison, or paralyze target.",
 	},
 	metalclaw: {
 		inherit: true,
@@ -123,6 +132,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	tropkick: {
 		inherit: true,
+		basePower: 75,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, kicking: 1 },
 	},
 	jumpkick: {
@@ -153,6 +163,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	infernalparade: {
 		inherit: true,
+		basePower: 65,
 		basePowerCallback(pokemon, target, move) {
 			if (target.status || target.hasAbility('comatose')) return move.basePower * 2;
 			for (const poke of this.getAllActive()) {
@@ -232,6 +243,115 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			}
 			return move.basePower;
 		},
+	},
+	strengthsap: {
+		inherit: true,
+		pp: 5,
+	},
+	doubleshock: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+	},
+	gravapple: {
+		inherit: true,
+		basePower: 90,
+	},
+	appleacid: {
+		inherit: true,
+		basePower: 90,
+	},
+	meteorassault: {
+		inherit: true,
+		basePower: 170,
+	},
+	slash: {
+		inherit: true,
+		basePower: 80,
+	},
+	firstimpression: {
+		inherit: true,
+		basePower: 100,
+	},
+	bonerush: {
+		inherit: true,
+		basePower: 30,
+	},
+	beakblast: {
+		inherit: true,
+		basePower: 120,
+	},
+	mountaingale: {
+		inherit: true,
+		basePower: 120,
+	},
+	nightdaze: {
+		inherit: true,
+		basePower: 90,
+	},
+	firelash: {
+		inherit: true,
+		basePower: 90,
+	},
+	spiritshackle: {
+		inherit: true,
+		basePower: 90,
+	},
+	psyshieldbash: {
+		inherit: true,
+		basePower: 90,
+	},
+	anchorshot: {
+		inherit: true,
+		basePower: 90,
+	},
+	revelationdance: {
+		inherit: true,
+		basePower: 100,
+	},
+	dragonhammer: {
+		inherit: true,
+		basePower: 100,
+	},
+	snipeshot: {
+		inherit: true,
+		basePower: 90,
+	},
+	tripledive: {
+		inherit: true,
+		basePower: 35,
+	},
+	hyperdrill: {
+		inherit: true,
+		basePower: 120,
+	},
+	syrupbomb: {
+		inherit: true,
+		accuracy: 90,
+	},
+	crabhammer: {
+		inherit: true,
+		accuracy: 95,
+	},
+	snaptrap: {
+		inherit: true,
+		type: "Steel",
+	},
+	moonblast: {
+		inherit: true,
+		secondary: {
+			chance: 10,
+			boosts: {
+				spa: -1,
+			},
+		},
+		desc: "Has a 10% chance to lower the target's Special Attack by 1 stage.",
+		shortDesc: "10% chance to lower the target's Sp. Atk by 1.",
+	},
+	freezedry: {
+		inherit: true,
+		secondary: {},
+		desc: "This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
+		shortDesc: "Super effective on Water.",
 	},
 
 	

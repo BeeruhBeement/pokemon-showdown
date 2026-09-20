@@ -110,7 +110,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	lucariomegaz: {
 		inherit: true,
-		abilities: {0: "Screen Cleaner"},
+		abilities: {0: "Aura Guard"},
 	},
 	zeraoramega: {
 		inherit: true,
@@ -157,7 +157,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	golisopodmega: {
 		inherit: true,
-		abilities: {0: "Tough Claws"},
+		abilities: {0: "Atlantean"},
 	},
 	magearnamega: {
 		inherit: true,
@@ -1068,7 +1068,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseSpecies: "Genesect",
 		forme: "Mega",
 		types: ["Bug", "Steel"],
-		baseStats: { hp: 71, atk: 135, def: 125, spa: 135, spd: 125, spe: 109 },
+		baseStats: { hp: 71, atk: 120, def: 135, spa: 160, spd: 135, spe: 79 },
 		abilities: { 0: "Slow Start" },
 		heightm: 3.5,
 		weightkg: 82.5,

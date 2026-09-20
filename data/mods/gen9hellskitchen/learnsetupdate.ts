@@ -88,6 +88,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "arbok").learnset.dracometeor = ["9M"];
 	dex.modData("Learnsets", "arbok").learnset.mortalspin = ["9M"];
 	dex.modData("Learnsets", "arbok").learnset.crosspoison = ["9M"];
+	dex.modData("Learnsets", "arbok").learnset.bulletseed = ["9M"];
+	dex.modData("Learnsets", "arbok").learnset.rockblast = ["9M"];
 
 	// arctibax
 	dex.modData("Learnsets", "arctibax").learnset.dragonrush = ["9M"];
@@ -2322,6 +2324,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "swalot").learnset.sing = ["9M"];
 	dex.modData("Learnsets", "swalot").learnset.smokescreen = ["9M"];
 	dex.modData("Learnsets", "swalot").learnset.tackle = ["9M"];
+	dex.modData("Learnsets", "swalot").learnset.corrosivegas = ["9M"];
+	dex.modData("Learnsets", "swalot").learnset.skittersmack = ["9M"];
 
 	// swampert
 	dex.modData("Learnsets", "swampert").learnset.aquaring = ["9M"];
@@ -2444,6 +2448,11 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// toxtricity
 	dex.modData("Learnsets", "toxtricity").learnset.magnetbomb = ["9M"];
 	dex.modData("Learnsets", "toxtricity").learnset.zapcannon = ["9M"];
+
+	//toxtricitylowkey
+	dex.modData("Learnsets", "toxtricitylowkey").learnset.magnetbomb = ["9M"];
+	dex.modData("Learnsets", "toxtricitylowkey").learnset.zapcannon = ["9M"];
+	dex.modData("Learnsets", "toxtricitylowkey").learnset.paraboliccharge = ["9M"];
 
 	// treecko
 	dex.modData("Learnsets", "treecko").learnset.tackle = ["9M"];
