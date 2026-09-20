@@ -110,6 +110,37 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 4,
 		shortDesc: "At the end of every turn, this item attempts to irradiate the holder.",
 	},
+	campingequipment: {
+		name: "Camping Equipment",
+		spritenum: -1,
+		fling: {
+			basePower: 80,
+		},
+		num: 5,
+		shortDesc: "No competitive use.",
+	},
+	treebark: {
+		name: "Tree Bark",
+		spritenum: -1,
+		fling: {
+			basePower: 40,
+		},
+		onModifyDefPriority: 1,
+		onModifyDef(def) {
+			return def + 20;
+		},
+		num: 6,
+		shortDesc: "Additive +20 to Defense.",
+	},
+	foghorn: {
+		name: "Foghorn",
+		spritenum: -1,
+		fling: {
+			basePower: 80,
+		},
+		num: 7,
+		shortDesc: "No competitive use.",
+	},
 };
 
 for (const moves in Base) {

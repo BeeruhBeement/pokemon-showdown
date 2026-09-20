@@ -1,11 +1,6 @@
 import { ModdedLearnsetData } from "../../../sim/dex-species";
 
 export const Learnsets: {[k: string]: ModdedLearnsetData} = {
-	smeargle: {
-		learnset: {
-			sketch: ["9M"],
-		},
-	},
 	lazurbim: {
 		learnset: {
 			laserbeam: ["9M"],
@@ -17,6 +12,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			battery: ["9M"],
 			rake: ["9M"],
 			voidcall: ["9M"],
+			dodge: ["9M"],
 		},
 	},
 	mummiriff: {
@@ -37,6 +33,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			isolate: ["9M"],
 			rake: ["9M"],
 			flay: ["9M"],
+			dodge: ["9M"],
 		},
 	},
 	snapcrap: {
@@ -54,6 +51,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			intervene: ["9M"],
 			voidcall: ["9M"],
 			lensbash: ["9M"],
+			dodge: ["9M"],
 		},
 	},
 	splitnana: {
@@ -71,6 +69,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			relax: ["9M"],
 			voidcall: ["9M"],
 			hailmary: ["9M"],
+			dodge: ["9M"],
 		},
 	},
 	voidog: {
@@ -85,6 +84,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			energydrain: ["9M"],
 			cauterize: ["9M"],
 			cameraflash: ["9M"],
+			dodge: ["9M"],
 		},
 	},
 	animon: {
@@ -97,6 +97,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			energydrain: ["9M"],
 			cauterize: ["9M"],
 			wither: ["9M"],
+			dodge: ["9M"],
 		},
 	},
 	beast: {
@@ -111,6 +112,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			wither: ["9M"],
 			havoc: ["9M"],
 			voidcall: ["9M"],
+			dodge: ["9M"],
+			stretchyslap: ["9M"],
+			springpunch: ["9M"],
 		},
 	},
 	blessball: {
@@ -119,10 +123,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			intervene: ["9M"],
 			penance: ["9M"],
 			deluge: ["9M"],
-			flat: ["9M"],
+			flay: ["9M"],
 			monsoon: ["9M"],
 			precipitation: ["9M"],
-			smite: ["9M"],
+			holysmite: ["9M"],
 			warp: ["9M"],
 			isolate: ["9M"],
 			voidbarrage: ["9M"],
@@ -137,6 +141,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			lensbash: ["9M"],
 			hailmary: ["9M"],
 			travelmemoir: ["9M"],
+			dodge: ["9M"],
+			holylight: ["9M"],
 		},
 	},
 	goatsword: {
@@ -147,11 +153,12 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			reap: ["9M"],
 			stampede: ["9M"],
 			rake: ["9M"],
-			smite: ["9M"],
+			holysmite: ["9M"],
 			lasersword: ["9M"],
 			parry: ["9M"],
 			plasmacutter: ["9M"],
 			boast: ["9M"],
+			dodge: ["9M"],
 		},
 	},
 	snakehamme: {
@@ -163,6 +170,37 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			fireworks: ["9M"],
 			sully: ["9M"],
 			naildown: ["9M"],
+			dodge: ["9M"],
+		},
+	},
+	candlit: {
+		learnset: {
+			kernelpop: ["9M"],
+			havoc: ["9M"],
+			ancestralflash: ["9M"],
+			panic: ["9M"],
+			cauterize: ["9M"],
+			fireworks: ["9M"],
+			dodge: ["9M"],
+			holylight: ["9M"],
+			stretchyslap: ["9M"],
+		},
+	},
+	candrake: {
+		learnset: {
+			enrage: ["9M"],
+			kernelpop: ["9M"],
+			intervene: ["9M"],
+			havoc: ["9M"],
+			ancestralflash: ["9M"],
+			panic: ["9M"],
+			cauterize: ["9M"],
+			fireworks: ["9M"],
+			boast: ["9M"],
+			dodge: ["9M"],
+			holylight: ["9M"],
+			stretchyslap: ["9M"],
+			deluge: ["9M"],
 		},
 	},
 };

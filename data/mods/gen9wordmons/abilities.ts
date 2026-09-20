@@ -113,13 +113,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	elastic: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.damage(source.baseMaxhp / 8, source, target);
-			}
+			this.damage(target.lastDamage / 8, source, target);
 		},
 		flags: {},
 		name: "Elastic",
 		num: 8,
+		shortDesc: "When hit by an attack, returns 1/8th dmg taken"
 	},
 	premonition: {
 		onSourceModifyDamage(damage, source, target, move) {
@@ -130,7 +129,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		flags: { breakable: 1 },
 		name: "Premonition",
 		num: 9,
-		shortDesc: "This Pokemon takes 1/2 damage from non-stab moves"
+		shortDesc: "This Pokemon takes 1/2 damage from non-STAB moves"
 	},
 	rebuild: {
 		onResidualOrder: 28,
@@ -149,7 +148,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 10,
 		shortDesc: "Raises a random dropped stat by 1 each turn.",
 	},
-	heroid: {
+	heroic: {
 		onSourceBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Rage') {
 				return this.chainModify(0.5);
@@ -172,6 +171,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Heroic",
 		num: 11,
 		shortDesc: "Power of Rage attacks against this Pokemon is halved. Immune to Rot.",
+	},
+	candlelight: {
+		onSourceModifyAccuracyPriority: -1,
+		onSourceModifyAccuracy(accuracy) {
+			if (typeof accuracy !== 'number') return;
+			this.debug('candlelight - enhancing accuracy');
+			return this.chainModify([5325, 4096]);
+		},
+		flags: {},
+		name: "Candle Light",
+		num: 12,
+		shortDesc: "This Pokemon's moves have their accuracy multiplied by 1.3.",
 	},
 };
 

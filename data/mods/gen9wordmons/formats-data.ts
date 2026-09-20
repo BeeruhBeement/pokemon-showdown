@@ -46,8 +46,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	snakehamme: {
 		tier: "OU",
 	},
-	smeargle: {
-		tier: "Uber",
+	candlit: {
+		tier: "LC",
+	},
+	candrake: {
+		tier: "OU",
 	},
 }
 

@@ -119,7 +119,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		target: "normal",
 		type: "Building",
-		shortDesc: "Lowers the user's Atk, Def, Speed by 1. Confuses the user.",
+		shortDesc: "Lowers user's Atk, Def, Spe by 1. Confuses user.",
 	},
 	intervene: {
 		num: 7,
@@ -321,12 +321,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		desc: "Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Doom Desire is already in effect for the target's position.",
 		shortDesc: "Hits two turns after being used.",
 	},
-	smite: {
+	holysmite: {
 		num: 17,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		name: "Smite",
+		name: "Holy Smite",
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
@@ -860,6 +860,83 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Building",
 		desc: "Has a 100% chance to lower the target's Evasion by 1 stage.",
 		shortDesc: "100% chance to lower the target's Evasion by 1.",
+	},
+	dodge: {
+		num: 46,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Dodge",
+		pp: 10,
+		priority: 4,
+		flags: { noassist: 1, failcopycat: 1, cantusetwice: 1 },
+		onHit(pokemon) {
+			pokemon.addVolatile('dodge');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Dodge');
+			},
+			onModifyAccuracy(accuracy, target, source, move) {
+				if (typeof accuracy !== 'number') return;
+				if (move.ignoreAccuracy || move.ignoreEvasion) return;
+				return 0;
+			},
+		},
+		target: "self",
+		type: "Flexible",
+		desc: "User dodges all moves this turn. Cannot be selected the turn after it's used.",
+		shortDesc: "Dodges moves this turn. Can't use consecutively.",
+	},
+	holylight: {
+		num: 47,
+		accuracy: 100,
+		basePower: 95,
+		category: "Special",
+		name: "Holy Light",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		target: "normal",
+		type: "Bless",
+		shortDesc: "No additional effect.",
+	},
+	stretchyslap: {
+		num: 48,
+		accuracy: 90,
+		basePower: 50,
+		category: "Physical",
+		name: "Stretchy SLap",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		multihit: 2,
+		target: "normal",
+		type: "Flexible",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	springpunch: {
+		num: 49,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Spring Punch",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, punch: 1, metronome: 1 },
+		onHit(target, source, move) {
+			if (this.randomChance(1, 2) && move.flags['contact']) delete move.flags['contact'];
+		},
+		secondary: {
+			chance: 30,
+			status: 'plx',
+		},
+		target: "normal",
+		type: "Flexible",
+		desc: "Has a 10% chance to perplex the target. 50% chance to move does not make contact.",
+		shortDesc: "10% perplex chance. 50% no contact.",
 	},
 };
 
