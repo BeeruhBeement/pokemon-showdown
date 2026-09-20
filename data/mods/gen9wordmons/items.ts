@@ -10,8 +10,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onDisableMove(pokemon) {
 			for (const moveSlot of pokemon.moveSlots) {
-				const move = this.dex.moves.get(moveSlot.id);
-				if (!pokemon.types.includes(move.type)) {
+				if (this.effectState.purity?.includes(moveSlot.id)) {
 					pokemon.disableMove(moveSlot.id);
 				}
 			}
@@ -20,8 +19,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onModifyAtk(atk, pokemon) {
 			return this.chainModify(1.4);
 		},
+		onAfterMove(source, target, move) {
+			if (!this.effectState.purity) {
+				this.effectState.purity = [];
+			}
+			if (!this.effectState.purity.includes(move.id)) {
+				this.effectState.purity.push(move.id);
+			}
+		},
+		onSwitchOut(pokemon) {
+			delete this.effectState.purity;
+		},
 		num: 1,
-		shortDesc: "Holder's Atk is 1.4x, but it can only select same type moves.",
+		shortDesc: "Holder's Atk is 1.4x, can only use each move once per switchin.",
 	},
 	purityrifle: {
 		name: "Purity Rifle",
@@ -31,8 +41,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onDisableMove(pokemon) {
 			for (const moveSlot of pokemon.moveSlots) {
-				const move = this.dex.moves.get(moveSlot.id);
-				if (!pokemon.types.includes(move.type)) {
+				if (this.effectState.purity?.includes(moveSlot.id)) {
 					pokemon.disableMove(moveSlot.id);
 				}
 			}
@@ -41,8 +50,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onModifySpA(spa, pokemon) {
 			return this.chainModify(1.4);
 		},
+		onAfterMove(source, target, move) {
+			if (!this.effectState.purity) {
+				this.effectState.purity = [];
+			}
+			if (!this.effectState.purity.includes(move.id)) {
+				this.effectState.purity.push(move.id);
+			}
+		},
+		onSwitchOut(pokemon) {
+			delete this.effectState.purity;
+		},
 		num: 2,
-		shortDesc: "Holder's SpA is 1.4x, but it can only select same type moves.",
+		shortDesc: "Holder's SpA is 1.4x, can only use each move once per switchin.",
 	},
 	puritymask: {
 		name: "Purity Mask",
@@ -52,8 +72,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onDisableMove(pokemon) {
 			for (const moveSlot of pokemon.moveSlots) {
-				const move = this.dex.moves.get(moveSlot.id);
-				if (!pokemon.types.includes(move.type)) {
+				if (this.effectState.purity?.includes(moveSlot.id)) {
 					pokemon.disableMove(moveSlot.id);
 				}
 			}
@@ -62,8 +81,34 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onModifySpe(spe, pokemon) {
 			return this.chainModify(1.4);
 		},
+		onAfterMove(source, target, move) {
+			if (!this.effectState.purity) {
+				this.effectState.purity = [];
+			}
+			if (!this.effectState.purity.includes(move.id)) {
+				this.effectState.purity.push(move.id);
+			}
+		},
+		onSwitchOut(pokemon) {
+			delete this.effectState.purity;
+		},
 		num: 3,
-		shortDesc: "Holder's Spe is 1.4x, but it can only select same type moves.",
+		shortDesc: "Holder's Spe is 1.4x, can only use each move once per switchin.",
+	},
+	radioactivevial: {
+		name: "Radioactive Vial",
+		spritenum: -1,
+		fling: {
+			basePower: 30,
+			status: 'rad',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('rad', pokemon);
+		},
+		num: 4,
+		shortDesc: "At the end of every turn, this item attempts to irradiate the holder.",
 	},
 };
 

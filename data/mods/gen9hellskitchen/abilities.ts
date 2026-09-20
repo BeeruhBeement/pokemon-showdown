@@ -31,10 +31,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 319,
 	},
 	
-	solarborne: {
-		name: "Solarborne",
-		num: 0,
-	},
 	perfectorganism: {
 		onStart(pokemon) {
 			this.boost({spa: 1}, pokemon);

@@ -31,6 +31,21 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	voidog: {
 		tier: "OU",
 	},
+	animon: {
+		tier: "LC",
+	},
+	beast: {
+		tier: "OU",
+	},
+	blessball: {
+		tier: "OU",
+	},
+	goatsword: {
+		tier: "OU",
+	},
+	snakehamme: {
+		tier: "OU",
+	},
 	smeargle: {
 		tier: "Uber",
 	},

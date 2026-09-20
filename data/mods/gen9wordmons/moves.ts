@@ -103,7 +103,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	demolition: {
 		num: 6,
 		accuracy: 85,
-		basePower: 180,
+		basePower: 150,
 		category: "Physical",
 		name: "Demolition",
 		pp: 5,
@@ -840,6 +840,26 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Biography",
 		shortDesc: "Switches out. Fails unless all other moves used.",
+	},
+	naildown: {
+		num: 45,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Nail Down",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			boosts: {
+				evasion: -1,
+			},
+		},
+		target: "normal",
+		type: "Building",
+		desc: "Has a 100% chance to lower the target's Evasion by 1 stage.",
+		shortDesc: "100% chance to lower the target's Evasion by 1.",
 	},
 };
 

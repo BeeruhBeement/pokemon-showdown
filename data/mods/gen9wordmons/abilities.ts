@@ -64,7 +64,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Absorbent",
 		onAfterMoveSecondarySelf(source, target, move) {
 			if (source && source !== target && move && move.category !== 'Status' && !this.queue.willMove(target)) {
-				this.heal(source.baseMaxhp / 10);
+				this.heal(source.baseMaxhp / 10, source, source);
 			}
 		},
 		num: 5,
@@ -109,6 +109,69 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Future Tech",
 		num: 7,
 		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Laser-type attack.",
+	},
+	elastic: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		flags: {},
+		name: "Elastic",
+		num: 8,
+	},
+	premonition: {
+		onSourceModifyDamage(damage, source, target, move) {
+			if (!source.hasType(move.type)) {
+				return this.chainModify(0.5);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Premonition",
+		num: 9,
+		shortDesc: "This Pokemon takes 1/2 damage from non-stab moves"
+	},
+	rebuild: {
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			const stats = ["atk", "def", "spa", "spd", "spe"] as const;
+			const negativeStats = stats.filter(stat => pokemon.boosts[stat] < 0);
+
+			if (negativeStats.length) {
+				const stat = this.sample(negativeStats);
+				this.boost({[stat]: 1}, pokemon, pokemon);
+			}
+		},
+		flags: {},
+		name: "Rebuild",
+		num: 10,
+		shortDesc: "Raises a random dropped stat by 1 each turn.",
+	},
+	heroid: {
+		onSourceBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Rage') {
+				return this.chainModify(0.5);
+			}
+		},
+		onUpdate(pokemon) {
+			if (pokemon.status === 'rot') {
+				this.add('-activate', pokemon, 'ability: Immunity');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'rot') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Heroic');
+			}
+			return false;
+		},
+		flags: { breakable: 1 },
+		name: "Heroic",
+		num: 11,
+		shortDesc: "Power of Rage attacks against this Pokemon is halved. Immune to Rot.",
 	},
 };
 
