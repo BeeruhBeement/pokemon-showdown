@@ -61,17 +61,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "Comfort-type moves become Rage type. Rage-type moves become Comfort type",
 	},
 	absorbent: {
-		name: "Absorbent",
 		onAfterMoveSecondarySelf(source, target, move) {
 			if (source && source !== target && move && move.category !== 'Status' && !this.queue.willMove(target)) {
 				this.heal(source.baseMaxhp / 10, source, source);
 			}
 		},
+		flags: {},
+		name: "Absorbent",
 		num: 5,
 		shortDesc: "This Pokemon heals 1/10 of its max HP if it moves after its target.",
 	},
 	feisty: {
-		name: "Feisty",
 		onBasePowerPriority: 21,
 		onBasePower(basePower, pokemon) {
 			let boosted = true;
@@ -87,19 +87,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return this.chainModify([15, 10]);
 			}
 		},
+		flags: {},
+		name: "Feisty",
 		num: 6,
 		shortDesc: "This Pokemon's attacks have 1.5x power if it has the lowest level on the field.",
 	},
 	futuretech: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Laser') {
-				this.debug('Future Tech boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
+		onBasePowerPriority: 5,
+		onBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Laser') {
 				this.debug('Future Tech boost');
 				return this.chainModify(1.5);
@@ -108,14 +103,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		flags: {},
 		name: "Future Tech",
 		num: 7,
-		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Laser-type attack.",
+		shortDesc: "This Pokemon's Laser-type moves have their power multiplied by 1.5.",
 	},
 	elastic: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			this.damage(target.lastDamage / 8, source, target);
 		},
-		flags: {},
+		flags: { breakable: 1 },
 		name: "Elastic",
 		num: 8,
 		shortDesc: "When hit by an attack, returns 1/8th dmg taken"

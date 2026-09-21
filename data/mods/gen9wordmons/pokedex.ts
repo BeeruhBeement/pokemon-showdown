@@ -78,7 +78,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Snapcrap",
 		types: ["Camera"],
 		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 79, atk: 83, def: 100, spa: 85, spd: 105, spe: 78 },
+		baseStats: { hp: 80, atk: 80, def: 100, spa: 85, spd: 105, spe: 80 },
 		abilities: { 0: "Projection" },
 		heightm: 1.3,
 		weightkg: 90,

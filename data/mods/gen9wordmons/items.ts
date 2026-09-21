@@ -110,8 +110,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 4,
 		shortDesc: "At the end of every turn, this item attempts to irradiate the holder.",
 	},
-	campingequipment: {
-		name: "Camping Equipment",
+	campinggear: {
+		name: "Camping Gear",
 		spritenum: -1,
 		fling: {
 			basePower: 80,
@@ -125,12 +125,20 @@ export const Items: {[k: string]: ModdedItemData} = {
 		fling: {
 			basePower: 40,
 		},
+		onDisableMove(pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(moveSlot.id);
+				if (!pokemon.types.includes(move.type)) {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
 		onModifyDefPriority: 1,
 		onModifyDef(def) {
-			return def + 20;
+			return this.chainModify(1.5);
 		},
 		num: 6,
-		shortDesc: "Additive +20 to Defense.",
+		shortDesc: "Holder's Def is 1.5x, but it can only select same type moves.",
 	},
 	foghorn: {
 		name: "Foghorn",
@@ -139,6 +147,78 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 80,
 		},
 		num: 7,
+		shortDesc: "No competitive use.",
+	},
+	identitycard: {
+		name: "Identity Card",
+		spritenum: -1,
+		fling: {
+			basePower: 20,
+		},
+		num: 8,
+		shortDesc: "No competitive use.",
+	},
+	firstaidkit: {
+		name: "First Aid Kit",
+		spritenum: -1,
+		fling: {
+			basePower: 60,
+		},
+		num: 9,
+		shortDesc: "No competitive use.",
+	},
+	utilitybelt: {
+		name: "Utility Belt",
+		spritenum: -1,
+		fling: {
+			basePower: 60,
+		},
+		num: 10,
+		shortDesc: "No competitive use.",
+	},
+	minerhat: {
+		name: "Miner Hat",
+		spritenum: -1,
+		fling: {
+			basePower: 60,
+		},
+		num: 11,
+		shortDesc: "No competitive use.",
+	},
+	fishhook: {
+		name: "Fish Hook",
+		spritenum: -1,
+		fling: {
+			basePower: 60,
+		},
+		num: 12,
+		shortDesc: "No competitive use.",
+	},
+	breakfast: {
+		name: "Breakfast",
+		spritenum: -1,
+		fling: {
+			basePower: 30,
+		},
+		num: 13,
+		shortDesc: "No competitive use.",
+	},
+	sugar: {
+		name: "Breakfast",
+		spritenum: -1,
+		fling: {
+			basePower: 30,
+		},
+		num: 14,
+		shortDesc: "No competitive use.",
+	},
+	deckofcard: {
+		name: "Deck of Cards",
+		spritenum: -1,
+		fling: {
+			basePower: 30,
+		},
+		num: 15,
 		shortDesc: "No competitive use.",
 	},
 };

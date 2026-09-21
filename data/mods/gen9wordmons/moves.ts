@@ -89,7 +89,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Kernel Pop",
 		pp: 20,
 		onBasePower(basePower, pokemon) {
-			if (pokemon.status === 'brn') {
+			if (pokemon.status === 'rad') {
 				return this.chainModify(2);
 			}
 		},
@@ -97,8 +97,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		priority: 0,
 		target: "any",
 		type: "Corn",
-		desc: "Hits two to five times. Power doubles if the user is burned. The physical damage halving effect from the user's burn is ignored.",
-		shortDesc: "Hits 2-5 times. Power doubles if user is burnt.",
+		desc: "Hits two to five times. Power doubles if the user is irradiated. The physical damage halving effect from the user's burn is ignored.",
+		shortDesc: "Hits 2-5 times. Power doubles if user has rad.",
 	},
 	demolition: {
 		num: 6,
@@ -269,8 +269,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		target: "allAdjacent",
 		type: "Corn",
-		desc: "Has a 30% chance to bleed the target.",
-		shortDesc: "30% chance to bleed the target.",
+		desc: "Has a 30% chance to bleed the target(s).",
+		shortDesc: "30% chance to bleed the target(s).",
 	},
 	monsoon: {
 		num: 15,
@@ -283,7 +283,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		target: "allAdjacentFoes",
 		type: "Drink",
-		shortDesc: "No additional effect.",
+		shortDesc: "Hits adjacent Pokemon.",
 	},
 	precipitation: {
 		num: 16,
@@ -793,7 +793,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Lens Bash",
 		pp: 10,
 		priority: 0,
-		flags: { contact:1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		target: "normal",
 		type: "Camera",
 		desc: "Deals damage to the target based on its Special Defense instead of Defense.",
@@ -907,7 +907,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		accuracy: 90,
 		basePower: 50,
 		category: "Physical",
-		name: "Stretchy SLap",
+		name: "Stretchy Slap",
 		pp: 15,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
@@ -930,13 +930,103 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			if (this.randomChance(1, 2) && move.flags['contact']) delete move.flags['contact'];
 		},
 		secondary: {
-			chance: 30,
+			chance: 20,
 			status: 'plx',
 		},
 		target: "normal",
 		type: "Flexible",
-		desc: "Has a 10% chance to perplex the target. 50% chance to move does not make contact.",
-		shortDesc: "10% perplex chance. 50% no contact.",
+		desc: "Has a 20% chance to perplex the target. 50% chance to move does not make contact.",
+		shortDesc: "20% perplex chance. 50% no contact.",
+	},
+	malady: {
+		num: 50,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Malady",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTryMove(source, target, move) {
+			source.trySetStatus('rot', source, move);
+		},
+		secondary: {
+			chance: 100,
+			status: 'rot',
+		},
+		target: "normal",
+		type: "Herd",
+		shortDesc: "Rots user. If user has Rot: Rot target.",
+	},
+	herostale: {
+		num: 51,
+		accuracy: 100,
+		basePower: 120,
+		category: "Special",
+		name: "Hero's Tale",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
+		self: {
+			volatileStatus: 'choicelock',
+		},
+		target: "allAdjacent",
+		type: "Legend",
+		shortDesc: "Locks the user until switch out."
+	},
+	huntersmark: {
+		num: 52,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Hunter's Mark",
+		pp: 20,
+		priority: 0,
+		flags: { reflectable: 1, nonsky: 1, metronome: 1, mustpressure: 1 },
+		sideCondition: 'huntersmark',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, "move: Hunter's Mark");
+			},
+			onSwitchIn(pokemon) {
+				pokemon.addVolatile('huntersmark');
+			},
+			onSourceModifyCritRatio(relayVar, source, target, move) {
+				if (!target.activeTurns) return 5;
+			},
+			onUpdate(pokemon) {
+				if (pokemon.activeTurns) pokemon.removeVolatile('huntersmark');
+			},
+		},
+		target: "foeSide",
+		type: "Herd",
+		shortDesc: "Guarantees crit on Pokemon switching in."
+	},
+	cleanfield: {
+		num: 53,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Clean Field",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, metronome: 1 },
+		onHit(target, source, move) {
+			let success = false;
+			const removeAll = ['huntersmark'];
+			for (const sideCondition of removeAll) {
+				if (source.side.removeSideCondition(sideCondition)) {
+					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name, '[from] move: Clean Field', `[of] ${source}`);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			return success;
+		},
+		target: "normal",
+		type: "Inspire",
+		shortDesc: "Removes all terrain/traps from field.",
 	},
 };
 

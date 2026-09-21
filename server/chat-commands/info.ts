@@ -1004,7 +1004,14 @@ export const commands: Chat.ChatCommands = {
 		const weaknesses = [];
 		const resistances = [];
 		const immunities = [];
-		for (const type of dex.types.names()) {
+
+		const typeNames = Object.keys(dex.data.TypeChart)
+			.map(id => dex.types.get(id))
+			.filter(type => type.exists && type.isNonstandard !== 'Future')
+			.map(type => type.name);
+
+			
+		for (const type of typeNames) {
 			const notImmune = dex.getImmunity(type, types);
 			if (notImmune || isInverse) {
 				let typeMod = !notImmune && isInverse ? 1 : 0;
@@ -1151,7 +1158,12 @@ export const commands: Chat.ChatCommands = {
 		const bestCoverage: { [k: string]: number } = {};
 		let hasThousandArrows = false;
 
-		for (const type of dex.types.names()) {
+		const typeNames = Object.keys(dex.data.TypeChart)
+			.map(id => dex.types.get(id))
+			.filter(type => type.exists && type.isNonstandard !== 'Future')
+			.map(type => type.name);
+
+		for (const type of typeNames) {
 			// This command uses -5 to designate immunity
 			bestCoverage[type] = -5;
 		}
