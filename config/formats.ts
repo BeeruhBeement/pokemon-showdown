@@ -344,6 +344,40 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		unbanlist: ['Magearna', 'Annihilape', 'Melmetal', 'Ogerpon-Hearthflame', 'Chien-Pao', 'Espathra', 'Indeedee-F'],
 	},
 	{
+		name: "[Gen 9] ND AAA Camo Sketch Tera Override NatSwap",
+		mod: 'teraoverride',
+		searchShow: false,
+		ruleset: ['Standard OMs', 'Camomons Mod', 'NatDex Mod', '!Obtainable Abilities', 'Ability Clause = 1', 'Sleep Moves Clause', 'Terastal Clause', 'Sketchmons Move Legality', 'Tera Type Preview'],
+		banlist: [],
+		onSwitchIn(pokemon) {
+			this.add('-start', pokemon, pokemon.getNature().name, '[silent]');
+		},
+		battle: {
+			statModify(baseStats, set, statName) {
+				const tr = this.trunc;
+				const nature = this.dex.natures.get(set.nature);
+				let baseStatName = statName;
+				if (nature.plus) {
+					if (statName === nature.minus) {
+						baseStatName = nature.plus;
+					} else if (statName === nature.plus) {
+						baseStatName = nature.minus!;
+					}
+				}
+				let stat = baseStats[baseStatName];
+				if (statName === 'hp') {
+					return tr(tr(2 * stat + set.ivs[statName] + tr(set.evs[statName] / 4) + 100) * set.level / 100 + 10);
+				}
+				stat = tr(tr(2 * stat + set.ivs[statName] + tr(set.evs[statName] / 4)) * set.level / 100 + 5);
+				if (nature.plus === statName) {
+					stat = this.ruleTable.has('overflowstatmod') ? Math.min(stat, 595) : stat;
+					stat = tr(tr(stat * 110, 16) / 100);
+				}
+				return stat;
+			},
+		},
+	},
+	{
 		section: "Roguelike Formats (Alpha)",
 	},
 	{

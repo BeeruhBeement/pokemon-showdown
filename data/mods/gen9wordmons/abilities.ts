@@ -108,7 +108,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	elastic: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			this.damage(target.lastDamage / 8, source, target);
+			this.damage(source.lastDamage / 8, source, target);
 		},
 		flags: { breakable: 1 },
 		name: "Elastic",

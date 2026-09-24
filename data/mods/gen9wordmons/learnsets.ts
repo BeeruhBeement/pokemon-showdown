@@ -106,6 +106,22 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			warp: ["9M"],
 		},
 	},
+	banita: {
+		learnset: {
+			battery: ["9M"],
+			coblance: ["9M"],
+			deluge: ["9M"],
+			dodge: ["9M"],
+			hailmary: ["9M"],
+			laserbeam: ["9M"],
+			monsoon: ["9M"],
+			panic: ["9M"],
+			precipitation: ["9M"],
+			relax: ["9M"],
+			stampede: ["9M"],
+			voidcall: ["9M"],
+		},
+	},
 	splitnana: {
 		learnset: {
 			bananasplit: ["9M"],
@@ -122,6 +138,21 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			relax: ["9M"],
 			stampede: ["9M"],
 			voidcall: ["9M"],
+		},
+	},
+	voipup: {
+		learnset: {
+			ancestralflash: ["9M"],
+			cameraflash: ["9M"],
+			cauterize: ["9M"],
+			deluge: ["9M"],
+			dodge: ["9M"],
+			energydrain: ["9M"],
+			isolate: ["9M"],
+			laserbeam: ["9M"],
+			voidbarrage: ["9M"],
+			voidcall: ["9M"],
+			warp: ["9M"],
 		},
 	},
 	voidog: {
@@ -142,6 +173,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	animon: {
 		learnset: {
 			cauterize: ["9M"],
+			cleanfield: ["9M"],
 			conspiracy: ["9M"],
 			deluge: ["9M"],
 			dodge: ["9M"],
@@ -155,6 +187,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	beast: {
 		learnset: {
 			cauterize: ["9M"],
+			cleanfield: ["9M"],
 			conspiracy: ["9M"],
 			deluge: ["9M"],
 			dodge: ["9M"],
@@ -174,6 +207,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			ancestralflash: ["9M"],
 			cameraflash: ["9M"],
+			cleanfield: ["9M"],
 			deluge: ["9M"],
 			dodge: ["9M"],
 			energydrain: ["9M"],
@@ -231,6 +265,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		learnset: {
 			ancestralflash: ["9M"],
 			cauterize: ["9M"],
+			cleanfield: ["9M"],
 			dodge: ["9M"],
 			fireworks: ["9M"],
 			havoc: ["9M"],
@@ -245,6 +280,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			ancestralflash: ["9M"],
 			boast: ["9M"],
 			cauterize: ["9M"],
+			cleanfield: ["9M"],
 			deluge: ["9M"],
 			dodge: ["9M"],
 			enrage: ["9M"],

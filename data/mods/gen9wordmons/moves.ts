@@ -15,6 +15,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Laser",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Steel Beam", target);
+		},
 	},
 	conspiracy: {
 		num: 2,
@@ -32,6 +36,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Proof",
 		desc: "This move's type effectiveness against Herd is changed to be super effective no matter what this move's type is.",
 		shortDesc: "Super effective on Herd.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Psychic Noise", target);
+		},
 	},
 	enrage: {
 		num: 3,
@@ -64,6 +72,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "self",
 		type: "Rage",
 		shortDesc: "Raises Attack by 1 for 3 turns.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Nasty Plot", target);
+		},
 	},
 	coblance: {
 		num: 4,
@@ -80,6 +92,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "any",
 		type: "Corn",
 		shortDesc: "Doubled type effectiveness.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Megahorn", target);
+		},
 	},
 	kernelpop: {
 		num: 5,
@@ -99,6 +115,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Corn",
 		desc: "Hits two to five times. Power doubles if the user is irradiated. The physical damage halving effect from the user's burn is ignored.",
 		shortDesc: "Hits 2-5 times. Power doubles if user has rad.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Bullet Seed", target);
+		},
 	},
 	demolition: {
 		num: 6,
@@ -120,6 +140,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Building",
 		shortDesc: "Lowers user's Atk, Def, Spe by 1. Confuses user.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Gyro Ball", target);
+		},
 	},
 	intervene: {
 		num: 7,
@@ -146,6 +170,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Honor",
 		shortDesc: "+1 prio. 100% -1 Spe. Only vs Status move.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Body Slam", target);
+		},
 	},
 	reap: {
 		num: 8,
@@ -161,6 +189,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Corn",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Leaf Blade", target);
+		},
 	},
 	penance: {
 		num: 9,
@@ -183,6 +215,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Bless",
 		desc: "Power doubles if the user moves after the target this turn. Switching in counts as an action.",
 		shortDesc: "Power doubles if the user moves after the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Moonblast", target);
+		},
 	},
 	deluge: {
 		num: 10,
@@ -196,6 +232,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Drink",
 		shortDesc: "No additional effect.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Surf", target);
+		},
 	},
 	battery: {
 		num: 11,
@@ -215,6 +255,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Rage",
 		desc: "Lowers the user's Attack by 2 stages.",
 		shortDesc: "Lowers the user's Attack by 2.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Superpower", target);
+		},
 	},
 	flay: {
 		num: 12,
@@ -235,6 +279,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Bless",
 		desc: "Has a 50% chance to lower the target's Defense by 1 stage.",
 		shortDesc: "50% chance to lower the target's Defense by 1.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Power Whip", target);
+		},
 	},
 	stampede: {
 		num: 13,
@@ -253,6 +301,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		contestType: "Cool",
 		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
 		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "High Horsepower", target);
+		},
 	},
 	rake: {
 		num: 14,
@@ -271,6 +323,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Corn",
 		desc: "Has a 30% chance to bleed the target(s).",
 		shortDesc: "30% chance to bleed the target(s).",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Slash", target);
+		},
 	},
 	monsoon: {
 		num: 15,
@@ -284,6 +340,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Drink",
 		shortDesc: "Hits adjacent Pokemon.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Hydro Pump", target);
+		},
 	},
 	precipitation: {
 		num: 16,
@@ -320,6 +380,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Drink",
 		desc: "Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Doom Desire is already in effect for the target's position.",
 		shortDesc: "Hits two turns after being used.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Weather Ball", target);
+		},
 	},
 	holysmite: {
 		num: 17,
@@ -333,6 +397,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Bless",
 		shortDesc: "No additional effect.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Behemoth Bash", target);
+		},
 	},
 	warp: {
 		num: 18,
@@ -348,6 +416,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Matter",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
 		shortDesc: "User switches out after damaging the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Teleport", target);
+		},
 	},
 	isolate: {
 		num: 19,
@@ -377,6 +449,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Rage",
 		shortDesc: "Disappears turn 1. Hits turn 2. Switches out.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Bulk Up", target);
+		},
 	},
 	voidbarrage: {
 		num: 20,
@@ -391,6 +467,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Matter",
 		desc: "No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Shadow Ball", target);
+		},
 	},
 	havoc: {
 		num: 21,
@@ -411,6 +491,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Rage",
 		desc: "Has a 10% chance to lower the target's Special Defense by 1 stage.",
 		shortDesc: "10% chance to lower the target's Sp. Def by 1.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Psywave", target);
+		},
 	},
 	ancestralflash: {
 		num: 22,
@@ -426,6 +510,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		contestType: "Tough",
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Flash", target);
+		},
 	},
 	relax: {
 		num: 23,
@@ -441,6 +529,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Comfort",
 		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
 		shortDesc: "Heals the user by 50% of its max HP.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Slack Off", target);
+		},
 	},
 	lasersword: {
 		num: 24,
@@ -456,6 +548,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Laser",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Sacred Sword", target);
+		},
 	},
 	seism: {
 		num: 25,
@@ -476,6 +572,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Building",
 		desc: "Has a 10% chance to lower the target's Speed by 1 stage.",
 		shortDesc: "10% chance to lower the target's Speed by 1.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Bulldoze", target);
+		},
 	},
 	panic: {
 		num: 26,
@@ -494,6 +594,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Herd",
 		desc: "For 2 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing and draining moves are unusable, and Abilities and items that grant healing will not heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain unable to restore its HP. Pain Split and the Regenerator Ability are unaffected.",
 		shortDesc: "For 2 turns, the target is prevented from healing.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Boomburst", target);
+		},
 	},
 	energydrain: {
 		num: 27,
@@ -509,6 +613,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Flexible",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User recovers 50% of the damage dealt.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Giga Drain", target);
+		},
 	},
 	parry: {
 		num: 28,
@@ -533,6 +641,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Honor",
 		desc: "Power doubles if the user was hit by the target this turn.",
 		shortDesc: "Power doubles if user is damaged by the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Detect", target);
+		},
 	},
 	cauterize: {
 		num: 29,
@@ -554,20 +666,35 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Fuel",
 		desc: "Power doubles if the target has a non-volatile status condition.",
 		shortDesc: "Power doubles if the target has a status ailment.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Will-O-Wisp", target);
+		},
 	},
 	desertwind: {
 		num: 30,
-		accuracy: 90,
-		basePower: 95,
+		accuracy: 80,
+		basePower: 100,
 		category: "Special",
 		name: "Desert Wind",
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
+		onModifyMove(move, pokemon, target) {
+			switch (target?.effectiveWeather()) {
+			case 'ancientegypt':
+				move.accuracy = true;
+				break;
+			}
+		},
 		target: "allAdjacentFoes",
 		type: "Pyramid",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.",
+		desc: "Can't miss in Ancient Egypt.",
+		shortDesc: "Can't miss in Ancient Egypt. Hits foes.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Sandsear Storm", target);
+		},
 	},
 	fireworks: {
 		num: 31,
@@ -583,6 +710,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Fuel",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Rock Blast", target);
+		},
 	},
 	plasmacutter: {
 		num: 32,
@@ -610,6 +741,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Laser",
 		shortDesc: "10 less BP for each PP used.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Sacred Sword", target);
+		},
 	},
 	sully: {
 		num: 33,
@@ -626,6 +761,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Biography",
 		shortDesc: "1.5x power if the target has any stat boosts.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Psychic Noise", target);
+		},
 	},
 	cameraflash: {
 		num: 34,
@@ -652,6 +791,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Camera",
 		shortDesc: "10% chance to drop SpD, 20% evasion.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Flash", target);
+		},
 	},
 	photoshoot: {
 		num: 35,
@@ -672,6 +815,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Camera",
 		shortDesc: "Hits 3 times. Each hit has 50% chance to lower SpD.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Flash", target);
+		},
 	},
 	voidcall: {
 		num: 36,
@@ -701,6 +848,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "self",
 		type: "Matter",
 		shortDesc: "Raises user's highest and lowest stat by 1 stage.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Moonlight", target);
+		},
 	},
 	wither: {
 		num: 37,
@@ -715,6 +866,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Pyramid",
 		shortDesc: "Rots the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Poison Gas", target);
+		},
 	},
 	ancientscythe: {
 		num: 38,
@@ -730,6 +885,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Pyramid",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User recovers 50% of the damage dealt.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Giga Drain", target);
+		},
 	},
 	bananasplit: {
 		num: 39,
@@ -749,6 +908,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Corn",
 		shortDesc: "Hits twice. 1st hit Corn, 2nd Drink.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Dual Wingbeat", target);
+		},
 	},
 	bandageup: {
 		num: 40,
@@ -766,6 +929,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "self",
 		type: "Pyramid",
 		shortDesc: "User is healed 1/4 max HP, status cured.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Moonlight", target);
+		},
 	},
 	boast: {
 		num: 41,
@@ -783,6 +950,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Legend",
 		shortDesc: "Raises Attack by 1. Lowers foe Defense by 1.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Bulk Up", target);
+		},
 	},
 	lensbash: {
 		num: 42,
@@ -798,6 +969,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Camera",
 		desc: "Deals damage to the target based on its Special Defense instead of Defense.",
 		shortDesc: "Damages target based on Sp. Def, not Defense.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Head Charge", target);
+		},
 	},
 	hailmary: {
 		num: 43,
@@ -815,6 +990,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Bless",
 		shortDesc: "Does damage equal to the user's missing HP.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Final Gambit", target);
+		},
 	},
 	travelmemoir: {
 		num: 44,
@@ -840,6 +1019,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Biography",
 		shortDesc: "Switches out. Fails unless all other moves used.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Volt Switch", target);
+		},
 	},
 	naildown: {
 		num: 45,
@@ -860,6 +1043,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Building",
 		desc: "Has a 100% chance to lower the target's Evasion by 1 stage.",
 		shortDesc: "100% chance to lower the target's Evasion by 1.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Spirit Shackle", target);
+		},
 	},
 	dodge: {
 		num: 46,
@@ -869,25 +1056,30 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Dodge",
 		pp: 10,
 		priority: 4,
-		flags: { noassist: 1, failcopycat: 1, cantusetwice: 1 },
-		onHit(pokemon) {
-			pokemon.addVolatile('dodge');
+		flags: { noassist: 1, failcopycat: 1 },
+		volatileStatus: 'dodge',
+		onDisableMove(pokemon) {
+			if (pokemon.lastMove?.id === 'dodge') pokemon.disableMove('dodge');
 		},
 		condition: {
 			duration: 1,
-			onStart(target) {
-				this.add('-singleturn', target, 'Dodge');
+			noCopy: true, // doesn't get copied by Baton Pass
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Dodge');
 			},
-			onModifyAccuracy(accuracy, target, source, move) {
-				if (typeof accuracy !== 'number') return;
-				if (move.ignoreAccuracy || move.ignoreEvasion) return;
-				return 0;
+			onInvulnerability(target, source, move) {
+				if (typeof move.accuracy !== 'number') return;
+				return false; 
 			},
 		},
 		target: "self",
 		type: "Flexible",
 		desc: "User dodges all moves this turn. Cannot be selected the turn after it's used.",
 		shortDesc: "Dodges moves this turn. Can't use consecutively.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Double Team", target);
+		},
 	},
 	holylight: {
 		num: 47,
@@ -901,6 +1093,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Bless",
 		shortDesc: "No additional effect.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Spotlight", target);
+		},
 	},
 	stretchyslap: {
 		num: 48,
@@ -916,6 +1112,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Flexible",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Wake-Up Slap", target);
+		},
 	},
 	springpunch: {
 		num: 49,
@@ -937,6 +1137,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		type: "Flexible",
 		desc: "Has a 20% chance to perplex the target. 50% chance to move does not make contact.",
 		shortDesc: "20% perplex chance. 50% no contact.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Mega Punch", target);
+		},
 	},
 	malady: {
 		num: 50,
@@ -957,6 +1161,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Herd",
 		shortDesc: "Rots user. If user has Rot: Rot target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Venoshock", target);
+		},
 	},
 	herostale: {
 		num: 51,
@@ -972,7 +1180,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		target: "allAdjacent",
 		type: "Legend",
-		shortDesc: "Locks the user until switch out."
+		shortDesc: "Locks the user until switch out.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Sparkling Aria", target);
+		},
 	},
 	huntersmark: {
 		num: 52,
@@ -1001,7 +1213,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		target: "foeSide",
 		type: "Herd",
-		shortDesc: "Guarantees crit on Pokemon switching in."
+		shortDesc: "Guarantees crit on Pokemon switching in.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Lock-On", target);
+		},
 	},
 	cleanfield: {
 		num: 53,
@@ -1027,6 +1243,51 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "normal",
 		type: "Inspire",
 		shortDesc: "Removes all terrain/traps from field.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Defog", target);
+		},
+	},
+	pharaohscurse: {
+		num: 54,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Pharaoh's Curse",
+		pp: 5,
+		priority: 0,
+		flags: { metronome: 1 },
+		weather: 'AncientEgypt',
+		target: "all",
+		type: "Pyramid",
+		desc: "For 5 turns, the Era becomes Ancient Egypt. At the end of each turn except the last, all active Pokemon lose 1/16 of their maximum HP, rounded down, unless they are a Pyramid type. During the effect, Pyramid types have their status cured at the end of each turn.",
+		shortDesc: "Era is Ancient Egypt (5 turns). Pyramid: cure status.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Sandstorm", target);
+		},
+	},
+	desertbreath: {
+		num: 55,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Desert Breath",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			status: 'rad',
+		},
+		target: "normal",
+		type: "Pyramid",
+		desc: "Has a 30% chance to irradiate the target.",
+		shortDesc: "30% chance to irradiate the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Dragon Breath", target);
+		},
 	},
 };
 

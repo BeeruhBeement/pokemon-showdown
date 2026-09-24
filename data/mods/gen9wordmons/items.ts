@@ -155,8 +155,16 @@ export const Items: {[k: string]: ModdedItemData} = {
 		fling: {
 			basePower: 20,
 		},
+		onStart(pokemon) {
+			this.add('-item', pokemon, 'Identity Card');
+		},
+		onSourceBasePower(basePower, attacker, defender, move) {
+			if (defender.hasType(attacker.getTypes())) {
+				return this.chainModify(0.5);
+			}
+		},
 		num: 8,
-		shortDesc: "No competitive use.",
+		shortDesc: "Holder takes 1/2 dmg if attacker shares a type with it. Revealed on entry.",
 	},
 	firstaidkit: {
 		name: "First Aid Kit",
@@ -164,8 +172,13 @@ export const Items: {[k: string]: ModdedItemData} = {
 		fling: {
 			basePower: 60,
 		},
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			if (pokemon.status) this.heal(pokemon.baseMaxhp / 8);
+		},
 		num: 9,
-		shortDesc: "No competitive use.",
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP if statused.",
 	},
 	utilitybelt: {
 		name: "Utility Belt",
@@ -219,6 +232,15 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 30,
 		},
 		num: 15,
+		shortDesc: "No competitive use.",
+	},
+	glassskull: {
+		name: "Glass Skull",
+		spritenum: -1,
+		fling: {
+			basePower: 50,
+		},
+		num: 16,
 		shortDesc: "No competitive use.",
 	},
 };

@@ -127,4 +127,36 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
 		},
 	},
+
+	ancientegypt: {
+		name: 'AncientEgypt',
+		effectType: 'Weather',
+		duration: 5,
+		durationCallback(source, effect) {
+			/*if (source?.hasItem('damprock')) {
+				return 8;
+			}*/
+			return 5;
+		},
+		onFieldStart(field, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				if (this.gen <= 5) this.effectState.duration = 0;
+				this.add('-weather', 'Ancient Egypt', '[from] ability: ' + effect.name, `[of] ${source}`);
+			} else {
+				this.add('-weather', 'Ancient Egypt');
+			}
+		},
+		onFieldResidualOrder: 1,
+		onFieldResidual() {
+			this.add('-weather', 'Ancient Egypt', '[upkeep]');
+			if (this.field.isWeather('ancientegypt')) this.eachEvent('Weather');
+		},
+		onWeather(target) {
+			if (target.types.includes("Pyramid")) target.cureStatus();
+			else this.damage(target.baseMaxhp / 16);
+		},
+		onFieldEnd() {
+			this.add('-weather', 'none');
+		},
+	},
 };
