@@ -347,7 +347,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] ND AAA Camo Sketch Tera Override NatSwap",
 		mod: 'teraoverride',
 		searchShow: false,
-		ruleset: ['Standard OMs', 'Camomons Mod', 'NatDex Mod', '!Obtainable Abilities', 'Ability Clause = 1', 'Sleep Moves Clause', 'Terastal Clause', 'Sketchmons Move Legality', 'Tera Type Preview'],
+		ruleset: ['Standard OMs', 'Camomons Mod', 'NatDex Mod', '!Obtainable Abilities', 'Ability Clause = 1', 'Sleep Moves Clause', 'Sketchmons Move Legality', 'Tera Type Preview'],
 		banlist: [],
 		onSwitchIn(pokemon) {
 			this.add('-start', pokemon, pokemon.getNature().name, '[silent]');
