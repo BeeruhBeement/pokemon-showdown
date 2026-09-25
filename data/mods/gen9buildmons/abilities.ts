@@ -102,7 +102,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	paintrain: {
 		onSourceDamagingHit(damage, target, source, move) {
-			if (damage >= target.maxhp / 10) this.boost({ spe: 50 });
+			if (damage >= target.maxhp / 10) this.boost({ spe: 25 }, source);
 		},
 		flags: {},
 		name: "Pain Train",

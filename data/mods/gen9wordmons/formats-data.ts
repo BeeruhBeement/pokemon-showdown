@@ -46,6 +46,12 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	snakehamme: {
 		tier: "OU",
 	},
+	vipemblem: {
+		tier: "LC",
+	},
+	inspobra: {
+		tier: "OU",
+	},
 	candlit: {
 		tier: "LC",
 	},

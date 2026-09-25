@@ -160,11 +160,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onSourceBasePower(basePower, attacker, defender, move) {
 			if (defender.hasType(attacker.getTypes())) {
-				return this.chainModify(0.5);
+				return this.chainModify(0.75);
 			}
 		},
 		num: 8,
-		shortDesc: "Holder takes 1/2 dmg if attacker shares a type with it. Revealed on entry.",
+		shortDesc: "Holder takes 3/4 dmg if attacker shares a type with it. Revealed on entry.",
 	},
 	firstaidkit: {
 		name: "First Aid Kit",

@@ -427,7 +427,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			"Toxtricity": "Toxtricity-Mega",
 			"Toxtricity-Low-Key": "Toxtricity-Mega",
 		},
-		itemUser: ["Toxtricity"],
+		itemUser: ["Toxtricity", "Toxtricity-Low-Key"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
@@ -800,7 +800,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	squawkabillite: {
 		name: "Squawkabillite",
 		megaStone: { "Squawkabilly": "Squawkabilly-Mega" },
-		itemUser: ["Squawkabilly"],
+		itemUser: ["Squawkabilly", "Squawkabilly-Blue", "Squawkabilly-White", "Squawkabilly-Yellow"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},

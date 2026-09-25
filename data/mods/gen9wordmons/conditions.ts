@@ -127,6 +127,21 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
 		},
 	},
+	cor: {
+		name: 'cor',
+		effectType: 'Status',
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'cor', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'cor');
+			}
+		},
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			this.damage(source.lastDamage / 10, target);
+		},
+	},
 
 	ancientegypt: {
 		name: 'AncientEgypt',

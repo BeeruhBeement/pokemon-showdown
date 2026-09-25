@@ -887,7 +887,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		shortDesc: "User recovers 50% of the damage dealt.",
 		onPrepareHit(target, pokemon, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', pokemon, "Giga Drain", target);
+			this.add('-anim', pokemon, "Slash", target);
 		},
 	},
 	bananasplit: {

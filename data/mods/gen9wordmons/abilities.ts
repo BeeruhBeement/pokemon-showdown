@@ -179,6 +179,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 12,
 		shortDesc: "This Pokemon's moves have their accuracy multiplied by 1.3.",
 	},
+	leadership: {
+		onAllyBasePowerPriority: 22,
+		onAllyBasePower(basePower, attacker, defender, move) {
+			this.debug('Leadership boost');
+			return this.chainModify(1.1);
+		},
+		flags: {},
+		name: "Leadership",
+		num: 13,
+		desc: "This Pokemon and its allies' moves have their power multiplied by 1.1. This affects Future moves even if the user is not on the field.",
+		shortDesc: "This Pokemon and its allies' moves have their power multiplied by 1.1.",
+	},
 };
 
 for (const abilities in Base) {
