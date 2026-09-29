@@ -52,8 +52,23 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	inspobra: {
 		tier: "OU",
 	},
+	baastral: {
+		tier: "OU",
+	},
+	beaver: {
+		tier: "LC",
+	},
+	bigbeaver: {
+		tier: "NFE",
+	},
+	lumber: {
+		tier: "OU",
+	},
 	candlit: {
 		tier: "LC",
+	},
+	necromancer: {
+		tier: "OU",
 	},
 	candrake: {
 		tier: "OU",

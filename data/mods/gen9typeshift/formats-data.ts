@@ -38,6 +38,9 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	ironbundle: {
 		natDexTier: "OU",
 	},
+	gholdengo: {
+		natDexTier: "OU",
+	},
 	
 	dragonite: {
 		natDexTier: "Uber",
@@ -156,5 +159,21 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	},
 	raichumegax: {
 		natDexTier: "OU",
+	},
+
+	golisopodmega: {
+		natDexTier: "OU",
+	},
+	absolmegaz: {
+		natDexTier: "OU",
+	},
+	garchompmegaz: {
+		natDexTier: "OU",
+	},
+	lucariomegaz: {
+		natDexTier: "OU",
+	},
+	baxcaliburmega: {
+		natDexTier: "Uber",
 	},
 };

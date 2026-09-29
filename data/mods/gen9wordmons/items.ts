@@ -213,8 +213,16 @@ export const Items: {[k: string]: ModdedItemData} = {
 		fling: {
 			basePower: 30,
 		},
+		onModifyPriority(priority, pokemon, target, move) {
+			if (this.turn === 1) return priority + 1;
+		},
+		onUpdate(pokemon) {
+			if (this.turn > 1) {
+				pokemon.eatItem(true);
+			}
+		},
 		num: 13,
-		shortDesc: "No competitive use.",
+		shortDesc: "+1 priority on absolute 1st turn of battle. Eat after 1st turn.",
 	},
 	sugar: {
 		name: "Breakfast",
@@ -232,7 +240,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 30,
 		},
 		num: 15,
-		shortDesc: "No competitive use.",
+		shortDesc: "If the holder knows a move of each category, something happens.",
 	},
 	glassskull: {
 		name: "Glass Skull",

@@ -651,7 +651,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		accuracy: 100,
 		basePower: 65,
 		basePowerCallback(pokemon, target, move) {
-			if (target.status || target.hasAbility('comatose')) {
+			if (target.status) {
 				this.debug('BP doubled from status condition');
 				return move.basePower * 2;
 			}
@@ -984,7 +984,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		category: "Special",
 		name: "Hail Mary",
-		pp: 5,
+		pp: 1,
+		noPPBoosts: true,
 		priority: 0,
 		flags: { protect: 1, metronome: 1, noparentalbond: 1 },
 		target: "normal",
@@ -1287,6 +1288,255 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		onPrepareHit(target, pokemon, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', pokemon, "Dragon Breath", target);
+		},
+	},
+	rally: {
+		num: 56,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Rally",
+		pp: 20,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Inspire",
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "100% chance to raise the user's Speed by 1.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Wild Charge", target);
+		},
+	},
+	flagswing: {
+		num: 57,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Flag Swing",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		target: "allAdjacent",
+		type: "Inspire",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent Pokemon.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Brutal Swing", target);
+		},
+	},
+	pyrothecnics: {
+		num: 58,
+		accuracy: 75,
+		basePower: 100,
+		category: "Physical",
+		name: "Pyrotechnics",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			boosts: {
+				spa: -1,
+			},
+		},
+		target: "normal",
+		type: "Fuel",
+		desc: "Has a 30% chance to lower the target's Special Attack by 1 stage.",
+		shortDesc: "30% chance to lower the target's Sp. Atk by 1.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Fire Blast", target);
+		},
+	},
+	blindrage: {
+		num: 59,
+		accuracy: 0,
+		basePower: 90,
+		category: "Physical",
+		name: "Blind Rage",
+		pp: 10,
+		priority: 1,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		critRatio: 3,
+		priorityChargeCallback(pokemon) {
+			pokemon.addVolatile('blindrage');
+		},
+		onModifyMove(move, pokemon, target) {
+			if (pokemon.volatiles['blindrage']?.critRatio === 0) move.accuracy = 100 / 24;
+			else if (pokemon.volatiles['blindrage']?.critRatio === 1) move.accuracy = 100 / 8;
+			else if (pokemon.volatiles['blindrage']?.critRatio === 3) move.accuracy = 100 / 2;
+			else if (pokemon.volatiles['blindrage']?.critRatio >= 4) move.accuracy = 100;
+			else move.accuracy = 0;
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Blind Rage');
+			},
+			onModifyCritRatio(critRatio, user) {
+				this.effectState.critRatio = critRatio;
+			},
+		},
+		target: "normal",
+		type: "Rage",
+		shortDesc: "+1 prio, Acc = crit chance, Very high crit.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Head Charge", target);
+		},
+	},
+	dissection: {
+		num: 60,
+		accuracy: 100,
+		basePower: 45,
+		category: "Physical",
+		name: "Dissection",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+		onModifyMove(move, pokemon, target) {
+			move.multihit = target?.types.length;
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			if (!target || !move.hit) return;
+
+			const targetTypes = target.getTypes();
+			const hitType = targetTypes[move.hit - 1];
+
+			if (!hitType) return;
+
+			return this.dex.getEffectiveness(move, hitType);
+		},
+		target: "normal",
+		type: "Proof",
+		shortDesc: "Multihit. Calculate dmg vs only one type.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Sacred Sword", target);
+		},
+	},
+	wishingcomet: {
+		num: 61,
+		accuracy: 95,
+		basePower: 80,
+		category: "Special",
+		name: "Wishing Comet",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		critRatio: 3,
+		self: {
+			boosts: {
+				spa: -1,
+			},
+		},
+		target: "normal",
+		type: "Proof",
+		shortDesc: "Very high crit ratio. -1 SpA.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Moonblast", target);
+		},
+	},
+	bonetoss: {
+		num: 62,
+		accuracy: 95,
+		basePower: 80,
+		category: "Physical",
+		name: "Bone Toss",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			status: 'cor',
+		},
+		target: "normal",
+		type: "Biography",
+		desc: "Has a 20% chance to corrode the target.",
+		shortDesc: "20% chance to corrode the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Bone Club", target);
+		},
+	},
+	blooddraw: {
+		num: 63,
+		accuracy: 90,
+		basePower: 20,
+		category: "Physical",
+		name: "Blood Draw",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, reflectable: 1, mirror: 1, metronome: 1, slicing: 1 },
+		status: 'bld',
+		target: "normal",
+		type: "Rage",
+		shortDesc: "Bleeds the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Night Slash", target);
+		},
+	},
+	corrosivespell: {
+		num: 64,
+		accuracy: 85,
+		basePower: 0,
+		category: "Status",
+		name: "Corrosive Spell",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, metronome: 1, sound: 1 },
+		status: 'cor',
+		target: "normal",
+		type: "Proof",
+		shortDesc: "Corrodes the target.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Energy Ball", target);
+		},
+	},
+	fragsplinters: {
+		num: 65,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Frag Splinters",
+		pp: 20,
+		priority: 0,
+		flags: { reflectable: 1, nonsky: 1, metronome: 1, mustpressure: 1 },
+		sideCondition: 'fragsplinters',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, "move: Frag Splinters");
+			},
+			onSwitchIn(pokemon) {
+				if (pokemon.hasType('Inspire')) {
+					this.add('-sideend', pokemon.side, 'move: Frag Splinters', `[of] ${pokemon}`);
+					pokemon.side.removeSideCondition('defrag');
+				} else {
+					pokemon.addVolatile('defrag');
+				}
+			},
+		},
+		target: "foeSide",
+		type: "Matter",
+		desc: "Applies Defrag on Pokemon switching in. Inspire-types absorb.",
+		shortDesc: "Applies Defrag on Pokemon switching in.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[still]');
+			this.add('-anim', pokemon, "Needle Arm", target);
 		},
 	},
 };

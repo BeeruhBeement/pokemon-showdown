@@ -191,6 +191,27 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon and its allies' moves have their power multiplied by 1.1. This affects Future moves even if the user is not on the field.",
 		shortDesc: "This Pokemon and its allies' moves have their power multiplied by 1.1.",
 	},
+	cryptic: {
+		onInvulnerability(target, source, move) {
+			if (move.type === "Camera" && typeof move.accuracy === 'number') return false;
+		},
+		flags: {},
+		name: "Cryptic",
+		num: 14,
+		shortDesc: "This Pokemon dodges Camera-type moves.",
+	},
+	bloodpact: {
+		onDamagePriority: 1,
+		onAnyDamage(damage, target, source, effect) {
+			if (effect.id === 'bld') {
+				this.heal(damage);
+			}
+		},
+		flags: {},
+		name: "Blood Pact",
+		num: 15,
+		shortDesc: "This Pokemon heals for any bleed damage."
+	},
 };
 
 for (const abilities in Base) {

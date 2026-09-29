@@ -22,13 +22,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "Ignores trapping.",
 	},
 	auraguard: {
-		onSourceModifyDamage(damage, source, target, move) {
-			if (move.flags['contact']) return this.chainModify(0.5);
-		},
-		flags: { breakable: 1 }, // TODO check breakable
-		name: "Aura Guard",
-		rating: 3.5,
-		num: 319,
+		inherit: true,
+		isNonstandard: null,
 	},
 	
 	perfectorganism: {

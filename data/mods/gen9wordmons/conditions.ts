@@ -33,6 +33,10 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				return this.chainModify([1, 2]);
 			}
 		},
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
+		},
 	},
 	wet: {
 		name: 'wet',
@@ -140,6 +144,27 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			this.damage(source.lastDamage / 10, target);
+		},
+	},
+
+	defrag: {
+		name: 'defrag',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect?.effectType === 'Ability') {
+				this.add('-start', target, 'defrag', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
+			} else {
+				this.add('-start', target, 'defrag');
+			}
+			this.effectState.time = this.random(2, 3);
+		},
+		onEnd(target) {
+			this.add('-end', target, 'confusion');
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Physical') {
+				this.boost({ atk: 1 }, source, target);
+			}
 		},
 	},
 
