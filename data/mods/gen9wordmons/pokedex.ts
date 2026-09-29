@@ -256,6 +256,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Brown",
 		evos: ["Bigbeaver"],
 		eggGroups: ["Human-Like"],
+		isNonstandard: "Modded",
 	},
 	bigbeaver: {
 		num: 20,
@@ -271,6 +272,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 25,
 		evos: ["Lumber"],
 		eggGroups: ["Human-Like"],
+		isNonstandard: "Modded",
 	},
 	lumber: {
 		num: 21,
@@ -285,6 +287,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Bigbeaver",
 		evoLevel: 40,
 		eggGroups: ["Human-Like"],
+		isNonstandard: "Modded",
 	},
 	candlit: {
 		num: 79,
@@ -301,7 +304,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	necromancer: {
 		num: 80,
-		name: "Candrake",
+		name: "Necromancer",
 		types: ["Fuel", "Biography"],
 		baseStats: { hp: 79, atk: 85, def: 100, spa: 95, spd: 100, spe: 76 },
 		abilities: { 0: "Candle Light", H: "Blood Pact" },
