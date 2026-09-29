@@ -1334,7 +1334,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-anim', pokemon, "Brutal Swing", target);
 		},
 	},
-	pyrothecnics: {
+	pyrotechnics: {
 		num: 58,
 		accuracy: 75,
 		basePower: 100,
