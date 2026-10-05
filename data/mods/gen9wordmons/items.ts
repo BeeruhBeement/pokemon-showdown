@@ -225,7 +225,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		shortDesc: "+1 priority on absolute 1st turn of battle. Eat after 1st turn.",
 	},
 	sugar: {
-		name: "Breakfast",
+		name: "Sugar",
 		spritenum: -1,
 		fling: {
 			basePower: 30,

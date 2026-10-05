@@ -44,6 +44,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	duality: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
+			if (move.typeChangerBoosted === this.effect) return;
 			if (move.type === 'Rage') {
 				move.type = 'Comfort';
 				move.typeChangerBoosted = this.effect;
@@ -211,6 +212,42 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Blood Pact",
 		num: 15,
 		shortDesc: "This Pokemon heals for any bleed damage."
+	},
+	mutant: {
+		onBasePowerPriority: 2,
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.status === 'rad') {
+				this.debug('Mutant boost');
+				return this.chainModify(1 + ((attacker.maxhp - attacker.hp) / attacker.maxhp) / 3);
+			}
+		},
+		flags: {},
+		name: "Mutant",
+		num: 16,
+		shortDesc: "If this Pokemon is irradiated, move BP is boosted by missing HP % / 3.",
+	},
+	darkarts: {
+		onAnyFaintPriority: 1,
+		onAnyFaint() {
+			this.heal(this.effectState.target.baseMaxhp / 5, this.effectState.target);
+		},
+		flags: {},
+		name: "Dark Arts",
+		num: 17,
+		shortDesc: "This Pokemon heals 1/5th of its max HP when another Pokemon faints.",
+	},
+	freehugs: {
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (move.id === 'hug') return;
+			const pokemon = this.effectState.source;
+			if (!pokemon || pokemon.fainted) return;
+
+			this.actions.useMove(this.dex.getActiveMove('hug'), pokemon);
+		},
+		flags: {},
+		name: "Free Hugs",
+		num: 18,
+		shortDesc: "This Pokemon uses Hug after using any other move.",
 	},
 };
 

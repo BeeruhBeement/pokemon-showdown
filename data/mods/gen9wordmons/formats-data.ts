@@ -40,7 +40,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	blessball: {
 		tier: "OU",
 	},
-	goatsword: {
+	capricleave: {
 		tier: "OU",
 	},
 	snakehamme: {
@@ -62,6 +62,75 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "NFE",
 	},
 	lumber: {
+		tier: "OU",
+	},
+	tinyheart: {
+		tier: "LC",
+	},
+	hearty: {
+		tier: "NFE",
+	},
+	ricardio: {
+		tier: "OU",
+	},
+	novolver: {
+		tier: "LC",
+	},
+	gunnygator: {
+		tier: "OU",
+	},
+	slimout: {
+		tier: "OU",
+	},
+	slimoutbiography: {
+		tier: "OU",
+	},
+	slimoutbless: {
+		tier: "OU",
+	},
+	slimoutbuilding: {
+		tier: "OU",
+	},
+	slimoutcamera: {
+		tier: "OU",
+	},
+	slimoutcomfort: {
+		tier: "OU",
+	},
+	slimoutcorn: {
+		tier: "OU",
+	},
+	slimoutdrink: {
+		tier: "OU",
+	},
+	slimoutfuel: {
+		tier: "OU",
+	},
+	slimoutherd: {
+		tier: "OU",
+	},
+	slimouthonor: {
+		tier: "OU",
+	},
+	slimoutinspire: {
+		tier: "OU",
+	},
+	slimoutlaser: {
+		tier: "OU",
+	},
+	slimoutlegend: {
+		tier: "OU",
+	},
+	slimoutmatter: {
+		tier: "OU",
+	},
+	slimoutproof: {
+		tier: "OU",
+	},
+	slimoutpyramid: {
+		tier: "OU",
+	},
+	slimoutrage: {
 		tier: "OU",
 	},
 	candlit: {
