@@ -1364,7 +1364,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "manectric").learnset.aurorabeam = ["9M"];
 	dex.modData("Learnsets", "manectric").learnset.supercellslam = ["9M"];
 	dex.modData("Learnsets", "manectric").learnset.electrodrift = ["9M"];
-
+	dex.modData("Learnsets", "manectric").learnset.weatherball = ["9M"];
+	
 	// mankey
 	dex.modData("Learnsets", "mankey").learnset.circlethrow = ["9M"];
 	dex.modData("Learnsets", "mankey").learnset.cometpunch = ["9M"];
