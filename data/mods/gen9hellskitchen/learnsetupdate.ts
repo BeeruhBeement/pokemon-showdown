@@ -36,6 +36,9 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "altaria").learnset.dragonrush = ["9M"];
 	dex.modData("Learnsets", "altaria").learnset.petaldance = ["9M"];
 	dex.modData("Learnsets", "altaria").learnset.silverwind = ["9M"];
+	dex.modData("Learnsets", "altaria").learnset.calmmind = ["9M"];
+	dex.modData("Learnsets", "altaria").learnset.flareblitz = ["9M"];
+	dex.modData("Learnsets", "altaria").learnset.storedpower = ["9M"];
 
 	// amaura
 	dex.modData("Learnsets", "amaura").learnset.tackle = ["9M"];
