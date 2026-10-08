@@ -1158,6 +1158,8 @@ export function learnsetUpdate(dex: ModdedDex) {
 	// kangaskhan
 	dex.modData("Learnsets", "kangaskhan").learnset.dualchop = ["9M"];
 	dex.modData("Learnsets", "kangaskhan").learnset.tackle = ["9M"];
+	dex.modData("Learnsets", "kangaskhan").learnset.highjumpkick = ["9M"];
+	dex.modData("Learnsets", "kangaskhan").learnset.knockoff = ["9M"];
 
 	// kecleon
 	dex.modData("Learnsets", "kecleon").learnset.conversion = ["9M"];
