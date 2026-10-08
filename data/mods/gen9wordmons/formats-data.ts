@@ -133,6 +133,12 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	slimoutrage: {
 		tier: "OU",
 	},
+	cornelius: {
+		tier: "OU",
+	},
+	witchhazel: {
+		tier: "OU",
+	},
 	candlit: {
 		tier: "LC",
 	},

@@ -159,7 +159,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.effectState.time = this.random(2, 3);
 		},
 		onEnd(target) {
-			this.add('-end', target, 'confusion');
+			this.add('-end', target, 'defrag');
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {

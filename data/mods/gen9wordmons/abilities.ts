@@ -152,7 +152,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onUpdate(pokemon) {
 			if (pokemon.status === 'rot') {
-				this.add('-activate', pokemon, 'ability: Immunity');
+				this.add('-activate', pokemon, 'ability: Heroic');
 				pokemon.cureStatus();
 			}
 		},
@@ -229,12 +229,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	darkarts: {
 		onAnyFaintPriority: 1,
 		onAnyFaint() {
-			this.heal(this.effectState.target.baseMaxhp / 5, this.effectState.target);
+			this.heal(this.effectState.target.baseMaxhp / 3, this.effectState.target);
 		},
 		flags: {},
 		name: "Dark Arts",
 		num: 17,
-		shortDesc: "This Pokemon heals 1/5th of its max HP when another Pokemon faints.",
+		shortDesc: "This Pokemon heals 1/3rd of its max HP when another Pokemon faints.",
 	},
 	freehugs: {
 		onAfterMoveSecondarySelf(source, target, move) {

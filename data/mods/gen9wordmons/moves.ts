@@ -192,10 +192,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		basePower: 50,
 		basePowerCallback(pokemon, target, move) {
 			if (this.queue.willMove(target)) {
-				this.debug('Payback NOT boosted');
+				this.debug('Penance NOT boosted');
 				return move.basePower;
 			}
-			this.debug('Payback damage boost');
+			this.debug('Penance damage boost');
 			return move.basePower * 2;
 		},
 		category: "Physical",
@@ -483,7 +483,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Ancestral Flash",
 		pp: 30,
 		priority: 1,
-		flags: { protect: 1, mirror: 1, punch: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1 },
 		target: "normal",
 		type: "Biography",
 		contestType: "Tough",
@@ -1621,6 +1621,22 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		shortDesc: "Physical if Atk > SpA. Type = User's first type.",
 		onPrepareHit(target, pokemon, move) {
 			this.attrLastMove('[anim] Energy Ball');
+		},
+	},
+	heroicpunch: {
+		num: 70,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Heroic Punch",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, punch: 1, metronome: 1 },
+		target: "normal",
+		type: "Flexible",
+		shortDesc: "No additional effect.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[anim] Mega Punch');
 		},
 	},
 };
