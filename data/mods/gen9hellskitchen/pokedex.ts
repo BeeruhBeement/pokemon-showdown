@@ -127,6 +127,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	staraptormega: {
 		inherit: true,
 	},
+	garchompmega: {
+		inherit: true,
+		abilities: {0: "Sharpness"},
+	},
 	garchompmegaz: {
 		inherit: true,
 		abilities: {0: "Levitate"},
