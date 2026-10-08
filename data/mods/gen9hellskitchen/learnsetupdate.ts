@@ -804,6 +804,7 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "garchomp").learnset.nastyplot = ["9M"];
 	dex.modData("Learnsets", "garchomp").learnset.razorwind = ["9M"];
 	dex.modData("Learnsets", "garchomp").learnset.vacuumwave = ["9M"];
+	dex.modData("Learnsets", "garchomp").learnset.aquacutter = ["9M"];
 
 	// garganacl
 	dex.modData("Learnsets", "garganacl").learnset.ancientpower = ["9M"];
