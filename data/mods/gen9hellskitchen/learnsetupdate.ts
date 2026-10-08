@@ -2276,7 +2276,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "staraptor").learnset.skullbash = ["9M"];
 	dex.modData("Learnsets", "staraptor").learnset.torment = ["9M"];
 	dex.modData("Learnsets", "staraptor").learnset.vacuumwave = ["9M"];
-	dex.modData("Learnsets", "staraptor").learnset.superpower = ["9M"];
 
 	// staravia
 	dex.modData("Learnsets", "staravia").learnset.gust = ["9M"];
