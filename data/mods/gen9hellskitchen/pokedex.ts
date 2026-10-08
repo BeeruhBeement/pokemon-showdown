@@ -51,7 +51,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chandeluremega: {
 		inherit: true,
-		abilities: {0: "Shadow Shield"},
+		abilities: {0: "No Guard"},
 	},
 	chesnaughtmega: {
 		inherit: true,
