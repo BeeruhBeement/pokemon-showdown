@@ -109,7 +109,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Buildmons OU",
 		gameType: "triples",
 		mod: 'gen9buildmons',
-		ruleset: ['Standard NatDex', 'Data Mod', 'Open Team Sheets', 'Sleep Moves Clause', 'Max Total Level = 400', 'Item Clause = 1', 'Ability Clause = 1'],
+		ruleset: ['Standard NatDex', 'Data Mod', 'Open Team Sheets', 'Sleep Moves Clause', 'Item Clause = 1', 'Ability Clause = 1'],
 		validateSet(set, teamHas) {
 			const dex = this.dex;
 			let species = dex.species.get(set.species);

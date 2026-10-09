@@ -139,6 +139,15 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	witchhazel: {
 		tier: "OU",
 	},
+	timothy: {
+		tier: "LC",
+	},
+	timoth: {
+		tier: "OU",
+	},
+	dile: {
+		tier: "OU",
+	},
 	candlit: {
 		tier: "LC",
 	},
@@ -146,6 +155,9 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 	},
 	candrake: {
+		tier: "OU",
+	},
+	goatitan: {
 		tier: "OU",
 	},
 }

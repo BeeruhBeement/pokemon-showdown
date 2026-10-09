@@ -1,20 +1,13 @@
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
-	lapras: {
+	noivern: {
 		inherit: true,
-		abilities: { skill: "Double Tap", 0: "Telepathy", 1: "Hydration", 4: "Ride the Wave" },
-	},
-	escavalier: {
-		inherit: true,
-		abilities: { skill: "Divine Blessing", 0: "Justified", 1: "Cutting Edge", 2: "Exoskeleton", 4: "Duelist" },
-	},
-	coalossal: {
-		inherit: true,
-		abilities: { skill: "Coal Mines", 2: "Pain Train", 4: "Explosive Charge" },
-	},
-	grimmsnarl: {
-		inherit: true,
-		abilities: { skill: "Double Tap", 0: "Tangling Hair", 2: "Prankster" },
+		color: "Pilot",
+		eggGroups: ["Saviour", "Expertise", "Versatile"],
+		abilities: { skill: "Sonar", 
+					tree00: "Dampener", tree01: "Slipstream", tree02: "Power of Friendship", tree03: "Harmony", tree04: "Centerpiece", tree05: "Sonic Shock",
+					tree10: "Air Vents", tree11: "Regulation", tree12: "Maneuver", tree13: "Stacking", tree14: "Air Resistance", tree15: "Air Support",
+					tree20: "Sonic Precision", tree21: "Draconian Rage", tree22: "Long Range", tree23: "Aerial Noise", tree24: "Sound Boost", tree25: "Straight Up Evil"},
 	},
 };

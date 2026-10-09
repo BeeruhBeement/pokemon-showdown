@@ -577,7 +577,13 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	regen: {
 		name: 'regen',
-		duration: 3,
+		duration: 1,
+		durationCallback(source, effect) {
+			if (source?.hasAbility('nectartap')) {
+				return 2;
+			}
+			return 1;
+		},
 		onStart(target, source, sourceEffect) {
 			this.add('-start', target, 'Regen');
 		},

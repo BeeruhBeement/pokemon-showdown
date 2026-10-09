@@ -249,6 +249,53 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 18,
 		shortDesc: "This Pokemon uses Hug after using any other move.",
 	},
+	expose: {
+		onStart(target) {
+			const moves = target.moves.filter(move => {
+				const moveData = this.dex.moves.get(move);
+				return moveData.category === 'Physical' || moveData.category === 'Special';
+			});
+
+			if (moves.length) {
+				this.effectState.move = this.sample(moves);
+				this.add('-start', target, this.effectState.move, 'Expose');
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.id === this.effectState.move) {
+				this.debug('Expose boost');
+				return this.chainModify([13, 10]);
+			}
+		},
+		flags: {},
+		name: "Expose",
+		num: 19,
+		shortDesc: "On Switch-in boost one of the Pokemon's attacks 1.3x.",
+	},
+	lunarthread: {
+		onSourceDamagingHit(damage, target, source, move) {
+			target.addVolatile('lunarthread');
+		},
+		condition: {
+			onStart(pokemon, source, effect) {
+				this.add('-start', pokemon, 'Lunar Thread');
+			},
+			onBasePower(basePower, attacker, defender, move) {
+				return this.chainModify([9, 10]);
+			},
+			onAfterMove(source, target, move) {
+				source.removeVolatile('lunarthread');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Lunar Thread');
+			}
+		},
+		flags: {},
+		name: "Lunar Thread",
+		num: 20,
+		shortDesc: "Attacking a Pokemon weakens its moves by 0.9x until its next move.",
+	},
 };
 
 for (const abilities in Base) {

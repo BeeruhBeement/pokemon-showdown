@@ -38,6 +38,8 @@ export interface PokemonSet {
 	 * This should always be converted to an id before use.
 	 */
 	ability: string;
+	/** Buildmons perk tree slots selected for this set. */
+	perks?: string[];
 	/**
 	 * Each move can be an id, e.g. "shellsmash" or a full name,
 	 * e.g. "Shell Smash"
@@ -200,12 +202,13 @@ export const Teams = new class Teams {
 			}
 
 			if (set.pokeball || set.hpType || set.gigantamax ||
-				(set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10) || set.teraType) {
+				(set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10) || set.teraType || set.perks !== undefined) {
 				buf += `,${set.hpType || ''}`;
 				buf += `,${this.packName(set.pokeball || '')}`;
 				buf += `,${set.gigantamax ? 'G' : ''}`;
 				buf += `,${set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10 ? set.dynamaxLevel : ''}`;
 				buf += `,${set.teraType || ''}`;
+				buf += `,${set.perks?.join(',') || ''}`;
 			}
 		}
 
@@ -326,9 +329,9 @@ export const Teams = new class Teams {
 			j = buf.indexOf(']', i);
 			let misc;
 			if (j < 0) {
-				if (i < buf.length) misc = buf.substring(i).split(',', 6);
+				if (i < buf.length) misc = buf.substring(i).split(',');
 			} else {
-				if (i !== j) misc = buf.substring(i, j).split(',', 6);
+				if (i !== j) misc = buf.substring(i, j).split(',');
 			}
 			if (misc) {
 				set.happiness = (misc[0] ? Number(misc[0]) : 255);
@@ -337,6 +340,9 @@ export const Teams = new class Teams {
 				set.gigantamax = !!misc[3];
 				set.dynamaxLevel = (misc[4] ? Number(misc[4]) : 10);
 				set.teraType = misc[5];
+				if (misc.length >= 7) {
+					set.perks = misc.slice(6).filter(perk => /^tree[0-2][0-5]$/.test(perk));
+				}
 			}
 			if (j < 0) break;
 			i = j + 1;
@@ -417,6 +423,9 @@ export const Teams = new class Teams {
 		}
 		if (set.teraType && !useStatPoints) {
 			out += `Tera Type: ${set.teraType}  \n`;
+		}
+		if (set.perks !== undefined) {
+			out += `Perks: ${set.perks.join(', ') || 'None'}  \n`;
 		}
 
 		// stats
@@ -502,6 +511,9 @@ export const Teams = new class Teams {
 		} else if (line.startsWith('Tera Type: ')) {
 			line = line.slice(11);
 			set.teraType = aggressive ? line.replace(/[^a-zA-Z0-9]/g, '') : line;
+		} else if (line.startsWith('Perks: ')) {
+			set.perks = line.slice(7).toLowerCase() === 'none' ? [] :
+				line.slice(7).split(',').map(perk => perk.trim()).filter(perk => /^tree[0-2][0-5]$/.test(perk));
 		} else if (line === 'Gigantamax: Yes') {
 			set.gigantamax = true;
 		} else if (line.startsWith('EVs: ')) {

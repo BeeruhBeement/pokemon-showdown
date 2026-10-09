@@ -1,4 +1,240 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
+	// noivern
+	// skill
+	sonar: {
+		onAfterTerastallization(pokemon) {
+			this.add('-ability', pokemon, 'Sonar');
+			pokemon.adjacentFoes().forEach(foe => {
+				foe.addVolatile('spddown');
+			})
+		},
+		onStart(pokemon) {
+			this.effectState.stacks = 0;
+			pokemon.canTerastallize = null;
+		},
+		onEnd(pokemon) {
+			this.effectState.stacks = 0;
+		},
+		onUpdate(pokemon) {
+			if (this.effectState.stacks >= 3) pokemon.canTerastallize = pokemon.teraType;
+			this.add('-start', pokemon, `Sonar: ${this.effectState.stacks}x`, '[silent]');
+		},
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (move.flags.sound || (source.hasAbility('') && (move.type === "Dragon" || move.type === "Flying"))) this.effectState.stacks++;
+		},
+		flags: {},
+		name: "Sonar",
+		desc: "Whenever this Pokemon uses a sound move it builds stacks, if it has 3 stacks it can spend all its stacks to activate this Ability and apply SpD down on all adjacent foes.",
+		shortDesc: "Sound moves build Stacks, at 3 stacks SpD down on all adj foes.",
+	},
+	// tree 1
+	dampener: {
+		onBasePower(relayVar, source, target, move) {
+			if (target.isAlly(source)) return this.chainModify([6, 10]);
+		},
+		flags: { breakable: 1 },
+		name: "Dampener",
+		shortDesc: "Moves deal 60% less damage to allies.",
+		rating: 1,
+	},
+	slipstream: {
+		onResidual(pokemon) {
+			if (pokemon.position !== 1) this.heal(pokemon.maxhp / 10, pokemon)
+		},
+		flags: {},
+		name: "Slipstream",
+		shortDesc: "This Pokemon recovers 10% HP per turn when it is not in the center.",
+		rating: 1,
+	},
+	poweroffriendship: {
+		onModifySpA(spa, pokemon) {
+			this.effectState.boost = 0;
+			pokemon.adjacentAllies().forEach(this.effectState.boost += 5);
+			return this.chainModify([100, 100 + this.effectState.boost]);
+		},
+		flags: {},
+		name: "Power of Friendship",
+		shortDesc: "+5% SpA for each adjacent ally.",
+		rating: 1,
+	},
+	harmony: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags.sound && target.isAlly(source)) {
+				this.boost({ spa: 5 }, target);
+			}
+		},
+		flags: {},
+		name: "Harmony",
+		shortDesc: "Allies hit by sound moves get a 5% SpA boost.",
+		rating: 1,
+	},
+	centerpiece: {
+		onBasePower(relayVar, source, target, move) {
+			if (source.position === 1) return this.chainModify([11, 10]);
+		},
+		flags: {},
+		name: "Centerpiece",
+		shortDesc: "Moves gain 10% Base Power when this Pokemon is in the center.",
+		rating: 1,
+	},
+	sonicshock: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags.sound && !target.isAlly(source)) {
+				if (this.randomChance(3, 20)) {
+					target.trySetStatus('par', source);
+				}
+			}
+		},
+		flags: {},
+		name: "Sonic Shock",
+		shortDesc: "Sound moves have a 15% paralysis chance against foes.",
+		rating: 1,
+	},
+	// tree 2
+	airvents: {
+		onStart(pokemon) {
+			if (pokemon.side.sideConditions['tailwind']) {
+				this.boost({ def: 5, spd: 5 }, pokemon, pokemon);
+			}
+		},
+		onHit(target, source, move) {
+			if (target !== source && move.flags['wind']) {
+				this.boost({ def: 5, spd: 5 }, target, target);
+			}
+		},
+		onSideConditionStart(side, source, sideCondition) {
+			const pokemon = this.effectState.target;
+			if (sideCondition.id === 'tailwind') {
+				this.boost({ def: 5, spd: 5 }, pokemon, pokemon);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Air Vents",
+		shortDesc: "Boosts Def and SpD 5% when hit by wind or Tailwind starts.",
+		rating: 1,
+	},
+	regulation: {
+		flags: {},
+		name: "Regulation",
+		shortDesc: "Shortens Tailwind duration by 1 turn.",
+		rating: 1,
+	},
+	maneuver: {
+		onStart(pokemon) {
+			if (pokemon.side.sideConditions['tailwind']) {
+				this.effectState.tailwind = true;
+			}
+		},
+		onSideConditionStart(side, source, sideCondition) {
+			const pokemon = this.effectState.target;
+			if (sideCondition.id === 'tailwind' && pokemon && !pokemon.fainted) {
+				this.effectState.tailwind = true;
+			}
+		},
+		onResidual(pokemon) {
+			if (this.effectState.tailwind && !pokemon.side.sideConditions['tailwind']) {
+				this.add('-activate', pokemon, 'ability: Maneuver');
+				this.heal(pokemon.maxhp / 4);
+				this.effectState.tailwind = false;
+			}
+		},
+		flags: {},
+		name: "Maneuver",
+		shortDesc: "When Tailwind ends heal 25% of max HP.",
+		rating: 1,
+	},
+	stacking: {
+		flags: {},
+		name: "Stacking",
+		shortDesc: "Can also build stacks of Sonar using Dragon or Flying-type moves.",
+		rating: 1,
+	},
+	airresistance: {
+		onSourceModifyDamage(damage, source, target, move) {
+			this.debug('Air Resistance weaken');
+			return this.chainModify(0.95);
+		},
+		flags: { breakable: 1 },
+		name: "Air Resistance",
+		shortDesc: "Damage taken from attacks is reduced by 5%.",
+		rating: 1,
+	},
+	airsupport: {
+		onAllyBasePowerPriority: 22,
+		onAllyBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Flying' && attacker.side.sideConditions['tailwind']) {
+				this.debug('Air Support boost');
+				return this.chainModify(1.15);
+			}
+		},
+		flags: {},
+		name: "Air Support",
+		desc: "This Pokemon and its allies' Flying-type moves have their power multiplied by 1.15 if Tailwind is active on their side.",
+		shortDesc: "This Pokemon and its allies' Flying-type moves have 1.15 power if Tailwind is active.",
+		rating: 2,
+	},
+	// tree 3
+	sonicprecision: {
+		onSourceModifyAccuracyPriority: -1,
+		onSourceModifyAccuracy(accuracy) {
+			if (typeof accuracy !== 'number') return;
+			this.debug('sonicprecision - enhancing accuracy');
+			return accuracy + 20;
+		},
+		flags: {},
+		name: "Sonic Precision",
+		shortDesc: "Moves gain an additional 20% accuracy.",
+		rating: 1,
+	},
+	draconianrage: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.type === "Dragon") {
+				target.addVolatile('spddown', source);
+			}
+		},
+		flags: {},
+		name: "Draconian Rage",
+		shortDesc: "Dragon-type moves apply SpD down.",
+		rating: 1,
+	},
+	longrange: {
+		onModifyMove(move, pokemon, target) {
+			move.target = 'any';
+		},
+		flags: {},
+		name: "Long Range",
+		shortDesc: "Moves are no longer spread and can hit any target on the field.",
+		rating: 1,
+	},
+	aerialnoise: {
+		onModifyMove(move, pokemon, target) {
+			if (move.type === "Flying") move.flags.sound = 1;
+		},
+		flags: {},
+		name: "Aerial Noise",
+		shortDesc: "Flying-type moves become sound.",
+		rating: 2,
+	},
+	soundboost: {
+		onBasePower(relayVar, source, target, move) {
+			if (move.flags.sound) return this.chainModify([11, 10]);
+		},
+		flags: {},
+		name: "Sound Boost",
+		shortDesc: "Sound moves gain 10% Base Power.",
+		rating: 1,
+	},
+	straightupevil: {
+		onBasePower(relayVar, source, target, move) {
+			if (source.position === 1) return this.chainModify([11, 10]);
+		},
+		flags: {},
+		name: "Straight Up Evil",
+		shortDesc: "Moves gain 10% Base Power to targets under 50% HP.",
+		rating: 1,
+	},
+
+	/*
 	// skills
 	coalmines: {
 		onAfterTerastallization(pokemon) {
@@ -13,8 +249,12 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	divineblessing: {
 		onHit(target, source, move) {
-			if (target.getMoveHitData(move).crit) {
+			if (target.getMoveHitData(move).crit && !source.syrupTriggered) {
+				source.syrupTriggered = true;
+			}
+			if (target.getMoveHitData(move).crit && source.syrupTriggered) {
 				source.canTerastallize = source.teraType;
+				source.syrupTriggered = false;
 			}
 		},
 		onAfterTerastallization(pokemon) {
@@ -27,7 +267,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Divine Blessing",
-		shortDesc: "Grants regen on user's side. Critical hits allow reactivation.",
+		shortDesc: "Grants regen on user's side. Consecutive Critical hits allow reactivation.",
 	},
 	doubletap: {
 		onAfterTerastallization(pokemon) {
@@ -59,12 +299,12 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	cuttingedge: {
 		onHit(target, source, move) {
 			if (target.getMoveHitData(move).crit) {
-				this.heal((source.maxhp - source.hp) / 2);
+				this.heal((source.maxhp - source.hp) / 10);
 			}
 		},
 		flags: {},
 		name: "Cutting Edge",
-		shortDesc: "Critical hits heal for 50% of missing HP.",
+		shortDesc: "Critical hits heal for 10% of missing HP.",
 	},
 	duelist: {
 		onSourceDamagingHit(damage, target, source, move) {
@@ -146,8 +386,53 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		shortDesc: "This Pokemon does 0 damage to its allies with attacks.",
 	},
-
-	/*
+	sharpblade: {
+		onModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).crit) {
+				this.debug('Sharp Blade boost');
+				return this.chainModify(1.2);
+			}
+		},
+		flags: {},
+		name: "Sharp Blade",
+		shortDesc: "If this Pokemon strikes with a critical hit, the damage is multiplied by 1.2.",
+	},
+	nectartap: {
+		flags: {},
+		name: "Nectar Tap",
+		shortDesc: "Extends Regen duration by 1 turn.",
+	},
+	fortitude: {
+		onAnyInvulnerabilityPriority: 1,
+		onAnyInvulnerability(target, source, move) {
+			if (move && source === this.effectState.target && source.volatiles.includes["regen"]) return 0;
+		},
+		onAnyAccuracy(accuracy, target, source, move) {
+			if (move && source === this.effectState.target && source.volatiles.includes["regen"]) {
+				return true;
+			}
+			return accuracy;
+		},
+		flags: {},
+		name: "Fortitude",
+		shortDesc: "While under the effect of Regen moves cannot miss."
+	},
+	zealousrush: {
+		onModifyPriority(priority, pokemon, target, move) {
+			if (pokemon.volatiles.includes["regen"]) {
+				return priority + 1;
+			}
+		},
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.volatiles.includes["regen"]) {
+				this.debug('Zealous Rush nerf');
+				return this.chainModify([1, 2]);
+			}
+		},
+		flags: {},
+		name: "Zealous Rush",
+		shortDesc: "While under the effect of Regen moves gain +1 priority but halved power."
+	},
 	brutal: {
 		onAfterTerastallization(pokemon) {
 			pokemon.addVolatile('doubletap');

@@ -8,17 +8,53 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 				/*if (pokemon.ability === this.toID(pokemon.species.abilities['S'])) {
 					continue;
 				}*/
-				pokemon.ability = this.toID(pokemon.species.abilities.skill);
+				const speciesAbilities = pokemon.species.abilities as
+					typeof pokemon.species.abilities & Record<string, string | undefined>;
+				pokemon.ability = this.toID(speciesAbilities.skill);
 
-				const innateCount = Math.min(
-					6,
-					Math.max(0, Math.floor((pokemon.level - 40) / 10))
-				);
-				pokemon.m.innates = [];
-				for (let i = 0; i < innateCount; i++) {
-					const ability = pokemon.species.abilities[i as 0 | 1 | 2 | 3 | 4 | 5];
-					if (ability) {
-						pokemon.m.innates.push(this.toID(ability));
+				if (pokemon.set.perks !== undefined) {
+					const requestedAbilities = new Set<string>();
+					for (const perk of pokemon.set.perks) {
+						if (!/^tree[0-2][0-5]$/.test(perk)) continue;
+						const ability = speciesAbilities[perk];
+						if (ability) requestedAbilities.add(this.toID(ability));
+					}
+
+					const unlockedAbilities = new Set<string>();
+					let spentPoints = 0;
+					let changed = true;
+					while (changed) {
+						changed = false;
+						for (let level = 0; level < 6; level++) {
+							for (let tree = 0; tree < 3; tree++) {
+								const ability = speciesAbilities[`tree${tree}${level}`];
+								const previousAbility = speciesAbilities[`tree${tree}${level - 1}`];
+								const abilityID = ability ? this.toID(ability) : '';
+								if (abilityID && requestedAbilities.has(abilityID) &&
+									(!level || previousAbility && unlockedAbilities.has(this.toID(previousAbility))) &&
+									!unlockedAbilities.has(abilityID)) {
+									const rating = this.dex.data.Abilities[abilityID]?.rating ?? 1;
+									const cost = Math.max(0, rating);
+									if (spentPoints + cost > 12) continue;
+									unlockedAbilities.add(abilityID);
+									spentPoints += cost;
+									changed = true;
+								}
+							}
+						}
+					}
+					pokemon.m.innates = [...unlockedAbilities];
+				} else {
+					const innateCount = Math.min(
+						6,
+						Math.max(0, Math.floor((pokemon.level - 40) / 10))
+					);
+					pokemon.m.innates = [];
+					for (let i = 0; i < innateCount; i++) {
+						const ability = speciesAbilities[i];
+						if (ability) {
+							pokemon.m.innates.push(this.toID(ability));
+						}
 					}
 				}
 			}

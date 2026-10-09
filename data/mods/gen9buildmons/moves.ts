@@ -1,33 +1,22 @@
 import { ModdedMoveData } from "../../../sim/dex-moves";
 
 export const Moves: {[k: string]: ModdedMoveData} = {
-	bestow: {
+	tailwind: {
 		inherit: true,
-		isNonstandard: "Future",
-	},
-	corrosivegas: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	covet: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	fling: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	switcheroo: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	thief: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	trick: {
-		inherit: true,
-		isNonstandard: "Future",
+		condition: {
+			inherit: true,
+			durationCallback(target, source, effect) {
+				if (source?.hasAbility('persistent')) {
+					this.add('-activate', source, 'ability: Persistent', '[move] Tailwind');
+					return 6;
+				}
+				if (source?.hasAbility('regulation')) {
+					this.add('-activate', source, 'ability: Regulation', '[move] Tailwind');
+					return 3;
+				}
+				return 4;
+			},
+		},
 	},
 	
 	metronome: {

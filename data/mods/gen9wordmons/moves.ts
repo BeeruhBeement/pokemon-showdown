@@ -314,20 +314,20 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.attrLastMove('[anim] Slash');
 		},
 	},
-	monsoon: {
+	bottleslice: {
 		num: 15,
-		accuracy: 100,
-		basePower: 100,
+		accuracy: 90,
+		basePower: 90,
 		category: "Physical",
-		name: "Monsoon",
-		pp: 5,
+		name: "Bottle Slice",
+		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 		target: "allAdjacentFoes",
 		type: "Drink",
-		shortDesc: "Hits adjacent Pokemon.",
+		shortDesc: "30% chance to bleed the target.",
 		onPrepareHit(target, pokemon, move) {
-			this.attrLastMove('[anim] Hydro Pump');
+			this.attrLastMove('[anim] Shadow Sneak');
 		},
 	},
 	precipitation: {
@@ -1633,10 +1633,42 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1, metronome: 1 },
 		target: "normal",
-		type: "Flexible",
+		type: "Legend",
 		shortDesc: "No additional effect.",
 		onPrepareHit(target, pokemon, move) {
 			this.attrLastMove('[anim] Mega Punch');
+		},
+	},
+	radiowave: {
+		num: 71,
+		accuracy: 100,
+		basePower: 85,
+		category: "Physical",
+		name: "Radio Wave",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, sound: 1, metronome: 1 },
+		onModifyMove(move, pokemon) {
+			pokemon.addVolatile('radiowave');
+		},
+		condition: {
+			duration: 1,
+			onModifyAtkPriority: -101,
+			onModifyAtk(atk, pokemon, defender, move) {
+				this.event.modifier = 1;
+				return this.dex.species.get(move.allies!.shift()!.set.species).baseStats.atk;
+			},
+			onFoeModifyDefPriority: -101,
+			onFoeModifyDef(def, pokemon) {
+				this.event.modifier = 1;
+				return this.dex.species.get(pokemon.set.species).baseStats.def;
+			},
+		},
+		target: "normal",
+		type: "Honor",
+		shortDesc: "Uses base Attack and target's base Defense.",
+		onPrepareHit(target, pokemon, move) {
+			this.attrLastMove('[anim] Shadow Punch');
 		},
 	},
 };
