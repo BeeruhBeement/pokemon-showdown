@@ -2043,7 +2043,6 @@ export function learnsetUpdate(dex: ModdedDex) {
 	dex.modData("Learnsets", "scovillain").learnset.darkpulse = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.knockoff = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.suckerpunch = ["9M"];
-	dex.modData("Learnsets", "scovillain").learnset.fierywrath = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.swordsdance = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.synthesis = ["9M"];
 	dex.modData("Learnsets", "scovillain").learnset.swagger = ["9M"];
