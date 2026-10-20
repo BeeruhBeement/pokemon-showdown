@@ -1,6 +1,21 @@
 import { Pokedex as Base } from '../../pokedex';
 
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
+	furret: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	beheeyem: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	durant: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
 	noivern: {
 		isNonstandard: null,
 		tier: "OU",

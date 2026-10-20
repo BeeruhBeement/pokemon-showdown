@@ -1,6 +1,7 @@
-import { RESTORATIVE_BERRIES } from "../../../sim/pokemon";
-import {Dex, toID} from '../../../sim/dex';
-import { MoveRequestData } from "../../../sim/side";
+import { RESTORATIVE_BERRIES, type Pokemon } from '../../../sim/pokemon';
+import { Dex, toID } from '../../../sim/dex';
+import type { MoveRequestData } from '../../../sim/side';
+import type { Move } from '../../../sim/dex-moves';
 import { learnsetUpdate } from "./learnsetupdate";
 
 export interface NatureData {
@@ -11,12 +12,6 @@ export interface NatureData {
 
 interface SpeciesAbility {
 	skill?: string;
-	0?: string;
-	1?: string;
-	2?: string;
-	3?: string;
-	4?: string;
-	5?: string;
 }
 
 export const Scripts: ModdedBattleScriptsData = {
@@ -25,6 +20,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (this.data.Items[i].gen && this.data.Items[i].gen > 0) {
 				this.modData('Items', i).isNonstandard = 'Future';
 			}
+		}
+		for (const i in this.data.Moves) {
+			this.modData('Moves', i).noPPBoosts = true;
 		}
 
 		learnsetUpdate(this);
@@ -366,6 +364,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		},
 	},
 	pokemon: {
+		deductPP(this: Pokemon, move: string | Move, amount?: number | null) {
+			const moveData = this.getMoveData(move);
+			if (!moveData) return 0;
+			moveData.used = true;
+			return amount || 1;
+		},
 		calculateStat(statName: StatIDExceptHP, boost: number, modifier?: number, statUser?: Pokemon) {
 			statName = toID(statName) as StatIDExceptHP;
 			// @ts-expect-error type checking prevents 'hp' from being passed, but we're paranoid
@@ -937,7 +941,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		hasAbility(ability) {
 			if (Array.isArray(ability)) return ability.some(abil => this.hasAbility(abil));
 			ability = this.battle.toID(ability);
-			return this.ability === ability || !!this.volatiles['ability:' + ability];
+			return this.ability === ability || !!this.volatiles['ability:' + ability] ||
+				!!this.m.innates?.includes(ability);
 		},
 		
 		/**

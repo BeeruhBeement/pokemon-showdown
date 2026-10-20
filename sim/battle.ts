@@ -414,6 +414,13 @@ export class Battle {
 	 * Doesn't reference `this` so doesn't need to be bound.
 	 */
 	comparePriority(this: void, a: AnyObject, b: AnyObject) {
+		if (a.order === b.order && (a.buildmonsMoveOrder !== undefined || b.buildmonsMoveOrder !== undefined)) {
+			const aBuildmonsMoveOrder = a.buildmonsMoveOrder || 0;
+			const bBuildmonsMoveOrder = b.buildmonsMoveOrder || 0;
+			if (aBuildmonsMoveOrder !== bBuildmonsMoveOrder) {
+				return aBuildmonsMoveOrder - bBuildmonsMoveOrder;
+			}
+		}
 		return -((b.order || 4294967296) - (a.order || 4294967296)) ||
 			((b.priority || 0) - (a.priority || 0)) ||
 			((b.speed || 0) - (a.speed || 0)) ||

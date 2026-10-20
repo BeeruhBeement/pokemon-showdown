@@ -30,6 +30,7 @@ import { type Move } from './dex-moves';
 export interface ChosenAction {
 	choice: 'move' | 'switch' | 'instaswitch' | 'revivalblessing' | 'team' | 'shift' | 'pass' | 'levelup';// action type
 	pokemon?: Pokemon; // the pokemon doing the action
+	buildmonsMoveOrder?: number;
 	targetLoc?: number; // relative location of the target to pokemon (move action only)
 	moveid?: string; // a move to use (move action only)
 	move?: ActiveMove; // the active move corresponding to moveid (move action only)
@@ -104,6 +105,7 @@ export interface MoveRequestData {
 
 export interface PokemonMoveRequestData {
 	moves: MoveRequestData[];
+	ppBudget?: number;
 	maybeDisabled?: boolean;
 	maybeLocked?: boolean;
 	trapped?: boolean;
@@ -328,7 +330,7 @@ export class Side {
 		if (this.choice.actions.length > 1 && this.choice.actions.every(action => action.choice === 'team')) {
 			return `team ` + this.choice.actions.map(action => action.pokemon!.position + 1).join(', ');
 		}
-		return this.choice.actions.map(action => {
+		const formatAction = (action: ChosenAction) => {
 			switch (action.choice) {
 			case 'move':
 				let details = ``;
@@ -353,7 +355,42 @@ export class Side {
 			default:
 				return action.choice;
 			}
-		}).join(', ');
+		};
+		const actions = this.choice.actions;
+		if (this.battle.dex.currentMod === 'gen9buildmons' && this.requestState === 'move') {
+			const choices: string[] = [];
+			for (let i = 0; i < actions.length; i++) {
+				const action = actions[i];
+				if (action.choice !== 'move' || !action.pokemon || action.buildmonsMoveOrder === undefined) {
+					choices.push(formatAction(action));
+					continue;
+				}
+				const sequence = [action];
+				while (
+					i + 1 < actions.length && actions[i + 1].pokemon === action.pokemon &&
+					actions[i + 1].buildmonsMoveOrder !== undefined
+				) {
+					sequence.push(actions[++i]);
+				}
+				const moveChoices = sequence.map(moveAction => {
+					let choice = String((moveAction.moveSlot ?? -1) + 1);
+					if (moveAction.moveSlot === undefined) choice = moveAction.moveid!;
+					if (moveAction.targetLoc && this.battle.activePerHalf > 1) {
+						choice += ` ${moveAction.targetLoc > 0 ? '+' : ''}${moveAction.targetLoc}`;
+					}
+					if (moveAction.mega) choice += moveAction.pokemon!.item === 'ultranecroziumz' ? ` ultra` : ` mega`;
+					if (moveAction.megax) choice += ` megax`;
+					if (moveAction.megay) choice += ` megay`;
+					if (moveAction.zmove) choice += ` zmove`;
+					if (moveAction.maxMove) choice += ` dynamax`;
+					if (moveAction.terastallize) choice += ` terastallize`;
+					return choice;
+				});
+				choices.push(moveChoices.length > 1 ? `moves ${moveChoices.join(';')}` : `move ${moveChoices[0]}`);
+			}
+			return choices.join(', ');
+		}
+		return actions.map(formatAction).join(', ');
 	}
 
 	toString() {
@@ -554,24 +591,26 @@ export class Side {
 		}
 
 		// current request is move/switch
-		this.getChoiceIndex(); // auto-pass
-		return this.choice.actions.length >= this.active.length;
+		const index = this.getChoiceIndex(); // auto-pass
+		return this.battle.dex.currentMod === 'gen9buildmons' ? index >= this.active.length :
+			this.choice.actions.length >= this.active.length;
 	}
 
 	chooseMove(
 		moveText?: string | number,
 		targetLoc = 0,
-		event: 'mega' | 'megax' | 'megay' | 'zmove' | 'ultra' | 'dynamax' | 'terastallize' | '' = ''
+		event: 'mega' | 'megax' | 'megay' | 'zmove' | 'ultra' | 'dynamax' | 'terastallize' | '' = '',
+		pokemonOverride?: Pokemon
 	) {
 		if (this.requestState !== 'move') {
 			return this.emitChoiceError(`Can't move: You need a ${this.requestState} response`);
 		}
-		const index = this.getChoiceIndex();
-		if (index >= this.active.length && this.battle.requestState !== 'levelup') {
+		const index = pokemonOverride ? this.active.indexOf(pokemonOverride) : this.getChoiceIndex();
+		if ((index < 0 || index >= this.active.length) && this.battle.requestState !== 'levelup') {
 			return this.emitChoiceError(`Can't move: You sent more choices than unfainted Pokémon.`);
 		}
 		const autoChoose = !moveText;
-		const pokemon: Pokemon = this.active[index] || this.pokemon[0];
+		const pokemon: Pokemon = pokemonOverride || this.active[index] || this.pokemon[0];
 
 		// Parse moveText (name or index)
 		// If the move is not found, the action is invalid without requiring further inspection.
@@ -649,6 +688,23 @@ export class Side {
 			}
 		}
 		const move = this.battle.dex.moves.get(moveid);
+		const isBuildmons = this.battle.dex.currentMod === 'gen9buildmons';
+		let buildmonsMoveOrder: number | undefined;
+		if (isBuildmons) {
+			const previousMoves = this.choice.actions.filter(action =>
+				action.choice === 'move' && action.pokemon === pokemon && action.buildmonsMoveOrder !== undefined
+			);
+			const spent = previousMoves.reduce((total, action) =>
+				total + (this.battle.dex.moves.get(action.moveid).pp || 1), 0);
+			const cost = move.pp || 1;
+			const budget = Math.max(1, pokemon.getWeight() / 10);
+			if (spent + cost > budget) {
+				return this.emitChoiceError(
+					`Can't move: ${pokemon.name} needs ${cost} PP, but only ${Math.max(0, budget - spent)} PP remains this turn`
+				);
+			}
+			buildmonsMoveOrder = previousMoves.length;
+		}
 
 		// Z-move
 		const zMove = event === 'zmove' ? this.battle.actions.getZMove(move, pokemon) : undefined;
@@ -711,6 +767,7 @@ export class Side {
 			this.choice.actions.push({
 				choice: 'move',
 				pokemon,
+				buildmonsMoveOrder,
 				targetLoc: lockedMoveTargetLoc,
 				moveid: lockedMoveID,
 			});
@@ -721,6 +778,7 @@ export class Side {
 			this.choice.actions.push({
 				choice: 'move',
 				pokemon,
+				buildmonsMoveOrder,
 				moveid: 'fight',
 			});
 			return true;
@@ -732,6 +790,7 @@ export class Side {
 			this.choice.actions.push({
 				choice: 'move',
 				pokemon,
+				buildmonsMoveOrder,
 				moveid: 'struggle',
 			});
 			return true;
@@ -836,7 +895,7 @@ export class Side {
 			// Make this work properly
 			return this.emitChoiceError(`Can't move: ${pokemon.name} can't Terastallize.`);
 		}
-		if (terastallize && this.choice.terastallize) {
+		if (terastallize && this.choice.terastallize && this.battle.dex.currentMod !== 'gen9buildmons') {
 			return this.emitChoiceError(`Can't move: You can only Terastallize once per battle.`);
 		}
 		if (terastallize && this.battle.gen !== 9) {
@@ -850,6 +909,7 @@ export class Side {
 		this.choice.actions.push({
 			choice: 'move',
 			pokemon,
+			buildmonsMoveOrder,
 			targetLoc,
 			moveid,
 			moveSlot,
@@ -873,6 +933,32 @@ export class Side {
 		if (dynamax) this.choice.dynamax = true;
 		if (terastallize) this.choice.terastallize = true;
 
+		return true;
+	}
+
+	chooseBuildmonsMoves(data: string) {
+		if (this.battle.dex.currentMod !== 'gen9buildmons') {
+			return this.emitChoiceError(`The "moves" choice is only available in Buildmons`);
+		}
+		const index = this.getChoiceIndex(false, false);
+		if (index >= this.active.length) {
+			return this.emitChoiceError(`Can't move: You sent more choices than unfainted Pokémon.`);
+		}
+		const pokemon = this.active[index];
+		const moveChoices = data.split(';');
+		if (!data || moveChoices.some(choice => !choice.trim())) {
+			return this.emitChoiceError(`Can't move: Your Buildmons move sequence is empty or invalid`);
+		}
+		for (const choice of moveChoices) {
+			const match = /^(\d+)(?:\s+([+-]?[1-3]))?(?:\s+(mega|megax|megay|zmove|ultra|dynamax|terastallize))?$/.exec(choice.trim());
+			if (!match) {
+				return this.emitChoiceError(`Can't move: Invalid Buildmons move sequence entry "${choice}"`);
+			}
+			const targetLoc = match[2] ? parseInt(match[2]) : 0;
+			const event = (match[3] || '') as
+				'mega' | 'megax' | 'megay' | 'zmove' | 'ultra' | 'dynamax' | 'terastallize' | '';
+			if (!this.chooseMove(match[1], targetLoc, event, pokemon)) return false;
+		}
 		return true;
 	}
 
@@ -1300,6 +1386,9 @@ export class Side {
 				}
 				if (!this.chooseMove(data, targetLoc, event)) return false;
 				break;
+			case 'moves':
+				if (!this.chooseBuildmonsMoves(data)) return false;
+				break;
 			case 'switch':
 				if (!this.chooseSwitch(data)) return false;
 				break;
@@ -1328,8 +1417,25 @@ export class Side {
 		return !this.choice.error;
 	}
 
-	getChoiceIndex(isPass?: boolean) {
+	getChoiceIndex(isPass?: boolean, autoPass = true) {
 		let index = this.choice.actions.length;
+		if (this.battle.dex.currentMod === 'gen9buildmons' && this.requestState === 'move') {
+			index = 0;
+			while (index < this.active.length && this.choice.actions.some(action => action.pokemon === this.active[index])) {
+				index++;
+			}
+			if (isPass) return index;
+			if (autoPass) {
+				while (
+					index < this.active.length &&
+					(this.active[index].fainted || this.active[index].volatiles['commanding'])
+				) {
+					this.choosePass();
+					index++;
+				}
+			}
+			return index;
+		}
 
 		if (!isPass) {
 			switch (this.requestState) {
@@ -1380,6 +1486,7 @@ export class Side {
 
 		this.choice.actions.push({
 			choice: 'pass',
+			pokemon: this.battle.dex.currentMod === 'gen9buildmons' && this.requestState === 'move' ? pokemon : undefined,
 		});
 		return true;
 	}

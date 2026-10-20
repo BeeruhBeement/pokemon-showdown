@@ -650,6 +650,19 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		gen: -1,
 		spritenum: -1,
 	},
+	radioactivevial: {
+		name: "Radioactive Vial",
+		fling: {
+			basePower: 30,
+			status: 'rad',
+		},
+		onUpdate(pokemon) {
+			pokemon.trySetStatus('rad', pokemon);
+		},
+		shortDesc: "Tries to irradiate the holder whenever possible.",
+		gen: -1,
+		spritenum: -1,
+	},
 	riotshield: {
 		name: "Riot Shield",
 		shortDesc: "10% damage reduction when attacking move selected but can only use BP<=60.",
@@ -887,7 +900,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onResidual(pokemon) {
 			const volatiles = Object.keys(pokemon.volatiles).filter(id => {
 				const vol = pokemon.volatiles[id];
-				return vol && typeof vol.duration === 'number' && vol.duration > 0;
+				return vol && typeof vol.duration === 'number' && vol.duration > 0 && !vol.noCopy;
 			});
 			if (!volatiles.length) return;
 

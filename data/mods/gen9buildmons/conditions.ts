@@ -116,12 +116,12 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			let statMinus: BoostID;
 			for (statMinus in pokemon.boosts) {
 				if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
-				if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
+				if (pokemon.boosts[statMinus] > 0 && statMinus !== randomStat) {
 					stats.push(statMinus);
 				}
 			}
 			randomStat = stats.length ? this.sample(stats) : undefined;
-			if (randomStat) boost[randomStat] = -1;
+			if (randomStat) boost[randomStat] = -15;
 
 			this.boost(boost, pokemon, pokemon);
 			
@@ -206,9 +206,10 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 		},
 		onTryHealPriority: 1,
-		onTryHeal(damage, target, source, effect) {
-			if (source.hp >= source.maxhp / 5 * 4) return false;
-			if (source.hp + damage > source.maxhp / 5 * 4) return source.maxhp / 2 - source.hp;
+		onTryHeal(damage, target) {
+			const healingLimit = target.maxhp / 5 * 4;
+			if (target.hp >= healingLimit) return false;
+			if (target.hp + damage > healingLimit) return healingLimit - target.hp;
 		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
@@ -416,6 +417,22 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	confusion: {
 		inherit: true,
+		onBeforeMove(pokemon) {
+			pokemon.volatiles['confusion'].time--;
+			if (!pokemon.volatiles['confusion'].time) {
+				pokemon.removeVolatile('confusion');
+				return;
+			}
+			this.add('-activate', pokemon, 'confusion');
+			if (!this.randomChance(33, 100)) {
+				return;
+			}
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 40);
+			if (typeof damage !== 'number') throw new Error("Confusion damage not dealt");
+			const activeMove = { id: this.toID('confused'), effectType: 'Move', type: '???' };
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
 		onModifySpDPriority: -101,
 		onModifySpD(spd, pokemon) {
 			// Copied from paralysis
@@ -614,6 +631,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	shield: {
 		name: 'shield',
+		duration: 1,
 		onStart(target, source, sourceEffect) {
 			if (this.effectState.shield === undefined) {
 				this.effectState.shield = 0;

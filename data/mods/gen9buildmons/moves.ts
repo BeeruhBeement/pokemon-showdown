@@ -23,7 +23,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		isNonstandard: "Future",
 	},
-	
+
 	electricterrain: {
 		inherit: true,
 		condition: {
@@ -140,6 +140,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 25,
 	},
+	aquatail: {
+		inherit: true,
+		pp: 4,
+	},
 	belch: {
 		inherit: true,
 		flags: { protect: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1, sound: 1 },
@@ -148,6 +152,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		desc: "Cannot be selected if the user is below 50% HP.",
 		shortDesc: "Cannot be selected if the user is below 50% HP.",
+	},
+	boomburst: {
+		inherit: true,
+		pp: 4,
 	},
 	charge: {
 		inherit: true,
@@ -171,9 +179,27 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 	},
+	coil: {
+		inherit: true,
+		boosts: {
+			atk: 20,
+			def: 20,
+			accuracy: 20,
+		},
+		desc: "Raises the user's Attack, Defense, and accuracy by 20%.",
+		shortDesc: "Raises user's Attack, Defense, accuracy by 20%.",
+	},
 	direclaw: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+	},
+	dracometeor: {
+		inherit: true,
+		self: {
+			volatileStatus: 'spadown',
+		},
+		desc: "Applies SpA Down on the user.",
+		shortDesc: "Applies SpA Down on the user.",
 	},
 	dragonbreath: {
 		inherit: true,
@@ -286,6 +312,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		multihit: 10,
 		desc: "Hits 10 times. Each hit has a 10% chance to burn.",
 		shortDesc: "Hits 10 times. 10% chance to burn.",
+		pp: 3,
 	},
 	flashcannon: {
 		inherit: true,
@@ -351,36 +378,27 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	protect: {
 		inherit: true,
+		flags: { noassist: 1, failcopycat: 1, cantusetwice: 1 },
 		stallingMove: false,
 		volatileStatus: undefined,
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
-		},
+		onPrepareHit(pokemon) {},
 		onHit(pokemon) {
-			if (pokemon.volatiles["protect"]) this.effectState.stacks++;
-			else pokemon.addVolatile("protect");
+			if (!pokemon.volatiles['shield']) pokemon.addVolatile('shield');
+			pokemon.volatiles['shield'].effectState.shield += 50;
 		},
-		condition: {
-			duration: 0,
-			onStart(target) {
-				this.effectState.stacks = 1;
-				this.add('-start', target, 'Protect', this.effectState.stacks);
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-				target.getMoveHitData(move).bypassProtect = true;
-				this.add('-end', target, 'Protect', this.effectState.stacks);
-				this.effectState.stacks--;
-				this.add('-start', target, 'Protect', this.effectState.stacks);
-				return;
-			},
-			onUpdate(pokemon) {
-				if (this.effectState.stacks <= 0) pokemon.removeVolatile("protect");
-			},
+		condition: undefined,
+		shortDesc: "Grants 50 shield. Can't use on consecutive turns.",
+		pp: 4,
+	},
+	psybeam: {
+		inherit: true,
+		secondary: {
+			chance: 20,
+			volatileStatus: 'confusion',
 		},
-		desc: "Halves damage taken. Each use adds a stack which increases number of uses before breaking.",
-		shortDesc: "Halves damage taken. Each use adds a stack which increases uses.",
+		desc: "Has a 20% chance to confuse the target.",
+		shortDesc: "20% chance to confuse the target.",
+		pp: 2,
 	},
 	razorwind: {
 		inherit: true,
@@ -438,17 +456,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 	},
 	smartstrike: {
-		num: 684,
-		accuracy: true,
-		basePower: 70,
-		category: "Physical",
-		name: "Smart Strike",
-		pp: 10,
-		priority: 0,
+		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
-		target: "normal",
-		type: "Steel",
-		contestType: "Cool",
 	},
 	snore: {
 		inherit: true,
@@ -479,11 +488,95 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 20% chance to irradiate the target.",
 		shortDesc: "20% chance to irradiate the target.",
 	},
+	substitute: {
+		inherit: true,
+		condition: {
+			onStart(target, source, effect) {
+				if (effect?.id === 'shedtail') {
+					this.add('-start', target, 'Substitute', '[from] move: Shed Tail');
+				} else {
+					this.add('-start', target, 'Substitute');
+				}
+				this.effectState.hp = Math.floor(target.maxhp / 4);
+				if (target.volatiles['partiallytrapped']) {
+					this.add('-end', target, target.volatiles['partiallytrapped'].sourceEffect, '[partiallytrapped]', '[silent]');
+					delete target.volatiles['partiallytrapped'];
+				}
+			},
+			onTryPrimaryHitPriority: -1,
+			onTryPrimaryHit(target, source, move) {
+				if (target === source || move.flags['bypasssub'] || move.infiltrates) {
+					return;
+				}
+				let damage = this.actions.getDamage(source, target, move);
+				if (!damage && damage !== 0) {
+					this.add('-fail', source);
+					this.attrLastMove('[still]');
+					return null;
+				}
+				if (damage > target.volatiles['substitute'].hp) {
+					damage = target.volatiles['substitute'].hp as number;
+				}
+				target.volatiles['substitute'].hp -= damage;
+				source.lastDamage = damage;
+				if (target.volatiles['substitute'].hp <= 0) {
+					if (move.ohko) this.add('-ohko');
+					target.removeVolatile('substitute');
+				}
+				if (damage) {
+					this.actions.applyRecoilDamage(damage, move, source);
+				}
+				if (move.drain) {
+					this.heal(Math.ceil(damage * move.drain[0] / move.drain[1]), source, target, 'drain');
+				}
+				this.singleEvent('AfterSubDamage', move, null, target, source, move, damage);
+				this.runEvent('AfterSubDamage', target, source, move, damage);
+				return this.HIT_SUBSTITUTE;
+			},
+			onAnyModifyDamage(damage, source, target, move) {
+				if (target !== source) {
+					if (!move.infiltrates) {
+						this.debug('Substitute weaken');
+						return this.chainModify(0.5);
+					}
+				}
+			},
+			onEnd(target) {
+				if (target.hasAbility('emotionalsupport')) this.runEvent('Faint', target);
+				this.add('-end', target, 'Substitute');
+			},
+		},
+		desc: "The user takes 1/4 of its maximum HP, rounded down, and puts it into a substitute to take its place in battle. The substitute is removed once enough damage is inflicted on it, if the user switches out or faints, or if any Pokemon uses Tidy Up. Baton Pass can be used to transfer the substitute to an ally, and the substitute will keep its remaining HP. Until the substitute is broken, it receives damage from all attacks made by other Pokemon and shields the user from status effects and stat stage changes caused by other Pokemon. Sound-based moves and Pokemon with the Infiltrator Ability ignore substitutes. The user still takes normal damage from weather and status effects while behind its substitute. If the substitute breaks during a multi-hit attack, the user will take damage from any remaining hits. If a substitute is created while the user is trapped by a binding move, the binding effect ends immediately. Fails if the user does not have enough HP remaining to create a substitute without fainting, or if it already has a substitute. While behind Substitute, the user takes 1/2 damage from attacks, except for moves that ignore substitutes.",
+	},
 	swordsdance: {
 		inherit: true,
 		boosts: {
-			atk: 100,
+			atk: 50,
 		},
+	},
+	tidyup: {
+		inherit: true,
+		onHit(pokemon) {
+			let success = false;
+			for (const active of this.getAllActive()) {
+				if (active.removeVolatile('substitute')) success = true;
+			}
+			const removeAll = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			const sides = [pokemon.side, ...pokemon.side.foeSidesWithConditions()];
+			for (const side of sides) {
+				for (const sideCondition of removeAll) {
+					if (side.removeSideCondition(sideCondition)) {
+						this.add('-sideend', side, this.dex.conditions.get(sideCondition).name);
+						success = true;
+					}
+				}
+			}
+			if (success) this.add('-activate', pokemon, 'move: Tidy Up');
+			return !!this.boost({ atk: 20, spe: 20 }, pokemon, pokemon, null, false, true) || success;
+		},
+		desc: "Raises the user's Attack and Speed by 20%. Removes substitutes from all active Pokemon and ends the effects of Spikes, Stealth Rock, Sticky Web, and Toxic Spikes for both sides.",
+		shortDesc: "User +20% Atk, Spe. Clears all substitutes/hazards.",
+		pp: 5,
 	},
 	tripleaxel: {
 		inherit: true,
@@ -798,6 +891,19 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Ground",
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
+	},
+	radiowave: {
+		accuracy: 90,
+		basePower: 0,
+		category: "Status",
+		name: "Radio Wave",
+		pp: 3,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, metronome: 1, sound: 1 },
+		status: 'rad',
+		target: "normal",
+		type: "Bug",
+		shortDesc: "Irradiates the target.",
 	},
 	signalflare: {
 		accuracy: true,

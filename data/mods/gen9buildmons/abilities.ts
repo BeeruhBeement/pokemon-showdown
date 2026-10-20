@@ -1,4 +1,233 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
+	// furret
+	// skill
+	stuffedguardian: {
+		onAfterTerastallization(pokemon) {
+			if (pokemon.hp > pokemon.maxhp / 4) this.directDamage(pokemon.maxhp / 4);
+			else this.directDamage(pokemon.hp - 1);
+			pokemon.addVolatile('substitute');
+		},
+		onStart(pokemon) {
+			pokemon.canTerastallize = pokemon.teraType;
+		},
+		flags: {},
+		name: "Stuffed Guardian",
+		desc: "On Activation sets up Substitute for 1/4th of the user's Max HP. If the user has less than 1/4th of its max HP leaves it at 1 HP.",
+		shortDesc: "On Activation sets up Substitute for 1/4th of the user's max HP.",
+	},
+	// tree 1
+	andever: {
+		onStart(pokemon) {
+			if (pokemon.hp > pokemon.maxhp / 4) this.directDamage(pokemon.maxhp / 4);
+			else this.directDamage(pokemon.hp - 1);
+			pokemon.addVolatile('substitute');
+		},
+		flags: {},
+		name: "And Ever",
+		desc: "On switch-in sets up Substitute for 1/4th of the user's max HP. If the user has less than 1/4th of its max HP leaves it at 1 HP.",
+		shortDesc: "On switch-in sets up Substitute for 1/4th of the user's max HP.",
+		rating: 2,
+	},
+	itneverends: {
+		onAnyFaint() {
+			this.heal(30, this.effectState.target);
+		},
+		flags: {},
+		name: "It Never Ends",
+		shortDesc: "When any Pokemon faints, heal 30 HP.",
+		rating: 1,
+	},
+	emotionalsupport: {
+		flags: {},
+		name: "Emotional Support",
+		shortDesc: "Substitute breaking counts for on faint Perks.",
+		rating: 1,
+	},
+
+	// tree 2
+	prepping: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move?.effectType === 'Move' && target.getMoveHitData(move).crit) {
+				this.boost({atk: 5}, source);
+			}
+		},
+		flags: {},
+		name: "Prepping",
+		shortDesc: "+5% Atk Boost when landing a Critical Hit.",
+		rating: 1,
+	},
+	safespot: {
+		onBasePower(relayVar, source, target, move) {
+			if (source.volatiles['substitute']) return this.chainModify(1.05);
+		},
+		flags: {},
+		name: "Safespot",
+		shortDesc: "+5% Base Power of moves while behind Substitute.",
+		rating: 1,
+	},
+
+	// tree 3
+	hamsterwheel: {
+		onModifySpe(spe) {
+			return this.chainModify(1.15);
+		},
+		flags: {},
+		name: "Hamster Wheel",
+		shortDesc: "+15% Speed.",
+		rating: 1,
+	},
+
+	// beheeyem
+	// skill
+	wormhole: {
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('wormhole');
+		},
+		onStart(pokemon) {
+			pokemon.canTerastallize = null;
+		},
+		onUpdate(pokemon) {
+			if (pokemon.activeTurns === 3) pokemon.canTerastallize = pokemon.teraType;
+		},
+		condition: {
+			duration: 2,
+			noCopy: true,
+			onInvulnerability(target, source, move) {
+				if (this.effectState.duration === 2) {
+					return false;
+				} else {
+					return true;
+				}
+			},
+			onBasePower(relayVar, source, target, move) {
+				return this.chainModify(1.3);
+			},
+			onBeforeMove(pokemon) {
+				if (this.effectState.duration === 2) {
+					return false;
+				}
+			},
+		},
+		flags: {},
+		name: "Wormhole",
+		desc: "After being active for 3 turns this Ability can be activated. When activated the Pokemon does not act for the turn and avoids all attacks, it also gains 1.3x power on its moves on the turn after.",
+		shortDesc: "After being active for 3 turns can activate: semi invulnerable and 1.3x power next turn.",
+	},
+	// tree 1
+	probing: {
+		onBasePower(relayVar, source, target, move) {
+			if (target.status === 'par' || target.status === 'rad') {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Probing",
+		shortDesc: "Increases damage dealt to paralyzed or irradiated targets by 10%.",
+		rating: 1,
+	},
+	spacemodulator: {
+		onModifyMove(move, pokemon, target) {
+			if (move.volatileStatus === 'confusion') {
+				move.volatileStatus = undefined;
+				move.status = 'rad' as ID;
+			}
+			if (move.secondary && move.secondary.volatileStatus === 'confusion') {
+				move.secondary.volatileStatus = undefined;
+				move.secondary.status = 'rad' as ID;
+			}
+		},
+		flags: {},
+		name: "Space Modulator",
+		shortDesc: "Swaps confusion with Radiation on moves.",
+		rating: 1,
+	},
+	dnadecompiler: {
+		onBasePower(relayVar, source, target, move) {
+			if (target.status === 'par' || target.status === 'rad') {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "DNA Decompiler",
+		shortDesc: "Increases damage dealt to paralyzed or irradiated targets by 10%.",
+		rating: 1,
+	},
+	loophole: {
+		onAnyDamage(damage, target, source, effect) {
+			if (target === this.effectState.target) this.heal(target.maxhp / 20, target, target)
+		},
+		flags: {},
+		name: "Loophole",
+		shortDesc: "Heals 5% after taking any damage",
+		rating: 1,
+	},
+
+	// tree 2
+	surveillancedrone: {
+		onSourceBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Ground') {
+				return this.chainModify(0.8);
+			}
+		},
+		flags: {},
+		name: "Surveillance Drone",
+		shortDesc: "Weakens Ground type damage taken by 20%.",
+		rating: 1,
+	},
+	laserproficency: {
+		onBasePower(relayVar, source, target, move) {
+			if (move.name.includes('Beam')) return this.chainModify(1.1);
+		},
+		flags: {},
+		name: "Laser Proficency",
+		desc: 'Boost the Base Power of moves that contain "Beam" in their name by 10%.',
+		shortDesc: 'Boost the Base Power of "Beam" moves by 10%.',
+		rating: 1,
+	},
+	pewpewpew: {
+		onModifyMove(move, pokemon, target) {
+			if (move.name.includes('Beam')) move.flags.bullet = 1;
+		},
+		flags: {},
+		name: "Pew Pew Pew",
+		desc: 'Moves that have "Beam" in their name have the bullet flag added.',
+		shortDesc: '"Beam" moves have the bullet flag added.',
+		rating: 1,
+	},
+	mothership: {
+		onUpdate(pokemon) {
+			if (pokemon.hasType('Steel')) return false;
+			if (!pokemon.addType('Steel')) return false;
+			this.add('-start', pokemon, 'typeadd', 'Steel', '[from] ability: Mothership');
+		},
+		flags: {},
+		name: "Mothership",
+		shortDesc: 'Adds the Steel type to the Pokemon.',
+		rating: 2,
+	},
+
+	// tree 3
+	noosphere: {
+		flags: {},
+		name: "Noosphere",
+		shortDesc: ".",
+		rating: 1,
+	},
+	binarysignal: {
+		flags: {},
+		name: "Binary Signal",
+		shortDesc: ".",
+		rating: 1,
+	},
+
+	//durant
+	//skill
+	pincermaneuver: {
+		flags: {},
+		name: "Pincer Maneuver",
+		shortDesc: "Placeholder.",
+	},
+
 	// noivern
 	// skill
 	sonar: {
@@ -20,7 +249,10 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.add('-start', pokemon, `Sonar: ${this.effectState.stacks}x`, '[silent]');
 		},
 		onAfterMoveSecondarySelf(source, target, move) {
-			if (move.flags.sound || (source.hasAbility('') && (move.type === "Dragon" || move.type === "Flying"))) this.effectState.stacks++;
+			if (move.flags.sound || (source.hasAbility('') && (move.type === "Dragon" || move.type === "Flying"))) {
+				this.add('-end', source, `Sonar: ${this.effectState.stacks}x`, '[silent]');
+				this.effectState.stacks++;
+			}
 		},
 		flags: {},
 		name: "Sonar",
@@ -30,7 +262,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	// tree 1
 	dampener: {
 		onBasePower(relayVar, source, target, move) {
-			if (target.isAlly(source)) return this.chainModify([6, 10]);
+			if (target.isAlly(source)) return this.chainModify(0.6);
 		},
 		flags: { breakable: 1 },
 		name: "Dampener",
@@ -48,9 +280,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	poweroffriendship: {
 		onModifySpA(spa, pokemon) {
-			this.effectState.boost = 0;
-			pokemon.adjacentAllies().forEach(this.effectState.boost += 5);
-			return this.chainModify([100, 100 + this.effectState.boost]);
+			const allies = pokemon.adjacentAllies().length;
+			return this.chainModify([100 + 5 * allies, 100]);
 		},
 		flags: {},
 		name: "Power of Friendship",
@@ -70,7 +301,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	centerpiece: {
 		onBasePower(relayVar, source, target, move) {
-			if (source.position === 1) return this.chainModify([11, 10]);
+			if (source.position === 1) return this.chainModify(1.1);
 		},
 		flags: {},
 		name: "Centerpiece",
@@ -217,7 +448,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	soundboost: {
 		onBasePower(relayVar, source, target, move) {
-			if (move.flags.sound) return this.chainModify([11, 10]);
+			if (move.flags.sound) return this.chainModify(1.1);
 		},
 		flags: {},
 		name: "Sound Boost",
@@ -226,7 +457,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	straightupevil: {
 		onBasePower(relayVar, source, target, move) {
-			if (source.position === 1) return this.chainModify([11, 10]);
+			if (source.position === 1) return this.chainModify(1.1);
 		},
 		flags: {},
 		name: "Straight Up Evil",

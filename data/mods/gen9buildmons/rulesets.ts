@@ -59,11 +59,16 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 				}
 			}
 		},
+	},
+	buildmonsperks: {
+		effectType: 'Rule',
+		name: 'Buildmons Perks',
+		desc: "Activates the selected Buildmons perks.",
 		onBeforeSwitchIn(pokemon) {
 			if (pokemon.m.innates) {
 				for (const innate of pokemon.m.innates) {
-					if (pokemon.hasAbility(innate)) continue;
 					const effect = 'ability:' + this.toID(innate);
+					if (innate === pokemon.ability || pokemon.volatiles[effect]) continue;
 					pokemon.volatiles[effect] = this.initEffectState({ id: effect, target: pokemon });
 				}
 			}
