@@ -146,7 +146,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamage(damage, target, source, effect) {
 			this.effectState.checkedAngerShell = !(
 				effect.effectType === "Move" && !effect.multihit &&
-				!(effect.hasSheerForce && source.hasAbility('sheerforce'))
+				!this.suppressingSecondaries()
 			);
 		},
 		onTryEatItem(item) {
@@ -263,7 +263,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return !this.effectState.unnerved;
 		},
 		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
+			if (effect?.effectType === 'Move') {
 				this.boost({ atk: length }, source, source, this.dex.abilities.get('chillingneigh'));
 			}
 		},
@@ -287,7 +287,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return !this.effectState.unnerved;
 		},
 		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
+			if (effect?.effectType === 'Move') {
 				this.boost({ spa: length }, source, source, this.dex.abilities.get('grimneigh'));
 			}
 		},
@@ -403,7 +403,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	beastboost: {
 		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
+			if (effect?.effectType === 'Move') {
 				const bestStat = source.getBestStat(true, true);
 				this.boost({ [bestStat]: length }, source);
 			}
@@ -417,7 +417,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamage(damage, target, source, effect) {
 			this.effectState.checkedBerserk = !(
 				effect.effectType === "Move" && !effect.multihit &&
-				!(effect.hasSheerForce && source.hasAbility('sheerforce'))
+				!this.suppressingSecondaries()
 			);
 		},
 		onTryEatItem(item) {
@@ -502,7 +502,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	chillingneigh: {
 		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
+			if (effect?.effectType === 'Move') {
 				this.boost({ atk: length }, source);
 			}
 		},
@@ -576,7 +576,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (target.side.active.length === 2 && target.position === 1) {
 					// Curse Glitch
 					const action = this.queue.willMove(target);
-					if (action && action.move.id === 'curse') {
+					if (action?.move.id === 'curse') {
 						action.targetLoc = -1;
 					}
 				}
@@ -679,7 +679,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	contrary: {
 		onChangeBoost(boost, target, source, effect) {
-			if (effect && effect.id === 'zpower') return;
+			if (effect?.id === 'zpower') return;
 			let i: BoostID;
 			for (i in boost) {
 				boost[i]! *= -1;
@@ -819,7 +819,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onAnyDamage(damage, target, source, effect) {
-			if (effect && effect.name === 'Aftermath') {
+			if (effect?.name === 'Aftermath') {
 				return false;
 			}
 		},
@@ -1149,7 +1149,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	eelevate: {
 		isNonstandard: "Future",
 		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
+			if (effect?.effectType === 'Move') {
 				const bestStat = source.getBestStat(true, true);
 				this.boost({ [bestStat]: length }, source);
 			}
@@ -1250,7 +1250,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 302,
 	},
 	emergencyexit: {
-		onEmergencyExit(target) {
+		onEmergencyExit(originalHp, target) {
+			if (!target.hp || target.hp > target.maxhp / 2 || originalHp <= target.maxhp / 2) return;
 			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
 			for (const side of this.sides) {
 				for (const active of side.active) {
@@ -1717,7 +1718,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	grimneigh: {
 		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
+			if (effect?.effectType === 'Move') {
 				this.boost({ spa: length }, source);
 			}
 		},
@@ -1848,7 +1849,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onDamage(damage, target, source, effect) {
-			if (effect && effect.id === 'brn') {
+			if (effect?.id === 'brn') {
 				return damage / 2;
 			}
 		},
@@ -2750,7 +2751,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	moxie: {
 		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
+			if (effect?.effectType === 'Move') {
 				this.boost({ atk: length }, source);
 			}
 		},
@@ -4285,7 +4286,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	simple: {
 		onChangeBoost(boost, target, source, effect) {
-			if (effect && effect.id === 'zpower') return;
+			if (effect?.id === 'zpower') return;
 			let i: BoostID;
 			for (i in boost) {
 				boost[i]! *= 2;
@@ -4338,7 +4339,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onEnd(pokemon) {
-			if (pokemon.beingCalledBack) return;
+			if (pokemon.beingCalledBack || !this.effectState.counter) return;
 			this.add('-end', pokemon, 'Slow Start', '[silent]');
 		},
 		flags: {},
@@ -4681,7 +4682,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onDamagePriority: -30,
 		onDamage(damage, target, source, effect) {
-			if (target.hp === target.maxhp && damage >= target.hp && effect && effect.effectType === 'Move') {
+			if (target.hp === target.maxhp && damage >= target.hp && effect?.effectType === 'Move') {
 				this.add('-ability', target, 'Sturdy');
 				return target.hp - 1;
 			}
@@ -4739,6 +4740,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onEnd(pokemon) {
+			if (pokemon.beingCalledBack || !this.effectState.fallen) return;
 			this.add('-end', pokemon, `fallen${this.effectState.fallen}`, '[silent]');
 		},
 		onBasePowerPriority: 21,
@@ -4859,7 +4861,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	synchronize: {
 		onAfterSetStatus(status, target, source, effect) {
 			if (!source || source === target) return;
-			if (effect && effect.id === 'toxicspikes') return;
+			if (effect?.id === 'toxicspikes') return;
 			if (status.id === 'slp' || status.id === 'frz') return;
 			this.add('-activate', target, 'ability: Synchronize');
 			// Hack to make status-prevention abilities think Synchronize is a status move
@@ -5493,7 +5495,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 73,
 	},
 	wimpout: {
-		onEmergencyExit(target) {
+		onEmergencyExit(originalHp, target) {
+			if (!target.hp || target.hp > target.maxhp / 2 || originalHp <= target.maxhp / 2) return;
 			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
 			for (const side of this.sides) {
 				for (const active of side.active) {
@@ -5648,7 +5651,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	// CAP
 	mountaineer: {
 		onDamage(damage, target, source, effect) {
-			if (effect && effect.id === 'stealthrock') {
+			if (effect?.id === 'stealthrock') {
 				return false;
 			}
 		},
