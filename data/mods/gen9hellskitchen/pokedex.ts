@@ -1219,4 +1219,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: { 0: "Striker", 1: "Queenly Majesty", H: "Sweet Veil" },
 	},
+	revavroom: {
+		inherit: true,
+		abilities: { 0: "Overcoat", 1: "Speed Boost", H: "Filter" },
+	},
 };
