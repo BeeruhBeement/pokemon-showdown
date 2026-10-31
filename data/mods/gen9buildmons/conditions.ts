@@ -211,13 +211,35 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			if (target.hp >= healingLimit) return false;
 			if (target.hp + damage > healingLimit) return healingLimit - target.hp;
 		},
-		onResidualOrder: 9,
-		onResidual(pokemon) {
-			if (pokemon.hp > pokemon.maxhp * 0.8) {
-				const damageNeeded = pokemon.hp - (pokemon.maxhp * 0.8);
+		onUpdate(pokemon) {
+			if (pokemon.hp > pokemon.maxhp / 5 * 4) {
+				const damageNeeded = pokemon.hp - (pokemon.maxhp / 5 * 4);
 				this.damage(damageNeeded);
 			}
 			
+			const chance = 4 - this.effectState.duration!;
+			if (this.randomChance(chance, 5)) {
+				pokemon.cureStatus();
+			}
+		},
+	},
+	cor: {
+		name: 'cor',
+		effectType: 'Status',
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect?.effectType === 'Ability') {
+				this.add('-status', target, 'cor', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
+			} else {
+				this.add('-status', target, 'cor');
+			}
+		},
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			this.damage(source.lastDamage / 30, target);
+		},
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 30);
 			const chance = 4 - this.effectState.duration!;
 			if (this.randomChance(chance, 5)) {
 				pokemon.cureStatus();
@@ -424,9 +446,6 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				return;
 			}
 			this.add('-activate', pokemon, 'confusion');
-			if (!this.randomChance(33, 100)) {
-				return;
-			}
 			this.activeTarget = pokemon;
 			const damage = this.actions.getConfusionDamage(pokemon, 40);
 			if (typeof damage !== 'number') throw new Error("Confusion damage not dealt");
@@ -556,7 +575,26 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 
-	supression: {
+	burst: {
+		name: 'burst',
+		duration: 1,
+		noCopy: true,
+		onStart(pokemon, source, sourceEffect) {
+			this.effectState.lastMove = sourceEffect?.effectType === 'Move' ? sourceEffect.id : '';
+			this.add('-start', pokemon, 'Burst');
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, 'Burst');
+		},
+		onTryMovePriority: -2,
+		onTryMove(pokemon, target, move) {
+			if (this.effectState.lastMove !== move.id) {
+				pokemon.removeVolatile('burst');
+			}
+			this.effectState.lastMove = move.id;
+		},
+	},
+	suppression: {
 		name: 'suppression',
 		duration: 3,
 		onStart(target, source, sourceEffect) {
@@ -590,6 +628,9 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onModifySpe(spe, pokemon) {
 			this.debug('Haste boost');
 			return this.chainModify(1.35);
+		},
+		onModifyWeight(weighthg, pokemon) {
+			return weighthg + 10;
 		},
 	},
 	regen: {
@@ -625,37 +666,36 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			}
 		},
 		duration: 3,
-		onStart(target, source, sourceEffect) {
+		onStart(target) {
 			this.add('-start', target, 'brittle');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'brittle');
 		},
 	},
 	shield: {
 		name: 'shield',
 		duration: 1,
 		onStart(target, source, sourceEffect) {
-			if (this.effectState.shield === undefined) {
-				this.effectState.shield = 0;
-			}
+			target.m.buildmonsShield = Math.min(target.m.buildmonsShield || 0, target.maxhp);
 		},
 		onUpdate(target) {
-			if (this.effectState.shield > target.maxhp) {
-				this.effectState.shield = target.maxhp;
-			}
+			target.m.buildmonsShield = Math.min(target.m.buildmonsShield || 0, target.maxhp);
 		},
 		onDamage(damage, target, source, effect) {
-			const shield = this.effectState.shield || 0;
+			const shield = target.m.buildmonsShield || 0;
 			if (shield <= 0) {
 				return damage;
 			}
 			
 			const shieldAbsorbed = Math.min(damage, shield);
-			this.effectState.shield -= shieldAbsorbed;
+			target.m.buildmonsShield = shield - shieldAbsorbed;
 			const remainingDamage = damage - shieldAbsorbed;
 			
 			// Update shield display
-			if (this.effectState.shield > 0) {
+			if (target.m.buildmonsShield > 0) {
 				this.add('-end', target, 'Shield', '[silent]');
-				this.add('-start', target, `Shield: ${Math.floor(this.effectState.shield)}`, '[silent]');
+				this.add('-start', target, `Shield: ${Math.floor(target.m.buildmonsShield)}`, '[silent]');
 			} else {
 				this.add('-end', target, 'Shield', '[silent]');
 				target.removeVolatile('shield');
@@ -664,6 +704,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			return remainingDamage;
 		},
 		onEnd(target) {
+			target.m.buildmonsShield = 0;
 			this.add('-end', target, 'Shield');
 		},
 	},

@@ -402,14 +402,6 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 	},
 
 	// mod effects
-	rot: {
-		start: "  [POKEMON] is rotting!",
-		end: "  [POKEMON] healed from rot!",
-		endFromItem: "  [POKEMON]'s [ITEM] healing it of its rot!",
-		alreadyStarted: "  [POKEMON] is already rotting!",
-		activate: "  [POKEMON] is rotten!",
-		damage: "The rot is wearing it down!",
-	},
 	bld: {
 		start: "  [POKEMON] started bleeding!",
 		startFromItem: "  [POKEMON] was injured by the [ITEM]!",
@@ -438,5 +430,21 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		alreadyStarted: "  [POKEMON] is already irradiated!",
 		end: "  [POKEMON] is no longer irradiated!",
 		endFromItem: "  [POKEMON]'s [ITEM] cured it of irradiation!",
+	},
+	cor: {
+		start: "  [POKEMON] was corroded!",
+		startFromItem: "  [POKEMON] was corroded by the [ITEM]!",
+		alreadyStarted: "  [POKEMON] is already corroded!",
+		end: "  [POKEMON] is no longer corroded!",
+		endFromItem: "  [POKEMON]'s [ITEM] cured it of corrosion!",
+		damage: "  [POKEMON] was hurt by corrosion!",
+	},
+	rot: {
+		start: "  [POKEMON] is rotting!",
+		end: "  [POKEMON] healed from rot!",
+		endFromItem: "  [POKEMON]'s [ITEM] healing it of its rot!",
+		alreadyStarted: "  [POKEMON] is already rotting!",
+		activate: "  [POKEMON] is rotten!",
+		damage: "The rot is wearing it down!",
 	},
 };

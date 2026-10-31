@@ -3,7 +3,27 @@ import { Pokedex as Base } from '../../pokedex';
 export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
 	furret: {
 		isNonstandard: null,
+		tier: "UU",
+		doublesTier: "DOU",
+	},
+	noctowl: {
+		isNonstandard: null,
+		tier: "UU",
+		doublesTier: "DOU",
+	},
+	granbull: {
+		isNonstandard: null,
 		tier: "OU",
+		doublesTier: "DOU",
+	},
+	floatzel: {
+		isNonstandard: null,
+		tier: "UU",
+		doublesTier: "DOU",
+	},
+	vanilluxe: {
+		isNonstandard: null,
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	beheeyem: {
@@ -16,9 +36,24 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		doublesTier: "DOU",
 	},
+	delphox: {
+		isNonstandard: null,
+		tier: "UU",
+		doublesTier: "DOU",
+	},
 	noivern: {
 		isNonstandard: null,
+		tier: "UU",
+		doublesTier: "DOU",
+	},
+	thievul: {
+		isNonstandard: null,
 		tier: "OU",
+		doublesTier: "DOU",
+	},
+	perrserker: {
+		isNonstandard: null,
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 };

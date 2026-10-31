@@ -3,6 +3,7 @@ import { Dex, toID } from '../../../sim/dex';
 import type { MoveRequestData } from '../../../sim/side';
 import type { Move } from '../../../sim/dex-moves';
 import { learnsetUpdate } from "./learnsetupdate";
+import { clampIntRange } from '../../../lib/utils';
 
 export interface NatureData {
 	name: string;
@@ -22,7 +23,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 		}
 		for (const i in this.data.Moves) {
+			if (this.modData('Moves', i).pp > 8) this.modData('Moves', i).pp = Math.max(this.trunc(1 / this.modData('Moves', i).pp * 50), 1);
 			this.modData('Moves', i).noPPBoosts = true;
+			this.modData('Moves', i).isNonStandard = null;
 		}
 
 		learnsetUpdate(this);
@@ -73,7 +76,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			basePower = this.battle.clampIntRange(basePower, 1);
 
 			// Crit rate is now percentage-based (0-100)
-			let critChance = this.battle.runEvent('ModifyCritRatio', source, target, move, move.critRatio || 0);
+			let critChance = this.battle.runEvent('ModifyCritRatio', source, target, move, move.critRatio || 1);
 			critChance = this.battle.clampIntRange(critChance, 0, 100);
 
 			const moveHit = target.getMoveHitData(move);
@@ -185,7 +188,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			// crit - not a modifier
 			const isCrit = target.getMoveHitData(move).crit;
 			if (isCrit) {
-				baseDamage = tr(baseDamage * (move.critModifier || (this.battle.gen >= 6 ? 1.15 : 2)));
+				baseDamage = tr(baseDamage * (move.critModifier || (this.battle.gen >= 6 ? 1.2 : 2)));
 			}
 
 			// random factor - also not a modifier
@@ -241,7 +244,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					if (!suppressMessages) this.battle.add('-supereffective', target);
 
 					for (let i = 0; i < typeMod; i++) {
-						baseDamage *= 1.25;
+						baseDamage *= 1.3;
 					}
 				}
 				if (typeMod < 0) {
@@ -358,7 +361,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			pokemon.canTerastallize = false;
 
-			this.battle.add('-message', `${pokemon.name} activated its ${pokemon.getAbility().name}.`);
+			this.battle.add('-message', `${pokemon.name} activated its Skill: ${pokemon.getAbility().name}.`);
 
 			this.battle.runEvent('AfterTerastallization', pokemon);
 		},

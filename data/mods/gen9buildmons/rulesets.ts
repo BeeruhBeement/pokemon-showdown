@@ -73,6 +73,11 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 				}
 			}
 		},
+		onUpdate(pokemon) {
+			if (pokemon.m.buildmonsShield > 0 && !pokemon.volatiles['shield']) {
+				pokemon.addVolatile('shield');
+			}
+		},
 		onSwitchOut(pokemon) {
 			for (const innate of Object.keys(pokemon.volatiles).filter(i => i.startsWith('ability:'))) {
 				pokemon.removeVolatile(innate);
@@ -109,6 +114,24 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 					`You are limited to ${itemLimit} of each item and move by Item Clause.`,
 				];
 			}
+		},
+	},
+	datamod: {
+		inherit: true,
+		onSwitchInPriority: 1,
+		onSwitchIn(pokemon) {
+			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (target.hasAbility('illusion')) { 
+				this.add('-start', target, 'typechange', (target.illusion || target).getTypes(true).join('/'), '[silent]');
+			}
+		},
+		onAfterMega(pokemon) {
+			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
+		},
+		onUpdate(pokemon) {
+			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 		},
 	},
 };

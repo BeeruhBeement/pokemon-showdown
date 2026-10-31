@@ -43,7 +43,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		shortDesc: "Substitute breaking counts for on faint Perks.",
 		rating: 1,
 	},
-
 	// tree 2
 	prepping: {
 		onSourceDamagingHit(damage, target, source, move) {
@@ -65,7 +64,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		shortDesc: "+5% Base Power of moves while behind Substitute.",
 		rating: 1,
 	},
-
 	// tree 3
 	hamsterwheel: {
 		onModifySpe(spe) {
@@ -74,6 +72,268 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		name: "Hamster Wheel",
 		shortDesc: "+15% Speed.",
+		rating: 1,
+	},
+
+	// granbull
+	// skill
+	wildhunt: {
+		onStart(pokemon) {
+			pokemon.canTerastallize = null;
+		},
+		onAnyFaint(pokemon) {
+			pokemon.canTerastallize = pokemon.teraType;
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('wildhunt');
+		},
+		condition: {
+			duration: 1,
+			noCopy: true,
+			onStart(target) {
+				this.add('-start', target, 'Wild Hunt');
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Wild Hunt');
+			},
+			onSourceDamagingHit(damage, target, source, move) {
+				if (!source?.hp) return;
+				const healAmount = Math.max(1, Math.trunc(target.lastDamage / 3));
+				const overheal = Math.max(0, healAmount - (source.maxhp - source.hp));
+				this.heal(healAmount, source, source, "drain");
+				if (!overheal) return;
+
+				const oldShield = source.m.buildmonsShield || 0;
+				const newShield = Math.min(oldShield + overheal, source.maxhp);
+				source.m.buildmonsShield = newShield;
+				this.add('-end', source, `Shield: ${Math.floor(oldShield)}`);
+				this.add('-start', source, `Shield: ${Math.floor(newShield)}`, '[silent]');
+			},
+			onModifyDamage(relayVar, source, target, move) {
+				if (move.type === "Fairy" || (move.type === "Fighting" && source.hasAbility('packapunch'))) {
+					return this.chainModify(1.2);
+				}
+			},
+			onResidualOrder: 1,
+			onResidual(pokemon) {
+				this.damage(pokemon.maxhp / 4, pokemon)
+			},
+		},
+		flags: {},
+		name: "Wild Hunt",
+		desc: "Can be activated once any Pokemon on the field Faints while this Pokemon is active. Once activated for the turn moves gain 1/3 drain and if this causes to heal over 100% shield is granted for that amount, Fairy-type moves are boosted by 20%, but at the end of the turn this Pokemon will take 25% of its max HP in damage.",
+		shortDesc: "Can activate after any Faint: boost Fairy 1.2x, moves gain drain, take dmg on residual.",
+	},
+	// tree 1
+	physres: {
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.category === "Physical") {
+				return this.chainModify(0.95);
+			}
+		},
+		flags: {},
+		name: "Phys Res",
+		shortDesc: "Physical damage taken is reduced by 5%.",
+		rating: 1,
+	},
+	spreaddmg: {
+		onModifyDamage(relayVar, source, target, move) {
+			if (move.spreadHit) {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Spread DMG",
+		shortDesc: "Spread moves deal 10% more damage.",
+		rating: 1,
+	},
+	bigmaws: {
+		onModifyMove(move, pokemon, target) {
+			if (move.flags.bite) move.target = 'allAdjacentFoes';
+		},
+		flags: {},
+		name: "Big Maws",
+		shortDesc: "Biting moves become spread. (All adjcent foes)",
+		rating: 1,
+	},
+	glitterbomb: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.type === "Fairy") {
+				target.addVolatile("glitterbomb");
+			}
+		},
+		condition: {
+			duration: 2,
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Glitter Bomb');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Glitter Bomb');
+			},
+			onModifyDamage(relayVar, source, target, move) {
+				if (move && this.effectState.target.getMoveHitData(move).typeMod > 0) {
+					return this.chainModify(1.1);
+				}
+			},
+		},
+		flags: {},
+		name: "Glitter Bomb",
+		desc: "Fairy moves apply Glitter Bomb on foes, increasing super-effective dmg taken by 1.1x for 2 turns.",
+		shortDesc: "Fairy moves apply Glitter Bomb on foes.",
+		rating: 1,
+	},
+	entombingjaws: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags.bite && !target.isAlly(source)) {
+				target.trySetStatus("ptr");
+			}
+		},
+		flags: {},
+		name: "Entombing Jaws",
+		shortDesc: "Biting moves apply Petrify if target is foe.",
+		rating: 3,
+	},
+	// tree 2
+	swapptr: {
+		onAnyTryAddVolatile(status, target, source, sourceEffect) {
+			if (source !== this.effectState.target || target === source) return;
+			if (status.id === 'flinch' || status.id.includes("down")) {
+				target.trySetStatus('ptr');
+				return null;
+			}
+		},
+		flags: {},
+		name: "Swap PTR",
+		shortDesc: "Swap Flinch/Stat Down effects for Petrify status.",
+		rating: 1,
+	},
+	vigor: {
+		onStart(pokemon) {
+			const appliedBoosts = pokemon.m.buildmonsMaxHPBoosts || (pokemon.m.buildmonsMaxHPBoosts = {});
+			if (appliedBoosts.vigor) return;
+			const oldMaxHP = pokemon.maxhp;
+			pokemon.maxhp *= 1.2;
+			pokemon.sethp(pokemon.hp + (pokemon.maxhp - oldMaxHP));
+			appliedBoosts.vigor = true;
+		},
+		flags: {},
+		name: "Vigor",
+		shortDesc: "+20% Max HP",
+		rating: 1,
+	},
+	whiletheyredown: {
+		onAnyAfterMoveSecondary(target, source, move) {
+			const user = this.effectState.target;
+			if (!source || source === target || !target.hp || !move.totalDamage || !user.hp || !user.isActive ||
+				target.isAlly(user)) return;
+			const lastAttackedBy = target.getLastAttackedBy();
+			if (!lastAttackedBy) return;
+			const damage = move.multihit && !move.smartTarget ? move.totalDamage : lastAttackedBy.damage;
+			if (target.hp * 5 <= target.maxhp * 2 && (target.hp + damage) * 5 > target.maxhp * 2) {
+				this.actions.useMove('lowkick', user, { target });
+			}
+		},
+		flags: {},
+		name: "While They're Down",
+		desc: "When a foe is brought to 40% HP or less by damage, uses Low Kick on them.",
+		shortDesc: "Uses Low Kick when a foe is brought to 40% HP or less.",
+		rating: 1,
+	},
+	gildedshackles: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (move.type === 'Steel') {
+				move.type = 'Fairy';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onModifyDamage(relayVar, source, target, move) {
+			if (!source.set.shiny) {
+				this.chainModify(1.15);
+			}
+		},
+		onUpdate(pokemon) {
+			if (pokemon.set.shiny) {
+				if (pokemon.volatiles['spedown']) pokemon.removeVolatile('spedown');
+				return;
+			}
+			if (!pokemon.volatiles['spedown']) pokemon.addVolatile('spedown', pokemon, this.effect);
+			if (pokemon.volatiles['spedown']) pokemon.volatiles['spedown'].duration = 1;
+		},
+		onResidual(pokemon) {
+			if (pokemon.set.shiny) this.heal(pokemon.maxhp / 10, pokemon);
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			if (target.set.shiny) {
+				return this.chainModify(0.95);
+			}
+		},
+		flags: {},
+		name: "Gilded Shackles",
+		desc: "Steel-type moves are Fairy-type. If this Pokemon isn't Shiny it deals 15% more damage and has Spe Down. If this Pokemon is Shiny it heals 5% on Residual and takes 5% less damage. Additionally become immune to Spe Down while Shiny.",
+		shortDesc: "Steel-type moves are Fairy-type. + Additional effects.",
+		rating: 1,
+	},
+	rocksplosion: {
+		onModifyDamage(relayVar, source, target, move) {
+			if (target.status === 'ptr') {
+				target.cureStatus();
+				return this.chainModify(1.2);
+			}
+		},
+		flags: {},
+		name: "Rocksplosion",
+		desc: "Hitting a Petrified target deals 20% more damage and cures their status.",
+		shortDesc: "Hitting a PTR target deals 20% more damage and cures their status.",
+		rating: 2,
+	},
+	// tree 3
+	packapunch: {
+		onModifyDamage(relayVar, source, target, move) {
+			if (move.type === "Fighting") {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Pack-a-Punch",
+		desc: "Boosts Fighting moves damage by 1.1x. They also gain the damage boost from Wild Hunt.",
+		shortDesc: "Boosts Fighting moves damage by 1.1x.",
+		rating: 1,
+	},
+	lickwounds: {
+		onAnyDamage(damage, target, source, effect) {
+			const user = this.effectState.target;
+			if (effect.effectType === 'Move' && (effect as Move).flags['bite'] &&
+				source === user && target.isAlly(user)) {
+				this.heal(damage, target, user, effect);
+				return 0;
+			}
+		},
+		onResidual(pokemon) {
+			this.heal(pokemon.maxhp / 20, pokemon);
+		},
+		flags: {},
+		name: "Lick Wounds",
+		desc: "Biting moves heal instead of damaging if target is ally. 5% heal on Residual.",
+		shortDesc: "Biting moves heal if target is ally. 5% heal on Residual.",
+		rating: 1,
+	},
+	beararms: {
+		onModifyAtk(atk, pokemon) {
+			return this.chainModify(1.1);
+		},
+		flags: {},
+		name: "Bear Arms",
+		shortDesc: "10% more Attack.",
+		rating: 1,
+	},
+	shieldedfavor: {
+		onAfterTerastallization(pokemon) {
+			pokemon.m.buildmonsShield = Math.min((pokemon.m.buildmonsShield || 0) + pokemon.maxhp / 10, pokemon.maxhp);
+		},
+		flags: {},
+		name: "Shielded Favor",
+		shortDesc: "Gain 10% shield when activating Skill.",
 		rating: 1,
 	},
 
@@ -87,11 +347,17 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			pokemon.canTerastallize = null;
 		},
 		onUpdate(pokemon) {
-			if (pokemon.activeTurns === 3) pokemon.canTerastallize = pokemon.teraType;
+			if (pokemon.activeTurns === 2) pokemon.canTerastallize = pokemon.teraType;
 		},
 		condition: {
 			duration: 2,
 			noCopy: true,
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Wormhole', '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Wormhole', '[silent]');
+			},
 			onInvulnerability(target, source, move) {
 				if (this.effectState.duration === 2) {
 					return false;
@@ -110,12 +376,12 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Wormhole",
-		desc: "After being active for 3 turns this Ability can be activated. When activated the Pokemon does not act for the turn and avoids all attacks, it also gains 1.3x power on its moves on the turn after.",
-		shortDesc: "After being active for 3 turns can activate: semi invulnerable and 1.3x power next turn.",
+		desc: "After being active for 2 turns this Ability can be activated. When activated the Pokemon does not act for the turn and avoids all attacks, it also gains 1.3x power on its moves on the turn after.",
+		shortDesc: "After being active for 2 turns can activate: semi invulnerable and 1.3x power next turn.",
 	},
 	// tree 1
 	probing: {
-		onBasePower(relayVar, source, target, move) {
+		onModifyDamage(relayVar, source, target, move) {
 			if (target.status === 'par' || target.status === 'rad') {
 				return this.chainModify(1.1);
 			}
@@ -126,30 +392,28 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 1,
 	},
 	spacemodulator: {
-		onModifyMove(move, pokemon, target) {
-			if (move.volatileStatus === 'confusion') {
-				move.volatileStatus = undefined;
-				move.status = 'rad' as ID;
-			}
-			if (move.secondary && move.secondary.volatileStatus === 'confusion') {
-				move.secondary.volatileStatus = undefined;
-				move.secondary.status = 'rad' as ID;
+		onAnyTryAddVolatile(status, target, source, sourceEffect) {
+			if (source !== this.effectState.target || target === source) return;
+			if (status.id === 'confusion') {
+				target.trySetStatus('rad');
+				return null;
 			}
 		},
 		flags: {},
 		name: "Space Modulator",
-		shortDesc: "Swaps confusion with Radiation on moves.",
+		shortDesc: "Swaps confusion with Radiation.",
 		rating: 1,
 	},
 	dnadecompiler: {
-		onBasePower(relayVar, source, target, move) {
-			if (target.status === 'par' || target.status === 'rad') {
-				return this.chainModify(1.1);
+		onAnyAfterSetStatus(status, target, source, effect) {
+			if (source !== this.effectState.target || target === source) return;
+			if (status.id === 'rad') {
+				target.addVolatile('spddown');
 			}
 		},
 		flags: {},
 		name: "DNA Decompiler",
-		shortDesc: "Increases damage dealt to paralyzed or irradiated targets by 10%.",
+		shortDesc: "Irradiating a target applies SpD Down.",
 		rating: 1,
 	},
 	loophole: {
@@ -158,10 +422,29 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		flags: {},
 		name: "Loophole",
-		shortDesc: "Heals 5% after taking any damage",
+		shortDesc: "Heals 5% after taking any damage.",
 		rating: 1,
 	},
-
+	nuclearoption: {
+		onFaint(pokemon) {
+			for (const target of pokemon.foes()) {
+				target.trySetStatus('rad', pokemon);
+			}
+		},
+		flags: {},
+		name: "Nuclear Option",
+		shortDesc: "On faint irradiates all foes.",
+		rating: 1,
+	},
+	hyperspaceleap: {
+		onAfterTerastallization(pokemon) {
+			this.runEvent('Faint', pokemon);
+		},
+		flags: {},
+		name: "Hyperspace Leap",
+		shortDesc: "Activating Wormhole counts for On Faint effects.",
+		rating: 1,
+	},
 	// tree 2
 	surveillancedrone: {
 		onSourceBasePower(basePower, attacker, defender, move) {
@@ -194,38 +477,368 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		shortDesc: '"Beam" moves have the bullet flag added.',
 		rating: 1,
 	},
-	mothership: {
-		onUpdate(pokemon) {
-			if (pokemon.hasType('Steel')) return false;
-			if (!pokemon.addType('Steel')) return false;
-			this.add('-start', pokemon, 'typeadd', 'Steel', '[from] ability: Mothership');
+	voidlight: {
+		onAfterTerastallization(pokemon) {
+			this.heal(pokemon.maxhp / 4, pokemon);
 		},
 		flags: {},
-		name: "Mothership",
-		shortDesc: 'Adds the Steel type to the Pokemon.',
-		rating: 2,
+		name: "Voidlight",
+		shortDesc: "On Skill activation heal for 1/4th of max HP.",
+		rating: 1,
 	},
-
-	// tree 3
-	noosphere: {
+	tractorbeam: {
+		onStart(pokemon) {
+			pokemon.addVolatile('tractorbeam');
+		},
+		condition: {
+			onStart(pokemon) {
+				this.effectState.lastMove = '';
+				this.effectState.numConsecutive = 0;
+			},
+			onTryMovePriority: -2,
+			onTryMove(pokemon, target, move) {
+				if (!pokemon.hasAbility('tractorbeam')) {
+					pokemon.removeVolatile('tractorbeam');
+					return;
+				}
+				if (move.callsMove || move.name.includes("Beam")) return;
+				if (this.effectState.lastMove === move.id && pokemon.moveLastTurnResult) {
+					this.effectState.numConsecutive++;
+				} else if (pokemon.volatiles['twoturnmove']) {
+					if (this.effectState.lastMove !== move.id) {
+						this.effectState.numConsecutive = 1;
+					} else {
+						this.effectState.numConsecutive++;
+					}
+				} else {
+					this.effectState.numConsecutive = 0;
+				}
+				this.effectState.lastMove = move.id;
+			},
+			onSourceDamagingHit(damage, target, source, move) {
+				if (this.effectState.numConsecutive >= 2) {
+					target.addVolatile('partiallytrapped', source);
+					this.effectState.numConsecutive = 0;
+				}
+			},
+		},
 		flags: {},
-		name: "Noosphere",
-		shortDesc: ".",
+		name: "Tractor Beam",
+		desc: "Using a Beam move twice consecutively applies Partially Trapped to target.",
+		shortDesc: "Using 2 Beam moves consecutively applies Partially Trapped to target.",
+		rating: 1,
+	},
+	// tree 3
+	enginecoolant: {
+		onModifyWeight(weighthg) {
+			if (this.effectState.target.status === 'frz') return weighthg + 20;
+		},
+		flags: {},
+		name: "Engine Coolant",
+		shortDesc: "While Frozen base PP is increased by 2.",
 		rating: 1,
 	},
 	binarysignal: {
 		flags: {},
 		name: "Binary Signal",
-		shortDesc: ".",
+		shortDesc: "Placeholder.",
+		rating: 1,
+	},
+	servitordrone: {
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('servitordrone');
+		},
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Servitor Drone', '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Servitor Drone', '[silent]');
+			},
+			onResidual(pokemon) {
+				pokemon.adjacentFoes().forEach(foe => {
+					this.damage(foe.maxhp / 40 * 3, foe, pokemon);
+				});
+			},
+		},
+		flags: {},
+		name: "Servitor Drone",
+		desc: "On Skill activation gain a servitor drone deal 7.5% damage to adjacent foes on Residual. The drone persists until the Pokemon switches out.",
+		shortDesc: "On Skill activation gain a drone deal 7.5% damage to adjacent foes.",
+		rating: 1,
+	},
+	omnispex: {
+		flags: {},
+		name: "Omnispex",
+		shortDesc: "Placeholder.",
+		rating: 1,
+	},
+	cybernetics: {
+		onUpdate(pokemon) {
+			if (!pokemon.isStarted) return;
+			if (pokemon.hasType('Steel')) return false;
+			if (!pokemon.addType('Steel')) return false;
+			this.add('-start', pokemon, 'typeadd', 'Steel', '[from] ability: Cybernetics');
+		},
+		onModifyDamage() {
+			this.chainModify(1.1);
+		},
+		flags: {},
+		name: "Cybernetics",
+		shortDesc: "Adds the Steel type to the Pokemon. Boosts damage by 10%.",
+		rating: 2,
+	},
+	servoarm: {
+		onUpdate(pokemon) {
+			pokemon.addVolatile('servoarm');
+		},
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Servo Arm', '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Servo Arm', '[silent]');
+			},
+			onModifyAtk(atk, pokemon) {
+				return atk + pokemon.getStat('spa') / 10 * 4;
+			},
+			onAfterMoveSecondarySelf(source, target, activeMove) {
+				if (activeMove.id === 'metalclaw') return;
+				const move = this.dex.getActiveMove('metalclaw');
+				move.flags.contact = undefined;
+				if (target && !target.fainted) this.actions.useMove(move, source, { target });
+			},
+		},
+		flags: {},
+		name: "Servo Arm",
+		desc: "Attack is boosted by 40% of SpA, including stat changes. Every attack is followed by using Metal Claw with the contact flag removed. Doesn't activate on Metal Claw.",
+		shortDesc: "Attack is boosted by 40% of SpA. Follows every attack with Metal Claw.",
 		rating: 1,
 	},
 
 	//durant
 	//skill
 	pincermaneuver: {
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('pincermaneuver');
+		},
+		onSwitchIn(pokemon) {
+			pokemon.canTerastallize = pokemon.teraType;
+		},
+		condition: {
+			duration: 1,
+			noCopy: true,
+			durationCallback(source, effect) {
+				if (source?.hasAbility('servomechswarm')) {
+					return 2;
+				}
+				return 1;
+			},
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Pincer Maneuver', '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Pincer Maneuver', '[silent]');
+			},
+			onModifyDamage(damage, source, target, move) {
+				return this.chainModify([12, 10]);
+			},
+		},
 		flags: {},
 		name: "Pincer Maneuver",
-		shortDesc: "Placeholder.",
+		desc: "Can be activated once per switch-in. On activation summon 2 Worker Ants, attacks deals 20% more damage for that turn.",
+		shortDesc: "On activation summon 2 Worker Ants to boost damage.",
+	},
+	// tree 1
+	galvanizedsteel: {
+		onUpdate(pokemon) {
+			if (pokemon.status === 'cor') {
+				this.add('-activate', pokemon, 'ability: Galvanized Steel');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'cor') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Galvanized Steel');
+			}
+			return false;
+		},
+		flags: { breakable: 1 },
+		name: "Galvanized Steel",
+		shortDesc: "Immune to corrosion status.",
+		rating: 1,
+	},
+	blacksmithing: {
+		onModifyDamage(relayVar, source, target, move) {
+			if (move.type === 'Steel') {
+				this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Blacksmithing",
+		shortDesc: "Boosts Steel-type moves' damage by 1.1x.",
+		rating: 1,
+	},
+	auxiliaryoptics: {
+		onInvulnerabilityPriority: 1,
+		onInvulnerability(target, source, move) {
+			if (move && source.volatiles['pincermaneuver']) return 0;
+		},
+		onAccuracy(accuracy, target, source, move) {
+			if (move && source.volatiles['pincermaneuver']) {
+				return true;
+			}
+			return accuracy;
+		},
+		flags: {},
+		name: "Auxiliary Optics",
+		shortDesc: "During Pincer Manuver moves can't miss.",
+		rating: 1,
+	},
+	repaircrew: {
+		onResidualOrder: 1,
+		onResidual(pokemon) {
+			if (!pokemon.volatiles['pincermaneuver']) return;
+			pokemon.side.activeTeam().forEach(ally => {
+				if (ally.types.includes('Steel')) this.heal(ally.maxhp / 20 * 3)
+			})
+		},
+		flags: {},
+		name: "Repair Crew",
+		shortDesc: "On Residual during Pincer Maneuver: Steel-types on user's side heal 15%.",
+		rating: 1,
+	},
+	reservecannon: {
+		onResidualOrder: 1,
+		onResidual(pokemon) {
+			if (pokemon.volatiles['pincermaneuver']) {
+				const frontTarget = pokemon.side.foe.active[pokemon.side.foe.active.length - pokemon.position - 1];
+				const target = frontTarget && frontTarget.hp ? frontTarget : this.sample(pokemon.foes());
+				const move = this.dex.getActiveMove('spikecannon');
+				if (target) this.actions.useMove(move, pokemon, { target });
+			}
+		},
+		flags: {},
+		name: "Reserve Cannon",
+		desc: "On Residual during Pincer Maneuver: use Spike Cannon on foe in front, or on random foe if there is no foe in front.",
+		shortDesc: "On Residual during Pincer Maneuver: use Spike Cannon on foe in front.",
+		rating: 1,
+	},
+	servomechswarm: {
+		onModifySpe(spe, pokemon) {
+			return this.chainModify(1.1);
+		},
+		flags: {},
+		name: "Servomech Swarm",
+		shortDesc: "Pincer Maneuver lasts one additional turn. Speed is boosted by 1.1x.",
+		rating: 3,
+	},
+	// tree 2
+	welding: {
+		onResidual(pokemon) {
+			pokemon.side.activeTeam().forEach(ally => {
+				if (ally.types.includes('Steel')) this.heal(ally.maxhp / 20)
+			})
+		},
+		onModifySpD(spe, pokemon) {
+			return this.chainModify(1.15);
+		},
+		flags: {},
+		name: "Welding",
+		shortDesc: "Heals Steel-type allies for 5% at the end of each turn. Boosts own SpD 1.15x.",
+		rating: 1,
+	},
+	thermalpaste: {
+		onModifyWeight(weighthg) {
+			return weighthg + 10;
+		},
+		flags: {},
+		name: "Thermal Paste",
+		shortDesc: "Increases base PP by 1.",
+		rating: 2,
+	},
+	thermite: {
+		onUpdate(pokemon) {
+			if (!pokemon.isStarted) return;
+			if (pokemon.hasType('Fire')) return false;
+			if (!pokemon.addType('Fire')) return false;
+			this.add('-start', pokemon, 'typeadd', 'Fire', '[from] ability: Thermite');
+		},
+		onModifyDamage(relayVar, source, target, move) {
+			if (target.status === 'brn') this.chainModify(1075, 1000);
+		},
+		flags: {},
+		name: "Thermite",
+		shortDesc: "Adds Fire to types. Moves deal 7.5% more damage to burned targets.",
+		rating: 1,
+	},
+	fireants: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (source.volatiles['pincermaneuver']) {
+				target.trySetStatus('brn', source);
+			}
+		},
+		flags: {},
+		name: "Fire Ants",
+		shortDesc: "Attacks during Pincer Maneuver burn targets.",
+		rating: 1,
+	},
+	// tree 3
+	mandibles: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bite']) {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Mandibles",
+		shortDesc: "This Pokemon's bite-based attacks have their power multiplied by 1.1.",
+		rating: 1,
+	},
+	anthill: {
+		onSourceModifyDamage(damage, source, target, move) {
+			this.debug('Anthill weaken');
+			return this.chainModify(0.92);
+		},
+		flags: { breakable: 1},
+		name: "Anthill",
+		shortDesc: "Damage taken from attacks is reduced by 8%.",
+		rating: 1,
+	},
+	delegate: {
+		onDamage(damage, target, source, effect) {
+			if (!target.hp || !target.volatiles['pincermaneuver']) return;
+			if (effect.effectType === 'Move') {
+				this.effectState.damage = (this.effectState.damage ?? 0) + damage;
+				return 0;
+			}
+		},
+		onResidualOrder: 1,
+		onResidual(pokemon) {
+			if (!this.effectState.damage || this.effectState.damage === 0) return;
+			if (this.effectState.damage > 0) this.damage(this.effectState.damage, pokemon);
+			this.effectState.damage = 0;
+		},
+		flags: { breakable: 1},
+		name: "Delegate",
+		shortDesc: "Attack damage taken during Pincer Maneuver happens at the end of the turn.",
+		rating: 2,
+	},
+	soldierants: {
+		onAnyModifyDamage(damage, source, target, move) {
+			if (source.side.activeTeam().includes(target)) {
+				this.debug('Anthill weaken');
+				return this.chainModify(0.9);
+			}
+		},
+		flags: { breakable: 1},
+		name: "Soldier Ants",
+		shortDesc: "Damage taken by allies during Pincer Maneuver is reduced by 10%.",
+		rating: 1,
 	},
 
 	// noivern
@@ -245,6 +858,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.effectState.stacks = 0;
 		},
 		onUpdate(pokemon) {
+			if (!pokemon.isStarted) return;
 			if (this.effectState.stacks >= 3) pokemon.canTerastallize = pokemon.teraType;
 			this.add('-start', pokemon, `Sonar: ${this.effectState.stacks}x`, '[silent]');
 		},
@@ -261,10 +875,10 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	// tree 1
 	dampener: {
-		onBasePower(relayVar, source, target, move) {
+		onModifyDamage(relayVar, source, target, move) {
 			if (target.isAlly(source)) return this.chainModify(0.6);
 		},
-		flags: { breakable: 1 },
+		flags: {},
 		name: "Dampener",
 		shortDesc: "Moves deal 60% less damage to allies.",
 		rating: 1,
@@ -462,6 +1076,266 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		flags: {},
 		name: "Straight Up Evil",
 		shortDesc: "Moves gain 10% Base Power to targets under 50% HP.",
+		rating: 1,
+	},
+	
+	// thievul
+	// skill
+	moneyispower: {
+		onStart(pokemon) {
+			this.effectState.money = 0;
+			pokemon.canTerastallize = null;
+		},
+		onEnd(pokemon) {
+			this.effectState.money = 0;
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.addVolatile('moneyispower');
+		},
+		onUpdate(pokemon) {
+			if (!pokemon.isStarted) return;
+			if (this.effectState.money >= 500 && !pokemon.hasAbility('wealthbeyondmeasure')) this.effectState.money = 500;
+			if (this.effectState.money >= 1000) this.effectState.money = 1000;
+			if (this.effectState.money >= 500 || (pokemon.hasAbility('cheapskate') && this.effectState.money >= 300)) pokemon.canTerastallize = pokemon.teraType;
+			this.add('-start', pokemon, `Money: ${this.effectState.money}x`, '[silent]');
+		},
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (!move || !move.hitTargets || move.category === 'Status') return;
+			this.add('-end', source, `Money: ${this.effectState.money}x`, '[silent]');
+			this.effectState.money += 50;
+		},
+		onDamagingHit(damage, target, source, move) {
+			this.add('-end', source, `Money: ${this.effectState.money}x`, '[silent]');
+			this.effectState.money -= 50;
+		},
+		condition: {
+			duration: 1,
+			noCopy: true,
+			onStart(target, source, sourceEffect) {
+				this.add('-start', target, 'Money Is Power');
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Money Is Power');
+			},
+			onSourceDamagingHit(damage, target, source, move) {
+				target.addVolatile('healblock');
+			},
+		},
+		flags: {},
+		name: "Money Is Power",
+		desc: 'You can have up to 500 stacks of "Money". Each stack grants a 0.1% boost to damage, up to 50% at 5 stacks. Succesfully using an attacking move grants 50 stacks, taking direct damage removes 50 stacks. Activation lasts 1 turn and all attacks apply Heal Block on target for 2 turns.',
+		shortDesc: "Money Stacks, max 500, 0.1 dmg boost * stack. Atk +50, Dmg -50.",
+	},
+	// tree 1
+	bounty: {
+		onResidual(pokemon) {
+			let foe = this.sample(pokemon.foes())
+			foe.addVolatile('bounty');
+		},
+		condition: {
+			duration: 1,
+			onStart(target, source, sourceEffect) {
+				this.add('-start', target, 'Bounty');
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Bounty');
+			},
+			onDamagingHit(damage, target, source, move) {
+				if (source.hasAbility('moneyispower')) {
+					this.add('-end', source, `Money: ${source.abilityState.money}x`, '[silent]');
+					source.abilityState.money += 100;
+				}
+				target.removeVolatile('bounty');
+			},
+			onSourceModifyDamage(relayVar, source, target, move) {
+				if (source.hasAbility('bounty')) {
+					this.chainModify(1.25);
+				}
+			},
+		},
+		flags: {},
+		name: "Bounty",
+		desc: "Random foe gains bounty every turn. Hitting foe with bounty grants 100 money stacks and removes bounty. Foes with bounty take 25% more damage from this Pokemon.",
+		shortDesc: "Random foe gains bounty every turn. Hitting foe with bounty +100 money.",
+		rating: 1,
+	},
+	familyheirloom: {
+		onModifyDamage(relayVar, source, target, move) {
+			if (move.flags.bullet) {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Family Heirloom",
+		shortDesc: "10% more bullet damage.",
+		rating: 1,
+	},
+	assassination: {
+		onModifyDamage(relayVar, source, target, move) {
+			if (target.volatiles['bounty']) {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Assassination",
+		shortDesc: "10% damage boost vs foe with bounty.",
+		rating: 1,
+	},
+	lifesentence: {
+		onStart(target) {
+			if (target.m.lifesentence === null) target.m.lifesentence = false;
+		},
+		onDamagePriority: -30,
+		onDamage(damage, target, source, effect) {
+			if (target.m.lifesentence) return;
+			if (damage >= target.hp) {
+				target.addVolatile('lifesentence');
+				target.m.lifesentence = true;
+				return target.hp - 1;
+			}
+		},
+		onAfterTerastallization(pokemon) {
+			pokemon.removeVolatile('lifesentence');
+			this.boost({ spa: 150 }, pokemon);
+		},
+		condition: {
+			duration: 3,
+			onDamagePriority: -30,
+			onDamage(damage, target, source, effect) {
+				return null;
+			},
+			onBeforeMove(pokemon) {
+				return false;
+			},
+			onResidual(pokemon) {
+				this.heal(pokemon.baseMaxhp / 3);
+			},
+			onStart(target) {
+				this.add('-start', target, 'Life Sentence');
+			},
+			onEnd(target) {
+				target.cureStatus();
+				const volatiles = Object.keys(target.volatiles).filter(id => {
+					const vol = target.volatiles[id];
+					return vol && typeof vol.duration === 'number' && vol.duration > 0 && !vol.noCopy;
+				});
+				if (!volatiles.length) return;
+
+				volatiles.forEach(vol => {
+					target.removeVolatile(vol);
+				});
+
+				this.add('-end', target, 'Life Sentence');
+			},
+		},
+		flags: {},
+		name: "Life Sentence",
+		desc: "Once per battle instead of fainting Thievul lives on 1 HP and gains Life Sentence for the following 3 turns. During Life Sentence Thievul cannot move or take damage and at the end of each turn it heals for 1/3rd its max HP and once the effect ends has all volatiles and status healed. If Money Is Power is activated while Life Sentence is active, Life Sentence ends and Thievul gains +150% SpA.",
+		shortDesc: "Once per battle live on 1 HP instead of die + more effects.",
+		rating: 2,
+	},
+	makingakilling: {
+		onFoeFaint(target, source, effect) {
+			if (source.boosts.def < 60) {
+				this.boost({ def: 10 }, source);
+			}
+			if (source.boosts.spd < 60) {
+				this.boost({ spd: 10 }, source);
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			if (target.volatiles['bounty']) {
+				this.runEvent('Faint', target);
+			}
+		},
+		flags: {},
+		name: "Making a Killing",
+		desc: "Hitting foes with bounty procs On Faint effects. On Foe Faint gain +10% boost to Defense and Special Defense up to 60%.",
+		shortDesc: "Hitting foes with bounty procs On Faint effects. Kills grant +10% Def/SpD.",
+		rating: 1,
+	},
+	// tree 2
+	inheritance: {
+		onUpdate(pokemon) {
+			if (!pokemon.hasAbility('moneyispower') || pokemon.abilityState.money > 0) return;
+			this.add('-end', pokemon, `Money: ${pokemon.abilityState.money}x`, '[silent]');
+			pokemon.abilityState.money += 100;
+		},
+		name: "Inheritance",
+		shortDesc: "If Money stacks are 0, gain 100.",
+		rating: 1,
+	},
+	cheapskate: {
+		flags: {},
+		name: "Cheapskate",
+		shortDesc: "Ability activation costs 200 less money.",
+		rating: 1,
+	},
+	spadownres: {
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'spadown') {
+				pokemon.boosts.spa = Math.floor(pokemon.boosts.spa * 0.5);
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Spa Down Res",
+		desc: "Immune to SpA down. Instead when you would suffer from SpA Down your SpA boosts are halved instead.",
+		shortDesc: "Immune to SpA down. Instead your SpA boosts are halved.",
+		rating: 1,
+	},
+	investmentbanker: {
+		onAfterTerastallization(pokemon) {
+			if (!pokemon.hasAbility('moneyispower')) return;
+			this.add('-end', pokemon, `Money: ${pokemon.abilityState.money}x`, '[silent]');
+			pokemon.abilityState.money += 500;
+		},
+		flags: {},
+		name: "Investment Banker",
+		shortDesc: "On Ability activation, regain 500 Money.",
+		rating: 2,
+	},
+	// tree 3
+	skilledgambler: {
+		onModifyCritRatio(critRatio) {
+			return critRatio + 10;
+		},
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (target.getMoveHitData(move).crit) {
+				this.add('-end', source, `Money: ${source.abilityState.money}x`, '[silent]');
+				source.abilityState.money += 50;
+			}
+		},
+		flags: {},
+		name: "Skilled Gambler",
+		shortDesc: "Increases crit chance by 10%. On crit gain 50 money.",
+		rating: 1,
+	},
+	burstboost: {
+		onModifyDamage(relayVar, source, target, move) {
+			if (source.volatiles['burst']) {
+				return this.chainModify(1.1);
+			}
+		},
+		flags: {},
+		name: "Burst Boost",
+		shortDesc: "10% more damage while Burst volatile is active.",
+		rating: 1,
+	},
+	moneybags: {
+		onDamagingHit(damage, target, source, move) {
+			this.add('-end', target, `Money: ${target.abilityState.money}x`, '[silent]');
+			this.effectState.money += 25;
+		},
+		flags: {},
+		name: "Moneybags",
+		shortDesc: "Gain 25 money when hit.",
+		rating: 3,
+	},
+	wealthbeyondmeasure: {
+		flags: {},
+		name: "Wealth Beyond Measure",
+		shortDesc: "Doubles Money cap to 1000.",
 		rating: 1,
 	},
 
@@ -1260,30 +2134,19 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			if (move.type === 'Electric' && target && !target.fainted) {
 				const shieldAmount = pokemon.maxhp / 10;
 
-				if (!pokemon.volatiles['shield']) {
-					pokemon.addVolatile('shield');
-				}
+				const oldShield = pokemon.m.buildmonsShield || 0;
+				const newShield = Math.min(oldShield + shieldAmount, pokemon.maxhp);
+				pokemon.m.buildmonsShield = newShield;
 
-				const volatile = pokemon.volatiles['shield'];
-				if (volatile) {
-					if (!volatile.effectState) {
-						volatile.effectState = {};
-					}
-					const oldShield = volatile.effectState.shield || 0;
-					const newShield = Math.min(oldShield + shieldAmount, pokemon.maxhp);
-					volatile.effectState.shield = newShield;
-					
-					this.add('-end', pokemon, `Shield: ${Math.floor(oldShield)}`);
-					this.add('-start', pokemon, `Shield: ${Math.floor(newShield)}`);
-				}
+				this.add('-end', pokemon, `Shield: ${Math.floor(oldShield)}`);
+				this.add('-start', pokemon, `Shield: ${Math.floor(newShield)}`);
 			}
 		},
 		onStart(pokemon) {
 			this.effectState.activated = false;
 		},
 		onUpdate(pokemon) {
-			const shieldVolatile = pokemon.volatiles['shield'];
-			if (shieldVolatile?.effectState?.shield >= pokemon.maxhp * 0.2 && !this.effectState.activated) {
+			if (pokemon.m.buildmonsShield >= pokemon.maxhp * 0.2 && !this.effectState.activated) {
 				pokemon.canTerastallize = pokemon.teraType;
 			} else {
 				pokemon.canTerastallize = false;

@@ -65,13 +65,14 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	bloodletterleech: {
 		name: "Bloodletter Leech",
-		shortDesc: "User Bleeds. Moves without drain gain 1/4 drain if the user is bleeding.",
+		shortDesc: "User Bleeds. Moves gain 1/4 additional drain if the user is bleeding.",
 		onUpdate(pokemon) {
 			pokemon.trySetStatus('bld', pokemon);
 		},
-		onModifyMovePriority: 1,
-		onModifyMove(move, pokemon, target) {
-			if (!move.drain && pokemon.status === 'bld') move.drain = [1, 4];
+		onSourceDamagingHit(damage, target, source, move) {
+			if (source.status === "bld") {
+				this.heal(target.lastDamage / 4, source, source, "drain");
+			}
 		},
 		gen: -1,
 		spritenum: -1,
@@ -157,6 +158,17 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			if (status.name === 'spedown') {
 				target.trySetStatus('psn', source);
 			}
+		},
+		gen: -1,
+		spritenum: -1,
+	},
+	chromaticcloak: {
+		name: "Chromatic Cloak",
+		shortDesc: "On Residual become Shiny/Normal if Normal/Shiny.",
+		onResidual(pokemon) {
+			pokemon.set.shiny = !pokemon.set.shiny;
+			pokemon.details = pokemon.getUpdatedDetails();
+			if (pokemon.isActive) this.add('detailschange', pokemon, pokemon.details);
 		},
 		gen: -1,
 		spritenum: -1,
@@ -264,8 +276,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Fan of Knives",
 		shortDesc: "Wind moves apply Bleed to the target.",
 		onSourceDamagingHit(damage, target, source, move) {
-			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
-			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
 			if (move.flags['wind']) {
 				target.trySetStatus('bld', source);
 			}
@@ -292,11 +302,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Juicy Steak",
 		shortDesc: "On switchin Gain 30 Max HP.",
 		onStart(pokemon) {
-			if (pokemon.bondTriggered) return;
-			this.effectState.oldmaxhp = pokemon.maxhp;
+			const appliedBoosts = pokemon.m.buildmonsMaxHPBoosts || (pokemon.m.buildmonsMaxHPBoosts = {});
+			if (appliedBoosts.juicysteak) return;
+			const oldMaxHP = pokemon.maxhp;
 			pokemon.maxhp += 30;
-			pokemon.sethp(pokemon.hp + (pokemon.maxhp - this.effectState.oldmaxhp));
-			pokemon.bondTriggered = true;
+			pokemon.sethp(pokemon.hp + (pokemon.maxhp - oldMaxHP));
+			appliedBoosts.juicysteak = true;
 		},
 		gen: -1,
 		spritenum: -1,
@@ -505,8 +516,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			}
 		},
 		onSourceDamagingHit(damage, target, source, move) {
-			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
-			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
 			if (this.randomChance(1, 10)) {
 				target.trySetStatus('bld', source);
 			}
@@ -516,7 +525,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	philosophersstone: {
 		name: "Philosopher's Stone",
-		shortDesc: "Turns Steel-type into Rock-type. If shiny turns Steel-type into Fairy-type.",
+		shortDesc: "Turns Steel-type into Rock-type. If Shiny turns Steel-type into Fairy-type.",
 		onUpdate(pokemon) {
 			let type = 'Rock';
 			if (pokemon.set.shiny) type = 'Fairy';
@@ -535,9 +544,9 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	psychicnullifier: {
 		name: "Psychic Nullifier",
-		shortDesc: "All damage received is Physical. Sp. Atk and Sp. Def are set to 5.",
-		onFoeModifyMove(move, pokemon, target) {
-			if (move.overrideDefensiveStat === null) move.overrideDefensiveStat = 'def';
+		shortDesc: "All damage received is Physical. SpA and SpD are set to 5. Crits ignore.",
+		onAnyModifyMove(move, pokemon, target) {
+			if (target && move.overrideDefensiveStat === null && pokemon !== target && !target.getMoveHitData(move).crit) move.overrideDefensiveStat = 'def';
 		},
 		onModifySpA() {
 			return 5;
@@ -587,51 +596,23 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	gasmask: {
 		name: "Gas Mask",
 		shortDesc: "Immune to being poisoned and secondary effects of wind moves. Breaks after 3 uses.",
-		onStart(pokemon) {
-			this.effectState.uses = 0;
-			if (pokemon.swordBoost) this.effectState.uses++;
-			if (pokemon.shieldBoost) this.effectState.uses++;
-			if (pokemon.syrupTriggered) this.effectState.uses++;
-		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox') return;
 			if ((effect as Move)?.status) {
 				this.add('-immune', target, '[from] item: Gas Mask');
 			}
-			if (!target.syrupTriggered && target.shieldBoost)  {
-				target.syrupTriggered = true;
-				this.effectState.uses++;
-			}
-			if (!target.shieldBoost && target.swordBoost)  {
-				target.shieldBoost = true;
-				this.effectState.uses++;
-			}
-			if (!target.swordBoost) {
-				target.swordBoost = true;
-				this.effectState.uses++;
-			}
+			if ((target.m.gasmaskUses || 0) < 3) target.m.gasmaskUses = (target.m.gasmaskUses || 0) + 1;
 
 			return false;
 		},
 		onHit(pokemon, source, move) {
 			if (move.flags['wind']) {
 				if (move.secondaries) delete move.secondaries;
-				if (!pokemon.syrupTriggered && pokemon.shieldBoost)  {
-					pokemon.syrupTriggered = true;
-					this.effectState.uses++;
-				}
-				if (!pokemon.shieldBoost && pokemon.swordBoost)  {
-					pokemon.shieldBoost = true;
-					this.effectState.uses++;
-				}
-				if (!pokemon.swordBoost) {
-					pokemon.swordBoost = true;
-					this.effectState.uses++;
-				}
+				if ((pokemon.m.gasmaskUses || 0) < 3) pokemon.m.gasmaskUses = (pokemon.m.gasmaskUses || 0) + 1;
 			}
 		},
 		onUpdate(pokemon) {
-			if (this.effectState.uses >= 3) {
+			if (pokemon.m.gasmaskUses >= 3) {
 				this.add('-enditem', pokemon, `Gas Mask`);
 				if (pokemon.item === 'gasmask') {
 					pokemon.item = '';
@@ -689,9 +670,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Rusty Knife",
 		shortDesc: "Holder's attacks have a 15% chance of bleeding.",
 		onSourceDamagingHit(damage, target, source, move) {
-			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
-			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
-
 			if (this.randomChance(3, 20)) {
 				target.trySetStatus('bld', source);
 			}
@@ -704,15 +682,14 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onImmunity(type, pokemon) {},
 		onTryHit(pokemon, source, move) {},
 		onDamage(damage, target, source, effect) {
-			if (effect.effectType !== 'Move' && target.hp <= target.maxhp / 5) {
+			if (effect.effectType !== 'Move' && target.hp <= target.maxhp / 3) {
 				if (effect.effectType === 'Ability') this.add('-activate', source, 'ability: ' + effect.name);
 				return false;
 			}
 		},
 		gen: -1,
-		spritenum: -1,
-		desc: "Holder can only be damaged by direct attacks when at or below 20% HP. Curse and Substitute on use, Belly Drum, Pain Split, Struggle recoil, and confusion damage are considered direct damage.",
-		shortDesc: "Holder can only be damaged by direct attacks below 20% HP.",
+		desc: "Holder can only be damaged by direct attacks when at or below 33% HP. Curse and Substitute on use, Belly Drum, Pain Split, Struggle recoil, and confusion damage are considered direct damage.",
+		shortDesc: "Holder can only be damaged by direct attacks below 33% HP.",
 	},
 	sandbucket: {
 		name: "Sand Bucket",
@@ -747,6 +724,10 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	scopelens: {
 		inherit: true,
+		shortDesc: "Increases Crit Ratio by +25%.",
+		onModifyCritRatio(critRatio) {
+			return critRatio + 25;
+		},
 		gen: -1,
 	},
 	scrapmetalbuckler: {
@@ -869,11 +850,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Strong Drink",
 		shortDesc: "User's max HP is boosted by 30% but cannot heal in any way.",
 		onStart(pokemon) {
-			if (pokemon.bondTriggered) return;
-			this.effectState.oldmaxhp = pokemon.maxhp;
+			const appliedBoosts = pokemon.m.buildmonsMaxHPBoosts || (pokemon.m.buildmonsMaxHPBoosts = {});
+			if (appliedBoosts.strongdrink) return;
+			const oldMaxHP = pokemon.maxhp;
 			pokemon.maxhp = Math.trunc(pokemon.maxhp * 1.3);
-			pokemon.sethp(pokemon.hp + (pokemon.maxhp - this.effectState.oldmaxhp));
-			pokemon.bondTriggered = true;
+			pokemon.sethp(pokemon.hp + (pokemon.maxhp - oldMaxHP));
+			appliedBoosts.strongdrink = true;
 		},
 		onTryHealPriority: 1,
 		onTryHeal() {
@@ -916,9 +898,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Taser",
 		shortDesc: "Holder's attacks have a 15% chance of paralyzing.",
 		onSourceDamagingHit(damage, target, source, move) {
-			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
-			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
-
 			if (this.randomChance(3, 20)) {
 				target.trySetStatus('par', source);
 			}
@@ -948,7 +927,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		name: "Tundra Crossbow",
 		shortDesc: "On ability activation uses Ice Shard that is guaranteed to crit.",
 		onAfterTerastallization(pokemon) {
-			const target = pokemon.foes()[1 - pokemon.position];
+			const frontTarget = pokemon.side.foe.active[pokemon.side.foe.active.length - pokemon.position - 1];
+			const target = frontTarget && frontTarget.hp ? frontTarget : this.sample(pokemon.foes());
 			const move = this.dex.getActiveMove('iceshard');
 			move.willCrit = true;
 			if (target && !target.fainted) this.actions.useMove(move, pokemon, { target });

@@ -102,6 +102,12 @@ export const StatusNames: { [id: string]: TranslationString } = {
 	tox: "Badly Poisoned",
 	fnt: "Fainted",
 	confusion: "Confused",
+
+	rad: "Irradiated",
+	wet: "Wet",
+	ptr: "Petrified",
+	bld: "Bleeding",
+	cor: "Corroded",
 };
 
 export const TargetNames: { [id: string]: TranslationString } = {
