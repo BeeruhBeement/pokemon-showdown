@@ -47,7 +47,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	prepping: {
 		onSourceDamagingHit(damage, target, source, move) {
 			if (move?.effectType === 'Move' && target.getMoveHitData(move).crit) {
-				this.boost({atk: 5}, source);
+				this.boost({ atk: 5 }, source);
 			}
 		},
 		flags: {},
@@ -116,7 +116,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			},
 			onResidualOrder: 1,
 			onResidual(pokemon) {
-				this.damage(pokemon.maxhp / 4, pokemon)
+				this.damage(pokemon.maxhp / 4, pokemon);
 			},
 		},
 		flags: {},
@@ -337,6 +337,186 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 1,
 	},
 
+	// crustle
+	// skill
+	craggybulwark: {
+		flags: {},
+		name: "Craggy Bulwark",
+		shortDesc: "Placeholder.",
+	},
+	// tree 1
+	rebar: {
+		onModifyDef() {
+			return this.chainModify(1.075);
+		},
+		onModifySpD() {
+			return this.chainModify(1.075);
+		},
+		flags: {},
+		name: "Rebar",
+		shortDesc: "Boosts Defense and Special Defense by 7.5%.",
+		rating: 1,
+	},
+	goodeatings: {
+		onTryHealPriority: 1,
+		onTryHeal(damage, target, source, effect) {
+			const noheals = ['drain', 'leechseed'];
+			if (!noheals.includes(effect.id)) {
+				return this.chainModify([12, 10]);
+			}
+		},
+		flags: {},
+		name: "Good Eatings",
+		shortDesc: "Increases healing effectiveness by 1.2x.",
+		rating: 1,
+	},
+	foodstorage: {
+		onUpdate(pokemon) {
+			pokemon.addVolatile('foodstorage');
+		},
+		condition: {
+			onTryHeal(relayVar, target, source, effect) {
+				const noheals = ['drain', 'leechseed'];
+				let mod = this.effectState.foodstorageStacks + 10;
+				if (!noheals.includes(effect.id)) {
+					this.effectState.healedThisTurn = true;
+					this.effectState.target.removeVolatile('foodstorage');
+					return this.chainModify([mod, 10]);
+				}
+			},
+			onStart(pokemon) {
+				this.effectState.foodstorageStacks = 0;
+				this.add('-start', pokemon, `foodstorage: ${this.effectState.foodstorageStacks}x`, '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, `foodstorage: ${this.effectState.foodstorageStacks}x`, '[silent]');
+				this.effectState.foodstorageStacks = 0;
+			},
+			onResidual(pokemon) {
+				if (this.effectState.healedThisTurn === true) return;
+				pokemon.addVolatile('foodstorage');
+			},
+			onRestart(pokemon) {
+				this.add('-end', pokemon, `foodstorage: ${this.effectState.foodstorageStacks}x`, '[silent]');
+				this.effectState.foodstorageStacks++;
+				this.add('-start', pokemon, `foodstorage: ${this.effectState.foodstorageStacks}x`, '[silent]');
+			},
+		},
+		flags: {},
+		name: "Food Storage",
+		desc: "Every turn spent without healing gain a Food Storage stack, increasing healing effectiveness by 10% for each.",
+		shortDesc: "Every turn spent without healing gain a Food Storage stack.",
+		rating: 1,
+	},
+	rampart: {
+		onUpdate(pokemon) {
+			pokemon.addVolatile('rampart');
+		},
+		condition: {
+			onTryHeal(relayVar, target, source, effect) {
+				const noheals = ['drain', 'leechseed'];
+				if (!noheals.includes(effect.id)) {
+					this.effectState.healedThisTurn = true;
+					this.effectState.target.removeVolatile('rampart');
+				}
+			},
+			onStart(pokemon) {
+				this.effectState.rampartStacks = 0;
+				this.add('-start', pokemon, `Rampart: ${this.effectState.rampartStacks}x`, '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, `Rampart: ${this.effectState.rampartStacks}x`, '[silent]');
+				this.effectState.rampartStacks = 0;
+			},
+			onResidual(pokemon) {
+				if (this.effectState.healedThisTurn === true) return;
+				pokemon.addVolatile('rampart');
+			},
+			onRestart(pokemon) {
+				if (this.effectState.rampartStacks < 3) {
+					this.add('-end', pokemon, `Rampart: ${this.effectState.rampartStacks}x`, '[silent]');
+					this.effectState.rampartStacks++;
+					this.add('-start', pokemon, `Rampart: ${this.effectState.rampartStacks}x`, '[silent]');
+				}
+			},
+		},
+		flags: {},
+		name: "Rampart",
+		desc: "Every turn spent without healing gain a Rampart stack, up to 3, reduring your damage taken by 8% for each stack.",
+		shortDesc: "Every turn spent without healing gain a Rampart stack.",
+		rating: 1,
+	},
+	mysteriousrockinn: {
+		onModifyDef(relayVar, target, source, move) {
+			let mod = (target.maxhp - target.hp) / target.maxhp + 1;
+			return this.chainModify(mod)
+		},
+		onModifySpD(relayVar, target, source, move) {
+			let mod = (target.maxhp - target.hp) / target.maxhp + 1;
+			return this.chainModify(mod)
+		},
+		flags: {},
+		name: "Mysterious Rock Inn",
+		shortDesc: "Defenses boosted by half of missing HP %.",
+		rating: 2,
+	},
+	monolith: {
+		flags: {},
+		name: "Monolith",
+		shortDesc: "Placeholder.",
+		rating: 1,
+	},
+	// tree 2
+	shrapnel: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.type === 'Rock') {
+				this.damage(source.getStat('atk') * move.basePower / 2000, target, source);
+			}
+		},
+		flags: {},
+		name: "Shrapnel",
+		desc: "Rock moves deal additional chip damage that is equals to the Attack multiplied by move Base Power and divided by 2000, rounded down.",
+		shortDesc: "Rock moves deal additional damage.",
+		rating: 1,
+	},
+	rockpower: {
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.activeTurns === 1 && move.type === 'Rock') return this.chainModify(1.15);
+		},
+		flags: {},
+		name: "Rock Power",
+		shortDesc: "Rock moves have 15% more Base Power on 1st turn out.",
+		rating: 1,
+	},
+	switchout: {
+		onEmergencyExit(originalHp, target) {
+			if (!target.volatiles['recharge'] || !target.volatiles['taunt']) return;
+			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+			for (const side of this.sides) {
+				for (const active of side.active) {
+					active.switchFlag = false;
+				}
+			}
+			this.damage(target.hp / 4, target, target);
+			target.switchFlag = true;
+			this.add('-activate', target, 'ability: Switch Out');
+		},
+		flags: {},
+		name: "Switch Out",
+		shortDesc: "If Recharge and Taunt are both active the Pokemon loses 1/4th current HP and switches.",
+		rating: 1,
+	},
+	kickstart: {
+		onModifyWeight(weighthg, pokemon) {
+			if (pokemon.activeTurns <= 1) return weighthg + 20;
+		},
+		flags: {},
+		name: "Kick-Start",
+		shortDesc: "+2 Base PP on the first turn out.",
+		rating: 2,
+	},
+	// tree 3
+
 	// beheeyem
 	// skill
 	wormhole: {
@@ -382,13 +562,13 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	// tree 1
 	probing: {
 		onModifyDamage(relayVar, source, target, move) {
-			if (target.status === 'par' || target.status === 'rad') {
+			if (target.status === 'frz' || target.status === 'rad') {
 				return this.chainModify(1.1);
 			}
 		},
 		flags: {},
 		name: "Probing",
-		shortDesc: "Increases damage dealt to paralyzed or irradiated targets by 10%.",
+		shortDesc: "Increases damage dealt to frozen or irradiated targets by 10%.",
 		rating: 1,
 	},
 	spacemodulator: {
@@ -418,7 +598,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	loophole: {
 		onAnyDamage(damage, target, source, effect) {
-			if (target === this.effectState.target) this.heal(target.maxhp / 20, target, target)
+			if (target === this.effectState.target) this.heal(target.maxhp / 20, target, target);
 		},
 		flags: {},
 		name: "Loophole",
@@ -550,6 +730,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		condition: {
 			noCopy: true,
+			duration: 4,
 			onStart(pokemon) {
 				this.add('-start', pokemon, 'Servitor Drone', '[silent]');
 			},
@@ -558,20 +739,28 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			},
 			onResidual(pokemon) {
 				pokemon.adjacentFoes().forEach(foe => {
-					this.damage(foe.maxhp / 40 * 3, foe, pokemon);
+					let critChance = this.runEvent('ModifyCritRatio', pokemon, foe, this.effect as ActiveMove, 10);
+					critChance = this.clampIntRange(critChance, 0, 100);
+					let crit = 1;
+					if (pokemon.hasAbility('Cold Steel') && this.randomChance(critChance, 100)) {
+						crit = 1.5;
+						foe.trySetStatus('frz');
+					}
+					this.damage(foe.maxhp * crit / 40 * 3, foe, pokemon);
 				});
 			},
 		},
 		flags: {},
 		name: "Servitor Drone",
-		desc: "On Skill activation gain a servitor drone deal 7.5% damage to adjacent foes on Residual. The drone persists until the Pokemon switches out.",
-		shortDesc: "On Skill activation gain a drone deal 7.5% damage to adjacent foes.",
+		desc: "On Skill activation gain a Servitor Drone deal 7.5% damage to adjacent foes on Residual. The drone persists for 4 turns.",
+		shortDesc: "On Skill activation gain a Drone deal 7.5% damage to adjacent foes.",
 		rating: 1,
 	},
-	omnispex: {
+	coldsteel: {
 		flags: {},
-		name: "Omnispex",
-		shortDesc: "Placeholder.",
+		name: "Cold Steel",
+		desc: "The Servitor Drone gains a 10% chance to crit, freezing targets and dealing 50% more damage. This crit chance can be boosted by other effects.",
+		shortDesc: "Servitor Drone gains a 10% chance to crit for frz and 1.5x dmg.",
 		rating: 1,
 	},
 	cybernetics: {
@@ -703,8 +892,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		onResidual(pokemon) {
 			if (!pokemon.volatiles['pincermaneuver']) return;
 			pokemon.side.activeTeam().forEach(ally => {
-				if (ally.types.includes('Steel')) this.heal(ally.maxhp / 20 * 3)
-			})
+				if (ally.types.includes('Steel')) this.heal(ally.maxhp / 20 * 3);
+			});
 		},
 		flags: {},
 		name: "Repair Crew",
@@ -740,8 +929,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	welding: {
 		onResidual(pokemon) {
 			pokemon.side.activeTeam().forEach(ally => {
-				if (ally.types.includes('Steel')) this.heal(ally.maxhp / 20)
-			})
+				if (ally.types.includes('Steel')) this.heal(ally.maxhp / 20);
+			});
 		},
 		onModifySpD(spe, pokemon) {
 			return this.chainModify(1.15);
@@ -804,7 +993,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.debug('Anthill weaken');
 			return this.chainModify(0.92);
 		},
-		flags: { breakable: 1},
+		flags: { breakable: 1 },
 		name: "Anthill",
 		shortDesc: "Damage taken from attacks is reduced by 8%.",
 		rating: 1,
@@ -823,7 +1012,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			if (this.effectState.damage > 0) this.damage(this.effectState.damage, pokemon);
 			this.effectState.damage = 0;
 		},
-		flags: { breakable: 1},
+		flags: { breakable: 1 },
 		name: "Delegate",
 		shortDesc: "Attack damage taken during Pincer Maneuver happens at the end of the turn.",
 		rating: 2,
@@ -835,7 +1024,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 				return this.chainModify(0.9);
 			}
 		},
-		flags: { breakable: 1},
+		flags: { breakable: 1 },
 		name: "Soldier Ants",
 		shortDesc: "Damage taken by allies during Pincer Maneuver is reduced by 10%.",
 		rating: 1,
@@ -848,7 +1037,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.add('-ability', pokemon, 'Sonar');
 			pokemon.adjacentFoes().forEach(foe => {
 				foe.addVolatile('spddown');
-			})
+			});
 		},
 		onStart(pokemon) {
 			this.effectState.stacks = 0;
@@ -885,7 +1074,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	slipstream: {
 		onResidual(pokemon) {
-			if (pokemon.position !== 1) this.heal(pokemon.maxhp / 10, pokemon)
+			if (pokemon.position !== 1) this.heal(pokemon.maxhp / 10, pokemon);
 		},
 		flags: {},
 		name: "Slipstream",
@@ -1078,7 +1267,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		shortDesc: "Moves gain 10% Base Power to targets under 50% HP.",
 		rating: 1,
 	},
-	
+
 	// thievul
 	// skill
 	moneyispower: {
@@ -1129,7 +1318,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	// tree 1
 	bounty: {
 		onResidual(pokemon) {
-			let foe = this.sample(pokemon.foes())
+			let foe = this.sample(pokemon.foes());
 			foe.addVolatile('bounty');
 		},
 		condition: {
@@ -1252,6 +1441,12 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Making a Killing",
 		desc: "Hitting foes with bounty procs On Faint effects. On Foe Faint gain +10% boost to Defense and Special Defense up to 60%.",
 		shortDesc: "Hitting foes with bounty procs On Faint effects. Kills grant +10% Def/SpD.",
+		rating: 1,
+	},
+	knivesout: {
+		flags: {},
+		name: "Knives Out",
+		shortDesc: "Placeholder.",
 		rating: 1,
 	},
 	// tree 2
@@ -1814,7 +2009,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.effectState.heat = 0;
 		},
 		onEnd(pokemon) {
-      		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
+				this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
 			this.effectState.heat = 0;
 		},
 		onUpdate(pokemon) {
@@ -1823,9 +2018,9 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 		onAfterMove(source, target, move) {
 			if (move.category === 'Status') return;
-      		this.add('-end', source, `Heat: ${this.effectState.heat}x`, '[silent]');
+				this.add('-end', source, `Heat: ${this.effectState.heat}x`, '[silent]');
 			this.effectState.heat = Math.min(5, (this.effectState.heat || 0) + 1);
-      		this.add('-start', source, `Heat: ${this.effectState.heat}x`, '[silent]');
+				this.add('-start', source, `Heat: ${this.effectState.heat}x`, '[silent]');
 		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, source, target, move) {
@@ -1843,7 +2038,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 					foe.trySetStatus('brn', pokemon);
 				}
 			});
-      		this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
+				this.add('-end', pokemon, `Heat: ${this.effectState.heat}x`, '[silent]');
 			this.effectState.heat = 0;
 			pokemon.canTerastallize = pokemon.teraType;
 		},
@@ -1943,17 +2138,17 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.effectState.prism = 0;
 		},
 		onEnd(pokemon) {
-      		this.add('-end', pokemon, `Prism: ${this.effectState.prism}x`, '[silent]');
+				this.add('-end', pokemon, `Prism: ${this.effectState.prism}x`, '[silent]');
 			this.effectState.prism = 0;
 		},
 		onPrepareHit(source, target, move) {
 			const type = move.type;
 			if (type && type !== '???' && source.getTypes().join() !== type) {
 				if (!source.setType(type)) return;
-      			this.add('-end', source, `Prism: ${this.effectState.prism}x`, '[silent]');
+					this.add('-end', source, `Prism: ${this.effectState.prism}x`, '[silent]');
 				this.effectState.prism++;
 				this.add('-start', source, 'typechange', type, '[from] ability: Prismatic');
-      			this.add('-start', source, `Prism: ${this.effectState.prism}x`, '[silent]');
+					this.add('-start', source, `Prism: ${this.effectState.prism}x`, '[silent]');
 			}
 		},
 		onAfterTerastallization(pokemon) {
@@ -1961,7 +2156,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			if (!prism) return;
 			const heal = 0.05 * prism;
 			this.heal(Math.floor(pokemon.maxhp * heal), pokemon, pokemon);
-      		this.add('-end', pokemon, `Prism: ${this.effectState.prism}x`, '[silent]');
+				this.add('-end', pokemon, `Prism: ${this.effectState.prism}x`, '[silent]');
 			this.effectState.prism = 0;
 			pokemon.canTerastallize = pokemon.teraType;
 		},
@@ -2183,7 +2378,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			this.effectState.essence = 0;
 		},
 		onEnd(pokemon) {
-	  		this.add('-end', pokemon, `Essence: ${this.effectState.essence}x`, '[silent]');
+				this.add('-end', pokemon, `Essence: ${this.effectState.essence}x`, '[silent]');
 			this.effectState.essence = 0;
 		},
 		onAnySwitchIn(pokemon) {
@@ -2194,16 +2389,16 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 		onAnyFaint(target, source, effect) {
-      		this.add('-end', source, `Essence: ${this.effectState.essence}x`, '[silent]');
+				this.add('-end', source, `Essence: ${this.effectState.essence}x`, '[silent]');
 			this.effectState.essence = (this.effectState.essence || 0) + 1;
-      		this.add('-start', source, `Essence: ${this.effectState.essence}x`, '[silent]');
+				this.add('-start', source, `Essence: ${this.effectState.essence}x`, '[silent]');
 		},
 		onAfterTerastallization(pokemon) {
 			const essence = this.effectState.essence || 0;
 			if (!essence) return;
 			const damageRatio = 0.1 * essence;
 			if (essence > 1) this.damage(Math.floor(pokemon.maxhp * damageRatio), pokemon, pokemon);
-      		this.add('-end', pokemon, `Essence: ${this.effectState.essence}x`, '[silent]');
+				this.add('-end', pokemon, `Essence: ${this.effectState.essence}x`, '[silent]');
 			this.effectState.essence = 0;
 			pokemon.canTerastallize = pokemon.teraType;
 		},

@@ -17,6 +17,10 @@ interface SpeciesAbility {
 
 export const Scripts: ModdedBattleScriptsData = {
 	init() {
+		for (const i in this.data.Pokedex) {
+			this.modData('Pokedex', i).evos = undefined;
+			this.modData('Pokedex', i).prevo = undefined;
+		}
 		for (const i in this.data.Items) {
 			if (this.data.Items[i].gen && this.data.Items[i].gen > 0) {
 				this.modData('Items', i).isNonstandard = 'Future';
@@ -188,7 +192,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			// crit - not a modifier
 			const isCrit = target.getMoveHitData(move).crit;
 			if (isCrit) {
-				baseDamage = tr(baseDamage * (move.critModifier || (this.battle.gen >= 6 ? 1.2 : 2)));
+				baseDamage = tr(baseDamage * (move.critModifier || 1.2));
 			}
 
 			// random factor - also not a modifier
@@ -354,7 +358,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 			return hitResults;
 		},
-		
+
 		// ability activation
 		terastallize(pokemon) {
 			if (!pokemon.canTerastallize) return;
@@ -377,10 +381,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			statName = toID(statName) as StatIDExceptHP;
 			// @ts-expect-error type checking prevents 'hp' from being passed, but we're paranoid
 			if (statName === 'hp') throw new Error("Please read `maxhp` directly");
-	
+
 			// base stat
 			let stat = this.storedStats[statName];
-	
+
 			// Wonder Room swaps defenses before calculating anything else
 			if ('wonderroom' in this.battle.field.pseudoWeather) {
 				if (statName === 'def') {
@@ -389,7 +393,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					stat = this.storedStats['def'];
 				}
 			}
-	
+
 			// stat boosts
 			// percentage based (e.g., 50 = 50% boost, -25 = invalid but clamped to 0)
 			let boosts: SparseBoostsTable = {};
@@ -400,7 +404,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (boost < 0) boost = 0;
 			const boostMultiplier = 1 + (boost / 100);
 			stat = Math.floor(stat * boostMultiplier);
-	
+
 			// stat modifier
 			return this.battle.modify(stat, (modifier || 1));
 		},
@@ -408,10 +412,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			statName = toID(statName) as StatIDExceptHP;
 			// @ts-expect-error type checking prevents 'hp' from being passed, but we're paranoid
 			if (statName === 'hp') throw new Error("Please read `maxhp` directly");
-	
+
 			// base stat
 			let stat = this.storedStats[statName];
-	
+
 			// Download ignores Wonder Room's effect, but this results in
 			// stat stages being calculated on the opposite defensive stat
 			if (unmodified && 'wonderroom' in this.battle.field.pseudoWeather) {
@@ -421,7 +425,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					statName = 'def';
 				}
 			}
-	
+
 			// stat boosts 
 			// percentage based (e.g., 50 = 50% boost)
 			if (!unboosted) {
@@ -434,13 +438,13 @@ export const Scripts: ModdedBattleScriptsData = {
 				const boostMultiplier = 1 + (boost / 100);
 				stat = Math.floor(stat * boostMultiplier);
 			}
-	
+
 			// stat modifier effects
 			if (!unmodified) {
 				const statTable: { [s in StatIDExceptHP]: string } = { atk: 'Atk', def: 'Def', spa: 'SpA', spd: 'SpD', spe: 'Spe' };
 				stat = this.battle.runEvent('Modify' + statTable[statName], this, null, null, stat);
 			}
-	
+
 			if (statName === 'spe' && stat > 10000 && !this.battle.format.battle?.trunc) stat = 10000;
 			return stat;
 		},
@@ -452,7 +456,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				speed = 10000 - speed;
 			}
 			const speedRoll = Math.floor(Math.random() * 50);
-    		speed += speedRoll;
+			speed += speedRoll;
 			return this.battle.trunc(speed, 13);
 		},
 		runEffectiveness(move: ActiveMove) {
@@ -542,7 +546,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				}
 				return false;
 			}
-			
+
 			let icecoldcoffeeproc = false;
 			if (source?.hasItem('icecoldcoffee') && status.id === 'brn' && !icecoldcoffeeproc) {
 				status = this.battle.dex.conditions.get('frz');
@@ -557,8 +561,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 
 			if (
-				!ignoreImmunities && status.id && !((source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id) || 
-				(sourceEffect && sourceEffect.id === 'pyromaniac')))
+				!ignoreImmunities && status.id && !((source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id) ||
+					(sourceEffect && sourceEffect.id === 'pyromaniac')))
 			) {
 				// the game currently never ignores immunities
 				if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
@@ -625,11 +629,11 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (!source) source = this;
 			if (this.battle.gen <= 4) {
 				if (source.itemKnockedOff) return false;
-				if (this.battle.toID(this.ability) === 'multitype' || (this.m.scrambled.abilities as { thing: string }[])
+				if (this.battle.toID(this.ability) === 'multitype' || (this.m.scrambled.abilities as { thing: string; }[])
 					.findIndex(e => this.battle.toID(e.thing) === 'multitype') >= 0) {
 					return false;
 				}
-				if (this.battle.toID(source.ability) === 'multitype' || (source.m.scrambled.abilities as { thing: string }[])
+				if (this.battle.toID(source.ability) === 'multitype' || (source.m.scrambled.abilities as { thing: string; }[])
 					.findIndex(e => this.battle.toID(e.thing) === 'multitype') >= 0) {
 					return false;
 				}
@@ -637,9 +641,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			const item = this.getItem();
 			if (this.battle.runEvent('TakeItem', this, source, null, item)) {
 				this.item = '';
-				let wrongSlot = (this.m.scrambled.abilities as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
-				if ((this.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
-					wrongSlot = (this.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
+				let wrongSlot = (this.m.scrambled.abilities as { inSlot: string; }[]).findIndex(e => e.inSlot === 'Item');
+				if ((this.m.scrambled.moves as { inSlot: string; }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
+					wrongSlot = (this.m.scrambled.moves as { inSlot: string; }[]).findIndex(e => e.inSlot === 'Item');
 					let indexOfMove = this.baseMoveSlots.findIndex(m => this.battle.toID(this.m.scrambled.moves[wrongSlot].thing) === m.id);
 					if (indexOfMove >= 0) this.baseMoveSlots.splice(indexOfMove, 1);
 					if (item.id !== 'mimic') {
@@ -659,9 +663,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		},
 		setItem(item, source, effect) {
 			const allThings = new Set([
-				...(this.m.scrambled.abilities as { thing: string }[]).map(e => e.thing),
-				...(this.m.scrambled.items as { thing: string }[]).map(e => e.thing),
-				...(this.m.scrambled.moves as { thing: string }[]).map(e => e.thing),
+				...(this.m.scrambled.abilities as { thing: string; }[]).map(e => e.thing),
+				...(this.m.scrambled.items as { thing: string; }[]).map(e => e.thing),
+				...(this.m.scrambled.moves as { thing: string; }[]).map(e => e.thing),
 				this.ability, ...this.moveSlots.map(e => e.move), this.item,
 			].map(this.battle.toID));
 
@@ -701,12 +705,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.itemState = this.battle.initEffectState({ id: item.id, target: this });
 			if (oldItem.exists) this.battle.singleEvent('End', oldItem, oldItemState, this);
 			if (isOldBMMItem) {
-				const isAbil = (this.m.scrambled.abilities as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
+				const isAbil = (this.m.scrambled.abilities as { inSlot: string; }[]).findIndex(e => e.inSlot === 'Item');
 				if (isAbil >= 0) {
 					this.removeVolatile('ability:' + this.battle.toID(this.m.scrambled.items[isAbil].thing));
 					this.m.scrambled.abilities.splice(isAbil, 1);
-				} else if ((this.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
-					const isMove = (this.m.scrambled.moves as { inSlot: string }[]).findIndex(e => e.inSlot === 'Item');
+				} else if ((this.m.scrambled.moves as { inSlot: string; }[]).findIndex(e => e.inSlot === 'Item') >= 0) {
+					const isMove = (this.m.scrambled.moves as { inSlot: string; }[]).findIndex(e => e.inSlot === 'Item');
 					let indexOfMove = this.baseMoveSlots.findIndex(m => this.battle.toID(this.m.scrambled.moves[isMove].thing) === m.id);
 					if (indexOfMove >= 0) this.baseMoveSlots.splice(indexOfMove, 1);
 					if (oldItem.id !== 'mimic') {
@@ -758,12 +762,12 @@ export const Scripts: ModdedBattleScriptsData = {
 
 				if (RESTORATIVE_BERRIES.has(item.id)) {
 					switch (this.pendingStaleness) {
-					case 'internal':
-						if (this.staleness !== 'external') this.staleness = 'internal';
-						break;
-					case 'external':
-						this.staleness = 'external';
-						break;
+						case 'internal':
+							if (this.staleness !== 'external') this.staleness = 'internal';
+							break;
+						case 'external':
+							this.staleness = 'external';
+							break;
 					}
 					this.pendingStaleness = undefined;
 				}
@@ -793,16 +797,16 @@ export const Scripts: ModdedBattleScriptsData = {
 			// }
 			if (this.battle.runEvent('UseItem', this, null, null, Dex.items.get(item.name))) {
 				switch (item.id) {
-				case 'redcard':
-					this.battle.add('-enditem', this, Dex.items.get(item.name), `[of] ${source}`);
-					break;
-				default:
-					if (item.isGem) {
-						this.battle.add('-enditem', this, Dex.items.get(item.name), '[from] gem');
-					} else {
-						this.battle.add('-enditem', this, Dex.items.get(item.name));
-					}
-					break;
+					case 'redcard':
+						this.battle.add('-enditem', this, Dex.items.get(item.name), `[of] ${source}`);
+						break;
+					default:
+						if (item.isGem) {
+							this.battle.add('-enditem', this, Dex.items.get(item.name), '[from] gem');
+						} else {
+							this.battle.add('-enditem', this, Dex.items.get(item.name));
+						}
+						break;
 				}
 
 				if (item.boosts) {
@@ -940,14 +944,14 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			return true;
 		},
-		
+
 		hasAbility(ability) {
 			if (Array.isArray(ability)) return ability.some(abil => this.hasAbility(abil));
 			ability = this.battle.toID(ability);
 			return this.ability === ability || !!this.volatiles['ability:' + ability] ||
 				!!this.m.innates?.includes(ability);
 		},
-		
+
 		/**
 		 * Like Field.effectiveWeather(), but ignores sun and rain if
 		 * the Utility Umbrella is active for the Pokemon.
@@ -956,15 +960,15 @@ export const Scripts: ModdedBattleScriptsData = {
 			const weather = this.battle.field.effectiveWeather();
 			if (this.hasItem('sandbucket')) return 'sandstorm' as ID;
 			switch (weather) {
-			case 'sunnyday':
-			case 'raindance':
-			case 'desolateland':
-			case 'primordialsea':
-				if (this.hasItem('utilityumbrella')) return '';
+				case 'sunnyday':
+				case 'raindance':
+				case 'desolateland':
+				case 'primordialsea':
+					if (this.hasItem('utilityumbrella')) return '';
 			}
 			return weather;
 		},
-	
+
 		getMoves(lockedMove?: string | null, restrictData?: boolean): MoveRequestData[] {
 			if (lockedMove) {
 				lockedMove = toID(lockedMove);
@@ -1000,22 +1004,22 @@ export const Scripts: ModdedBattleScriptsData = {
 				}
 				let target = moveSlot.target;
 				switch (moveSlot.id) {
-				case 'curse':
-					if (!this.hasType('Ghost')) {
-						target = this.battle.dex.moves.get('curse').nonGhostTarget;
-					}
-					break;
-				case 'pollenpuff':
-					// Heal Block only prevents Pollen Puff from targeting an ally when the user has Heal Block
-					if (this.volatiles['healblock']) {
-						target = 'adjacentFoe';
-					}
-					break;
-				case 'terastarstorm':
-					if (this.species.name === 'Terapagos-Stellar') {
-						target = 'allAdjacentFoes';
-					}
-					break;
+					case 'curse':
+						if (!this.hasType('Ghost')) {
+							target = this.battle.dex.moves.get('curse').nonGhostTarget;
+						}
+						break;
+					case 'pollenpuff':
+						// Heal Block only prevents Pollen Puff from targeting an ally when the user has Heal Block
+						if (this.volatiles['healblock']) {
+							target = 'adjacentFoe';
+						}
+						break;
+					case 'terastarstorm':
+						if (this.species.name === 'Terapagos-Stellar') {
+							target = 'allAdjacentFoes';
+						}
+						break;
 				}
 				let disabled = moveSlot.disabled;
 				if (this.volatiles['dynamax']) {
@@ -1025,14 +1029,14 @@ export const Scripts: ModdedBattleScriptsData = {
 				} else if (moveSlot.pp <= 0) {
 					disabled = true;
 				}
-	
+
 				if (disabled === 'hidden') {
 					disabled = !restrictData;
 				}
 				if (!disabled) {
 					hasValidMove = true;
 				}
-	
+
 				moves.push({
 					move: moveName,
 					id: moveSlot.id,
@@ -1064,8 +1068,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		const nature = this.dex.natures.get(set.nature);
 		// Natures are calculated with 16-bit truncation.
 		// This only affects Eternatus-Eternamax in Pure Hackmons.
-		if (nature.name === 'Fighter' || nature.name === 'Sorcerer' || nature.name === 'Tank')
-		{ plusmult = 120; minusmult = 80; } else { plusmult = 110; minusmult = 90; }
+		if (nature.name === 'Fighter' || nature.name === 'Sorcerer' || nature.name === 'Tank') { plusmult = 120; minusmult = 80; } else { plusmult = 110; minusmult = 90; }
 		if (nature.plus === statName) {
 			stat = this.ruleTable.has('overflowstatmod') ? Math.min(stat, 595) : stat;
 			stat = tr(tr(stat * plusmult, 16) / 100);

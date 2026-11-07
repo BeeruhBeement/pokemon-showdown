@@ -123,7 +123,7 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 		},
 		onDamagingHit(damage, target, source, move) {
-			if (target.hasAbility('illusion')) { 
+			if (target.hasAbility('illusion')) {
 				this.add('-start', target, 'typechange', (target.illusion || target).getTypes(true).join('/'), '[silent]');
 			}
 		},

@@ -22,7 +22,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				pokemon.cureStatus();
 			}
 		},
-		onBeforeMove() { return },
+		onBeforeMove() { return; },
 	},
 	frz: {
 		inherit: true,
@@ -56,7 +56,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			if (this.effectState.stage < 3) {
 				this.effectState.stage++;
 			}
-			const inverseStage = 5 - this.effectState.stage; 
+			const inverseStage = 5 - this.effectState.stage;
 			this.damage(this.clampIntRange(pokemon.baseMaxhp / 20, 1) * inverseStage);
 			if (this.effectState.stage && this.effectState.stage > 0) {
 				const chance = 4 - this.effectState.stage;
@@ -124,7 +124,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			if (randomStat) boost[randomStat] = -15;
 
 			this.boost(boost, pokemon, pokemon);
-			
+
 			const chance = 4 - this.effectState.duration!;
 			if (this.randomChance(chance, 5)) {
 				pokemon.cureStatus();
@@ -216,7 +216,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				const damageNeeded = pokemon.hp - (pokemon.maxhp / 5 * 4);
 				this.damage(damageNeeded);
 			}
-			
+
 			const chance = 4 - this.effectState.duration!;
 			if (this.randomChance(chance, 5)) {
 				pokemon.cureStatus();
@@ -252,7 +252,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.add('-activate', pokemon, 'move: ' + this.effectState.sourceEffect, `[of] ${source}`);
 			this.effectState.boundDivisor = source.hasItem('bindingband') ? 20 : 10;
 		},
-		onTrapPokemon(pokemon) {},
+		onTrapPokemon(pokemon) { },
 	},
 
 	// weather is implemented here since it's so important to the game
@@ -367,6 +367,31 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.add('-weather', 'none');
 		},
 	},
+	flinch: {
+		inherit: true,
+		duration: 0,
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'Flinch');
+			this.effectState.willflinch = false;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'Flinch');
+			this.add('-end', target, 'Will Flinch');
+		},
+		onRestart(target, source, sourceEffect) {
+			this.effectState.willflinch = true;
+			this.add('-end', target, 'Flinch');
+			this.add('-start', target, 'Will Flinch');
+		},
+		onBeforeMove(pokemon) {
+			if (this.effectState.willflinch === true) {
+				this.add('cant', pokemon, 'flinch');
+				this.runEvent('Flinch', pokemon);
+				pokemon.removeVolatile('flinch');
+				return false;
+			}
+		},
+	},
 
 	mustrecharge: {
 		inherit: true,
@@ -466,7 +491,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	// stat down
 	atkdown: {
 		name: 'atkdown',
-		duration: 3,
+		duration: 2,
 		onStart(target, source, sourceEffect) {
 			if (target.boosts.atk > 0) {
 				this.boost({ atk: -target.boosts.atk }, target, target, this.effectState.sourceEffect);
@@ -488,7 +513,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	defdown: {
 		name: 'defdown',
-		duration: 3,
+		duration: 2,
 		onStart(target, source, sourceEffect) {
 			if (target.boosts.def > 0) {
 				this.boost({ def: -target.boosts.def }, target, target, this.effectState.sourceEffect);
@@ -510,7 +535,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	spadown: {
 		name: 'spadown',
-		duration: 3,
+		duration: 2,
 		onStart(target, source, sourceEffect) {
 			if (target.boosts.spa > 0) {
 				this.boost({ spa: -target.boosts.spa }, target, target, this.effectState.sourceEffect);
@@ -532,7 +557,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	spddown: {
 		name: 'spddown',
-		duration: 3,
+		duration: 2,
 		onStart(target, source, sourceEffect) {
 			if (target.boosts.spd > 0) {
 				this.boost({ spd: -target.boosts.spd }, target, target, this.effectState.sourceEffect);
@@ -554,7 +579,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	spedown: {
 		name: 'spedown',
-		duration: 3,
+		duration: 2,
 		onStart(target, source, sourceEffect) {
 			if (target.boosts.spe > 0) {
 				this.boost({ spe: -target.boosts.spe }, target, target, this.effectState.sourceEffect);
@@ -687,11 +712,11 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			if (shield <= 0) {
 				return damage;
 			}
-			
+
 			const shieldAbsorbed = Math.min(damage, shield);
 			target.m.buildmonsShield = shield - shieldAbsorbed;
 			const remainingDamage = damage - shieldAbsorbed;
-			
+
 			// Update shield display
 			if (target.m.buildmonsShield > 0) {
 				this.add('-end', target, 'Shield', '[silent]');
@@ -700,7 +725,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 				this.add('-end', target, 'Shield', '[silent]');
 				target.removeVolatile('shield');
 			}
-			
+
 			return remainingDamage;
 		},
 		onEnd(target) {
@@ -708,7 +733,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.add('-end', target, 'Shield');
 		},
 	},
-	
+
 	// ability specific
 	duel: {
 		name: 'duel',
@@ -717,7 +742,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			let noDuel = true;
 			this.getAllActive().forEach(mon => {
 				if (mon.volatiles.includes["duel"] && mon != pokemon) noDuel = false;
-			})
+			});
 			if (noDuel) pokemon.removeVolatile("duel");
 		},
 		onDamage(damage, target, source, effect) {

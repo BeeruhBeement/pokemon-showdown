@@ -2,7 +2,7 @@ import { Natures as Base } from '../../natures';
 
 import { ModdedNatureData } from '../../../sim/dex-data';
 
-export const Natures: {[k: string]: ModdedNatureData} = {
+export const Natures: { [k: string]: ModdedNatureData; } = {
 	// implement hp natures
 	fighter: {
 		name: "Fighter",
@@ -66,5 +66,5 @@ export const Natures: {[k: string]: ModdedNatureData} = {
 
 for (const nature in Base) {
 	const key = nature as keyof typeof Natures;
-	if (!Natures[key]) Natures[key] = {inherit: true, name: "Generalist", plus: undefined, minus: undefined};
+	if (!Natures[key]) Natures[key] = { inherit: true, name: "Generalist", plus: undefined, minus: undefined };
 }

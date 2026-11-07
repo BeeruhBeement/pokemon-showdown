@@ -1,7 +1,7 @@
 import { ModdedMoveData } from "../../../sim/dex-moves";
 
-export const Moves: {[k: string]: ModdedMoveData} = {
-	
+export const Moves: { [k: string]: ModdedMoveData; } = {
+
 	metronome: {
 		inherit: true,
 		isNonstandard: "Future",
@@ -99,7 +99,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				return this.chainModify(1.5);
 			}
 		},
-		onAfterHit(target, source) { return },
+		onAfterHit(target, source) { return; },
 		pp: 4,
 	},
 	spikes: {
@@ -327,6 +327,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
 		pp: 5,
 	},
+	firstimpression: {
+		inherit: true,
+		onTry(source) {
+			if (source.activeTurns > 1) {
+				this.hint("First Impression only works on your first turn out.");
+				return false;
+			}
+		},
+	},
 	flamethrower: {
 		inherit: true,
 		pp: 4,
@@ -354,7 +363,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Petrifies the target.",
 		pp: 4,
 	},
-	
+
 	healblock: {
 		inherit: true,
 		condition: {
@@ -378,6 +387,31 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 		},
+	},
+	laserfocus: {
+		inherit: true,
+		condition: {
+			duration: 1,
+			onStart(pokemon, source, effect) {
+				if (effect && (['costar', 'imposter', 'psychup', 'transform'].includes(effect.id))) {
+					this.add('-start', pokemon, 'move: Laser Focus', '[silent]');
+				} else {
+					this.add('-start', pokemon, 'move: Laser Focus');
+				}
+			},
+			onRestart(pokemon) {
+				this.effectState.duration = 2;
+				this.add('-start', pokemon, 'move: Laser Focus');
+			},
+			onModifyCritRatio(critRatio) {
+				return 5;
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'move: Laser Focus', '[silent]');
+			},
+		},
+		desc: "Until the end of the turn, the user's attacks will be critical hits.",
+		shortDesc: "Until the end of the turn, user's moves crit.",
 	},
 	leechlife: {
 		inherit: true,
@@ -427,6 +461,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
 		pp: 5,
 	},
+	multiattack: {
+		inherit: true,
+		pp: 3,
+		onModifyType(move, pokemon) {
+			const types = pokemon.getTypes();
+			let type = types[types.length - 1];
+			move.type = type;
+		},
+		shortDesc: "Matches the user's last type.",
+	},
 	nightslash: {
 		inherit: true,
 		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
@@ -471,7 +515,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: { noassist: 1, failcopycat: 1, cantusetwice: 1 },
 		stallingMove: false,
 		volatileStatus: undefined,
-		onPrepareHit(pokemon) {},
+		onPrepareHit(pokemon) { },
 		onHit(pokemon) {
 			pokemon.m.buildmonsShield = Math.min((pokemon.m.buildmonsShield || 0) + 50, pokemon.maxhp);
 		},
@@ -492,7 +536,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	razorwind: {
 		inherit: true,
 		type: "Steel",
-		onTryMove(attacker, defender, move) {},
+		onTryMove(attacker, defender, move) { },
 		secondary: {
 			chance: 30,
 			status: 'bld',
@@ -522,6 +566,17 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 20% chance to confuse the target. The becomes ungrounded if the move hits.",
 		shortDesc: "20% chance to confuse target. Ungrounds user.",
 		pp: 4,
+	},
+	rockwrecker: {
+		inherit: true,
+		self: {
+			onHit(source) {
+				source.addVolatile('mustrecharge');
+				source.addVolatile('taunt');
+			},
+		},
+		desc: "If this move is successful, applies Recharge and Taunt on user.",
+		shortDesc: "Applies Recharge and Taunt on user.",
 	},
 	silverwind: {
 		inherit: true,
@@ -599,6 +654,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 		pp: 5,
+	},
+	stormthrow: {
+		inherit: true,
+		basePower: 40,
+		critModifier: 2,
+		desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities. Critical hits dealt by this move have a 2x multiplier.",
+		shortDesc: "Always results in a crit. Deals 2x damage on a crit.",
+		pp: 4,
 	},
 	strangesteam: {
 		inherit: true,
@@ -678,6 +741,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		boosts: {
 			atk: 50,
 		},
+		desc: "Raises the user's Attack by 50%.",
+		shortDesc: "Raises the user's Attack by 50%.",
 		pp: 4,
 	},
 	tailwind: {
@@ -697,6 +762,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 		pp: 4,
+	},
+	taunt: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			duration: 2,
+		},
 	},
 	tidyup: {
 		inherit: true,
@@ -727,7 +799,32 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, dance: 1 },
 		pp: 5,
 	},
-	
+	withdraw: {
+		inherit: true,
+		pp: 3,
+		flags: { snatch: 1, heal: 1, metronome: 1 },
+		onHit(pokemon) {
+			const success = !!this.heal(50);
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
+		},
+		boosts: undefined,
+		shortDesc: "Heals the user by 50 HP.",
+	},
+	xscissor: {
+		inherit: true,
+		desc: "Has a 30% chance to bleed the target and a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. 30% chance to bleed.",
+		secondary: {
+			chance: 30,
+			status: 'bld',
+		},
+		pp: 4,
+	},
+
 	asteroidbelt: {
 		accuracy: 90,
 		basePower: 25,
@@ -1005,13 +1102,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		priority: 2,
 		flags: { bullet: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		onTry(source) {
-			if (source.activeMoveActions > 1) {
+			if (source.activeTurns > 1) {
 				this.hint("Morning Star only works on your first turn out.");
 				return false;
 			}
 		},
 		target: "normal",
-		type: "Steel",
+		type: "Rock",
 		desc: "Fails unless it is the user's first turn on the field.",
 		shortDesc: "Nearly always goes first. First turn out only.",
 	},
@@ -1287,4 +1384,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 30% chance to wet the target.",
 		shortDesc: "30% chance to wet the target.",
 	},
+
+	// functional moves
 };

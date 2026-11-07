@@ -1,12 +1,12 @@
 export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	aloevera: {
 		name: "Aloe Vera",
-		shortDesc: "Increases healing effectiveness by 1.25x.",
+		shortDesc: "Increases healing effectiveness by 1.2x.",
 		onTryHealPriority: 1,
 		onTryHeal(damage, target, source, effect) {
 			const noheals = ['drain', 'leechseed'];
 			if (!noheals.includes(effect.id)) {
-				return this.chainModify([125, 100]);
+				return this.chainModify([12, 10]);
 			}
 		},
 		gen: -1,
@@ -36,7 +36,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyMove(move, pokemon, target) {
 			if (move.flags.slicing && !move.multihit) {
 				move.multihit = 2;
-				move.basePower*=.5;
+				move.basePower *= .5;
 			}
 		},
 		onCriticalHit(pokemon, target, move) {
@@ -140,7 +140,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 					const isBMM = source.volatiles['item:ceramicblunderbuss']?.inSlot;
 					if (isBMM) {
 						source.removeVolatile('item:ceramicblunderbuss');
-						source.m.scrambled.items.splice((source.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+						source.m.scrambled.items.splice((source.m.scrambled.items as { thing: string, inSlot: string; }[]).findIndex(e =>
 							this.toID(e.thing) === 'ceramicblunderbuss' && e.inSlot === isBMM), 1);
 					}
 				}
@@ -445,7 +445,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	moltenhammer: {
 		name: "Molten Hammer",
-		shortDesc: "After using a move more than twice consecutively every subsequent hit burns.",
+		shortDesc: "After using a move for more than two consecutive turns every hit burns.",
 		onStart(pokemon) {
 			pokemon.addVolatile('moltenhammer');
 		},
@@ -563,14 +563,9 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	razorpenny: {
 		name: "Razor Penny",
-		shortDesc: "All moveslots gain 2 PP on landing a crit.",
-		onSourceDamagingHit(damage, target, source, move) {
-			if (move?.effectType === 'Move' && target.getMoveHitData(move).crit) {
-				for (const m of source.moveSlots) {
-					if (!m) continue;
-					m.pp = Math.min(m.pp + 2, m.maxpp);
-				}
-			}
+		shortDesc: "Grants Laser Focus on switch-in.",
+		onStart(pokemon) {
+			pokemon.addVolatile('laserfocus');
 		},
 		gen: -1,
 		spritenum: -1,
@@ -621,7 +616,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 					const isBMM = pokemon.volatiles['item:gasmask']?.inSlot;
 					if (isBMM) {
 						pokemon.removeVolatile('item:gasmask');
-						pokemon.m.scrambled.items.splice((pokemon.m.scrambled.items as { thing: string, inSlot: string }[]).findIndex(e =>
+						pokemon.m.scrambled.items.splice((pokemon.m.scrambled.items as { thing: string, inSlot: string; }[]).findIndex(e =>
 							this.toID(e.thing) === 'gasmask' && e.inSlot === isBMM), 1);
 					}
 				}
@@ -679,8 +674,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	safetygoggles: {
 		inherit: true,
-		onImmunity(type, pokemon) {},
-		onTryHit(pokemon, source, move) {},
+		onImmunity(type, pokemon) { },
+		onTryHit(pokemon, source, move) { },
 		onDamage(damage, target, source, effect) {
 			if (effect.effectType !== 'Move' && target.hp <= target.maxhp / 3) {
 				if (effect.effectType === 'Ability') this.add('-activate', source, 'ability: ' + effect.name);

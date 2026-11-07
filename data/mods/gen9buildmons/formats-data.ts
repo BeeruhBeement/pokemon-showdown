@@ -21,6 +21,16 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 		doublesTier: "DOU",
 	},
+	weavile: {
+		isNonstandard: null,
+		tier: "UU",
+		doublesTier: "DOU",
+	},
+	crustle: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
 	vanilluxe: {
 		isNonstandard: null,
 		tier: "UU",
@@ -42,6 +52,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	noivern: {
+		isNonstandard: null,
+		tier: "UU",
+		doublesTier: "DOU",
+	},
+	typenull: {
 		isNonstandard: null,
 		tier: "UU",
 		doublesTier: "DOU",

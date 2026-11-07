@@ -4,6 +4,7 @@ import { Pokedex as BasePokedex } from '../../pokedex';
 export const Learnsets: { [k: string]: ModdedLearnsetData; } = {
   furret: {
     learnset: {
+      fakeout: ["9M"],
       aquatail: ["9M"],
       blizzard: ["9M"],
       bodyslam: ["9M"],
@@ -73,6 +74,24 @@ export const Learnsets: { [k: string]: ModdedLearnsetData; } = {
       thunderfang: ["9M"],
       thunderpunch: ["9M"],
       wetslap: ["9M"],
+    },
+  },
+  crustle: {
+    learnset: {
+      bodypress: ["9M"],
+      bugbite: ["9M"],
+      heavyslam: ["9M"],
+      rockblast: ["9M"],
+      rockpolish: ["9M"],
+      rockslide: ["9M"],
+      rocktomb: ["9M"],
+      rockwrecker: ["9M"],
+      sandtomb: ["9M"],
+      shadowclaw: ["9M"],
+      stoneedge: ["9M"],
+      swordsdance: ["9M"],
+      withdraw: ["9M"],
+      xscissor: ["9M"],
     },
   },
   beheeyem: {
