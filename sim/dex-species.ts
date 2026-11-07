@@ -19,6 +19,8 @@ export interface SpeciesData extends Partial<Species> {
 	baseStats: StatsTable;
 	eggGroups: string[];
 	weightkg: number;
+
+	hasNightmareForm?: boolean;
 }
 export interface CosmeticFormeData {
 	isCosmeticForme: boolean;
@@ -205,6 +207,8 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 	readonly bst: number;
 	/** Weight (in kg). Not valid for OMs; use weighthg / 10 instead. */
 	readonly weightkg: number;
+	/** True when this species has a Plastic Pyrite nightmare sprite. */
+	readonly hasNightmareForm: boolean;
 	/** Weight (in integer multiples of 0.1kg). */
 	readonly weighthg: number;
 	/** Height (in m). */
@@ -319,6 +323,7 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 		this.bst = this.baseStats.hp + this.baseStats.atk + this.baseStats.def +
 			this.baseStats.spa + this.baseStats.spd + this.baseStats.spe;
 		this.weightkg = data.weightkg || 0;
+		this.hasNightmareForm = !!data.hasNightmareForm;
 		this.weighthg = this.weightkg * 10;
 		this.heightm = data.heightm || 0;
 		this.color = data.color || '';

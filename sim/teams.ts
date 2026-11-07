@@ -83,6 +83,9 @@ export interface PokemonSet {
 	 * event-only abilities or moves.
 	 */
 	shiny?: boolean;
+	/** Plastic Pyrite battle-only customization flags. */
+	tiny?: boolean;
+	nightmare?: boolean;
 	/**
 	 * This is technically "Friendship", but the community calls this
 	 * "Happiness".
@@ -202,13 +205,16 @@ export const Teams = new class Teams {
 			}
 
 			if (set.pokeball || set.hpType || set.gigantamax ||
-				(set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10) || set.teraType || set.perks !== undefined) {
+				(set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10) || set.teraType || set.perks !== undefined ||
+				set.tiny || set.nightmare) {
 				buf += `,${set.hpType || ''}`;
 				buf += `,${this.packName(set.pokeball || '')}`;
 				buf += `,${set.gigantamax ? 'G' : ''}`;
 				buf += `,${set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10 ? set.dynamaxLevel : ''}`;
 				buf += `,${set.teraType || ''}`;
 				buf += `,${set.perks?.join(',') || ''}`;
+				buf += `,${set.tiny ? 'T' : ''}`;
+				buf += `,${set.nightmare ? 'N' : ''}`;
 			}
 		}
 
@@ -340,9 +346,10 @@ export const Teams = new class Teams {
 				set.gigantamax = !!misc[3];
 				set.dynamaxLevel = (misc[4] ? Number(misc[4]) : 10);
 				set.teraType = misc[5];
-				if (misc.length >= 7) {
-					set.perks = misc.slice(6).filter(perk => /^tree[0-2][0-5]$/.test(perk));
-				}
+				const perks = misc.slice(6).filter(perk => /^tree[0-2][0-5]$/.test(perk));
+				if (perks.length || (misc.length >= 7 && misc[7] !== 'T' && misc[8] !== 'N')) set.perks = perks;
+				if (misc[7] === 'T') set.tiny = true;
+				if (misc[8] === 'N') set.nightmare = true;
 			}
 			if (j < 0) break;
 			i = j + 1;
@@ -406,6 +413,8 @@ export const Teams = new class Teams {
 		if (set.shiny) {
 			out += `Shiny: Yes  \n`;
 		}
+		if (set.tiny) out += `Tiny: Yes  \n`;
+		if (set.nightmare) out += `Nightmare: Yes  \n`;
 		if (typeof set.happiness === 'number' && set.happiness !== 255 && !isNaN(set.happiness)) {
 			out += `Happiness: ${set.happiness}  \n`;
 		}
@@ -496,6 +505,10 @@ export const Teams = new class Teams {
 			set.ability = aggressive ? toID(line) : line;
 		} else if (line === 'Shiny: Yes') {
 			set.shiny = true;
+		} else if (line === 'Tiny: Yes') {
+			set.tiny = true;
+		} else if (line === 'Nightmare: Yes') {
+			set.nightmare = true;
 		} else if (line.startsWith('Level: ')) {
 			line = line.slice(7);
 			set.level = +line;

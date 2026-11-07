@@ -634,7 +634,7 @@ export class DexMoves {
 		if (id === '' || id === 'constructor') return EMPTY_MOVE;
 		let move = this.moveCache.get(id);
 		if (move) return move;
-		if (this.dex.getAlias(id)) {
+		if (this.dex.getAlias(id) && !this.dex.data.Moves.hasOwnProperty(id)) {
 			move = this.get(this.dex.getAlias(id));
 			if (move.exists) {
 				this.moveCache.set(id, move);

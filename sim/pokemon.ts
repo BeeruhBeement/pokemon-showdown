@@ -558,8 +558,16 @@ export class Pokemon {
 		let name = this.species.name;
 		if (['Greninja-Bond', 'Rockruff-Dusk'].includes(name)) name = this.species.baseSpecies;
 		if (!level) level = this.level;
-		return name + (level === 100 ? '' : `, L${level}`) +
-			(this.gender === '' ? '' : `, ${this.gender}`) + (this.set.shiny ? ', shiny' : '');
+		const details = [
+			level === 100 ? '' : `L${level}`,
+			this.gender,
+			this.set.shiny ? 'shiny' : '',
+		];
+		if (this.battle.dex.currentMod === 'gen9plasticpyrite') {
+			if (this.set.tiny) details.push('tiny');
+			if (this.set.nightmare) details.push('nightmare');
+		}
+		return name + (details.filter(Boolean).length ? `, ${details.filter(Boolean).join(', ')}` : '');
 	}
 
 	getFullDetails = () => {
@@ -1451,8 +1459,7 @@ export class Pokemon {
 		this.knownType = true;
 		this.weighthg = species.weighthg;
 
-		const stats = this.battle.spreadModify(this.species.baseStats, this.set);
-		if (this.species.maxHP) stats.hp = this.species.maxHP;
+		const stats = this.getSetStats(this.species);
 
 		if (!this.maxhp) {
 			this.baseMaxhp = stats.hp;
@@ -1552,13 +1559,31 @@ export class Pokemon {
 	}
 
 	updateMaxHp() {
-		const newBaseMaxHp = this.battle.statModify(this.species.baseStats, this.set, 'hp');
+		const newBaseMaxHp = this.getSetStats(this.species).hp;
 		if (newBaseMaxHp === this.baseMaxhp) return;
 		this.baseMaxhp = newBaseMaxHp;
 		const newMaxHP = this.volatiles['dynamax'] ? (2 * this.baseMaxhp) : this.baseMaxhp;
 		this.hp = this.hp <= 0 ? 0 : Math.max(1, newMaxHP - (this.maxhp - this.hp));
 		this.maxhp = newMaxHP;
 		if (this.hp) this.battle.add('-heal', this, this.getHealth, '[silent]');
+	}
+
+	getSetStats(species: Species) {
+		const stats = this.battle.spreadModify(species.baseStats, this.set);
+		if (species.maxHP) stats.hp = species.maxHP;
+		if (this.battle.dex.currentMod !== 'gen9plasticpyrite') return stats;
+
+		if (this.set.tiny) {
+			stats.hp = Math.floor(stats.hp * 0.8);
+			stats.spe = Math.floor(stats.spe * 1.2);
+		}
+		if (this.set.nightmare) {
+			stats.atk = Math.floor(stats.atk * 1.2);
+			stats.spa = Math.floor(stats.spa * 1.2);
+			stats.def = Math.floor(stats.def * 0.8);
+			stats.spd = Math.floor(stats.spd * 0.8);
+		}
+		return stats;
 	}
 
 	clearVolatile(includeSwitchFlags = true) {

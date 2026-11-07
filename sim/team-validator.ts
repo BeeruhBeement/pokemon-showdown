@@ -575,6 +575,12 @@ export class TeamValidator {
 
 		let species = dex.species.get(set.species);
 		set.species = species.name;
+		if ((set.tiny || set.nightmare) && dex.currentMod !== 'gen9plasticpyrite') {
+			problems.push(`${species.name} can only use Tiny or Nightmare forms in Plastic Pyrite formats.`);
+		}
+		if (set.nightmare && dex.currentMod === 'gen9plasticpyrite' && !species.hasNightmareForm) {
+			problems.push(`${species.name} does not have a Nightmare form.`);
+		}
 		// Backwards compatibility with old Gmax format
 		if (set.species.toLowerCase().endsWith('-gmax') && this.format.id !== 'gen8megamax') {
 			set.species = set.species.slice(0, -5);
