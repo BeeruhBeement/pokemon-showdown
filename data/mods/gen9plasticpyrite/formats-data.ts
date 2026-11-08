@@ -181,24 +181,38 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	cocowati: { tier: "LC" },
 	alemera: { tier: "OU" },
 	ironhi5: { tier: "OU" },
-	feralfang: { tier: "OU" },
+	feralfang: {
+		tier: "Uber"
+	},
 	memorsid: { tier: "OU" },
 	jagwarr: { tier: "OU" },
 	artiment: { tier: "OU" },
 	piggygee: { tier: "OU" },
 	hogalog: { tier: "OU" },
 	boarbrick: { tier: "OU" },
-	qumulykan: { tier: "OU" },
+	qumulykan: {
+		tier: "Uber"
+	},
 	specuatro: { tier: "OU" },
 	vurreeze: { tier: "LC" },
 	aklamaster: { tier: "OU" },
 	cadavyre: { tier: "OU" },
-	amassion: { tier: "OU" },
+	amassion: {
+		tier: "Uber"
+	},
 	zuezemzenyo: { tier: "OU" },
-	typhordra: { tier: "OU" },
-	pintamant: { tier: "OU" },
-	auruniro: { tier: "OU" },
-	cardizn: { tier: "OU" },
+	typhordra: {
+		tier: "Uber"
+	},
+	pintamant: {
+		tier: "Uber"
+	},
+	auruniro: {
+		tier: "Uber"
+	},
+	cardizn: {
+		tier: "Uber"
+	},
 	capaldy: { tier: "OU" },
 };
 

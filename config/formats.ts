@@ -466,11 +466,15 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Plastic Pyrite OU",
 		mod: 'gen9plasticpyrite',
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
+		banlist: [
+			'Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Focus Band', 'Assist', 'Baton Pass',
+		],
 	},
 	{
 		name: "[Gen 9] Plastic Pyrite AG",
 		mod: 'gen9plasticpyrite',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
+		ruleset: ['Standard AG', 'NatDex Mod', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
 	},
 
 	{
