@@ -131,10 +131,16 @@ export const Items: import("../../../sim/dex-items").ModdedItemDataTable = {
 			basePower: 80,
 		},
 		onDamage(damage, target, source, effect) {
-			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			const sideConditions = ['spikes', 'stealthrock', 'gmaxsteelsurge'];
 			if (sideConditions.includes(effect.id)) {
 				return false;
 			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (effect.id === 'toxicspikes') return false;
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (effect.id === 'stickyweb') return false;
 		},
 		shortDesc: "When switching in, the holder is unaffected by hazards on its side of the field.",
 	},
