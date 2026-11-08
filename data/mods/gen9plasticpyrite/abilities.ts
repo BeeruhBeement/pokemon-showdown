@@ -260,37 +260,35 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 	},
 	kleptomaniac: {
 		onStart(pokemon) {
-			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
-			this.effectState.boost = true;
-			const sides = [this.sides[0], this.sides[3]!, this.sides[1], this.sides[2]!];
+			let success = false;
+			const hazards = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			const sides = [pokemon.side, ...pokemon.side.foeSidesWithConditions()];
 			for (const side of sides) {
-				if (!side.sideConditions) continue;
-				for (const id in side.sideConditions) {
-					if (sideConditions.includes(id)) {
-						side.removeSideCondition(id);
-						if (this.effectState.boost) {
-							this.boost({ def: 1, spd: 1 }, pokemon);
-							this.effectState.boost = false;
-						}
+				for (const sideCondition of hazards) {
+					if (side.removeSideCondition(sideCondition)) {
+						this.add('-sideend', side, this.dex.conditions.get(sideCondition).name, '[from] ability: Kleptomaniac', `[of] ${pokemon}`);
+						success = true;
 					}
 				}
 			}
+			if (success) {
+				this.boost({ def: 1, spd: 1 }, pokemon);
+			}
 		},
 		onResidual(pokemon) {
-			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
-			this.effectState.boost = true;
-			const sides = [this.sides[0], this.sides[3]!, this.sides[1], this.sides[2]!];
+			let success = false;
+			const hazards = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			const sides = [pokemon.side, ...pokemon.side.foeSidesWithConditions()];
 			for (const side of sides) {
-				if (!side.sideConditions) continue;
-				for (const id in side.sideConditions) {
-					if (sideConditions.includes(id)) {
-						side.removeSideCondition(id);
-						if (this.effectState.boost) {
-							this.boost({ def: 1, spd: 1 }, pokemon);
-							this.effectState.boost = false;
-						}
+				for (const sideCondition of hazards) {
+					if (side.removeSideCondition(sideCondition)) {
+						this.add('-sideend', side, this.dex.conditions.get(sideCondition).name, '[from] ability: Kleptomaniac', `[of] ${pokemon}`);
+						success = true;
 					}
 				}
+			}
+			if (success) {
+				this.boost({ def: 1, spd: 1 }, pokemon);
 			}
 		},
 		flags: {},
