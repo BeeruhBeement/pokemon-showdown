@@ -13449,7 +13449,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			earthquake: ["9M"],
 			energyball: ["9M"],
 			explosion: ["9L75"],
-			extremeevoboost: ["9L57"],
+			captoadsgift: ["9L57"],
 			facade: ["9M"],
 			falseswipe: ["9M"],
 			fantastickicks: ["9L11"],

@@ -89,6 +89,25 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		name: "Conductor",
 		shortDesc: "User's sound-based moves are boosted by 50%. Electric moves raise its Sp. Defense",
 	},
+	darksmoke: {
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+				this.add('-fail', target, 'unboost', '[from] ability: Dark Smoke', `[of] ${target}`);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Dark Smoke",
+		shortDesc: "Prevents other Pokemon from lowering this Pokemon's stat stages.",
+	},
 	dragonsoul: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
@@ -691,11 +710,16 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		shortDesc: "Doubles the power of the Pokémon's physical moves (It's Pure Power, Yoga Power is the Japanese name)",
 	},
 	
+	auraguard: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	snowwarning: {
 		inherit: true,
 		onStart(source) {
 			this.field.setWeather('hail');
 		},
 		rating: 4,
+		shortDesc: "On switch-in, this Pokemon summons Hail.",
 	},
 };
