@@ -245,6 +245,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 			this.effectState.boost = true;
 			const sides = [this.sides[0], this.sides[3]!, this.sides[1], this.sides[2]!];
 			for (const side of sides) {
+				if (!side.sideConditions) continue;
 				for (const id in side.sideConditions) {
 					if (sideConditions.includes(id)) {
 						side.removeSideCondition(id);
@@ -261,6 +262,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 			this.effectState.boost = true;
 			const sides = [this.sides[0], this.sides[3]!, this.sides[1], this.sides[2]!];
 			for (const side of sides) {
+				if (!side.sideConditions) continue;
 				for (const id in side.sideConditions) {
 					if (sideConditions.includes(id)) {
 						side.removeSideCondition(id);
