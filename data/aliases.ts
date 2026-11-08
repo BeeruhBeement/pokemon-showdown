@@ -779,6 +779,15 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	vivillonsavanna: "Vivillon",
 	vivillonsun: "Vivillon",
 	vivillontundra: "Vivillon",
+	// modded cosmetic form aliases
+	mccritteryellow: "McCritter",
+	mccritterred: "McCritter",
+	mccritterwhite: "McCritter",
+	mccritterblue: "McCritter",
+	puppawhuared: "Puppawhua",
+	puppawhuablue: "Puppawhua",
+	puppawhuagreen: "Puppawhua",
+	puppawhuacyan: "Puppawhua",
 
 	// abilities --- 1st ordered alphabetically by ability name, 2nd by alias
 	adapt: "Adaptability",
@@ -1324,6 +1333,9 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	hprock: "Hidden Power Rock",
 	hpsteel: "Hidden Power Steel",
 	hpwater: "Hidden Power Water",
+	// for some mods
+	hpfairy: "Hidden Power Fairy",
+	//
 	hjk: "High Jump Kick",
 	hijumpkick: "High Jump Kick",
 	id: "Iron Defense",

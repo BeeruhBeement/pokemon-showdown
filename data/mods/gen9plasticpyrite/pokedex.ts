@@ -332,7 +332,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Red",
 		abilities: { 0: "Mega Launcher", 1: "Scrappy", H: "Analytic" },
-		isNonstandard: "Modded"
+		isNonstandard: "Modded",
+		cosmeticFormes: ["McCritter-Yellow", "McCritter-Red", "McCritter-White", "McCritter-Blue"],
+		formeOrder: [
+			"McCritter",
+			"McCritter-Yellow",
+			"McCritter-Red",
+			"McCritter-White",
+			"McCritter-Blue",
+		],
 	},
 	brrrbat: {
 		hasNightmareForm: true,
@@ -743,7 +751,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Purple",
 		abilities: { 0: "Watchdog", 1: "Guts", H: "Moody" },
-		isNonstandard: "Modded"
+		isNonstandard: "Modded",
+		cosmeticFormes: ["Puppawhua-Red", "Puppawhua-Blue", "Puppawhua-Green", "Puppawhua-Cyan"],
+		formeOrder: [
+			"Puppawhua",
+			"Puppawhua-Red",
+			"Puppawhua-Blue",
+			"Puppawhua-Green",
+			"Puppawhua-Cyan"
+		],
 	},
 	metamoso: {
 		num: 9054,
@@ -1310,6 +1326,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	enamanuel: {
+		hasNightmareForm: true,
 		num: 9085,
 		name: "Enamanuel",
 		types: ["Fairy"],
@@ -1365,6 +1382,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	forebail: {
+		hasNightmareForm: true,
 		num: 9089,
 		name: "Forebail",
 		types: ["Ghost"],
@@ -1435,6 +1453,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	bubboll: {
+		hasNightmareForm: true,
 		num: 9094,
 		name: "Bubboll",
 		types: ["Water"],
@@ -1449,6 +1468,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	shambloo: {
+		hasNightmareForm: true,
 		num: 9095,
 		name: "Shambloo",
 		types: ["Water"],
@@ -2062,6 +2082,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	doonba: {
+		hasNightmareForm: true,
 		num: 9140,
 		name: "Doonba",
 		types: ["Ground", "Electric"],
@@ -2224,6 +2245,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	crystall: {
+		hasNightmareForm: true,
 		num: 9152,
 		name: "Crystall",
 		types: ["Psychic"],

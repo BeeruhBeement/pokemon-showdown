@@ -126,6 +126,8 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 			Stellar: 0,
 			Water: 0,
 		},
+		// necessary for plastic pyrite until i find a better solution
+		HPivs: {},
 	},
 	fighting: {
 		damageTaken: {

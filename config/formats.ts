@@ -465,12 +465,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Plastic Pyrite OU",
 		mod: 'gen9plasticpyrite',
-		ruleset: ['Standard', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
 	},
 	{
 		name: "[Gen 9] Plastic Pyrite AG",
 		mod: 'gen9plasticpyrite',
-		ruleset: ['Standard', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
 	},
 
 	{

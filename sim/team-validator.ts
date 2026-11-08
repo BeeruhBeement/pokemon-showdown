@@ -838,9 +838,7 @@ export class TeamValidator {
 		}
 
 		const pokemonGoProblems = this.validatePokemonGo(outOfBattleSpecies, set, setSources);
-		if (ruleTable.isBanned('nonexistent')) {
-			problems.push(...this.validateStats(set, species, setSources, pokemonGoProblems));
-		}
+		problems.push(...this.validateStats(set, species, setSources, pokemonGoProblems));
 
 		const moveLegalityWhitelist: { [k: string]: true | undefined } = {};
 		for (const moveName of set.moves) {

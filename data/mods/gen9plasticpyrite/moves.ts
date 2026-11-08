@@ -15,19 +15,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
-	fairytail: {
-		name: "Fairy Tail",
-		type: "Fairy",
-		category: "Physical",
-		basePower: 60,
-		accuracy: 90,
-		pp: 10,
-		priority: -6,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
 	fantasyfangs: {
 		name: "Fantasy Fangs",
 		type: "Fairy",
@@ -49,32 +36,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		desc: "Has a 30% chance to either burn, frostbite, or paralyze the target.",
 		shortDesc: "30% chance to paralyze or burn or frostbite target.",
-	},
-	enchantingcall: {
-		name: "Enchanting Call",
-		type: "Fairy",
-		category: "Special",
-		basePower: 40,
-		accuracy: 100,
-		pp: 15,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	glitzblitz: {
-		name: "Glitz Blitz",
-		type: "Fairy",
-		category: "Physical",
-		basePower: 50,
-		accuracy: true,
-		pp: 35,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
 	},
 	lunablaster: {
 		name: "Luna Blaster",
@@ -131,45 +92,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		shortDesc: "No additional effect.",
 	},
-	forestillusion: {
-		name: "Forest Illusion",
-		type: "Fairy",
-		category: "Special",
-		basePower: 25,
-		accuracy: 90,
-		pp: 15,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	lunacy: {
-		name: "Lunacy",
-		type: "Fairy",
-		category: "Physical",
-		basePower: 120,
-		accuracy: 100,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	ogrebreath: {
-		name: "Ogre Breath",
-		type: "Fairy",
-		category: "Special",
-		basePower: 60,
-		accuracy: 100,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
 	divinity: {
 		name: "Divinity",
 		type: "Fairy",
@@ -194,19 +116,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		desc: "The user has 1/16 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3× normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
 		shortDesc: "User recovers 1/16 max HP per turn.",
-	},
-	bamboozle: {
-		name: "Bamboozle",
-		type: "Grass",
-		category: "Physical",
-		basePower: 40,
-		accuracy: 100,
-		pp: 10,
-		priority: 3,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
 	},
 	arcticaria: {
 		name: "Arctic Aria",
@@ -244,19 +153,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		drain: [1, 2],
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3× normal, rounded half down.",
 		shortDesc: "User recovers 50% of the damage dealt.",
-	},
-	um: {
-		name: "Um",
-		type: "Flying",
-		category: "Physical",
-		basePower: 90,
-		accuracy: 100,
-		pp: 5,
-		priority: 3,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
 	},
 	allstarsmash: {
 		name: "All-Star Smash",
@@ -360,7 +256,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
 		critRatio: 2,
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
@@ -379,32 +275,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
 		desc: "Has a 50% chance to lower the target's Defense by 1 stage.",
 		shortDesc: "50% chance to lower the target's Defense by 1.",
-	},
-	slaponthewrist: {
-		name: "Slap on the Wrist",
-		type: "Normal",
-		category: "Physical",
-		basePower: 50,
-		accuracy: 100,
-		pp: 35,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	texaswrapem: {
-		name: "Texas Wrap 'em",
-		type: "Normal",
-		category: "Special",
-		basePower: 15,
-		accuracy: 90,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
 	},
 	quicktemper: {
 		name: "Quick Temper",
@@ -441,32 +311,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		desc: "Has a 100% chance to lower the target's Speed by 2 stage.",
 		shortDesc: "100% chance to lower the foe(s) Speed by 2.",
-	},
-	splashdown: {
-		name: "Splashdown",
-		type: "Water",
-		category: "Physical",
-		basePower: 150,
-		accuracy: 100,
-		pp: 5,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	polterheist: {
-		name: "Polterheist",
-		type: "Ghost",
-		category: "Physical",
-		basePower: 40,
-		accuracy: 100,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
 	},
 	sugarrush: {
 		name: "Sugar Rush",
@@ -514,71 +358,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		type: "Ground",
 		desc: "Hits one time for the user and one time for each unfainted Pokemon without a non-volatile status condition in the user's party. The power of each hit is equal to 5+(X/10), where X is each participating Pokemon's base Attack; each hit is considered to come from the user.",
 		shortDesc: "All healthy allies aid in damaging the target.",
-	},
-	aftershock: {
-		name: "Aftershock",
-		type: "Ground",
-		category: "Physical",
-		basePower: 120,
-		accuracy: 100,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	backfireold: {
-		name: "BackfireOLD",
-		type: "Fire",
-		category: "Physical",
-		basePower: 90,
-		accuracy: 90,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	sandcoffin: {
-		name: "Sand Coffin",
-		type: "Ghost",
-		category: "Physical",
-		basePower: 95,
-		accuracy: 90,
-		pp: 15,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	latchon: {
-		name: "Latch On",
-		type: "Grass",
-		category: "Physical",
-		basePower: 15,
-		accuracy: 90,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	slipslide: {
-		name: "Slip Slide",
-		type: "Water",
-		category: "Physical",
-		basePower: 50,
-		accuracy: 100,
-		pp: 15,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
 	},
 	weatherbash: {
 		name: "Weather Bash",
@@ -671,19 +450,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		desc: "The user restores 1/2 of its maximum HP if Strong Winds or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Intense Sun or Sun, and 1/4 of its maximum HP if the weather is Heavy Rain, Rain, Sandstorm, or Snow, all rounded half down.",
 		shortDesc: "Heals the user by a weather-dependent amount.",
 	},
-	favorlaser: {
-		name: "Favor Laser",
-		type: "Normal",
-		category: "Special",
-		basePower: 1,
-		accuracy: 100,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
 	swoopdown: {
 		name: "Swoop Down",
 		type: "Flying",
@@ -767,19 +533,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
 	},
-	omegadrain: {
-		name: "Omega Drain",
-		type: "Grass",
-		category: "Special",
-		basePower: 90,
-		accuracy: 100,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1, heal: 1 }
-	},
 	armorbash: {
 		name: "Armor Bash",
 		type: "Steel",
@@ -844,19 +597,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 1/4 recoil.",
 	},
-	sandygale: {
-		name: "Sandy Gale",
-		type: "Ground",
-		category: "Special",
-		basePower: 60,
-		accuracy: 100,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
 	bubbleburst: {
 		name: "Bubbleburst",
 		type: "Water",
@@ -872,19 +612,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		selfdestruct: "always",
 		desc: "The user faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability.",
 		shortDesc: "Hits adjacent Pokemon. The user faints.",
-	},
-	rampage: {
-		name: "Rampage",
-		type: "Ground",
-		category: "Physical",
-		basePower: 100,
-		accuracy: 95,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
 	},
 	slimetime: {
 		name: "Slime Time",
@@ -1133,32 +860,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		desc: "Lowers the target's Speed by 2 stages.",
 		shortDesc: "Lowers the Speed of all adjacent by 2.",
 	},
-	tectonichead: {
-		name: "Tectonic Head",
-		type: "Ground",
-		category: "Physical",
-		basePower: 120,
-		accuracy: 90,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	aaa: {
-		name: "Aaa",
-		type: "Normal",
-		category: "Physical",
-		basePower: 50,
-		accuracy: 100,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
 	solarflare: {
 		name: "Solar Flare",
 		type: "Fire",
@@ -1185,7 +886,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, pulse: 1 },
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			move.type = this.runEvent('Drive', pokemon, null, move, 'Normal');
@@ -1659,7 +1360,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
 		desc: "No additional effect.",
 		shortDesc: "Scatters coins.",
 	},
@@ -2201,19 +1902,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		shortDesc: "Power doubles if target is burned. 30% burn chance.",
 	},
-	meteorshower: {
-		name: "Meteor Shower",
-		type: "Rock",
-		category: "Special",
-		basePower: 60,
-		accuracy: 90,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
 	psykick: {
 		name: "Psykick",
 		type: "Psychic",
@@ -2304,45 +1992,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		shortDesc: "Resets all of the target's stat stages to 0.",
 	},
-	tombstone: {
-		name: "Tombstone",
-		type: "Ghost",
-		category: "Physical",
-		basePower: 85,
-		accuracy: 95,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	soulsteal: {
-		name: "Soul Steal",
-		type: "Ghost",
-		category: "Physical",
-		basePower: 75,
-		accuracy: 100,
-		pp: 10,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
-	shadowdance: {
-		name: "Shadow Dance",
-		type: "Ghost",
-		category: "Status",
-		basePower: 0,
-		accuracy: true,
-		pp: 20,
-		priority: 0,
-		num: 0,
-		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
-	},
 	jawbreaker: {
 		name: "Jawbreaker",
 		type: "Fairy",
@@ -2354,7 +2003,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
 		self: {
 			boosts: {
 				atk: -2,
@@ -2660,5 +2309,209 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 		},
 		shortDesc: "User recovers 50% of the damage dealt. Target -1 Atk.",
+	},
+
+	// move changes
+	ancientpower: {
+		inherit: true,
+		pp: 10,
+	},
+	armorcannon: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, pulse: 1 },
+	},
+	aurasphere: {
+		inherit: true,
+		basePower: 90,
+	},
+	barrage: {
+		inherit: true,
+		accuracy: 90,
+		basePower: 25,
+		category: "Physical",
+		type: "Steel",
+	},
+	blastburn: {
+		inherit: true,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon) {
+			return Math.floor((pokemon.happiness * 10) / 25) || 1;
+		},
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		pp: 20,
+		self: {},
+		desc: "Power is equal to the greater of (user's Happiness × 2/5), rounded down, or 1.",
+		shortDesc: "Max 102 power at maximum Happiness.",
+	},
+	blizzard: {
+		inherit: true,
+		basePower: 120,
+	},
+	bounce: {
+		inherit: true,
+		accuracy: 95,
+		pp: 10,
+	},
+	chargebeam: {
+		inherit: true,
+		accuracy: 100,
+	},
+	doubleslap: {
+		inherit: true,
+		type: "Fairy",
+	},
+	dracometeor: {
+		inherit: true,
+		basePower: 140,
+	},
+	dragonpulse: {
+		inherit: true,
+		basePower: 90,
+	},
+	dragonrush: {
+		inherit: true,
+		accuracy: 85,
+	},
+	fireblast: {
+		inherit: true,
+		basePower: 120,
+	},
+	flamethrower: {
+		inherit: true,
+		basePower: 95,
+	},
+	flashcannon: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, pulse: 1 },
+	},
+	frenzyplant: {
+		inherit: true,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon) {
+			return Math.floor((pokemon.happiness * 10) / 25) || 1;
+		},
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		pp: 20,
+		self: {},
+		desc: "Power is equal to the greater of (user's Happiness × 2/5), rounded down, or 1.",
+		shortDesc: "Max 102 power at maximum Happiness.",
+	},
+	hiddenpower: {
+		inherit: true,
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
+		type: "???",
+		desc: "This move's type depends on the user's individual values (IVs), and can be any type but Fairy and Normal. This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes.",
+		shortDesc: "Changes type based on user's IVs. Physical if Atk > Sp. Atk.",
+	},
+	hiddenpowerfairy: {
+		num: 237,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		placeholderFor: "Hidden Power",
+		isNonstandard: "Past",
+		name: "Hidden Power Fairy",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1 },
+		target: "normal",
+		type: "Fairy",
+		contestType: "Clever",
+	},
+	hurricane: {
+		inherit: true,
+		basePower: 120,
+	},
+	hydrocannon: {
+		inherit: true,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon) {
+			return Math.floor((pokemon.happiness * 10) / 25) || 1;
+		},
+		flags: { protect: 1, mirror: 1, metronome: 1, pulse: 1 },
+		pp: 20,
+		self: {},
+		desc: "Power is equal to the greater of (user's Happiness × 2/5), rounded down, or 1.",
+		shortDesc: "Max 102 power at maximum Happiness.",
+	},
+	hypnosis: {
+		inherit: true,
+		accuracy: 75,
+	},
+	icebeam: {
+		inherit: true,
+		basePower: 95,
+	},
+	irontail: {
+		inherit: true,
+		basePower: 120,
+		accuracy: 85,
+	},
+	leafstorm: {
+		inherit: true,
+		basePower: 140,
+	},
+	meteormash: {
+		inherit: true,
+		basePower: 100,
+		accuracy: 85,
+	},
+	moonlight: {
+		inherit: true,
+		pp: 10,
+	},
+	mudbomb: {
+		inherit: true,
+		basePower: 70,
+		accuracy: 95,
+	},
+	muddywater: {
+		inherit: true,
+		accuracy: 90,
+	},
+	ominouswind: {
+		inherit: true,
+		pp: 10,
+	},
+	overheat: {
+		inherit: true,
+		basePower: 140,
+	},
+	silverwind: {
+		inherit: true,
+		pp: 10,
+	},
+	sing: {
+		inherit: true,
+		accuracy: 60,
+	},
+	spikecannon: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, pulse: 1 },
+	},
+	technoblast: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, pulse: 1 },
+	},
+	thunder: {
+		inherit: true,
+		basePower: 120,
+	},
+	thunderbolt: {
+		inherit: true,
+		basePower: 95,
+	},
+	zapcannon: {
+		inherit: true,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1, pulse: 1 },
+	},
+	needlearm: {
+		inherit: true,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, punch: 1 },
 	},
 };
