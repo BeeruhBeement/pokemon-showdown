@@ -10,7 +10,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: 2,
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
 	},
 	fairytail: {
 		name: "Fairy Tail",
@@ -36,7 +39,16 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
+		secondary: {
+			chance: 30,
+			onHit(target, source) {
+				const status = this.sample(['brn', 'par', 'frz']);
+				target.trySetStatus(status, source);
+			},
+		},
+		desc: "Has a 30% chance to either burn, frostbite, or paralyze the target.",
+		shortDesc: "30% chance to paralyze or burn or frostbite target.",
 	},
 	enchantingcall: {
 		name: "Enchanting Call",
@@ -75,7 +87,19 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onHit(target, source, move) {
+			for (const ally of target.adjacentAllies()) {
+				this.damage(ally.baseMaxhp / 16, ally, source, this.dex.conditions.get('Flame Burst'));
+			}
+		},
+		onAfterSubDamage(damage, target, source, move) {
+			for (const ally of target.adjacentAllies()) {
+				this.damage(ally.baseMaxhp / 16, ally, source, this.dex.conditions.get('Flame Burst'));
+			}
+		},
+		desc: "If this move is successful, the target's ally loses 1/16 of its maximum HP, rounded down, unless it has the Magic Guard Ability.",
+		shortDesc: "Damages Pokemon next to the target as well.",
 	},
 	magicmissile: {
 		name: "Magic Missile",
@@ -88,7 +112,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		overrideDefensiveStat: 'def',
+		desc: "Deals damage to the target based on its Defense instead of Special Defense.",
+		shortDesc: "Damages target based on Defense, not Sp. Def.",
 	},
 	fairywings: {
 		name: "Fairy Wings",
@@ -101,7 +128,8 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		shortDesc: "No additional effect.",
 	},
 	forestillusion: {
 		name: "Forest Illusion",
@@ -153,7 +181,19 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		volatileStatus: 'divinity',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Divinity');
+			},
+			onResidualOrder: 6,
+			onResidual(pokemon) {
+				this.heal(pokemon.baseMaxhp / 16);
+			},
+		},
+		desc: "The user has 1/16 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3× normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+		shortDesc: "User recovers 1/16 max HP per turn.",
 	},
 	bamboozle: {
 		name: "Bamboozle",
@@ -179,7 +219,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
+		secondary: {
+			chance: 50,
+			boosts: {
+				spd: -1,
+			},
+		},
+		desc: "Has a 50% chance to lower the target's Special Defense by 1 stage.",
+		shortDesc: "50% chance to lower the target's Sp. Def by 1.",
 	},
 	corruptostone: {
 		name: "Corruptostone",
@@ -192,7 +240,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, heal: 1 },
+		drain: [1, 2],
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3× normal, rounded half down.",
+		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	um: {
 		name: "Um",
@@ -218,7 +269,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		willCrit: true,
+		desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "Always results in a critical hit.",
 	},
 	frostypaws: {
 		name: "Frosty Paws",
@@ -231,7 +285,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: [2, 5],
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
 	},
 	mentaldrain: {
 		name: "Mental Drain",
@@ -244,7 +301,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, heal: 1 },
+		drain: [1, 2],
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3× normal, rounded half down.",
+		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	wackyjig: {
 		name: "Wacky Jig",
@@ -256,8 +316,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			volatileStatus: 'confusion',
+		},
+		shortDesc: "30% chance to confuse adjacent Pokemon.",
 	},
 	quickdraw: {
 		name: "Quick Draw",
@@ -270,7 +335,19 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onTry(source) {
+			if (source.activeMoveActions > 1) {
+				this.hint("Fake Out only works on your first turn out.");
+				return false;
+			}
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'flinch',
+		},
+		desc: "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field.",
+		shortDesc: "Hits first. First turn out only. 100% flinch chance.",
 	},
 	mandibuster: {
 		name: "Mandibuster",
@@ -283,7 +360,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		critRatio: 2,
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
 	},
 	beastbite: {
 		name: "Beast Bite",
@@ -296,7 +376,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
+		desc: "Has a 50% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "50% chance to lower the target's Defense by 1.",
 	},
 	slaponthewrist: {
 		name: "Slap on the Wrist",
@@ -335,7 +417,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
 	},
 	riptide: {
 		name: "Riptide",
@@ -347,8 +431,16 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacentFoes",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			boosts: {
+				spe: -2,
+			},
+		},
+		desc: "Has a 100% chance to lower the target's Speed by 2 stage.",
+		shortDesc: "100% chance to lower the foe(s) Speed by 2.",
 	},
 	splashdown: {
 		name: "Splashdown",
@@ -387,20 +479,41 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "100% chance to raise the user's Speed by 1.",
 	},
 	stampede: {
-		name: "Stampede",
-		type: "Ground",
-		category: "Physical",
-		basePower: 1,
+		num: 0,
 		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			const setSpecies = this.dex.species.get(move.allies!.shift()!.set.species);
+			const bp = 5 + Math.floor(setSpecies.baseStats.atk / 10);
+			this.debug(`BP for ${setSpecies.name} hit: ${bp}`);
+			return bp;
+		},
+		category: "Physical",
+		name: "Stampede",
 		pp: 10,
 		priority: 0,
-		num: 0,
-		gen: 9,
+		flags: { protect: 1, mirror: 1, allyanim: 1, metronome: 1 },
+		onModifyMove(move, pokemon) {
+			move.allies = pokemon.side.pokemon.filter(ally => ally === pokemon || !ally.fainted && !ally.status);
+			move.multihit = move.allies.length;
+		},
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		type: "Ground",
+		desc: "Hits one time for the user and one time for each unfainted Pokemon without a non-volatile status condition in the user's party. The power of each hit is equal to 5+(X/10), where X is each participating Pokemon's base Attack; each hit is considered to come from the user.",
+		shortDesc: "All healthy allies aid in damaging the target.",
 	},
 	aftershock: {
 		name: "Aftershock",
@@ -478,7 +591,48 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onModifyType(move, pokemon) {
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				move.type = 'Fire';
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				move.type = 'Water';
+				break;
+			case 'sandstorm':
+				move.type = 'Rock';
+				break;
+			case 'hail':
+			case 'snowscape':
+				move.type = 'Ice';
+				break;
+			}
+		},
+		onModifyMove(move, pokemon) {
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				move.basePower *= 2;
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				move.basePower *= 2;
+				break;
+			case 'sandstorm':
+				move.basePower *= 2;
+				break;
+			case 'hail':
+			case 'snowscape':
+				move.basePower *= 2;
+				break;
+			}
+			this.debug(`BP: ${move.basePower}`);
+		},
+		desc: "Power doubles if a weather condition other than Strong Winds is active, and this move's type changes to match. Ice type during Snow, Water type during Heavy Rain or Rain, Rock type during Sandstorm, and Fire type during Intense Sun or Sun. If the user is holding Utility Umbrella and uses Weather Ball during Heavy Rain, Rain, Intense Sun, or Sun, this move remains Normal type and does not double in power.",
+		shortDesc: "Power doubles and type varies in each weather.",
 	},
 	hibernation: {
 		name: "Hibernation",
@@ -490,8 +644,32 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "self",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onHit(pokemon) {
+			let factor = 0.5;
+			switch (pokemon.effectiveWeather(undefined, true)) {
+			case 'sunnyday':
+			case 'desolateland':
+				factor = 0.667;
+				break;
+			case 'raindance':
+			case 'primordialsea':
+			case 'sandstorm':
+			case 'hail':
+			case 'snowscape':
+				factor = 0.25;
+				break;
+			}
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
+		},
+		desc: "The user restores 1/2 of its maximum HP if Strong Winds or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Intense Sun or Sun, and 1/4 of its maximum HP if the weather is Heavy Rain, Rain, Sandstorm, or Snow, all rounded half down.",
+		shortDesc: "Heals the user by a weather-dependent amount.",
 	},
 	favorlaser: {
 		name: "Favor Laser",
@@ -517,7 +695,18 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondaries: [
+			{
+				chance: 10,
+				status: 'par',
+			}, {
+				chance: 10,
+				volatileStatus: 'flinch',
+			},
+		],
+		desc: "Has a 10% chance to paralyze the target and a 10% chance to make it flinch.",
+		shortDesc: "10% chance to paralyze. 10% chance to flinch.",
 	},
 	scalycharge: {
 		name: "Scaly Charge",
@@ -530,7 +719,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 50,
+			self: {
+				boosts: {
+					def: 1,
+				},
+			},
+		},
+		desc: "Has a 50% chance to raise the user's Defense by 1 stage.",
+		shortDesc: "50% chance to raise the user's Defense by 1.",
 	},
 	brainbuster: {
 		name: "Brain Buster",
@@ -543,7 +742,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	psychoflow: {
 		name: "Psychoflow",
@@ -556,7 +763,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
 	},
 	omegadrain: {
 		name: "Omega Drain",
@@ -569,7 +778,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, heal: 1 }
 	},
 	armorbash: {
 		name: "Armor Bash",
@@ -582,7 +791,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					def: 1,
+				},
+			},
+		},
+		desc: "Has a 100% chance to raise the user's Defense by 1 stage.",
+		shortDesc: "100% chance to raise the user's Defense by 1.",
 	},
 	acupuncture: {
 		name: "Acupuncture",
@@ -595,7 +814,19 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		basePowerCallback(pokemon, target, move) {
+			if (target.status === 'par') {
+				this.debug('BP doubled on paralyzed target');
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		onHit(target) {
+			if (target.status === 'par') target.cureStatus();
+		},
+		desc: "Power doubles if the target is paralyzed. If the user has not fainted, the target is cured of paralysis.",
+		shortDesc: "Power doubles if target is paralyzed, and cures it.",
 	},
 	rockettail: {
 		name: "Rocket Tail",
@@ -608,7 +839,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		recoil: [1, 4],
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/4 recoil.",
 	},
 	sandygale: {
 		name: "Sandy Gale",
@@ -633,8 +867,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1, noparentalbond: 1 },
+		selfdestruct: "always",
+		desc: "The user faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability.",
+		shortDesc: "Hits adjacent Pokemon. The user faints.",
 	},
 	rampage: {
 		name: "Rampage",
@@ -659,8 +896,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		boosts: {
+			spe: -2,
+		},
+		shortDesc: "Lowers adjacent Pokemon's Speed by 2.",
 	},
 	hotacid: {
 		name: "Hot Acid",
@@ -672,8 +913,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		desc: "Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn adjacent Pokemon.",
 	},
 	twerk: {
 		name: "Twerk",
@@ -685,8 +932,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		volatileStatus: 'attract',
+		onTryImmunity(target, source) {
+			return (target.gender === 'M' && source.gender === 'F') || (target.gender === 'F' && source.gender === 'M');
+		},
+		shortDesc: "Attracts adjacent Pokemon.",
 	},
 	razorhorn: {
 		name: "Razor Horn",
@@ -699,7 +951,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		recoil: [1, 4],
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/4 recoil.",
 	},
 	jetstream: {
 		name: "Jet Stream",
@@ -712,7 +967,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "100% chance to raise the user's Speed by 1.",
 	},
 	headwind: {
 		name: "Headwind",
@@ -724,8 +989,16 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacentFoes",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			boosts: {
+				spe: -1,
+			},
+		},
+		desc: "Has a 100% chance to lower the target's Speed by 1 stage.",
+		shortDesc: "100% chance to lower the foe(s) Speed by 1.",
 	},
 	haymaker: {
 		name: "Haymaker",
@@ -738,7 +1011,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		ignoreDefensive: true,
+		ignoreEvasion: true,
+		desc: "Ignores the target's stat stage changes, including evasiveness.",
+		shortDesc: "Ignores the target's stat stage changes.",
 	},
 	tailswing: {
 		name: "Tail Swing",
@@ -751,7 +1028,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 10,
+			boosts: {
+				atk: -1,
+			},
+		},
+		desc: "Has a 10% chance to lower the target's Attack by 1 stage.",
+		shortDesc: "10% chance to lower the target's Attack by 1.",
 	},
 	frenzypowder: {
 		name: "Frenzy Powder",
@@ -777,7 +1062,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			status: 'slp',
+		},
+		desc: "Has a 20% chance to cause the target to fall asleep.",
+		shortDesc: "20% chance to cause the target to fall asleep.",
 	},
 	nightspear: {
 		name: "Night Spear",
@@ -790,7 +1081,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		critRatio: 2,
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
 	},
 	acidsplash: {
 		name: "Acid Splash",
@@ -816,7 +1110,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
+		volatileStatus: 'partiallytrapped',
+		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
+		shortDesc: "Traps and damages the target for 4-5 turns.",
 	},
 	enthrall: {
 		name: "Enthrall",
@@ -828,8 +1125,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		boosts: {
+			spe: -2,
+		},
+		desc: "Lowers the target's Speed by 2 stages.",
+		shortDesc: "Lowers the Speed of all adjacent by 2.",
 	},
 	tectonichead: {
 		name: "Tectonic Head",
@@ -868,7 +1170,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		weather: 'SunnyDay',
+		shortDesc: "Sets up Sunny Day on hit. -6 priority.",
 	},
 	technopulse: {
 		name: "Techno Pulse",
@@ -881,7 +1185,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onModifyType(move, pokemon) {
+			if (pokemon.ignoringItem()) return;
+			move.type = this.runEvent('Drive', pokemon, null, move, 'Normal');
+		},
+		desc: "This move's type depends on the user's held Drive.",
+		shortDesc: "Type varies based on the held Drive.",
 	},
 	dustflurry: {
 		name: "Dust Flurry",
@@ -894,7 +1204,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			status: 'psn',
+		},
+		desc: "Has a 30% chance to poison the target.",
+		shortDesc: "30% chance to poison the target.",
 	},
 	etherealburst: {
 		name: "Ethereal Burst",
@@ -906,8 +1222,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacentFoes",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		desc: "Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn adjacent Pokemon.",
 	},
 	coldflare: {
 		name: "Cold Flare",
@@ -920,7 +1242,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		overrideDefensiveStat: 'def',
+		desc: "Deals damage to the target based on its Defense instead of Special Defense.",
+		shortDesc: "Damages target based on Defense, not Sp. Def.",
 	},
 	frostdrive: {
 		name: "Frost Drive",
@@ -933,20 +1258,35 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		recoil: [33, 100],
+		secondary: {
+			chance: 10,
+			status: 'brn',
+		},
+		desc: "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 10% chance to burn.",
 	},
 	somerassault: {
 		name: "Somer-Assault",
 		type: "Dark",
 		category: "Physical",
 		basePower: 55,
+		basePowerCallback(pokemon, target, move) {
+			if (!pokemon.item) {
+				this.debug("BP doubled for no item");
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
 		accuracy: 100,
 		pp: 15,
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "any",
+		flags: { protect: 1, mirror: 1, metronome: 1, contact: 1 },
+		shortDesc: "Power doubles if the user has no held item.",
 	},
 	supersuplex: {
 		name: "Super Suplex",
@@ -958,8 +1298,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "self",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			volatileStatus: 'confusion',
+		},
+		desc: "Has a 10% chance to confuse the target. This move does not check accuracy.",
+		shortDesc: "10% chance to confuse. Does not check accuracy.",
 	},
 	irongrip: {
 		name: "Iron Grip",
@@ -972,7 +1318,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				if (source.isActive) target.addVolatile('trapped', source, move, 'trapper');
+			},
+		},
+		desc: "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
+		shortDesc: "Prevents the target from switching out.",
 	},
 	vileflaps: {
 		name: "Vile Flaps",
@@ -985,7 +1339,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: 2,
+		secondary: {
+			chance: 20,
+			status: 'psn',
+		},
+		desc: "Hits twice, with each hit having a 20% chance to poison the target. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times. Each hit has 20% chance to poison.",
 	},
 	hammerthrow: {
 		name: "Hammer Throw",
@@ -998,7 +1359,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 50,
+			status: 'par',
+		},
+		desc: "Has a 50% chance to paralyze the target.",
+		shortDesc: "50% chance to paralyze the target.",
 	},
 	digitail: {
 		name: "Digitail",
@@ -1011,7 +1378,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 40,
+			boosts: {
+				accuracy: -1,
+			},
+		},
+		desc: "Has a 40% chance to lower the target's Accuracy by 1 stages.",
+		shortDesc: "40% chance to lower the target's Accuracy by 1.",
 	},
 	blueberryblast: {
 		name: "Blueberry Blast",
@@ -1024,7 +1399,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 50,
+			volatileStatus: "leechseed",
+		},
+		shortDesc: "50% chance to apply Leech Seed on target."
 	},
 	lightspeed: {
 		name: "Lightspeed",
@@ -1037,7 +1417,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "Usually goes first. 100% chance to raise Speed by 1.",
 	},
 	waltzjump: {
 		name: "Waltz Jump",
@@ -1050,7 +1440,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		selfSwitch: true,
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "User switches out after damaging the target.",
 	},
 	berryblaster: {
 		name: "Berry Blaster",
@@ -1063,7 +1456,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 10,
+			volatileStatus: "leechseed",
+		},
+		shortDesc: "10% chance to apply Leech Seed on target."
 	},
 	scaledance: {
 		name: "Scale Dance",
@@ -1089,7 +1487,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 40,
+			boosts: {
+				spd: -1,
+			},
+		},
+		desc: "Has a 40% chance to lower the target's Special Defense by 1 stages.",
+		shortDesc: "40% chance to lower the target's Sp. Def by 1.",
 	},
 	supersonicjab: {
 		name: "Supersonic Jab",
@@ -1102,7 +1508,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "100% chance to raise the user's Speed by 1.",
 	},
 	specialpunch: {
 		name: "Special Punch",
@@ -1115,7 +1531,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		overrideDefensiveStat: 'def',
+		desc: "Deals damage to the target based on its Defense instead of Special Defense.",
+		shortDesc: "Damages target based on Defense, not Sp. Def.",
 	},
 	concentrate: {
 		name: "Concentrate",
@@ -1128,7 +1547,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		boosts: {
+			spd: 1,
+		},
+		desc: "Raises the user's Special Defense by 1 stage.",
+		shortDesc: "Raises the user's Sp. Def by 1.",
 	},
 	cryout: {
 		name: "Cry Out",
@@ -1141,7 +1565,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			boosts: {
+				spa: -1,
+			},
+		},
+		desc: "Has a 20% chance to lower the target's Special Attack by 1 stage.",
+		shortDesc: "20% chance to lower the target's Sp. Atk by 1.",
 	},
 	thunderdive: {
 		name: "Thunder Dive",
@@ -1154,7 +1586,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('Thunder Dive'));
+		},
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 	},
 	chargedtackle: {
 		name: "Charged Tackle",
@@ -1167,7 +1605,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
+		desc: "Has a 30% chance to make the target flinch.",
+		shortDesc: "30% chance to make the target flinch.",
 	},
 	auraslasher: {
 		name: "Aura Slasher",
@@ -1180,7 +1624,8 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		shortDesc: "This move does not check accuracy.",
 	},
 	stormshards: {
 		name: "Stormshards",
@@ -1193,7 +1638,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		self: {
+			chance: 10,
+			boosts: {
+				def: 2,
+			},
+		},
+		desc: "Has a 10% chance to raise the user's Defense by 2 stages.",
+		shortDesc: "10% chance to raise user's Defense by 2.",
 	},
 	bankbreaker: {
 		name: "Bank Breaker",
@@ -1206,7 +1659,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "No additional effect.",
+		shortDesc: "Scatters coins.",
 	},
 	bloomingriver: {
 		name: "Blooming River",
@@ -1218,8 +1673,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Grass', type);
+		},
+		desc: "This move combines Grass in its type effectiveness against the target. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+		shortDesc: "Hits adjacent Pokemon. Combines Grass in effectiveness.",
 	},
 	kaleidostorm: {
 		name: "Kaleidostorm",
@@ -1232,20 +1692,38 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onModifyMove(move) {
+			if (this.field.isWeather(['rain', 'primordialsea'])) move.accuracy = 100;
+		},
+		secondary: {
+			chance: 30,
+			onHit(target) {
+				target.clearBoosts();
+				this.add('-clearboost', target);
+			},
+		},
+		shortDesc: "30% to clear target's boosts. 100% accuracy in Rain.",
 	},
 	tripleswirl: {
 		name: "Triple Swirl",
 		type: "Fairy",
 		category: "Physical",
 		basePower: 20,
+		basePowerCallback(pokemon, target, move) {
+			return 20 * move.hit;
+		},
 		accuracy: 95,
 		pp: 10,
 		priority: 0,
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: 3,
+		multiaccuracy: true,
+		desc: "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
 	},
 	judoletteflip: {
 		name: "Judolette Flip",
@@ -1258,7 +1736,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		selfSwitch: true,
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "User switches out after damaging the target.",
 	},
 	bewilder: {
 		name: "Bewilder",
@@ -1271,7 +1752,19 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onTry(source) {
+			if (source.activeMoveActions > 1) {
+				this.hint("Fake Out only works on your first turn out.");
+				return false;
+			}
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'flinch',
+		},
+		desc: "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field.",
+		shortDesc: "Hits first. First turn out only. 100% flinch chance.",
 	},
 	clobbertail: {
 		name: "Clobber Tail",
@@ -1284,50 +1777,72 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			status: 'tox',
+		},
+		desc: "Has a 30% chance to badly poison the target.",
+		shortDesc: "30% chance to badly poison the target.",
 	},
 	typhoonboom: {
 		name: "Typhoon Boom",
 		type: "Flying",
 		category: "Physical",
-		basePower: 1,
+		basePower: 0,
+		basePowerCallback(pokemon) {
+			return Math.floor((pokemon.happiness * 10) / 25) || 1;
+		},
 		accuracy: 100,
 		pp: 20,
 		priority: 0,
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "Power is equal to the greater of (user's Happiness × 2/5), rounded down, or 1.",
+		shortDesc: "Max 102 power at maximum Happiness.",
 	},
 	superslam: {
 		name: "Super Slam",
 		type: "Fighting",
 		category: "Physical",
-		basePower: 1,
+		basePower: 0,
+		basePowerCallback(pokemon) {
+			return Math.floor((pokemon.happiness * 10) / 25) || 1;
+		},
 		accuracy: 100,
 		pp: 20,
 		priority: 0,
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "Power is equal to the greater of (user's Happiness × 2/5), rounded down, or 1.",
+		shortDesc: "Max 102 power at maximum Happiness.",
+
 	},
 	megatontail: {
 		name: "Megaton Tail",
 		type: "Rock",
 		category: "Physical",
-		basePower: 1,
+		basePower: 0,
+		basePowerCallback(pokemon) {
+			return Math.floor((pokemon.happiness * 10) / 25) || 1;
+		},
 		accuracy: 100,
 		pp: 20,
 		priority: 0,
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "Power is equal to the greater of (user's Happiness × 2/5), rounded down, or 1.",
+		shortDesc: "Max 102 power at maximum Happiness.",
 	},
 	shadowrush: {
 		name: "Shadow Rush",
-		type: "Qmarks",
+		type: "???",
 		category: "Physical",
 		basePower: 90,
 		accuracy: 100,
@@ -1336,7 +1851,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		critRatio: 2,
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
 	},
 	maelstrom: {
 		name: "Maelstrom",
@@ -1349,7 +1867,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		volatileStatus: 'partiallytrapped',
+		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
+		shortDesc: "Traps and damages the target for 4-5 turns.",
 	},
 	cosmicwind: {
 		name: "Cosmic Wind",
@@ -1362,7 +1883,21 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+		desc: "Has a 20% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+		shortDesc: "20% chance to raise all stats by 1 (not acc/eva).",
 	},
 	snowstorm: {
 		name: "Snowstorm",
@@ -1375,7 +1910,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		self: {
+			boosts: {
+				spe: -1,
+			},
+		},
+		desc: "Lowers the user's Speed by 1 stage.",
+		shortDesc: "Lowers the user's Speed by 1.",
 	},
 	stratossphere: {
 		name: "Stratos Sphere",
@@ -1401,7 +1943,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1 },
+		sleepUsable: true,
+		onTry(source) {
+			return source.status === 'slp' || source.hasAbility('comatose');
+		},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
 	},
 	negativeenergy: {
 		name: "Negative Energy",
@@ -1414,7 +1964,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spa: 1,
+				},
+			},
+		},
+		desc: "Has a 100% chance to raise the user's Special Attack by 1 stage.",
+		shortDesc: "100% chance to raise the user's SpA by 1.",
 	},
 	plumagestorm: {
 		name: "Plumage Storm",
@@ -1427,7 +1987,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		critRatio: 2,
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
 	},
 	spectralspear: {
 		name: "Spectral Spear",
@@ -1440,20 +2003,37 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			boosts: {
+				def: -2,
+			},
+		},
+		desc: "Has a 20% chance to lower the target's  Defense by 2 stages.",
+		shortDesc: "20% chance to lower the target's Defense by 2.",
 	},
 	omnigaze: {
 		name: "Omnigaze",
 		type: "Normal",
 		category: "Special",
-		basePower: 1,
+		basePower: 0,
+		basePowerCallback(pokemon, target) {
+			let power = Math.floor(25 * target.getStat('spe') / pokemon.getStat('spe')) + 1;
+			if (!isFinite(power)) power = 1;
+			if (power > 150) power = 150;
+			this.debug(`BP: ${power}`);
+			return power;
+		},
 		accuracy: 100,
 		pp: 10,
 		priority: 0,
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "Power is equal to (25 * target's current Speed / user's current Speed) + 1, rounded down, but not more than 150. If the user's current Speed is 0, this move's power is 1.",
+		shortDesc: "More power the slower the user than the target.",
 	},
 	doublepummel: {
 		name: "Double Pummel",
@@ -1466,7 +2046,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: 2,
+		critRatio: 2,
+		shortDesc: "High critical hit ratio. Hits twice.",
 	},
 	vengeance: {
 		name: "Vengeance",
@@ -1479,7 +2062,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onBasePower(basePower, pokemon) {
+			if (pokemon.side.faintedLastTurn) {
+				this.debug('Boosted for a faint last turn');
+				return this.chainModify(2);
+			}
+		},
+		desc: "Power doubles if one of the user's party members fainted last turn.",
+		shortDesc: "Power doubles if an ally fainted last turn.",
 	},
 	"150decibels": {
 		name: "150 Decibels",
@@ -1491,8 +2082,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacentFoes",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			volatileStatus: 'taunt',
+		},
+		shortDesc: "Taunts those hit",
 	},
 	vampirekiller: {
 		name: "Vampire Killer",
@@ -1505,7 +2101,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onTryHit(source, target, move) {
+			target.addVolatile("foresight");
+		},
+		shortDesc: "Applies Foresight before attacking.",
 	},
 	rockriot: {
 		name: "Rock Riot",
@@ -1518,7 +2118,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Fighting') return 1;
+		},
+		desc: "This move's type effectiveness against Fighting is changed to be super effective no matter what this move's type is.",
+		shortDesc: "Super effective on Fighting.",
 	},
 	daredevil: {
 		name: "Daredevil",
@@ -1531,7 +2136,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		recoil: [33, 100],
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
 	},
 	backfire: {
 		name: "Backfire",
@@ -1544,7 +2152,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		self: {
+			status: 'psn',
+		},
+		shortDesc: "When hits, self-Poisons user",
 	},
 	shimmershot: {
 		name: "Shimmer Shot",
@@ -1557,7 +2169,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: 2,
+		onAfterMoveSecondarySelf(pokemon, target, move) {
+			if (move.hit > 1) {
+				this.boost({ spe: 1, spd: -1 }, pokemon);
+			}
+		},
+		shortDesc: "Boosts Speed but lowers Sp. Def if it hits twice.",
 	},
 	iratefury: {
 		name: "Irate Fury",
@@ -1570,7 +2189,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		onBasePower(basePower, pokemon, target) {
+			if (target.status === 'brn') {
+				return this.chainModify(2);
+			}
+		},
+		shortDesc: "Power doubles if target is burned. 30% burn chance.",
 	},
 	meteorshower: {
 		name: "Meteor Shower",
@@ -1596,7 +2225,17 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 70,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		desc: "Has a 70% chance to raise the user's Special Defense by 1 stage.",
+		shortDesc: "70% chance to raise the user's SpD by 1.",
 	},
 	supersede: {
 		name: "Supersede",
@@ -1609,7 +2248,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		boosts: {
+			spa: 1,
+			spd: 1,
+			accuracy: 1,
+		},
+		desc: "Raises the user's Special Attack, Special Defense, and accuracy by 1 stage.",
+		shortDesc: "Raises user's SpA, SpD, accuracy by 1.",
 	},
 	stonesurge: {
 		name: "Stonesurge",
@@ -1622,7 +2268,23 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onAfterHit(target, source, move) {
+			if (!move.hasSheerForce) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('stealthrock');
+				}
+			}
+		},
+		onAfterSubDamage(damage, target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('stealthrock');
+				}
+			}
+		},
+		desc: "If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25×, 0.5×, neutral, 2×, or 4×, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
+		shortDesc: "Sets Stealth Rock on the target's side.",
 	},
 	blusteroushowl: {
 		name: "Blusterous Howl",
@@ -1635,7 +2297,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onHit(target) {
+			target.clearBoosts();
+			this.add('-clearboost', target);
+		},
+		shortDesc: "Resets all of the target's stat stages to 0.",
 	},
 	tombstone: {
 		name: "Tombstone",
@@ -1687,7 +2354,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		self: {
+			boosts: {
+				atk: -2,
+			},
+		},
+		desc: "Lowers the user's Attack by 2 stages.",
+		shortDesc: "Lowers the user's Atk by 2.",
 	},
 	poisumoslap: {
 		name: "Poisumoslap",
@@ -1700,20 +2374,34 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: 2,
+		secondary: {
+			chance: 50,
+			status: 'psn',
+		},
+		desc: "Hits twice, with each hit having a 50% chance to poison the target. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times. Each hit has 50% chance to poison.",
 	},
 	tricannon: {
 		name: "Tri Cannon",
 		type: "Steel",
 		category: "Physical",
 		basePower: 25,
+		basePowerCallback(pokemon, target, move) {
+			return 25 * move.hit;
+		},
 		accuracy: 90,
 		pp: 10,
 		priority: 0,
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1, pulse: 1 },
+		multihit: 3,
+		multiaccuracy: true,
+		desc: "Hits three times. Power increases to 50 for the second hit and 75 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
 	},
 	dragonfury: {
 		name: "Dragon Fury",
@@ -1725,8 +2413,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent Pokemon.",
 	},
 	shutdown: {
 		name: "Shutdown",
@@ -1739,7 +2429,16 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		self: {
+			boosts: {
+				spe: -1,
+				def: -1,
+				spd: -1,
+			},
+		},
+		desc: "Lowers the user's Speed, Defense, and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense, Sp. Def, Speed by 1.",
 	},
 	downpour: {
 		name: "Downpour",
@@ -1752,7 +2451,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		weather: 'RainDance',
+		shortDesc: "Sets up Rain Dance on hit. -6 priority.",
 	},
 	hailcrash: {
 		name: "Hail Crash",
@@ -1765,7 +2466,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		weather: 'Hail',
+		shortDesc: "Sets up Hail on hit. -6 priority.",
 	},
 	sandburst: {
 		name: "Sandburst",
@@ -1778,7 +2481,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		weather: 'Sandstorm',
+		shortDesc: "Sets up Sandstorm on hit. -6 priority.",
 	},
 	brainwave: {
 		name: "Brainwave",
@@ -1790,8 +2495,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		priority: 0,
 		num: 0,
 		gen: 9,
-		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		target: "allAdjacent",
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent Pokemon.",
 	},
 	funnyhammer: {
 		name: "Funny Hammer",
@@ -1804,7 +2511,21 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondaries: [
+			{
+				chance: 10,
+				status: 'par',
+			}, {
+				chance: 10,
+				volatileStatus: 'flinch',
+			}, {
+				chance: 10,
+				volatileStatus: 'confusion',
+			},
+		],
+		desc: "Has a 10% chance to paralyze the target, a 10% chance to make it flinch and a 10% chance to confuse it.",
+		shortDesc: "10% chance to paralyze, flinch, confuse.",
 	},
 	steamclaws: {
 		name: "Steam Claws",
@@ -1817,7 +2538,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "If the current weather is Sun and the user is not holding Utility Umbrella, this move's damage is multiplied by 1.5 instead of halved for being Water type.",
+		shortDesc: "During Sun: 1.5× damage instead of half.",
 	},
 	goodvibes: {
 		name: "Good Vibes",
@@ -1830,6 +2553,112 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "normal",
-		flags: { protect: 1, mirror: 1, metronome: 1 }
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		overrideOffensiveStat: 'spd',
+		desc: "Damage is calculated using the user's Special Defense stat as its Special Attack, including stat stage changes. Other effects that modify the Special Attack stat are used as normal.",
+		shortDesc: "Uses user's SpD stat as SpA in damage calculation.",
+	},
+	atomicslicer: {
+		num: 0,
+		accuracy: true,
+		basePower: 40,
+		category: "Special",
+		name: "Atomic Slicer",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		multihit: 2,
+		target: "normal",
+		type: "Steel",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. This move does not check accuracy.",
+		shortDesc: "Hits twice. This move does not check accuracy.",
+	},
+	captoadsgift: {
+		num: 0,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Captoad's Gift",
+		pp: 5,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		boosts: {
+			atk: 1,
+			def: 1,
+			spa: 1,
+			spd: 1,
+			spe: 1,
+		},
+		target: "self",
+		type: "Fairy",
+		desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stages.",
+		shortDesc: "Raises user's Atk, Def, SpA, SpD, and Spe by 1.",
+	},
+	disarmingcry: {
+		num: 0,
+		accuracy: true,
+		basePower: 50,
+		category: "Special",
+		name: "Disarming Cry",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1 },
+		target: "normal",
+		type: "Fairy",
+	},
+	dreamtendril: {
+		num: 0,
+		accuracy: 100,
+		basePower: 75,
+		category: "Special",
+		name: "Dream Tendril",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			status: 'slp',
+		},
+		target: "allAdjacentFoes",
+		type: "Poison",
+		desc: "Has a 100% chance to cause the target to fall asleep. Hits adjacent foes.",
+		shortDesc: "100% chance to cause the foe(s) to fall asleep.",
+	},
+	megaleg: {
+		num: 0,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Facade",
+		pp: 20,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onBasePower(basePower, pokemon) {
+			if (pokemon.status && pokemon.status !== 'slp') {
+				return this.chainModify(2);
+			}
+		},
+		target: "normal",
+		type: "Steel",
+	},
+	spiritsap: {
+		num: 0,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Spirit Sap",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		drain: [1, 2],
+		target: "normal",
+		type: "Ghost",
+		secondary: {
+			chance: 100,
+			boosts: {
+				atk: -1,
+			},
+		},
+		shortDesc: "User recovers 50% of the damage dealt. Target -1 Atk.",
 	},
 };

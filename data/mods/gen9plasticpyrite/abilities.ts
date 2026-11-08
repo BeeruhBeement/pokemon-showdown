@@ -108,6 +108,35 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		name: "Dragon Soul",
 		shortDesc: "Gain Dragon STAB (Steelworker but for Dragon moves)",
 	},
+	forecast: {
+		inherit: true,
+		onWeatherChange(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Metamoso' || pokemon.transformed) return;
+			let forme = null;
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				if (pokemon.species.id !== 'metamososunny') forme = 'Metamoso-Sunny';
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				if (pokemon.species.id !== 'metamosorainy') forme = 'Metamoso-Rainy';
+				break;
+			case 'hail':
+			case 'snowscape':
+				if (pokemon.species.id !== 'metamososnowy') forme = 'Metamoso-Snowy';
+				break;
+			default:
+				if (pokemon.species.id !== 'metamoso') forme = 'Metamoso';
+				break;
+			}
+			if (pokemon.isActive && forme) {
+				pokemon.formeChange(forme, this.effect, false, '0', '[msg]');
+			}
+		},
+		desc: "If this Pokemon is a Metamoso, its type changes to the current weather condition's type, except Sandstorm. This effect is prevented if this Pokemon is holding a Utility Umbrella and the weather is Rain or Sun.",
+		shortDesc: "Metamoso's type changes to the current weather condition's type, except Sandstorm.",
+	},
 	fragmentation: {
 		onStart(pokemon) {
 			const side = pokemon.side.foe;
@@ -210,6 +239,43 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.3.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.3× power. Sucker Punch is not boosted.",
 	},
+	kleptomaniac: {
+		onStart(pokemon) {
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			this.effectState.boost = true;
+			const sides = [this.sides[0], this.sides[3]!, this.sides[1], this.sides[2]!];
+			for (const side of sides) {
+				for (const id in side.sideConditions) {
+					if (sideConditions.includes(id)) {
+						side.removeSideCondition(id);
+						if (this.effectState.boost) {
+							this.boost({ def: 1, spd: 1 }, pokemon);
+							this.effectState.boost = false;
+						}
+					}
+				}
+			}
+		},
+		onResidual(pokemon) {
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			this.effectState.boost = true;
+			const sides = [this.sides[0], this.sides[3]!, this.sides[1], this.sides[2]!];
+			for (const side of sides) {
+				for (const id in side.sideConditions) {
+					if (sideConditions.includes(id)) {
+						side.removeSideCondition(id);
+						if (this.effectState.boost) {
+							this.boost({ def: 1, spd: 1 }, pokemon);
+							this.effectState.boost = false;
+						}
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "Kleptomaniac",
+		shortDesc: "On switch-in and at end of turn, clear all hazards. If any hazards were cleared +1 Def/SpD.",
+	},
 	laziness: {
 		onDamagingHit(damage, target, source, move) {
 			const sourceAbility = source.getAbility();
@@ -293,6 +359,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		name: "Nocturnal",
 		rating: 3,
 		num: 87,
+		shortDesc: "Dark moves heal the user, Fairy moves deal 25% more damage",
 	},
 	paratonnerre: {
 		onTryHit(target, source, move) {
@@ -337,6 +404,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		name: "Phantasma",
 		rating: 3,
 		num: 87,
+		shortDesc: "Ghost moves heal the user, Dark moves deal 25% more damage",
 	},
 	plantveil: {
 		onAllyTryBoost(boost, target, source, effect) {
@@ -376,9 +444,25 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		name: "Plant Veil",
 		shortDesc: "Prevents Grass-types from having their stats lowered (Flower Veil renamed)",
 	},
+	protean: {
+		inherit: true,
+		onPrepareHit(source, target, move) {
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch' || move.callsMove) return;
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if (!source.setType(type)) return;
+				this.add('-start', source, 'typechange', type, '[from] ability: Protean');
+			}
+		},
+		rating: 4.5,
+		desc: "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+		shortDesc: "This Pokemon's type changes to match the type of the move it is about to use.",
+	},
 	searingtouch: {
 		onSourceDamagingHit(damage, target, source, move) {
-			if (move.category === "Physical") {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (this.checkMoveMakesContact(move, target, source)) {
 				if (this.randomChance(3, 10)) {
 					target.trySetStatus('brn', source);
 				}
@@ -473,7 +557,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 	},
 	sunshower: {
 		onModifySpe(spe, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sunnyday', 'desolateland', 'raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
@@ -509,6 +593,65 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		flags: {},
 		name: "Thermal Body",
 		shortDesc: "Raises Sp. Attack when hit by a Fire move",
+	},
+	vastvines: {
+		onTryHitPriority: 4,
+		onTryHit(target, source, move) {
+			if (this.effectState.vastvines) return;
+			// Wide Guard blocks all spread moves
+			if (move?.target !== 'allAdjacent' && move.target !== 'allAdjacentFoes') {
+				return;
+			}
+			if (this.checkMoveBypassesProtect(move, source, target)) return;
+			this.add('-activate', target, 'ability: Vast Vines');
+			const lockedmove = source.getVolatile('lockedmove');
+			if (lockedmove) {
+				// Outrage counter is reset
+				if (source.volatiles['lockedmove'].duration === 2) {
+					delete source.volatiles['lockedmove'];
+				}
+			}
+			this.effectState.vastvines = true;
+			return this.NOT_FAIL;
+		},
+		flags: {},
+		name: "Vast Vines",
+		shortDesc: "Protects the user and ally from from one spread move once per switch-in.",
+	},
+	volcanic: {
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Malhelent' || pokemon.transformed) {
+				return;
+			}
+			if (pokemon.hp <= pokemon.maxhp / 2 && !['Volcanic'].includes(pokemon.species.forme)) {
+				pokemon.addVolatile('volcanic');
+			} else if (pokemon.hp > pokemon.maxhp / 2 && ['Volcanic'].includes(pokemon.species.forme)) {
+				pokemon.addVolatile('volcanic'); // in case of base Darmanitan-Zen
+				pokemon.removeVolatile('volcanic');
+			}
+		},
+		onEnd(pokemon) {
+			if (!pokemon.volatiles['volcanic'] || !pokemon.hp) return;
+			pokemon.transformed = false;
+			delete pokemon.volatiles['volcanic'];
+			if (pokemon.species.baseSpecies === 'Malhelent' && pokemon.species.battleOnly) {
+				pokemon.formeChange(pokemon.species.battleOnly as string, this.effect, false, '0', '[silent]');
+			}
+		},
+		condition: {
+			onStart(pokemon) {
+				if (pokemon.species.id !== 'malhelentvolcanic') pokemon.formeChange('Malhelent-Volcanic');
+			},
+			onEnd(pokemon) {
+				if (['Volcanic'].includes(pokemon.species.forme)) {
+					pokemon.formeChange(pokemon.species.battleOnly as string);
+				}
+			},
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
+		name: "Volcanic",
+		shortDesc: "Changes form when under 50% HP (Zen Mode renamed)",
 	},
 	watchdog: {
 		onResidualOrder: 28,

@@ -20,4 +20,22 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onAfterMoveSecondary(target, source, move) { },
 		onDamagingHit(damage, target, source, move) { },
 	},
+	sunnyday: {
+		inherit: true,
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if ((move.id === 'hydrosteam' || move.id === 'steamclaws') && attacker.effectiveWeather() === 'sunnyday') {
+				this.debug('Sunny Day Hydro Steam boost');
+				return this.chainModify(1.5);
+			}
+			if (defender.effectiveWeather() !== 'sunnyday') return;
+			if (move.type === 'Fire') {
+				this.debug('Sunny Day fire boost');
+				return this.chainModify(1.5);
+			}
+			if (move.type === 'Water') {
+				this.debug('Sunny Day water suppress');
+				return this.chainModify(0.5);
+			}
+		},
+	},
 };

@@ -457,13 +457,15 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		searchShow: false,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1', '+Nonexistent'],
 	},
+
 	{
 		section: "Plastic Pyrite",
+		column: 2,
 	},
 	{
 		name: "[Gen 9] Plastic Pyrite OU",
 		mod: 'gen9plasticpyrite',
-		ruleset: ['Standard', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent', 'Tiny Clause'],
+		ruleset: ['Standard', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
 	},
 	{
 		name: "[Gen 9] Plastic Pyrite AG",
@@ -662,7 +664,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 	{
 		section: "OU",
-		column: 2,
+		column: 3,
 	},
 	{
 		name: "[Gen 9] OU",

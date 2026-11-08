@@ -1493,7 +1493,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	maxprotect: "Max Guard",
 
 	// G-Max Moves --- ordered alphabetically by alias
-	befuddle: "G-Max Befuddle",
+	/*befuddle: "G-Max Befuddle",
 	cannonade: "G-Max Cannonade",
 	centiferno: "G-Max Centiferno",
 	//chistrike: "G-Max Chi Strike",
@@ -1525,7 +1525,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	volcalith: "G-Max Volcalith",
 	voltcrash: "G-Max Volt Crash",
 	// wildfire: "G-Max Wildfire",
-	windrage: "G-Max Wind Rage",
+	windrage: "G-Max Wind Rage",*/
 
 	// tags --- ordered alphabetically by alias
 	ballistic: "Bullet",

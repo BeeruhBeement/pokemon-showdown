@@ -1,6 +1,5 @@
 export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable = {
 	malhelent: {
-		hasNightmareForm: true,
 		num: 9001,
 		name: "Malhelent",
 		types: ["Dragon", "Poison"],
@@ -10,8 +9,27 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		weightkg: 192.9,
 		eggGroups: ["Monster", "Dragon"],
 		color: "Red",
-		abilities: { 0: "Volcanic", H: "Volcanic" },
-		isNonstandard: "Modded"
+		abilities: { 0: "Volcanic" },
+		isNonstandard: "Modded",
+		otherFormes: ["Malhelent-Zen"],
+		formeOrder: ["Malhelent", "Malhelent-Volcanic"],
+	},
+	malhelentvolcanic: {
+		num: 9001,
+		name: "Malhelent-Volcanic",
+		baseSpecies: "Malhelent",
+		forme: "Volcanic",
+		types: ["Dragon", "Poison"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 124, atk: 75, def: 86, spe: 105, spa: 135, spd: 75 },
+		heightm: 3.3,
+		weightkg: 192.9,
+		eggGroups: ["Monster", "Dragon"],
+		color: "Red",
+		abilities: { 0: "Volcanic" },
+		isNonstandard: "Modded",
+		requiredAbility: "Volcanic",
+		battleOnly: "Malhelent",
 	},
 	soarrel: {
 		hasNightmareForm: true,
@@ -453,49 +471,8 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Teravolt", 1: "Download", H: "Minus" },
 		isNonstandard: "Modded"
 	},
-	helmenace: {
-		num: 9034,
-		name: "Helmenace",
-		types: ["Steel", "Ghost"],
-		genderRatio: { M: 0.5, F: 0.5 },
-		baseStats: { hp: 50, atk: 64, def: 80, spe: 30, spa: 45, spd: 30 },
-		heightm: 0.4,
-		weightkg: 60,
-		eggGroups: ["Monster"],
-		color: "Gray",
-		abilities: { 0: "Bulletproof", 1: "Heatproof", H: "Defiant" },
-		evos: ["Hauntlet"],
-		isNonstandard: "Modded"
-	},
-	hauntlet: {
-		num: 9035,
-		name: "Hauntlet",
-		types: ["Steel", "Ghost"],
-		genderRatio: { M: 0.5, F: 0.5 },
-		baseStats: { hp: 60, atk: 94, def: 86, spe: 50, spa: 50, spd: 55 },
-		heightm: 1.2,
-		weightkg: 152,
-		eggGroups: ["Monster"],
-		color: "Gray",
-		abilities: { 0: "Bulletproof", 1: "Heatproof", H: "Levitate" },
-		evos: ["Souldier"],
-		isNonstandard: "Modded"
-	},
-	souldier: {
-		num: 9036,
-		name: "Souldier",
-		types: ["Steel", "Ghost"],
-		genderRatio: { M: 0.5, F: 0.5 },
-		baseStats: { hp: 70, atk: 115, def: 110, spe: 55, spa: 60, spd: 65 },
-		heightm: 1.2,
-		weightkg: 152,
-		eggGroups: ["Monster"],
-		color: "Gray",
-		abilities: { 0: "Bulletproof", 1: "Heatproof", H: "Defiant" },
-		isNonstandard: "Modded"
-	},
 	lynxius: {
-		num: 9037,
+		num: 9034,
 		name: "Lynxius",
 		types: ["Ice", "Fire"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -509,7 +486,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	fahrenthera: {
-		num: 9038,
+		num: 9035,
 		name: "Fahrenthera",
 		types: ["Ice", "Fire"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -522,7 +499,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	smolvra: {
-		num: 9039,
+		num: 9036,
 		name: "Smolvra",
 		types: ["Bug"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -536,7 +513,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	chrysilla: {
-		num: 9040,
+		num: 9037,
 		name: "Chrysilla",
 		types: ["Bug"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -550,7 +527,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	longarval: {
-		num: 9041,
+		num: 9038,
 		name: "Longarval",
 		types: ["Bug", "Dragon"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -563,7 +540,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	totter: {
-		num: 9042,
+		num: 9039,
 		name: "Totter",
 		types: ["Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -577,7 +554,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	armotter: {
-		num: 9043,
+		num: 9040,
 		name: "Armotter",
 		types: ["Psychic", "Fighting"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -591,7 +568,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	luminsect: {
 		hasNightmareForm: true,
-		num: 9044,
+		num: 9041,
 		name: "Luminsect",
 		types: ["Bug", "Electric"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -603,22 +580,9 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Yoga Power", H: "Huge Power" },
 		isNonstandard: "Modded"
 	},
-	lumenighter: {
-		num: 9045,
-		name: "Lumenighter",
-		types: ["Fighting", "Electric"],
-		genderRatio: { M: 0.5, F: 0.5 },
-		baseStats: { hp: 70, atk: 65, def: 60, spe: 90, spa: 90, spd: 75 },
-		heightm: 1.5,
-		weightkg: 12.5,
-		eggGroups: ["Bug"],
-		color: "Purple",
-		abilities: { 0: "Yoga Power", H: "No Guard" },
-		isNonstandard: "Modded"
-	},
 	grumple: {
 		hasNightmareForm: true,
-		num: 9046,
+		num: 9042,
 		name: "Grumple",
 		types: ["Rock"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -632,7 +596,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	slumbug: {
 		hasNightmareForm: true,
-		num: 9047,
+		num: 9043,
 		name: "Slumbug",
 		types: ["Bug"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -647,7 +611,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	kalamoth: {
 		hasNightmareForm: true,
-		num: 9048,
+		num: 9044,
 		name: "Kalamoth",
 		types: ["Bug", "Dark"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -660,7 +624,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	sorceed: {
-		num: 9049,
+		num: 9045,
 		name: "Sorceed",
 		types: ["Psychic", "Grass"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -674,7 +638,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	sapprini: {
-		num: 9050,
+		num: 9046,
 		name: "Sapprini",
 		types: ["Psychic", "Grass"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -688,7 +652,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	solceree: {
-		num: 9051,
+		num: 9047,
 		name: "Solceree",
 		types: ["Psychic", "Grass"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -701,7 +665,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	luplaze: {
-		num: 9052,
+		num: 9048,
 		name: "Luplaze",
 		types: ["Fire"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -715,7 +679,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	plazmek: {
-		num: 9053,
+		num: 9049,
 		name: "Plazmek",
 		types: ["Fire", "Electric"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -729,7 +693,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	heliostric: {
-		num: 9054,
+		num: 9050,
 		name: "Heliostric",
 		types: ["Fire", "Electric"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -742,7 +706,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	grusty: {
-		num: 9055,
+		num: 9051,
 		name: "Grusty",
 		types: ["Ground", "Ghost"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -756,7 +720,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	shreddar: {
-		num: 9056,
+		num: 9052,
 		name: "Shreddar",
 		types: ["Ground", "Ghost"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -769,7 +733,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	puppawhua: {
-		num: 9057,
+		num: 9053,
 		name: "Puppawhua",
 		types: ["Fighting"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -781,21 +745,8 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Watchdog", 1: "Guts", H: "Moody" },
 		isNonstandard: "Modded"
 	},
-	canerrain: {
-		num: 9058,
-		name: "Canerrain",
-		types: ["Ground"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 65, atk: 65, def: 60, spe: 130, spa: 110, spd: 95 },
-		heightm: 0.8,
-		weightkg: 24.5,
-		eggGroups: ["Field"],
-		color: "Yellow",
-		abilities: { 0: "Moxie", 1: "Contrary", H: "Defiant" },
-		isNonstandard: "Modded"
-	},
 	metamoso: {
-		num: 9059,
+		num: 9054,
 		name: "Metamoso",
 		types: ["Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -805,10 +756,63 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "White",
 		abilities: { 0: "Forecast" },
-		isNonstandard: "Modded"
+		isNonstandard: "Modded",
+		otherFormes: ["Metamoso-Sunny", "Metamoso-Rainy", "Metamoso-Snowy"],
+		formeOrder: ["Metamoso", "Metamoso-Sunny", "Metamoso-Rainy", "Metamoso-Snowy"],
+	},
+	metamososunny: {
+		num: 351,
+		name: "Metamoso-Sunny",
+		baseSpecies: "Metamoso",
+		forme: "Sunny",
+		types: ["Fire"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 100, atk: 80, def: 70, spe: 50, spa: 50, spd: 70 },
+		heightm: 0.7,
+		weightkg: 4.4,
+		eggGroups: ["Field"],
+		color: "White",
+		abilities: { 0: "Forecast" },
+		isNonstandard: "Modded",
+		requiredAbility: "Forecast",
+		battleOnly: "Metamoso",
+	},
+	metamosorainy: {
+		num: 351,
+		name: "Metamoso-Rainy",
+		baseSpecies: "Metamoso",
+		forme: "Rainy",
+		types: ["Water"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 100, atk: 80, def: 70, spe: 50, spa: 50, spd: 70 },
+		heightm: 0.7,
+		weightkg: 4.4,
+		eggGroups: ["Field"],
+		color: "White",
+		abilities: { 0: "Forecast" },
+		isNonstandard: "Modded",
+		requiredAbility: "Forecast",
+		battleOnly: "Metamoso",
+	},
+	metamososnowy: {
+		num: 351,
+		name: "Metamoso-Snowy",
+		baseSpecies: "Metamoso",
+		forme: "Snowy",
+		types: ["Ice"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 100, atk: 80, def: 70, spe: 50, spa: 50, spd: 70 },
+		heightm: 0.7,
+		weightkg: 4.4,
+		eggGroups: ["Field"],
+		color: "White",
+		abilities: { 0: "Forecast" },
+		isNonstandard: "Modded",
+		requiredAbility: "Forecast",
+		battleOnly: "Metamoso",
 	},
 	jingloo: {
-		num: 9060,
+		num: 9055,
 		name: "Jingloo",
 		types: ["Ice", "Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -822,7 +826,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	jakaclaws: {
-		num: 9061,
+		num: 9056,
 		name: "Jakaclaws",
 		types: ["Ice", "Dark"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -834,21 +838,8 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Tough Claws", 1: "No Guard", H: "Inner Focus" },
 		isNonstandard: "Modded"
 	},
-	broncaroo: {
-		num: 9062,
-		name: "Broncaroo",
-		types: ["Fighting"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 50, atk: 85, def: 65, spe: 90, spa: 50, spd: 55 },
-		heightm: 0.6,
-		weightkg: 8.5,
-		eggGroups: ["Monster", "Dragon"],
-		color: "Red",
-		abilities: { 0: "Guts", 1: "Justified", H: "Scrappy" },
-		isNonstandard: "Modded"
-	},
 	fierie: {
-		num: 9063,
+		num: 9057,
 		name: "Fierie",
 		types: ["Fire", "Fairy"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -862,7 +853,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	candelleba: {
-		num: 9064,
+		num: 9058,
 		name: "Candelleba",
 		types: ["Fire", "Fairy"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -876,7 +867,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	prawngs: {
 		hasNightmareForm: true,
-		num: 9065,
+		num: 9059,
 		name: "Prawngs",
 		types: ["Water"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -891,7 +882,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	crustodean: {
 		hasNightmareForm: true,
-		num: 9066,
+		num: 9060,
 		name: "Crustodean",
 		types: ["Water", "Fairy"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -905,7 +896,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	ignicean: {
 		hasNightmareForm: true,
-		num: 9067,
+		num: 9061,
 		name: "Ignicean",
 		types: ["Water", "Fire"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -919,7 +910,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	cleggean: {
 		hasNightmareForm: true,
-		num: 9068,
+		num: 9062,
 		name: "Cleggean",
 		types: ["Water", "Steel"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -931,73 +922,8 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Quick Feet", 1: "Tangled Feet", H: "Swift Swim" },
 		isNonstandard: "Modded"
 	},
-	crestacean: {
-		num: 9069,
-		name: "Crestacean",
-		types: ["Water", "Dragon"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 65, atk: 65, def: 60, spe: 110, spa: 130, spd: 95 },
-		heightm: 0.9,
-		weightkg: 26.5,
-		eggGroups: ["Field"],
-		color: "Purple",
-		abilities: { 0: "Intimidate", H: "Multiscale" },
-		isNonstandard: "Modded"
-	},
-	sealender: {
-		num: 9070,
-		name: "Sealender",
-		types: ["Water", "Ghost"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 95, atk: 65, def: 110, spe: 65, spa: 60, spd: 130 },
-		heightm: 1,
-		weightkg: 27,
-		eggGroups: ["Field"],
-		color: "Black",
-		abilities: { 0: "Clear Body", H: "Wonder Skin" },
-		isNonstandard: "Modded"
-	},
-	shrimpion: {
-		num: 9071,
-		name: "Shrimpion",
-		types: ["Water", "Bug"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 65, atk: 110, def: 130, spe: 95, spa: 60, spd: 65 },
-		heightm: 1,
-		weightkg: 25.5,
-		eggGroups: ["Field"],
-		color: "Green",
-		abilities: { 0: "Poison Touch", H: "Tough Claws" },
-		isNonstandard: "Modded"
-	},
-	decatora: {
-		num: 9072,
-		name: "Decatora",
-		types: ["Water", "Electric"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 65, atk: 60, def: 110, spe: 65, spa: 130, spd: 95 },
-		heightm: 0.8,
-		weightkg: 25.9,
-		eggGroups: ["Field"],
-		color: "Blue",
-		abilities: { 0: "Levitate", H: "Drizzle" },
-		isNonstandard: "Modded"
-	},
-	primpimp: {
-		num: 9073,
-		name: "Primpimp",
-		types: ["Water", "Normal"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 85, atk: 50, def: 95, spe: 80, spa: 120, spd: 115 },
-		heightm: 1.5,
-		weightkg: 38,
-		eggGroups: ["Flying", "Fairy"],
-		color: "White",
-		abilities: { 0: "Wonder Guard", H: "Normalize" },
-		isNonstandard: "Modded"
-	},
 	pholanges: {
-		num: 9074,
+		num: 9063,
 		name: "Pholanges",
 		types: ["Rock", "Water"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1011,7 +937,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	shreef: {
-		num: 9075,
+		num: 9064,
 		name: "Shreef",
 		types: ["Rock", "Water"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1024,7 +950,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	pokipine: {
-		num: 9076,
+		num: 9065,
 		name: "Pokipine",
 		types: ["Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1038,7 +964,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	prikipine: {
-		num: 9077,
+		num: 9066,
 		name: "Prikipine",
 		types: ["Normal", "Steel"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1052,7 +978,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	worbnid: {
 		hasNightmareForm: true,
-		num: 9078,
+		num: 9067,
 		name: "Worbnid",
 		types: ["Bug", "Dark"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -1067,7 +993,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	spreaver: {
 		hasNightmareForm: true,
-		num: 9079,
+		num: 9068,
 		name: "Spreaver",
 		types: ["Bug", "Dark"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -1082,7 +1008,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	arachness: {
 		hasNightmareForm: true,
-		num: 9080,
+		num: 9069,
 		name: "Arachness",
 		types: ["Bug", "Dark"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -1094,21 +1020,8 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Prankster", 1: "Poison Heal", H: "Technician" },
 		isNonstandard: "Modded"
 	},
-	ayylien: {
-		num: 9081,
-		name: "Ayylien",
-		types: ["Psychic", "Flying"],
-		gender: "M",
-		baseStats: { hp: 70, atk: 95, def: 70, spe: 45, spa: 50, spd: 125 },
-		heightm: 1.4,
-		weightkg: 88.4,
-		eggGroups: ["Field"],
-		color: "Brown",
-		abilities: { 0: "Moxie", 1: "Tinted Lens", H: "Speed Boost" },
-		isNonstandard: "Modded"
-	},
 	gargan: {
-		num: 9082,
+		num: 9070,
 		name: "Gargan",
 		types: ["Rock", "Fairy"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1122,7 +1035,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	guilor: {
 		hasNightmareForm: true,
-		num: 9083,
+		num: 9071,
 		name: "Águilor",
 		types: ["Flying", "Ground"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1135,7 +1048,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	ghrold: {
-		num: 9084,
+		num: 9072,
 		name: "Ghrold",
 		types: ["Dragon"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1149,7 +1062,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	greerial: {
-		num: 9085,
+		num: 9073,
 		name: "Greerial",
 		types: ["Dragon"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1162,7 +1075,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	gansitone: {
-		num: 9086,
+		num: 9074,
 		name: "Gansitone",
 		types: ["Rock"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1176,7 +1089,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	honklacier: {
-		num: 9087,
+		num: 9075,
 		name: "Honklacier",
 		types: ["Rock", "Ice"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1190,7 +1103,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	forgerry: {
 		hasNightmareForm: true,
-		num: 9088,
+		num: 9076,
 		name: "Forgerry",
 		types: ["Poison"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1205,7 +1118,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	bobbletee: {
 		hasNightmareForm: true,
-		num: 9089,
+		num: 9077,
 		name: "Bobbletee",
 		types: ["Poison", "Ice"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1220,7 +1133,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	berygrimmm: {
 		hasNightmareForm: true,
-		num: 9090,
+		num: 9078,
 		name: "Berygrimmm",
 		types: ["Poison", "Ice"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1233,7 +1146,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	crezygy: {
-		num: 9091,
+		num: 9079,
 		name: "Crezygy",
 		types: ["Rock", "Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1244,10 +1157,44 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Blue",
 		abilities: { 0: "Aquagenic" },
 		evos: ["Hadrazard"],
+		isNonstandard: "Modded",
+		otherFormes: ["Crezygy", "Crezygy-Cavern", "Crezygy-Entree"],
+		formeOrder: ["Crezygy", "Crezygy-Cavern", "Crezygy-Entree"]
+	},
+	crezygycavern: {
+		num: 9079,
+		name: "Crezygy-Cavern",
+		baseSpecies: "Crezygy",
+		forme: "Cavern",
+		types: ["Rock", "Dragon"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 65, atk: 50, def: 65, spe: 55, spa: 70, spd: 85 },
+		heightm: 1.4,
+		weightkg: 27.2,
+		eggGroups: ["Mineral"],
+		color: "Blue",
+		abilities: { 0: "Nocturnal" },
+		evos: ["Hadrazard"],
+		isNonstandard: "Modded"
+	},
+	crezygyentree: {
+		num: 9079,
+		name: "Crezygy-Entree",
+		baseSpecies: "Crezygy",
+		forme: "Entree",
+		types: ["Rock", "Ghost"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 55, atk: 65, def: 55, spe: 75, spa: 85, spd: 55 },
+		heightm: 1.4,
+		weightkg: 27.2,
+		eggGroups: ["Mineral"],
+		color: "Blue",
+		abilities: { 0: "Nocturnal" },
+		evos: ["Phantasma"],
 		isNonstandard: "Modded"
 	},
 	hadrazard: {
-		num: 9092,
+		num: 9080,
 		name: "Hadrazard",
 		types: ["Rock", "Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1257,10 +1204,42 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral"],
 		color: "Blue",
 		abilities: { 0: "Aquagenic" },
-		isNonstandard: "Modded"
+		isNonstandard: "Modded",
+		otherFormes: ["Hadrazard", "Hadrazard-Cavern", "Hadrazard-Entree"],
+		formeOrder: ["Hadrazard", "Hadrazard-Cavern", "Hadrazard-Entree"]
+	},
+	hadrazardcavern: {
+		num: 9080,
+		name: "Hadrazard-Cavern",
+		baseSpecies: "Hadrazard",
+		forme: "Cavern",
+		types: ["Rock", "Dragon"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 86, atk: 81, def: 96, spe: 65, spa: 81, spd: 106 },
+		heightm: 3.1,
+		weightkg: 225.1,
+		eggGroups: ["Mineral"],
+		color: "Blue",
+		abilities: { 0: "Nocturnal" },
+		isNonstandard: "Modded",
+	},
+	hadrazardentree: {
+		num: 9080,
+		name: "Hadrazard-Entree",
+		baseSpecies: "Hadrazard",
+		forme: "Entree",
+		types: ["Rock", "Ghost"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 86, atk: 76, def: 96, spe: 85, spa: 116, spd: 56 },
+		heightm: 3.1,
+		weightkg: 225.1,
+		eggGroups: ["Mineral"],
+		color: "Blue",
+		abilities: { 0: "Phantasma" },
+		isNonstandard: "Modded",
 	},
 	bilffalo: {
-		num: 9093,
+		num: 9081,
 		name: "Bilffalo",
 		types: ["Electric"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1270,12 +1249,11 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Blue",
 		abilities: { 0: "Motor Drive", 1: "Static", H: "Fur Coat" },
-		evos: ["Gruffalo"],
+		evos: ["Gruffalo", "Gruffalo-Glacial"],
 		isNonstandard: "Modded"
 	},
 	gruffalo: {
-		hasNightmareForm: true,
-		num: 9094,
+		num: 9082,
 		name: "Gruffalo",
 		types: ["Electric", "Ground"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1285,10 +1263,27 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Yellow",
 		abilities: { 0: "Motor Drive", 1: "Galvanize", H: "Fur Coat" },
+		isNonstandard: "Modded",
+		otherFormes: ["Gruffalo", "Gruffalo-Glacial"],
+		formeOrder: ["Gruffalo", "Gruffalo-Glacial"]
+	},
+	gruffaloglacial: {
+		num: 9082,
+		name: "Gruffalo-Glacial",
+		baseSpecies: "Gruffalo",
+		forme: "Glacial",
+		types: ["Electric", "Ice"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 90, atk: 100, def: 60, spe: 80, spa: 50, spd: 75 },
+		heightm: 1.5,
+		weightkg: 411.2,
+		eggGroups: ["Field"],
+		color: "Yellow",
+		abilities: { 0: "Motor Drive", 1: "Galvanize", H: "Fur Coat" },
 		isNonstandard: "Modded"
 	},
 	ethel: {
-		num: 9095,
+		num: 9083,
 		name: "Ethel",
 		types: ["Flying", "Steel"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1302,7 +1297,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	grabreal: {
-		num: 9096,
+		num: 9084,
 		name: "Grabreal",
 		types: ["Flying", "Steel"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1315,8 +1310,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	enamanuel: {
-		hasNightmareForm: true,
-		num: 9097,
+		num: 9085,
 		name: "Enamanuel",
 		types: ["Fairy"],
 		gender: "M",
@@ -1331,7 +1325,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	malkolmolar: {
 		hasNightmareForm: true,
-		num: 9098,
+		num: 9086,
 		name: "Malkolmolar",
 		types: ["Fairy"],
 		gender: "M",
@@ -1344,7 +1338,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	lepidot: {
-		num: 9099,
+		num: 9087,
 		name: "Lepidot",
 		types: ["Bug", "Ghost"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1358,7 +1352,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	beheemoth: {
-		num: 9100,
+		num: 9088,
 		name: "Beheemoth",
 		types: ["Bug", "Ghost"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1371,8 +1365,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	forebail: {
-		hasNightmareForm: true,
-		num: 9101,
+		num: 9089,
 		name: "Forebail",
 		types: ["Ghost"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1387,7 +1380,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	hexalwurm: {
 		hasNightmareForm: true,
-		num: 9102,
+		num: 9090,
 		name: "Hexalwurm",
 		types: ["Ghost", "Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1402,7 +1395,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	dozumbra: {
 		hasNightmareForm: true,
-		num: 9103,
+		num: 9091,
 		name: "Dozumbra",
 		types: ["Ghost", "Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1415,7 +1408,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	naffnlaff: {
-		num: 9104,
+		num: 9092,
 		name: "Naffnlaff",
 		types: ["Water"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1429,7 +1422,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	ropheelmau: {
-		num: 9105,
+		num: 9093,
 		name: "Ropheelmau",
 		types: ["Water", "Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1442,8 +1435,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	bubboll: {
-		hasNightmareForm: true,
-		num: 9106,
+		num: 9094,
 		name: "Bubboll",
 		types: ["Water"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1457,8 +1449,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	shambloo: {
-		hasNightmareForm: true,
-		num: 9107,
+		num: 9095,
 		name: "Shambloo",
 		types: ["Water"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1471,7 +1462,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	hareball: {
-		num: 9108,
+		num: 9096,
 		name: "Hareball",
 		types: ["Ground"],
 		genderRatio: { M: 0.75, F: 0.25 },
@@ -1485,7 +1476,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	disharay: {
-		num: 9109,
+		num: 9097,
 		name: "Disharay",
 		types: ["Ground"],
 		genderRatio: { M: 0.75, F: 0.25 },
@@ -1497,22 +1488,9 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Adaptability", 1: "Pickup", H: "Kleptomaniac" },
 		isNonstandard: "Modded"
 	},
-	regeden: {
-		num: 9110,
-		name: "Regeden",
-		types: ["Fighting"],
-		genderRatio: { M: 0.75, F: 0.25 },
-		baseStats: { hp: 90, atk: 130, def: 80, spe: 55, spa: 65, spd: 85 },
-		heightm: 1.6,
-		weightkg: 130,
-		eggGroups: ["Humanlike"],
-		color: "Gray",
-		abilities: { 0: "Big Pecks", 1: "Aerilate", H: "Steadfast" },
-		isNonstandard: "Modded"
-	},
 	robbel: {
 		hasNightmareForm: true,
-		num: 9111,
+		num: 9098,
 		name: "Robbel",
 		types: ["Flying", "Dark"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1527,7 +1505,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	quazogre: {
 		hasNightmareForm: true,
-		num: 9112,
+		num: 9099,
 		name: "Quazogre",
 		types: ["Fighting"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1542,7 +1520,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	talxious: {
 		hasNightmareForm: true,
-		num: 9113,
+		num: 9100,
 		name: "Talxious",
 		types: ["Rock", "Poison"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1556,7 +1534,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	flish: {
-		num: 9114,
+		num: 9101,
 		name: "Flish",
 		types: ["Water", "Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1570,7 +1548,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	aerialish: {
-		num: 9115,
+		num: 9102,
 		name: "Aerialish",
 		types: ["Water", "Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1583,7 +1561,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	punkypine: {
-		num: 9116,
+		num: 9103,
 		name: "Punkypine",
 		types: ["Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1597,7 +1575,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	typheline: {
-		num: 9117,
+		num: 9104,
 		name: "Typheline",
 		types: ["Grass"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1611,7 +1589,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	felily: {
-		num: 9118,
+		num: 9105,
 		name: "Felily",
 		types: ["Grass", "Water"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1625,7 +1603,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	thrivegris: {
-		num: 9119,
+		num: 9106,
 		name: "Thrivegris",
 		types: ["Grass", "Water"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1638,7 +1616,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	calaverito: {
-		num: 9120,
+		num: 9107,
 		name: "Calaverito",
 		types: ["Ghost"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1652,7 +1630,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	macaballo: {
-		num: 9121,
+		num: 9108,
 		name: "Macaballo",
 		types: ["Ghost"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1665,8 +1643,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	kankandee: {
-		hasNightmareForm: true,
-		num: 9122,
+		num: 9109,
 		name: "Kankandee",
 		types: ["Fairy"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1680,8 +1657,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	gorhorror: {
-		hasNightmareForm: true,
-		num: 9123,
+		num: 9110,
 		name: "Gorhorror",
 		types: ["Fairy", "Ghost"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1694,7 +1670,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	setek: {
-		num: 9124,
+		num: 9111,
 		name: "Setek",
 		types: ["Ground"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1708,7 +1684,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	kayaset: {
-		num: 9125,
+		num: 9112,
 		name: "Kayaset",
 		types: ["Ground", "Fighting"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1721,7 +1697,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	minore: {
-		num: 9126,
+		num: 9113,
 		name: "Minore",
 		types: ["Fighting"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -1735,7 +1711,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	ornadent: {
-		num: 9127,
+		num: 9114,
 		name: "Ornadent",
 		types: ["Fighting", "Rock"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -1749,7 +1725,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	amestelith: {
-		num: 9128,
+		num: 9115,
 		name: "Amestelith",
 		types: ["Fighting", "Rock"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -1762,7 +1738,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	hortvi: {
-		num: 9129,
+		num: 9116,
 		name: "Hortvi",
 		types: ["Grass"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1776,7 +1752,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	virivangs: {
-		num: 9130,
+		num: 9117,
 		name: "Virivangs",
 		types: ["Grass"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1790,7 +1766,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	ventraptor: {
-		num: 9131,
+		num: 9118,
 		name: "Ventraptor",
 		types: ["Grass", "Dragon"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1803,7 +1779,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	pisceely: {
-		num: 9132,
+		num: 9119,
 		name: "Pisceely",
 		types: ["Water"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1817,7 +1793,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	armureel: {
-		num: 9133,
+		num: 9120,
 		name: "Armureel",
 		types: ["Water", "Psychic"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1831,7 +1807,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	krakloptic: {
-		num: 9134,
+		num: 9121,
 		name: "Krakloptic",
 		types: ["Water", "Psychic"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -1844,7 +1820,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	bersarking: {
-		num: 9135,
+		num: 9122,
 		name: "Bersarking",
 		types: ["Steel", "Dark"],
 		gender: "M",
@@ -1857,7 +1833,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	griffilan: {
-		num: 9136,
+		num: 9123,
 		name: "Griffilan",
 		types: ["Fairy", "Flying"],
 		gender: "M",
@@ -1870,7 +1846,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	elekelp: {
-		num: 9137,
+		num: 9124,
 		name: "Elekelp",
 		types: ["Grass", "Electric"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1884,7 +1860,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	elamagis: {
-		num: 9138,
+		num: 9125,
 		name: "Elamagis",
 		types: ["Grass", "Electric"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1897,7 +1873,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	splatypus: {
-		num: 9139,
+		num: 9126,
 		name: "Splatypus",
 		types: ["Water", "Ground"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1911,7 +1887,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	platapult: {
-		num: 9140,
+		num: 9127,
 		name: "Platapult",
 		types: ["Water", "Ground"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1924,7 +1900,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	telekiki: {
-		num: 9141,
+		num: 9128,
 		name: "Telekiki",
 		types: ["Electric"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1938,7 +1914,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	zanykey: {
-		num: 9142,
+		num: 9129,
 		name: "Zanykey",
 		types: ["Electric", "Fighting"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1951,7 +1927,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	nimphant: {
-		num: 9143,
+		num: 9130,
 		name: "Nimphant",
 		types: ["Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1965,7 +1941,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	nebulears: {
-		num: 9144,
+		num: 9131,
 		name: "Nebulears",
 		types: ["Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1978,7 +1954,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	falalalah: {
-		num: 9145,
+		num: 9132,
 		name: "Falalalah",
 		types: ["Ice", "Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -1991,7 +1967,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	sputty: {
-		num: 9146,
+		num: 9133,
 		name: "Sputty",
 		types: ["Steel", "Bug"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -2005,7 +1981,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	mollmagnus: {
-		num: 9147,
+		num: 9134,
 		name: "Mollmagnus",
 		types: ["Steel", "Bug"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -2018,7 +1994,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	skwiyer: {
-		num: 9148,
+		num: 9135,
 		name: "Skwiyer",
 		types: ["Water"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2032,7 +2008,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	shamolish: {
-		num: 9149,
+		num: 9136,
 		name: "Shamolish",
 		types: ["Water", "Steel"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2044,8 +2020,22 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: { 0: "Justified", 1: "Infiltrator", H: "Mega Launcher" },
 		isNonstandard: "Modded"
 	},
+	flox: {
+		num: 9137,
+		name: "Flox",
+		types: ["Ice"],
+		genderRatio: { M: 0.5, F: 0.5 },
+		baseStats: { hp: 44, atk: 20, def: 35, spe: 66, spa: 70, spd: 55 },
+		heightm: 0.7,
+		weightkg: 30.6,
+		eggGroups: ["Field"],
+		color: "Black",
+		abilities: { 0: "Snow Cloak", 1: "Trace", H: "Steadfast" },
+		evos: ["Avaline"],
+		isNonstandard: "Modded"
+	},
 	avaline: {
-		num: 9150,
+		num: 9138,
 		name: "Avaline",
 		types: ["Ice", "Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2059,7 +2049,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	azureign: {
-		num: 9151,
+		num: 9139,
 		name: "Azureign",
 		types: ["Ice", "Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2072,7 +2062,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	doonba: {
-		num: 9152,
+		num: 9140,
 		name: "Doonba",
 		types: ["Ground", "Electric"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2086,7 +2076,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	feravel: {
 		hasNightmareForm: true,
-		num: 9153,
+		num: 9141,
 		name: "Feravel",
 		types: ["Grass"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2100,7 +2090,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	fernbully: {
-		num: 9154,
+		num: 9142,
 		name: "Fernbully",
 		types: ["Grass", "Fighting"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2113,7 +2103,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	shleepy: {
-		num: 9155,
+		num: 9143,
 		name: "Shleepy",
 		types: ["Normal", "Fairy"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2126,7 +2116,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	smoglin: {
-		num: 9156,
+		num: 9144,
 		name: "Smoglin",
 		types: ["Dragon", "Poison"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2140,7 +2130,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	drasnyla: {
-		num: 9157,
+		num: 9145,
 		name: "Drasnyla",
 		types: ["Dragon", "Poison"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2153,22 +2143,8 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		evos: ["Malhelent"],
 		isNonstandard: "Modded"
 	},
-	test: {
-		num: 9158,
-		name: "Test",
-		types: ["Dragon", "Poison"],
-		genderRatio: { M: 0.5, F: 0.5 },
-		baseStats: { hp: 74, atk: 94, def: 131, spe: 20, spa: 54, spd: 116 },
-		heightm: 1,
-		weightkg: 110,
-		eggGroups: ["Monster", "Dragon"],
-		color: "Gray",
-		abilities: { 0: "Dark Smoke" },
-		evos: ["Malhelent"],
-		isNonstandard: "Modded"
-	},
 	jayby: {
-		num: 9159,
+		num: 9146,
 		name: "Jayby",
 		types: ["Electric", "Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2182,7 +2158,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	cobolt: {
-		num: 9160,
+		num: 9147,
 		name: "Cobolt",
 		types: ["Electric", "Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2195,7 +2171,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	venalanza: {
-		num: 9161,
+		num: 9148,
 		name: "Venalanza",
 		types: ["Ghost", "Steel"],
 		gender: "M",
@@ -2208,7 +2184,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	buckenwhip: {
-		num: 9162,
+		num: 9149,
 		name: "Buckenwhip",
 		types: ["Fighting", "Normal"],
 		gender: "M",
@@ -2221,7 +2197,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	drvonham: {
-		num: 9163,
+		num: 9150,
 		name: "Dr. Von Ham",
 		types: ["Dark"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2235,7 +2211,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	hamonster: {
-		num: 9164,
+		num: 9151,
 		name: "Hamonster",
 		types: ["Dark"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2248,7 +2224,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	crystall: {
-		num: 9165,
+		num: 9152,
 		name: "Crystall",
 		types: ["Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2263,7 +2239,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	skrying: {
 		hasNightmareForm: true,
-		num: 9166,
+		num: 9153,
 		name: "Skrying",
 		types: ["Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2277,7 +2253,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	turtill: {
 		hasNightmareForm: true,
-		num: 9167,
+		num: 9154,
 		name: "Turtill",
 		types: ["Ice"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2291,7 +2267,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	chillados: {
-		num: 9168,
+		num: 9155,
 		name: "Chillados",
 		types: ["Ice", "Dragon"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2304,7 +2280,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	batterizer: {
-		num: 9169,
+		num: 9156,
 		name: "Batterizer",
 		types: ["Electric"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2318,7 +2294,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	plugagon: {
-		num: 9170,
+		num: 9157,
 		name: "Plugagon",
 		types: ["Electric", "Dragon"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2331,7 +2307,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	daminu: {
-		num: 9171,
+		num: 9158,
 		name: "Daminu",
 		types: ["Steel"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2345,7 +2321,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	elastini: {
-		num: 9172,
+		num: 9159,
 		name: "Elastini",
 		types: ["Steel"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2358,7 +2334,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	wyvite: {
-		num: 9173,
+		num: 9160,
 		name: "Wyvite",
 		types: ["Flying", "Dragon"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2372,7 +2348,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	cyclonadon: {
-		num: 9174,
+		num: 9161,
 		name: "Cyclonadon",
 		types: ["Flying", "Dragon"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2385,7 +2361,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	quimera: {
-		num: 9175,
+		num: 9162,
 		name: "Quimera",
 		types: ["Fairy", "Dragon"],
 		gender: "N",
@@ -2398,7 +2374,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	sonapod: {
-		num: 9176,
+		num: 9163,
 		name: "Sonapod",
 		types: ["Normal", "Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2412,7 +2388,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	clarineck: {
-		num: 9177,
+		num: 9164,
 		name: "Clarineck",
 		types: ["Normal", "Psychic"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2425,7 +2401,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	spudling: {
-		num: 9178,
+		num: 9165,
 		name: "Spudling",
 		types: ["Ground", "Grass"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -2439,7 +2415,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	ploafer: {
-		num: 9179,
+		num: 9166,
 		name: "Ploafer",
 		types: ["Ground", "Grass"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -2453,7 +2429,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	mashuffy: {
-		num: 9180,
+		num: 9167,
 		name: "Mashuffy",
 		types: ["Ground", "Grass"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -2466,7 +2442,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	tropper: {
-		num: 9181,
+		num: 9168,
 		name: "Tropper",
 		types: ["Bug"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2480,7 +2456,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	camokage: {
-		num: 9182,
+		num: 9169,
 		name: "Camokage",
 		types: ["Bug"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2493,7 +2469,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	fawntia: {
-		num: 9183,
+		num: 9170,
 		name: "Fawntia",
 		types: ["Fire", "Rock"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2506,7 +2482,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	skippity: {
-		num: 9184,
+		num: 9171,
 		name: "Skippity",
 		types: ["Rock", "Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2520,7 +2496,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	kometrix: {
-		num: 9185,
+		num: 9172,
 		name: "Kometrix",
 		types: ["Rock", "Flying"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2533,7 +2509,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	evellure: {
-		num: 9186,
+		num: 9173,
 		name: "Evellure",
 		types: ["Dark", "Fairy"],
 		gender: "F",
@@ -2546,7 +2522,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	chromavo: {
-		num: 9187,
+		num: 9174,
 		name: "Chromavo",
 		types: ["Normal"],
 		gender: "M",
@@ -2559,7 +2535,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	tobogguin: {
-		num: 9188,
+		num: 9175,
 		name: "Tobogguin",
 		types: ["Ground"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2573,7 +2549,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	romundio: {
-		num: 9189,
+		num: 9176,
 		name: "Romundio",
 		types: ["Ground", "Fairy"],
 		gender: "M",
@@ -2586,7 +2562,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	jalliet: {
-		num: 9190,
+		num: 9177,
 		name: "Jalliet",
 		types: ["Ground", "Dark"],
 		gender: "F",
@@ -2599,7 +2575,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	cocowati: {
-		num: 9191,
+		num: 9178,
 		name: "Cocowati",
 		types: ["Normal"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2613,7 +2589,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	alemera: {
-		num: 9192,
+		num: 9179,
 		name: "Alemera",
 		types: ["Normal", "Dark"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2626,7 +2602,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	ironhi5: {
-		num: 9193,
+		num: 9180,
 		name: "Iron Hi-5",
 		types: ["Rock", "Fighting"],
 		gender: "N",
@@ -2639,7 +2615,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	feralfang: {
-		num: 9194,
+		num: 9181,
 		name: "Feral Fang",
 		types: ["Fairy", "Grass"],
 		gender: "N",
@@ -2652,7 +2628,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	memorsid: {
-		num: 9195,
+		num: 9182,
 		name: "Memorsid",
 		types: ["Normal"],
 		gender: "N",
@@ -2665,7 +2641,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	jagwarr: {
-		num: 9196,
+		num: 9183,
 		name: "Jagwarr",
 		types: ["Rock", "Dark"],
 		genderRatio: { M: 0.875, F: 0.125 },
@@ -2678,7 +2654,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	artiment: {
-		num: 9197,
+		num: 9184,
 		name: "Artiment",
 		types: ["Fairy", "Fighting"],
 		gender: "N",
@@ -2691,7 +2667,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	piggygee: {
-		num: 9198,
+		num: 9185,
 		name: "Piggygee",
 		types: ["Grass", "Ghost"],
 		gender: "N",
@@ -2704,7 +2680,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	hogalog: {
-		num: 9199,
+		num: 9186,
 		name: "Hogalog",
 		types: ["Grass", "Steel"],
 		gender: "N",
@@ -2717,7 +2693,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	boarbrick: {
-		num: 9200,
+		num: 9187,
 		name: "Boarbrick",
 		types: ["Ground", "Steel"],
 		gender: "N",
@@ -2730,7 +2706,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	qumulykan: {
-		num: 9201,
+		num: 9188,
 		name: "Qumulykan",
 		types: ["Flying", "Dark"],
 		gender: "N",
@@ -2743,7 +2719,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	specuatro: {
-		num: 9202,
+		num: 9189,
 		name: "Specuatro",
 		types: ["Ghost", "Flying"],
 		gender: "N",
@@ -2756,7 +2732,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	vurreeze: {
-		num: 9203,
+		num: 9190,
 		name: "Vurreeze",
 		types: ["Ice", "Fighting"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -2770,7 +2746,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	aklamaster: {
-		num: 9204,
+		num: 9191,
 		name: "Aklamaster",
 		types: ["Ice", "Fighting"],
 		genderRatio: { M: 0.25, F: 0.75 },
@@ -2783,7 +2759,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	cadavyre: {
-		num: 9205,
+		num: 9192,
 		name: "Cadavyre",
 		types: ["Ghost", "Fire"],
 		genderRatio: { M: 0.5, F: 0.5 },
@@ -2796,7 +2772,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	amassion: {
-		num: 9206,
+		num: 9193,
 		name: "Amassion",
 		types: ["Psychic"],
 		gender: "N",
@@ -2809,7 +2785,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	zuezemzenyo: {
-		num: 9207,
+		num: 9194,
 		name: "Zuezemzenyo",
 		types: ["Poison", "Dark"],
 		gender: "N",
@@ -2822,7 +2798,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	typhordra: {
-		num: 9208,
+		num: 9195,
 		name: "Typhordra",
 		types: ["Dragon"],
 		gender: "N",
@@ -2835,7 +2811,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	pintamant: {
-		num: 9209,
+		num: 9196,
 		name: "Pintamant",
 		types: ["Bug", "Rock"],
 		gender: "N",
@@ -2848,7 +2824,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	auruniro: {
-		num: 9210,
+		num: 9197,
 		name: "Auruniro",
 		types: ["Fire", "Steel"],
 		gender: "N",
@@ -2861,7 +2837,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	cardizn: {
-		num: 9211,
+		num: 9198,
 		name: "Cardizón",
 		types: ["Ghost", "Electric"],
 		gender: "N",
@@ -2874,7 +2850,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	capaldy: {
-		num: 9212,
+		num: 9199,
 		name: "Capaldy",
 		types: ["Psychic", "Ground"],
 		gender: "N",
