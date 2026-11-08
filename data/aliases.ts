@@ -1426,7 +1426,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	soulstealingsevenstarstrike: "Soul-Stealing 7-Star Strike",
 	splintered: "Splintered Stormshards",
 	stoked: "Stoked Sparksurfer",
-	stormshards: "Splintered Stormshards",
+	//stormshards: "Splintered Stormshards",
 	zbug: "Savage Spin-Out",
 	zclangingscales: "Clangorous Soulblaze",
 	zdark: "Black Hole Eclipse",

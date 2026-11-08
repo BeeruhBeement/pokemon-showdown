@@ -19,7 +19,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		name: "Malhelent-Volcanic",
 		baseSpecies: "Malhelent",
 		forme: "Volcanic",
-		types: ["Dragon", "Poison"],
+		types: ["Dragon", "Fire"],
 		genderRatio: { M: 0.5, F: 0.5 },
 		baseStats: { hp: 124, atk: 75, def: 86, spe: 105, spa: 135, spd: 75 },
 		heightm: 3.3,
@@ -1663,6 +1663,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	kankandee: {
+		hasNightmareForm: true,
 		num: 9109,
 		name: "Kankandee",
 		types: ["Fairy"],
@@ -1677,6 +1678,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	gorhorror: {
+		hasNightmareForm: true,
 		num: 9110,
 		name: "Gorhorror",
 		types: ["Fairy", "Ghost"],
@@ -2133,7 +2135,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		weightkg: 75.5,
 		eggGroups: ["Field"],
 		color: "Purple",
-		abilities: { 0: "Laziness", H: "Laziness" },
+		abilities: { 0: "Laziness" },
 		isNonstandard: "Modded"
 	},
 	smoglin: {

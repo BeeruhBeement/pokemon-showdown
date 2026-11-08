@@ -213,6 +213,26 @@ export const Items: import("../../../sim/dex-items").ModdedItemDataTable = {
 		itemUser: ["Animon"],
 		shortDesc: "If held by an Animon that hasn't Transformed, its Defense is doubled.",
 	},
+	miraclite: {
+		name: "Miraclite",
+		spritenum: -1,
+		fling: {
+			basePower: 40,
+		},
+		onModifyAtkPriority: 2,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 2,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.5);
+			}
+		},
+		shortDesc: "If holder's species can evolve, its Attack and Sp. Atk are 1.5×.",
+	},
 	oddkeystone: {
 		name: "Odd Keystone",
 		spritenum: -1,

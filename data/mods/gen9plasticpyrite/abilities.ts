@@ -30,7 +30,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		onHit(target, source, move) {
 			if (!target.hp) return;
 			if (move?.effectType === 'Move' && (target.getMoveHitData(move).crit || move.type === "Flying")) {
-				this.boost({ atk: 6 }, target, target);
+				this.boost({ def: 6 }, target, target);
 			}
 		},
 		flags: {},
@@ -287,7 +287,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 			}
 		},
 		flags: {},
-		name: "Mummy",
+		name: "Laziness",
 		shortDesc: "Contact with Laziness spreads this ability (Mummy renamed)",
 	},
 	leafcutter: {
@@ -687,5 +687,13 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		flags: {},
 		name: "Yoga Power",
 		shortDesc: "Doubles the power of the Pokémon's physical moves (It's Pure Power, Yoga Power is the Japanese name)",
+	},
+	
+	snowwarning: {
+		inherit: true,
+		onStart(source) {
+			this.field.setWeather('hail');
+		},
+		rating: 4,
 	},
 };

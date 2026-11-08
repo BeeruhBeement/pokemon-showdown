@@ -474,6 +474,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Plastic Pyrite AG",
 		mod: 'gen9plasticpyrite',
+		searchShow: false,
 		ruleset: ['Standard AG', 'NatDex Mod', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent'],
 	},
 
