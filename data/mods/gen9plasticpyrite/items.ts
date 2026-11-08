@@ -290,7 +290,7 @@ export const Items: import("../../../sim/dex-items").ModdedItemDataTable = {
 			}
 		},
 		itemUser: ["Tropper", "Camokage"],
-		shortDesc: "If held by a Farfetch’d, its critical hit ratio is raised by 2 stages.",
+		shortDesc: "If held by a Tropper or Camokage, its critical hit ratio is raised by 2 stages.",
 	},
 	thermalmitts: {
 		name: "Thermal Mitts",
