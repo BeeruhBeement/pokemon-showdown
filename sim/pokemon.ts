@@ -618,6 +618,14 @@ export class Pokemon {
 			stat = Math.floor(stat / boostTable[-boost]);
 		}
 
+		if (this.set.tiny) {
+			if (statName === 'spe') stat *= 1.2;
+		}
+		if (this.set.nightmare) {
+			if (statName === 'atk' || statName === 'spa') stat *= 1.2;
+			if (statName === 'def' || statName === 'spd') stat *= 0.8;
+		}
+
 		// stat modifier
 		return this.battle.modify(stat, (modifier || 1));
 	}
@@ -655,6 +663,14 @@ export class Pokemon {
 			} else {
 				stat = Math.floor(stat / boostTable[-boost]);
 			}
+		}
+
+		if (this.set.tiny) {
+			if (statName === 'spe') stat *= 1.2;
+		}
+		if (this.set.nightmare) {
+			if (statName === 'atk' || statName === 'spa') stat *= 1.2;
+			if (statName === 'def' || statName === 'spd') stat *= 0.8;
 		}
 
 		// stat modifier effects
@@ -1459,7 +1475,9 @@ export class Pokemon {
 		this.knownType = true;
 		this.weighthg = species.weighthg;
 
-		const stats = this.getSetStats(this.species);
+		const stats = this.battle.spreadModify(this.species.baseStats, this.set);
+		if (this.species.maxHP) stats.hp = this.species.maxHP;
+		if (this.set.tiny) stats.hp = Math.floor(stats.hp * 0.8);
 
 		if (!this.maxhp) {
 			this.baseMaxhp = stats.hp;
@@ -1559,31 +1577,15 @@ export class Pokemon {
 	}
 
 	updateMaxHp() {
-		const newBaseMaxHp = this.getSetStats(this.species).hp;
+		const newBaseMaxHp = this.battle.statModify(this.species.baseStats, this.set, 'hp');
 		if (newBaseMaxHp === this.baseMaxhp) return;
 		this.baseMaxhp = newBaseMaxHp;
-		const newMaxHP = this.volatiles['dynamax'] ? (2 * this.baseMaxhp) : this.baseMaxhp;
+		let newMaxHP = this.baseMaxhp;
+		if (this.volatiles['dynamax']) newMaxHP *= 2;
+		if (this.set.tiny) newMaxHP *= 0.8;
 		this.hp = this.hp <= 0 ? 0 : Math.max(1, newMaxHP - (this.maxhp - this.hp));
 		this.maxhp = newMaxHP;
 		if (this.hp) this.battle.add('-heal', this, this.getHealth, '[silent]');
-	}
-
-	getSetStats(species: Species) {
-		const stats = this.battle.spreadModify(species.baseStats, this.set);
-		if (species.maxHP) stats.hp = species.maxHP;
-		if (this.battle.dex.currentMod !== 'gen9plasticpyrite') return stats;
-
-		if (this.set.tiny) {
-			stats.hp = Math.floor(stats.hp * 0.8);
-			stats.spe = Math.floor(stats.spe * 1.2);
-		}
-		if (this.set.nightmare) {
-			stats.atk = Math.floor(stats.atk * 1.2);
-			stats.spa = Math.floor(stats.spa * 1.2);
-			stats.def = Math.floor(stats.def * 0.8);
-			stats.spd = Math.floor(stats.spd * 0.8);
-		}
-		return stats;
 	}
 
 	clearVolatile(includeSwitchFlags = true) {

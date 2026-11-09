@@ -1,5 +1,12 @@
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 9, inherit: "gen9",
+	init() {
+		for (const i in this.data.Items) {
+			if (this.data.Items[i].gen && this.data.Items[i].gen > 6) {
+				this.modData('Items', i).isNonstandard = 'Future';
+			}
+		}
+	},
 	actions: {
 		modifyDamage(
 			baseDamage: number, pokemon: Pokemon, target: Pokemon, move: ActiveMove, suppressMessages = false
