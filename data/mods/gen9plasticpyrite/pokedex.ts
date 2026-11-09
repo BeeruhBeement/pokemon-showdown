@@ -777,7 +777,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		formeOrder: ["Metamoso", "Metamoso-Sunny", "Metamoso-Rainy", "Metamoso-Snowy"],
 	},
 	metamososunny: {
-		num: 351,
+		num: 9054,
 		name: "Metamoso-Sunny",
 		baseSpecies: "Metamoso",
 		forme: "Sunny",
@@ -794,7 +794,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		battleOnly: "Metamoso",
 	},
 	metamosorainy: {
-		num: 351,
+		num: 9054,
 		name: "Metamoso-Rainy",
 		baseSpecies: "Metamoso",
 		forme: "Rainy",
@@ -811,7 +811,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		battleOnly: "Metamoso",
 	},
 	metamososnowy: {
-		num: 351,
+		num: 9054,
 		name: "Metamoso-Snowy",
 		baseSpecies: "Metamoso",
 		forme: "Snowy",
