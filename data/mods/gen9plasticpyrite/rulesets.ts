@@ -20,7 +20,8 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 		name: 'Pintamant Clause',
 		desc: 'Pintamant can only be tiny.',
 		onValidateSet(set) {
-			if (set.species === 'pintamant' && !set.tiny) return [`${set.species} can only ever be found in Tiny Form.`];
+			const species = this.dex.species.get(set.species);
+			if (species.id === 'pintamant' && !set.tiny) return [`${set.species} can only ever be found in Tiny Form.`];
 		},
 	},
 };

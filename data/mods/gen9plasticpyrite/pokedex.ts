@@ -14,6 +14,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Monster", "Dragon"],
 		color: "Red",
 		abilities: { 0: "Volcanic" },
+		prevo: "Drasnyla",
 		isNonstandard: "Modded",
 		otherFormes: ["Malhelent-Zen"],
 		formeOrder: ["Malhelent", "Malhelent-Volcanic"],
@@ -62,6 +63,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Black",
 		abilities: { 0: "Second Wind", H: "Adaptability" },
+		prevo: "Robbel",
 		isNonstandard: "Modded"
 	},
 	monogre: {
@@ -91,6 +93,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Humanlike"],
 		color: "Green",
 		abilities: { 0: "Swole Up", H: "Paratonnerre" },
+		prevo: "Quazogre",
 		isNonstandard: "Modded"
 	},
 	tailith: {
@@ -120,6 +123,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral", "Monster"],
 		color: "Brown",
 		abilities: { 0: "Geosurge", H: "Solid Rock" },
+		prevo: "Talxious",
 		isNonstandard: "Modded"
 	},
 	animon: {
@@ -160,6 +164,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Bug"],
 		color: "Red",
 		abilities: { 0: "Parental Bond", H: "Compound Eyes" },
+		prevo: "Termini",
 		isNonstandard: "Modded"
 	},
 	terminator: {
@@ -173,6 +178,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Bug"],
 		color: "Red",
 		abilities: { 0: "Hustle", H: "Compound Eyes" },
+		prevo: "Termini",
 		isNonstandard: "Modded"
 	},
 	buzzaldy: {
@@ -200,6 +206,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Flying"],
 		color: "Red",
 		abilities: { 0: "Unnerve", 1: "Gale Wings", H: "Poison Touch" },
+		prevo: "Buzzaldy",
 		isNonstandard: "Modded"
 	},
 	woggiwog: {
@@ -228,6 +235,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Red",
 		abilities: { 0: "Tinted Lens", 1: "Gooey", H: "Drought" },
 		evos: ["Caesizzend"],
+		prevo: "Woggiwog",
 		isNonstandard: "Modded"
 	},
 	caesizzend: {
@@ -241,6 +249,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1", "Dragon"],
 		color: "Purple",
 		abilities: { 0: "Intimidate", 1: "Gooey", H: "Drought" },
+		prevo: "Amphibiwog",
 		isNonstandard: "Modded"
 	},
 	rikoroll: {
@@ -281,6 +290,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 2"],
 		color: "Blue",
 		abilities: { 0: "Strong Jaw", 1: "Intimidate", H: "Poison Heal" },
+		prevo: "Stribite",
 		isNonstandard: "Modded"
 	},
 	seatiki: {
@@ -336,6 +346,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Red",
 		abilities: { 0: "Mega Launcher", 1: "Scrappy", H: "Analytic" },
+		prevo: "Mouslaw",
 		isNonstandard: "Modded",
 		cosmeticFormes: ["McCritter-Yellow", "McCritter-Red", "McCritter-White", "McCritter-Blue"],
 		formeOrder: [
@@ -373,6 +384,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Flying"],
 		color: "Black",
 		abilities: { 0: "Telepathy", 1: "Serene Grace", H: "Refrigerate" },
+		prevo: "Brrrbat",
 		isNonstandard: "Modded"
 	},
 	brickos: {
@@ -414,6 +426,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Blue",
 		abilities: { 0: "Magic Bounce", 1: "Synchronize", H: "Regenerator" },
 		evos: ["Mushremacy", "Fungrainiac"],
+		prevo: "Saturoom",
 		isNonstandard: "Modded"
 	},
 	fungrainiac: {
@@ -427,6 +440,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Grass"],
 		color: "Blue",
 		abilities: { 0: "Magic Bounce", 1: "Synchronize", H: "Regenerator" },
+		prevo: "Toadtugo",
 		isNonstandard: "Modded"
 	},
 	mushremacy: {
@@ -440,6 +454,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Grass"],
 		color: "Blue",
 		abilities: { 0: "Magic Bounce", 1: "Shadow Shield", H: "Regenerator" },
+		prevo: "Toadtugo",
 		isNonstandard: "Modded"
 	},
 	rattlebulb: {
@@ -468,6 +483,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Purple",
 		abilities: { 0: "Candle Light", 1: "Download", H: "Shed Skin" },
 		evos: ["Standaija"],
+		prevo: "Rattlebulb",
 		isNonstandard: "Modded"
 	},
 	standaija: {
@@ -481,6 +497,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Dragon"],
 		color: "Green",
 		abilities: { 0: "Teravolt", 1: "Download", H: "Minus" },
+		prevo: "USBoa",
 		isNonstandard: "Modded"
 	},
 	lynxius: {
@@ -508,6 +525,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "White",
 		abilities: { 0: "Flame Body", 1: "Thermal Body", H: "Turboblaze" },
+		prevo: "Lynxius",
 		isNonstandard: "Modded"
 	},
 	smolvra: {
@@ -536,6 +554,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Red",
 		abilities: { 0: "Rock Head", 1: "Moxie", H: "Mold Breaker" },
 		evos: ["Longarval"],
+		prevo: "Smolvra",
 		isNonstandard: "Modded"
 	},
 	longarval: {
@@ -549,6 +568,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Bug"],
 		color: "Purple",
 		abilities: { 0: "Rock Head", 1: "Moxie", H: "Mold Breaker" },
+		prevo: "Chrysilla",
 		isNonstandard: "Modded"
 	},
 	totter: {
@@ -576,6 +596,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Purple",
 		abilities: { 0: "Water Absorb", 1: "Magic Bounce", H: "Shell Armor" },
+		prevo: "Totter",
 		isNonstandard: "Modded"
 	},
 	luminsect: {
@@ -633,6 +654,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Bug"],
 		color: "Black",
 		abilities: { 0: "Bad Dreams", H: "Dark Aura" },
+		prevo: "Slumbug",
 		isNonstandard: "Modded"
 	},
 	sorceed: {
@@ -661,6 +683,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Green",
 		abilities: { 0: "Chlorophyll", 1: "Cursed Body", H: "Telepathy" },
 		evos: ["Solceree"],
+		prevo: "Sorceed",
 		isNonstandard: "Modded"
 	},
 	solceree: {
@@ -674,6 +697,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Amorphous", "Grass"],
 		color: "Green",
 		abilities: { 0: "Chlorophyll", 1: "Overawe", H: "Telepathy" },
+		prevo: "Sapprini",
 		isNonstandard: "Modded"
 	},
 	luplaze: {
@@ -702,6 +726,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Red",
 		abilities: { 0: "Blaze", H: "Speed Boost" },
 		evos: ["Heliostric"],
+		prevo: "Luplaze",
 		isNonstandard: "Modded"
 	},
 	heliostric: {
@@ -715,6 +740,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Red",
 		abilities: { 0: "Blaze", H: "Speed Boost" },
+		prevo: "Plazmek",
 		isNonstandard: "Modded"
 	},
 	grusty: {
@@ -742,6 +768,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral", "Amorphous"],
 		color: "Yellow",
 		abilities: { 0: "Dry Skin", 1: "Regenerator", H: "Sand Stream" },
+		prevo: "Grusty",
 		isNonstandard: "Modded"
 	},
 	puppawhua: {
@@ -856,6 +883,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Monster", "Fairy"],
 		color: "White",
 		abilities: { 0: "Tough Claws", 1: "No Guard", H: "Inner Focus" },
+		prevo: "Jingloo",
 		isNonstandard: "Modded"
 	},
 	fierie: {
@@ -883,6 +911,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Amorphous"],
 		color: "Pink",
 		abilities: { 0: "Candle Light", 1: "Burn Both Ends", H: "Solar Power" },
+		prevo: "Fierie",
 		isNonstandard: "Modded"
 	},
 	prawngs: {
@@ -912,6 +941,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1"],
 		color: "Blue",
 		abilities: { 0: "Filter", 1: "Wonder Skin", H: "Water Absorb" },
+		prevo: "Prawngs",
 		isNonstandard: "Modded"
 	},
 	ignicean: {
@@ -926,6 +956,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1"],
 		color: "Red",
 		abilities: { 0: "Searing Touch", 1: "Flame Body", H: "Flash Fire" },
+		prevo: "Prawngs",
 		isNonstandard: "Modded"
 	},
 	cleggean: {
@@ -940,6 +971,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1"],
 		color: "Blue",
 		abilities: { 0: "Quick Feet", 1: "Tangled Feet", H: "Swift Swim" },
+		prevo: "Prawngs",
 		isNonstandard: "Modded"
 	},
 	pholanges: {
@@ -967,6 +999,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1", "Water 3"],
 		color: "Green",
 		abilities: { 0: "Sticky Hold", 1: "No Guard", H: "Iron Fist" },
+		prevo: "Pholanges",
 		isNonstandard: "Modded"
 	},
 	pokipine: {
@@ -994,6 +1027,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Gray",
 		abilities: { 0: "Iron Barbs", 1: "Cheek Pouch", H: "Aftermath" },
+		prevo: "Punkypine",
 		isNonstandard: "Modded"
 	},
 	worbnid: {
@@ -1024,6 +1058,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Black",
 		abilities: { 0: "Prankster", 1: "Poison Heal", H: "Technician" },
 		evos: ["Arachness"],
+		prevo: "Worbnid",
 		isNonstandard: "Modded"
 	},
 	arachness: {
@@ -1038,6 +1073,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Bug"],
 		color: "Black",
 		abilities: { 0: "Prankster", 1: "Poison Heal", H: "Technician" },
+		prevo: "Spreaver",
 		isNonstandard: "Modded"
 	},
 	gargan: {
@@ -1092,6 +1128,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1", "Dragon"],
 		color: "Green",
 		abilities: { 0: "Money Maw", H: "Marvel Scale" },
+		prevo: "Ghrold",
 		isNonstandard: "Modded"
 	},
 	gansitone: {
@@ -1119,6 +1156,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Flying", "Water 3"],
 		color: "White",
 		abilities: { 0: "Skill Link", 1: "Gale Wings", H: "Heavy Metal" },
+		prevo: "Gansitone",
 		isNonstandard: "Modded"
 	},
 	forgerry: {
@@ -1149,6 +1187,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "White",
 		abilities: { 0: "Gluttony", 1: "Regenerator", H: "Chilly Spray" },
 		evos: ["Berygrimmm"],
+		prevo: "Forgerry",
 		isNonstandard: "Modded"
 	},
 	berygrimmm: {
@@ -1163,6 +1202,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Grass", "Amorphous"],
 		color: "Green",
 		abilities: { 0: "Gluttony", 1: "Regenerator", H: "Chilly Spray" },
+		prevo: "Bobbletee",
 		isNonstandard: "Modded"
 	},
 	crezygy: {
@@ -1194,7 +1234,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral"],
 		color: "Blue",
 		abilities: { 0: "Nocturnal" },
-		evos: ["Hadrazard"],
+		evos: ["Hadrazard-Cavern"],
 		isNonstandard: "Modded"
 	},
 	crezygyentree: {
@@ -1209,8 +1249,8 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		weightkg: 27.2,
 		eggGroups: ["Mineral"],
 		color: "Blue",
-		abilities: { 0: "Nocturnal" },
-		evos: ["Phantasma"],
+		abilities: { 0: "Phantasma" },
+		evos: ["Hadrazard-Entree"],
 		isNonstandard: "Modded"
 	},
 	hadrazard: {
@@ -1224,6 +1264,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral"],
 		color: "Blue",
 		abilities: { 0: "Aquagenic" },
+		prevo: "Crezygy",
 		isNonstandard: "Modded",
 		otherFormes: ["Hadrazard", "Hadrazard-Cavern", "Hadrazard-Entree"],
 		formeOrder: ["Hadrazard", "Hadrazard-Cavern", "Hadrazard-Entree"]
@@ -1241,6 +1282,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral"],
 		color: "Blue",
 		abilities: { 0: "Nocturnal" },
+		prevo: "Crezygy-Cavern",
 		isNonstandard: "Modded",
 	},
 	hadrazardentree: {
@@ -1256,6 +1298,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral"],
 		color: "Blue",
 		abilities: { 0: "Phantasma" },
+		prevo: "Crezygy-Entree",
 		isNonstandard: "Modded",
 	},
 	bilffalo: {
@@ -1283,6 +1326,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Yellow",
 		abilities: { 0: "Motor Drive", 1: "Galvanize", H: "Fur Coat" },
+		prevo: "Bilffalo",
 		isNonstandard: "Modded",
 		otherFormes: ["Gruffalo", "Gruffalo-Glacial"],
 		formeOrder: ["Gruffalo", "Gruffalo-Glacial"]
@@ -1300,6 +1344,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Yellow",
 		abilities: { 0: "Motor Drive", 1: "Galvanize", H: "Fur Coat" },
+		prevo: "Bilffalo",
 		isNonstandard: "Modded"
 	},
 	ethel: {
@@ -1327,6 +1372,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral"],
 		color: "White",
 		abilities: { 0: "Serene Grace", 1: "Pixilate", H: "Fairy Aura" },
+		prevo: "Ethel",
 		isNonstandard: "Modded"
 	},
 	enamanuel: {
@@ -1356,6 +1402,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Fairy", "Amorphous"],
 		color: "White",
 		abilities: { 0: "Strong Jaw", 1: "Intimidate", H: "Weak Armor" },
+		prevo: "Enamanuel",
 		isNonstandard: "Modded"
 	},
 	lepidot: {
@@ -1383,6 +1430,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Humanlike"],
 		color: "Black",
 		abilities: { 0: "Moxie", 1: "Compound Eyes", H: "Sniper" },
+		prevo: "Lepidot",
 		isNonstandard: "Modded"
 	},
 	forebail: {
@@ -1413,6 +1461,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Purple",
 		abilities: { 0: "Aura Break", H: "Dragon Soul" },
 		evos: ["Dozumbra"],
+		prevo: "Forebail",
 		isNonstandard: "Modded"
 	},
 	dozumbra: {
@@ -1427,6 +1476,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Dragon"],
 		color: "Black",
 		abilities: { 0: "Aura Break", H: "Dragon Soul" },
+		prevo: "Hexalwurm",
 		isNonstandard: "Modded"
 	},
 	naffnlaff: {
@@ -1454,6 +1504,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 2"],
 		color: "Yellow",
 		abilities: { 0: "Multiscale" },
+		prevo: "Naffnlaff",
 		isNonstandard: "Modded"
 	},
 	bubboll: {
@@ -1483,6 +1534,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 3"],
 		color: "Blue",
 		abilities: { 0: "Liquid Ooze", 1: "Bulletproof", H: "Water Bubble" },
+		prevo: "Bubboll",
 		isNonstandard: "Modded"
 	},
 	hareball: {
@@ -1510,6 +1562,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Brown",
 		abilities: { 0: "Adaptability", 1: "Pickup", H: "Kleptomaniac" },
+		prevo: "Hareball",
 		isNonstandard: "Modded"
 	},
 	robbel: {
@@ -1525,6 +1578,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Black",
 		abilities: { 0: "Second Wind", H: "Adaptability" },
 		evos: ["Slyrrel"],
+		prevo: "Soarrel",
 		isNonstandard: "Modded"
 	},
 	quazogre: {
@@ -1540,6 +1594,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Green",
 		abilities: { 0: "Swole Up", H: "Paratonnerre" },
 		evos: ["Oglurogre"],
+		prevo: "Monogre",
 		isNonstandard: "Modded"
 	},
 	talxious: {
@@ -1555,6 +1610,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Red",
 		abilities: { 0: "Geosurge", H: "Solid Rock" },
 		evos: ["Tectoxire"],
+		prevo: "Tailith",
 		isNonstandard: "Modded"
 	},
 	flish: {
@@ -1596,6 +1652,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Brown",
 		abilities: { 0: "Iron Barbs", 1: "Cheek Pouch", H: "Aftermath" },
 		evos: ["Prikipine"],
+		prevo: "Pokipine",
 		isNonstandard: "Modded"
 	},
 	typheline: {
@@ -1624,6 +1681,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Green",
 		abilities: { 0: "Competitive", 1: "Harvest", H: "Sunshower" },
 		evos: ["Thrivegris"],
+		prevo: "Typheline",
 		isNonstandard: "Modded"
 	},
 	thrivegris: {
@@ -1637,6 +1695,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Water 1"],
 		color: "Green",
 		abilities: { 0: "Competitive", 1: "Harvest", H: "Sunshower" },
+		prevo: "Felily",
 		isNonstandard: "Modded"
 	},
 	calaverito: {
@@ -1664,6 +1723,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Purple",
 		abilities: { 0: "Herbivorous", 1: "Grim Neigh", H: "Cursed Body" },
+		prevo: "Calaverito",
 		isNonstandard: "Modded"
 	},
 	kankandee: {
@@ -1693,6 +1753,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral"],
 		color: "Brown",
 		abilities: { 0: "Rock Head", 1: "Solid Rock", H: "Gooey" },
+		prevo: "Kankandee",
 		isNonstandard: "Modded"
 	},
 	setek: {
@@ -1720,6 +1781,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Humanlike"],
 		color: "Brown",
 		abilities: { 0: "Battle Armor", 1: "Hyper Cutter", H: "Aura Guard" },
+		prevo: "Setek",
 		isNonstandard: "Modded"
 	},
 	minore: {
@@ -1748,6 +1810,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Brown",
 		abilities: { 0: "Sturdy", 1: "Gemstone", H: "Sheer Force" },
 		evos: ["Amestelith"],
+		prevo: "Minore",
 		isNonstandard: "Modded"
 	},
 	amestelith: {
@@ -1761,6 +1824,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Humanlike"],
 		color: "Brown",
 		abilities: { 0: "Sturdy", 1: "Gemstone", H: "Sheer Force" },
+		prevo: "Ornadent",
 		isNonstandard: "Modded"
 	},
 	hortvi: {
@@ -1789,6 +1853,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Green",
 		abilities: { 0: "Overgrow", H: "Vast Vines" },
 		evos: ["Ventraptor"],
+		prevo: "Hortvi",
 		isNonstandard: "Modded"
 	},
 	ventraptor: {
@@ -1802,6 +1867,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Monster", "Grass"],
 		color: "Green",
 		abilities: { 0: "Overgrow", H: "Vast Vines" },
+		prevo: "Virivangs",
 		isNonstandard: "Modded"
 	},
 	pisceely: {
@@ -1830,6 +1896,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Purple",
 		abilities: { 0: "Torrent", H: "Regenerator" },
 		evos: ["Krakloptic"],
+		prevo: "Pisceely",
 		isNonstandard: "Modded"
 	},
 	krakloptic: {
@@ -1843,6 +1910,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1", "Field"],
 		color: "Blue",
 		abilities: { 0: "Torrent", H: "Regenerator" },
+		prevo: "Armureel",
 		isNonstandard: "Modded"
 	},
 	bersarking: {
@@ -1896,6 +1964,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 2"],
 		color: "Yellow",
 		abilities: { 0: "Illuminate", 1: "Plant Veil", H: "Chlorophyll" },
+		prevo: "Elekelp",
 		isNonstandard: "Modded"
 	},
 	splatypus: {
@@ -1923,6 +1992,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1", "Field"],
 		color: "Brown",
 		abilities: { 0: "Skill Link", 1: "Simple", H: "Liquid Ooze" },
+		prevo: "Splatypus",
 		isNonstandard: "Modded"
 	},
 	telekiki: {
@@ -1950,6 +2020,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Fairy"],
 		color: "Yellow",
 		abilities: { 0: "Infiltrator", 1: "Prankster", H: "Moody" },
+		prevo: "Telekiki",
 		isNonstandard: "Modded"
 	},
 	nimphant: {
@@ -1977,6 +2048,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Purple",
 		abilities: { 0: "Cloud Nine", 1: "Magic Guard", H: "Drizzle" },
+		prevo: "Nimphant",
 		isNonstandard: "Modded"
 	},
 	falalalah: {
@@ -1990,6 +2062,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Monster", "Fairy"],
 		color: "Green",
 		abilities: { 0: "Wonder Skin", 1: "Friend Guard", H: "Snow Warning" },
+		prevo: "Jingloo",
 		isNonstandard: "Modded"
 	},
 	sputty: {
@@ -2017,6 +2090,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1", "Water 3"],
 		color: "Purple",
 		abilities: { 0: "Magnet Pull", 1: "Galvanize", H: "Analytic" },
+		prevo: "Sputty",
 		isNonstandard: "Modded"
 	},
 	skwiyer: {
@@ -2044,6 +2118,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Water 2"],
 		color: "Blue",
 		abilities: { 0: "Justified", 1: "Infiltrator", H: "Mega Launcher" },
+		prevo: "Skwiyer",
 		isNonstandard: "Modded"
 	},
 	flox: {
@@ -2072,6 +2147,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Pink",
 		abilities: { 0: "Snow Cloak", 1: "Trace", H: "Steadfast" },
 		evos: ["Azureign"],
+		prevo: "Flox",
 		isNonstandard: "Modded"
 	},
 	azureign: {
@@ -2085,6 +2161,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Blue",
 		abilities: { 0: "Intimidate", 1: "Trace", H: "Steadfast" },
+		prevo: "Avaline",
 		isNonstandard: "Modded"
 	},
 	doonba: {
@@ -2127,6 +2204,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Grass"],
 		color: "Green",
 		abilities: { 0: "Natural Cure", 1: "Vast Vines", H: "Iron Fist" },
+		prevo: "Feravel",
 		isNonstandard: "Modded"
 	},
 	shleepy: {
@@ -2167,6 +2245,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Monster", "Dragon"],
 		color: "Gray",
 		abilities: { 0: "Dark Smoke" },
+		prevo: "Smoglin",
 		evos: ["Malhelent"],
 		isNonstandard: "Modded"
 	},
@@ -2195,6 +2274,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Flying"],
 		color: "Blue",
 		abilities: { 0: "Lightning Rod", 1: "Sniper", H: "Sheer Force" },
+		prevo: "Jayby",
 		isNonstandard: "Modded"
 	},
 	venalanza: {
@@ -2248,6 +2328,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Purple",
 		abilities: { 0: "Tough Claws", 1: "Pressure", H: "Frisk" },
+		prevo: "Dr. Von Ham",
 		isNonstandard: "Modded"
 	},
 	crystall: {
@@ -2277,6 +2358,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Humanlike"],
 		color: "Purple",
 		abilities: { 0: "Forewarn", 1: "Levitate", H: "Telepathy" },
+		prevo: "Crystall",
 		isNonstandard: "Modded"
 	},
 	turtill: {
@@ -2305,6 +2387,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Dragon"],
 		color: "Blue",
 		abilities: { 0: "Sheer Force", 1: "Snow Cloak", H: "Intimidate" },
+		prevo: "Turtill",
 		isNonstandard: "Modded"
 	},
 	batterizer: {
@@ -2332,6 +2415,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Dragon", "Monster"],
 		color: "Black",
 		abilities: { 0: "Plus", 1: "Static", H: "Volt Absorb" },
+		prevo: "Batterizer",
 		isNonstandard: "Modded"
 	},
 	daminu: {
@@ -2359,6 +2443,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Flying", "Field"],
 		color: "Pink",
 		abilities: { 0: "Friend Guard", 1: "Simple", H: "Cute Charm" },
+		prevo: "Daminu",
 		isNonstandard: "Modded"
 	},
 	wyvite: {
@@ -2386,6 +2471,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Dragon"],
 		color: "White",
 		abilities: { 0: "No Guard", 1: "Super Luck", H: "Aerilate" },
+		prevo: "Wyvite",
 		isNonstandard: "Modded"
 	},
 	quimera: {
@@ -2426,6 +2512,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Dragon"],
 		color: "Blue",
 		abilities: { 0: "Soundproof", 1: "Conductor", H: "Filter" },
+		prevo: "Sonapod",
 		isNonstandard: "Modded"
 	},
 	spudling: {
@@ -2454,6 +2541,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		color: "Green",
 		abilities: { 0: "Damp", 1: "Harvest", H: "Regenerator" },
 		evos: ["Mashuffy"],
+		prevo: "Spudling",
 		isNonstandard: "Modded"
 	},
 	mashuffy: {
@@ -2467,6 +2555,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Monster", "Grass"],
 		color: "Green",
 		abilities: { 0: "Fluffy", 1: "Harvest", H: "Regenerator" },
+		prevo: "Ploafer",
 		isNonstandard: "Modded"
 	},
 	tropper: {
@@ -2494,6 +2583,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Bug"],
 		color: "Green",
 		abilities: { 0: "Compound Eyes", 1: "Quick Feet", H: "Leafcutter" },
+		prevo: "Tropper",
 		isNonstandard: "Modded"
 	},
 	fawntia: {
@@ -2534,6 +2624,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Mineral", "Amorphous"],
 		color: "Blue",
 		abilities: { 0: "Swift Swim", 1: "Gemstone", H: "Speed Boost" },
+		prevo: "Skippity",
 		isNonstandard: "Modded"
 	},
 	evellure: {
@@ -2587,6 +2678,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1"],
 		color: "Red",
 		abilities: { 0: "Thick Fat", 1: "Sturdy", H: "Sand Rush" },
+		prevo: "Tobogguin",
 		isNonstandard: "Modded"
 	},
 	jalliet: {
@@ -2600,6 +2692,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Water 1"],
 		color: "Purple",
 		abilities: { 0: "Swift Swim", 1: "Reckless", H: "Sand Rush" },
+		prevo: "Tobogguin",
 		isNonstandard: "Modded"
 	},
 	cocowati: {
@@ -2627,6 +2720,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field"],
 		color: "Green",
 		abilities: { 0: "Intimidate", 1: "Guts", H: "Gluttony" },
+		prevo: "Cocowati",
 		isNonstandard: "Modded"
 	},
 	ironhi5: {
@@ -2784,6 +2878,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Field", "Humanlike"],
 		color: "Purple",
 		abilities: { 0: "Scrappy", 1: "Heatproof", H: "Ice Body" },
+		prevo: "Vurreeze",
 		isNonstandard: "Modded"
 	},
 	cadavyre: {
