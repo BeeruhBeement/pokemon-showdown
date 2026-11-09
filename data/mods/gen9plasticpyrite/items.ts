@@ -44,10 +44,12 @@ export const Items: import("../../../sim/dex-items").ModdedItemDataTable = {
 		onResidual(pokemon) {
 			pokemon.trySetStatus('par', pokemon);
 			if (pokemon.types.includes("Electric")) {
+				if (this.effectState.brightbulb) return;
 				pokemon.addVolatile("charge");
+				this.effectState.brightbulb = true;
 			}
 		},
-		shortDesc: "At end of turn: Paralysis. If Electric: Charge.",
+		shortDesc: "At end of turn: Paralysis. If Electric: Charge, once per switch-in.",
 	},
 	dawnball: {
 		name: "Dawn Ball",
