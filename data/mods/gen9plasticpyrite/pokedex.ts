@@ -1,4 +1,8 @@
 export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable = {
+	heatmor: {
+		inherit: true,
+		abilities: { 0: "Gluttony", 1: "Flash Fire", H: "Dark Smoke" },
+	},
 	malhelent: {
 		num: 9001,
 		name: "Malhelent",

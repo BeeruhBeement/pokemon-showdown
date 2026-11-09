@@ -15,4 +15,12 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 			if (set.nightmare) return [`${set.species} is using its Nightmare form, which is banned by Nightmare Clause.`];
 		},
 	},
+	pintamantclause: {
+		effectType: 'ValidatorRule',
+		name: 'Pintamant Clause',
+		desc: 'Pintamant can only be tiny.',
+		onValidateSet(set) {
+			if (set.species === 'pintamant' && !set.tiny) return [`${set.species} can only ever be found in Tiny Form.`];
+		},
+	},
 };

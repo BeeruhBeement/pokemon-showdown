@@ -2428,6 +2428,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		desc: "Power is equal to the greater of (user's Happiness × 2/5), rounded down, or 1.",
 		shortDesc: "Max 102 power at maximum Happiness.",
 	},
+	hydropump: {
+		inherit: true,
+		basePower: 120,
+	},
 	hypnosis: {
 		inherit: true,
 		accuracy: 75,
@@ -2483,6 +2487,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, pulse: 1 },
 	},
+	surf: {
+		inherit: true,
+		basePower: 95,
+	},
 	technoblast: {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, pulse: 1 },
@@ -2502,5 +2510,74 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	needlearm: {
 		inherit: true,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, punch: 1 },
+	},
+	icespinner: {
+		inherit: true,
+		onAfterHit(target, pokemon, move) {
+			if (!move.hasSheerForce) {
+				if (pokemon.removeVolatile('leechseed')) {
+					this.add('-end', pokemon, 'Leech Seed', '[from] move: Rapid Spin', `[of] ${pokemon}`);
+				}
+				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+				for (const condition of sideConditions) {
+					if (pokemon.side.removeSideCondition(condition)) {
+						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name, '[from] move: Rapid Spin', `[of] ${pokemon}`);
+					}
+				}
+				if (pokemon.volatiles['partiallytrapped']) {
+					pokemon.removeVolatile('partiallytrapped');
+				}
+			}
+			this.field.clearTerrain();
+		},
+		onAfterSubDamage(damage, target, pokemon, move) {
+			if (pokemon.hp) {
+				if (!move.hasSheerForce) {
+					if (pokemon.removeVolatile('leechseed')) {
+						this.add('-end', pokemon, 'Leech Seed', '[from] move: Rapid Spin', `[of] ${pokemon}`);
+					}
+					const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+					for (const condition of sideConditions) {
+						if (pokemon.side.removeSideCondition(condition)) {
+							this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name, '[from] move: Rapid Spin', `[of] ${pokemon}`);
+						}
+					}
+					if (pokemon.volatiles['partiallytrapped']) {
+						pokemon.removeVolatile('partiallytrapped');
+					}
+				}
+				this.field.clearTerrain();
+			}
+		},
+		desc: "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain.",
+		shortDesc: "Ends terrain, and hazards/bind/Leech on user side.",
+	},
+	milkdrink: {
+		inherit: true,
+		pp: 10,
+	},
+	recover: {
+		inherit: true,
+		pp: 10,
+	},
+	rest: {
+		inherit: true,
+		pp: 10,
+	},
+	roost: {
+		inherit: true,
+		pp: 10,
+	},
+	shoreup: {
+		inherit: true,
+		pp: 10,
+	},
+	slackoff: {
+		inherit: true,
+		pp: 10,
+	},
+	softboiled: {
+		inherit: true,
+		pp: 10,
 	},
 };
