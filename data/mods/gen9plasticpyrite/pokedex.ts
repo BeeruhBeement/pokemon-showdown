@@ -2362,7 +2362,6 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isNonstandard: "Modded"
 	},
 	turtill: {
-		hasNightmareForm: true,
 		num: 9154,
 		name: "Turtill",
 		types: ["Ice"],

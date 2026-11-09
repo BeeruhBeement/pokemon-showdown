@@ -273,6 +273,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		gen: 9,
 		target: "normal",
 		flags: { protect: 1, mirror: 1, metronome: 1, bite: 1 },
+		secondary: {
+			chance: 50,
+			boosts: {
+				def: -1,
+			},
+		},
 		desc: "Has a 50% chance to lower the target's Defense by 1 stage.",
 		shortDesc: "50% chance to lower the target's Defense by 1.",
 	},
@@ -1773,7 +1779,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "allAdjacentFoes",
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
 		secondary: {
 			chance: 100,
 			volatileStatus: 'taunt',

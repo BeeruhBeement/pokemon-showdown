@@ -603,6 +603,14 @@ export class Pokemon {
 			}
 		}
 
+		if (this.set.tiny) {
+			if (statName === 'spe') stat *= 1.2;
+		}
+		if (this.set.nightmare) {
+			if (statName === 'atk' || statName === 'spa') stat *= 1.2;
+			if (statName === 'def' || statName === 'spd') stat *= 0.8;
+		}
+
 		// stat boosts
 		let boosts: SparseBoostsTable = {};
 		const boostName = statName as BoostID;
@@ -616,14 +624,6 @@ export class Pokemon {
 			stat = Math.floor(stat * boostTable[boost]);
 		} else {
 			stat = Math.floor(stat / boostTable[-boost]);
-		}
-
-		if (this.set.tiny) {
-			if (statName === 'spe') stat *= 1.2;
-		}
-		if (this.set.nightmare) {
-			if (statName === 'atk' || statName === 'spa') stat *= 1.2;
-			if (statName === 'def' || statName === 'spd') stat *= 0.8;
 		}
 
 		// stat modifier
@@ -648,6 +648,14 @@ export class Pokemon {
 			}
 		}
 
+		if (this.set.tiny) {
+			if (statName === 'spe') stat *= 1.2;
+		}
+		if (this.set.nightmare) {
+			if (statName === 'atk' || statName === 'spa') stat *= 1.2;
+			if (statName === 'def' || statName === 'spd') stat *= 0.8;
+		}
+
 		// stat boosts
 		if (!unboosted) {
 			let boosts = this.boosts;
@@ -663,14 +671,6 @@ export class Pokemon {
 			} else {
 				stat = Math.floor(stat / boostTable[-boost]);
 			}
-		}
-
-		if (this.set.tiny) {
-			if (statName === 'spe') stat *= 1.2;
-		}
-		if (this.set.nightmare) {
-			if (statName === 'atk' || statName === 'spa') stat *= 1.2;
-			if (statName === 'def' || statName === 'spd') stat *= 0.8;
 		}
 
 		// stat modifier effects
