@@ -545,7 +545,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier:  "OU"
 	},
 	feralfang: {
-		tier: "Uber"
+		tier: "OU"
 	},
 	memorsid: {
 		tier:  "OU"
@@ -554,7 +554,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier:  "OU"
 	},
 	artiment: {
-		tier: "Uber"
+		tier: "OU"
 	},
 	piggygee: {
 		tier:  "OU"

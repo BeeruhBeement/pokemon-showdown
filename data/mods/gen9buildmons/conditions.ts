@@ -733,6 +733,25 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 			this.add('-end', target, 'Shield');
 		},
 	},
+	/*mark: {
+		// change to 10% more damage from crits
+		onDamage(damage, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				let move = effect as Move;
+				if (move.category === 'Physical') {
+					this.debug('Mark increase');
+					return this.chainModify(1.15);
+				}
+			}
+		},
+		duration: 2,
+		onStart(target) {
+			this.add('-start', target, 'mark');
+		},
+		onEnd(target) {
+			this.add('-end', target, 'mark');
+		},
+	},*/
 
 	// ability specific
 	duel: {
