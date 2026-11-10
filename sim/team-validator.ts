@@ -588,17 +588,17 @@ export class TeamValidator {
 			if (set.name?.endsWith('-Gmax')) set.name = species.baseSpecies;
 			set.gigantamax = true;
 		}
-		//if (set.name && set.name.length > 60) {
-			if (set.name === set.species) {
+		if (set.name && set.name.length > 60) {
+			if (set.name === set.species && set.name.length > 18) {
 				set.name = species.baseSpecies;
-			}/* else {
+			} else {
 				problems.push(`${set.species}'s nickname "${set.name}" is too long.`);
 				problems.push(
 					`(It's ${set.name.length} characters long, but should be 60 or less. ` +
 					`Some characters, like emojis, may count as more than one.)`
 				);
 			}
-		}*/
+		}
 		set.name = dex.getName(set.name);
 		let item = dex.items.get(Utils.getString(set.item));
 		set.item = item.name;
