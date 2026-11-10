@@ -350,8 +350,8 @@ export const Items: import("../../../sim/dex-items").ModdedItemDataTable = {
 		},
 		shortDesc: "Fire-/Ice-type moves against this Pokemon damage with halved offensive stat, but can only select damaging moves.",
 	},
-	twotontonic: {
-		name: "Two-Ton Tonic",
+	twotontunic: {
+		name: "Two-Ton Tunic",
 		spritenum: -1,
 		fling: {
 			basePower: 80,

@@ -1346,7 +1346,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		gen: 9,
 		target: "normal",
 		flags: { protect: 1, mirror: 1, metronome: 1 },
-		self: {
+		secondary: {
 			chance: 10,
 			boosts: {
 				def: 2,
@@ -1779,7 +1779,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		num: 0,
 		gen: 9,
 		target: "allAdjacentFoes",
-		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1, bypasssub: 1 },
 		secondary: {
 			chance: 100,
 			volatileStatus: 'taunt',
