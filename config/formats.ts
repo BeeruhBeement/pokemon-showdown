@@ -471,7 +471,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: [
 			'Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Focus Band', 'Assist', 'Baton Pass',
-			'Brick Wall', 'Dentures', 'Cosmic Wind', 'Light Clay', "Captoad's Gift",
+			'Brick Wall', 'Dentures', 'Cosmic Wind', 'Light Clay', "Captoad's Gift", 'Dream Tendril',
 		],
 	},
 	{
