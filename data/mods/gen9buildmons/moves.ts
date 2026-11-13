@@ -670,9 +670,29 @@ export const Moves: { [k: string]: ModdedMoveData; } = {
 			chance: 20,
 			status: 'rad',
 		},
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+				move.infiltrates = true;
+			}
+		},
+		onTryMove(source, target, move) {
+			if (source.isAlly(target) && source.volatiles['healblock']) {
+				this.attrLastMove('[still]');
+				this.add('cant', source, 'move: Heal Block', move);
+				return false;
+			}
+		},
+		onHit(target, source, move) {
+			if (source.isAlly(target)) {
+				if (!this.heal(Math.floor(target.baseMaxhp * 0.5))) {
+					return this.NOT_FAIL;
+				}
+			}
+		},
 		target: "any",
-		desc: "Has a 20% chance to irradiate the target.",
-		shortDesc: "20% chance to irradiate the target.",
+		desc: "Has a 20% chance to irradiate the target. If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage.",
+		shortDesc: "20% chance to irradiate target. Heal allies.",
 		pp: 4,
 	},
 	substitute: {
@@ -1386,4 +1406,32 @@ export const Moves: { [k: string]: ModdedMoveData; } = {
 	},
 
 	// functional moves
+	evade: {
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Evade",
+		pp: 5,
+		priority: 0,
+		flags: { noassist: 1, failcopycat: 1 },
+		volatileStatus: 'evade',
+		onDisableMove(pokemon) {
+			if (pokemon.lastMove?.id === 'evade') pokemon.disableMove('evade');
+		},
+		condition: {
+			duration: 1,
+			noCopy: true, // doesn't get copied by Baton Pass
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Evade');
+			},
+			onInvulnerability(target, source, move) {
+				if (typeof move.accuracy !== 'number') return;
+				return false; 
+			},
+		},
+		target: "self",
+		type: "Ghost",
+		desc: "User dodges all moves this turn. Cannot be selected the turn after it's used.",
+		shortDesc: "Dodges moves this turn. Can't use consecutively.",
+	},
 };

@@ -41,6 +41,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		doublesTier: "DOU",
 	},
+	accelgor: {
+		isNonstandard: null,
+		tier: "OU",
+		doublesTier: "DOU",
+	},
 	durant: {
 		isNonstandard: null,
 		tier: "OU",

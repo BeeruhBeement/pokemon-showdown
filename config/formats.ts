@@ -20,8 +20,44 @@ The column value will be ignored for repeat sections.
 export const Formats: import('../sim/dex-formats').FormatList = [
 
 	{
-		section: "Custom",
+		section: "Plastic Pyrite",
 		column: 1,
+	},
+	{
+		name: "[Gen 9] Plastic Pyrite OU",
+		mod: 'gen9plasticpyrite',
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent', '-Future', '+Light of Ruin', 'Tiny Clause', 'Sleep Moves Clause',
+			'Pintamant Clause', 'Nightmare Specific Clause',
+		],
+		banlist: [
+			'Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Focus Band', 'Assist', 'Baton Pass',
+			'Brick Wall', 'Dentures', 'Cosmic Wind', 'Light Clay', "Captoad's Gift", 'Dream Tendril',
+		],
+	},
+	{
+		name: "[Gen 9] Plastic Pyrite AG",
+		mod: 'gen9plasticpyrite',
+		searchShow: false,
+		ruleset: ['Standard AG', 'NatDex Mod', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent', '-Future', '+Light of Ruin',
+			'Pintamant Clause'
+		],
+	},
+
+	{
+		section: "Puffy Pink",
+	},
+	{
+		name: "[Gen 3] Puffy Pink OU",
+
+		mod: 'gen3puffypink',
+		ruleset: ['Standard', 'Data Mod', '+Nonexistent'],
+		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
+	},
+
+	{
+		section: "Draft Formats",
+		column: 2,
 	},
 	{
 		name: "[Gen 9] Hells Kitchen OU",
@@ -32,6 +68,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 		],
+	},
+	{
+		name: "[Gen 9] Hells Kitchen Draft",
+
+		mod: 'gen9hellskitchen',
+		teraPreviewDefault: true,
+		searchShow: false,
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1', '+Nonexistent'],
 	},
 	{
 		name: "[Gen 9] Iron Fist",
@@ -59,12 +103,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			}
 		}
 	},
-	{
-		name: "[Gen 3] Puffy Pink OU",
 
-		mod: 'gen3puffypink',
-		ruleset: ['Standard', 'Data Mod', '+Nonexistent'],
-		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
+
+	{
+		section: "Other Mods",
+		column: 3,
 	},
 	{
 		name: "[Gen 9] Altermons OU",
@@ -444,47 +487,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				pokemon.moveSlots = pokemon.baseMoveSlots.slice();
 			}
 		},
-	},
-
-	{
-		section: "Custom Draft",
-	},
-	{
-		name: "[Gen 9] Hells Kitchen Draft",
-
-		mod: 'gen9hellskitchen',
-		teraPreviewDefault: true,
-		searchShow: false,
-		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1', '+Nonexistent'],
-	},
-
-	{
-		section: "Plastic Pyrite",
-		column: 2,
-	},
-	{
-		name: "[Gen 9] Plastic Pyrite OU",
-		mod: 'gen9plasticpyrite',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent', '-Future', '+Light of Ruin', 'Tiny Clause', 'Sleep Moves Clause',
-			'Pintamant Clause',
-		],
-		banlist: [
-			'Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Focus Band', 'Assist', 'Baton Pass',
-			'Brick Wall', 'Dentures', 'Cosmic Wind', 'Light Clay', "Captoad's Gift", 'Dream Tendril',
-		],
-	},
-	{
-		name: "[Gen 9] Plastic Pyrite AG",
-		mod: 'gen9plasticpyrite',
-		searchShow: false,
-		ruleset: ['Standard AG', 'NatDex Mod', 'Terastal Clause', 'Z-Move Clause', 'Data Mod', '+Nonexistent', '-Future', '+Light of Ruin',
-			'Pintamant Clause'
-		],
-	},
-
-	{
-		section: "Other Mods",
 	},
 	{
 		name: "[Gen 9] National Dex Sky Battles",

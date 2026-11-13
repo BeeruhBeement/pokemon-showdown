@@ -24,4 +24,14 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 			if (species.id === 'pintamant' && !set.tiny) return [`${set.species} can only ever be found in Tiny Form.`];
 		},
 	},
+	nightmarespecificclause: {
+		effectType: 'ValidatorRule',
+		name: 'Nightmare Specific Clause',
+		desc: 'Bans Specific Nightmare Pokemon.',
+		onValidateSet(set) {
+			const species = this.dex.species.get(set.species);
+			const banlist = ['oglurogre'];
+			if (banlist.includes(species.id) && set.nightmare) return [`${set.species} is not allowed to be in Nightmare Form.`];
+		},
+	},
 };

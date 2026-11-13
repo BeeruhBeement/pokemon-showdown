@@ -1,3 +1,5 @@
+import { Battle } from '../../../sim';
+
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
 	// furret
 	// skill
@@ -804,6 +806,264 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Servo Arm",
 		desc: "Attack is boosted by 40% of SpA, including stat changes. Every attack is followed by using Metal Claw with the contact flag removed. Doesn't activate on Metal Claw.",
 		shortDesc: "Attack is boosted by 40% of SpA. Follows every attack with Metal Claw.",
+		rating: 1,
+	},
+	
+	//accelgor
+	//skill
+	rapture: {
+		onAfterTerastallization(pokemon) {
+			this.damage(pokemon.hp / 2);
+			for (const ally of pokemon.allies()) {
+				ally.addVolatile('haste');
+			}
+		},
+		onSwitchIn(pokemon) {
+			pokemon.canTerastallize = null;
+		},
+		onUpdate(pokemon) {
+			if (pokemon.hp >= 60) pokemon.canTerastallize = pokemon.teraType;
+		},
+		flags: {},
+		name: "Rapture",
+		desc: "Can be activated while your HP is greater than or equals to 60. On activation lose 1/2 of your current HP and grant your allies Haste.",
+		shortDesc: "On activation lose 1/2 HP to grant allies Haste.",
+	},
+	// tree 1
+	evasion: {
+		onStart(pokemon) {
+			if (pokemon.moveSlots.some(move => move.id === 'evade')) return;
+			pokemon.moveSlots.push({
+				move: 'evade' as ID,
+				pp: 5,
+				maxpp: 5,
+				id: 'evade' as ID,
+				disabled: false,
+				used: false,
+			});
+		},
+		flags: { breakable: 1 },
+		name: "Evasion",
+		desc: "Evade is added to moves. Evade costs 5 PP, dodges all moves for the turn, and cannot be used on consecutive turns.",
+		shortDesc: "Evade is added to moves.",
+		rating: 1,
+	},
+	swiftmend: {
+		onDamagingHit(damage, target, source, move) {
+			this.effectState.hit = true;
+		},
+		onResidual(target, source, effect) {
+			if (!this.effectState.hit) {
+				this.heal((target.baseMaxhp - target.hp) / 6);
+			}
+			this.effectState.hit = false;
+		},
+		flags: {},
+		name: "Swift Mend",
+		shortDesc: "Heal 1/6th of missing HP on turns when not taken any damage for the turn.",
+		rating: 1,
+	},
+	protectivewraps: {
+		onModifyDefPriority: 1,
+		onModifyDef(def, target, source, move) {
+			if (target.getStat('def') > target.getStat('spd')) return;
+			return target.getStat('spd');
+		},
+		onModifySpDPriority: 2,
+		onModifySpD(spd) {
+			return this.chainModify(1.1);
+		},
+		flags: {},
+		name: "Protective Wraps",
+		shortDesc: "Def matches SpD unless it is already higher. SpD * 1.1x.",
+		rating: 1,
+	},
+	river: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.randomChance(1, 2)) {
+				source.trySetStatus('wet', target);
+			}
+		},
+		flags: {},
+		name: "River",
+		shortDesc: "50% chance a Pokemon attacking this Pokemon will be wet.",
+		rating: 1,
+	},
+	//tree 2
+	blooddrenched: {
+		onModifySpA(spa, pokemon) {
+			if (pokemon.status === 'bld') {
+				return this.chainModify(1.12);
+			}
+		},
+		flags: {},
+		name: "Blooddrenched",
+		shortDesc: "While Bleeding gain 12% more Special Attack.",
+		rating: 1,
+	},
+	bloodyshroud: {
+		onSourceModifyDamage(damage, source, target, move) {
+			const statuses = ['brn', 'frz', 'par'];
+			const hasStatusSecondary = statuses.includes(move.secondary?.status || '') ||
+				move.secondaries?.some(secondary => statuses.includes(secondary.status || ''));
+			if (hasStatusSecondary) {
+				return this.chainModify(0.9);
+			}
+		},
+		onModifyAccuracyPriority: 10,
+		onModifyAccuracy(accuracy, target, source, move) {
+			const statuses = ['brn', 'frz', 'par'];
+			const hasStatus = move.status && statuses.includes(move.status);
+			if (move.category === 'Status' && typeof accuracy === 'number' && hasStatus) {
+				return 50;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Bloody Shroud",
+		desc: "Moves with a chance to BRN/FRZ/PAR deal 10% less damage to this Pokémon. Additionally Status moves that apply those statuses have 50% accuracy when used against this Pokemon.",
+		shortDesc: "Moves with a chance to BRN/FRZ/PAR deal 10% less damage to this Pokémon.",
+		rating: 1,
+	},
+	corrosiveaura: {
+		onDamagingHit(damage, target, source, move) {
+			this.effectState.hit = true;
+		},
+		onResidual(target, source, effect) {
+			if (!this.effectState.hit) {
+				target.adjacentFoes().forEach(foe => {
+					foe.trySetStatus('cor', target);
+				});
+			}
+			this.effectState.hit = false;
+		},
+		flags: {},
+		name: "Corrosive Aura",
+		shortDesc: "If you haven't taken damage for the turn, all adjacent foes become corroded.",
+		rating: 1,
+	},
+	consume: {
+		onSourceModifyDamage(damage, source, target, move) {
+			const types = ['Bug', 'Fighting'];
+			if (target.status && types.includes(move.type)) {
+				target.cureStatus();
+				const judgementStacks = target.m.judgementStacks || 0;
+				target.removeVolatile('judgement');
+				return this.chainModify(1.1 + judgementStacks * 0.02);
+			}
+		},
+		flags: {},
+		name: "Consume",
+		shortDesc: "Bug/Fighting moves consume Status on target to deal 10% more damage.",
+		rating: 1,
+	},
+	judgement: {
+		onSourceDamagingHit(damage, target, source, move) {
+			const types = ['Bug', 'Fighting'];
+			if (target.status === 'cor' && !types.includes(move.type)) {
+				target.addVolatile('judgement');
+			}
+		},
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				this.add('-start', pokemon, `Judgement: ${pokemon.m.judgementStacks}x`, '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, `Judgement: ${pokemon.m.judgementStacks}x`, '[silent]');
+			},
+			onRestart(target, source, sourceEffect) {
+				this.add('-end', target, `Judgement: ${target.m.judgementStacks}x`, '[silent]');
+				target.m.judgementStacks++;
+				if (target.m.judgementStacks > 10) target.m.judgementStacks = 10;
+				this.add('-start', target, `Judgement: ${target.m.judgementStacks}x`, '[silent]');
+			},
+		},
+		flags: {},
+		name: "Judgement",
+		desc: "Hitting Corroded enemy with non Bug/Fighting increases Consume damage on that target by 2%, up to 20%.",
+		shortDesc: "Hitting Corroded enemy with non Bug/Fighting increases Consume dmg by 2%.",
+		rating: 1,
+	},
+	divinity: {
+		onModifyDef(def, pokemon) {
+			if (pokemon.status) {
+				return this.chainModify(1.3);
+			}
+		},
+		onModifySpD(def, pokemon) {
+			if (pokemon.status) {
+				return this.chainModify(1.3);
+			}
+		},
+		onResidual(pokemon) {
+			if (pokemon.status) {
+				let heal = pokemon.status === 'bld' ? 10 : 20
+				this.heal(pokemon.maxhp / heal, pokemon, pokemon);
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			if (source.status) {
+				this.heal(target.lastDamage / 10, source, source, "drain");
+			}
+		},
+		flags: {},
+		name: "Blooddrenched",
+		desc: "While statused, 30% more Def/SpD, heal 1/20th on Residual (1/10th if bleeding), gain 10% lifesteal.",
+		shortDesc: "While statused, 30% more Def/SpD, heal 1/20th on Residual, gain 10% lifesteal.",
+		rating: 2,
+	},
+	//tree 3
+	purity: {
+		onSourceDamagingHit(damage, target, source, move) {
+			target.addVolatile('purity');
+		},
+		onSwitchOut(pokemon) {
+			const move = this.dex.getActiveMove('bugbuzz');
+			move.basePower = 20;
+			
+			for (const foe of pokemon.foes()) {
+				if (!foe.volatiles['purity']) continue;
+
+				const damage = this.actions.getDamage(pokemon, foe, move);
+				if (typeof damage === 'number') {
+					this.damage(damage, foe, pokemon, move);
+				}
+			}
+		},
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				this.add('-start', pokemon, `Purity`, '[silent]');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, `Purity`, '[silent]');
+			},
+		},
+		flags: {},
+		name: "Purity",
+		desc: "Hitting an enemy applies Purity. Switching out deals damage equivalent to a 20 Base Power copy of Bug Buzz to enemies with Purity.",
+		shortDesc: "Hitting an enemy applies Purity. Switching out deals dmg to enemies with it.",
+		rating: 1,
+	},
+	tobeleftalone: {
+		onStart(pokemon) {
+			if (pokemon.m.toBeLeftAloneStacks === undefined) pokemon.m.toBeLeftAloneStacks = 0;
+			this.add('-start', pokemon, `To Be Left Alone: ${pokemon.m.toBeLeftAloneStacks}x`, '[silent]');
+		},
+		onSwitchOut(pokemon) {
+			if (pokemon.m.toBeLeftAloneStacks < 5) pokemon.m.toBeLeftAloneStacks++;
+		},
+		onUpdate(pokemon) {
+			if (pokemon.m.toBeLeftAloneStacks > 5) pokemon.m.toBeLeftAloneStacks = 5;
+		},
+		onSourceWeatherModifyDamage(damage, source, target, move) {
+			if (target.status) {
+				return this.chainModify(1 + source.m.toBeLeftAloneStacks * 0.1);
+			}
+		},
+		flags: {},
+		name: "To Be Left Alone",
+		shortDesc: "Switching out grants permanent +10% dmg to statused targets, up to 50%.",
 		rating: 1,
 	},
 

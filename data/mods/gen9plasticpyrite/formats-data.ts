@@ -107,7 +107,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier:  "NFE"
 	},
 	standaija: {
-		tier:  "OU"
+		tier:  "Uber"
 	},
 	lynxius: {
 		tier:  "LC"
@@ -287,7 +287,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier:  "OU"
 	},
 	shambloo: {
-		tier:  "OU"
+		tier:  "Uber"
 	},
 	hareball: {
 		tier:  "LC"
@@ -545,7 +545,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier:  "OU"
 	},
 	feralfang: {
-		tier: "OU"
+		tier: "Uber"
 	},
 	memorsid: {
 		tier:  "OU"

@@ -101,12 +101,12 @@ export const Pokedex: { [k: string]: ModdedSpeciesData; } = {
 		inherit: true,
 		types: ["Bug", "Water"],
 		color: "Daredevil",
-		eggGroups: ["1", "2", "3"],
+		eggGroups: ["Flow Like Water", "Penitence", "Solace"],
 		abilities: {
-			skill: "Placeholder",
-					/*tree00: "Laser Proficency", tree01: "Space Modulator", tree02: "Pew Pew Pew", tree03: "Loophole", tree04: "Mothership", //tree05: "Sonic Shock",
-					tree10: "Probing", tree11: "Surveillance Drone", //tree12: "Maneuver", tree13: "Stacking", tree14: "Air Resistance", tree15: "Air Support",
-					tree20: "Noosphere", tree21: "Binary Signal", /*tree22: "Long Range", tree23: "Aerial Noise", tree24: "Sound Boost", tree25: "Straight Up Evil"*/},
+			skill: "Rapture",
+					tree00: "Evasion", tree01: "Swift Mend", tree02: "Protective Wraps", tree03: "River",// tree04: "Mothership", //tree05: "Sonic Shock",
+					tree10: "Blooddrenched", tree11: "Bloody Shroud", tree12: "Corrosive Aura", tree13: "Consume", tree14: "Judgement", tree15: "Divinity",
+					tree20: "Purity", tree21: "To Be Left Alone", /*tree22: "Long Range", tree23: "Aerial Noise", tree24: "Sound Boost", tree25: "Straight Up Evil"*/},
 		weightkg: 6,
 	},
 	durant: {
