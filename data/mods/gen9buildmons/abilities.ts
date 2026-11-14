@@ -1007,7 +1007,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 		flags: {},
-		name: "Blooddrenched",
+		name: "Divinity",
 		desc: "While statused, 30% more Def/SpD, heal 1/20th on Residual (1/10th if bleeding), gain 10% lifesteal.",
 		shortDesc: "While statused, 30% more Def/SpD, heal 1/20th on Residual, gain 10% lifesteal.",
 		rating: 2,

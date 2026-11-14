@@ -478,7 +478,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 		],
 		desc: "Has a 10% chance to paralyze the target and a 10% chance to make it flinch.",
-		shortDesc: "10% chance to paralyze. 10% chance to flinch.",
+		shortDesc: "Usually goes first. 10% paralyze/flinch chance.",
 	},
 	scalycharge: {
 		name: "Scaly Charge",
