@@ -874,7 +874,7 @@ export class Side {
 		if (megay && !pokemon.canMegaEvoY) {
 			return this.emitChoiceError(`Can't move: ${pokemon.name} can't mega evolve Y`);
 		}
-		if ((mega || megax || megay) && this.choice.mega && !mixandmega) {
+		if ((mega || megax || megay) && this.choice.mega && !mixandmega && !this.battle.ruleTable.has('multiplemega')) {
 			return this.emitChoiceError(`Can't move: You can only mega-evolve once per battle`);
 		}
 		const ultra = (event === 'ultra');

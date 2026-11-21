@@ -54,6 +54,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard', 'Data Mod', '+Nonexistent'],
 		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Sand Stream ++ Sand Veil'],
 	},
+	{
+		name: "[Gen 3] Puffy Pink AG",
+
+		mod: 'gen3puffypink',
+		ruleset: ['Standard AG', 'Data Mod', '+Nonexistent'],
+		banlist: [],
+	},
 
 	{
 		section: "Draft Formats",
@@ -63,7 +70,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Hells Kitchen OU",
 
 		mod: 'gen9hellskitchen',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Moves Clause', '+lightofruin', '+Nonexistent'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Min Source Gen = 1', 'Z-Move Clause', 'Sleep Moves Clause', '+lightofruin', '+Nonexistent', 'Multiple Mega = 2'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',

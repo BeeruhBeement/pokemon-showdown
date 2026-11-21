@@ -1,6 +1,18 @@
 import { ModdedSpeciesData } from "../../../sim/dex-species";
 
 export const Pokedex: { [k: string]: ModdedSpeciesData; } = {
+	poliwrath: {
+		inherit: true,
+		color: "Enforcer",
+		eggGroups: ["1", "2", "3"],
+		abilities: {
+			skill: "Wild Hunt",
+			tree00: "Phys Res", tree01: "Spread DMG", tree02: "Big Maws", tree03: "Glitter Bomb", tree04: "Entombing Jaws",// tree05: "Sonic Shock",
+			tree10: "Swap PTR", tree11: "Vigor", tree12: "While They're Down", tree13: "Gilded Shackles", tree14: "Rocksplosion",// tree15: "Air Support",
+			tree20: "Pack-a-Punch", tree21: "Lick Wounds", tree22: "Bear Arms", tree23: "Shielded Favor",/* tree24: "Sound Boost", tree25: "Straight Up Evil"*/
+		},
+		weightkg: 5,
+	},
 	furret: {
 		inherit: true,
 		color: "Handler",

@@ -3266,4 +3266,36 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 		},
 	},
+	multiplemega: {
+		effectType: 'Rule',
+		name: 'Multiple Mega',
+		desc: "Allows for a given number of Pokémon to mega-evolve during battle.",
+		hasValue: 'positive-integer',
+		// hardcoded in sim/side.ts
+		onBegin() {
+			this.add('rule', 'Multiple Mega: Allows for a given number of Pokémon to mega-evolve during battle.');
+			const runMegaEvo = this.actions.runMegaEvo;
+			const megaLimit = Number(this.ruleTable.valueRules.get('multiplemega') || 1);
+			const megaCount: { [sideid: string]: number } = {};
+			this.actions.runMegaEvo = function (pokemon) {
+				const canMegaEvo = pokemon.side.pokemon.map(ally => ally.canMegaEvo);
+				const isMega = !!pokemon.canMegaEvo;
+				const result = runMegaEvo.call(this, pokemon);
+				if (result && isMega) megaCount[pokemon.side.id] = (megaCount[pokemon.side.id] || 0) + 1;
+				if ((megaCount[pokemon.side.id] || 0) < megaLimit) {
+					pokemon.side.pokemon.forEach((ally, i) => {
+						if (ally !== pokemon) ally.canMegaEvo = canMegaEvo[i];
+					});
+				}
+				return result;
+			};
+		},
+		onValidateRule(value) {
+			const num = Number(value);
+			if (num < 1 || num > this.ruleTable.maxTeamSize) {
+				throw new Error(`Multiple Mega clause must be between 1 and ${this.ruleTable.maxTeamSize}.`);
+			}
+			return value;
+		},
+	},
 };

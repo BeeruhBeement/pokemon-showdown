@@ -15,6 +15,9 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	victreebelmega: {
 		natDexTier: "OU",
 	},
+	gengarmega: {
+		natDexTier: "OU",
+	},
 	starmiemega: {
 		natDexTier: "OU",
 	},
@@ -30,7 +33,16 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	skarmorymega: {
 		natDexTier: "OU",
 	},
+	salamencemega: {
+		natDexTier: "OU",
+	},
+	metagrossmega: {
+		natDexTier: "OU",
+	},
 	froslassmega: {
+		natDexTier: "OU",
+	},
+	lucariomega: {
 		natDexTier: "OU",
 	},
 	emboarmega: {
@@ -154,7 +166,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		natDexTier: "OU",
 	},
 	baxcaliburmega: {
-		natDexTier: "OU",
+		natDexTier: "Uber",
 	},
 
 	venusaurmegag: {
@@ -323,7 +335,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		natDexTier: "OU",
 	},
 	genesectmega: {
-		natDexTier: "OU",
+		natDexTier: "Uber",
 	},
 	orangurumega: {
 		natDexTier: "OU",
